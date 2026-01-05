@@ -4,7 +4,25 @@
 <title>AI Papers - 2026-01-05</title>
 <link>https://arxiv.org</link>
 <description>AI papers as of 2026-01-05 - 243 papers</description>
-<lastBuildDate>Mon, 05 Jan 2026 13:55:41 +0000</lastBuildDate>
+<lastBuildDate>Mon, 05 Jan 2026 14:21:43 +0000</lastBuildDate>
+<item>
+<title><![CDATA[SenseNova-MARS: Empowering Multimodal Agentic Reasoning and Search via Reinforcement Learning]]></title>
+<link>https://huggingface.co/papers/2512.24330</link>
+<guid>2512.24330</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yong Xien Chng, Tao Hu, Wenwen Tong, Xueheng Li, Jiandong Chen
+Institution: 
+Published: 2025-12-30
+Score: 8/10
+Citations: 0
+Upvotes: 29
+GitHub: 
+Stars: 0
+
+While Vision-Language Models (VLMs) can solve complex tasks through agentic reasoning, their capabilities remain largely constrained to text-oriented chain-of-thought or isolated tool invocation. They fail to exhibit the human-like proficiency required to seamlessly interleave dynamic tool manipulation with continuous reasoning, particularly in knowledge-intensive and visually complex scenarios that demand coordinated external tools such as search and image cropping. In this work, we introduce SenseNova-MARS, a novel Multimodal Agentic Reasoning and Search framework that empowers VLMs with interleaved visual reasoning and tool-use capabilities via reinforcement learning (RL). Specifically, SenseNova-MARS dynamically integrates the image search, text search, and image crop tools to tackle fine-grained and knowledge-intensive visual understanding challenges. In the RL stage, we propose the Batch-Normalized Group Sequence Policy Optimization (BN-GSPO) algorithm to improve the training stability and advance the model's ability to invoke tools and reason effectively. To comprehensively evaluate the agentic VLMs on complex visual tasks, we introduce the HR-MMSearch benchmark, the first search-oriented benchmark composed of high-resolution images with knowledge-intensive and search-driven questions. Experiments demonstrate that SenseNova-MARS achieves state-of-the-art performance on open-source search and fine-grained image understanding benchmarks. Specifically, on search-oriented benchmarks, SenseNova-MARS-8B scores 67.84 on MMSearch and 41.64 on HR-MMSearch, surpassing proprietary models such as Gemini-3-Flash and GPT-5. SenseNova-MARS represents a promising step toward agentic VLMs by providing effective and robust tool-use capabilities. To facilitate further research in this field, we will release all code, models, and datasets.]]></description>
+<pubDate>Tue, 30 Dec 2025 16:31:45 +0000</pubDate>
+</item>
 <item>
 <title><![CDATA[InfoSynth: Information-Guided Benchmark Synthesis for LLMs]]></title>
 <link>https://huggingface.co/papers/2601.00575</link>
@@ -24,24 +42,6 @@ Large language models (LLMs) have demonstrated significant advancements in reaso
 <pubDate>Fri, 02 Jan 2026 05:26:27 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Fast-weight Product Key Memory]]></title>
-<link>https://huggingface.co/papers/2601.00671</link>
-<guid>2601.00671</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Tianyu Zhao, Llion Jones
-Institution: 
-Published: 2026-01-02
-Score: 8/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Sequence modeling layers in modern language models typically face a trade-off between storage capacity and computational efficiency. While Softmax attention offers unbounded storage at prohibitive quadratic costs, linear variants provide efficiency but suffer from limited, fixed-size storage. We propose Fast-weight Product Key Memory (FwPKM), a novel architecture that resolves this tension by transforming the sparse Product Key Memory (PKM) from a static module into a dynamic, "fast-weight" episodic memory. Unlike PKM, FwPKM updates its parameters dynamically at both training and inference time via local chunk-level gradient descent, allowing the model to rapidly memorize and retrieve new key-value pairs from input sequences. Experiments reveal that FwPKM functions as an effective episodic memory that complements the semantic memory of standard modules, yielding significant perplexity reductions on long-context datasets. Notably, in Needle in a Haystack evaluations, FwPKM generalizes to 128K-token contexts despite being trained on only 4K-token sequences.]]></description>
-<pubDate>Fri, 02 Jan 2026 12:37:53 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos]]></title>
 <link>https://huggingface.co/papers/2601.00393</link>
 <guid>2601.00393</guid>
@@ -52,30 +52,12 @@ Institution:
 Published: 2026-01-01
 Score: 7/10
 Citations: 0
-Upvotes: 68
+Upvotes: 73
 GitHub: 
 Stars: 0
 
 In this paper, we propose NeoVerse, a versatile 4D world model that is capable of 4D reconstruction, novel-trajectory video generation, and rich downstream applications. We first identify a common limitation of scalability in current 4D world modeling methods, caused either by expensive and specialized multi-view 4D data or by cumbersome training pre-processing. In contrast, our NeoVerse is built upon a core philosophy that makes the full pipeline scalable to diverse in-the-wild monocular videos. Specifically, NeoVerse features pose-free feed-forward 4D reconstruction, online monocular degradation pattern simulation, and other well-aligned techniques. These designs empower NeoVerse with versatility and generalization to various domains. Meanwhile, NeoVerse achieves state-of-the-art performance in standard reconstruction and generation benchmarks. Our project page is available at https://neoverse-4d.github.io]]></description>
 <pubDate>Thu, 01 Jan 2026 17:07:30 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[SenseNova-MARS: Empowering Multimodal Agentic Reasoning and Search via Reinforcement Learning]]></title>
-<link>https://huggingface.co/papers/2512.24330</link>
-<guid>2512.24330</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yong Xien Chng, Tao Hu, Wenwen Tong, Xueheng Li, Jiandong Chen
-Institution: 
-Published: 2025-12-30
-Score: 7/10
-Citations: 0
-Upvotes: 29
-GitHub: 
-Stars: 0
-
-While Vision-Language Models (VLMs) can solve complex tasks through agentic reasoning, their capabilities remain largely constrained to text-oriented chain-of-thought or isolated tool invocation. They fail to exhibit the human-like proficiency required to seamlessly interleave dynamic tool manipulation with continuous reasoning, particularly in knowledge-intensive and visually complex scenarios that demand coordinated external tools such as search and image cropping. In this work, we introduce SenseNova-MARS, a novel Multimodal Agentic Reasoning and Search framework that empowers VLMs with interleaved visual reasoning and tool-use capabilities via reinforcement learning (RL). Specifically, SenseNova-MARS dynamically integrates the image search, text search, and image crop tools to tackle fine-grained and knowledge-intensive visual understanding challenges. In the RL stage, we propose the Batch-Normalized Group Sequence Policy Optimization (BN-GSPO) algorithm to improve the training stability and advance the model's ability to invoke tools and reason effectively. To comprehensively evaluate the agentic VLMs on complex visual tasks, we introduce the HR-MMSearch benchmark, the first search-oriented benchmark composed of high-resolution images with knowledge-intensive and search-driven questions. Experiments demonstrate that SenseNova-MARS achieves state-of-the-art performance on open-source search and fine-grained image understanding benchmarks. Specifically, on search-oriented benchmarks, SenseNova-MARS-8B scores 67.84 on MMSearch and 41.64 on HR-MMSearch, surpassing proprietary models such as Gemini-3-Flash and GPT-5. SenseNova-MARS represents a promising step toward agentic VLMs by providing effective and robust tool-use capabilities. To facilitate further research in this field, we will release all code, models, and datasets.]]></description>
-<pubDate>Tue, 30 Dec 2025 16:31:45 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Taming Hallucinations: Boosting MLLMs' Video Understanding via Counterfactual Video Generation]]></title>
@@ -258,6 +240,24 @@ Despite the recent progresses, particularly in developing Language Models, there
 <pubDate>Wed, 31 Dec 2025 07:59:43 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[Fast-weight Product Key Memory]]></title>
+<link>https://huggingface.co/papers/2601.00671</link>
+<guid>2601.00671</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Tianyu Zhao, Llion Jones
+Institution: 
+Published: 2026-01-02
+Score: 5/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+Sequence modeling layers in modern language models typically face a trade-off between storage capacity and computational efficiency. While Softmax attention offers unbounded storage at prohibitive quadratic costs, linear variants provide efficiency but suffer from limited, fixed-size storage. We propose Fast-weight Product Key Memory (FwPKM), a novel architecture that resolves this tension by transforming the sparse Product Key Memory (PKM) from a static module into a dynamic, "fast-weight" episodic memory. Unlike PKM, FwPKM updates its parameters dynamically at both training and inference time via local chunk-level gradient descent, allowing the model to rapidly memorize and retrieve new key-value pairs from input sequences. Experiments reveal that FwPKM functions as an effective episodic memory that complements the semantic memory of standard modules, yielding significant perplexity reductions on long-context datasets. Notably, in Needle in a Haystack evaluations, FwPKM generalizes to 128K-token contexts despite being trained on only 4K-token sequences.]]></description>
+<pubDate>Fri, 02 Jan 2026 12:37:53 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Dynamic Large Concept Models: Latent Reasoning in an Adaptive Semantic Space]]></title>
 <link>https://huggingface.co/papers/2512.24617</link>
 <guid>2512.24617</guid>
@@ -322,7 +322,7 @@ Institution:
 Published: 2026-01-02
 Score: 4/10
 Citations: 0
-Upvotes: 39
+Upvotes: 40
 GitHub: 
 Stars: 0
 
