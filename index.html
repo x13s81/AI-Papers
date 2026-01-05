@@ -5,706 +5,383 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Papers Daily</title>
     <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #238636;
+            --accent-orange: #f0883e;
+            --accent-red: #da3633;
+            --accent-purple: #a371f7;
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0d1117;
-            color: #e6edf3;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
         }
-        
-        /* Split layout */
-        .container {
-            display: flex;
-            height: 100vh;
-        }
-        
-        /* Left panel - Papers */
-        .papers-panel {
-            width: 55%;
-            height: 100vh;
+        .app { display: flex; height: 100vh; }
+        .main-panel { flex: 1; overflow-y: auto; padding: 20px 30px; }
+        .side-panel {
+            width: 380px;
+            background: var(--bg-secondary);
+            border-left: 1px solid var(--border);
             overflow-y: auto;
             padding: 20px;
-            border-right: 1px solid #30363d;
         }
-        
-        /* Right panel - Summary */
-        .summary-panel {
-            width: 45%;
-            height: 100vh;
-            overflow-y: auto;
-            padding: 20px;
-            background: #161b22;
+        .header { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--border); }
+        .header h1 { font-size: 1.8em; margin-bottom: 5px; }
+        .header-meta { color: var(--text-secondary); font-size: 0.9em; }
+        .search-container { margin-bottom: 20px; }
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.95em;
         }
-        
-        /* Header */
-        h1 { font-size: 1.5em; margin-bottom: 5px; }
-        h2 { font-size: 1.3em; margin-bottom: 15px; color: #58a6ff; }
-        h3 { font-size: 1.1em; margin-bottom: 10px; color: #8b949e; }
-        .subtitle { color: #8b949e; font-size: 0.9em; margin-bottom: 20px; }
-        
-        /* Filters */
-        .filters {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #30363d;
-        }
+        .search-input:focus { outline: none; border-color: var(--accent-blue); }
+        .search-input::placeholder { color: var(--text-secondary); }
+        .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+        .filter-group { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
         .filter-btn {
-            padding: 5px 12px;
-            background: #21262d;
-            border: 1px solid #30363d;
-            border-radius: 15px;
-            color: #e6edf3;
+            padding: 6px 14px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-primary);
             font-size: 0.8em;
             cursor: pointer;
         }
-        .filter-btn:hover { background: #30363d; }
-        .filter-btn.active { background: #238636; border-color: #238636; }
-        
-        /* Paper cards */
+        .filter-btn:hover { background: var(--border); }
+        .filter-btn.active { background: var(--accent-green); border-color: var(--accent-green); }
+        .sort-select {
+            padding: 8px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.85em;
+        }
+        .must-read-section {
+            background: linear-gradient(135deg, #1a1f2e 0%, #161b22 100%);
+            border: 1px solid var(--accent-orange);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .must-read-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .must-read-header h2 { font-size: 1.2em; color: var(--accent-orange); }
+        .must-read-summary { color: var(--text-secondary); font-size: 0.9em; margin-bottom: 15px; line-height: 1.7; }
         .paper {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
         }
-        .paper-title {
-            font-size: 0.95em;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .paper-title a { color: #58a6ff; text-decoration: none; }
+        .paper:hover { border-color: var(--text-secondary); }
+        .paper.must-read { border-left: 3px solid var(--accent-orange); }
+        .paper.notable { border-left: 3px solid var(--accent-blue); }
+        .paper-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+        .paper-title { font-size: 1em; font-weight: 600; line-height: 1.4; }
+        .paper-title a { color: var(--accent-blue); text-decoration: none; }
         .paper-title a:hover { text-decoration: underline; }
-        
-        .paper-meta {
-            color: #8b949e;
-            font-size: 0.8em;
-            margin-bottom: 8px;
+        .paper-score { flex-shrink: 0; padding: 4px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; }
+        .paper-score.high { background: var(--accent-green); color: white; }
+        .paper-score.medium { background: var(--accent-blue); color: white; }
+        .paper-score.low { background: var(--bg-tertiary); color: var(--text-secondary); }
+        .paper-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; font-size: 0.8em; color: var(--text-secondary); }
+        .paper-institution { color: var(--accent-purple); font-weight: 500; }
+        .paper-date { color: var(--accent-orange); }
+        .paper-citations { color: var(--accent-green); }
+        .paper-contribution {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: var(--bg-primary);
+            border-radius: 6px;
+            border-left: 2px solid var(--accent-blue);
         }
-        
-        .paper-date {
-            color: #f0883e;
-            font-weight: 500;
-        }
-        
-        .paper-tags {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-        }
+        .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
         .tag {
             font-size: 0.7em;
-            padding: 2px 8px;
-            background: #21262d;
-            border-radius: 10px;
-            color: #8b949e;
-            cursor: pointer;
-        }
-        .tag:hover { background: #30363d; color: #e6edf3; }
-        .tag.source { border: 1px solid #30363d; }
-        .tag.source.arxiv { border-color: #f0883e; color: #f0883e; }
-        .tag.source.huggingface { border-color: #ff6b6b; color: #ff6b6b; }
-        .tag.source.paperswithcode { border-color: #a371f7; color: #a371f7; }
-        
-        /* Action buttons */
-        .paper-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .action-btn {
-            padding: 4px 10px;
-            background: #21262d;
-            border: 1px solid #30363d;
-            border-radius: 4px;
-            color: #8b949e;
-            font-size: 0.75em;
-            cursor: pointer;
-        }
-        .action-btn:hover { background: #30363d; color: #e6edf3; }
-        .action-btn.explain-btn { border-color: #238636; color: #238636; }
-        .action-btn.explain-btn:hover { background: #238636; color: white; }
-        
-        /* Abstract and explanation panels */
-        .paper-abstract, .paper-explanation {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background: #0d1117;
-            border-radius: 6px;
-            font-size: 0.85em;
-            line-height: 1.6;
-        }
-        .paper-abstract.show, .paper-explanation.show { display: block; }
-        
-        .explanation-section {
-            margin-bottom: 15px;
-        }
-        .explanation-section h4 {
-            color: #58a6ff;
-            font-size: 0.85em;
-            margin-bottom: 8px;
-        }
-        .explanation-section p {
-            margin-bottom: 8px;
-        }
-        
-        .concept-list {
-            list-style: none;
-            padding: 0;
-        }
-        .concept-list li {
-            padding: 5px 0;
-            border-bottom: 1px solid #21262d;
-        }
-        .concept-list li:last-child { border-bottom: none; }
-        .concept-name { color: #f0883e; font-weight: 500; }
-        .concept-brief { color: #8b949e; font-size: 0.9em; }
-        
-        .difficulty-badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.75em;
-            text-transform: uppercase;
-        }
-        .difficulty-badge.beginner { background: #238636; color: white; }
-        .difficulty-badge.intermediate { background: #f0883e; color: white; }
-        .difficulty-badge.advanced { background: #da3633; color: white; }
-        .difficulty-badge.expert { background: #8957e5; color: white; }
-        
-        .no-explanation {
-            color: #8b949e;
-            font-style: italic;
-            padding: 10px;
-        }
-        
-        /* Summary styling */
-        .summary-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #30363d;
-        }
-        .summary-date {
-            color: #8b949e;
-            font-size: 0.85em;
-        }
-        .summary-badge {
-            background: #238636;
-            color: white;
             padding: 3px 10px;
+            background: var(--bg-tertiary);
             border-radius: 12px;
-            font-size: 0.75em;
-        }
-        
-        .summary-content {
-            font-size: 0.95em;
-            line-height: 1.8;
-            white-space: pre-wrap;
-        }
-        .summary-content p {
-            margin-bottom: 15px;
-        }
-        
-        .summary-stats {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        .stat {
-            background: #0d1117;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.8em;
-        }
-        .stat strong { color: #58a6ff; }
-        
-        /* Tabs for summary panel */
-        .summary-tabs {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 20px;
-        }
-        .tab-btn {
-            padding: 8px 16px;
-            background: #21262d;
-            border: none;
-            border-radius: 6px 6px 0 0;
-            color: #8b949e;
-            font-size: 0.85em;
+            color: var(--text-secondary);
             cursor: pointer;
         }
-        .tab-btn:hover { background: #30363d; color: #e6edf3; }
-        .tab-btn.active { background: #0d1117; color: #58a6ff; }
-        
-        .tab-content {
-            display: none;
-            background: #0d1117;
-            padding: 15px;
-            border-radius: 0 6px 6px 6px;
+        .tag:hover { background: var(--border); color: var(--text-primary); }
+        .tag.source { font-weight: 500; }
+        .tag.source.arxiv { color: var(--accent-orange); border: 1px solid var(--accent-orange); }
+        .tag.source.huggingface { color: #ff6b6b; border: 1px solid #ff6b6b; }
+        .tag.source.paperswithcode { color: var(--accent-purple); border: 1px solid var(--accent-purple); }
+        .paper-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+        .action-btn {
+            padding: 6px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 0.75em;
+            cursor: pointer;
+            text-decoration: none;
         }
-        .tab-content.active { display: block; }
-        
-        .loading { text-align: center; padding: 40px; color: #8b949e; }
-        
-        /* Mobile responsive */
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-                height: auto;
-            }
-            .papers-panel, .summary-panel {
-                width: 100%;
-                height: auto;
-                border-right: none;
-            }
-            .summary-panel {
-                border-top: 1px solid #30363d;
-                order: -1; /* Summary first on mobile */
-            }
+        .action-btn:hover { background: var(--border); color: var(--text-primary); }
+        .action-btn.save-btn.saved { background: var(--accent-green); border-color: var(--accent-green); color: white; }
+        .action-btn.pdf-btn { border-color: var(--accent-red); color: var(--accent-red); }
+        .paper-expandable { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+        .paper-expandable.show { display: block; }
+        .paper-abstract { font-size: 0.85em; color: var(--text-secondary); line-height: 1.7; }
+        .prereq-list { list-style: none; }
+        .prereq-list li { padding: 6px 0; border-bottom: 1px solid var(--bg-tertiary); font-size: 0.85em; }
+        .prereq-name { color: var(--accent-orange); font-weight: 500; }
+        .prereq-desc { color: var(--text-secondary); font-size: 0.9em; }
+        .difficulty-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.7em; text-transform: uppercase; font-weight: 600; color: white; }
+        .difficulty-badge.beginner { background: var(--accent-green); }
+        .difficulty-badge.intermediate { background: var(--accent-orange); }
+        .difficulty-badge.advanced { background: var(--accent-red); }
+        .difficulty-badge.expert { background: var(--accent-purple); }
+        .side-section { margin-bottom: 25px; }
+        .side-section h3 { font-size: 1em; margin-bottom: 12px; }
+        .reading-list-empty { text-align: center; color: var(--text-secondary); padding: 30px; font-size: 0.9em; }
+        .reading-list-item { padding: 10px; background: var(--bg-primary); border-radius: 6px; margin-bottom: 8px; font-size: 0.85em; }
+        .reading-list-item a { color: var(--accent-blue); text-decoration: none; }
+        .reading-list-item .remove-btn { float: right; background: none; border: none; color: var(--text-secondary); cursor: pointer; }
+        .trend-item { padding: 10px; background: var(--bg-primary); border-radius: 6px; margin-bottom: 8px; }
+        .trend-topic { font-weight: 600; color: var(--accent-orange); margin-bottom: 4px; }
+        .trend-insight { font-size: 0.85em; color: var(--text-secondary); }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .stat-card { background: var(--bg-primary); padding: 12px; border-radius: 6px; text-align: center; }
+        .stat-value { font-size: 1.5em; font-weight: 700; color: var(--accent-blue); }
+        .stat-label { font-size: 0.75em; color: var(--text-secondary); }
+        .institution-list { list-style: none; }
+        .institution-list li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--bg-tertiary); font-size: 0.85em; cursor: pointer; }
+        .institution-name { color: var(--accent-purple); }
+        .loading { text-align: center; padding: 60px; color: var(--text-secondary); }
+        .shortcuts-hint { font-size: 0.75em; color: var(--text-secondary); text-align: center; padding: 10px; border-top: 1px solid var(--border); margin-top: 20px; }
+        kbd { background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+        .count-badge { background: var(--bg-tertiary); padding: 2px 8px; border-radius: 10px; font-size: 0.75em; color: var(--text-secondary); }
+        .no-results { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
+        @media (max-width: 1000px) {
+            .app { flex-direction: column; }
+            .side-panel { width: 100%; border-left: none; border-top: 1px solid var(--border); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Left: Papers list -->
-        <div class="papers-panel">
-            <h1>AI Papers</h1>
-            <p class="subtitle" id="papers-subtitle">Loading...</p>
-            
-            <div class="filters" id="filters"></div>
-            
-            <div id="papers"><div class="loading">Loading papers...</div></div>
+    <div class="app">
+        <div class="main-panel">
+            <div class="header">
+                <h1>🔬 AI Papers Daily</h1>
+                <div class="header-meta" id="header-meta">Loading...</div>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" id="search-input" placeholder="Search papers..." onkeyup="handleSearch(event)">
+            </div>
+            <div class="controls">
+                <div class="filter-group" id="filters"></div>
+                <select class="sort-select" id="sort-select" onchange="handleSort()">
+                    <option value="score-desc">Best First</option>
+                    <option value="date-desc">Newest</option>
+                    <option value="date-asc">Oldest</option>
+                    <option value="citations-desc">Most Cited</option>
+                    <option value="upvotes-desc">Most Upvotes</option>
+                    <option value="stars-desc">Most Stars</option>
+                </select>
+            </div>
+            <div id="must-read-section"></div>
+            <div id="papers-list"><div class="loading">Loading papers...</div></div>
         </div>
-        
-        <!-- Right: Summary and explanations -->
-        <div class="summary-panel">
-            <div class="summary-header">
-                <h2>Daily Briefing</h2>
-                <span class="summary-badge">AI-Generated</span>
+        <div class="side-panel">
+            <div class="side-section">
+                <h3>📚 Reading List <span class="count-badge" id="reading-count">0</span></h3>
+                <div id="reading-list"><div class="reading-list-empty">Click Save to add papers</div></div>
+                <button class="action-btn" style="width:100%;margin-top:10px;text-align:center" onclick="exportReadingList()">Export List</button>
             </div>
-            
-            <div class="summary-tabs">
-                <button class="tab-btn active" onclick="showTab('summary')">Summary</button>
-                <button class="tab-btn" onclick="showTab('stats')">Statistics</button>
-            </div>
-            
-            <div class="tab-content active" id="tab-summary">
-                <div class="summary-stats" id="summary-stats"></div>
-                <div class="summary-content" id="summary-content">
-                    <div class="loading">Loading summary...</div>
+            <div class="side-section">
+                <h3>📊 Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-card"><div class="stat-value" id="stat-total">-</div><div class="stat-label">Papers</div></div>
+                    <div class="stat-card"><div class="stat-value" id="stat-mustread">-</div><div class="stat-label">Must Read</div></div>
+                    <div class="stat-card"><div class="stat-value" id="stat-code">-</div><div class="stat-label">With Code</div></div>
+                    <div class="stat-card"><div class="stat-value" id="stat-notable">-</div><div class="stat-label">Notable</div></div>
                 </div>
             </div>
-            
-            <div class="tab-content" id="tab-stats">
-                <div id="stats-content">
-                    <div class="loading">Loading statistics...</div>
-                </div>
+            <div class="side-section">
+                <h3>🔥 Hot Topics</h3>
+                <div id="trends-list"><div class="loading">Loading...</div></div>
             </div>
+            <div class="side-section">
+                <h3>🏛️ Institutions</h3>
+                <ul class="institution-list" id="institution-list"></ul>
+            </div>
+            <div class="shortcuts-hint"><kbd>j</kbd>/<kbd>k</kbd> nav · <kbd>o</kbd> open · <kbd>s</kbd> save · <kbd>/</kbd> search</div>
         </div>
     </div>
+<script>
+let allPapers=[], filteredPapers=[], summaryData={}, explanationsData={};
+let readingList=JSON.parse(localStorage.getItem('aiPapersReadingList')||'[]');
+let currentFilter='all', currentSort='score-desc', searchQuery='', selectedIndex=-1;
 
-    <script>
-        let allPapers = [];
-        let currentFilter = 'all';
-        let explanationsData = {};
-        
-        const tagNames = {
-            'cs.CV': 'Vision',
-            'cs.CL': 'NLP',
-            'cs.LG': 'ML',
-            'cs.AI': 'AI',
-            'cs.NE': 'Neural',
-            'cs.RO': 'Robotics',
-            'stat.ML': 'Stats',
-            'trending': 'Trending',
-            'has-code': 'Code'
-        };
-        
-        function getTagName(tag) {
-            return tagNames[tag] || tag;
-        }
-        
-        // Tab switching
-        function showTab(tabName) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
-            document.querySelector(`.tab-btn[onclick="showTab('${tabName}')"]`).classList.add('active');
-            document.getElementById(`tab-${tabName}`).classList.add('active');
-        }
-        
-        let summaryData = null;
-        
-        // Load explanations data
-        async function loadExplanations() {
-            try {
-                const response = await fetch('explanations.json');
-                explanationsData = await response.json();
-                console.log(`Loaded ${Object.keys(explanationsData).length} explanations`);
-            } catch (error) {
-                console.log('Explanations not available:', error);
-                explanationsData = {};
-            }
-        }
-        
-        // Load summary data
-        async function loadSummary() {
-            try {
-                const response = await fetch('summary.json');
-                summaryData = await response.json();
-                showSummary('all');
-                showStats();
-            } catch (error) {
-                document.getElementById('summary-content').innerHTML = 
-                    '<p style="color: #8b949e;">Summary not available. Run the workflow to generate.</p>';
-            }
-        }
-        
-        // Show statistics
-        function showStats() {
-            if (!summaryData) return;
-            
-            let html = '<div class="explanation-section">';
-            html += `<h4>Sources</h4>`;
-            html += '<ul class="concept-list">';
-            for (const [source, count] of Object.entries(summaryData.sources || {})) {
-                html += `<li><span class="concept-name">${source}</span>: ${count} papers</li>`;
-            }
-            html += '</ul></div>';
-            
-            html += '<div class="explanation-section">';
-            html += `<h4>Categories</h4>`;
-            html += '<ul class="concept-list">';
-            const sortedTags = Object.entries(summaryData.tags || {})
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 10);
-            for (const [tag, count] of sortedTags) {
-                html += `<li><span class="concept-name">${getTagName(tag)}</span>: ${count} papers</li>`;
-            }
-            html += '</ul></div>';
-            
-            html += `<div class="explanation-section">`;
-            html += `<h4>Generated</h4>`;
-            html += `<p>${summaryData.generated_at || summaryData.date}</p>`;
-            html += `</div>`;
-            
-            document.getElementById('stats-content').innerHTML = html;
-        }
-        
-        // Show summary for specific category
-        function showSummary(filterKey) {
-            if (!summaryData) return;
-            
-            // Map filter to summary key
-            let summaryKey = 'all';
-            if (filterKey !== 'all') {
-                if (filterKey.type === 'source') {
-                    summaryKey = filterKey.value;
-                } else if (filterKey.type === 'tag') {
-                    summaryKey = filterKey.value;
-                }
-            }
-            
-            // Get the summary for this category
-            const summaries = summaryData.summaries || {};
-            const catSummary = summaries[summaryKey] || summaries['all'];
-            
-            // Update stats
-            let statsHtml = `<div class="stat">Date: <strong>${summaryData.date}</strong></div>`;
-            
-            if (catSummary) {
-                statsHtml += `<div class="stat">${catSummary.name}: <strong>${catSummary.count}</strong> papers</div>`;
-            } else {
-                statsHtml += `<div class="stat">Papers: <strong>${summaryData.paper_count}</strong></div>`;
-            }
-            
-            document.getElementById('summary-stats').innerHTML = statsHtml;
-            
-            // Update summary text
-            let summaryText = catSummary?.text || summaries['all']?.text || 'No summary available for this category.';
-            summaryText = summaryText
-                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                .replace(/\n\n/g, '</p><p>')
-                .replace(/^/, '<p>')
-                .replace(/$/, '</p>');
-            
-            document.getElementById('summary-content').innerHTML = summaryText;
-        }
-        
-        // Get explanation HTML for a paper
-        function getExplanationHtml(paperId) {
-            const exp = explanationsData[paperId];
-            
-            if (!exp || (!exp.eli5 && !exp.prerequisites)) {
-                return '<div class="no-explanation">No explanation available yet. Check back later!</div>';
-            }
-            
-            let html = '';
-            
-            // ELI5 Section
-            if (exp.eli5 && exp.eli5.simple_explanation) {
-                html += '<div class="explanation-section">';
-                html += '<h4>🧒 Simple Explanation</h4>';
-                html += `<p>${exp.eli5.simple_explanation}</p>`;
-                if (exp.eli5.why_it_matters) {
-                    html += `<p><strong>Why it matters:</strong> ${exp.eli5.why_it_matters}</p>`;
-                }
-                html += '</div>';
-            }
-            
-            // Prerequisites Section
-            if (exp.prerequisites) {
-                const prereqs = exp.prerequisites;
-                
-                // Difficulty level
-                if (prereqs.difficulty_level) {
-                    html += '<div class="explanation-section">';
-                    html += '<h4>📊 Difficulty</h4>';
-                    html += `<span class="difficulty-badge ${prereqs.difficulty_level}">${prereqs.difficulty_level}</span>`;
-                    if (prereqs.estimated_study_time) {
-                        html += `<span style="margin-left: 10px; color: #8b949e;">${prereqs.estimated_study_time}</span>`;
-                    }
-                    html += '</div>';
-                }
-                
-                // Core concepts
-                if (prereqs.core_concepts && prereqs.core_concepts.length > 0) {
-                    html += '<div class="explanation-section">';
-                    html += '<h4>🔑 Key Concepts to Know</h4>';
-                    html += '<ul class="concept-list">';
-                    for (const concept of prereqs.core_concepts) {
-                        html += `<li><span class="concept-name">${concept.name}</span>`;
-                        if (concept.brief) {
-                            html += `<br><span class="concept-brief">${concept.brief}</span>`;
-                        }
-                        html += '</li>';
-                    }
-                    html += '</ul></div>';
-                }
-                
-                // Background knowledge
-                if (prereqs.background_knowledge && prereqs.background_knowledge.length > 0) {
-                    html += '<div class="explanation-section">';
-                    html += '<h4>📚 Background You\'ll Need</h4>';
-                    html += '<ul class="concept-list">';
-                    for (const bg of prereqs.background_knowledge) {
-                        html += `<li><span class="concept-name">${bg.topic}</span>`;
-                        if (bg.why_needed) {
-                            html += `<br><span class="concept-brief">${bg.why_needed}</span>`;
-                        }
-                        html += '</li>';
-                    }
-                    html += '</ul></div>';
-                }
-            }
-            
-            return html || '<div class="no-explanation">Explanation data is incomplete.</div>';
-        }
-        
-        // Toggle explanation panel
-        function toggleExplanation(paperId) {
-            const expDiv = document.getElementById(`exp-${paperId}`);
-            if (expDiv) {
-                const isShowing = expDiv.classList.toggle('show');
-                if (isShowing && !expDiv.dataset.loaded) {
-                    expDiv.innerHTML = getExplanationHtml(paperId);
-                    expDiv.dataset.loaded = 'true';
-                }
-            }
-        }
-        
-        // Load papers
-        async function loadPapers() {
-            try {
-                const response = await fetch('papers.xml');
-                const text = await response.text();
-                const parser = new DOMParser();
-                const xml = parser.parseFromString(text, 'text/xml');
-                
-                document.getElementById('papers-subtitle').textContent = 
-                    xml.querySelector('channel > description')?.textContent || '';
-                
-                const items = xml.querySelectorAll('item');
-                allPapers = [];
-                
-                items.forEach((item, i) => {
-                    const desc = item.querySelector('description')?.textContent || '';
-                    
-                    const sourceMatch = desc.match(/Source: (\w+)/);
-                    const tagsMatch = desc.match(/Tags: ([^\n]+)/);
-                    const authorsMatch = desc.match(/Authors: ([^\n]+)/);
-                    const publishedMatch = desc.match(/Published: ([^\n]+)/);
-                    
-                    const abstractStart = desc.indexOf('\n\n');
-                    const abstract = abstractStart > -1 ? desc.substring(abstractStart + 2) : '';
-                    
-                    // Get paper ID from guid or link
-                    const guid = item.querySelector('guid')?.textContent || '';
-                    const link = item.querySelector('link')?.textContent || '#';
-                    const paperId = guid || link.split('/').pop();
-                    
-                    allPapers.push({
-                        id: paperId,
-                        title: item.querySelector('title')?.textContent || 'Untitled',
-                        link: link,
-                        source: sourceMatch ? sourceMatch[1] : 'arXiv',
-                        tags: tagsMatch ? tagsMatch[1].split(', ').map(t => t.trim()).filter(t => t) : [],
-                        authors: authorsMatch ? authorsMatch[1] : '',
-                        publishedDate: publishedMatch ? publishedMatch[1] : '',
-                        abstract: abstract
-                    });
-                });
-                
-                buildFilters();
-                renderPapers();
-                
-            } catch (error) {
-                document.getElementById('papers').innerHTML = 
-                    `<div class="loading">Error: ${error.message}</div>`;
-            }
-        }
-        
-        function buildFilters() {
-            const sourceCounts = {};
-            const tagCounts = {};
-            
-            allPapers.forEach(p => {
-                sourceCounts[p.source] = (sourceCounts[p.source] || 0) + 1;
-                p.tags.forEach(t => {
-                    tagCounts[t] = (tagCounts[t] || 0) + 1;
-                });
-            });
-            
-            const container = document.getElementById('filters');
-            container.innerHTML = '';
-            
-            // All button
-            const allBtn = document.createElement('button');
-            allBtn.className = 'filter-btn active';
-            allBtn.textContent = `All (${allPapers.length})`;
-            allBtn.onclick = () => setFilter('all', allBtn);
-            container.appendChild(allBtn);
-            
-            // Source buttons
-            Object.entries(sourceCounts)
-                .sort((a, b) => b[1] - a[1])
-                .forEach(([source, count]) => {
-                    const btn = document.createElement('button');
-                    btn.className = 'filter-btn';
-                    btn.textContent = `${source} (${count})`;
-                    btn.onclick = () => setFilter({type: 'source', value: source}, btn);
-                    container.appendChild(btn);
-                });
-            
-            // Top tags
-            Object.entries(tagCounts)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 6)
-                .forEach(([tag, count]) => {
-                    const btn = document.createElement('button');
-                    btn.className = 'filter-btn';
-                    btn.textContent = `${getTagName(tag)} (${count})`;
-                    btn.onclick = () => setFilter({type: 'tag', value: tag}, btn);
-                    container.appendChild(btn);
-                });
-        }
-        
-        function setFilter(filter, btn) {
-            currentFilter = filter;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderPapers();
-            showSummary(filter);
-        }
-        
-        function filterByTag(tag) {
-            currentFilter = {type: 'tag', value: tag};
-            buildFilters();
-            renderPapers();
-            showSummary(currentFilter);
-        }
-        
-        function filterBySource(source) {
-            currentFilter = {type: 'source', value: source};
-            buildFilters();
-            renderPapers();
-            showSummary(currentFilter);
-        }
-        
-        function renderPapers() {
-            let filtered = allPapers;
-            
-            if (currentFilter !== 'all') {
-                if (currentFilter.type === 'source') {
-                    filtered = allPapers.filter(p => p.source === currentFilter.value);
-                } else if (currentFilter.type === 'tag') {
-                    filtered = allPapers.filter(p => p.tags.includes(currentFilter.value));
-                }
-            }
-            
-            if (filtered.length === 0) {
-                document.getElementById('papers').innerHTML = '<div class="loading">No papers found.</div>';
-                return;
-            }
-            
-            let html = '';
-            filtered.forEach(paper => {
-                const sourceClass = paper.source.toLowerCase();
-                const hasExplanation = explanationsData[paper.id];
-                
-                let tagsHtml = `<span class="tag source ${sourceClass}" onclick="filterBySource('${paper.source}')">${paper.source}</span>`;
-                paper.tags.forEach(tag => {
-                    tagsHtml += `<span class="tag" onclick="filterByTag('${tag}')">${getTagName(tag)}</span>`;
-                });
-                
-                // Format the date nicely
-                const dateDisplay = paper.publishedDate || 'Date unknown';
-                
-                html += `
-                    <div class="paper">
-                        <div class="paper-title">
-                            <a href="${paper.link}" target="_blank">${paper.title}</a>
-                        </div>
-                        <div class="paper-meta">
-                            <span class="paper-date">📅 ${dateDisplay}</span> · ${paper.authors}
-                        </div>
-                        <div class="paper-tags">${tagsHtml}</div>
-                        <div class="paper-actions">
-                            <button class="action-btn" onclick="document.getElementById('abs-${paper.id}').classList.toggle('show')">
-                                Abstract
-                            </button>
-                            <button class="action-btn explain-btn" onclick="toggleExplanation('${paper.id}')">
-                                ${hasExplanation ? '💡 Explain This' : '💡 Explain'}
-                            </button>
-                        </div>
-                        <div class="paper-abstract" id="abs-${paper.id}">${paper.abstract}</div>
-                        <div class="paper-explanation" id="exp-${paper.id}"></div>
-                    </div>
-                `;
-            });
-            
-            document.getElementById('papers').innerHTML = html;
-        }
-        
-        // Initialize
-        async function init() {
-            await loadExplanations();
-            await loadSummary();
-            await loadPapers();
-        }
-        
-        init();
-    </script>
+async function loadData(){
+    try{
+        const pr=await fetch('papers.json'); const pd=await pr.json(); allPapers=pd.papers||[];
+        document.getElementById('header-meta').textContent=pd.date+' · '+allPapers.length+' papers';
+        const sr=await fetch('summary.json'); summaryData=await sr.json();
+        try{const er=await fetch('explanations.json'); explanationsData=await er.json();}catch{}
+        buildFilters(); updateStats(); renderTrends(); renderInstitutions(); renderReadingList(); applyFiltersAndRender();
+    }catch(e){document.getElementById('papers-list').innerHTML='<div class="loading">Error: '+e.message+'</div>';}
+}
+
+function applyFiltersAndRender(){
+    let papers=[...allPapers];
+    if(searchQuery){const q=searchQuery.toLowerCase();papers=papers.filter(p=>p.title?.toLowerCase().includes(q)||p.authors?.toLowerCase().includes(q)||p.institution?.toLowerCase().includes(q)||p.abstract?.toLowerCase().includes(q));}
+    if(currentFilter!=='all'){
+        if(currentFilter==='must-read')papers=papers.filter(p=>p.score>=8);
+        else if(currentFilter==='notable')papers=papers.filter(p=>p.score>=6&&p.score<8);
+        else if(currentFilter==='has-code')papers=papers.filter(p=>p.github_url);
+        else if(currentFilter==='saved')papers=papers.filter(p=>readingList.includes(p.id));
+        else if(currentFilter.startsWith('source:'))papers=papers.filter(p=>p.source===currentFilter.replace('source:',''));
+        else if(currentFilter.startsWith('inst:'))papers=papers.filter(p=>p.institution===currentFilter.replace('inst:',''));
+        else papers=papers.filter(p=>p.tags?.includes(currentFilter));
+    }
+    papers=sortPapers(papers); filteredPapers=papers; renderPapers(); renderMustRead();
+}
+
+function sortPapers(papers){
+    const s=[...papers];
+    switch(currentSort){
+        case'score-desc':s.sort((a,b)=>(b.score||0)-(a.score||0));break;
+        case'date-desc':s.sort((a,b)=>(b.pubDateISO||'').localeCompare(a.pubDateISO||''));break;
+        case'date-asc':s.sort((a,b)=>(a.pubDateISO||'').localeCompare(b.pubDateISO||''));break;
+        case'citations-desc':s.sort((a,b)=>(b.citations||0)-(a.citations||0));break;
+        case'upvotes-desc':s.sort((a,b)=>(b.upvotes||0)-(a.upvotes||0));break;
+        case'stars-desc':s.sort((a,b)=>(b.github_stars||0)-(a.github_stars||0));break;
+    }
+    return s;
+}
+
+function handleSearch(e){searchQuery=e.target.value;applyFiltersAndRender();}
+function handleSort(){currentSort=document.getElementById('sort-select').value;applyFiltersAndRender();}
+function setFilter(f,btn){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');applyFiltersAndRender();}
+
+function buildFilters(){
+    const c=document.getElementById('filters');
+    const counts={all:allPapers.length,'must-read':allPapers.filter(p=>p.score>=8).length,notable:allPapers.filter(p=>p.score>=6&&p.score<8).length,'has-code':allPapers.filter(p=>p.github_url).length,saved:readingList.length};
+    const filters=[{key:'all',label:'All'},{key:'must-read',label:'🔥 Must Read'},{key:'notable',label:'📈 Notable'},{key:'has-code',label:'💻 Code'},{key:'saved',label:'📚 Saved'}];
+    c.innerHTML=filters.map(f=>'<button class="filter-btn '+(currentFilter===f.key?'active':'')+'" onclick="setFilter(\''+f.key+'\',this)">'+f.label+' ('+(counts[f.key]||0)+')</button>').join('');
+}
+
+function renderMustRead(){
+    const c=document.getElementById('must-read-section');
+    if(currentFilter!=='all'&&currentFilter!=='must-read'){c.innerHTML='';return;}
+    const mr=allPapers.filter(p=>p.score>=8).slice(0,5);
+    if(!mr.length){c.innerHTML='';return;}
+    c.innerHTML='<div class="must-read-section"><div class="must-read-header"><h2>🔥 Must Read Today</h2></div><div class="must-read-summary">'+(summaryData.daily_summary||'Top papers for serious researchers.')+'</div><div>'+mr.map(p=>renderPaper(p)).join('')+'</div></div>';
+}
+
+function renderPapers(){
+    const c=document.getElementById('papers-list');
+    const papers=currentFilter==='all'?filteredPapers.filter(p=>p.score<8):filteredPapers;
+    if(!papers.length){c.innerHTML='<div class="no-results"><h3>No papers found</h3></div>';return;}
+    c.innerHTML=papers.map(p=>renderPaper(p)).join('');
+}
+
+function renderPaper(p){
+    const sc=p.score>=8?'high':p.score>=6?'medium':'low';
+    const saved=readingList.includes(p.id);
+    const exp=explanationsData[p.id];
+    const cls=p.score>=8?'must-read':p.score>=6?'notable':'';
+    let meta=[];
+    if(p.institution)meta.push('<span class="paper-institution">🏛️ '+p.institution+'</span>');
+    if(p.pubDateISO)meta.push('<span class="paper-date">📅 '+p.pubDateISO+'</span>');
+    if(p.citations>0)meta.push('<span class="paper-citations">📚 '+p.citations+'</span>');
+    if(p.upvotes>0)meta.push('<span>👍 '+p.upvotes+'</span>');
+    if(p.github_stars>0)meta.push('<span>⭐ '+p.github_stars+'</span>');
+    let tags='<span class="tag source '+(p.source||'').toLowerCase()+'" onclick="setFilter(\'source:'+p.source+'\')">'+p.source+'</span>';
+    (p.tags||[]).forEach(t=>{tags+='<span class="tag" onclick="setFilter(\''+t+'\')">'+t+'</span>';});
+    let contrib=p.key_contribution?'<div class="paper-contribution"><strong>Key:</strong> '+p.key_contribution+(p.why_it_matters?'<br><strong>Impact:</strong> '+p.why_it_matters:'')+'</div>':'';
+    return '<div class="paper '+cls+'" data-id="'+p.id+'"><div class="paper-header"><div class="paper-title"><a href="'+p.link+'" target="_blank">'+p.title+'</a></div><span class="paper-score '+sc+'">'+p.score+'/10</span></div><div class="paper-meta">'+meta.join('')+'<span>'+p.authors+'</span></div>'+contrib+'<div class="paper-tags">'+tags+'</div><div class="paper-actions"><button class="action-btn save-btn '+(saved?'saved':'')+'" onclick="toggleSave(\''+p.id+'\')">'+(saved?'✓ Saved':'📚 Save')+'</button><button class="action-btn" onclick="toggleSection(\''+p.id+'\',\'abstract\')">Abstract</button>'+(exp?'<button class="action-btn" onclick="toggleSection(\''+p.id+'\',\'prereqs\')">Prerequisites</button>':'')+(p.pdf_link?'<a href="'+p.pdf_link+'" target="_blank" class="action-btn pdf-btn">📄 PDF</a>':'')+(p.github_url?'<a href="'+p.github_url+'" target="_blank" class="action-btn">💻 Code</a>':'')+'</div><div class="paper-expandable" id="abstract-'+p.id+'"><div class="paper-abstract">'+(p.abstract||'No abstract.')+'</div></div>'+(exp?'<div class="paper-expandable" id="prereqs-'+p.id+'">'+renderPrereqs(exp)+'</div>':'')+'</div>';
+}
+
+function renderPrereqs(exp){
+    const pr=exp.prerequisites||{};let h='';
+    if(pr.difficulty_level)h+='<p><span class="difficulty-badge '+pr.difficulty_level+'">'+pr.difficulty_level+'</span>'+(pr.estimated_study_time?' · '+pr.estimated_study_time:'')+'</p><br>';
+    if(pr.core_concepts?.length){h+='<h4>🔑 Concepts</h4><ul class="prereq-list">';pr.core_concepts.forEach(c=>{h+='<li><span class="prereq-name">'+c.name+'</span><br><span class="prereq-desc">'+(c.brief||'')+'</span></li>';});h+='</ul>';}
+    if(pr.background_knowledge?.length){h+='<h4>📚 Background</h4><ul class="prereq-list">';pr.background_knowledge.forEach(b=>{h+='<li><span class="prereq-name">'+b.topic+'</span><br><span class="prereq-desc">'+(b.why_needed||'')+'</span></li>';});h+='</ul>';}
+    return h||'<p>No data.</p>';
+}
+
+function renderTrends(){
+    const c=document.getElementById('trends-list');
+    const t=summaryData.weekly_trends;
+    if(!t?.hot_topics?.length){c.innerHTML='<div class="loading">No trends</div>';return;}
+    c.innerHTML=t.hot_topics.slice(0,5).map(x=>'<div class="trend-item"><div class="trend-topic">'+x.topic+' ('+x.paper_count+')</div><div class="trend-insight">'+x.insight+'</div></div>').join('');
+}
+
+function renderInstitutions(){
+    const c=document.getElementById('institution-list');
+    const inst=Object.entries(summaryData.institutions||{}).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    if(!inst.length){c.innerHTML='<li>No data</li>';return;}
+    c.innerHTML=inst.map(([n,ct])=>'<li onclick="setFilter(\'inst:'+n+'\')"><span class="institution-name">'+n+'</span><span>'+ct+'</span></li>').join('');
+}
+
+function updateStats(){
+    document.getElementById('stat-total').textContent=allPapers.length;
+    document.getElementById('stat-mustread').textContent=allPapers.filter(p=>p.score>=8).length;
+    document.getElementById('stat-notable').textContent=allPapers.filter(p=>p.score>=6&&p.score<8).length;
+    document.getElementById('stat-code').textContent=allPapers.filter(p=>p.github_url).length;
+}
+
+function toggleSave(id){
+    if(readingList.includes(id))readingList=readingList.filter(x=>x!==id);
+    else readingList.push(id);
+    localStorage.setItem('aiPapersReadingList',JSON.stringify(readingList));
+    renderReadingList();buildFilters();applyFiltersAndRender();
+}
+
+function renderReadingList(){
+    const c=document.getElementById('reading-list');
+    document.getElementById('reading-count').textContent=readingList.length;
+    if(!readingList.length){c.innerHTML='<div class="reading-list-empty">Click Save to add papers</div>';return;}
+    const saved=allPapers.filter(p=>readingList.includes(p.id));
+    c.innerHTML=saved.map(p=>'<div class="reading-list-item"><button class="remove-btn" onclick="toggleSave(\''+p.id+'\')">✕</button><a href="'+p.link+'" target="_blank">'+p.title+'</a></div>').join('');
+}
+
+function exportReadingList(){
+    const saved=allPapers.filter(p=>readingList.includes(p.id));
+    const txt=saved.map(p=>p.title+'\n'+p.link+'\n').join('\n');
+    const b=new Blob([txt],{type:'text/plain'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='reading-list.txt';a.click();
+}
+
+function toggleSection(id,sec){const e=document.getElementById(sec+'-'+id);if(e)e.classList.toggle('show');}
+
+document.addEventListener('keydown',e=>{
+    if(e.target.tagName==='INPUT'){if(e.key==='Escape')e.target.blur();return;}
+    const papers=document.querySelectorAll('.paper');
+    if(e.key==='/'){e.preventDefault();document.getElementById('search-input').focus();}
+    else if(e.key==='j'){e.preventDefault();selectedIndex=Math.min(selectedIndex+1,papers.length-1);highlight(papers);}
+    else if(e.key==='k'){e.preventDefault();selectedIndex=Math.max(selectedIndex-1,0);highlight(papers);}
+    else if(e.key==='o'&&selectedIndex>=0){const l=papers[selectedIndex]?.querySelector('.paper-title a');if(l)window.open(l.href,'_blank');}
+    else if(e.key==='s'&&selectedIndex>=0){const id=papers[selectedIndex]?.dataset.id;if(id)toggleSave(id);}
+});
+
+function highlight(papers){
+    papers.forEach((p,i)=>{p.style.outline=i===selectedIndex?'2px solid var(--accent-blue)':'none';});
+    if(papers[selectedIndex])papers[selectedIndex].scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+loadData();
+</script>
 </body>
 </html>
