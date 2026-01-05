@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Papers Daily</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+        }
+        
+        /* Split layout */
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        /* Left panel - Papers */
+        .papers-panel {
+            width: 55%;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+            border-right: 1px solid #30363d;
+        }
+        
+        /* Right panel - Summary */
+        .summary-panel {
+            width: 45%;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+            background: #161b22;
+        }
+        
+        /* Header */
+        h1 { font-size: 1.5em; margin-bottom: 5px; }
+        h2 { font-size: 1.3em; margin-bottom: 15px; color: #58a6ff; }
+        h3 { font-size: 1.1em; margin-bottom: 10px; color: #8b949e; }
+        .subtitle { color: #8b949e; font-size: 0.9em; margin-bottom: 20px; }
+        
+        /* Filters */
+        .filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #30363d;
+        }
+        .filter-btn {
+            padding: 5px 12px;
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 15px;
+            color: #e6edf3;
+            font-size: 0.8em;
+            cursor: pointer;
+        }
+        .filter-btn:hover { background: #30363d; }
+        .filter-btn.active { background: #238636; border-color: #238636; }
+        
+        /* Paper cards */
+        .paper {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .paper-title {
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .paper-title a { color: #58a6ff; text-decoration: none; }
+        .paper-title a:hover { text-decoration: underline; }
+        
+        .paper-meta {
+            color: #8b949e;
+            font-size: 0.8em;
+            margin-bottom: 8px;
+        }
+        
+        .paper-date {
+            color: #f0883e;
+            font-weight: 500;
+        }
+        
+        .paper-tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            font-size: 0.7em;
+            padding: 2px 8px;
+            background: #21262d;
+            border-radius: 10px;
+            color: #8b949e;
+            cursor: pointer;
+        }
+        .tag:hover { background: #30363d; color: #e6edf3; }
+        .tag.source { border: 1px solid #30363d; }
+        .tag.source.arxiv { border-color: #f0883e; color: #f0883e; }
+        .tag.source.huggingface { border-color: #ff6b6b; color: #ff6b6b; }
+        .tag.source.paperswithcode { border-color: #a371f7; color: #a371f7; }
+        
+        /* Action buttons */
+        .paper-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 4px 10px;
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 4px;
+            color: #8b949e;
+            font-size: 0.75em;
+            cursor: pointer;
+        }
+        .action-btn:hover { background: #30363d; color: #e6edf3; }
+        .action-btn.explain-btn { border-color: #238636; color: #238636; }
+        .action-btn.explain-btn:hover { background: #238636; color: white; }
+        
+        /* Abstract and explanation panels */
+        .paper-abstract, .paper-explanation {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #0d1117;
+            border-radius: 6px;
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+        .paper-abstract.show, .paper-explanation.show { display: block; }
+        
+        .explanation-section {
+            margin-bottom: 15px;
+        }
+        .explanation-section h4 {
+            color: #58a6ff;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+        }
+        .explanation-section p {
+            margin-bottom: 8px;
+        }
+        
+        .concept-list {
+            list-style: none;
+            padding: 0;
+        }
+        .concept-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #21262d;
+        }
+        .concept-list li:last-child { border-bottom: none; }
+        .concept-name { color: #f0883e; font-weight: 500; }
+        .concept-brief { color: #8b949e; font-size: 0.9em; }
+        
+        .difficulty-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            text-transform: uppercase;
+        }
+        .difficulty-badge.beginner { background: #238636; color: white; }
+        .difficulty-badge.intermediate { background: #f0883e; color: white; }
+        .difficulty-badge.advanced { background: #da3633; color: white; }
+        .difficulty-badge.expert { background: #8957e5; color: white; }
+        
+        .no-explanation {
+            color: #8b949e;
+            font-style: italic;
+            padding: 10px;
+        }
+        
+        /* Summary styling */
+        .summary-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #30363d;
+        }
+        .summary-date {
+            color: #8b949e;
+            font-size: 0.85em;
+        }
+        .summary-badge {
+            background: #238636;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+        }
+        
+        .summary-content {
+            font-size: 0.95em;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+        .summary-content p {
+            margin-bottom: 15px;
+        }
+        
+        .summary-stats {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: #0d1117;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.8em;
+        }
+        .stat strong { color: #58a6ff; }
+        
+        /* Tabs for summary panel */
+        .summary-tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            padding: 8px 16px;
+            background: #21262d;
+            border: none;
+            border-radius: 6px 6px 0 0;
+            color: #8b949e;
+            font-size: 0.85em;
+            cursor: pointer;
+        }
+        .tab-btn:hover { background: #30363d; color: #e6edf3; }
+        .tab-btn.active { background: #0d1117; color: #58a6ff; }
+        
+        .tab-content {
+            display: none;
+            background: #0d1117;
+            padding: 15px;
+            border-radius: 0 6px 6px 6px;
+        }
+        .tab-content.active { display: block; }
+        
+        .loading { text-align: center; padding: 40px; color: #8b949e; }
+        
+        /* Mobile responsive */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .papers-panel, .summary-panel {
+                width: 100%;
+                height: auto;
+                border-right: none;
+            }
+            .summary-panel {
+                border-top: 1px solid #30363d;
+                order: -1; /* Summary first on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left: Papers list -->
+        <div class="papers-panel">
+            <h1>AI Papers</h1>
+            <p class="subtitle" id="papers-subtitle">Loading...</p>
+            
+            <div class="filters" id="filters"></div>
+            
+            <div id="papers"><div class="loading">Loading papers...</div></div>
+        </div>
+        
+        <!-- Right: Summary and explanations -->
+        <div class="summary-panel">
+            <div class="summary-header">
+                <h2>Daily Briefing</h2>
+                <span class="summary-badge">AI-Generated</span>
+            </div>
+            
+            <div class="summary-tabs">
+                <button class="tab-btn active" onclick="showTab('summary')">Summary</button>
+                <button class="tab-btn" onclick="showTab('stats')">Statistics</button>
+            </div>
+            
+            <div class="tab-content active" id="tab-summary">
+                <div class="summary-stats" id="summary-stats"></div>
+                <div class="summary-content" id="summary-content">
+                    <div class="loading">Loading summary...</div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="tab-stats">
+                <div id="stats-content">
+                    <div class="loading">Loading statistics...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allPapers = [];
+        let currentFilter = 'all';
+        let explanationsData = {};
+        
+        const tagNames = {
+            'cs.CV': 'Vision',
+            'cs.CL': 'NLP',
+            'cs.LG': 'ML',
+            'cs.AI': 'AI',
+            'cs.NE': 'Neural',
+            'cs.RO': 'Robotics',
+            'stat.ML': 'Stats',
+            'trending': 'Trending',
+            'has-code': 'Code'
+        };
+        
+        function getTagName(tag) {
+            return tagNames[tag] || tag;
+        }
+        
+        // Tab switching
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            document.querySelector(`.tab-btn[onclick="showTab('${tabName}')"]`).classList.add('active');
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+        }
+        
+        let summaryData = null;
+        
+        // Load explanations data
+        async function loadExplanations() {
+            try {
+                const response = await fetch('explanations.json');
+                explanationsData = await response.json();
+                console.log(`Loaded ${Object.keys(explanationsData).length} explanations`);
+            } catch (error) {
+                console.log('Explanations not available:', error);
+                explanationsData = {};
+            }
+        }
+        
+        // Load summary data
+        async function loadSummary() {
+            try {
+                const response = await fetch('summary.json');
+                summaryData = await response.json();
+                showSummary('all');
+                showStats();
+            } catch (error) {
+                document.getElementById('summary-content').innerHTML = 
+                    '<p style="color: #8b949e;">Summary not available. Run the workflow to generate.</p>';
+            }
+        }
+        
+        // Show statistics
+        function showStats() {
+            if (!summaryData) return;
+            
+            let html = '<div class="explanation-section">';
+            html += `<h4>Sources</h4>`;
+            html += '<ul class="concept-list">';
+            for (const [source, count] of Object.entries(summaryData.sources || {})) {
+                html += `<li><span class="concept-name">${source}</span>: ${count} papers</li>`;
+            }
+            html += '</ul></div>';
+            
+            html += '<div class="explanation-section">';
+            html += `<h4>Categories</h4>`;
+            html += '<ul class="concept-list">';
+            const sortedTags = Object.entries(summaryData.tags || {})
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10);
+            for (const [tag, count] of sortedTags) {
+                html += `<li><span class="concept-name">${getTagName(tag)}</span>: ${count} papers</li>`;
+            }
+            html += '</ul></div>';
+            
+            html += `<div class="explanation-section">`;
+            html += `<h4>Generated</h4>`;
+            html += `<p>${summaryData.generated_at || summaryData.date}</p>`;
+            html += `</div>`;
+            
+            document.getElementById('stats-content').innerHTML = html;
+        }
+        
+        // Show summary for specific category
+        function showSummary(filterKey) {
+            if (!summaryData) return;
+            
+            // Map filter to summary key
+            let summaryKey = 'all';
+            if (filterKey !== 'all') {
+                if (filterKey.type === 'source') {
+                    summaryKey = filterKey.value;
+                } else if (filterKey.type === 'tag') {
+                    summaryKey = filterKey.value;
+                }
+            }
+            
+            // Get the summary for this category
+            const summaries = summaryData.summaries || {};
+            const catSummary = summaries[summaryKey] || summaries['all'];
+            
+            // Update stats
+            let statsHtml = `<div class="stat">Date: <strong>${summaryData.date}</strong></div>`;
+            
+            if (catSummary) {
+                statsHtml += `<div class="stat">${catSummary.name}: <strong>${catSummary.count}</strong> papers</div>`;
+            } else {
+                statsHtml += `<div class="stat">Papers: <strong>${summaryData.paper_count}</strong></div>`;
+            }
+            
+            document.getElementById('summary-stats').innerHTML = statsHtml;
+            
+            // Update summary text
+            let summaryText = catSummary?.text || summaries['all']?.text || 'No summary available for this category.';
+            summaryText = summaryText
+                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^/, '<p>')
+                .replace(/$/, '</p>');
+            
+            document.getElementById('summary-content').innerHTML = summaryText;
+        }
+        
+        // Get explanation HTML for a paper
+        function getExplanationHtml(paperId) {
+            const exp = explanationsData[paperId];
+            
+            if (!exp || (!exp.eli5 && !exp.prerequisites)) {
+                return '<div class="no-explanation">No explanation available yet. Check back later!</div>';
+            }
+            
+            let html = '';
+            
+            // ELI5 Section
+            if (exp.eli5 && exp.eli5.simple_explanation) {
+                html += '<div class="explanation-section">';
+                html += '<h4>🧒 Simple Explanation</h4>';
+                html += `<p>${exp.eli5.simple_explanation}</p>`;
+                if (exp.eli5.why_it_matters) {
+                    html += `<p><strong>Why it matters:</strong> ${exp.eli5.why_it_matters}</p>`;
+                }
+                html += '</div>';
+            }
+            
+            // Prerequisites Section
+            if (exp.prerequisites) {
+                const prereqs = exp.prerequisites;
+                
+                // Difficulty level
+                if (prereqs.difficulty_level) {
+                    html += '<div class="explanation-section">';
+                    html += '<h4>📊 Difficulty</h4>';
+                    html += `<span class="difficulty-badge ${prereqs.difficulty_level}">${prereqs.difficulty_level}</span>`;
+                    if (prereqs.estimated_study_time) {
+                        html += `<span style="margin-left: 10px; color: #8b949e;">${prereqs.estimated_study_time}</span>`;
+                    }
+                    html += '</div>';
+                }
+                
+                // Core concepts
+                if (prereqs.core_concepts && prereqs.core_concepts.length > 0) {
+                    html += '<div class="explanation-section">';
+                    html += '<h4>🔑 Key Concepts to Know</h4>';
+                    html += '<ul class="concept-list">';
+                    for (const concept of prereqs.core_concepts) {
+                        html += `<li><span class="concept-name">${concept.name}</span>`;
+                        if (concept.brief) {
+                            html += `<br><span class="concept-brief">${concept.brief}</span>`;
+                        }
+                        html += '</li>';
+                    }
+                    html += '</ul></div>';
+                }
+                
+                // Background knowledge
+                if (prereqs.background_knowledge && prereqs.background_knowledge.length > 0) {
+                    html += '<div class="explanation-section">';
+                    html += '<h4>📚 Background You\'ll Need</h4>';
+                    html += '<ul class="concept-list">';
+                    for (const bg of prereqs.background_knowledge) {
+                        html += `<li><span class="concept-name">${bg.topic}</span>`;
+                        if (bg.why_needed) {
+                            html += `<br><span class="concept-brief">${bg.why_needed}</span>`;
+                        }
+                        html += '</li>';
+                    }
+                    html += '</ul></div>';
+                }
+            }
+            
+            return html || '<div class="no-explanation">Explanation data is incomplete.</div>';
+        }
+        
+        // Toggle explanation panel
+        function toggleExplanation(paperId) {
+            const expDiv = document.getElementById(`exp-${paperId}`);
+            if (expDiv) {
+                const isShowing = expDiv.classList.toggle('show');
+                if (isShowing && !expDiv.dataset.loaded) {
+                    expDiv.innerHTML = getExplanationHtml(paperId);
+                    expDiv.dataset.loaded = 'true';
+                }
+            }
+        }
+        
+        // Load papers
+        async function loadPapers() {
+            try {
+                const response = await fetch('papers.xml');
+                const text = await response.text();
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(text, 'text/xml');
+                
+                document.getElementById('papers-subtitle').textContent = 
+                    xml.querySelector('channel > description')?.textContent || '';
+                
+                const items = xml.querySelectorAll('item');
+                allPapers = [];
+                
+                items.forEach((item, i) => {
+                    const desc = item.querySelector('description')?.textContent || '';
+                    
+                    const sourceMatch = desc.match(/Source: (\w+)/);
+                    const tagsMatch = desc.match(/Tags: ([^\n]+)/);
+                    const authorsMatch = desc.match(/Authors: ([^\n]+)/);
+                    const publishedMatch = desc.match(/Published: ([^\n]+)/);
+                    
+                    const abstractStart = desc.indexOf('\n\n');
+                    const abstract = abstractStart > -1 ? desc.substring(abstractStart + 2) : '';
+                    
+                    // Get paper ID from guid or link
+                    const guid = item.querySelector('guid')?.textContent || '';
+                    const link = item.querySelector('link')?.textContent || '#';
+                    const paperId = guid || link.split('/').pop();
+                    
+                    allPapers.push({
+                        id: paperId,
+                        title: item.querySelector('title')?.textContent || 'Untitled',
+                        link: link,
+                        source: sourceMatch ? sourceMatch[1] : 'arXiv',
+                        tags: tagsMatch ? tagsMatch[1].split(', ').map(t => t.trim()).filter(t => t) : [],
+                        authors: authorsMatch ? authorsMatch[1] : '',
+                        publishedDate: publishedMatch ? publishedMatch[1] : '',
+                        abstract: abstract
+                    });
+                });
+                
+                buildFilters();
+                renderPapers();
+                
+            } catch (error) {
+                document.getElementById('papers').innerHTML = 
+                    `<div class="loading">Error: ${error.message}</div>`;
+            }
+        }
+        
+        function buildFilters() {
+            const sourceCounts = {};
+            const tagCounts = {};
+            
+            allPapers.forEach(p => {
+                sourceCounts[p.source] = (sourceCounts[p.source] || 0) + 1;
+                p.tags.forEach(t => {
+                    tagCounts[t] = (tagCounts[t] || 0) + 1;
+                });
+            });
+            
+            const container = document.getElementById('filters');
+            container.innerHTML = '';
+            
+            // All button
+            const allBtn = document.createElement('button');
+            allBtn.className = 'filter-btn active';
+            allBtn.textContent = `All (${allPapers.length})`;
+            allBtn.onclick = () => setFilter('all', allBtn);
+            container.appendChild(allBtn);
+            
+            // Source buttons
+            Object.entries(sourceCounts)
+                .sort((a, b) => b[1] - a[1])
+                .forEach(([source, count]) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-btn';
+                    btn.textContent = `${source} (${count})`;
+                    btn.onclick = () => setFilter({type: 'source', value: source}, btn);
+                    container.appendChild(btn);
+                });
+            
+            // Top tags
+            Object.entries(tagCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 6)
+                .forEach(([tag, count]) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-btn';
+                    btn.textContent = `${getTagName(tag)} (${count})`;
+                    btn.onclick = () => setFilter({type: 'tag', value: tag}, btn);
+                    container.appendChild(btn);
+                });
+        }
+        
+        function setFilter(filter, btn) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderPapers();
+            showSummary(filter);
+        }
+        
+        function filterByTag(tag) {
+            currentFilter = {type: 'tag', value: tag};
+            buildFilters();
+            renderPapers();
+            showSummary(currentFilter);
+        }
+        
+        function filterBySource(source) {
+            currentFilter = {type: 'source', value: source};
+            buildFilters();
+            renderPapers();
+            showSummary(currentFilter);
+        }
+        
+        function renderPapers() {
+            let filtered = allPapers;
+            
+            if (currentFilter !== 'all') {
+                if (currentFilter.type === 'source') {
+                    filtered = allPapers.filter(p => p.source === currentFilter.value);
+                } else if (currentFilter.type === 'tag') {
+                    filtered = allPapers.filter(p => p.tags.includes(currentFilter.value));
+                }
+            }
+            
+            if (filtered.length === 0) {
+                document.getElementById('papers').innerHTML = '<div class="loading">No papers found.</div>';
+                return;
+            }
+            
+            let html = '';
+            filtered.forEach(paper => {
+                const sourceClass = paper.source.toLowerCase();
+                const hasExplanation = explanationsData[paper.id];
+                
+                let tagsHtml = `<span class="tag source ${sourceClass}" onclick="filterBySource('${paper.source}')">${paper.source}</span>`;
+                paper.tags.forEach(tag => {
+                    tagsHtml += `<span class="tag" onclick="filterByTag('${tag}')">${getTagName(tag)}</span>`;
+                });
+                
+                // Format the date nicely
+                const dateDisplay = paper.publishedDate || 'Date unknown';
+                
+                html += `
+                    <div class="paper">
+                        <div class="paper-title">
+                            <a href="${paper.link}" target="_blank">${paper.title}</a>
+                        </div>
+                        <div class="paper-meta">
+                            <span class="paper-date">📅 ${dateDisplay}</span> · ${paper.authors}
+                        </div>
+                        <div class="paper-tags">${tagsHtml}</div>
+                        <div class="paper-actions">
+                            <button class="action-btn" onclick="document.getElementById('abs-${paper.id}').classList.toggle('show')">
+                                Abstract
+                            </button>
+                            <button class="action-btn explain-btn" onclick="toggleExplanation('${paper.id}')">
+                                ${hasExplanation ? '💡 Explain This' : '💡 Explain'}
+                            </button>
+                        </div>
+                        <div class="paper-abstract" id="abs-${paper.id}">${paper.abstract}</div>
+                        <div class="paper-explanation" id="exp-${paper.id}"></div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('papers').innerHTML = html;
+        }
+        
+        // Initialize
+        async function init() {
+            await loadExplanations();
+            await loadSummary();
+            await loadPapers();
+        }
+        
+        init();
+    </script>
+</body>
+</html>
