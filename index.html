@@ -6,283 +6,231 @@
     <title>AI Papers Daily</title>
     <style>
         :root {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --bg-tertiary: #21262d;
+            --bg: #0d1117;
+            --bg2: #161b22;
+            --bg3: #21262d;
             --border: #30363d;
-            --text-primary: #e6edf3;
-            --text-secondary: #8b949e;
-            --accent-blue: #58a6ff;
-            --accent-green: #238636;
-            --accent-orange: #f0883e;
-            --accent-red: #da3633;
-            --accent-purple: #a371f7;
-            --accent-pink: #db61a2;
+            --text: #e6edf3;
+            --text2: #8b949e;
+            --blue: #58a6ff;
+            --green: #238636;
+            --orange: #f0883e;
+            --red: #da3633;
+            --purple: #a371f7;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
         
+        /* 3-Panel Layout */
         .app { display: flex; height: 100vh; }
-        .main-panel { flex: 1; overflow-y: auto; padding: 20px 30px; }
-        .side-panel { width: 320px; background: var(--bg-secondary); border-left: 1px solid var(--border); overflow-y: auto; padding: 20px; }
-        .chat-panel { width: 380px; background: var(--bg-secondary); border-left: 1px solid var(--border); display: flex; flex-direction: column; }
+        .papers-panel { width: 420px; border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
+        .pdf-panel { flex: 1; display: flex; flex-direction: column; background: var(--bg2); }
+        .chat-panel { width: 380px; border-left: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
         
-        .header { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-        .header-left h1 { font-size: 1.8em; margin-bottom: 5px; }
-        .header-meta { color: var(--text-secondary); font-size: 0.9em; }
-        .add-paper-btn { padding: 10px 20px; background: var(--accent-purple); border: none; border-radius: 8px; color: white; font-size: 0.9em; cursor: pointer; display: flex; align-items: center; gap: 8px; }
-        .add-paper-btn:hover { opacity: 0.9; }
+        /* Papers Panel */
+        .panel-header { padding: 15px 20px; border-bottom: 1px solid var(--border); }
+        .panel-header h1 { font-size: 1.3em; margin-bottom: 10px; }
+        .search-box { width: 100%; padding: 10px 14px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.9em; }
+        .search-box:focus { outline: none; border-color: var(--blue); }
         
-        .search-container { margin-bottom: 20px; }
-        .search-input { width: 100%; padding: 12px 16px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 0.95em; }
-        .search-input:focus { outline: none; border-color: var(--accent-blue); }
+        /* Tabs */
+        .tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--bg2); overflow-x: auto; }
+        .tab { padding: 12px 16px; font-size: 0.85em; color: var(--text2); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; }
+        .tab:hover { color: var(--text); }
+        .tab.active { color: var(--blue); border-bottom-color: var(--blue); }
+        .tab .count { background: var(--bg3); padding: 2px 8px; border-radius: 10px; font-size: 0.75em; margin-left: 6px; }
+        .tab.active .count { background: var(--blue); color: white; }
         
-        .controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
-        .filter-group { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
-        .filter-btn { padding: 6px 14px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 20px; color: var(--text-primary); font-size: 0.8em; cursor: pointer; }
-        .filter-btn:hover { background: var(--border); }
-        .filter-btn.active { background: var(--accent-green); border-color: var(--accent-green); }
-        .sort-select { padding: 8px 12px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); font-size: 0.85em; }
+        /* Paper List */
+        .papers-list { flex: 1; overflow-y: auto; }
+        .paper { padding: 14px 20px; border-bottom: 1px solid var(--border); cursor: pointer; }
+        .paper:hover { background: var(--bg2); }
+        .paper.selected { background: var(--bg3); border-left: 3px solid var(--blue); }
+        .paper-title { font-size: 0.95em; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+        .paper-meta { font-size: 0.8em; color: var(--text2); display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+        .paper-date { color: var(--orange); }
+        .paper-score { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.7em; font-weight: 600; }
+        .paper-score.high { background: var(--green); color: white; }
+        .paper-score.medium { background: var(--blue); color: white; }
+        .paper-score.low { background: var(--bg3); color: var(--text2); }
+        .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+        .tag { font-size: 0.7em; padding: 2px 8px; background: var(--bg3); border-radius: 10px; color: var(--text2); }
+        .paper-actions { display: flex; gap: 8px; margin-top: 10px; }
+        .paper-btn { padding: 5px 10px; font-size: 0.75em; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; color: var(--text2); cursor: pointer; }
+        .paper-btn:hover { background: var(--border); color: var(--text); }
+        .paper-btn.primary { background: var(--blue); border-color: var(--blue); color: white; }
+        .paper-btn.saved { background: var(--green); border-color: var(--green); color: white; }
         
-        .must-read-section { background: linear-gradient(135deg, #1a1f2e 0%, #161b22 100%); border: 1px solid var(--accent-orange); border-radius: 12px; padding: 20px; margin-bottom: 25px; }
-        .must-read-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
-        .must-read-header h2 { font-size: 1.2em; color: var(--accent-orange); }
-        .must-read-summary { color: var(--text-secondary); font-size: 0.9em; margin-bottom: 15px; line-height: 1.7; }
-        
-        /* My Papers Section */
-        .my-papers-section { background: linear-gradient(135deg, #1f1a2e 0%, #1b1622 100%); border: 1px solid var(--accent-purple); border-radius: 12px; padding: 20px; margin-bottom: 25px; }
-        .my-papers-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
-        .my-papers-header h2 { font-size: 1.2em; color: var(--accent-purple); display: flex; align-items: center; gap: 10px; }
-        
-        .paper { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 12px; cursor: pointer; }
-        .paper:hover { border-color: var(--text-secondary); }
-        .paper.must-read { border-left: 3px solid var(--accent-orange); }
-        .paper.notable { border-left: 3px solid var(--accent-blue); }
-        .paper.custom { border-left: 3px solid var(--accent-purple); }
-        .paper.selected { border-color: var(--accent-purple); background: rgba(168, 85, 247, 0.1); }
-        .paper-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
-        .paper-title { font-size: 1em; font-weight: 600; line-height: 1.4; }
-        .paper-title a { color: var(--accent-blue); text-decoration: none; }
-        .paper-score { flex-shrink: 0; padding: 4px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; }
-        .paper-score.high { background: var(--accent-green); color: white; }
-        .paper-score.medium { background: var(--accent-blue); color: white; }
-        .paper-score.low { background: var(--bg-tertiary); color: var(--text-secondary); }
-        .paper-score.custom { background: var(--accent-purple); color: white; }
-        .paper-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; font-size: 0.8em; color: var(--text-secondary); }
-        .paper-institution { color: var(--accent-purple); font-weight: 500; }
-        .paper-contribution { font-size: 0.9em; margin-bottom: 10px; padding: 10px; background: var(--bg-primary); border-radius: 6px; border-left: 2px solid var(--accent-blue); }
-        .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
-        .tag { font-size: 0.7em; padding: 3px 10px; background: var(--bg-tertiary); border-radius: 12px; color: var(--text-secondary); cursor: pointer; }
-        .tag:hover { background: var(--border); }
-        .paper-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-        .action-btn { padding: 6px 12px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-secondary); font-size: 0.75em; cursor: pointer; text-decoration: none; }
-        .action-btn:hover { background: var(--border); color: var(--text-primary); }
-        .action-btn.saved { background: var(--accent-green); border-color: var(--accent-green); color: white; }
-        .action-btn.delete { border-color: var(--accent-red); color: var(--accent-red); }
-        .action-btn.delete:hover { background: var(--accent-red); color: white; }
-        .paper-expandable { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
-        .paper-expandable.show { display: block; }
-        .paper-abstract { font-size: 0.85em; color: var(--text-secondary); line-height: 1.7; }
-        
-        /* Modal */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; }
-        .modal-overlay.show { display: flex; }
-        .modal { background: var(--bg-secondary); border-radius: 12px; padding: 30px; width: 90%; max-width: 600px; max-height: 90vh; overflow-y: auto; }
-        .modal h2 { margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--text-secondary); font-size: 1.5em; cursor: pointer; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-size: 0.9em; color: var(--text-secondary); }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 0.95em; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-purple); }
-        .form-group textarea { min-height: 100px; resize: vertical; }
-        .form-group small { display: block; margin-top: 5px; color: var(--text-secondary); font-size: 0.8em; }
-        .form-row { display: flex; gap: 15px; }
-        .form-row .form-group { flex: 1; }
-        .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
-        .btn { padding: 12px 24px; border-radius: 8px; font-size: 0.9em; cursor: pointer; border: none; }
-        .btn-primary { background: var(--accent-purple); color: white; }
-        .btn-secondary { background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border); }
-        
-        /* Side Panel */
-        .side-section { margin-bottom: 25px; }
-        .side-section h3 { font-size: 1em; margin-bottom: 12px; }
-        .reading-list-empty { text-align: center; color: var(--text-secondary); padding: 20px; font-size: 0.9em; }
-        .reading-list-item { padding: 10px; background: var(--bg-primary); border-radius: 6px; margin-bottom: 8px; font-size: 0.85em; }
-        .reading-list-item a { color: var(--accent-blue); text-decoration: none; }
-        .reading-list-item .remove-btn { float: right; background: none; border: none; color: var(--text-secondary); cursor: pointer; }
-        .trend-item { padding: 10px; background: var(--bg-primary); border-radius: 6px; margin-bottom: 8px; }
-        .trend-topic { font-weight: 600; color: var(--accent-orange); margin-bottom: 4px; }
-        .trend-insight { font-size: 0.85em; color: var(--text-secondary); }
-        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .stat-card { background: var(--bg-primary); padding: 12px; border-radius: 6px; text-align: center; }
-        .stat-value { font-size: 1.5em; font-weight: 700; color: var(--accent-blue); }
-        .stat-label { font-size: 0.75em; color: var(--text-secondary); }
-        .count-badge { background: var(--bg-tertiary); padding: 2px 8px; border-radius: 10px; font-size: 0.75em; }
+        /* PDF Panel */
+        .pdf-placeholder { flex: 1; display: flex; align-items: center; justify-content: center; color: var(--text2); text-align: center; padding: 40px; }
+        .pdf-placeholder h2 { font-size: 1.2em; margin-bottom: 10px; color: var(--text); }
+        .pdf-placeholder p { font-size: 0.9em; }
+        .pdf-header { padding: 12px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg); }
+        .pdf-title { font-size: 0.9em; font-weight: 600; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .pdf-links { display: flex; gap: 10px; }
+        .pdf-links a { font-size: 0.8em; color: var(--blue); text-decoration: none; }
+        .pdf-links a:hover { text-decoration: underline; }
+        .pdf-frame { flex: 1; border: none; background: #525659; }
         
         /* Chat Panel */
         .chat-header { padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-        .chat-header h3 { font-size: 1em; }
-        .ai-dot { width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; animation: pulse 2s infinite; }
+        .chat-header h2 { font-size: 1em; }
+        .ai-status { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-        .chat-context { padding: 10px 20px; background: var(--bg-primary); border-bottom: 1px solid var(--border); font-size: 0.8em; color: var(--text-secondary); }
-        .chat-context strong { color: var(--accent-purple); }
+        .chat-context { padding: 10px 20px; background: var(--bg); border-bottom: 1px solid var(--border); font-size: 0.8em; color: var(--text2); }
+        .chat-context strong { color: var(--purple); }
         .chat-messages { flex: 1; overflow-y: auto; padding: 20px; }
-        .message { margin-bottom: 16px; display: flex; gap: 10px; }
-        .msg-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8em; flex-shrink: 0; }
-        .message.user .msg-avatar { background: var(--accent-blue); }
-        .message.ai .msg-avatar { background: var(--accent-purple); }
-        .msg-content { flex: 1; padding: 10px 14px; border-radius: 10px; font-size: 0.85em; line-height: 1.6; }
-        .message.user .msg-content { background: var(--accent-blue); }
-        .message.ai .msg-content { background: var(--bg-tertiary); }
-        .chat-input-area { padding: 15px; border-top: 1px solid var(--border); }
-        .quick-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
-        .quick-btn { padding: 5px 10px; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 15px; font-size: 0.7em; cursor: pointer; color: var(--text-secondary); }
-        .quick-btn:hover { border-color: var(--accent-purple); color: var(--text-primary); }
+        .msg { margin-bottom: 16px; display: flex; gap: 10px; }
+        .msg-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75em; flex-shrink: 0; }
+        .msg.user .msg-avatar { background: var(--blue); }
+        .msg.ai .msg-avatar { background: var(--purple); }
+        .msg-body { flex: 1; }
+        .msg-content { padding: 10px 14px; border-radius: 10px; font-size: 0.85em; line-height: 1.6; }
+        .msg.user .msg-content { background: var(--blue); }
+        .msg.ai .msg-content { background: var(--bg3); }
+        .msg-time { font-size: 0.7em; color: var(--text2); margin-top: 4px; }
+        .chat-input-area { padding: 15px 20px; border-top: 1px solid var(--border); }
+        .quick-btns { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+        .quick-btn { padding: 5px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 15px; font-size: 0.7em; cursor: pointer; color: var(--text2); }
+        .quick-btn:hover { border-color: var(--purple); color: var(--text); }
         .chat-input-row { display: flex; gap: 8px; }
-        .chat-input { flex: 1; padding: 10px 14px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 0.85em; resize: none; }
-        .chat-input:focus { outline: none; border-color: var(--accent-purple); }
-        .chat-send { padding: 10px 14px; background: var(--accent-purple); border: none; border-radius: 8px; color: white; cursor: pointer; }
+        .chat-input { flex: 1; padding: 10px 14px; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.85em; resize: none; }
+        .chat-input:focus { outline: none; border-color: var(--purple); }
+        .chat-send { padding: 10px 16px; background: var(--purple); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: 500; }
+        .chat-send:hover { opacity: 0.9; }
+        .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
         
-        .loading { text-align: center; padding: 40px; color: var(--text-secondary); }
-        .typing::after { content: '...'; animation: dots 1s infinite; }
-        @keyframes dots { 0%{content:'.'} 33%{content:'..'} 66%{content:'...'} }
+        /* Loading & Typing */
+        .loading { text-align: center; padding: 40px; color: var(--text2); }
+        .typing-indicator { display: flex; gap: 4px; padding: 10px 14px; }
+        .typing-indicator span { width: 8px; height: 8px; background: var(--text2); border-radius: 50%; animation: bounce 1.4s infinite; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-4px)} }
         
-        @media (max-width: 1400px) { .chat-panel { width: 340px; } }
-        @media (max-width: 1200px) { .chat-panel { display: none; } }
-        @media (max-width: 900px) { .side-panel { display: none; } }
+        /* Add Paper Modal */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; }
+        .modal-overlay.show { display: flex; }
+        .modal { background: var(--bg2); border-radius: 12px; padding: 25px; width: 90%; max-width: 500px; }
+        .modal h2 { margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 0.85em; color: var(--text2); margin-bottom: 6px; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.9em; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--purple); }
+        .form-row { display: flex; gap: 15px; }
+        .form-row .form-group { flex: 1; }
+        .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+        .btn { padding: 10px 20px; border-radius: 6px; font-size: 0.9em; cursor: pointer; border: none; }
+        .btn-primary { background: var(--purple); color: white; }
+        .btn-secondary { background: var(--bg3); color: var(--text); }
+        
+        /* Responsive */
+        @media (max-width: 1200px) { .chat-panel { width: 320px; } }
+        @media (max-width: 1000px) { .chat-panel { display: none; } }
+        @media (max-width: 800px) { .pdf-panel { display: none; } .papers-panel { width: 100%; } }
     </style>
 </head>
 <body>
 <div class="app">
-    <div class="main-panel">
-        <div class="header">
-            <div class="header-left">
-                <h1>🔬 AI Papers Daily</h1>
-                <div class="header-meta" id="header-meta">Loading...</div>
-            </div>
-            <button class="add-paper-btn" onclick="openAddPaperModal()">➕ Add Paper</button>
+    <!-- Papers List Panel -->
+    <div class="papers-panel">
+        <div class="panel-header">
+            <h1>🔬 AI Papers Daily</h1>
+            <input type="text" class="search-box" id="search" placeholder="Search papers..." oninput="filterPapers()">
         </div>
-        <div class="search-container">
-            <input type="text" class="search-input" id="search-input" placeholder="Search papers..." onkeyup="handleSearch(event)">
+        <div class="tabs" id="tabs"></div>
+        <div class="papers-list" id="papers-list">
+            <div class="loading">Loading papers...</div>
         </div>
-        <div class="controls">
-            <div class="filter-group" id="filters"></div>
-            <select class="sort-select" id="sort-select" onchange="handleSort()">
-                <option value="score-desc">Best First</option>
-                <option value="date-desc">Newest</option>
-                <option value="date-asc">Oldest</option>
-                <option value="citations-desc">Most Cited</option>
-            </select>
-        </div>
-        <div id="my-papers-section"></div>
-        <div id="must-read-section"></div>
-        <div id="papers-list"><div class="loading">Loading papers...</div></div>
-    </div>
-    
-    <div class="side-panel">
-        <div class="side-section">
-            <h3>📚 Reading List <span class="count-badge" id="reading-count">0</span></h3>
-            <div id="reading-list"><div class="reading-list-empty">Click Save to add papers</div></div>
-            <button class="action-btn" style="width:100%;margin-top:10px;text-align:center" onclick="exportReadingList()">Export List</button>
-        </div>
-        <div class="side-section">
-            <h3>📊 Stats</h3>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="stat-value" id="stat-total">-</div><div class="stat-label">Today</div></div>
-                <div class="stat-card"><div class="stat-value" id="stat-custom">-</div><div class="stat-label">My Papers</div></div>
-            </div>
-        </div>
-        <div class="side-section">
-            <h3>🔥 Hot Topics</h3>
-            <div id="trends-list"><div class="loading">Loading...</div></div>
+        <div style="padding:10px 20px;border-top:1px solid var(--border)">
+            <button class="paper-btn" style="width:100%" onclick="openAddModal()">➕ Add Paper</button>
         </div>
     </div>
     
+    <!-- PDF Viewer Panel -->
+    <div class="pdf-panel" id="pdf-panel">
+        <div class="pdf-placeholder" id="pdf-placeholder">
+            <div>
+                <h2>📄 Select a Paper</h2>
+                <p>Click "Open PDF" on any paper to view it here</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AI Chat Panel -->
     <div class="chat-panel">
         <div class="chat-header">
-            <div class="ai-dot"></div>
-            <h3>🤖 AI Tutor</h3>
+            <div class="ai-status"></div>
+            <h2>🤖 Ask AI</h2>
         </div>
-        <div class="chat-context" id="chat-context">Click on a paper to ask questions</div>
+        <div class="chat-context" id="chat-context">Select a paper to ask questions about it</div>
         <div class="chat-messages" id="chat-messages">
-            <div class="message ai">
+            <div class="msg ai">
                 <div class="msg-avatar">🤖</div>
-                <div class="msg-content">
-                    Hi! I can help with today's papers AND your custom papers. Try:<br><br>
-                    • Click a paper then ask about it<br>
-                    • "Add paper" to save classics<br>
-                    • "What should I read?"
+                <div class="msg-body">
+                    <div class="msg-content">Hi! Open a paper and I'll help you understand it. I can explain concepts, summarize sections, or answer any questions about the research.</div>
                 </div>
             </div>
         </div>
         <div class="chat-input-area">
-            <div class="quick-actions">
-                <span class="quick-btn" onclick="askTutor('What should I read first?')">What's best?</span>
-                <span class="quick-btn" onclick="askTutor('Explain this paper')">Explain</span>
-                <span class="quick-btn" onclick="askTutor('Compare to other papers')">Compare</span>
+            <div class="quick-btns">
+                <span class="quick-btn" onclick="askAI('Summarize this paper in 3 bullet points')">Summarize</span>
+                <span class="quick-btn" onclick="askAI('What is the key contribution?')">Key contribution</span>
+                <span class="quick-btn" onclick="askAI('Explain the methodology')">Methodology</span>
+                <span class="quick-btn" onclick="askAI('What are the limitations?')">Limitations</span>
             </div>
             <div class="chat-input-row">
-                <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about any paper..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"></textarea>
-                <button class="chat-send" onclick="sendChat()">→</button>
+                <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about this paper..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
+                <button class="chat-send" id="send-btn" onclick="sendMessage()">Send</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Add Paper Modal -->
-<div class="modal-overlay" id="add-paper-modal" onclick="if(event.target===this)closeModal()">
+<div class="modal-overlay" id="add-modal" onclick="if(event.target===this)closeAddModal()">
     <div class="modal">
         <h2>➕ Add Paper</h2>
-        <form id="add-paper-form" onsubmit="savePaper(event)">
+        <form onsubmit="saveCustomPaper(event)">
             <div class="form-group">
-                <label>Paper Title *</label>
-                <input type="text" id="paper-title" required placeholder="Attention Is All You Need">
+                <label>Title *</label>
+                <input type="text" id="add-title" required placeholder="Attention Is All You Need">
             </div>
             <div class="form-group">
-                <label>Paper URL *</label>
-                <input type="url" id="paper-url" required placeholder="https://arxiv.org/abs/1706.03762">
-                <small>arXiv, OpenReview, or any paper link</small>
+                <label>URL *</label>
+                <input type="url" id="add-url" required placeholder="https://arxiv.org/abs/1706.03762">
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label>Authors</label>
-                    <input type="text" id="paper-authors" placeholder="Vaswani et al.">
+                    <input type="text" id="add-authors" placeholder="Vaswani et al.">
                 </div>
                 <div class="form-group">
-                    <label>Year</label>
-                    <input type="number" id="paper-year" placeholder="2017" min="1900" max="2100">
+                    <label>Date</label>
+                    <input type="date" id="add-date">
                 </div>
-            </div>
-            <div class="form-group">
-                <label>Abstract / Notes</label>
-                <textarea id="paper-abstract" placeholder="What's this paper about? Your notes..."></textarea>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label>Your Rating (1-10)</label>
-                    <input type="number" id="paper-score" min="1" max="10" placeholder="8">
+                    <label>Score (1-10)</label>
+                    <input type="number" id="add-score" min="1" max="10" placeholder="8">
                 </div>
                 <div class="form-group">
                     <label>Category</label>
-                    <select id="paper-category">
-                        <option value="classic">📜 Classic Paper</option>
-                        <option value="research">🔬 My Research</option>
+                    <select id="add-category">
+                        <option value="classic">📜 Classic</option>
                         <option value="toread">📖 To Read</option>
-                        <option value="reference">📚 Reference</option>
+                        <option value="research">🔬 Research</option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <label>Tags (comma separated)</label>
-                <input type="text" id="paper-tags" placeholder="transformers, attention, NLP">
-            </div>
-            <div class="form-group">
-                <label>Key Contribution (one sentence)</label>
-                <input type="text" id="paper-contribution" placeholder="Introduced self-attention mechanism...">
+                <input type="text" id="add-tags" placeholder="transformers, attention">
             </div>
             <div class="modal-actions">
-                <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
-                <button type="submit" class="btn btn-primary">Save Paper</button>
+                <button type="button" class="btn btn-secondary" onclick="closeAddModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
     </div>
@@ -290,318 +238,355 @@
 
 <script>
 // === STATE ===
-let allPapers=[], customPapers=[], filteredPapers=[], summaryData={};
-let readingList=JSON.parse(localStorage.getItem('aiPapersReadingList')||'[]');
-let studentState=JSON.parse(localStorage.getItem('studentState')||'{"level":"intermediate","goal":"Learn AI"}');
-let currentFilter='all', currentSort='score-desc', searchQuery='';
-let selectedPaper=null;
+let allPapers = [];
+let customPapers = JSON.parse(localStorage.getItem('customPapers') || '[]');
+let savedPapers = JSON.parse(localStorage.getItem('savedPapers') || '[]');
+let currentTab = 'today';
+let selectedPaper = null;
+let chatHistory = [];
 
-// Load custom papers from localStorage
-customPapers=JSON.parse(localStorage.getItem('customPapers')||'[]');
-
-// === DATA LOADING ===
-async function loadData(){
-    try{
-        const pr=await fetch('papers.json'); const pd=await pr.json(); allPapers=pd.papers||[];
-        document.getElementById('header-meta').textContent=pd.date+' · '+allPapers.length+' papers';
-        try{const sr=await fetch('summary.json'); summaryData=await sr.json();}catch{}
-        buildFilters(); updateStats(); renderTrends(); renderReadingList(); applyFiltersAndRender();
-    }catch(e){
-        document.getElementById('papers-list').innerHTML='<div class="loading">Error: '+e.message+'</div>';
-        buildFilters(); updateStats(); applyFiltersAndRender();
+// === LOAD DATA ===
+async function loadData() {
+    try {
+        const res = await fetch('papers.json');
+        const data = await res.json();
+        allPapers = data.papers || [];
+        renderTabs();
+        filterPapers();
+    } catch (e) {
+        document.getElementById('papers-list').innerHTML = '<div class="loading">Failed to load papers</div>';
+        renderTabs();
     }
 }
 
-// === CUSTOM PAPERS ===
-function openAddPaperModal(){ document.getElementById('add-paper-modal').classList.add('show'); }
-function closeModal(){ document.getElementById('add-paper-modal').classList.remove('show'); document.getElementById('add-paper-form').reset(); }
+// === TABS ===
+function renderTabs() {
+    const counts = {
+        today: allPapers.length,
+        'must-read': allPapers.filter(p => p.score >= 8).length,
+        saved: savedPapers.length,
+        'my-papers': customPapers.length
+    };
+    
+    const tabs = [
+        { id: 'today', label: 'Today', count: counts.today },
+        { id: 'must-read', label: '🔥 Must Read', count: counts['must-read'] },
+        { id: 'saved', label: '📚 Saved', count: counts.saved },
+        { id: 'my-papers', label: '📁 My Papers', count: counts['my-papers'] }
+    ];
+    
+    document.getElementById('tabs').innerHTML = tabs.map(t => 
+        `<div class="tab ${currentTab === t.id ? 'active' : ''}" onclick="switchTab('${t.id}')">${t.label}<span class="count">${t.count}</span></div>`
+    ).join('');
+}
 
-function savePaper(e){
+function switchTab(tab) {
+    currentTab = tab;
+    renderTabs();
+    filterPapers();
+}
+
+// === FILTER & RENDER ===
+function filterPapers() {
+    const query = document.getElementById('search').value.toLowerCase();
+    let papers = [];
+    
+    if (currentTab === 'today') {
+        papers = allPapers;
+    } else if (currentTab === 'must-read') {
+        papers = allPapers.filter(p => p.score >= 8);
+    } else if (currentTab === 'saved') {
+        papers = [...customPapers, ...allPapers].filter(p => savedPapers.includes(p.id));
+    } else if (currentTab === 'my-papers') {
+        papers = customPapers;
+    }
+    
+    if (query) {
+        papers = papers.filter(p => 
+            p.title?.toLowerCase().includes(query) || 
+            p.authors?.toLowerCase().includes(query) ||
+            p.tags?.some(t => t.toLowerCase().includes(query))
+        );
+    }
+    
+    // Sort by score then date
+    papers.sort((a, b) => (b.score || 0) - (a.score || 0));
+    
+    renderPapers(papers);
+}
+
+function renderPapers(papers) {
+    const container = document.getElementById('papers-list');
+    
+    if (!papers.length) {
+        container.innerHTML = '<div class="loading">No papers found</div>';
+        return;
+    }
+    
+    container.innerHTML = papers.map(p => {
+        const scoreClass = p.score >= 8 ? 'high' : p.score >= 6 ? 'medium' : 'low';
+        const isSaved = savedPapers.includes(p.id);
+        const isSelected = selectedPaper?.id === p.id;
+        const pdfUrl = p.pdf_link || (p.link?.includes('arxiv.org/abs/') ? p.link.replace('/abs/', '/pdf/') + '.pdf' : null);
+        
+        return `
+        <div class="paper ${isSelected ? 'selected' : ''}" onclick="selectPaper('${p.id}')">
+            <div class="paper-title">${p.title}</div>
+            <div class="paper-meta">
+                <span class="paper-date">📅 ${p.pubDate || p.date || 'Unknown'}</span>
+                <span>${p.authors || 'Unknown'}</span>
+                ${p.institution ? `<span>🏛️ ${p.institution}</span>` : ''}
+                <span class="paper-score ${scoreClass}">${p.score || '?'}/10</span>
+            </div>
+            ${p.tags?.length ? `<div class="paper-tags">${p.tags.slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+            <div class="paper-actions">
+                ${pdfUrl ? `<button class="paper-btn primary" onclick="event.stopPropagation();openPDF('${p.id}')">📄 Open PDF</button>` : ''}
+                <button class="paper-btn ${isSaved ? 'saved' : ''}" onclick="event.stopPropagation();toggleSave('${p.id}')">${isSaved ? '✓ Saved' : 'Save'}</button>
+                <a href="${p.link}" target="_blank" class="paper-btn" onclick="event.stopPropagation()">↗ Link</a>
+                ${p.isCustom ? `<button class="paper-btn" onclick="event.stopPropagation();deleteCustom('${p.id}')" style="color:var(--red)">🗑️</button>` : ''}
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// === PAPER SELECTION ===
+function selectPaper(id) {
+    const allPapersWithCustom = [...customPapers, ...allPapers];
+    selectedPaper = allPapersWithCustom.find(p => p.id === id);
+    
+    if (selectedPaper) {
+        document.getElementById('chat-context').innerHTML = `📄 <strong>${selectedPaper.title}</strong>`;
+        chatHistory = [];
+        document.getElementById('chat-messages').innerHTML = `
+            <div class="msg ai">
+                <div class="msg-avatar">🤖</div>
+                <div class="msg-body">
+                    <div class="msg-content">I'm ready to discuss "<strong>${selectedPaper.title}</strong>". What would you like to know?</div>
+                </div>
+            </div>`;
+    }
+    
+    filterPapers();
+}
+
+// === PDF VIEWER ===
+function openPDF(id) {
+    selectPaper(id);
+    const paper = selectedPaper;
+    if (!paper) return;
+    
+    let pdfUrl = paper.pdf_link;
+    if (!pdfUrl && paper.link?.includes('arxiv.org/abs/')) {
+        pdfUrl = paper.link.replace('/abs/', '/pdf/') + '.pdf';
+    }
+    
+    if (!pdfUrl) {
+        alert('No PDF available for this paper');
+        return;
+    }
+    
+    document.getElementById('pdf-panel').innerHTML = `
+        <div class="pdf-header">
+            <div class="pdf-title">${paper.title}</div>
+            <div class="pdf-links">
+                <a href="${pdfUrl}" target="_blank">Open in new tab ↗</a>
+                <a href="${paper.link}" target="_blank">Paper page ↗</a>
+            </div>
+        </div>
+        <iframe class="pdf-frame" src="${pdfUrl}"></iframe>
+    `;
+}
+
+// === SAVE/DELETE ===
+function toggleSave(id) {
+    if (savedPapers.includes(id)) {
+        savedPapers = savedPapers.filter(x => x !== id);
+    } else {
+        savedPapers.push(id);
+    }
+    localStorage.setItem('savedPapers', JSON.stringify(savedPapers));
+    renderTabs();
+    filterPapers();
+}
+
+function deleteCustom(id) {
+    if (!confirm('Delete this paper?')) return;
+    customPapers = customPapers.filter(p => p.id !== id);
+    localStorage.setItem('customPapers', JSON.stringify(customPapers));
+    renderTabs();
+    filterPapers();
+}
+
+// === ADD PAPER MODAL ===
+function openAddModal() { document.getElementById('add-modal').classList.add('show'); }
+function closeAddModal() { document.getElementById('add-modal').classList.remove('show'); }
+
+function saveCustomPaper(e) {
     e.preventDefault();
-    const paper={
-        id: 'custom-'+Date.now(),
-        title: document.getElementById('paper-title').value,
-        link: document.getElementById('paper-url').value,
-        authors: document.getElementById('paper-authors').value || 'Unknown',
-        year: document.getElementById('paper-year').value || new Date().getFullYear(),
-        abstract: document.getElementById('paper-abstract').value || '',
-        score: parseInt(document.getElementById('paper-score').value) || 7,
-        category: document.getElementById('paper-category').value,
-        tags: document.getElementById('paper-tags').value.split(',').map(t=>t.trim()).filter(t=>t),
-        key_contribution: document.getElementById('paper-contribution').value || '',
-        source: 'Custom',
-        isCustom: true,
-        addedAt: new Date().toISOString()
+    
+    const paper = {
+        id: 'custom-' + Date.now(),
+        title: document.getElementById('add-title').value,
+        link: document.getElementById('add-url').value,
+        pdf_link: document.getElementById('add-url').value.includes('arxiv.org/abs/') 
+            ? document.getElementById('add-url').value.replace('/abs/', '/pdf/') + '.pdf' 
+            : null,
+        authors: document.getElementById('add-authors').value || 'Unknown',
+        pubDate: document.getElementById('add-date').value || new Date().toISOString().split('T')[0],
+        score: parseInt(document.getElementById('add-score').value) || 7,
+        category: document.getElementById('add-category').value,
+        tags: document.getElementById('add-tags').value.split(',').map(t => t.trim()).filter(t => t),
+        isCustom: true
     };
     
     customPapers.unshift(paper);
     localStorage.setItem('customPapers', JSON.stringify(customPapers));
-    closeModal();
-    buildFilters();
-    updateStats();
-    applyFiltersAndRender();
-    addChatMessage('ai', `Added "${paper.title}" to your papers! 📚`);
-}
-
-function deleteCustomPaper(id){
-    if(!confirm('Delete this paper?')) return;
-    customPapers = customPapers.filter(p => p.id !== id);
-    localStorage.setItem('customPapers', JSON.stringify(customPapers));
-    buildFilters();
-    updateStats();
-    applyFiltersAndRender();
-}
-
-// === FILTERING & SORTING ===
-function getAllPapers(){ return [...customPapers, ...allPapers]; }
-
-function applyFiltersAndRender(){
-    let papers = getAllPapers();
     
-    if(searchQuery){
-        const q=searchQuery.toLowerCase();
-        papers=papers.filter(p=>p.title?.toLowerCase().includes(q)||p.authors?.toLowerCase().includes(q)||p.abstract?.toLowerCase().includes(q));
-    }
-    
-    if(currentFilter==='must-read') papers=papers.filter(p=>p.score>=8 && !p.isCustom);
-    else if(currentFilter==='notable') papers=papers.filter(p=>p.score>=6 && p.score<8 && !p.isCustom);
-    else if(currentFilter==='has-code') papers=papers.filter(p=>p.github_url);
-    else if(currentFilter==='saved') papers=papers.filter(p=>readingList.includes(p.id));
-    else if(currentFilter==='my-papers') papers=papers.filter(p=>p.isCustom);
-    
-    papers=sortPapers(papers);
-    filteredPapers=papers;
-    renderMyPapers();
-    renderMustRead();
-    renderPapers();
+    closeAddModal();
+    document.querySelector('#add-modal form').reset();
+    switchTab('my-papers');
 }
-
-function sortPapers(papers){
-    const s=[...papers];
-    switch(currentSort){
-        case'score-desc':s.sort((a,b)=>(b.score||0)-(a.score||0));break;
-        case'date-desc':s.sort((a,b)=>(b.addedAt||b.pubDate||'').localeCompare(a.addedAt||a.pubDate||''));break;
-        case'date-asc':s.sort((a,b)=>(a.addedAt||a.pubDate||'').localeCompare(b.addedAt||b.pubDate||''));break;
-        case'citations-desc':s.sort((a,b)=>(b.citations||0)-(a.citations||0));break;
-    }
-    return s;
-}
-
-function handleSearch(e){searchQuery=e.target.value;applyFiltersAndRender();}
-function handleSort(){currentSort=document.getElementById('sort-select').value;applyFiltersAndRender();}
-function setFilter(f,btn){currentFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');applyFiltersAndRender();}
-
-function buildFilters(){
-    const c=document.getElementById('filters');
-    const all=getAllPapers();
-    const counts={
-        all: all.length,
-        'my-papers': customPapers.length,
-        'must-read': allPapers.filter(p=>p.score>=8).length,
-        notable: allPapers.filter(p=>p.score>=6&&p.score<8).length,
-        saved: readingList.length
-    };
-    const filters=[
-        {id:'all',label:'All',count:counts.all},
-        {id:'my-papers',label:'📁 My Papers',count:counts['my-papers']},
-        {id:'must-read',label:'🔥 Must Read',count:counts['must-read']},
-        {id:'notable',label:'📈 Notable',count:counts.notable},
-        {id:'saved',label:'📚 Saved',count:counts.saved}
-    ];
-    c.innerHTML=filters.map(f=>`<button class="filter-btn ${currentFilter===f.id?'active':''}" onclick="setFilter('${f.id}',this)">${f.label} (${f.count})</button>`).join('');
-}
-
-// === RENDERING ===
-function renderMyPapers(){
-    const c=document.getElementById('my-papers-section');
-    if(currentFilter!=='all' && currentFilter!=='my-papers'){c.innerHTML='';return;}
-    if(!customPapers.length){c.innerHTML='';return;}
-    
-    const toShow = currentFilter==='my-papers' ? customPapers : customPapers.slice(0,3);
-    c.innerHTML=`<div class="my-papers-section">
-        <div class="my-papers-header">
-            <h2>📁 My Papers</h2>
-            ${customPapers.length>3 && currentFilter==='all' ? `<button class="action-btn" onclick="setFilter('my-papers',null)">View all ${customPapers.length}</button>` : ''}
-        </div>
-        ${toShow.map(p=>renderPaper(p,true)).join('')}
-    </div>`;
-}
-
-function renderMustRead(){
-    const c=document.getElementById('must-read-section');
-    if(currentFilter!=='all' && currentFilter!=='must-read'){c.innerHTML='';return;}
-    const mr=allPapers.filter(p=>p.score>=8).slice(0,5);
-    if(!mr.length){c.innerHTML='';return;}
-    c.innerHTML=`<div class="must-read-section"><div class="must-read-header"><h2>🔥 Must Read Today</h2></div><div class="must-read-summary">${summaryData.daily_summary||'Top papers for AI researchers.'}</div>${mr.map(p=>renderPaper(p)).join('')}</div>`;
-}
-
-function renderPapers(){
-    const c=document.getElementById('papers-list');
-    let papers=filteredPapers.filter(p=>!p.isCustom);
-    if(currentFilter==='all') papers=papers.filter(p=>p.score<8);
-    if(currentFilter==='my-papers') papers=[];
-    if(!papers.length && currentFilter!=='my-papers'){c.innerHTML='<div class="loading">No papers found</div>';return;}
-    if(currentFilter==='my-papers'){c.innerHTML='';return;}
-    c.innerHTML=papers.map(p=>renderPaper(p)).join('');
-}
-
-function renderPaper(p,isCustomSection=false){
-    const sc = p.isCustom ? 'custom' : p.score>=8 ? 'high' : p.score>=6 ? 'medium' : 'low';
-    const saved = readingList.includes(p.id);
-    const cls = (p.isCustom ? 'custom ' : p.score>=8 ? 'must-read ' : p.score>=6 ? 'notable ' : '') + (selectedPaper===p.id ? 'selected' : '');
-    
-    const categoryLabels = {classic:'📜 Classic',research:'🔬 Research',toread:'📖 To Read',reference:'📚 Reference'};
-    
-    let meta=[];
-    if(p.isCustom && p.category) meta.push(`<span style="color:var(--accent-pink)">${categoryLabels[p.category]||p.category}</span>`);
-    if(p.institution) meta.push(`<span class="paper-institution">🏛️ ${p.institution}</span>`);
-    if(p.year) meta.push(`<span>📅 ${p.year}</span>`);
-    if(p.citations>0) meta.push(`<span>📚 ${p.citations}</span>`);
-    
-    let tags = (p.tags||[]).slice(0,3).map(t=>`<span class="tag">${t}</span>`).join('');
-    let contrib = p.key_contribution ? `<div class="paper-contribution"><strong>Key:</strong> ${p.key_contribution}</div>` : '';
-    
-    return `<div class="paper ${cls}" data-id="${p.id}" onclick="selectPaper('${p.id}')">
-        <div class="paper-header">
-            <div class="paper-title"><a href="${p.link}" target="_blank" onclick="event.stopPropagation()">${p.title}</a></div>
-            <span class="paper-score ${sc}">${p.isCustom?'⭐ '+p.score:p.score+'/10'}</span>
-        </div>
-        <div class="paper-meta">${meta.join('')}<span>${p.authors}</span></div>
-        ${contrib}
-        <div class="paper-tags">${tags}</div>
-        <div class="paper-actions">
-            <button class="action-btn ${saved?'saved':''}" onclick="event.stopPropagation();toggleSave('${p.id}')">${saved?'✓ Saved':'📚 Save'}</button>
-            <button class="action-btn" onclick="event.stopPropagation();toggleSection('${p.id}','abstract')">Abstract</button>
-            <button class="action-btn" onclick="event.stopPropagation();askAboutPaper('${p.id}')">🤖 Ask AI</button>
-            ${p.isCustom?`<button class="action-btn delete" onclick="event.stopPropagation();deleteCustomPaper('${p.id}')">🗑️</button>`:''}
-        </div>
-        <div class="paper-expandable" id="abstract-${p.id}"><div class="paper-abstract">${p.abstract||'No abstract.'}</div></div>
-    </div>`;
-}
-
-// === PAPER SELECTION ===
-function selectPaper(id){
-    selectedPaper=id;
-    const p = getAllPapers().find(x=>x.id===id);
-    if(p){
-        document.getElementById('chat-context').innerHTML=`Viewing: <strong>${p.title}</strong>`;
-        studentState.current_paper=p.title;
-    }
-    applyFiltersAndRender();
-}
-
-function askAboutPaper(id){
-    selectPaper(id);
-    const p = getAllPapers().find(x=>x.id===id);
-    if(p) askTutor(`Tell me about "${p.title}"`);
-}
-
-// === SIDE PANEL ===
-function renderTrends(){
-    const c=document.getElementById('trends-list');
-    const t=summaryData.weekly_trends;
-    if(!t?.hot_topics?.length){c.innerHTML='<div style="color:var(--text-secondary);font-size:0.9em">No trends yet</div>';return;}
-    c.innerHTML=t.hot_topics.slice(0,4).map(x=>`<div class="trend-item"><div class="trend-topic">${x.topic}</div><div class="trend-insight">${x.insight}</div></div>`).join('');
-}
-
-function updateStats(){
-    document.getElementById('stat-total').textContent=allPapers.length;
-    document.getElementById('stat-custom').textContent=customPapers.length;
-}
-
-function toggleSave(id){
-    if(readingList.includes(id)) readingList=readingList.filter(x=>x!==id);
-    else readingList.push(id);
-    localStorage.setItem('aiPapersReadingList',JSON.stringify(readingList));
-    renderReadingList();buildFilters();applyFiltersAndRender();
-}
-
-function renderReadingList(){
-    const c=document.getElementById('reading-list');
-    document.getElementById('reading-count').textContent=readingList.length;
-    if(!readingList.length){c.innerHTML='<div class="reading-list-empty">Click Save to add</div>';return;}
-    const all=getAllPapers();
-    const saved=all.filter(p=>readingList.includes(p.id));
-    c.innerHTML=saved.map(p=>`<div class="reading-list-item"><button class="remove-btn" onclick="toggleSave('${p.id}')">✕</button><a href="${p.link}" target="_blank">${p.title.slice(0,40)}...</a></div>`).join('');
-}
-
-function exportReadingList(){
-    const all=getAllPapers();
-    const saved=all.filter(p=>readingList.includes(p.id));
-    const txt=saved.map(p=>p.title+'\n'+p.link).join('\n\n');
-    const b=new Blob([txt],{type:'text/plain'});
-    const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='reading-list.txt';a.click();
-}
-
-function toggleSection(id,sec){document.getElementById(sec+'-'+id)?.classList.toggle('show');}
 
 // === AI CHAT ===
-function addChatMessage(role,content){
-    const c=document.getElementById('chat-messages');
-    c.innerHTML+=`<div class="message ${role}"><div class="msg-avatar">${role==='ai'?'🤖':'👤'}</div><div class="msg-content">${content}</div></div>`;
-    c.scrollTop=c.scrollHeight;
+function askAI(text) {
+    document.getElementById('chat-input').value = text;
+    sendMessage();
 }
 
-function askTutor(text){document.getElementById('chat-input').value=text;sendChat();}
-
-async function sendChat(){
-    const input=document.getElementById('chat-input');
-    const msg=input.value.trim();
-    if(!msg)return;
-    addChatMessage('user',msg);
-    input.value='';
-    addChatMessage('ai','<span class="typing">Thinking</span>');
+async function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const msg = input.value.trim();
+    if (!msg || !selectedPaper) {
+        if (!selectedPaper) alert('Please select a paper first');
+        return;
+    }
     
-    // Fallback to local
-    setTimeout(()=>{
-        document.getElementById('chat-messages').lastChild.remove();
-        addChatMessage('ai',getLocalResponse(msg));
-    },500);
-}
-
-function getLocalResponse(msg){
-    const m=msg.toLowerCase();
-    const all=getAllPapers();
-    const current=selectedPaper?all.find(p=>p.id===selectedPaper):null;
+    // Add user message
+    addMessage('user', msg);
+    input.value = '';
     
-    if(current){
-        if(m.includes('explain')||m.includes('tell me')||m.includes('about')){
-            return `<strong>${current.title}</strong> ${current.isCustom?'(Your paper)':''}<br><br>
-                ${current.key_contribution||current.abstract?.slice(0,300)||'No details available.'}<br><br>
-                ${current.tags?.length?'<strong>Topics:</strong> '+current.tags.join(', '):''}`;
+    // Show typing indicator
+    const typingId = showTyping();
+    
+    // Build context for AI
+    const context = {
+        paper: {
+            title: selectedPaper.title,
+            authors: selectedPaper.authors,
+            abstract: selectedPaper.abstract,
+            score: selectedPaper.score,
+            tags: selectedPaper.tags,
+            key_contribution: selectedPaper.key_contribution
+        },
+        question: msg,
+        history: chatHistory.slice(-6) // Last 3 exchanges
+    };
+    
+    try {
+        // Try API call
+        const res = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(context)
+        });
+        
+        if (res.ok) {
+            const data = await res.json();
+            removeTyping(typingId);
+            addMessage('ai', data.response);
+            chatHistory.push({ role: 'user', content: msg }, { role: 'ai', content: data.response });
+            return;
         }
+    } catch (e) {
+        console.log('API unavailable, using local response');
     }
     
-    if(m.includes('what')&&(m.includes('read')||m.includes('best'))){
-        const top=[...customPapers.slice(0,2),...allPapers.filter(p=>p.score>=8).slice(0,3)];
-        return `Here's what I recommend:<br><br>${top.map((p,i)=>`<strong>${i+1}. ${p.title}</strong> ${p.isCustom?'(yours)':''}<br>${p.key_contribution||''}`).join('<br><br>')}`;
-    }
-    
-    if(m.includes('add')||m.includes('custom')){
-        return `Click the <strong>➕ Add Paper</strong> button to add your own papers! You can add:<br><br>
-            • 📜 Classic papers (Attention Is All You Need, etc.)<br>
-            • 🔬 Your research papers<br>
-            • 📖 Papers to read later<br>
-            • 📚 Reference materials`;
-    }
-    
-    if(current){
-        return `Looking at "<strong>${current.title}</strong>".<br><br>${current.key_contribution||'Click Abstract for more details.'}<br><br>Want me to explain it, compare to others, or find related papers?`;
-    }
-    
-    return `I can help with ${allPapers.length} daily papers + ${customPapers.length} of your papers!<br><br>
-        • Click any paper, then ask about it<br>
-        • "What should I read?"<br>
-        • "Add paper" to save your own`;
+    // Fallback to local response
+    removeTyping(typingId);
+    const response = getLocalResponse(msg);
+    addMessage('ai', response);
+    chatHistory.push({ role: 'user', content: msg }, { role: 'ai', content: response });
 }
 
-// === KEYBOARD ===
-document.addEventListener('keydown',e=>{
-    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
-    if(e.key==='/'){e.preventDefault();document.getElementById('search-input').focus();}
-    if(e.key==='n'){e.preventDefault();openAddPaperModal();}
-});
+function addMessage(role, content) {
+    const container = document.getElementById('chat-messages');
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    
+    container.innerHTML += `
+        <div class="msg ${role}">
+            <div class="msg-avatar">${role === 'ai' ? '🤖' : '👤'}</div>
+            <div class="msg-body">
+                <div class="msg-content">${content}</div>
+                <div class="msg-time">${time}</div>
+            </div>
+        </div>`;
+    
+    container.scrollTop = container.scrollHeight;
+}
 
+function showTyping() {
+    const id = 'typing-' + Date.now();
+    const container = document.getElementById('chat-messages');
+    container.innerHTML += `
+        <div class="msg ai" id="${id}">
+            <div class="msg-avatar">🤖</div>
+            <div class="msg-body">
+                <div class="typing-indicator"><span></span><span></span><span></span></div>
+            </div>
+        </div>`;
+    container.scrollTop = container.scrollHeight;
+    return id;
+}
+
+function removeTyping(id) {
+    document.getElementById(id)?.remove();
+}
+
+function getLocalResponse(msg) {
+    const p = selectedPaper;
+    const m = msg.toLowerCase();
+    
+    if (m.includes('summar')) {
+        return `<strong>Summary of "${p.title}":</strong><br><br>
+            ${p.key_contribution || p.abstract?.slice(0, 300) || 'This paper presents research in ' + (p.tags?.[0] || 'AI/ML') + '.'}<br><br>
+            <strong>Score:</strong> ${p.score}/10<br>
+            <strong>Authors:</strong> ${p.authors || 'Unknown'}`;
+    }
+    
+    if (m.includes('key') || m.includes('contribution') || m.includes('novel')) {
+        return p.key_contribution 
+            ? `<strong>Key Contribution:</strong><br><br>${p.key_contribution}`
+            : `The key contribution isn't extracted yet. Based on the title "${p.title}", this paper likely focuses on ${p.tags?.join(', ') || 'machine learning research'}.`;
+    }
+    
+    if (m.includes('method') || m.includes('how')) {
+        return `For detailed methodology, I'd recommend checking the PDF (sections 3-4 typically cover methods).<br><br>
+            Based on the paper's focus on ${p.tags?.[0] || 'AI'}, it likely involves ${p.tags?.includes('transformers') ? 'attention mechanisms and transformer architectures' : 'neural network approaches'}.`;
+    }
+    
+    if (m.includes('limit') || m.includes('weakness')) {
+        return p.limitations 
+            ? `<strong>Limitations:</strong><br><br>${p.limitations}`
+            : `The specific limitations aren't extracted. Common limitations in ${p.tags?.[0] || 'ML'} papers include computational costs, dataset biases, and generalization concerns. Check the paper's discussion section for details.`;
+    }
+    
+    if (m.includes('why') || m.includes('important') || m.includes('matter')) {
+        return p.why_it_matters 
+            ? `<strong>Why it matters:</strong><br><br>${p.why_it_matters}`
+            : `This paper scored ${p.score}/10 on importance. ${p.score >= 8 ? 'High scores indicate significant novelty or impact.' : p.score >= 6 ? 'A solid contribution to the field.' : 'Incremental but potentially useful work.'}`;
+    }
+    
+    // Default contextual response
+    return `I can help you understand "<strong>${p.title}</strong>".<br><br>
+        Try asking about:<br>
+        • The key contribution<br>
+        • Methodology and approach<br>
+        • Limitations<br>
+        • Why this paper matters<br><br>
+        Or ask any specific question about the content!`;
+}
+
+// === INIT ===
 loadData();
 </script>
 </body>
