@@ -17,174 +17,254 @@
             --orange: #f0883e;
             --red: #da3633;
             --purple: #a371f7;
+            --yellow: #d29922;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
         
-        /* 3-Panel Layout */
         .app { display: flex; height: 100vh; }
-        .papers-panel { width: 420px; border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
-        .pdf-panel { flex: 1; display: flex; flex-direction: column; background: var(--bg2); }
-        .chat-panel { width: 380px; border-left: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
         
-        /* Papers Panel */
-        .panel-header { padding: 15px 20px; border-bottom: 1px solid var(--border); }
-        .panel-header h1 { font-size: 1.3em; margin-bottom: 10px; }
-        .search-box { width: 100%; padding: 10px 14px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.9em; }
+        .panel { display: flex; flex-direction: column; border-right: 1px solid var(--border); transition: width 0.3s, min-width 0.3s; overflow: hidden; }
+        .panel:last-child { border-right: none; border-left: 1px solid var(--border); }
+        .panel.collapsed { width: 0 !important; min-width: 0 !important; border: none; }
+        
+        .papers-panel { width: 400px; min-width: 400px; }
+        .pdf-panel { flex: 1; min-width: 0; background: var(--bg2); }
+        .chat-panel { width: 420px; min-width: 420px; }
+        
+        .panel-header { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--bg); flex-shrink: 0; }
+        .panel-header h1 { font-size: 1.1em; }
+        .panel-header h2 { font-size: 0.95em; display: flex; align-items: center; gap: 8px; }
+        .toggle-btn { background: var(--bg3); border: 1px solid var(--border); color: var(--text2); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75em; }
+        .toggle-btn:hover { background: var(--border); color: var(--text); }
+        
+        .panel-tab { position: fixed; background: var(--bg2); border: 1px solid var(--border); padding: 10px 6px; cursor: pointer; z-index: 10; writing-mode: vertical-rl; font-size: 0.8em; border-radius: 0 6px 6px 0; }
+        .panel-tab:hover { background: var(--bg3); }
+        .panel-tab.left { left: 0; top: 50%; transform: translateY(-50%); }
+        .panel-tab.right { right: 0; top: 50%; transform: translateY(-50%) rotate(180deg); }
+        .panel-tab.hidden { display: none; }
+        
+        .search-box { width: 100%; padding: 10px 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.85em; margin: 10px 0; }
         .search-box:focus { outline: none; border-color: var(--blue); }
+        .panel-content { padding: 0 14px; flex-shrink: 0; }
         
-        /* Tabs */
-        .tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--bg2); overflow-x: auto; }
-        .tab { padding: 12px 16px; font-size: 0.85em; color: var(--text2); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; }
+        .tabs { display: flex; border-bottom: 1px solid var(--border); background: var(--bg2); overflow-x: auto; flex-shrink: 0; }
+        .tab { padding: 10px 12px; font-size: 0.75em; color: var(--text2); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; }
         .tab:hover { color: var(--text); }
         .tab.active { color: var(--blue); border-bottom-color: var(--blue); }
-        .tab .count { background: var(--bg3); padding: 2px 8px; border-radius: 10px; font-size: 0.75em; margin-left: 6px; }
+        .tab .count { background: var(--bg3); padding: 1px 6px; border-radius: 8px; font-size: 0.75em; margin-left: 4px; }
         .tab.active .count { background: var(--blue); color: white; }
         
-        /* Paper List */
         .papers-list { flex: 1; overflow-y: auto; }
-        .paper { padding: 14px 20px; border-bottom: 1px solid var(--border); cursor: pointer; }
+        .paper { padding: 12px 14px; border-bottom: 1px solid var(--border); cursor: pointer; }
         .paper:hover { background: var(--bg2); }
         .paper.selected { background: var(--bg3); border-left: 3px solid var(--blue); }
-        .paper-title { font-size: 0.95em; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
-        .paper-meta { font-size: 0.8em; color: var(--text2); display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
-        .paper-date { color: var(--orange); }
-        .paper-score { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.7em; font-weight: 600; }
+        .paper-title { font-size: 0.85em; font-weight: 600; margin-bottom: 5px; line-height: 1.4; }
+        .paper-meta { font-size: 0.7em; color: var(--text2); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; }
+        .paper-date { color: var(--orange); font-weight: 500; }
+        .paper-score { padding: 2px 6px; border-radius: 8px; font-size: 0.65em; font-weight: 600; }
         .paper-score.high { background: var(--green); color: white; }
         .paper-score.medium { background: var(--blue); color: white; }
         .paper-score.low { background: var(--bg3); color: var(--text2); }
-        .paper-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
-        .tag { font-size: 0.7em; padding: 2px 8px; background: var(--bg3); border-radius: 10px; color: var(--text2); }
-        .paper-actions { display: flex; gap: 8px; margin-top: 10px; }
-        .paper-btn { padding: 5px 10px; font-size: 0.75em; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; color: var(--text2); cursor: pointer; }
+        .paper-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 6px; }
+        .tag { font-size: 0.6em; padding: 2px 6px; background: var(--bg3); border-radius: 6px; color: var(--text2); }
+        .paper-actions { display: flex; gap: 5px; }
+        .paper-btn { padding: 4px 8px; font-size: 0.65em; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; color: var(--text2); cursor: pointer; text-decoration: none; }
         .paper-btn:hover { background: var(--border); color: var(--text); }
         .paper-btn.primary { background: var(--blue); border-color: var(--blue); color: white; }
         .paper-btn.saved { background: var(--green); border-color: var(--green); color: white; }
         
-        /* PDF Panel */
-        .pdf-placeholder { flex: 1; display: flex; align-items: center; justify-content: center; color: var(--text2); text-align: center; padding: 40px; }
-        .pdf-placeholder h2 { font-size: 1.2em; margin-bottom: 10px; color: var(--text); }
-        .pdf-placeholder p { font-size: 0.9em; }
-        .pdf-header { padding: 12px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg); }
-        .pdf-title { font-size: 0.9em; font-weight: 600; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .pdf-links { display: flex; gap: 10px; }
-        .pdf-links a { font-size: 0.8em; color: var(--blue); text-decoration: none; }
-        .pdf-links a:hover { text-decoration: underline; }
-        .pdf-frame { flex: 1; border: none; background: #525659; }
+        .pdf-empty { flex: 1; display: flex; align-items: center; justify-content: center; color: var(--text2); text-align: center; }
+        .pdf-header { padding: 10px 14px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg); flex-shrink: 0; }
+        .pdf-title { font-size: 0.8em; font-weight: 600; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 10px; }
+        .pdf-actions { display: flex; gap: 8px; align-items: center; }
+        .pdf-actions a { font-size: 0.7em; color: var(--blue); text-decoration: none; }
+        .close-btn { background: var(--bg3); border: 1px solid var(--border); color: var(--text2); padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.7em; }
+        .close-btn:hover { background: var(--red); border-color: var(--red); color: white; }
+        .pdf-frame { flex: 1; border: none; background: #333; }
         
         /* Chat Panel */
-        .chat-header { padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-        .chat-header h2 { font-size: 1em; }
-        .ai-status { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+        .ai-status { width: 8px; height: 8px; border-radius: 50%; }
+        .ai-status.online { background: var(--green); animation: pulse 2s infinite; }
+        .ai-status.offline { background: var(--red); }
+        .ai-status.thinking { background: var(--yellow); animation: pulse 0.5s infinite; }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-        .chat-context { padding: 10px 20px; background: var(--bg); border-bottom: 1px solid var(--border); font-size: 0.8em; color: var(--text2); }
+        
+        .chat-context { padding: 8px 14px; background: var(--bg); border-bottom: 1px solid var(--border); font-size: 0.75em; color: var(--text2); flex-shrink: 0; }
         .chat-context strong { color: var(--purple); }
-        .chat-messages { flex: 1; overflow-y: auto; padding: 20px; }
-        .msg { margin-bottom: 16px; display: flex; gap: 10px; }
-        .msg-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75em; flex-shrink: 0; }
+        
+        .chat-body { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+        
+        .chat-messages { flex: 1; overflow-y: auto; padding: 14px; }
+        .msg { margin-bottom: 14px; display: flex; gap: 10px; }
+        .msg-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; flex-shrink: 0; }
         .msg.user .msg-avatar { background: var(--blue); }
         .msg.ai .msg-avatar { background: var(--purple); }
-        .msg-body { flex: 1; }
-        .msg-content { padding: 10px 14px; border-radius: 10px; font-size: 0.85em; line-height: 1.6; }
+        .msg-body { flex: 1; max-width: calc(100% - 40px); }
+        .msg-content { padding: 10px 12px; border-radius: 10px; font-size: 0.8em; line-height: 1.5; word-wrap: break-word; }
         .msg.user .msg-content { background: var(--blue); }
         .msg.ai .msg-content { background: var(--bg3); }
-        .msg-time { font-size: 0.7em; color: var(--text2); margin-top: 4px; }
-        .chat-input-area { padding: 15px 20px; border-top: 1px solid var(--border); }
-        .quick-btns { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
-        .quick-btn { padding: 5px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 15px; font-size: 0.7em; cursor: pointer; color: var(--text2); }
-        .quick-btn:hover { border-color: var(--purple); color: var(--text); }
-        .chat-input-row { display: flex; gap: 8px; }
-        .chat-input { flex: 1; padding: 10px 14px; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.85em; resize: none; }
-        .chat-input:focus { outline: none; border-color: var(--purple); }
-        .chat-send { padding: 10px 16px; background: var(--purple); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: 500; }
-        .chat-send:hover { opacity: 0.9; }
-        .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+        .msg-content pre { background: var(--bg); padding: 8px; border-radius: 4px; overflow-x: auto; margin: 8px 0; font-size: 0.85em; }
+        .msg-content code { background: var(--bg); padding: 2px 4px; border-radius: 3px; font-size: 0.9em; }
         
-        /* Loading & Typing */
-        .loading { text-align: center; padding: 40px; color: var(--text2); }
-        .typing-indicator { display: flex; gap: 4px; padding: 10px 14px; }
-        .typing-indicator span { width: 8px; height: 8px; background: var(--text2); border-radius: 50%; animation: bounce 1.4s infinite; }
+        .typing-indicator { display: flex; gap: 4px; padding: 10px 12px; }
+        .typing-indicator span { width: 6px; height: 6px; background: var(--text2); border-radius: 50%; animation: bounce 1.4s infinite; }
         .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
         .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-4px)} }
+        @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-3px)} }
         
-        /* Add Paper Modal */
+        /* Whiteboard */
+        .whiteboard-section { border-top: 1px solid var(--border); flex-shrink: 0; }
+        .whiteboard-header { padding: 8px 14px; background: var(--bg2); display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .whiteboard-header:hover { background: var(--bg3); }
+        .whiteboard-header h3 { font-size: 0.8em; display: flex; align-items: center; gap: 6px; }
+        .whiteboard-toggle { background: none; border: none; color: var(--text2); cursor: pointer; font-size: 0.8em; }
+        .whiteboard-content { display: none; padding: 10px 14px; background: var(--bg); max-height: 200px; }
+        .whiteboard-content.show { display: block; }
+        .whiteboard-textarea { width: 100%; height: 150px; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: 'Monaco', 'Menlo', monospace; font-size: 0.8em; padding: 10px; resize: none; }
+        .whiteboard-textarea:focus { outline: none; border-color: var(--yellow); }
+        .whiteboard-actions { display: flex; gap: 8px; margin-top: 8px; }
+        .whiteboard-btn { padding: 4px 10px; font-size: 0.7em; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; color: var(--text2); cursor: pointer; }
+        .whiteboard-btn:hover { background: var(--border); color: var(--text); }
+        
+        .chat-input-area { padding: 10px 14px; border-top: 1px solid var(--border); flex-shrink: 0; }
+        .quick-btns { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px; }
+        .quick-btn { padding: 4px 8px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; font-size: 0.65em; cursor: pointer; color: var(--text2); }
+        .quick-btn:hover { border-color: var(--purple); color: var(--text); }
+        .chat-input-row { display: flex; gap: 8px; }
+        .chat-input { flex: 1; padding: 10px 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.8em; resize: none; min-height: 40px; max-height: 120px; }
+        .chat-input:focus { outline: none; border-color: var(--purple); }
+        .chat-send { padding: 10px 14px; background: var(--purple); border: none; border-radius: 6px; color: white; cursor: pointer; font-size: 0.8em; }
+        .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        .api-key-notice { padding: 10px 14px; background: var(--bg); border-bottom: 1px solid var(--border); font-size: 0.75em; }
+        .api-key-notice input { width: 100%; padding: 8px; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; color: var(--text); font-size: 0.9em; margin-top: 6px; }
+        
         .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; }
         .modal-overlay.show { display: flex; }
-        .modal { background: var(--bg2); border-radius: 12px; padding: 25px; width: 90%; max-width: 500px; }
-        .modal h2 { margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-size: 0.85em; color: var(--text2); margin-bottom: 6px; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.9em; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--purple); }
-        .form-row { display: flex; gap: 15px; }
+        .modal { background: var(--bg2); border-radius: 12px; padding: 24px; width: 90%; max-width: 480px; }
+        .modal h2 { margin-bottom: 20px; font-size: 1.1em; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 0.8em; color: var(--text2); margin-bottom: 5px; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.9em; }
+        .form-row { display: flex; gap: 12px; }
         .form-row .form-group { flex: 1; }
         .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
-        .btn { padding: 10px 20px; border-radius: 6px; font-size: 0.9em; cursor: pointer; border: none; }
+        .btn { padding: 10px 18px; border-radius: 6px; font-size: 0.85em; cursor: pointer; border: none; }
         .btn-primary { background: var(--purple); color: white; }
         .btn-secondary { background: var(--bg3); color: var(--text); }
         
-        /* Responsive */
-        @media (max-width: 1200px) { .chat-panel { width: 320px; } }
-        @media (max-width: 1000px) { .chat-panel { display: none; } }
-        @media (max-width: 800px) { .pdf-panel { display: none; } .papers-panel { width: 100%; } }
+        .footer-actions { padding: 8px 14px; border-top: 1px solid var(--border); flex-shrink: 0; }
+        .footer-actions button { width: 100%; padding: 8px; }
+        
+        .empty-state { text-align: center; padding: 40px 20px; color: var(--text2); }
+        .empty-state h3 { color: var(--text); margin-bottom: 8px; font-size: 1em; }
+        
+        @media (max-width: 1200px) { .chat-panel { width: 360px; min-width: 360px; } }
+        @media (max-width: 1000px) { .papers-panel { width: 320px; min-width: 320px; } }
     </style>
 </head>
 <body>
 <div class="app">
-    <!-- Papers List Panel -->
-    <div class="papers-panel">
+    <!-- Papers Panel -->
+    <div class="panel papers-panel" id="papers-panel">
         <div class="panel-header">
             <h1>🔬 AI Papers Daily</h1>
+            <button class="toggle-btn" onclick="togglePanel('papers')">◀</button>
+        </div>
+        <div class="panel-content">
             <input type="text" class="search-box" id="search" placeholder="Search papers..." oninput="filterPapers()">
         </div>
         <div class="tabs" id="tabs"></div>
         <div class="papers-list" id="papers-list">
-            <div class="loading">Loading papers...</div>
+            <div class="empty-state">Loading...</div>
         </div>
-        <div style="padding:10px 20px;border-top:1px solid var(--border)">
-            <button class="paper-btn" style="width:100%" onclick="openAddModal()">➕ Add Paper</button>
+        <div class="footer-actions">
+            <button class="paper-btn" onclick="openAddModal()">➕ Add Paper</button>
         </div>
     </div>
+    <div class="panel-tab left hidden" id="papers-tab" onclick="togglePanel('papers')">📄 Papers</div>
     
-    <!-- PDF Viewer Panel -->
-    <div class="pdf-panel" id="pdf-panel">
-        <div class="pdf-placeholder" id="pdf-placeholder">
-            <div>
-                <h2>📄 Select a Paper</h2>
-                <p>Click "Open PDF" on any paper to view it here</p>
+    <!-- PDF Panel -->
+    <div class="panel pdf-panel collapsed" id="pdf-panel">
+        <div class="pdf-header">
+            <div class="pdf-title" id="pdf-title"></div>
+            <div class="pdf-actions">
+                <a href="#" id="pdf-link-new" target="_blank">New tab ↗</a>
+                <a href="#" id="pdf-link-page" target="_blank">Paper ↗</a>
+                <button class="close-btn" onclick="closePDF()">✕</button>
             </div>
         </div>
+        <iframe class="pdf-frame" id="pdf-frame"></iframe>
     </div>
     
-    <!-- AI Chat Panel -->
-    <div class="chat-panel">
-        <div class="chat-header">
-            <div class="ai-status"></div>
-            <h2>🤖 Ask AI</h2>
+    <!-- Chat Panel -->
+    <div class="panel chat-panel" id="chat-panel">
+        <div class="panel-header">
+            <h2><div class="ai-status online" id="ai-status"></div> Ask AI</h2>
+            <button class="toggle-btn" onclick="togglePanel('chat')">▶</button>
         </div>
-        <div class="chat-context" id="chat-context">Select a paper to ask questions about it</div>
-        <div class="chat-messages" id="chat-messages">
-            <div class="msg ai">
-                <div class="msg-avatar">🤖</div>
-                <div class="msg-body">
-                    <div class="msg-content">Hi! Open a paper and I'll help you understand it. I can explain concepts, summarize sections, or answer any questions about the research.</div>
+        
+        <!-- API Key Input (only if not set) -->
+        <div class="api-key-notice" id="api-key-section" style="display:none;">
+            <strong>🔑 Enter Groq API Key for live AI:</strong>
+            <input type="password" id="api-key-input" placeholder="gsk_..." onchange="saveApiKey()">
+            <small style="color:var(--text2);display:block;margin-top:4px;">Free at <a href="https://console.groq.com" target="_blank" style="color:var(--blue)">console.groq.com</a></small>
+        </div>
+        
+        <div class="chat-context" id="chat-context">Select a paper to start</div>
+        
+        <div class="chat-body">
+            <div class="chat-messages" id="chat-messages">
+                <div class="msg ai">
+                    <div class="msg-avatar">🤖</div>
+                    <div class="msg-body">
+                        <div class="msg-content">Hi! Open a paper's PDF and I'll help you understand it. I can explain concepts, summarize sections, or discuss the methodology.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Whiteboard Section -->
+            <div class="whiteboard-section">
+                <div class="whiteboard-header" onclick="toggleWhiteboard()">
+                    <h3>📝 Whiteboard</h3>
+                    <span class="whiteboard-toggle" id="whiteboard-toggle">▲</span>
+                </div>
+                <div class="whiteboard-content" id="whiteboard-content">
+                    <textarea class="whiteboard-textarea" id="whiteboard" placeholder="Your notes, math, code snippets...
+
+Example:
+- Key insight: attention mechanism
+- Q = K = V in self-attention
+- Complexity: O(n²)
+
+def attention(Q, K, V):
+    scores = Q @ K.T / sqrt(d_k)
+    return softmax(scores) @ V"></textarea>
+                    <div class="whiteboard-actions">
+                        <button class="whiteboard-btn" onclick="clearWhiteboard()">Clear</button>
+                        <button class="whiteboard-btn" onclick="copyWhiteboard()">Copy</button>
+                        <button class="whiteboard-btn" onclick="askAboutWhiteboard()">Ask AI about this</button>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="chat-input-area">
             <div class="quick-btns">
-                <span class="quick-btn" onclick="askAI('Summarize this paper in 3 bullet points')">Summarize</span>
+                <span class="quick-btn" onclick="askAI('Summarize this paper briefly')">Summarize</span>
                 <span class="quick-btn" onclick="askAI('What is the key contribution?')">Key contribution</span>
-                <span class="quick-btn" onclick="askAI('Explain the methodology')">Methodology</span>
-                <span class="quick-btn" onclick="askAI('What are the limitations?')">Limitations</span>
+                <span class="quick-btn" onclick="askAI('Explain the methodology')">Method</span>
+                <span class="quick-btn" onclick="askAI('What are the main results?')">Results</span>
+                <span class="quick-btn" onclick="askAI('Limitations and future work?')">Limitations</span>
             </div>
             <div class="chat-input-row">
-                <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about this paper..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
+                <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask anything about this paper..." onkeydown="handleChatKeydown(event)" oninput="autoResize(this)"></textarea>
                 <button class="chat-send" id="send-btn" onclick="sendMessage()">Send</button>
             </div>
         </div>
     </div>
+    <div class="panel-tab right hidden" id="chat-tab" onclick="togglePanel('chat')">🤖 AI</div>
 </div>
 
 <!-- Add Paper Modal -->
@@ -197,7 +277,7 @@
                 <input type="text" id="add-title" required placeholder="Attention Is All You Need">
             </div>
             <div class="form-group">
-                <label>URL *</label>
+                <label>arXiv / Paper URL *</label>
                 <input type="url" id="add-url" required placeholder="https://arxiv.org/abs/1706.03762">
             </div>
             <div class="form-row">
@@ -216,36 +296,59 @@
                     <input type="number" id="add-score" min="1" max="10" placeholder="8">
                 </div>
                 <div class="form-group">
-                    <label>Category</label>
-                    <select id="add-category">
-                        <option value="classic">📜 Classic</option>
-                        <option value="toread">📖 To Read</option>
-                        <option value="research">🔬 Research</option>
-                    </select>
+                    <label>Tags</label>
+                    <input type="text" id="add-tags" placeholder="transformers, attention">
                 </div>
-            </div>
-            <div class="form-group">
-                <label>Tags (comma separated)</label>
-                <input type="text" id="add-tags" placeholder="transformers, attention">
             </div>
             <div class="modal-actions">
                 <button type="button" class="btn btn-secondary" onclick="closeAddModal()">Cancel</button>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Add</button>
             </div>
         </form>
     </div>
 </div>
 
 <script>
+// === CONFIG ===
+const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const MODEL = 'llama-3.3-70b-versatile';
+
 // === STATE ===
 let allPapers = [];
 let customPapers = JSON.parse(localStorage.getItem('customPapers') || '[]');
 let savedPapers = JSON.parse(localStorage.getItem('savedPapers') || '[]');
+let apiKey = localStorage.getItem('groqApiKey') || '';
 let currentTab = 'today';
 let selectedPaper = null;
 let chatHistory = [];
+let isTyping = false;
+let whiteboardOpen = false;
 
-// === LOAD DATA ===
+// === INIT ===
+function init() {
+    // Check API key
+    if (!apiKey) {
+        document.getElementById('api-key-section').style.display = 'block';
+        document.getElementById('ai-status').className = 'ai-status offline';
+    }
+    
+    // Load whiteboard content
+    document.getElementById('whiteboard').value = localStorage.getItem('whiteboard') || '';
+    
+    loadData();
+}
+
+function saveApiKey() {
+    apiKey = document.getElementById('api-key-input').value.trim();
+    if (apiKey) {
+        localStorage.setItem('groqApiKey', apiKey);
+        document.getElementById('api-key-section').style.display = 'none';
+        document.getElementById('ai-status').className = 'ai-status online';
+        addMessage('ai', '🟢 API key saved! I\'m now connected and ready to help.');
+    }
+}
+
+// === DATA ===
 async function loadData() {
     try {
         const res = await fetch('papers.json');
@@ -254,30 +357,90 @@ async function loadData() {
         renderTabs();
         filterPapers();
     } catch (e) {
-        document.getElementById('papers-list').innerHTML = '<div class="loading">Failed to load papers</div>';
+        document.getElementById('papers-list').innerHTML = '<div class="empty-state"><h3>No papers loaded</h3><p>Add your own papers below</p></div>';
         renderTabs();
     }
 }
 
+// === PANELS ===
+function togglePanel(panel) {
+    const el = document.getElementById(panel + '-panel');
+    const tab = document.getElementById(panel + '-tab');
+    el.classList.toggle('collapsed');
+    tab.classList.toggle('hidden');
+}
+
+function closePDF() {
+    document.getElementById('pdf-panel').classList.add('collapsed');
+    document.getElementById('pdf-frame').src = '';
+}
+
+// === WHITEBOARD ===
+function toggleWhiteboard() {
+    whiteboardOpen = !whiteboardOpen;
+    document.getElementById('whiteboard-content').classList.toggle('show', whiteboardOpen);
+    document.getElementById('whiteboard-toggle').textContent = whiteboardOpen ? '▼' : '▲';
+}
+
+function clearWhiteboard() {
+    if (confirm('Clear whiteboard?')) {
+        document.getElementById('whiteboard').value = '';
+        localStorage.removeItem('whiteboard');
+    }
+}
+
+function copyWhiteboard() {
+    const text = document.getElementById('whiteboard').value;
+    navigator.clipboard.writeText(text);
+    alert('Copied to clipboard!');
+}
+
+function askAboutWhiteboard() {
+    const notes = document.getElementById('whiteboard').value.trim();
+    if (!notes) {
+        alert('Write something in the whiteboard first');
+        return;
+    }
+    askAI('Here are my notes/questions:\n\n' + notes + '\n\nCan you help me with this?');
+}
+
+// Save whiteboard on change
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('whiteboard')?.addEventListener('input', (e) => {
+        localStorage.setItem('whiteboard', e.target.value);
+    });
+});
+
 // === TABS ===
+function getToday() { return new Date().toISOString().split('T')[0]; }
+
+function isToday(dateStr) {
+    if (!dateStr) return false;
+    return dateStr.split('T')[0] === getToday();
+}
+
+function formatDate(dateStr) {
+    if (!dateStr) return 'Unknown';
+    try {
+        return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    } catch { return dateStr; }
+}
+
 function renderTabs() {
+    const todayPapers = allPapers.filter(p => isToday(p.pubDateISO));
     const counts = {
-        today: allPapers.length,
+        today: todayPapers.length || allPapers.length,
         'must-read': allPapers.filter(p => p.score >= 8).length,
         saved: savedPapers.length,
         'my-papers': customPapers.length
     };
     
-    const tabs = [
+    document.getElementById('tabs').innerHTML = [
         { id: 'today', label: 'Today', count: counts.today },
-        { id: 'must-read', label: '🔥 Must Read', count: counts['must-read'] },
+        { id: 'must-read', label: '🔥 Top', count: counts['must-read'] },
         { id: 'saved', label: '📚 Saved', count: counts.saved },
-        { id: 'my-papers', label: '📁 My Papers', count: counts['my-papers'] }
-    ];
-    
-    document.getElementById('tabs').innerHTML = tabs.map(t => 
-        `<div class="tab ${currentTab === t.id ? 'active' : ''}" onclick="switchTab('${t.id}')">${t.label}<span class="count">${t.count}</span></div>`
-    ).join('');
+        { id: 'my-papers', label: '📁 Mine', count: counts['my-papers'] }
+    ].map(t => `<div class="tab ${currentTab === t.id ? 'active' : ''}" onclick="switchTab('${t.id}')">${t.label}<span class="count">${t.count}</span></div>`).join('');
 }
 
 function switchTab(tab) {
@@ -286,13 +449,14 @@ function switchTab(tab) {
     filterPapers();
 }
 
-// === FILTER & RENDER ===
+// === PAPERS ===
 function filterPapers() {
     const query = document.getElementById('search').value.toLowerCase();
     let papers = [];
     
     if (currentTab === 'today') {
-        papers = allPapers;
+        const todayPapers = allPapers.filter(p => isToday(p.pubDateISO));
+        papers = todayPapers.length ? todayPapers : allPapers;
     } else if (currentTab === 'must-read') {
         papers = allPapers.filter(p => p.score >= 8);
     } else if (currentTab === 'saved') {
@@ -304,14 +468,11 @@ function filterPapers() {
     if (query) {
         papers = papers.filter(p => 
             p.title?.toLowerCase().includes(query) || 
-            p.authors?.toLowerCase().includes(query) ||
-            p.tags?.some(t => t.toLowerCase().includes(query))
+            p.authors?.toLowerCase().includes(query)
         );
     }
     
-    // Sort by score then date
     papers.sort((a, b) => (b.score || 0) - (a.score || 0));
-    
     renderPapers(papers);
 }
 
@@ -319,7 +480,7 @@ function renderPapers(papers) {
     const container = document.getElementById('papers-list');
     
     if (!papers.length) {
-        container.innerHTML = '<div class="loading">No papers found</div>';
+        container.innerHTML = '<div class="empty-state"><h3>No papers</h3></div>';
         return;
     }
     
@@ -327,127 +488,110 @@ function renderPapers(papers) {
         const scoreClass = p.score >= 8 ? 'high' : p.score >= 6 ? 'medium' : 'low';
         const isSaved = savedPapers.includes(p.id);
         const isSelected = selectedPaper?.id === p.id;
-        const pdfUrl = p.pdf_link || (p.link?.includes('arxiv.org/abs/') ? p.link.replace('/abs/', '/pdf/') + '.pdf' : null);
+        const pdfUrl = getPdfUrl(p);
+        const dateStr = formatDate(p.pubDateISO || p.pubDate);
         
-        return `
-        <div class="paper ${isSelected ? 'selected' : ''}" onclick="selectPaper('${p.id}')">
+        return `<div class="paper ${isSelected ? 'selected' : ''}" onclick="selectPaper('${p.id}')">
             <div class="paper-title">${p.title}</div>
             <div class="paper-meta">
-                <span class="paper-date">📅 ${p.pubDate || p.date || 'Unknown'}</span>
+                <span class="paper-date">📅 ${dateStr}</span>
                 <span>${p.authors || 'Unknown'}</span>
-                ${p.institution ? `<span>🏛️ ${p.institution}</span>` : ''}
                 <span class="paper-score ${scoreClass}">${p.score || '?'}/10</span>
             </div>
-            ${p.tags?.length ? `<div class="paper-tags">${p.tags.slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+            ${p.tags?.length ? `<div class="paper-tags">${p.tags.slice(0,3).map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
             <div class="paper-actions">
-                ${pdfUrl ? `<button class="paper-btn primary" onclick="event.stopPropagation();openPDF('${p.id}')">📄 Open PDF</button>` : ''}
-                <button class="paper-btn ${isSaved ? 'saved' : ''}" onclick="event.stopPropagation();toggleSave('${p.id}')">${isSaved ? '✓ Saved' : 'Save'}</button>
-                <a href="${p.link}" target="_blank" class="paper-btn" onclick="event.stopPropagation()">↗ Link</a>
-                ${p.isCustom ? `<button class="paper-btn" onclick="event.stopPropagation();deleteCustom('${p.id}')" style="color:var(--red)">🗑️</button>` : ''}
+                ${pdfUrl ? `<button class="paper-btn primary" onclick="event.stopPropagation();openPDF('${p.id}')">📄 PDF</button>` : ''}
+                <button class="paper-btn ${isSaved ? 'saved' : ''}" onclick="event.stopPropagation();toggleSave('${p.id}')">${isSaved ? '✓' : 'Save'}</button>
+                <a href="${p.link}" target="_blank" class="paper-btn" onclick="event.stopPropagation()">↗</a>
+                ${p.isCustom ? `<button class="paper-btn" onclick="event.stopPropagation();deleteCustom('${p.id}')" style="color:var(--red)">🗑</button>` : ''}
             </div>
         </div>`;
     }).join('');
 }
 
-// === PAPER SELECTION ===
+function getPdfUrl(p) {
+    if (p.pdf_link) return p.pdf_link;
+    if (p.link?.includes('arxiv.org/abs/')) return p.link.replace('/abs/', '/pdf/') + '.pdf';
+    return null;
+}
+
 function selectPaper(id) {
-    const allPapersWithCustom = [...customPapers, ...allPapers];
-    selectedPaper = allPapersWithCustom.find(p => p.id === id);
-    
+    selectedPaper = [...customPapers, ...allPapers].find(p => p.id === id);
     if (selectedPaper) {
         document.getElementById('chat-context').innerHTML = `📄 <strong>${selectedPaper.title}</strong>`;
-        chatHistory = [];
-        document.getElementById('chat-messages').innerHTML = `
-            <div class="msg ai">
-                <div class="msg-avatar">🤖</div>
-                <div class="msg-body">
-                    <div class="msg-content">I'm ready to discuss "<strong>${selectedPaper.title}</strong>". What would you like to know?</div>
-                </div>
-            </div>`;
+        // Don't clear chat history, just add context message
+        addMessage('ai', `Now discussing: "<strong>${selectedPaper.title}</strong>". What would you like to know?`);
     }
-    
     filterPapers();
 }
 
-// === PDF VIEWER ===
 function openPDF(id) {
     selectPaper(id);
-    const paper = selectedPaper;
-    if (!paper) return;
+    if (!selectedPaper) return;
     
-    let pdfUrl = paper.pdf_link;
-    if (!pdfUrl && paper.link?.includes('arxiv.org/abs/')) {
-        pdfUrl = paper.link.replace('/abs/', '/pdf/') + '.pdf';
-    }
+    const pdfUrl = getPdfUrl(selectedPaper);
+    if (!pdfUrl) { alert('No PDF available'); return; }
     
-    if (!pdfUrl) {
-        alert('No PDF available for this paper');
-        return;
-    }
-    
-    document.getElementById('pdf-panel').innerHTML = `
-        <div class="pdf-header">
-            <div class="pdf-title">${paper.title}</div>
-            <div class="pdf-links">
-                <a href="${pdfUrl}" target="_blank">Open in new tab ↗</a>
-                <a href="${paper.link}" target="_blank">Paper page ↗</a>
-            </div>
-        </div>
-        <iframe class="pdf-frame" src="${pdfUrl}"></iframe>
-    `;
+    document.getElementById('pdf-panel').classList.remove('collapsed');
+    document.getElementById('pdf-title').textContent = selectedPaper.title;
+    document.getElementById('pdf-link-new').href = pdfUrl;
+    document.getElementById('pdf-link-page').href = selectedPaper.link;
+    document.getElementById('pdf-frame').src = pdfUrl;
 }
 
-// === SAVE/DELETE ===
 function toggleSave(id) {
-    if (savedPapers.includes(id)) {
-        savedPapers = savedPapers.filter(x => x !== id);
-    } else {
-        savedPapers.push(id);
-    }
+    if (savedPapers.includes(id)) savedPapers = savedPapers.filter(x => x !== id);
+    else savedPapers.push(id);
     localStorage.setItem('savedPapers', JSON.stringify(savedPapers));
     renderTabs();
     filterPapers();
 }
 
 function deleteCustom(id) {
-    if (!confirm('Delete this paper?')) return;
+    if (!confirm('Delete?')) return;
     customPapers = customPapers.filter(p => p.id !== id);
     localStorage.setItem('customPapers', JSON.stringify(customPapers));
     renderTabs();
     filterPapers();
 }
 
-// === ADD PAPER MODAL ===
+// === ADD PAPER ===
 function openAddModal() { document.getElementById('add-modal').classList.add('show'); }
 function closeAddModal() { document.getElementById('add-modal').classList.remove('show'); }
 
 function saveCustomPaper(e) {
     e.preventDefault();
-    
-    const paper = {
+    const url = document.getElementById('add-url').value;
+    customPapers.unshift({
         id: 'custom-' + Date.now(),
         title: document.getElementById('add-title').value,
-        link: document.getElementById('add-url').value,
-        pdf_link: document.getElementById('add-url').value.includes('arxiv.org/abs/') 
-            ? document.getElementById('add-url').value.replace('/abs/', '/pdf/') + '.pdf' 
-            : null,
+        link: url,
+        pdf_link: url.includes('arxiv.org/abs/') ? url.replace('/abs/', '/pdf/') + '.pdf' : null,
         authors: document.getElementById('add-authors').value || 'Unknown',
-        pubDate: document.getElementById('add-date').value || new Date().toISOString().split('T')[0],
+        pubDateISO: document.getElementById('add-date').value || getToday(),
         score: parseInt(document.getElementById('add-score').value) || 7,
-        category: document.getElementById('add-category').value,
         tags: document.getElementById('add-tags').value.split(',').map(t => t.trim()).filter(t => t),
         isCustom: true
-    };
-    
-    customPapers.unshift(paper);
+    });
     localStorage.setItem('customPapers', JSON.stringify(customPapers));
-    
     closeAddModal();
     document.querySelector('#add-modal form').reset();
     switchTab('my-papers');
 }
 
-// === AI CHAT ===
+// === LIVE AI CHAT ===
+function handleChatKeydown(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+    }
+}
+
+function autoResize(el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
 function askAI(text) {
     document.getElementById('chat-input').value = text;
     sendMessage();
@@ -456,138 +600,141 @@ function askAI(text) {
 async function sendMessage() {
     const input = document.getElementById('chat-input');
     const msg = input.value.trim();
-    if (!msg || !selectedPaper) {
-        if (!selectedPaper) alert('Please select a paper first');
-        return;
-    }
+    if (!msg || isTyping) return;
     
-    // Add user message
     addMessage('user', msg);
     input.value = '';
+    input.style.height = 'auto';
     
-    // Show typing indicator
+    // Add to history
+    chatHistory.push({ role: 'user', content: msg });
+    
+    // Show typing
+    isTyping = true;
+    document.getElementById('ai-status').className = 'ai-status thinking';
+    document.getElementById('send-btn').disabled = true;
     const typingId = showTyping();
     
-    // Build context for AI
-    const context = {
-        paper: {
-            title: selectedPaper.title,
-            authors: selectedPaper.authors,
-            abstract: selectedPaper.abstract,
-            score: selectedPaper.score,
-            tags: selectedPaper.tags,
-            key_contribution: selectedPaper.key_contribution
-        },
-        question: msg,
-        history: chatHistory.slice(-6) // Last 3 exchanges
-    };
-    
     try {
-        // Try API call
-        const res = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(context)
-        });
-        
-        if (res.ok) {
-            const data = await res.json();
-            removeTyping(typingId);
-            addMessage('ai', data.response);
-            chatHistory.push({ role: 'user', content: msg }, { role: 'ai', content: data.response });
-            return;
-        }
+        const response = await callGroqAPI(msg);
+        removeTyping(typingId);
+        addMessage('ai', response);
+        chatHistory.push({ role: 'assistant', content: response });
     } catch (e) {
-        console.log('API unavailable, using local response');
+        removeTyping(typingId);
+        addMessage('ai', `⚠️ ${e.message}. Using offline mode.`);
+        // Fallback response
+        const fallback = getFallbackResponse(msg);
+        addMessage('ai', fallback);
     }
     
-    // Fallback to local response
-    removeTyping(typingId);
-    const response = getLocalResponse(msg);
-    addMessage('ai', response);
-    chatHistory.push({ role: 'user', content: msg }, { role: 'ai', content: response });
+    isTyping = false;
+    document.getElementById('ai-status').className = 'ai-status online';
+    document.getElementById('send-btn').disabled = false;
+}
+
+async function callGroqAPI(userMessage) {
+    if (!apiKey) {
+        throw new Error('No API key set. Enter your Groq API key above');
+    }
+    
+    // Build system prompt with paper context
+    let systemPrompt = `You are an expert AI research assistant helping a user understand academic papers. Be concise but thorough. Use markdown for formatting. When explaining technical concepts, be clear and precise.`;
+    
+    if (selectedPaper) {
+        systemPrompt += `\n\nCurrent paper being discussed:
+Title: ${selectedPaper.title}
+Authors: ${selectedPaper.authors || 'Unknown'}
+Abstract: ${selectedPaper.abstract || 'Not available'}
+Key Contribution: ${selectedPaper.key_contribution || 'Not extracted'}
+Tags: ${selectedPaper.tags?.join(', ') || 'None'}
+Score: ${selectedPaper.score}/10
+
+Help the user understand this paper. Reference specific details when relevant.`;
+    }
+    
+    // Build messages array with history
+    const messages = [
+        { role: 'system', content: systemPrompt },
+        ...chatHistory.slice(-10), // Last 10 messages for context
+        { role: 'user', content: userMessage }
+    ];
+    
+    const response = await fetch(GROQ_API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: MODEL,
+            messages: messages,
+            temperature: 0.7,
+            max_tokens: 1500
+        })
+    });
+    
+    if (!response.ok) {
+        const error = await response.json().catch(() => ({}));
+        if (response.status === 401) {
+            throw new Error('Invalid API key');
+        }
+        throw new Error(error.error?.message || 'API request failed');
+    }
+    
+    const data = await response.json();
+    return data.choices[0]?.message?.content || 'No response generated';
+}
+
+function getFallbackResponse(msg) {
+    const m = msg.toLowerCase();
+    const p = selectedPaper;
+    
+    if (!p) return 'Please select a paper first by clicking on it or opening its PDF.';
+    
+    if (m.includes('summar')) {
+        return `**${p.title}**\n\n${p.key_contribution || p.abstract?.slice(0,400) || 'No summary available.'}\n\n*Score: ${p.score}/10*`;
+    }
+    if (m.includes('key') || m.includes('contribution')) {
+        return p.key_contribution || `The key contribution isn't extracted. Based on the title, this paper focuses on ${p.tags?.join(', ') || 'AI research'}.`;
+    }
+    if (m.includes('method')) {
+        return `Check sections 3-4 of the PDF for methodology. Tags suggest this involves: ${p.tags?.join(', ') || 'machine learning techniques'}.`;
+    }
+    return `I'm in offline mode. For full AI responses, add your Groq API key. Meanwhile, I can tell you:\n\n**${p.title}**\n${p.abstract?.slice(0,300) || 'Open the PDF for details.'}...`;
 }
 
 function addMessage(role, content) {
     const container = document.getElementById('chat-messages');
-    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    // Convert markdown-style formatting
+    const formatted = content
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/```(\w*)\n?([\s\S]*?)```/g, '<pre><code>$2</code></pre>')
+        .replace(/\n/g, '<br>');
     
-    container.innerHTML += `
-        <div class="msg ${role}">
-            <div class="msg-avatar">${role === 'ai' ? '🤖' : '👤'}</div>
-            <div class="msg-body">
-                <div class="msg-content">${content}</div>
-                <div class="msg-time">${time}</div>
-            </div>
-        </div>`;
-    
+    container.innerHTML += `<div class="msg ${role}">
+        <div class="msg-avatar">${role === 'ai' ? '🤖' : '👤'}</div>
+        <div class="msg-body"><div class="msg-content">${formatted}</div></div>
+    </div>`;
     container.scrollTop = container.scrollHeight;
 }
 
 function showTyping() {
     const id = 'typing-' + Date.now();
-    const container = document.getElementById('chat-messages');
-    container.innerHTML += `
-        <div class="msg ai" id="${id}">
-            <div class="msg-avatar">🤖</div>
-            <div class="msg-body">
-                <div class="typing-indicator"><span></span><span></span><span></span></div>
-            </div>
-        </div>`;
-    container.scrollTop = container.scrollHeight;
+    document.getElementById('chat-messages').innerHTML += `<div class="msg ai" id="${id}">
+        <div class="msg-avatar">🤖</div>
+        <div class="msg-body"><div class="typing-indicator"><span></span><span></span><span></span></div></div>
+    </div>`;
+    document.getElementById('chat-messages').scrollTop = 999999;
     return id;
 }
 
-function removeTyping(id) {
-    document.getElementById(id)?.remove();
-}
+function removeTyping(id) { document.getElementById(id)?.remove(); }
 
-function getLocalResponse(msg) {
-    const p = selectedPaper;
-    const m = msg.toLowerCase();
-    
-    if (m.includes('summar')) {
-        return `<strong>Summary of "${p.title}":</strong><br><br>
-            ${p.key_contribution || p.abstract?.slice(0, 300) || 'This paper presents research in ' + (p.tags?.[0] || 'AI/ML') + '.'}<br><br>
-            <strong>Score:</strong> ${p.score}/10<br>
-            <strong>Authors:</strong> ${p.authors || 'Unknown'}`;
-    }
-    
-    if (m.includes('key') || m.includes('contribution') || m.includes('novel')) {
-        return p.key_contribution 
-            ? `<strong>Key Contribution:</strong><br><br>${p.key_contribution}`
-            : `The key contribution isn't extracted yet. Based on the title "${p.title}", this paper likely focuses on ${p.tags?.join(', ') || 'machine learning research'}.`;
-    }
-    
-    if (m.includes('method') || m.includes('how')) {
-        return `For detailed methodology, I'd recommend checking the PDF (sections 3-4 typically cover methods).<br><br>
-            Based on the paper's focus on ${p.tags?.[0] || 'AI'}, it likely involves ${p.tags?.includes('transformers') ? 'attention mechanisms and transformer architectures' : 'neural network approaches'}.`;
-    }
-    
-    if (m.includes('limit') || m.includes('weakness')) {
-        return p.limitations 
-            ? `<strong>Limitations:</strong><br><br>${p.limitations}`
-            : `The specific limitations aren't extracted. Common limitations in ${p.tags?.[0] || 'ML'} papers include computational costs, dataset biases, and generalization concerns. Check the paper's discussion section for details.`;
-    }
-    
-    if (m.includes('why') || m.includes('important') || m.includes('matter')) {
-        return p.why_it_matters 
-            ? `<strong>Why it matters:</strong><br><br>${p.why_it_matters}`
-            : `This paper scored ${p.score}/10 on importance. ${p.score >= 8 ? 'High scores indicate significant novelty or impact.' : p.score >= 6 ? 'A solid contribution to the field.' : 'Incremental but potentially useful work.'}`;
-    }
-    
-    // Default contextual response
-    return `I can help you understand "<strong>${p.title}</strong>".<br><br>
-        Try asking about:<br>
-        • The key contribution<br>
-        • Methodology and approach<br>
-        • Limitations<br>
-        • Why this paper matters<br><br>
-        Or ask any specific question about the content!`;
-}
-
-// === INIT ===
-loadData();
+// === START ===
+init();
 </script>
 </body>
 </html>
