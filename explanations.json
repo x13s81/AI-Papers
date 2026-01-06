@@ -1,706 +1,161 @@
 {
-  "2512.22955": {
-    "title": "Diversity or Precision? A Deep Dive into Next Token Prediction",
+  "2512.24617": {
+    "title": "Dynamic Large Concept Models: Latent Reasoning in an Adaptive Semantic Space",
     "prerequisites": {
       "core_concepts": [
-        {
-          "name": "Reinforcement Learning (RL)",
-          "brief": "A subfield of machine learning where agents learn by interacting with an environment and receiving rewards or penalties"
-        },
         {
           "name": "Large Language Models (LLMs)",
-          "brief": "Artificial intelligence models designed to process and understand human language, often trained on vast amounts of text data"
+          "brief": "AI models that process and understand human language"
         },
         {
-          "name": "Policy Gradient Optimization",
-          "brief": "A type of reinforcement learning algorithm that updates the policy directly using gradient ascent"
+          "name": "Latent Representations",
+          "brief": "Hidden, abstract representations of data used for modeling"
         },
         {
-          "name": "Stochastic Decision Process",
-          "brief": "A mathematical framework for modeling situations where outcomes are uncertain and influenced by random events"
+          "name": "Semantic Boundaries",
+          "brief": "Divisions between concepts or ideas in language"
         },
         {
-          "name": "Cross-Entropy Loss",
-          "brief": "A common loss function used in machine learning for classification problems, measuring the difference between predicted probabilities and true labels"
+          "name": "Hierarchical Language Modeling",
+          "brief": "Modeling language using multiple levels of abstraction"
+        },
+        {
+          "name": "Compression-aware Scaling Law",
+          "brief": "A principle for allocating computational resources based on compression ratio"
+        },
+        {
+          "name": "Decoupled μP Parametrization",
+          "brief": "A method for training heterogeneous architectures with stable hyperparameters"
         }
       ],
       "background_knowledge": [
-        {
-          "topic": "Machine Learning Fundamentals",
-          "why_needed": "To understand the basics of reinforcement learning, supervised learning, and deep learning"
-        },
-        {
-          "topic": "Deep Learning Architectures",
-          "why_needed": "To comprehend how large language models are designed and function"
-        },
-        {
-          "topic": "Probability Theory and Statistics",
-          "why_needed": "To grasp concepts like stochastic decision processes, policy gradients, and entropy"
-        },
         {
           "topic": "Natural Language Processing (NLP)",
-          "why_needed": "To appreciate the context and applications of large language models and next-token prediction tasks"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months for comprehensive understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2601.00796": {
-    "title": "AdaGaR: Adaptive Gabor Representation for Dynamic Scene Reconstruction",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Gabor Functions",
-          "brief": "A mathematical function used for signal processing and image analysis, extended in this paper for adaptive representation"
-        },
-        {
-          "name": "Cubic Hermite Splines",
-          "brief": "A type of spline used for smooth interpolation and modeling of temporal continuity"
-        },
-        {
-          "name": "Adaptive Energy Compensation",
-          "brief": "A technique used to balance detail capture and stability in the proposed Adaptive Gabor Representation"
-        },
-        {
-          "name": "Temporal Curvature Regularization",
-          "brief": "A method to ensure smooth motion evolution in dynamic scene reconstruction"
-        },
-        {
-          "name": "Monocular 3D Scene Reconstruction",
-          "brief": "The process of reconstructing 3D scenes from 2D video footage using a single camera"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Computer Vision",
-          "why_needed": "Understanding the fundamentals of computer vision is essential for grasping the concepts of 3D scene reconstruction and image processing"
-        },
-        {
-          "topic": "Signal Processing",
-          "why_needed": "Knowledge of signal processing techniques is necessary for understanding the application of Gabor functions and other signal processing methods"
+          "why_needed": "To understand the context and applications of LLMs"
         },
         {
           "topic": "Deep Learning",
-          "why_needed": "Familiarity with deep learning concepts and techniques is required for understanding the learnable components of the proposed framework"
-        },
-        {
-          "topic": "Mathematics (Linear Algebra, Calculus)",
-          "why_needed": "A strong mathematical foundation is necessary for understanding the underlying mathematical concepts and techniques used in the paper"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months for comprehensive understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2601.00575": {
-    "title": "InfoSynth: Information-Guided Benchmark Synthesis for LLMs",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Large Language Models (LLMs)",
-          "brief": "AI models capable of understanding and generating human-like language"
-        },
-        {
-          "name": "Information-Theoretic Principles",
-          "brief": "Concepts like KL-divergence and entropy used to quantify information and uncertainty"
-        },
-        {
-          "name": "Genetic Algorithms",
-          "brief": "Optimization techniques inspired by natural selection and genetics"
-        },
-        {
-          "name": "Benchmark Synthesis",
-          "brief": "Automated generation of test cases and problems to evaluate AI model performance"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Machine Learning and Deep Learning",
-          "why_needed": "To understand LLMs and their capabilities"
+          "why_needed": "To comprehend the architecture and training of DLCM"
         },
         {
           "topic": "Information Theory",
-          "why_needed": "To grasp concepts like KL-divergence and entropy"
-        },
-        {
-          "topic": "Programming and Software Development",
-          "why_needed": "To understand the context of code generation and evaluation"
-        },
-        {
-          "topic": "Natural Language Processing (NLP)",
-          "why_needed": "To appreciate the challenges and opportunities in LLM evaluation"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months for thorough understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2512.24695": {
-    "title": "Nested Learning: The Illusion of Deep Learning Architectures",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Nested Learning (NL)",
-          "brief": "A new learning paradigm representing machine learning models as nested, multi-level optimization problems"
-        },
-        {
-          "name": "In-Context Learning",
-          "brief": "A learning approach where models learn from data by compressing their own context flow"
-        },
-        {
-          "name": "Expressive Optimizers",
-          "brief": "Optimizers that aim to compress gradients' information, such as Adam and SGD with Momentum, with potential for more expressive variants"
-        },
-        {
-          "name": "Self-Modifying Learning Modules",
-          "brief": "Learning models that can modify themselves by learning their own update algorithms"
-        },
-        {
-          "name": "Continuum Memory System",
-          "brief": "A system that enables effective continual learning capabilities"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Deep Learning Fundamentals",
-          "why_needed": "To understand the context and limitations of current deep learning methods"
-        },
-        {
-          "topic": "Optimization Techniques",
-          "why_needed": "To comprehend the role of optimizers in machine learning and their potential for improvement"
-        },
-        {
-          "topic": "Language Models",
-          "why_needed": "To appreciate the applications and challenges of large-scale language models"
-        },
-        {
-          "topic": "Machine Learning Theory",
-          "why_needed": "To grasp the underlying principles of learning and generalization in machine learning models"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months for thorough understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2601.00393": {
-    "title": "NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "4D World Modeling",
-          "brief": "The process of creating a four-dimensional representation of the world, including 3D space and time"
-        },
-        {
-          "name": "Monocular Video Reconstruction",
-          "brief": "Reconstructing 3D scenes from 2D video footage taken from a single camera"
-        },
-        {
-          "name": "Pose-Free Feed-Forward 4D Reconstruction",
-          "brief": "A technique for reconstructing 4D models without requiring known camera poses"
-        },
-        {
-          "name": "Online Monocular Degradation Pattern Simulation",
-          "brief": "Simulating real-world degradation patterns in video footage to improve model robustness"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Computer Vision",
-          "why_needed": "Understanding computer vision fundamentals is crucial for grasping 4D world modeling and monocular video reconstruction"
-        },
-        {
-          "topic": "Deep Learning",
-          "why_needed": "Familiarity with deep learning concepts and architectures is necessary for understanding the NeoVerse pipeline"
-        },
-        {
-          "topic": "3D Reconstruction",
-          "why_needed": "Knowledge of 3D reconstruction techniques is essential for understanding the extension to 4D world modeling"
-        },
-        {
-          "topic": "Video Processing",
-          "why_needed": "Understanding video processing techniques is necessary for working with in-the-wild monocular videos"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "6-12 months for in-depth understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2601.00204": {
-    "title": "MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Structured Latent (SLAT) Representations",
-          "brief": "A method to represent complex data in a structured and meaningful way"
-        },
-        {
-          "name": "Morphing Cross-Attention (MCA)",
-          "brief": "A technique to fuse source and target information for structural coherence in 3D morphing"
-        },
-        {
-          "name": "Temporal-Fused Self-Attention (TFSA)",
-          "brief": "A method to enhance temporal consistency by incorporating features from preceding frames"
-        },
-        {
-          "name": "3D Generative Models",
-          "brief": "Models that generate 3D data, such as objects or scenes"
-        },
-        {
-          "name": "Attention Mechanisms",
-          "brief": "Techniques used to focus on specific parts of the data when generating or processing it"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Deep Learning",
-          "why_needed": "To understand the fundamentals of neural networks and generative models"
-        },
-        {
-          "topic": "Computer Vision",
-          "why_needed": "To comprehend the concepts of 3D data representation and processing"
-        },
-        {
-          "topic": "Linear Algebra and Geometry",
-          "why_needed": "To grasp the mathematical foundations of 3D transformations and attention mechanisms"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "6-12 weeks for fundamentals, 3-6 months for in-depth understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2512.24271": {
-    "title": "Taming Hallucinations: Boosting MLLMs' Video Understanding via Counterfactual Video Generation",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Multimodal Large Language Models (MLLMs)",
-          "brief": "AI models that process and understand multiple forms of data, such as text and video"
-        },
-        {
-          "name": "Counterfactual Video Generation",
-          "brief": "Generating videos that defy common sense or expected outcomes to test model understanding"
-        },
-        {
-          "name": "Diffusion-based Video Editing",
-          "brief": "A technique for editing videos using a process that gradually refines the output"
-        },
-        {
-          "name": "Contrastive Training",
-          "brief": "A training method that uses pairs of examples to learn the differences between them"
-        },
-        {
-          "name": "Reinforcement Learning (RL) with Advantage Normalization",
-          "brief": "A training method that uses rewards and penalties to optimize a policy, with a technique to normalize the advantages"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Deep Learning",
-          "why_needed": "To understand the fundamentals of MLLMs and other AI models used in the paper"
-        },
-        {
-          "topic": "Natural Language Processing (NLP)",
-          "why_needed": "To understand how language models work and how they can be applied to video understanding"
-        },
-        {
-          "topic": "Computer Vision",
-          "why_needed": "To understand how videos are processed and analyzed in the context of MLLMs"
-        },
-        {
-          "topic": "Reinforcement Learning",
-          "why_needed": "To understand the RL training regime used in the paper, including advantage normalization"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months for comprehensive understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2512.24615": {
-    "title": "Youtu-Agent: Scaling Agent Productivity with Automated Generation and Hybrid Policy Optimization",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Large Language Model (LLM) Agents",
-          "brief": "AI models that can perform tasks using natural language inputs"
-        },
-        {
-          "name": "Automated Generation and Hybrid Policy Optimization",
-          "brief": "Techniques for automatically creating and improving LLM agents"
-        },
-        {
-          "name": "Modular Frameworks for Agent Development",
-          "brief": "Structured systems for building and evolving AI agents"
-        },
-        {
-          "name": "Reinforcement Learning (RL)",
-          "brief": "A machine learning approach for training agents to make decisions in complex environments"
-        },
-        {
-          "name": "In-Context Optimization",
-          "brief": "A method for improving agent performance without updating model parameters"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Natural Language Processing (NLP)",
-          "why_needed": "To understand how LLM agents process and generate human-like language"
-        },
-        {
-          "topic": "Machine Learning and Deep Learning",
-          "why_needed": "To comprehend the fundamentals of training and optimizing AI models"
-        },
-        {
-          "topic": "Software Development and Modular Programming",
-          "why_needed": "To appreciate the design and implementation of modular frameworks for agent development"
-        },
-        {
-          "topic": "Artificial Intelligence and Agent-Based Systems",
-          "why_needed": "To understand the context and applications of LLM agents"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "6-12 weeks for fundamentals, 6 months or more for in-depth understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2512.24330": {
-    "title": "SenseNova-MARS: Empowering Multimodal Agentic Reasoning and Search via Reinforcement Learning",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Multimodal Agentic Reasoning",
-          "brief": "The ability of models to reason and act across multiple modalities (e.g., text, images) and tools"
-        },
-        {
-          "name": "Reinforcement Learning (RL)",
-          "brief": "A machine learning approach where agents learn by interacting with an environment and receiving rewards or penalties"
-        },
-        {
-          "name": "Vision-Language Models (VLMs)",
-          "brief": "Models that process and understand both visual and textual data"
-        },
-        {
-          "name": "Batch-Normalized Group Sequence Policy Optimization (BN-GSPO)",
-          "brief": "A novel RL algorithm for improving training stability and tool invocation in VLMs"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Deep Learning",
-          "why_needed": "Understanding the basics of neural networks, convolutional neural networks, and recurrent neural networks is crucial for grasping VLMs and RL"
-        },
-        {
-          "topic": "Computer Vision",
-          "why_needed": "Knowledge of image processing, object detection, and image understanding is necessary for comprehending the visual aspects of multimodal reasoning"
-        },
-        {
-          "topic": "Natural Language Processing (NLP)",
-          "why_needed": "Familiarity with text processing, language models, and text-based reasoning is required for understanding the language components of VLMs"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "6-12 weeks for fundamentals, 3-6 months for in-depth understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2601.00671": {
-    "title": "Fast-weight Product Key Memory",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Product Key Memory (PKM)",
-          "brief": "A memory mechanism used in sequence modeling layers to store key-value pairs"
-        },
-        {
-          "name": "Fast-weight Product Key Memory (FwPKM)",
-          "brief": "A novel architecture that transforms PKM into a dynamic, episodic memory"
-        },
-        {
-          "name": "Softmax attention and linear variants",
-          "brief": "Attention mechanisms used in sequence modeling layers to weigh input elements"
-        },
-        {
-          "name": "Local chunk-level gradient descent",
-          "brief": "An optimization technique used to update FwPKM parameters dynamically"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Deep Learning and Neural Networks",
-          "why_needed": "To understand the context of sequence modeling layers and attention mechanisms"
-        },
-        {
-          "topic": "Natural Language Processing (NLP)",
-          "why_needed": "To comprehend the application of FwPKM in language models and its evaluation on long-context datasets"
-        },
-        {
-          "topic": "Optimization Techniques and Gradient Descent",
-          "why_needed": "To grasp the dynamic parameter updates in FwPKM using local chunk-level gradient descent"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "6-12 weeks for fundamentals and 3-6 months for in-depth understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2601.00664": {
-    "title": "Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Diffusion Forcing",
-          "brief": "A technique used for real-time interactive head avatar generation, enabling avatars to process multimodal inputs with low latency"
-        },
-        {
-          "name": "Multimodal Interaction",
-          "brief": "The ability of avatars to respond to various forms of user input, including audio, motion, and other non-verbal cues"
-        },
-        {
-          "name": "Label-Free Learning",
-          "brief": "A method of training models without requiring labeled data, using techniques such as synthetic sample construction"
-        },
-        {
-          "name": "Real-Time Motion Generation",
-          "brief": "The ability to generate motion in real-time, under causal constraints, to create interactive and responsive avatars"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Deep Learning",
-          "why_needed": "Understanding deep learning fundamentals is necessary to comprehend the diffusion forcing technique and label-free learning methods"
-        },
-        {
-          "topic": "Computer Vision",
-          "why_needed": "Knowledge of computer vision is required to understand how avatars are generated and how they process visual inputs"
-        },
-        {
-          "topic": "Human-Computer Interaction",
-          "why_needed": "Familiarity with human-computer interaction principles is necessary to understand the importance of multimodal interaction and real-time motion generation"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months for in-depth understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2601.00417": {
-    "title": "Deep Delta Learning",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Deep Residual Networks",
-          "brief": "A type of neural network that uses identity shortcut connections to mitigate the vanishing gradient problem"
-        },
-        {
-          "name": "Geometric Transformation",
-          "brief": "A mathematical operation that modifies the shape or structure of an object, used in this paper to generalize the residual connection"
-        },
-        {
-          "name": "Spectral Analysis",
-          "brief": "A mathematical technique used to analyze the properties of linear operators, applied here to understand the Delta Operator"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Neural Networks",
-          "why_needed": "Understanding the basics of neural networks, including feedforward and recurrent architectures, is essential to grasp the context of the paper"
-        },
-        {
-          "topic": "Linear Algebra",
-          "why_needed": "Familiarity with concepts such as matrix operations, eigenvalues, and eigenvectors is necessary to understand the mathematical derivations and analysis in the paper"
-        },
-        {
-          "topic": "Deep Learning",
-          "why_needed": "Knowledge of deep learning techniques, including residual networks and gated architectures, is required to appreciate the contributions and implications of the proposed Deep Delta Learning approach"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months for comprehensive understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2512.24007": {
-    "title": "TESO Tabu Enhanced Simulation Optimization for Noisy Black Box Problems",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Simulation Optimization (SO)",
-          "brief": "A methodology to find the optimal solution by iteratively simulating and evaluating different scenarios"
-        },
-        {
-          "name": "Tabu Search",
-          "brief": "A metaheuristic search algorithm that uses memory to avoid getting stuck in local optima"
-        },
-        {
-          "name": "Metaheuristics",
-          "brief": "High-level algorithms that use heuristics to find good solutions to complex optimization problems"
-        },
-        {
-          "name": "Noisy Black Box Problems",
-          "brief": "Optimization problems where the objective function is unknown, expensive to evaluate, and subject to noise or uncertainty"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Optimization Techniques",
-          "why_needed": "To understand the context and motivation behind simulation optimization and metaheuristics"
-        },
-        {
-          "topic": "Stochastic Processes",
-          "why_needed": "To comprehend the challenges of noisy black box problems and the need for adaptive search strategies"
-        },
-        {
-          "topic": "Algorithm Design and Analysis",
-          "why_needed": "To appreciate the design and evaluation of the TESO framework"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months for in-depth understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2512.24724": {
-    "title": "FlowBlending: Stage-Aware Multi-Model Sampling for Fast and High-Fidelity Video Generation",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Multi-Model Sampling",
-          "brief": "Using multiple models of varying capacities to improve efficiency in video generation"
-        },
-        {
-          "name": "Stage-Aware Modeling",
-          "brief": "Adapting model usage based on the stage of video generation, such as early, intermediate, and late stages"
-        },
-        {
-          "name": "FlowBlending Strategy",
-          "brief": "A specific approach that blends the outputs of large and small models at different stages to achieve fast and high-fidelity video generation"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Deep Learning for Video Generation",
-          "why_needed": "Understanding how deep learning models are used for video generation is crucial for grasping the context and contributions of FlowBlending"
-        },
-        {
-          "topic": "Model Capacity and Computational Complexity",
-          "why_needed": "Knowledge of how model size and complexity affect computational requirements and inference speed is necessary to appreciate the efficiency gains of FlowBlending"
-        },
-        {
-          "topic": "Sampling Techniques in Machine Learning",
-          "why_needed": "Familiarity with sampling techniques and their role in accelerating inference in machine learning models is important for understanding the integration of FlowBlending with existing sampling-acceleration techniques"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "6-12 weeks for comprehensive understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2512.24766": {
-    "title": "Dream2Flow: Bridging Video Generation and Open-World Manipulation with 3D Object Flow",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Generative Video Modeling",
-          "brief": "Using models to generate videos of plausible physical interactions"
-        },
-        {
-          "name": "3D Object Flow",
-          "brief": "Representing object motions in 3D space as an intermediate representation"
-        },
-        {
-          "name": "Object Trajectory Tracking",
-          "brief": "Formulating manipulation as tracking the trajectory of objects"
-        },
-        {
-          "name": "Embodiment Gap",
-          "brief": "The challenge of translating high-level motions into low-level actions for robotic systems"
-        },
-        {
-          "name": "Trajectory Optimization and Reinforcement Learning",
-          "brief": "Methods for converting 3D object flow into executable low-level commands"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Computer Vision",
-          "why_needed": "Understanding how to process and analyze visual data from videos"
-        },
-        {
-          "topic": "Robotics and Control",
-          "why_needed": "Knowledge of robotic systems and how to control them"
-        },
-        {
-          "topic": "Deep Learning",
-          "why_needed": "Familiarity with deep learning models and techniques for generative modeling"
-        },
-        {
-          "topic": "3D Geometry and Reconstruction",
-          "why_needed": "Understanding how to reconstruct 3D object motions from 2D video data"
-        }
-      ],
-      "difficulty_level": "advanced",
-      "estimated_study_time": "6-12 weeks for fundamentals, 6 months or more for in-depth understanding"
-    },
-    "last_updated": "2026-01-05"
-  },
-  "2512.24880": {
-    "title": "mHC: Manifold-Constrained Hyper-Connections",
-    "prerequisites": {},
-    "last_updated": "2026-01-05"
-  },
-  "2512.22280": {
-    "title": "Valori: A Deterministic Memory Substrate for AI Systems",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Deterministic Memory Substrate",
-          "brief": "A memory system that ensures identical outputs given identical inputs, code, and models across different hardware architectures"
-        },
-        {
-          "name": "Vector Embeddings",
-          "brief": "A method of representing data as vectors in a high-dimensional space for similarity search and other AI applications"
-        },
-        {
-          "name": "Floating-Point Arithmetic",
-          "brief": "A method of representing numbers in computing that can introduce non-determinism due to rounding errors and hardware variations"
-        },
-        {
-          "name": "Fixed-Point Arithmetic",
-          "brief": "A method of representing numbers in computing that uses a fixed number of bits for the integer and fractional parts to ensure determinism"
-        },
-        {
-          "name": "Replayable State Machine",
-          "brief": "A system that can reproduce its exact state and behavior given the same inputs and initial conditions"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Artificial Intelligence (AI) Systems",
-          "why_needed": "To understand the context and importance of deterministic memory substrates in AI applications"
+          "why_needed": "To understand the concept of information density and compression"
         },
         {
           "topic": "Computer Architecture",
-          "why_needed": "To appreciate the differences between hardware architectures (e.g., x86 vs. ARM) and their impact on memory operations"
+          "why_needed": "To appreciate the implications of compute allocation and FLOPs"
         },
         {
-          "topic": "Numerical Analysis",
-          "why_needed": "To understand the trade-offs between floating-point and fixed-point arithmetic and their implications for determinism"
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the principles of model training and hyperparameter tuning"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-01-06"
+  },
+  "2512.25070": {
+    "title": "Scaling Open-Ended Reasoning to Predict the Future",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Open-Ended Reasoning",
+          "brief": "The ability of a model to reason and make predictions about uncertain future events"
         },
         {
-          "topic": "Software Engineering",
-          "why_needed": "To recognize the importance of reproducibility and verifiability in software development, particularly in regulated sectors"
+          "name": "Language Models",
+          "brief": "Artificial intelligence models that process and generate human-like language"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A type of machine learning that involves training models through trial and error using rewards or penalties"
+        },
+        {
+          "name": "Forecasting",
+          "brief": "The process of making predictions about future events or trends"
+        },
+        {
+          "name": "Data Curation",
+          "brief": "The process of selecting, cleaning, and preparing data for use in a model or analysis"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand how language models are trained and evaluated"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend how language models generate and process human-like language"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To grasp the architecture and training of large language models like OpenForecaster 8B"
+        },
+        {
+          "topic": "Data Science",
+          "why_needed": "To understand data curation, preprocessing, and analysis techniques used in the paper"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To appreciate the broader context and applications of open-ended reasoning and forecasting"
         }
       ],
       "difficulty_level": "advanced",
-      "estimated_study_time": "3-6 months"
+      "estimated_study_time": "6-12 months"
+    },
+    "last_updated": "2026-01-06"
+  },
+  "2512.23343": {
+    "title": "AI Meets Brain: Memory Systems from Cognitive Neuroscience to Autonomous Agents",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Cognitive Neuroscience",
+          "brief": "The study of the neural basis of cognition and behavior"
+        },
+        {
+          "name": "Artificial Intelligence (AI)",
+          "brief": "The development of computer systems that can perform tasks that typically require human intelligence"
+        },
+        {
+          "name": "Memory Systems",
+          "brief": "The mechanisms by which humans and AI systems store, retrieve, and utilize information"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "A type of AI model that processes and generates human-like language"
+        },
+        {
+          "name": "Autonomous Agents",
+          "brief": "AI systems that can perform tasks independently with minimal human intervention"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Neuroscience",
+          "why_needed": "To understand human memory mechanisms and their potential applications in AI"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To comprehend the current state of AI systems and their limitations in terms of memory and cognition"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To understand the technical aspects of AI systems and their implementation"
+        },
+        {
+          "topic": "Cognitive Psychology",
+          "why_needed": "To grasp the concepts of human cognition and memory and their relevance to AI systems"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the role of machine learning in the development of AI systems and their memory mechanisms"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6-12 months"
     },
     "last_updated": "2026-01-06"
   },
@@ -710,7 +165,7 @@
       "core_concepts": [
         {
           "name": "Multimodal Large Language Models (MLLMs)",
-          "brief": "Models that process and generate multiple forms of data, such as text, audio, and video"
+          "brief": "AI models that process and generate multiple forms of data, such as text, audio, and video"
         },
         {
           "name": "Encoder-LLM-Decoder Architecture",
@@ -748,59 +203,7 @@
         },
         {
           "topic": "Multimodal Learning",
-          "why_needed": "To understand how JavisGPT combines multiple forms of data to enable multimodal comprehension and generation"
-        }
-      ],
-      "difficulty_level": "expert",
-      "estimated_study_time": "6 months"
-    },
-    "last_updated": "2026-01-06"
-  },
-  "2512.24551": {
-    "title": "PhyGDPO: Physics-Aware Groupwise Direct Preference Optimization for Physically Consistent Text-to-Video Generation",
-    "prerequisites": {
-      "core_concepts": [
-        {
-          "name": "Text-to-Video Generation",
-          "brief": "Generating videos from text descriptions"
-        },
-        {
-          "name": "Physics-Aware Modeling",
-          "brief": "Incorporating physical laws and principles into machine learning models"
-        },
-        {
-          "name": "Groupwise Direct Preference Optimization",
-          "brief": "Optimizing models based on groupwise preferences and physical consistency"
-        },
-        {
-          "name": "Vision-Language Models",
-          "brief": "Models that process and understand both visual and textual data"
-        },
-        {
-          "name": "Plackett-Luce Probabilistic Model",
-          "brief": "A statistical model for ranking and preference learning"
-        }
-      ],
-      "background_knowledge": [
-        {
-          "topic": "Deep Learning",
-          "why_needed": "To understand the fundamentals of neural networks and their applications in computer vision and natural language processing"
-        },
-        {
-          "topic": "Computer Vision",
-          "why_needed": "To comprehend the concepts of video generation, object detection, and image processing"
-        },
-        {
-          "topic": "Natural Language Processing",
-          "why_needed": "To grasp the basics of text analysis, language models, and vision-language models"
-        },
-        {
-          "topic": "Physics and Mechanics",
-          "why_needed": "To understand the physical laws and principles that are being incorporated into the model"
-        },
-        {
-          "topic": "Optimization Techniques",
-          "why_needed": "To familiarize oneself with various optimization algorithms and methods used in machine learning"
+          "why_needed": "To understand how JavisGPT integrates multiple forms of data, such as text, audio, and video"
         }
       ],
       "difficulty_level": "advanced",
@@ -808,47 +211,43 @@
     },
     "last_updated": "2026-01-06"
   },
-  "2512.21185": {
-    "title": "UltraShape 1.0: High-Fidelity 3D Shape Generation via Scalable Geometric Refinement",
+  "2512.24297": {
+    "title": "Figure It Out: Improving the Frontier of Reasoning with Active Visual Thinking",
     "prerequisites": {
       "core_concepts": [
         {
-          "name": "3D Geometry Generation",
-          "brief": "The process of creating 3D shapes using algorithms and models"
+          "name": "Active Visual Thinking",
+          "brief": "The process of using visual representations to enhance reasoning and problem-solving abilities"
         },
         {
-          "name": "Diffusion Framework",
-          "brief": "A type of deep learning model used for generating high-quality data"
+          "name": "Multi-turn Reasoning",
+          "brief": "A type of reasoning that involves multiple steps or turns to arrive at a solution"
         },
         {
-          "name": "Geometric Refinement",
-          "brief": "The process of improving the quality and detail of 3D shapes"
+          "name": "Reinforcement Learning",
+          "brief": "A machine learning approach that involves training agents to make decisions based on rewards or penalties"
         },
         {
-          "name": "Voxel-Based Refinement",
-          "brief": "A method of refining 3D shapes using voxel-based representations"
-        },
-        {
-          "name": "RoPE (Rotary Position Embedding)",
-          "brief": "A technique used to encode positional information in deep learning models"
+          "name": "Multimodal Reasoning",
+          "brief": "The ability to reason using multiple forms of input, such as text and visual representations"
         }
       ],
       "background_knowledge": [
         {
-          "topic": "Deep Learning",
-          "why_needed": "To understand the diffusion framework and its applications in 3D geometry generation"
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context of the research and the capabilities of current reasoning models"
         },
         {
-          "topic": "3D Computer Vision",
-          "why_needed": "To comprehend the concepts of 3D shape representation, processing, and generation"
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the reinforcement learning approach used in FIGR"
         },
         {
-          "topic": "Geometry Processing",
-          "why_needed": "To understand the importance of geometric refinement and the challenges associated with it"
+          "topic": "Computer Vision",
+          "why_needed": "To understand how visual representations are constructed and used in the reasoning process"
         },
         {
-          "topic": "Data Processing Pipelines",
-          "why_needed": "To appreciate the role of data processing in improving the quality of 3D datasets"
+          "topic": "Mathematical Reasoning",
+          "why_needed": "To appreciate the challenges of representing global structural constraints in complex mathematical problems"
         }
       ],
       "difficulty_level": "advanced",
