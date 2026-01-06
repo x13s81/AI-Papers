@@ -18,1540 +18,692 @@
             --red: #da3633;
             --purple: #a371f7;
             --yellow: #d29922;
-            --cyan: #39c5cf;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-            background: var(--bg); 
-            color: var(--text); 
-            line-height: 1.5; 
-            overflow: hidden; 
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; overflow: hidden; }
         
-        /* ============ LAYOUT SYSTEM ============ */
-        .app-container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
+        .app { display: flex; flex-direction: column; height: 100vh; }
         
-        .app-toolbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 6px 12px;
-            background: var(--bg2);
-            border-bottom: 1px solid var(--border);
-            flex-shrink: 0;
-            z-index: 100;
-        }
+        /* Toolbar */
+        .toolbar { display: flex; align-items: center; justify-content: space-between; padding: 8px 16px; background: var(--bg2); border-bottom: 1px solid var(--border); flex-shrink: 0; z-index: 100; }
+        .toolbar h1 { font-size: 1em; }
+        .toolbar-right { display: flex; gap: 8px; align-items: center; }
+        .tool-btn { padding: 6px 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text2); font-size: 0.75em; cursor: pointer; }
+        .tool-btn:hover { background: var(--border); color: var(--text); }
         
-        .app-toolbar h1 {
-            font-size: 0.95em;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        /* Workspace - the dock container */
+        .workspace { flex: 1; display: flex; overflow: hidden; position: relative; }
         
-        .toolbar-actions {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-        }
+        /* Dock areas */
+        .dock-area { display: flex; flex: 1; overflow: hidden; }
+        .dock-area.horizontal { flex-direction: row; }
+        .dock-area.vertical { flex-direction: column; }
         
-        .toolbar-btn {
-            padding: 5px 10px;
-            background: var(--bg3);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            color: var(--text2);
-            font-size: 0.7em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            transition: all 0.15s;
-        }
+        /* Resizer */
+        .resizer { background: var(--border); flex-shrink: 0; z-index: 10; transition: background 0.15s; }
+        .resizer:hover, .resizer.active { background: var(--blue); }
+        .resizer.horizontal { width: 4px; cursor: col-resize; }
+        .resizer.vertical { height: 4px; cursor: row-resize; }
         
-        .toolbar-btn:hover {
-            background: var(--border);
-            color: var(--text);
-        }
+        /* Panel container - holds tabs + content */
+        .panel-container { display: flex; flex-direction: column; overflow: hidden; background: var(--bg); min-width: 200px; min-height: 150px; position: relative; }
         
-        .toolbar-btn.active {
-            background: var(--blue);
-            border-color: var(--blue);
-            color: white;
-        }
+        /* Tab bar */
+        .tab-bar { display: flex; align-items: center; background: var(--bg2); border-bottom: 1px solid var(--border); min-height: 36px; flex-shrink: 0; overflow-x: auto; }
+        .tab-bar::-webkit-scrollbar { height: 0; }
         
-        /* Layout dropdown */
-        .layout-menu {
-            position: relative;
-        }
+        .tab { display: flex; align-items: center; gap: 6px; padding: 8px 14px; font-size: 0.8em; color: var(--text2); cursor: grab; border-right: 1px solid var(--border); white-space: nowrap; user-select: none; transition: background 0.1s; }
+        .tab:hover { background: var(--bg3); color: var(--text); }
+        .tab.active { background: var(--bg); color: var(--text); border-bottom: 2px solid var(--blue); margin-bottom: -1px; }
+        .tab.dragging { opacity: 0.5; }
+        .tab .close-tab { margin-left: 6px; opacity: 0.5; font-size: 0.8em; }
+        .tab .close-tab:hover { opacity: 1; color: var(--red); }
         
-        .layout-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: 4px;
-            background: var(--bg2);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            min-width: 200px;
-            z-index: 1000;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-        }
+        .tab-bar-actions { margin-left: auto; display: flex; padding: 0 8px; gap: 4px; }
+        .tab-bar-btn { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 4px; color: var(--text2); cursor: pointer; font-size: 0.8em; }
+        .tab-bar-btn:hover { background: var(--bg3); color: var(--text); }
         
-        .layout-dropdown.show {
-            display: block;
-        }
+        /* Panel content */
+        .panel-content { flex: 1; overflow: hidden; display: none; flex-direction: column; }
+        .panel-content.active { display: flex; }
         
-        .layout-dropdown-section {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-        }
+        /* Drop zones */
+        .drop-zone { position: absolute; background: rgba(88, 166, 255, 0.15); border: 2px dashed var(--blue); z-index: 100; display: none; pointer-events: none; }
+        .drop-zone.visible { display: block; }
+        .drop-zone.center { inset: 20%; }
+        .drop-zone.top { top: 0; left: 0; right: 0; height: 40%; }
+        .drop-zone.bottom { bottom: 0; left: 0; right: 0; height: 40%; }
+        .drop-zone.left { top: 0; bottom: 0; left: 0; width: 40%; }
+        .drop-zone.right { top: 0; bottom: 0; right: 0; width: 40%; }
+        .drop-zone.tab-bar { top: 0; left: 0; right: 0; height: 36px; background: rgba(88, 166, 255, 0.3); }
         
-        .layout-dropdown-section:last-child {
-            border-bottom: none;
-        }
+        /* Floating drag preview */
+        .drag-preview { position: fixed; background: var(--bg2); border: 1px solid var(--blue); border-radius: 6px; padding: 8px 14px; font-size: 0.8em; pointer-events: none; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
         
-        .layout-dropdown-title {
-            padding: 4px 12px;
-            font-size: 0.65em;
-            color: var(--text2);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        /* Content styles */
+        .search-area { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+        .search-box { width: 100%; padding: 8px 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.85em; margin-bottom: 8px; }
+        .search-box:focus { outline: none; border-color: var(--blue); }
+        .filter-select { width: 100%; padding: 6px 10px; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; color: var(--text); font-size: 0.75em; cursor: pointer; }
         
-        .layout-dropdown-item {
-            padding: 6px 12px;
-            font-size: 0.75em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: background 0.1s;
-        }
+        .tabs-row { display: flex; border-bottom: 1px solid var(--border); background: var(--bg); overflow-x: auto; flex-shrink: 0; }
+        .filter-tab { padding: 8px 14px; font-size: 0.75em; color: var(--text2); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; }
+        .filter-tab:hover { color: var(--text); }
+        .filter-tab.active { color: var(--blue); border-bottom-color: var(--blue); }
+        .filter-tab .count { background: var(--bg3); padding: 2px 6px; border-radius: 10px; font-size: 0.7em; margin-left: 4px; }
+        .filter-tab.active .count { background: var(--blue); color: white; }
         
-        .layout-dropdown-item:hover {
-            background: var(--bg3);
-        }
-        
-        .layout-dropdown-item .check {
-            color: var(--green);
-            opacity: 0;
-        }
-        
-        .layout-dropdown-item.checked .check {
-            opacity: 1;
-        }
-        
-        .preset-btn {
-            padding: 6px 12px;
-            font-size: 0.75em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.1s;
-        }
-        
-        .preset-btn:hover {
-            background: var(--bg3);
-        }
-        
-        .preset-icon {
-            display: flex;
-            gap: 2px;
-        }
-        
-        .preset-icon span {
-            width: 12px;
-            height: 10px;
-            background: var(--border);
-            border-radius: 2px;
-        }
-        
-        /* Main workspace */
-        .workspace {
-            flex: 1;
-            display: flex;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        /* ============ PANEL SYSTEM ============ */
-        .panel {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-            background: var(--bg);
-            transition: width 0.2s ease, flex 0.2s ease;
-        }
-        
-        .panel.collapsed {
-            flex: 0 0 36px !important;
-            min-width: 36px !important;
-            width: 36px !important;
-        }
-        
-        .panel.hidden {
-            display: none !important;
-        }
-        
-        .panel-header {
-            padding: 8px 12px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--bg2);
-            flex-shrink: 0;
-            min-height: 36px;
-        }
-        
-        .panel-header h2 {
-            font-size: 0.8em;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        
-        .panel.collapsed .panel-header {
-            padding: 8px 6px;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            justify-content: center;
-            border-bottom: none;
-            border-right: 1px solid var(--border);
-        }
-        
-        .panel.collapsed .panel-header h2 {
-            transform: rotate(180deg);
-        }
-        
-        .panel.collapsed .panel-controls {
-            flex-direction: column;
-            gap: 4px;
-        }
-        
-        .panel.collapsed .panel-body {
-            display: none;
-        }
-        
-        .panel-controls {
-            display: flex;
-            gap: 4px;
-            align-items: center;
-        }
-        
-        .panel-control-btn {
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: none;
-            border-radius: 3px;
-            color: var(--text2);
-            cursor: pointer;
-            font-size: 0.7em;
-            transition: all 0.15s;
-        }
-        
-        .panel-control-btn:hover {
-            background: var(--bg3);
-            color: var(--text);
-        }
-        
-        .panel-body {
-            flex: 1;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        /* ============ RESIZER ============ */
-        .resizer {
-            width: 5px;
-            background: transparent;
-            cursor: col-resize;
-            position: relative;
-            flex-shrink: 0;
-            z-index: 10;
-            transition: background 0.15s;
-        }
-        
-        .resizer:hover,
-        .resizer.active {
-            background: var(--blue);
-        }
-        
-        .resizer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -3px;
-            right: -3px;
-        }
-        
-        .resizer-hint {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 3px;
-            height: 30px;
-            background: var(--border);
-            border-radius: 2px;
-            opacity: 0.5;
-        }
-        
-        .resizer:hover .resizer-hint {
-            opacity: 0;
-        }
-        
-        /* Horizontal resizer */
-        .resizer-h {
-            height: 5px;
-            width: 100%;
-            cursor: row-resize;
-        }
-        
-        .resizer-h::before {
-            top: -3px;
-            bottom: -3px;
-            left: 0;
-            right: 0;
-        }
-        
-        /* ============ PAPERS PANEL ============ */
-        #papers-panel {
-            min-width: 36px;
-        }
-        
-        #papers-panel:not(.collapsed) {
-            min-width: 280px;
-            width: 360px;
-            max-width: 550px;
-        }
-        
-        .search-sort {
-            padding: 8px 12px;
-            border-bottom: 1px solid var(--border);
-            flex-shrink: 0;
-        }
-        
-        .search-box {
-            width: 100%;
-            padding: 7px 10px;
-            background: var(--bg3);
-            border: 1px solid var(--border);
-            border-radius: 5px;
-            color: var(--text);
-            font-size: 0.8em;
-            margin-bottom: 6px;
-        }
-        
-        .search-box:focus {
-            outline: none;
-            border-color: var(--blue);
-        }
-        
-        .sort-select {
-            width: 100%;
-            padding: 5px 8px;
-            background: var(--bg3);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            color: var(--text);
-            font-size: 0.7em;
-            cursor: pointer;
-        }
-        
-        .tabs {
-            display: flex;
-            border-bottom: 1px solid var(--border);
-            background: var(--bg2);
-            flex-shrink: 0;
-            overflow-x: auto;
-        }
-        
-        .tab {
-            padding: 7px 10px;
-            font-size: 0.7em;
-            color: var(--text2);
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            white-space: nowrap;
-            transition: all 0.15s;
-        }
-        
-        .tab:hover {
-            color: var(--text);
-        }
-        
-        .tab.active {
-            color: var(--blue);
-            border-bottom-color: var(--blue);
-        }
-        
-        .tab .count {
-            background: var(--bg3);
-            padding: 1px 5px;
-            border-radius: 6px;
-            font-size: 0.65em;
-            margin-left: 3px;
-        }
-        
-        .tab.active .count {
-            background: var(--blue);
-            color: white;
-        }
-        
-        .papers-list {
-            flex: 1;
-            overflow-y: auto;
-        }
-        
-        .paper {
-            padding: 10px 12px;
-            border-bottom: 1px solid var(--border);
-            cursor: pointer;
-            transition: background 0.1s;
-        }
-        
-        .paper:hover {
-            background: var(--bg2);
-        }
-        
-        .paper.selected {
-            background: rgba(88,166,255,0.1);
-            border-left: 3px solid var(--blue);
-            padding-left: 9px;
-        }
-        
-        .paper-title {
-            font-size: 0.82em;
-            font-weight: 600;
-            margin-bottom: 4px;
-            line-height: 1.4;
-        }
-        
-        .paper-meta {
-            font-size: 0.68em;
-            color: var(--text2);
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 4px;
-        }
-        
-        .paper-date {
-            color: var(--orange);
-        }
-        
-        .paper-score {
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-size: 0.62em;
-            font-weight: 600;
-        }
-        
+        .papers-list { flex: 1; overflow-y: auto; }
+        .paper { padding: 12px; border-bottom: 1px solid var(--border); cursor: pointer; }
+        .paper:hover { background: var(--bg2); }
+        .paper.selected { background: rgba(88,166,255,0.1); border-left: 3px solid var(--blue); padding-left: 9px; }
+        .paper-title { font-size: 0.85em; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+        .paper-meta { font-size: 0.72em; color: var(--text2); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; }
+        .paper-date { color: var(--orange); }
+        .paper-score { padding: 2px 6px; border-radius: 4px; font-size: 0.65em; font-weight: 600; }
         .paper-score.high { background: var(--green); color: white; }
         .paper-score.medium { background: var(--blue); color: white; }
         .paper-score.low { background: var(--bg3); color: var(--text2); }
+        .paper-actions { display: flex; gap: 6px; margin-top: 8px; }
+        .paper-btn { padding: 4px 10px; font-size: 0.7em; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; color: var(--text2); cursor: pointer; text-decoration: none; }
+        .paper-btn:hover { background: var(--border); color: var(--text); }
+        .paper-btn.primary { background: var(--blue); border-color: var(--blue); color: white; }
+        .paper-btn.saved { background: var(--green); border-color: var(--green); color: white; }
+        .add-paper-btn { margin: 12px; padding: 8px; width: calc(100% - 24px); }
         
-        .paper-actions {
-            display: flex;
-            gap: 4px;
-            margin-top: 5px;
-        }
+        .pdf-toolbar { padding: 8px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg); flex-shrink: 0; }
+        .pdf-title { font-size: 0.8em; font-weight: 500; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 12px; }
+        .pdf-links { display: flex; gap: 12px; align-items: center; }
+        .pdf-links a { font-size: 0.75em; color: var(--blue); text-decoration: none; }
+        .pdf-frame { flex: 1; border: none; background: #2d2d2d; }
+        .pdf-placeholder { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text2); gap: 12px; }
+        .pdf-placeholder-icon { font-size: 4em; opacity: 0.2; }
         
-        .paper-btn {
-            padding: 3px 7px;
-            font-size: 0.62em;
-            background: var(--bg3);
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            color: var(--text2);
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.15s;
-        }
-        
-        .paper-btn:hover {
-            background: var(--border);
-            color: var(--text);
-        }
-        
-        .paper-btn.primary {
-            background: var(--blue);
-            border-color: var(--blue);
-            color: white;
-        }
-        
-        .paper-btn.saved {
-            background: var(--green);
-            border-color: var(--green);
-            color: white;
-        }
-        
-        .footer-btn {
-            padding: 8px 12px;
-            border-top: 1px solid var(--border);
-            flex-shrink: 0;
-        }
-        
-        .footer-btn button {
-            width: 100%;
-            padding: 6px;
-            font-size: 0.72em;
-        }
-        
-        /* ============ PDF PANEL ============ */
-        #pdf-panel {
-            min-width: 36px;
-            background: var(--bg2);
-        }
-        
-        #pdf-panel:not(.collapsed) {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        #pdf-panel.hidden-no-paper:not(.has-paper) .panel-body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .pdf-placeholder {
-            text-align: center;
-            color: var(--text2);
-            padding: 40px;
-        }
-        
-        .pdf-placeholder-icon {
-            font-size: 3em;
-            margin-bottom: 16px;
-            opacity: 0.3;
-        }
-        
-        .pdf-placeholder p {
-            font-size: 0.85em;
-        }
-        
-        .pdf-header-bar {
-            padding: 6px 12px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--bg);
-            flex-shrink: 0;
-        }
-        
-        .pdf-title-text {
-            font-size: 0.75em;
-            font-weight: 500;
-            flex: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            margin-right: 10px;
-        }
-        
-        .pdf-links {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-        
-        .pdf-links a {
-            font-size: 0.68em;
-            color: var(--blue);
-            text-decoration: none;
-        }
-        
-        .pdf-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .close-pdf-btn {
-            background: var(--bg3);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 3px 8px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 0.7em;
-            transition: all 0.15s;
-        }
-        
-        .close-pdf-btn:hover {
-            background: var(--red);
-            border-color: var(--red);
-            color: white;
-        }
-        
-        .pdf-frame {
-            flex: 1;
-            border: none;
-            background: #333;
-        }
-        
-        /* ============ CHAT PANEL ============ */
-        #chat-panel {
-            min-width: 36px;
-        }
-        
-        #chat-panel:not(.collapsed) {
-            min-width: 280px;
-            width: 380px;
-            max-width: 600px;
-        }
-        
-        .ai-status {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--green);
-        }
-        
-        .chat-context {
-            padding: 6px 12px;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            font-size: 0.72em;
-            color: var(--text2);
-            flex-shrink: 0;
-        }
-        
-        .chat-context strong {
-            color: var(--purple);
-        }
-        
-        .chat-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 10px;
-        }
-        
-        .msg {
-            margin-bottom: 10px;
-            display: flex;
-            gap: 8px;
-        }
-        
-        .msg-avatar {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.6em;
-            flex-shrink: 0;
-        }
-        
+        .chat-context { padding: 8px 12px; background: var(--bg); border-bottom: 1px solid var(--border); font-size: 0.75em; color: var(--text2); flex-shrink: 0; }
+        .chat-context strong { color: var(--purple); }
+        .chat-messages { flex: 1; overflow-y: auto; padding: 12px; }
+        .msg { margin-bottom: 12px; display: flex; gap: 10px; }
+        .msg-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; flex-shrink: 0; }
         .msg.user .msg-avatar { background: var(--blue); }
         .msg.ai .msg-avatar { background: var(--purple); }
-        
-        .msg-content {
-            padding: 7px 10px;
-            border-radius: 8px;
-            font-size: 0.78em;
-            line-height: 1.5;
-            max-width: 90%;
-        }
-        
-        .msg.user .msg-content {
-            background: var(--blue);
-            margin-left: auto;
-        }
-        
-        .msg.ai .msg-content {
-            background: var(--bg3);
-        }
-        
-        .typing span {
-            width: 5px;
-            height: 5px;
-            background: var(--text2);
-            border-radius: 50%;
-            display: inline-block;
-            animation: bounce 1.4s infinite;
-            margin-right: 3px;
-        }
-        
+        .msg-content { padding: 10px 14px; border-radius: 12px; font-size: 0.85em; line-height: 1.6; max-width: 85%; }
+        .msg.user .msg-content { background: var(--blue); margin-left: auto; }
+        .msg.ai .msg-content { background: var(--bg3); }
+        .typing span { width: 6px; height: 6px; background: var(--text2); border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite; margin-right: 4px; }
         .typing span:nth-child(2) { animation-delay: 0.2s; }
         .typing span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+        .chat-input-area { padding: 12px; border-top: 1px solid var(--border); background: var(--bg); flex-shrink: 0; }
+        .quick-btns { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+        .quick-btn { padding: 5px 10px; background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; font-size: 0.72em; cursor: pointer; color: var(--text2); }
+        .quick-btn:hover { border-color: var(--purple); color: var(--text); }
+        .chat-input-row { display: flex; gap: 8px; }
+        .chat-input { flex: 1; padding: 10px 14px; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.85em; resize: none; }
+        .chat-input:focus { outline: none; border-color: var(--purple); }
+        .chat-send { padding: 10px 18px; background: var(--purple); border: none; border-radius: 8px; color: white; cursor: pointer; font-size: 0.8em; font-weight: 500; }
+        .chat-send:disabled { opacity: 0.5; }
         
-        @keyframes bounce {
-            0%,60%,100% { transform: translateY(0); }
-            30% { transform: translateY(-4px); }
-        }
+        .wb-toolbar { padding: 8px 12px; display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--border); background: var(--bg); flex-shrink: 0; }
+        .wb-tool { padding: 6px 10px; font-size: 0.75em; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; cursor: pointer; color: var(--text2); }
+        .wb-tool:hover { background: var(--border); }
+        .wb-tool.active { background: var(--yellow); color: black; border-color: var(--yellow); }
+        .color-btn { width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--border); cursor: pointer; }
+        .color-btn.active { border-color: white; }
+        .wb-canvas-container { flex: 1; position: relative; overflow: hidden; }
+        .whiteboard-canvas { width: 100%; height: 100%; background: #1a1a2e; cursor: crosshair; display: block; }
+        .whiteboard-textarea { width: 100%; height: 100%; background: var(--bg2); border: none; color: var(--text); font-family: Monaco, monospace; font-size: 0.85em; padding: 12px; resize: none; }
+        .whiteboard-textarea:focus { outline: none; }
         
-        /* Whiteboard */
-        .whiteboard-section {
-            border-top: 1px solid var(--border);
-            flex-shrink: 0;
-        }
+        .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1000; align-items: center; justify-content: center; }
+        .modal-bg.show { display: flex; }
+        .modal { background: var(--bg2); border-radius: 12px; padding: 24px; width: 90%; max-width: 450px; border: 1px solid var(--border); }
+        .modal h2 { font-size: 1.1em; margin-bottom: 20px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 0.8em; color: var(--text2); margin-bottom: 6px; }
+        .form-group input { width: 100%; padding: 10px 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.9em; }
+        .form-row { display: flex; gap: 12px; }
+        .form-row .form-group { flex: 1; }
+        .modal-btns { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+        .btn { padding: 10px 20px; border-radius: 6px; font-size: 0.85em; cursor: pointer; border: none; font-weight: 500; }
+        .btn-primary { background: var(--purple); color: white; }
+        .btn-secondary { background: var(--bg3); color: var(--text); }
         
-        .whiteboard-header {
-            padding: 7px 12px;
-            background: var(--bg2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-            transition: background 0.1s;
-        }
+        .empty { text-align: center; padding: 40px; color: var(--text2); font-size: 0.9em; }
+        .ai-status { width: 8px; height: 8px; border-radius: 50%; background: var(--green); display: inline-block; }
         
-        .whiteboard-header:hover {
-            background: var(--bg3);
-        }
-        
-        .whiteboard-header h3 {
-            font-size: 0.75em;
-        }
-        
-        .whiteboard-content {
-            display: none;
-            background: var(--bg);
-        }
-        
-        .whiteboard-content.show {
-            display: block;
-        }
-        
-        .whiteboard-tabs {
-            display: flex;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .wb-tab {
-            padding: 5px 10px;
-            font-size: 0.68em;
-            cursor: pointer;
-            color: var(--text2);
-            border-bottom: 2px solid transparent;
-            transition: all 0.15s;
-        }
-        
-        .wb-tab.active {
-            color: var(--yellow);
-            border-bottom-color: var(--yellow);
-        }
-        
-        .wb-panel {
-            display: none;
-        }
-        
-        .wb-panel.active {
-            display: block;
-        }
-        
-        .whiteboard-canvas {
-            width: 100%;
-            height: 160px;
-            background: #1a1a2e;
-            cursor: crosshair;
-            display: block;
-        }
-        
-        .whiteboard-textarea {
-            width: 100%;
-            height: 160px;
-            background: var(--bg2);
-            border: none;
-            color: var(--text);
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 0.72em;
-            padding: 8px;
-            resize: none;
-        }
-        
-        .whiteboard-textarea:focus {
-            outline: none;
-        }
-        
-        .wb-tools {
-            padding: 5px 8px;
-            display: flex;
-            gap: 5px;
-            border-bottom: 1px solid var(--border);
-            flex-wrap: wrap;
-        }
-        
-        .wb-tool {
-            padding: 3px 7px;
-            font-size: 0.62em;
-            background: var(--bg3);
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            cursor: pointer;
-            color: var(--text2);
-            transition: all 0.15s;
-        }
-        
-        .wb-tool:hover {
-            background: var(--border);
-        }
-        
-        .wb-tool.active {
-            background: var(--yellow);
-            color: black;
-            border-color: var(--yellow);
-        }
-        
-        .color-btn {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            border: 2px solid var(--border);
-            cursor: pointer;
-            transition: border-color 0.15s;
-        }
-        
-        .color-btn.active {
-            border-color: white;
-        }
-        
-        .chat-input-area {
-            padding: 8px 12px;
-            border-top: 1px solid var(--border);
-            flex-shrink: 0;
-        }
-        
-        .quick-btns {
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            margin-bottom: 6px;
-        }
-        
-        .quick-btn {
-            padding: 3px 7px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.62em;
-            cursor: pointer;
-            color: var(--text2);
-            transition: all 0.15s;
-        }
-        
-        .quick-btn:hover {
-            border-color: var(--purple);
-            color: var(--text);
-        }
-        
-        .chat-input-row {
-            display: flex;
-            gap: 6px;
-        }
-        
-        .chat-input {
-            flex: 1;
-            padding: 7px 9px;
-            background: var(--bg3);
-            border: 1px solid var(--border);
-            border-radius: 5px;
-            color: var(--text);
-            font-size: 0.78em;
-            resize: none;
-        }
-        
-        .chat-input:focus {
-            outline: none;
-            border-color: var(--purple);
-        }
-        
-        .chat-send {
-            padding: 7px 12px;
-            background: var(--purple);
-            border: none;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
-            font-size: 0.72em;
-            transition: opacity 0.15s;
-        }
-        
-        .chat-send:disabled {
-            opacity: 0.5;
-        }
-        
-        /* ============ UTILITIES ============ */
-        .empty {
-            text-align: center;
-            padding: 30px;
-            color: var(--text2);
-            font-size: 0.82em;
-        }
-        
-        /* ============ MODAL ============ */
-        .modal-bg {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.75);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-bg.show {
-            display: flex;
-        }
-        
-        .modal {
-            background: var(--bg2);
-            border-radius: 8px;
-            padding: 18px;
-            width: 90%;
-            max-width: 420px;
-            border: 1px solid var(--border);
-        }
-        
-        .modal h2 {
-            font-size: 0.95em;
-            margin-bottom: 14px;
-        }
-        
-        .form-group {
-            margin-bottom: 10px;
-        }
-        
-        .form-group label {
-            display: block;
-            font-size: 0.72em;
-            color: var(--text2);
-            margin-bottom: 3px;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 7px;
-            background: var(--bg3);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            color: var(--text);
-            font-size: 0.82em;
-        }
-        
-        .form-row {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .form-row .form-group {
-            flex: 1;
-        }
-        
-        .modal-btns {
-            display: flex;
-            gap: 8px;
-            justify-content: flex-end;
-            margin-top: 14px;
-        }
-        
-        .btn {
-            padding: 7px 14px;
-            border-radius: 4px;
-            font-size: 0.78em;
-            cursor: pointer;
-            border: none;
-            transition: opacity 0.15s;
-        }
-        
-        .btn-primary {
-            background: var(--purple);
-            color: white;
-        }
-        
-        .btn-secondary {
-            background: var(--bg3);
-            color: var(--text);
-        }
-        
-        /* Keyboard shortcut hints */
-        .kbd {
-            padding: 1px 4px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            font-size: 0.65em;
-            font-family: monospace;
-            color: var(--text2);
-        }
-        
-        /* Drag overlay */
-        .drag-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 999;
-            cursor: col-resize;
-        }
-        
-        .drag-overlay.active {
-            display: block;
-        }
-        
-        /* Tooltips */
-        [data-tooltip] {
-            position: relative;
-        }
-        
-        [data-tooltip]:hover::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 4px 8px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 0.65em;
-            white-space: nowrap;
-            z-index: 100;
-            margin-bottom: 4px;
-        }
+        /* Help tooltip */
+        .help-tip { position: fixed; bottom: 20px; right: 20px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: 0.75em; color: var(--text2); z-index: 50; max-width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .help-tip strong { color: var(--blue); }
+        .help-tip-close { position: absolute; top: 8px; right: 8px; background: none; border: none; color: var(--text2); cursor: pointer; }
     </style>
 </head>
 <body>
-
-<div class="app-container">
-    <!-- Top Toolbar -->
-    <div class="app-toolbar">
+<div class="app">
+    <div class="toolbar">
         <h1>🔬 AI Papers Daily</h1>
-        <div class="toolbar-actions">
-            <button class="toolbar-btn" onclick="resetLayout()" data-tooltip="Reset to default layout">
-                ↺ Reset
-            </button>
-            <div class="layout-menu">
-                <button class="toolbar-btn" onclick="toggleLayoutMenu()" id="layout-menu-btn">
-                    ⊞ Layout ▾
-                </button>
-                <div class="layout-dropdown" id="layout-dropdown">
-                    <div class="layout-dropdown-section">
-                        <div class="layout-dropdown-title">Visible Panels</div>
-                        <div class="layout-dropdown-item checked" onclick="togglePanelVisibility('papers-panel')">
-                            <span>📚 Papers List</span>
-                            <span class="check">✓</span>
-                        </div>
-                        <div class="layout-dropdown-item checked" onclick="togglePanelVisibility('pdf-panel')">
-                            <span>📄 PDF Viewer</span>
-                            <span class="check">✓</span>
-                        </div>
-                        <div class="layout-dropdown-item checked" onclick="togglePanelVisibility('chat-panel')">
-                            <span>💬 AI Chat</span>
-                            <span class="check">✓</span>
-                        </div>
-                    </div>
-                    <div class="layout-dropdown-section">
-                        <div class="layout-dropdown-title">Presets</div>
-                        <div class="preset-btn" onclick="applyPreset('default')">
-                            <div class="preset-icon">
-                                <span style="width:8px"></span>
-                                <span style="flex:1"></span>
-                                <span style="width:8px"></span>
-                            </div>
-                            <span>Default (3 panels)</span>
-                        </div>
-                        <div class="preset-btn" onclick="applyPreset('reading')">
-                            <div class="preset-icon">
-                                <span style="width:6px"></span>
-                                <span style="flex:1"></span>
-                            </div>
-                            <span>Reading Mode</span>
-                        </div>
-                        <div class="preset-btn" onclick="applyPreset('research')">
-                            <div class="preset-icon">
-                                <span style="width:10px"></span>
-                                <span style="width:10px"></span>
-                            </div>
-                            <span>Research Mode</span>
-                        </div>
-                        <div class="preset-btn" onclick="applyPreset('chat')">
-                            <div class="preset-icon">
-                                <span style="flex:1"></span>
-                                <span style="width:10px"></span>
-                            </div>
-                            <span>Chat Focus</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="toolbar-right">
+            <button class="tool-btn" onclick="resetLayout()">↺ Reset Layout</button>
+            <button class="tool-btn" onclick="toggleHelp()">? Help</button>
         </div>
     </div>
     
-    <!-- Main Workspace -->
-    <div class="workspace" id="workspace">
-        <!-- Papers Panel -->
-        <div class="panel" id="papers-panel">
-            <div class="panel-header">
-                <h2>📚 Papers</h2>
-                <div class="panel-controls">
-                    <button class="panel-control-btn" onclick="togglePanel('papers-panel')" data-tooltip="Collapse">
-                        ◀
-                    </button>
-                </div>
-            </div>
-            <div class="panel-body">
-                <div class="search-sort">
-                    <input type="text" class="search-box" id="search" placeholder="Search papers..." oninput="filterPapers()">
-                    <select class="sort-select" id="sort-select" onchange="filterPapers()">
-                        <option value="score-desc">⭐ Highest Rated</option>
-                        <option value="score-asc">⭐ Lowest Rated</option>
-                        <option value="date-desc">📅 Newest First</option>
-                        <option value="date-asc">📅 Oldest First</option>
-                    </select>
-                </div>
-                <div class="tabs" id="tabs"></div>
-                <div class="papers-list" id="papers-list">
-                    <div class="empty">Loading...</div>
-                </div>
-                <div class="footer-btn">
-                    <button class="paper-btn" onclick="openAddModal()">➕ Add Paper</button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="resizer" id="resizer-1" data-left="papers-panel" data-right="pdf-panel">
-            <div class="resizer-hint"></div>
-        </div>
-        
-        <!-- PDF Panel -->
-        <div class="panel" id="pdf-panel">
-            <div class="panel-header">
-                <h2>📄 PDF Viewer</h2>
-                <div class="panel-controls">
-                    <button class="panel-control-btn" onclick="togglePanel('pdf-panel')" data-tooltip="Collapse">
-                        ◀
-                    </button>
-                </div>
-            </div>
-            <div class="panel-body">
-                <div class="pdf-placeholder" id="pdf-placeholder">
-                    <div class="pdf-placeholder-icon">📄</div>
-                    <p>Select a paper and click "PDF" to view</p>
-                </div>
-                <div class="pdf-header-bar" id="pdf-header-bar" style="display:none">
-                    <div class="pdf-title-text" id="pdf-title-text"></div>
-                    <div class="pdf-links">
-                        <a href="#" id="pdf-newtab" target="_blank">New Tab ↗</a>
-                        <a href="#" id="pdf-page" target="_blank">Paper Page ↗</a>
-                        <button class="close-pdf-btn" onclick="closePDF()">✕</button>
-                    </div>
-                </div>
-                <iframe class="pdf-frame" id="pdf-frame" style="display:none"></iframe>
-            </div>
-        </div>
-        
-        <div class="resizer" id="resizer-2" data-left="pdf-panel" data-right="chat-panel">
-            <div class="resizer-hint"></div>
-        </div>
-        
-        <!-- Chat Panel -->
-        <div class="panel" id="chat-panel">
-            <div class="panel-header">
-                <h2><span class="ai-status"></span> Ask AI</h2>
-                <div class="panel-controls">
-                    <button class="panel-control-btn" onclick="togglePanel('chat-panel')" data-tooltip="Collapse">
-                        ▶
-                    </button>
-                </div>
-            </div>
-            <div class="panel-body">
-                <div class="chat-context" id="chat-context">Select a paper to start</div>
-                <div class="chat-body">
-                    <div class="chat-messages" id="chat-messages">
-                        <div class="msg ai">
-                            <div class="msg-avatar">🤖</div>
-                            <div class="msg-content">Hi! Click a paper and open its PDF. I'll help you understand it.</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Whiteboard -->
-                    <div class="whiteboard-section">
-                        <div class="whiteboard-header" onclick="toggleWhiteboard()">
-                            <h3>📝 Whiteboard</h3>
-                            <span id="wb-toggle">▲</span>
-                        </div>
-                        <div class="whiteboard-content" id="wb-content">
-                            <div class="whiteboard-tabs">
-                                <div class="wb-tab active" onclick="switchWbTab('draw')">🎨 Draw</div>
-                                <div class="wb-tab" onclick="switchWbTab('notes')">📝 Notes</div>
-                            </div>
-                            <div class="wb-panel active" id="wb-draw">
-                                <div class="wb-tools">
-                                    <button class="wb-tool active" onclick="setTool('pen')">✏️</button>
-                                    <button class="wb-tool" onclick="setTool('eraser')">🧹</button>
-                                    <button class="wb-tool" onclick="clearCanvas()">🗑️</button>
-                                    <span style="border-left:1px solid var(--border);margin:0 3px"></span>
-                                    <button class="color-btn active" style="background:#fff" onclick="setColor('#fff')"></button>
-                                    <button class="color-btn" style="background:#58a6ff" onclick="setColor('#58a6ff')"></button>
-                                    <button class="color-btn" style="background:#f0883e" onclick="setColor('#f0883e')"></button>
-                                    <button class="color-btn" style="background:#238636" onclick="setColor('#238636')"></button>
-                                    <button class="color-btn" style="background:#da3633" onclick="setColor('#da3633')"></button>
-                                </div>
-                                <canvas class="whiteboard-canvas" id="canvas"></canvas>
-                            </div>
-                            <div class="wb-panel" id="wb-notes">
-                                <textarea class="whiteboard-textarea" id="notes" placeholder="Your notes, equations, code..."></textarea>
-                            </div>
-                            <div class="wb-tools">
-                                <button class="wb-tool" onclick="askAboutWhiteboard()">🤖 Ask AI about this</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="chat-input-area">
-                    <div class="quick-btns">
-                        <span class="quick-btn" onclick="askAI('Summarize this paper')">Summarize</span>
-                        <span class="quick-btn" onclick="askAI('Key contribution?')">Key point</span>
-                        <span class="quick-btn" onclick="askAI('Explain the method')">Method</span>
-                        <span class="quick-btn" onclick="askAI('Results?')">Results</span>
-                    </div>
-                    <div class="chat-input-row">
-                        <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about this paper..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
-                        <button class="chat-send" id="send-btn" onclick="sendMessage()">Send</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="workspace" id="workspace"></div>
 </div>
 
-<!-- Drag overlay for smooth resizing -->
-<div class="drag-overlay" id="drag-overlay"></div>
+<div class="help-tip" id="help-tip" style="display:none;">
+    <button class="help-tip-close" onclick="toggleHelp()">✕</button>
+    <strong>Drag & Drop Panels</strong><br><br>
+    • Drag any tab to rearrange<br>
+    • Drop on edges to split<br>
+    • Drop on tab bar to merge<br>
+    • Drag borders to resize
+</div>
 
-<!-- Add Paper Modal -->
 <div class="modal-bg" id="add-modal" onclick="if(event.target===this)closeAddModal()">
     <div class="modal">
         <h2>➕ Add Paper</h2>
         <form onsubmit="saveCustomPaper(event)">
-            <div class="form-group">
-                <label>Title *</label>
-                <input type="text" id="add-title" required placeholder="Attention Is All You Need">
-            </div>
-            <div class="form-group">
-                <label>URL *</label>
-                <input type="url" id="add-url" required placeholder="https://arxiv.org/abs/...">
+            <div class="form-group"><label>Title *</label><input type="text" id="add-title" required placeholder="Attention Is All You Need"></div>
+            <div class="form-group"><label>URL *</label><input type="url" id="add-url" required placeholder="https://arxiv.org/abs/..."></div>
+            <div class="form-row">
+                <div class="form-group"><label>Authors</label><input type="text" id="add-authors" placeholder="Vaswani et al."></div>
+                <div class="form-group"><label>Date</label><input type="date" id="add-date"></div>
             </div>
             <div class="form-row">
-                <div class="form-group">
-                    <label>Authors</label>
-                    <input type="text" id="add-authors" placeholder="Vaswani et al.">
-                </div>
-                <div class="form-group">
-                    <label>Date</label>
-                    <input type="date" id="add-date">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Score (1-10)</label>
-                    <input type="number" id="add-score" min="1" max="10" placeholder="8">
-                </div>
-                <div class="form-group">
-                    <label>Tags</label>
-                    <input type="text" id="add-tags" placeholder="transformers, nlp">
-                </div>
+                <div class="form-group"><label>Score (1-10)</label><input type="number" id="add-score" min="1" max="10" placeholder="8"></div>
+                <div class="form-group"><label>Tags</label><input type="text" id="add-tags" placeholder="transformers, nlp"></div>
             </div>
             <div class="modal-btns">
                 <button type="button" class="btn btn-secondary" onclick="closeAddModal()">Cancel</button>
-                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="submit" class="btn btn-primary">Add Paper</button>
             </div>
         </form>
     </div>
 </div>
 
 <script>
-// ============ STATE ============
-let allPapers = [];
-let customPapers = JSON.parse(localStorage.getItem('customPapers') || '[]');
-let savedPapers = JSON.parse(localStorage.getItem('savedPapers') || '[]');
-let currentTab = 'today';
-let selectedPaper = null;
-let chatHistory = [];
-let isTyping = false;
+// ============ PANEL DEFINITIONS ============
+const PANELS = {
+    papers: { id: 'papers', title: '📚 Papers', icon: '📚' },
+    pdf: { id: 'pdf', title: '📄 PDF Viewer', icon: '📄' },
+    chat: { id: 'chat', title: '💬 Ask AI', icon: '💬' },
+    whiteboard: { id: 'whiteboard', title: '🎨 Whiteboard', icon: '🎨' },
+    notes: { id: 'notes', title: '📝 Notes', icon: '📝' }
+};
 
-// Whiteboard state
-let canvas, ctx;
-let drawing = false;
-let tool = 'pen';
-let penColor = '#fff';
-let lastX = 0, lastY = 0;
+// ============ STATE ============
+let allPapers = [], customPapers = JSON.parse(localStorage.getItem('customPapers') || '[]'), savedPapers = JSON.parse(localStorage.getItem('savedPapers') || '[]');
+let currentTab = 'all', selectedPaper = null, chatHistory = [], isTyping = false;
+let canvas, ctx, drawing = false, tool = 'pen', penColor = '#fff', lastX = 0, lastY = 0;
 
 // Layout state
-let layoutState = {
-    panels: {
-        'papers-panel': { visible: true, collapsed: false, width: 360 },
-        'pdf-panel': { visible: true, collapsed: false, width: null }, // null = flex
-        'chat-panel': { visible: true, collapsed: false, width: 380 }
-    }
+let layoutState = null;
+let dragState = null;
+
+// ============ DEFAULT LAYOUT ============
+const DEFAULT_LAYOUT = {
+    type: 'horizontal',
+    children: [
+        { type: 'panel', tabs: ['papers'], activeTab: 'papers', size: 340 },
+        { type: 'vertical', size: null, children: [
+            { type: 'panel', tabs: ['pdf'], activeTab: 'pdf', size: null },
+            { type: 'panel', tabs: ['whiteboard', 'notes'], activeTab: 'whiteboard', size: 280 }
+        ]},
+        { type: 'panel', tabs: ['chat'], activeTab: 'chat', size: 380 }
+    ]
 };
 
 // ============ INIT ============
 document.addEventListener('DOMContentLoaded', () => {
-    loadLayoutState();
-    applyLayoutState();
-    initResizers();
-    initCanvas();
-    loadNotes();
+    loadLayout();
+    renderLayout();
     loadData();
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.layout-menu')) {
-            document.getElementById('layout-dropdown').classList.remove('show');
-        }
-    });
+    initDragDrop();
 });
 
-// ============ LAYOUT SYSTEM ============
-function loadLayoutState() {
-    const saved = localStorage.getItem('layoutState');
+// ============ LAYOUT MANAGEMENT ============
+function loadLayout() {
+    const saved = localStorage.getItem('dockLayout');
     if (saved) {
-        try {
-            layoutState = JSON.parse(saved);
-        } catch (e) {}
+        try { layoutState = JSON.parse(saved); } 
+        catch(e) { layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT)); }
+    } else {
+        layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT));
     }
 }
 
-function saveLayoutState() {
-    localStorage.setItem('layoutState', JSON.stringify(layoutState));
-}
-
-function applyLayoutState() {
-    Object.entries(layoutState.panels).forEach(([id, state]) => {
-        const panel = document.getElementById(id);
-        if (!panel) return;
-        
-        // Visibility
-        panel.classList.toggle('hidden', !state.visible);
-        
-        // Collapsed
-        panel.classList.toggle('collapsed', state.collapsed);
-        
-        // Width
-        if (state.width && !state.collapsed) {
-            panel.style.width = state.width + 'px';
-            panel.style.flex = '0 0 auto';
-        } else if (!state.collapsed && id === 'pdf-panel') {
-            panel.style.width = '';
-            panel.style.flex = '1';
-        }
-    });
-    
-    // Update dropdown checkmarks
-    updateDropdownState();
-    
-    // Update resizers visibility
-    updateResizersVisibility();
-}
-
-function updateDropdownState() {
-    document.querySelectorAll('.layout-dropdown-item').forEach(item => {
-        const panelName = item.querySelector('span').textContent;
-        let panelId = null;
-        
-        if (panelName.includes('Papers')) panelId = 'papers-panel';
-        else if (panelName.includes('PDF')) panelId = 'pdf-panel';
-        else if (panelName.includes('Chat')) panelId = 'chat-panel';
-        
-        if (panelId && layoutState.panels[panelId]) {
-            item.classList.toggle('checked', layoutState.panels[panelId].visible);
-        }
-    });
-}
-
-function updateResizersVisibility() {
-    const resizer1 = document.getElementById('resizer-1');
-    const resizer2 = document.getElementById('resizer-2');
-    
-    const papersVisible = layoutState.panels['papers-panel'].visible && !layoutState.panels['papers-panel'].collapsed;
-    const pdfVisible = layoutState.panels['pdf-panel'].visible && !layoutState.panels['pdf-panel'].collapsed;
-    const chatVisible = layoutState.panels['chat-panel'].visible && !layoutState.panels['chat-panel'].collapsed;
-    
-    resizer1.style.display = (papersVisible && pdfVisible) ? '' : 'none';
-    resizer2.style.display = (pdfVisible && chatVisible) ? '' : 'none';
-}
-
-function toggleLayoutMenu() {
-    document.getElementById('layout-dropdown').classList.toggle('show');
-}
-
-function togglePanelVisibility(panelId) {
-    layoutState.panels[panelId].visible = !layoutState.panels[panelId].visible;
-    saveLayoutState();
-    applyLayoutState();
-}
-
-function togglePanel(panelId) {
-    const panel = document.getElementById(panelId);
-    const state = layoutState.panels[panelId];
-    
-    state.collapsed = !state.collapsed;
-    
-    if (state.collapsed) {
-        // Save current width before collapsing
-        if (!state.width && panelId !== 'pdf-panel') {
-            state.width = panel.offsetWidth;
-        }
-    }
-    
-    saveLayoutState();
-    applyLayoutState();
-    
-    // Resize canvas if chat panel is toggled
-    if (panelId === 'chat-panel' && canvas) {
-        setTimeout(() => {
-            const rect = canvas.parentElement.getBoundingClientRect();
-            canvas.width = rect.width || 300;
-        }, 250);
-    }
-}
-
-function applyPreset(preset) {
-    switch (preset) {
-        case 'default':
-            layoutState.panels = {
-                'papers-panel': { visible: true, collapsed: false, width: 360 },
-                'pdf-panel': { visible: true, collapsed: false, width: null },
-                'chat-panel': { visible: true, collapsed: false, width: 380 }
-            };
-            break;
-        case 'reading':
-            layoutState.panels = {
-                'papers-panel': { visible: true, collapsed: true, width: 360 },
-                'pdf-panel': { visible: true, collapsed: false, width: null },
-                'chat-panel': { visible: false, collapsed: false, width: 380 }
-            };
-            break;
-        case 'research':
-            layoutState.panels = {
-                'papers-panel': { visible: true, collapsed: false, width: 400 },
-                'pdf-panel': { visible: false, collapsed: false, width: null },
-                'chat-panel': { visible: true, collapsed: false, width: 500 }
-            };
-            break;
-        case 'chat':
-            layoutState.panels = {
-                'papers-panel': { visible: false, collapsed: false, width: 360 },
-                'pdf-panel': { visible: true, collapsed: false, width: null },
-                'chat-panel': { visible: true, collapsed: false, width: 450 }
-            };
-            break;
-    }
-    
-    saveLayoutState();
-    applyLayoutState();
-    document.getElementById('layout-dropdown').classList.remove('show');
+function saveLayout() {
+    localStorage.setItem('dockLayout', JSON.stringify(layoutState));
 }
 
 function resetLayout() {
-    applyPreset('default');
+    layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT));
+    saveLayout();
+    renderLayout();
+}
+
+// ============ RENDER LAYOUT ============
+function renderLayout() {
+    const workspace = document.getElementById('workspace');
+    workspace.innerHTML = '';
+    workspace.appendChild(renderNode(layoutState));
+    
+    // Initialize panel contents
+    initPanelContents();
+    initResizers();
+}
+
+function renderNode(node, parent = null) {
+    if (node.type === 'horizontal' || node.type === 'vertical') {
+        const container = document.createElement('div');
+        container.className = `dock-area ${node.type}`;
+        container.dataset.nodeId = Math.random().toString(36).substr(2, 9);
+        
+        node.children.forEach((child, i) => {
+            if (i > 0) {
+                const resizer = document.createElement('div');
+                resizer.className = `resizer ${node.type === 'horizontal' ? 'horizontal' : 'vertical'}`;
+                resizer.dataset.index = i;
+                container.appendChild(resizer);
+            }
+            const childEl = renderNode(child, node);
+            if (child.size) {
+                if (node.type === 'horizontal') childEl.style.width = child.size + 'px';
+                else childEl.style.height = child.size + 'px';
+                childEl.style.flex = 'none';
+            } else {
+                childEl.style.flex = '1';
+            }
+            container.appendChild(childEl);
+        });
+        
+        return container;
+    } else if (node.type === 'panel') {
+        return renderPanelContainer(node);
+    }
+}
+
+function renderPanelContainer(node) {
+    const container = document.createElement('div');
+    container.className = 'panel-container';
+    container.dataset.nodeId = Math.random().toString(36).substr(2, 9);
+    
+    // Tab bar
+    const tabBar = document.createElement('div');
+    tabBar.className = 'tab-bar';
+    
+    node.tabs.forEach(tabId => {
+        const panel = PANELS[tabId];
+        if (!panel) return;
+        
+        const tab = document.createElement('div');
+        tab.className = `tab ${node.activeTab === tabId ? 'active' : ''}`;
+        tab.dataset.panelId = tabId;
+        tab.draggable = true;
+        tab.innerHTML = `<span>${panel.icon}</span> ${panel.title.replace(panel.icon + ' ', '')}`;
+        tab.onclick = () => activateTab(container, tabId);
+        tabBar.appendChild(tab);
+    });
+    
+    // Tab bar actions
+    const actions = document.createElement('div');
+    actions.className = 'tab-bar-actions';
+    actions.innerHTML = `<button class="tab-bar-btn" onclick="maximizePanel(this)" title="Maximize">⤢</button>`;
+    tabBar.appendChild(actions);
+    
+    container.appendChild(tabBar);
+    
+    // Panel contents
+    node.tabs.forEach(tabId => {
+        const content = document.createElement('div');
+        content.className = `panel-content ${node.activeTab === tabId ? 'active' : ''}`;
+        content.dataset.panelId = tabId;
+        content.innerHTML = getPanelContent(tabId);
+        container.appendChild(content);
+    });
+    
+    // Drop zones
+    ['center', 'top', 'bottom', 'left', 'right', 'tab-bar'].forEach(zone => {
+        const dropZone = document.createElement('div');
+        dropZone.className = `drop-zone ${zone}`;
+        dropZone.dataset.zone = zone;
+        container.appendChild(dropZone);
+    });
+    
+    return container;
+}
+
+function getPanelContent(panelId) {
+    switch(panelId) {
+        case 'papers': return `
+            <div class="search-area">
+                <input type="text" class="search-box" id="search" placeholder="Search papers..." oninput="filterPapers()">
+                <select class="filter-select" id="sort-select" onchange="filterPapers()">
+                    <option value="score-desc">⭐ Highest Rated</option>
+                    <option value="score-asc">⭐ Lowest Rated</option>
+                    <option value="date-desc">📅 Newest</option>
+                    <option value="date-asc">📅 Oldest</option>
+                </select>
+            </div>
+            <div class="tabs-row" id="tabs"></div>
+            <div class="papers-list" id="papers-list"><div class="empty">Loading...</div></div>
+            <button class="paper-btn add-paper-btn" onclick="openAddModal()">➕ Add Paper</button>`;
+        case 'pdf': return `
+            <div class="pdf-placeholder" id="pdf-placeholder"><div class="pdf-placeholder-icon">📄</div><p>Select a paper and click "PDF"</p></div>
+            <div class="pdf-toolbar" id="pdf-toolbar" style="display:none;">
+                <div class="pdf-title" id="pdf-title"></div>
+                <div class="pdf-links">
+                    <a href="#" id="pdf-newtab" target="_blank">New Tab ↗</a>
+                    <a href="#" id="pdf-page" target="_blank">Paper ↗</a>
+                    <button class="paper-btn" onclick="closePDF()">✕</button>
+                </div>
+            </div>
+            <iframe class="pdf-frame" id="pdf-frame" style="display:none;"></iframe>`;
+        case 'chat': return `
+            <div class="chat-context" id="chat-context">Select a paper to start</div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="msg ai"><div class="msg-avatar">🤖</div><div class="msg-content">Hi! Select a paper and open its PDF. I'll help you understand it.</div></div>
+            </div>
+            <div class="chat-input-area">
+                <div class="quick-btns">
+                    <span class="quick-btn" onclick="askAI('Summarize')">Summarize</span>
+                    <span class="quick-btn" onclick="askAI('Key point?')">Key point</span>
+                    <span class="quick-btn" onclick="askAI('Method?')">Method</span>
+                    <span class="quick-btn" onclick="askAI('Results?')">Results</span>
+                </div>
+                <div class="chat-input-row">
+                    <textarea class="chat-input" id="chat-input" rows="1" placeholder="Ask about this paper..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
+                    <button class="chat-send" id="send-btn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>`;
+        case 'whiteboard': return `
+            <div class="wb-toolbar">
+                <button class="wb-tool active" onclick="setTool('pen',this)">✏️ Pen</button>
+                <button class="wb-tool" onclick="setTool('eraser',this)">🧹 Eraser</button>
+                <button class="wb-tool" onclick="clearCanvas()">🗑️ Clear</button>
+                <span style="width:1px;background:var(--border);margin:0 4px"></span>
+                <button class="color-btn active" style="background:#fff" onclick="setColor('#fff',this)"></button>
+                <button class="color-btn" style="background:#58a6ff" onclick="setColor('#58a6ff',this)"></button>
+                <button class="color-btn" style="background:#f0883e" onclick="setColor('#f0883e',this)"></button>
+                <button class="color-btn" style="background:#238636" onclick="setColor('#238636',this)"></button>
+                <button class="color-btn" style="background:#da3633" onclick="setColor('#da3633',this)"></button>
+                <button class="wb-tool" style="margin-left:auto" onclick="askAboutCanvas()">🤖 Ask AI</button>
+            </div>
+            <div class="wb-canvas-container"><canvas class="whiteboard-canvas" id="canvas"></canvas></div>`;
+        case 'notes': return `<textarea class="whiteboard-textarea" id="notes" placeholder="Your notes, equations, ideas..." style="flex:1"></textarea>`;
+        default: return '<div class="empty">Unknown panel</div>';
+    }
+}
+
+function initPanelContents() {
+    // Papers
+    renderTabs();
+    filterPapers();
+    
+    // Canvas
+    initCanvas();
+    
+    // Notes
+    const notes = document.getElementById('notes');
+    if (notes) {
+        notes.value = localStorage.getItem('notes') || '';
+        notes.oninput = () => localStorage.setItem('notes', notes.value);
+    }
+}
+
+function activateTab(container, tabId) {
+    container.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.panelId === tabId));
+    container.querySelectorAll('.panel-content').forEach(c => c.classList.toggle('active', c.dataset.panelId === tabId));
+    
+    // Update layout state
+    updateLayoutState();
+    
+    if (tabId === 'whiteboard') setTimeout(resizeCanvas, 50);
+}
+
+function updateLayoutState() {
+    // Walk through DOM and update layoutState
+    function walkNode(node, el) {
+        if (node.type === 'panel') {
+            const activeTab = el.querySelector('.tab.active');
+            if (activeTab) node.activeTab = activeTab.dataset.panelId;
+        } else if (node.children) {
+            const children = el.querySelectorAll(':scope > .dock-area, :scope > .panel-container');
+            node.children.forEach((child, i) => {
+                if (children[i]) walkNode(child, children[i]);
+            });
+        }
+    }
+    walkNode(layoutState, document.getElementById('workspace').firstChild);
+    saveLayout();
+}
+
+// ============ DRAG & DROP ============
+function initDragDrop() {
+    document.addEventListener('dragstart', handleDragStart);
+    document.addEventListener('dragend', handleDragEnd);
+    document.addEventListener('dragover', handleDragOver);
+    document.addEventListener('drop', handleDrop);
+}
+
+function handleDragStart(e) {
+    if (!e.target.classList.contains('tab')) return;
+    
+    const tabId = e.target.dataset.panelId;
+    const container = e.target.closest('.panel-container');
+    
+    dragState = { tabId, sourceContainer: container };
+    e.target.classList.add('dragging');
+    
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', tabId);
+    
+    // Show drop zones
+    setTimeout(() => {
+        document.querySelectorAll('.panel-container').forEach(pc => {
+            pc.querySelectorAll('.drop-zone').forEach(dz => dz.classList.add('visible'));
+        });
+    }, 0);
+}
+
+function handleDragEnd(e) {
+    document.querySelectorAll('.tab.dragging').forEach(t => t.classList.remove('dragging'));
+    document.querySelectorAll('.drop-zone').forEach(dz => dz.classList.remove('visible'));
+    dragState = null;
+}
+
+function handleDragOver(e) {
+    if (!dragState) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+}
+
+function handleDrop(e) {
+    if (!dragState) return;
+    e.preventDefault();
+    
+    const dropZone = e.target.closest('.drop-zone');
+    const targetContainer = e.target.closest('.panel-container');
+    
+    if (!targetContainer) return;
+    
+    const zone = dropZone?.dataset.zone || 'tab-bar';
+    const { tabId, sourceContainer } = dragState;
+    
+    if (zone === 'tab-bar' || zone === 'center') {
+        // Merge into existing panel
+        mergeTabIntoPanel(tabId, sourceContainer, targetContainer);
+    } else {
+        // Split and create new panel
+        splitPanel(tabId, sourceContainer, targetContainer, zone);
+    }
+    
+    cleanupEmptyPanels();
+    saveLayout();
+    renderLayout();
+}
+
+function mergeTabIntoPanel(tabId, sourceContainer, targetContainer) {
+    // Find nodes in layout
+    function findPanelNode(node, container) {
+        if (node.type === 'panel') {
+            return node;
+        }
+        if (node.children) {
+            for (let child of node.children) {
+                const found = findPanelNode(child, container);
+                if (found) return found;
+            }
+        }
+        return null;
+    }
+    
+    // Remove from source
+    removeTabFromLayout(tabId);
+    
+    // Add to target (find target node)
+    function addToTarget(node) {
+        if (node.type === 'panel' && !node.tabs.includes(tabId)) {
+            // Check if this is our target by comparing tabs
+            const targetTabs = Array.from(targetContainer.querySelectorAll('.tab')).map(t => t.dataset.panelId);
+            if (node.tabs.some(t => targetTabs.includes(t))) {
+                node.tabs.push(tabId);
+                node.activeTab = tabId;
+                return true;
+            }
+        }
+        if (node.children) {
+            for (let child of node.children) {
+                if (addToTarget(child)) return true;
+            }
+        }
+        return false;
+    }
+    addToTarget(layoutState);
+}
+
+function splitPanel(tabId, sourceContainer, targetContainer, zone) {
+    removeTabFromLayout(tabId);
+    
+    const newPanel = { type: 'panel', tabs: [tabId], activeTab: tabId, size: zone === 'top' || zone === 'bottom' ? 250 : 300 };
+    
+    function findAndSplit(node, parent, index) {
+        if (node.type === 'panel') {
+            const targetTabs = Array.from(targetContainer.querySelectorAll('.tab')).map(t => t.dataset.panelId);
+            if (node.tabs.some(t => targetTabs.includes(t))) {
+                const direction = (zone === 'left' || zone === 'right') ? 'horizontal' : 'vertical';
+                const newNode = {
+                    type: direction,
+                    size: node.size,
+                    children: zone === 'left' || zone === 'top' 
+                        ? [newPanel, { ...node, size: null }]
+                        : [{ ...node, size: null }, newPanel]
+                };
+                if (parent) {
+                    parent.children[index] = newNode;
+                } else {
+                    Object.assign(layoutState, newNode);
+                }
+                return true;
+            }
+        }
+        if (node.children) {
+            for (let i = 0; i < node.children.length; i++) {
+                if (findAndSplit(node.children[i], node, i)) return true;
+            }
+        }
+        return false;
+    }
+    findAndSplit(layoutState, null, 0);
+}
+
+function removeTabFromLayout(tabId) {
+    function remove(node) {
+        if (node.type === 'panel') {
+            const idx = node.tabs.indexOf(tabId);
+            if (idx > -1) {
+                node.tabs.splice(idx, 1);
+                if (node.activeTab === tabId) {
+                    node.activeTab = node.tabs[0] || null;
+                }
+            }
+        }
+        if (node.children) {
+            node.children.forEach(remove);
+        }
+    }
+    remove(layoutState);
+}
+
+function cleanupEmptyPanels() {
+    function cleanup(node, parent, index) {
+        if (node.children) {
+            // Recursively clean children first
+            for (let i = node.children.length - 1; i >= 0; i--) {
+                cleanup(node.children[i], node, i);
+            }
+            // Remove empty children
+            node.children = node.children.filter(child => {
+                if (child.type === 'panel') return child.tabs.length > 0;
+                if (child.children) return child.children.length > 0;
+                return true;
+            });
+            // Collapse single-child containers
+            if (node.children.length === 1) {
+                const child = node.children[0];
+                if (parent) {
+                    parent.children[index] = { ...child, size: node.size };
+                } else {
+                    Object.assign(layoutState, child);
+                }
+            }
+        }
+    }
+    cleanup(layoutState, null, 0);
 }
 
 // ============ RESIZERS ============
 function initResizers() {
-    const resizers = document.querySelectorAll('.resizer');
-    const dragOverlay = document.getElementById('drag-overlay');
-    let activeResizer = null;
-    let startX = 0;
-    let startWidths = {};
+    let activeResizer = null, startPos = 0, startSizes = [], siblings = [], isVertical = false;
     
-    resizers.forEach(resizer => {
-        resizer.addEventListener('mousedown', (e) => {
+    document.querySelectorAll('.resizer').forEach(resizer => {
+        resizer.addEventListener('mousedown', e => {
             e.preventDefault();
             activeResizer = resizer;
-            startX = e.clientX;
+            isVertical = resizer.classList.contains('vertical');
+            startPos = isVertical ? e.clientY : e.clientX;
             
-            const leftId = resizer.dataset.left;
-            const rightId = resizer.dataset.right;
-            const leftPanel = document.getElementById(leftId);
-            const rightPanel = document.getElementById(rightId);
-            
-            startWidths = {
-                left: leftPanel.offsetWidth,
-                right: rightPanel.offsetWidth
-            };
+            const parent = resizer.parentElement;
+            siblings = Array.from(parent.children).filter(c => !c.classList.contains('resizer'));
+            const idx = parseInt(resizer.dataset.index);
+            startSizes = [
+                isVertical ? siblings[idx-1].offsetHeight : siblings[idx-1].offsetWidth,
+                isVertical ? siblings[idx].offsetHeight : siblings[idx].offsetWidth
+            ];
             
             resizer.classList.add('active');
-            dragOverlay.classList.add('active');
-            document.body.style.cursor = 'col-resize';
+            document.body.style.cursor = isVertical ? 'row-resize' : 'col-resize';
+            document.body.style.userSelect = 'none';
         });
     });
     
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', e => {
         if (!activeResizer) return;
+        const idx = parseInt(activeResizer.dataset.index);
+        const delta = (isVertical ? e.clientY : e.clientX) - startPos;
+        const newSize1 = Math.max(150, startSizes[0] + delta);
+        const newSize2 = Math.max(150, startSizes[1] - delta);
         
-        const delta = e.clientX - startX;
-        const leftId = activeResizer.dataset.left;
-        const rightId = activeResizer.dataset.right;
-        const leftPanel = document.getElementById(leftId);
-        const rightPanel = document.getElementById(rightId);
-        
-        const leftState = layoutState.panels[leftId];
-        const rightState = layoutState.panels[rightId];
-        
-        // Calculate new widths
-        let newLeftWidth = startWidths.left + delta;
-        let newRightWidth = startWidths.right - delta;
-        
-        // Get min/max from CSS
-        const leftStyle = getComputedStyle(leftPanel);
-        const rightStyle = getComputedStyle(rightPanel);
-        const leftMin = parseInt(leftStyle.minWidth) || 200;
-        const rightMin = parseInt(rightStyle.minWidth) || 200;
-        
-        // Clamp values
-        if (newLeftWidth < leftMin) {
-            newLeftWidth = leftMin;
-            newRightWidth = startWidths.left + startWidths.right - leftMin;
-        }
-        if (newRightWidth < rightMin) {
-            newRightWidth = rightMin;
-            newLeftWidth = startWidths.left + startWidths.right - rightMin;
-        }
-        
-        // Apply widths
-        if (leftId !== 'pdf-panel') {
-            leftPanel.style.width = newLeftWidth + 'px';
-            leftPanel.style.flex = '0 0 auto';
-            leftState.width = newLeftWidth;
-        }
-        
-        if (rightId !== 'pdf-panel') {
-            rightPanel.style.width = newRightWidth + 'px';
-            rightPanel.style.flex = '0 0 auto';
-            rightState.width = newRightWidth;
+        if (isVertical) {
+            siblings[idx-1].style.height = newSize1 + 'px';
+            siblings[idx-1].style.flex = 'none';
+            siblings[idx].style.height = newSize2 + 'px';
+            siblings[idx].style.flex = 'none';
+        } else {
+            siblings[idx-1].style.width = newSize1 + 'px';
+            siblings[idx-1].style.flex = 'none';
+            siblings[idx].style.width = newSize2 + 'px';
+            siblings[idx].style.flex = 'none';
         }
     });
     
@@ -1559,542 +711,174 @@ function initResizers() {
         if (activeResizer) {
             activeResizer.classList.remove('active');
             activeResizer = null;
-            dragOverlay.classList.remove('active');
             document.body.style.cursor = '';
-            saveLayoutState();
-            
-            // Resize canvas after layout change
-            if (canvas) {
-                const rect = canvas.parentElement.getBoundingClientRect();
-                canvas.width = rect.width || 300;
-            }
+            document.body.style.userSelect = '';
+            updateLayoutSizes();
+            resizeCanvas();
         }
     });
 }
 
-// ============ CANVAS WHITEBOARD ============
+function updateLayoutSizes() {
+    function walk(node, el) {
+        if (!el) return;
+        if (node.type === 'panel') {
+            const w = el.style.width, h = el.style.height;
+            if (w && w !== 'auto') node.size = parseInt(w);
+            else if (h && h !== 'auto') node.size = parseInt(h);
+            else if (el.style.flex === '1') node.size = null;
+        } else if (node.children) {
+            const childEls = Array.from(el.children).filter(c => !c.classList.contains('resizer'));
+            node.children.forEach((child, i) => walk(child, childEls[i]));
+        }
+    }
+    walk(layoutState, document.getElementById('workspace').firstChild);
+    saveLayout();
+}
+
+function maximizePanel(btn) {
+    const container = btn.closest('.panel-container');
+    container.classList.toggle('maximized');
+    if (container.classList.contains('maximized')) {
+        container.style.cssText = 'position:fixed;inset:50px 0 0 0;z-index:200;';
+    } else {
+        container.style.cssText = '';
+    }
+    setTimeout(resizeCanvas, 50);
+}
+
+// ============ CANVAS ============
 function initCanvas() {
     canvas = document.getElementById('canvas');
+    if (!canvas) return;
     ctx = canvas.getContext('2d');
-    
-    function resizeCanvas() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        canvas.width = rect.width || 300;
-        canvas.height = 160;
-        const saved = localStorage.getItem('canvasData');
-        if (saved) {
-            const img = new Image();
-            img.onload = () => ctx.drawImage(img, 0, 0);
-            img.src = saved;
-        }
-    }
     resizeCanvas();
     
-    canvas.addEventListener('mousedown', (e) => {
-        drawing = true;
+    canvas.addEventListener('mousedown', e => { drawing = true; [lastX, lastY] = [e.offsetX, e.offsetY]; });
+    canvas.addEventListener('mousemove', e => {
+        if (!drawing) return;
+        ctx.beginPath(); ctx.moveTo(lastX, lastY); ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.strokeStyle = tool === 'eraser' ? '#1a1a2e' : penColor;
+        ctx.lineWidth = tool === 'eraser' ? 20 : 2; ctx.lineCap = 'round'; ctx.stroke();
         [lastX, lastY] = [e.offsetX, e.offsetY];
     });
+    canvas.addEventListener('mouseup', () => { drawing = false; saveCanvasData(); });
+    canvas.addEventListener('mouseleave', () => { drawing = false; });
     
-    canvas.addEventListener('mousemove', (e) => {
-        if (!drawing) return;
-        ctx.beginPath();
-        ctx.moveTo(lastX, lastY);
-        ctx.lineTo(e.offsetX, e.offsetY);
-        ctx.strokeStyle = tool === 'eraser' ? '#1a1a2e' : penColor;
-        ctx.lineWidth = tool === 'eraser' ? 20 : 2;
-        ctx.lineCap = 'round';
-        ctx.stroke();
-        [lastX, lastY] = [e.offsetX, e.offsetY];
-    });
-    
-    canvas.addEventListener('mouseup', saveCanvas);
-    canvas.addEventListener('mouseleave', () => { drawing = false; saveCanvas(); });
-    
-    // Touch support
-    canvas.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        const touch = e.touches[0];
-        const rect = canvas.getBoundingClientRect();
-        drawing = true;
-        [lastX, lastY] = [touch.clientX - rect.left, touch.clientY - rect.top];
-    });
-    
-    canvas.addEventListener('touchmove', (e) => {
-        if (!drawing) return;
-        e.preventDefault();
-        const touch = e.touches[0];
-        const rect = canvas.getBoundingClientRect();
-        const x = touch.clientX - rect.left;
-        const y = touch.clientY - rect.top;
-        ctx.beginPath();
-        ctx.moveTo(lastX, lastY);
-        ctx.lineTo(x, y);
-        ctx.strokeStyle = tool === 'eraser' ? '#1a1a2e' : penColor;
-        ctx.lineWidth = tool === 'eraser' ? 20 : 2;
-        ctx.lineCap = 'round';
-        ctx.stroke();
-        [lastX, lastY] = [x, y];
-    });
-    
-    canvas.addEventListener('touchend', saveCanvas);
+    const saved = localStorage.getItem('canvasData');
+    if (saved) { const img = new Image(); img.onload = () => ctx.drawImage(img, 0, 0); img.src = saved; }
 }
 
-function saveCanvas() {
-    drawing = false;
-    localStorage.setItem('canvasData', canvas.toDataURL());
+function resizeCanvas() {
+    if (!canvas) return;
+    const container = canvas.parentElement;
+    if (!container) return;
+    const r = container.getBoundingClientRect();
+    const savedData = canvas.toDataURL();
+    canvas.width = r.width || 400;
+    canvas.height = r.height || 200;
+    const img = new Image();
+    img.onload = () => ctx.drawImage(img, 0, 0);
+    img.src = savedData;
 }
 
-function setTool(t) {
-    tool = t;
-    document.querySelectorAll('.wb-tool').forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
-}
+function saveCanvasData() { localStorage.setItem('canvasData', canvas.toDataURL()); }
+function setTool(t, btn) { tool = t; btn.closest('.wb-toolbar').querySelectorAll('.wb-tool').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+function setColor(c, btn) { penColor = c; tool = 'pen'; btn.closest('.wb-toolbar').querySelectorAll('.color-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+function clearCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); localStorage.removeItem('canvasData'); }
+function askAboutCanvas() { askAI('Help me understand what I drew on the whiteboard'); }
 
-function setColor(c) {
-    penColor = c;
-    tool = 'pen';
-    document.querySelectorAll('.color-btn').forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
-}
+// ============ DATA ============
+async function loadData() { try { const r = await fetch('papers.json'); if (r.ok) { const d = await r.json(); allPapers = d.papers || []; } } catch(e) { allPapers = getSamplePapers(); } renderTabs(); filterPapers(); }
+function getSamplePapers() { return [
+    { id: '2412.01', title: 'Scaling Open-Ended Reasoning to Predict the Future', authors: 'Nikhil Chandak, Shashwat Goel', pubDateISO: '2025-12-31', score: 9, tags: ['cs.AI'], abstract: 'Novel approach...', pdf_link: 'https://arxiv.org/pdf/2412.01.pdf', link: 'https://arxiv.org/abs/2412.01' },
+    { id: '2412.02', title: 'Can We Trust AI Explanations?', authors: 'Deep Mehta', pubDateISO: '2025-12-25', score: 9, tags: ['cs.AI'], abstract: 'Chain-of-thought...', pdf_link: 'https://arxiv.org/pdf/2412.02.pdf', link: 'https://arxiv.org/abs/2412.02' },
+    { id: '2412.03', title: 'DiffThinker: Multimodal Reasoning with Diffusion', authors: 'Zefeng He', pubDateISO: '2025-12-30', score: 8, tags: ['cs.CV'], abstract: 'DiffThinker...', pdf_link: 'https://arxiv.org/pdf/2412.03.pdf', link: 'https://arxiv.org/abs/2412.03' },
+    { id: '2412.04', title: 'Taming Hallucinations in Video MLLMs', authors: 'Zhe Huang', pubDateISO: '2025-12-30', score: 8, tags: ['cs.CV'], abstract: 'Video...', pdf_link: 'https://arxiv.org/pdf/2412.04.pdf', link: 'https://arxiv.org/abs/2412.04' },
+    { id: '2412.05', title: 'JavisGPT: Multi-modal LLM for Video', authors: 'Kai Liu', pubDateISO: '2025-12-28', score: 8, tags: ['cs.CV'], abstract: 'JavisGPT...', pdf_link: 'https://arxiv.org/pdf/2412.05.pdf', link: 'https://arxiv.org/abs/2412.05' },
+]; }
+function getToday() { return new Date().toISOString().split('T')[0]; }
 
-function clearCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    localStorage.removeItem('canvasData');
-}
-
-function toggleWhiteboard() {
-    const content = document.getElementById('wb-content');
-    const toggle = document.getElementById('wb-toggle');
-    content.classList.toggle('show');
-    toggle.textContent = content.classList.contains('show') ? '▼' : '▲';
-    
-    if (content.classList.contains('show')) {
-        setTimeout(() => {
-            const rect = canvas.parentElement.getBoundingClientRect();
-            canvas.width = rect.width || 300;
-        }, 50);
-    }
-}
-
-function switchWbTab(tab) {
-    document.querySelectorAll('.wb-tab').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.wb-panel').forEach(el => el.classList.remove('active'));
-    event.target.classList.add('active');
-    document.getElementById('wb-' + tab).classList.add('active');
-}
-
-function loadNotes() {
-    document.getElementById('notes').value = localStorage.getItem('notes') || '';
-    document.getElementById('notes').addEventListener('input', (e) => {
-        localStorage.setItem('notes', e.target.value);
-    });
-}
-
-function askAboutWhiteboard() {
-    const notes = document.getElementById('notes').value;
-    if (notes.trim()) {
-        askAI(`Help me understand this: ${notes}`);
-    } else {
-        askAI('I drew something on the whiteboard. Can you help me understand the concept?');
-    }
-}
-
-// ============ DATA LOADING ============
-async function loadData() {
-    try {
-        const response = await fetch('papers.json');
-        if (response.ok) {
-            const data = await response.json();
-            allPapers = data.papers || [];
-        }
-    } catch (e) {
-        console.log('No papers.json found, using sample data');
-        allPapers = getSamplePapers();
-    }
-    
-    renderTabs();
-    filterPapers();
-}
-
-function getSamplePapers() {
-    return [
-        {
-            id: '2412.sample1',
-            title: 'Scaling Open-Ended Reasoning to Predict the Future',
-            link: 'https://arxiv.org/abs/2412.sample1',
-            pdf_link: 'https://arxiv.org/pdf/2412.sample1.pdf',
-            authors: 'Nikhil Chandak, Shashwat Goel, Ameya Pra',
-            pubDateISO: '2025-12-31',
-            score: 9,
-            tags: ['cs.AI', 'cs.LG'],
-            abstract: 'We present a novel approach to scaling open-ended reasoning...'
-        },
-        {
-            id: '2412.sample2',
-            title: 'Can We Trust AI Explanations? Evidence of Systematic Underreporting in Chain-of-Thought Reasoning',
-            link: 'https://arxiv.org/abs/2412.sample2',
-            pdf_link: 'https://arxiv.org/pdf/2412.sample2.pdf',
-            authors: 'Deep Pankajbhai Mehta',
-            pubDateISO: '2025-12-25',
-            score: 9,
-            tags: ['cs.AI', 'cs.CL'],
-            abstract: 'Chain-of-thought reasoning has become a cornerstone...'
-        },
-        {
-            id: '2412.sample3',
-            title: 'DiffThinker: Towards Generative Multimodal Reasoning with Diffusion Models',
-            link: 'https://arxiv.org/abs/2412.sample3',
-            pdf_link: 'https://arxiv.org/pdf/2412.sample3.pdf',
-            authors: 'Zefeng He, Xiaoye Qu, Yafu Li, Tong Zhu',
-            pubDateISO: '2025-12-30',
-            score: 8,
-            tags: ['cs.CV', 'cs.AI'],
-            abstract: 'We introduce DiffThinker, a novel framework...'
-        },
-        {
-            id: '2412.sample4',
-            title: 'Taming Hallucinations: Boosting MLLMs Video Understanding via Counterfactual Video Generation',
-            link: 'https://arxiv.org/abs/2412.sample4',
-            pdf_link: 'https://arxiv.org/pdf/2412.sample4.pdf',
-            authors: 'Zhe Huang, Hao Wen, Aiming Hao, Bingze S',
-            pubDateISO: '2025-12-30',
-            score: 8,
-            tags: ['cs.CV', 'cs.AI'],
-            abstract: 'Multimodal large language models suffer from hallucinations...'
-        },
-        {
-            id: '2412.sample5',
-            title: 'JavisGPT: A Unified Multi-modal LLM for Sounding-Video Comprehension and Generation',
-            link: 'https://arxiv.org/abs/2412.sample5',
-            pdf_link: 'https://arxiv.org/pdf/2412.sample5.pdf',
-            authors: 'Kai Liu, Jungang Li, Yuchong Sun, Shengq',
-            pubDateISO: '2025-12-28',
-            score: 8,
-            tags: ['cs.CV', 'cs.AI', 'cs.SD'],
-            abstract: 'We present JavisGPT, a unified multimodal model...'
-        },
-        {
-            id: '2412.sample6',
-            title: 'End-to-End Test-Time Training for Long Context',
-            link: 'https://arxiv.org/abs/2412.sample6',
-            pdf_link: 'https://arxiv.org/pdf/2412.sample6.pdf',
-            authors: 'Arnuv Tandon, Karan Dalal, Xinhao Li, Da',
-            pubDateISO: '2025-12-29',
-            score: 8,
-            tags: ['cs.LG', 'cs.CL'],
-            abstract: 'Long context understanding remains a challenge...'
-        }
-    ];
-}
-
-function getToday() {
-    return new Date().toISOString().split('T')[0];
-}
-
-// ============ TABS & FILTERING ============
 function renderTabs() {
-    const today = getToday();
-    const allCount = [...allPapers, ...customPapers].length;
-    const todayCount = allPapers.filter(p => p.pubDateISO === today).length;
-    const topCount = [...allPapers, ...customPapers].filter(p => p.score >= 8).length;
-    const savedCount = savedPapers.length;
-    const mineCount = customPapers.length;
-    
-    document.getElementById('tabs').innerHTML = `
-        <div class="tab ${currentTab === 'today' ? 'active' : ''}" onclick="switchTab('today')">Today <span class="count">${todayCount}</span></div>
-        <div class="tab ${currentTab === 'all' ? 'active' : ''}" onclick="switchTab('all')">All <span class="count">${allCount}</span></div>
-        <div class="tab ${currentTab === 'top' ? 'active' : ''}" onclick="switchTab('top')">🔥 Top <span class="count">${topCount}</span></div>
-        <div class="tab ${currentTab === 'saved' ? 'active' : ''}" onclick="switchTab('saved')">💾 <span class="count">${savedCount}</span></div>
-        <div class="tab ${currentTab === 'mine' ? 'active' : ''}" onclick="switchTab('mine')">📁 <span class="count">${mineCount}</span></div>
-    `;
+    const tabs = document.getElementById('tabs'); if (!tabs) return;
+    const today = getToday(), all = [...allPapers, ...customPapers];
+    tabs.innerHTML = `
+        <div class="filter-tab ${currentTab==='today'?'active':''}" onclick="switchTab('today')">Today<span class="count">${allPapers.filter(p=>p.pubDateISO===today).length}</span></div>
+        <div class="filter-tab ${currentTab==='all'?'active':''}" onclick="switchTab('all')">All<span class="count">${all.length}</span></div>
+        <div class="filter-tab ${currentTab==='top'?'active':''}" onclick="switchTab('top')">🔥 Top<span class="count">${all.filter(p=>p.score>=8).length}</span></div>
+        <div class="filter-tab ${currentTab==='saved'?'active':''}" onclick="switchTab('saved')">💾<span class="count">${savedPapers.length}</span></div>
+        <div class="filter-tab ${currentTab==='mine'?'active':''}" onclick="switchTab('mine')">📁<span class="count">${customPapers.length}</span></div>`;
 }
 
-function switchTab(tab) {
-    currentTab = tab;
-    renderTabs();
-    filterPapers();
-}
+function switchTab(tab) { currentTab = tab; renderTabs(); filterPapers(); }
 
 function filterPapers() {
-    const search = document.getElementById('search').value.toLowerCase();
-    const sort = document.getElementById('sort-select').value;
-    const today = getToday();
-    
-    let papers = [];
-    
-    switch (currentTab) {
-        case 'today':
-            papers = allPapers.filter(p => p.pubDateISO === today);
-            break;
-        case 'all':
-            papers = [...allPapers, ...customPapers];
-            break;
-        case 'top':
-            papers = [...allPapers, ...customPapers].filter(p => p.score >= 8);
-            break;
-        case 'saved':
-            papers = [...allPapers, ...customPapers].filter(p => savedPapers.includes(p.id));
-            break;
-        case 'mine':
-            papers = customPapers;
-            break;
-    }
-    
-    // Search filter
-    if (search) {
-        papers = papers.filter(p =>
-            p.title.toLowerCase().includes(search) ||
-            (p.authors || '').toLowerCase().includes(search) ||
-            (p.tags || []).some(t => t.toLowerCase().includes(search))
-        );
-    }
-    
-    // Sort
+    const searchEl = document.getElementById('search'), sortEl = document.getElementById('sort-select'), listEl = document.getElementById('papers-list');
+    if (!listEl) return;
+    const search = (searchEl?.value || '').toLowerCase(), sort = sortEl?.value || 'score-desc', today = getToday();
+    let papers = currentTab === 'today' ? allPapers.filter(p => p.pubDateISO === today) : currentTab === 'all' ? [...allPapers, ...customPapers] : currentTab === 'top' ? [...allPapers, ...customPapers].filter(p => p.score >= 8) : currentTab === 'saved' ? [...allPapers, ...customPapers].filter(p => savedPapers.includes(p.id)) : customPapers;
+    if (search) papers = papers.filter(p => p.title.toLowerCase().includes(search) || (p.authors||'').toLowerCase().includes(search));
     const [field, dir] = sort.split('-');
-    papers.sort((a, b) => {
-        let va = field === 'score' ? (a.score || 0) : (a.pubDateISO || '');
-        let vb = field === 'score' ? (b.score || 0) : (b.pubDateISO || '');
-        return dir === 'desc' ? (vb > va ? 1 : -1) : (va > vb ? 1 : -1);
-    });
-    
+    papers.sort((a, b) => { let va = field === 'score' ? (a.score||0) : (a.pubDateISO||''), vb = field === 'score' ? (b.score||0) : (b.pubDateISO||''); return dir === 'desc' ? (vb > va ? 1 : -1) : (va > vb ? 1 : -1); });
     renderPapers(papers);
 }
 
 function renderPapers(papers) {
-    const container = document.getElementById('papers-list');
-    
-    if (!papers.length) {
-        container.innerHTML = '<div class="empty">No papers found</div>';
-        return;
-    }
-    
+    const container = document.getElementById('papers-list'); if (!container) return;
+    if (!papers.length) { container.innerHTML = '<div class="empty">No papers found</div>'; return; }
     container.innerHTML = papers.map(p => {
-        const scoreClass = p.score >= 8 ? 'high' : p.score >= 6 ? 'medium' : 'low';
-        const isSaved = savedPapers.includes(p.id);
-        const isSelected = selectedPaper?.id === p.id;
-        const isCustom = p.isCustom;
-        
-        return `
-            <div class="paper ${isSelected ? 'selected' : ''}" onclick="selectPaper('${p.id}')">
-                <div class="paper-title">${p.title}</div>
-                <div class="paper-meta">
-                    <span class="paper-date">📅 ${formatDate(p.pubDateISO)}</span>
-                    <span>${p.authors || 'Unknown'}</span>
-                    <span class="paper-score ${scoreClass}">${p.score}/10</span>
-                </div>
-                <div class="paper-actions">
-                    ${p.pdf_link ? `<button class="paper-btn primary" onclick="event.stopPropagation();openPDF('${p.id}')">📄 PDF</button>` : ''}
-                    <button class="paper-btn ${isSaved ? 'saved' : ''}" onclick="event.stopPropagation();toggleSave('${p.id}')">
-                        ${isSaved ? '✓ Saved' : 'Save'}
-                    </button>
-                    <a class="paper-btn" href="${p.link}" target="_blank" onclick="event.stopPropagation()">↗</a>
-                    ${isCustom ? `<button class="paper-btn" onclick="event.stopPropagation();deleteCustom('${p.id}')" style="color:var(--red)">🗑️</button>` : ''}
-                </div>
-            </div>
-        `;
+        const scoreClass = p.score >= 8 ? 'high' : p.score >= 6 ? 'medium' : 'low', isSaved = savedPapers.includes(p.id), isSelected = selectedPaper?.id === p.id;
+        return `<div class="paper ${isSelected?'selected':''}" onclick="selectPaper('${p.id}')">
+            <div class="paper-title">${p.title}</div>
+            <div class="paper-meta"><span class="paper-date">📅 ${formatDate(p.pubDateISO)}</span><span>${p.authors||'Unknown'}</span><span class="paper-score ${scoreClass}">${p.score}/10</span></div>
+            <div class="paper-actions">${p.pdf_link?`<button class="paper-btn primary" onclick="event.stopPropagation();openPDF('${p.id}')">📄 PDF</button>`:''}<button class="paper-btn ${isSaved?'saved':''}" onclick="event.stopPropagation();toggleSave('${p.id}')">${isSaved?'✓ Saved':'Save'}</button><a class="paper-btn" href="${p.link}" target="_blank" onclick="event.stopPropagation()">↗</a></div>
+        </div>`;
     }).join('');
 }
 
-function formatDate(dateStr) {
-    if (!dateStr) return 'Unknown';
-    const d = new Date(dateStr);
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-}
-
-// ============ PAPER ACTIONS ============
-function selectPaper(id) {
-    const allP = [...allPapers, ...customPapers];
-    selectedPaper = allP.find(p => p.id === id);
-    
-    if (selectedPaper) {
-        document.getElementById('chat-context').innerHTML = `Discussing: <strong>${selectedPaper.title}</strong>`;
-    }
-    
-    filterPapers();
-}
+function formatDate(d) { if (!d) return '?'; const dt = new Date(d); return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); }
+function selectPaper(id) { selectedPaper = [...allPapers, ...customPapers].find(p => p.id === id); const ctx = document.getElementById('chat-context'); if (ctx && selectedPaper) ctx.innerHTML = 'Discussing: <strong>' + selectedPaper.title + '</strong>'; filterPapers(); }
 
 function openPDF(id) {
-    const allP = [...allPapers, ...customPapers];
-    selectedPaper = allP.find(p => p.id === id);
-    if (!selectedPaper?.pdf_link) return;
-    
-    // Show PDF elements
-    document.getElementById('pdf-placeholder').style.display = 'none';
-    document.getElementById('pdf-header-bar').style.display = 'flex';
-    document.getElementById('pdf-frame').style.display = 'block';
-    
-    // Update PDF panel state
-    document.getElementById('pdf-panel').classList.add('has-paper');
-    
-    // Set PDF content
-    const pdfUrl = selectedPaper.pdf_link;
-    document.getElementById('pdf-title-text').textContent = selectedPaper.title;
-    document.getElementById('pdf-newtab').href = pdfUrl;
-    document.getElementById('pdf-page').href = selectedPaper.link;
-    document.getElementById('pdf-frame').src = pdfUrl;
-    
-    // Update chat context
-    document.getElementById('chat-context').innerHTML = `Discussing: <strong>${selectedPaper.title}</strong>`;
-    
-    addMessage('ai', `Opened "<strong>${selectedPaper.title}</strong>". What would you like to know?`);
-    
-    filterPapers();
+    selectedPaper = [...allPapers, ...customPapers].find(p => p.id === id); if (!selectedPaper?.pdf_link) return;
+    const ph = document.getElementById('pdf-placeholder'), tb = document.getElementById('pdf-toolbar'), fr = document.getElementById('pdf-frame');
+    if (ph) ph.style.display = 'none'; if (tb) tb.style.display = 'flex'; if (fr) { fr.style.display = 'block'; fr.src = selectedPaper.pdf_link; }
+    const title = document.getElementById('pdf-title'), newtab = document.getElementById('pdf-newtab'), page = document.getElementById('pdf-page');
+    if (title) title.textContent = selectedPaper.title; if (newtab) newtab.href = selectedPaper.pdf_link; if (page) page.href = selectedPaper.link;
+    const ctx = document.getElementById('chat-context'); if (ctx) ctx.innerHTML = 'Discussing: <strong>' + selectedPaper.title + '</strong>';
+    addMessage('ai', 'Opened "<strong>' + selectedPaper.title + '</strong>". What would you like to know?'); filterPapers();
 }
 
-function closePDF() {
-    document.getElementById('pdf-placeholder').style.display = '';
-    document.getElementById('pdf-header-bar').style.display = 'none';
-    document.getElementById('pdf-frame').style.display = 'none';
-    document.getElementById('pdf-frame').src = '';
-    document.getElementById('pdf-panel').classList.remove('has-paper');
-}
+function closePDF() { const ph = document.getElementById('pdf-placeholder'), tb = document.getElementById('pdf-toolbar'), fr = document.getElementById('pdf-frame'); if (ph) ph.style.display = ''; if (tb) tb.style.display = 'none'; if (fr) { fr.style.display = 'none'; fr.src = ''; } }
+function toggleSave(id) { if (savedPapers.includes(id)) savedPapers = savedPapers.filter(x => x !== id); else savedPapers.push(id); localStorage.setItem('savedPapers', JSON.stringify(savedPapers)); renderTabs(); filterPapers(); }
 
-function toggleSave(id) {
-    if (savedPapers.includes(id)) {
-        savedPapers = savedPapers.filter(x => x !== id);
-    } else {
-        savedPapers.push(id);
-    }
-    localStorage.setItem('savedPapers', JSON.stringify(savedPapers));
-    renderTabs();
-    filterPapers();
-}
-
-function deleteCustom(id) {
-    if (!confirm('Delete this paper?')) return;
-    customPapers = customPapers.filter(p => p.id !== id);
-    localStorage.setItem('customPapers', JSON.stringify(customPapers));
-    renderTabs();
-    filterPapers();
-}
-
-// ============ ADD PAPER MODAL ============
-function openAddModal() {
-    document.getElementById('add-modal').classList.add('show');
-}
-
-function closeAddModal() {
-    document.getElementById('add-modal').classList.remove('show');
-}
-
+function openAddModal() { document.getElementById('add-modal').classList.add('show'); }
+function closeAddModal() { document.getElementById('add-modal').classList.remove('show'); }
 function saveCustomPaper(e) {
-    e.preventDefault();
-    const url = document.getElementById('add-url').value;
-    
-    customPapers.unshift({
-        id: 'custom-' + Date.now(),
-        title: document.getElementById('add-title').value,
-        link: url,
-        pdf_link: url.includes('arxiv.org/abs/') ? url.replace('/abs/', '/pdf/') + '.pdf' : null,
-        authors: document.getElementById('add-authors').value || 'Unknown',
-        pubDateISO: document.getElementById('add-date').value || getToday(),
-        score: parseInt(document.getElementById('add-score').value) || 7,
-        tags: document.getElementById('add-tags').value.split(',').map(t => t.trim()).filter(Boolean),
-        isCustom: true
-    });
-    
-    localStorage.setItem('customPapers', JSON.stringify(customPapers));
-    closeAddModal();
-    document.querySelector('#add-modal form').reset();
-    switchTab('mine');
+    e.preventDefault(); const url = document.getElementById('add-url').value;
+    customPapers.unshift({ id: 'custom-' + Date.now(), title: document.getElementById('add-title').value, link: url, pdf_link: url.includes('arxiv.org/abs/') ? url.replace('/abs/', '/pdf/') + '.pdf' : null, authors: document.getElementById('add-authors').value || 'Unknown', pubDateISO: document.getElementById('add-date').value || getToday(), score: parseInt(document.getElementById('add-score').value) || 7, tags: [], isCustom: true });
+    localStorage.setItem('customPapers', JSON.stringify(customPapers)); closeAddModal(); document.querySelector('#add-modal form').reset(); switchTab('mine');
 }
 
-// ============ AI CHAT ============
-function askAI(text) {
-    document.getElementById('chat-input').value = text;
-    sendMessage();
-}
-
+function askAI(text) { const input = document.getElementById('chat-input'); if (input) { input.value = text; sendMessage(); } }
 async function sendMessage() {
-    const input = document.getElementById('chat-input');
-    const msg = input.value.trim();
-    if (!msg || isTyping) return;
-    
-    if (!selectedPaper) {
-        addMessage('ai', 'Please select a paper first by clicking on it.');
-        return;
-    }
-    
-    addMessage('user', msg);
-    input.value = '';
-    chatHistory.push({ role: 'user', content: msg });
-    
-    isTyping = true;
-    document.getElementById('send-btn').disabled = true;
-    const typingEl = showTyping();
-    
+    const input = document.getElementById('chat-input'), msg = input?.value.trim(); if (!msg || isTyping) return;
+    if (!selectedPaper) { addMessage('ai', 'Please select a paper first.'); return; }
+    addMessage('user', msg); if (input) input.value = ''; chatHistory.push({ role: 'user', content: msg });
+    isTyping = true; const sendBtn = document.getElementById('send-btn'); if (sendBtn) sendBtn.disabled = true; const typingEl = showTyping();
     try {
-        const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                message: msg,
-                paper: {
-                    title: selectedPaper.title,
-                    authors: selectedPaper.authors,
-                    abstract: selectedPaper.abstract,
-                    tags: selectedPaper.tags
-                },
-                history: chatHistory.slice(-8)
-            })
-        });
-        
-        if (response.ok) {
-            const data = await response.json();
-            typingEl.remove();
-            addMessage('ai', data.response);
-            chatHistory.push({ role: 'assistant', content: data.response });
-        } else {
-            throw new Error('API error');
-        }
-    } catch (e) {
-        typingEl.remove();
-        const fallback = getFallback(msg);
-        addMessage('ai', fallback);
-        chatHistory.push({ role: 'assistant', content: fallback });
-    }
-    
-    isTyping = false;
-    document.getElementById('send-btn').disabled = false;
+        const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: msg, paper: { title: selectedPaper.title, authors: selectedPaper.authors, abstract: selectedPaper.abstract, tags: selectedPaper.tags }, history: chatHistory.slice(-8) }) });
+        if (r.ok) { const d = await r.json(); typingEl.remove(); addMessage('ai', d.response); chatHistory.push({ role: 'assistant', content: d.response }); } else throw new Error();
+    } catch(e) { typingEl.remove(); const fb = getFallback(msg); addMessage('ai', fb); chatHistory.push({ role: 'assistant', content: fb }); }
+    isTyping = false; if (sendBtn) sendBtn.disabled = false;
 }
+function getFallback(msg) { const p = selectedPaper, m = msg.toLowerCase(); if (m.includes('summar')) return '<strong>'+p.title+'</strong><br><br>'+(p.abstract?.slice(0,400)||'Open PDF.')+'<br><br>Score: '+p.score+'/10'; return 'Offline mode. "'+p.title+'": '+(p.abstract?.slice(0,200)||'Open PDF.')+'...'; }
+function addMessage(role, content) { const c = document.getElementById('chat-messages'); if (!c) return; c.innerHTML += '<div class="msg '+role+'"><div class="msg-avatar">'+(role==='ai'?'🤖':'👤')+'</div><div class="msg-content">'+content+'</div></div>'; c.scrollTop = c.scrollHeight; }
+function showTyping() { const c = document.getElementById('chat-messages'); if (!c) return document.createElement('div'); const el = document.createElement('div'); el.className = 'msg ai'; el.innerHTML = '<div class="msg-avatar">🤖</div><div class="msg-content typing"><span></span><span></span><span></span></div>'; c.appendChild(el); c.scrollTop = c.scrollHeight; return el; }
 
-function getFallback(msg) {
-    const p = selectedPaper;
-    const m = msg.toLowerCase();
-    
-    if (m.includes('summar')) {
-        return `<strong>${p.title}</strong><br><br>${p.abstract?.slice(0, 400) || p.key_contribution || 'Open the PDF to read the full paper.'}<br><br>Score: ${p.score}/10`;
-    }
-    if (m.includes('key') || m.includes('contribution')) {
-        return p.key_contribution || `This paper focuses on ${p.tags?.join(', ') || 'AI research'}. Check the abstract in the PDF.`;
-    }
-    if (m.includes('method')) {
-        return `The methodology is typically in Sections 3-4 of the PDF. Based on tags: ${p.tags?.join(', ') || 'not specified'}.`;
-    }
-    
-    return `I'm in offline mode (no backend). For live AI, deploy the API endpoint.<br><br>Meanwhile, here's what I know about "<strong>${p.title}</strong>":<br>${p.abstract?.slice(0, 200) || 'Open the PDF for details.'}...`;
-}
+function toggleHelp() { const h = document.getElementById('help-tip'); h.style.display = h.style.display === 'none' ? 'block' : 'none'; }
 
-function addMessage(role, content) {
-    const container = document.getElementById('chat-messages');
-    container.innerHTML += `
-        <div class="msg ${role}">
-            <div class="msg-avatar">${role === 'ai' ? '🤖' : '👤'}</div>
-            <div class="msg-content">${content}</div>
-        </div>
-    `;
-    container.scrollTop = container.scrollHeight;
-}
-
-function showTyping() {
-    const container = document.getElementById('chat-messages');
-    const el = document.createElement('div');
-    el.className = 'msg ai';
-    el.innerHTML = `<div class="msg-avatar">🤖</div><div class="msg-content typing"><span></span><span></span><span></span></div>`;
-    container.appendChild(el);
-    container.scrollTop = container.scrollHeight;
-    return el;
-}
+window.addEventListener('resize', () => setTimeout(resizeCanvas, 100));
 </script>
 </body>
 </html>
