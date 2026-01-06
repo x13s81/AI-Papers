@@ -31,7 +31,7 @@
         .tool-btn { padding: 6px 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; color: var(--text2); font-size: 0.75em; cursor: pointer; }
         .tool-btn:hover { background: var(--border); color: var(--text); }
         
-        /* Workspace - the dock container */
+        /* Workspace */
         .workspace { flex: 1; display: flex; overflow: hidden; position: relative; }
         
         /* Dock areas */
@@ -45,7 +45,7 @@
         .resizer.horizontal { width: 4px; cursor: col-resize; }
         .resizer.vertical { height: 4px; cursor: row-resize; }
         
-        /* Panel container - holds tabs + content */
+        /* Panel container */
         .panel-container { display: flex; flex-direction: column; overflow: hidden; background: var(--bg); min-width: 200px; min-height: 150px; position: relative; }
         
         /* Tab bar */
@@ -56,10 +56,8 @@
         .tab:hover { background: var(--bg3); color: var(--text); }
         .tab.active { background: var(--bg); color: var(--text); border-bottom: 2px solid var(--blue); margin-bottom: -1px; }
         .tab.dragging { opacity: 0.5; }
-        .tab .close-tab { margin-left: 6px; opacity: 0.5; font-size: 0.8em; }
-        .tab .close-tab:hover { opacity: 1; color: var(--red); }
         
-        .tab-bar-actions { margin-left: auto; display: flex; padding: 0 8px; gap: 4px; }
+        .tab-bar-actions { margin-left: auto; display: flex; padding: 0 8px; gap: 4px; flex-shrink: 0; }
         .tab-bar-btn { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 4px; color: var(--text2); cursor: pointer; font-size: 0.8em; }
         .tab-bar-btn:hover { background: var(--bg3); color: var(--text); }
         
@@ -67,18 +65,11 @@
         .panel-content { flex: 1; overflow: hidden; display: none; flex-direction: column; }
         .panel-content.active { display: flex; }
         
-        /* Drop zones */
-        .drop-zone { position: absolute; background: rgba(88, 166, 255, 0.15); border: 2px dashed var(--blue); z-index: 100; display: none; pointer-events: none; }
-        .drop-zone.visible { display: block; }
-        .drop-zone.center { inset: 20%; }
-        .drop-zone.top { top: 0; left: 0; right: 0; height: 40%; }
-        .drop-zone.bottom { bottom: 0; left: 0; right: 0; height: 40%; }
-        .drop-zone.left { top: 0; bottom: 0; left: 0; width: 40%; }
-        .drop-zone.right { top: 0; bottom: 0; right: 0; width: 40%; }
-        .drop-zone.tab-bar { top: 0; left: 0; right: 0; height: 36px; background: rgba(88, 166, 255, 0.3); }
+        /* Drop indicator - only show on hovered panel */
+        .drop-indicator { position: absolute; background: rgba(88, 166, 255, 0.2); border: 2px dashed var(--blue); z-index: 100; display: none; pointer-events: none; border-radius: 4px; }
         
-        /* Floating drag preview */
-        .drag-preview { position: fixed; background: var(--bg2); border: 1px solid var(--blue); border-radius: 6px; padding: 8px 14px; font-size: 0.8em; pointer-events: none; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        /* Drag preview */
+        .drag-preview { position: fixed; background: var(--bg2); border: 2px solid var(--blue); border-radius: 6px; padding: 8px 14px; font-size: 0.8em; pointer-events: none; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.5); display: none; }
         
         /* Content styles */
         .search-area { padding: 10px 12px; border-bottom: 1px solid var(--border); }
@@ -116,8 +107,14 @@
         .pdf-links { display: flex; gap: 12px; align-items: center; }
         .pdf-links a { font-size: 0.75em; color: var(--blue); text-decoration: none; }
         .pdf-frame { flex: 1; border: none; background: #2d2d2d; }
-        .pdf-placeholder { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text2); gap: 12px; }
-        .pdf-placeholder-icon { font-size: 4em; opacity: 0.2; }
+        .pdf-placeholder { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text2); gap: 16px; padding: 40px; }
+        .pdf-placeholder-icon { font-size: 4em; opacity: 0.3; }
+        .pdf-placeholder p { font-size: 0.9em; text-align: center; }
+        .upload-zone { border: 2px dashed var(--border); border-radius: 12px; padding: 30px 40px; text-align: center; cursor: pointer; transition: all 0.2s; margin-top: 20px; }
+        .upload-zone:hover { border-color: var(--blue); background: rgba(88,166,255,0.05); }
+        .upload-zone input { display: none; }
+        .upload-zone-text { font-size: 0.85em; color: var(--text2); }
+        .upload-zone-text strong { color: var(--blue); }
         
         .chat-context { padding: 8px 12px; background: var(--bg); border-bottom: 1px solid var(--border); font-size: 0.75em; color: var(--text2); flex-shrink: 0; }
         .chat-context strong { color: var(--purple); }
@@ -171,7 +168,6 @@
         .empty { text-align: center; padding: 40px; color: var(--text2); font-size: 0.9em; }
         .ai-status { width: 8px; height: 8px; border-radius: 50%; background: var(--green); display: inline-block; }
         
-        /* Help tooltip */
         .help-tip { position: fixed; bottom: 20px; right: 20px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: 0.75em; color: var(--text2); z-index: 50; max-width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
         .help-tip strong { color: var(--blue); }
         .help-tip-close { position: absolute; top: 8px; right: 8px; background: none; border: none; color: var(--text2); cursor: pointer; }
@@ -190,13 +186,20 @@
     <div class="workspace" id="workspace"></div>
 </div>
 
+<!-- Drag preview element -->
+<div class="drag-preview" id="drag-preview"></div>
+
+<!-- Drop indicator -->
+<div class="drop-indicator" id="drop-indicator"></div>
+
 <div class="help-tip" id="help-tip" style="display:none;">
     <button class="help-tip-close" onclick="toggleHelp()">✕</button>
     <strong>Drag & Drop Panels</strong><br><br>
-    • Drag any tab to rearrange<br>
+    • Drag tabs to rearrange<br>
     • Drop on edges to split<br>
     • Drop on tab bar to merge<br>
-    • Drag borders to resize
+    • Drag borders to resize<br>
+    • Upload your own PDFs!
 </div>
 
 <div class="modal-bg" id="add-modal" onclick="if(event.target===this)closeAddModal()">
@@ -222,25 +225,30 @@
 </div>
 
 <script>
-// ============ PANEL DEFINITIONS ============
+// Panel definitions
 const PANELS = {
-    papers: { id: 'papers', title: '📚 Papers', icon: '📚' },
-    pdf: { id: 'pdf', title: '📄 PDF Viewer', icon: '📄' },
-    chat: { id: 'chat', title: '💬 Ask AI', icon: '💬' },
-    whiteboard: { id: 'whiteboard', title: '🎨 Whiteboard', icon: '🎨' },
-    notes: { id: 'notes', title: '📝 Notes', icon: '📝' }
+    papers: { id: 'papers', title: 'Papers', icon: '📚' },
+    pdf: { id: 'pdf', title: 'PDF Viewer', icon: '📄' },
+    chat: { id: 'chat', title: 'Ask AI', icon: '💬' },
+    whiteboard: { id: 'whiteboard', title: 'Whiteboard', icon: '🎨' },
+    notes: { id: 'notes', title: 'Notes', icon: '📝' }
 };
 
-// ============ STATE ============
+// State
 let allPapers = [], customPapers = JSON.parse(localStorage.getItem('customPapers') || '[]'), savedPapers = JSON.parse(localStorage.getItem('savedPapers') || '[]');
 let currentTab = 'all', selectedPaper = null, chatHistory = [], isTyping = false;
 let canvas, ctx, drawing = false, tool = 'pen', penColor = '#fff', lastX = 0, lastY = 0;
+let uploadedPdfUrl = null, uploadedPdfName = null;
 
-// Layout state
+// Layout
 let layoutState = null;
-let dragState = null;
 
-// ============ DEFAULT LAYOUT ============
+// Drag state
+let draggedTab = null;
+let draggedTabId = null;
+let sourceContainer = null;
+
+// Default layout
 const DEFAULT_LAYOUT = {
     type: 'horizontal',
     children: [
@@ -253,7 +261,7 @@ const DEFAULT_LAYOUT = {
     ]
 };
 
-// ============ INIT ============
+// Init
 document.addEventListener('DOMContentLoaded', () => {
     loadLayout();
     renderLayout();
@@ -261,20 +269,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initDragDrop();
 });
 
-// ============ LAYOUT MANAGEMENT ============
+// Layout functions
 function loadLayout() {
     const saved = localStorage.getItem('dockLayout');
-    if (saved) {
-        try { layoutState = JSON.parse(saved); } 
-        catch(e) { layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT)); }
-    } else {
-        layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT));
-    }
+    if (saved) { try { layoutState = JSON.parse(saved); } catch(e) { layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT)); } }
+    else { layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT)); }
 }
 
-function saveLayout() {
-    localStorage.setItem('dockLayout', JSON.stringify(layoutState));
-}
+function saveLayout() { localStorage.setItem('dockLayout', JSON.stringify(layoutState)); }
 
 function resetLayout() {
     layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT));
@@ -282,70 +284,77 @@ function resetLayout() {
     renderLayout();
 }
 
-// ============ RENDER LAYOUT ============
 function renderLayout() {
     const workspace = document.getElementById('workspace');
     workspace.innerHTML = '';
-    workspace.appendChild(renderNode(layoutState));
-    
-    // Initialize panel contents
+    const rendered = renderNode(layoutState);
+    if (rendered) workspace.appendChild(rendered);
     initPanelContents();
     initResizers();
 }
 
-function renderNode(node, parent = null) {
+function renderNode(node) {
+    if (!node) return null;
+    
     if (node.type === 'horizontal' || node.type === 'vertical') {
+        // Filter out empty children first
+        const validChildren = node.children.filter(child => {
+            if (child.type === 'panel') return child.tabs && child.tabs.length > 0;
+            return true;
+        });
+        
+        if (validChildren.length === 0) return null;
+        if (validChildren.length === 1) return renderNode(validChildren[0]);
+        
         const container = document.createElement('div');
         container.className = `dock-area ${node.type}`;
-        container.dataset.nodeId = Math.random().toString(36).substr(2, 9);
         
-        node.children.forEach((child, i) => {
+        validChildren.forEach((child, i) => {
             if (i > 0) {
                 const resizer = document.createElement('div');
                 resizer.className = `resizer ${node.type === 'horizontal' ? 'horizontal' : 'vertical'}`;
                 resizer.dataset.index = i;
                 container.appendChild(resizer);
             }
-            const childEl = renderNode(child, node);
-            if (child.size) {
-                if (node.type === 'horizontal') childEl.style.width = child.size + 'px';
-                else childEl.style.height = child.size + 'px';
-                childEl.style.flex = 'none';
-            } else {
-                childEl.style.flex = '1';
+            const childEl = renderNode(child);
+            if (childEl) {
+                if (child.size) {
+                    if (node.type === 'horizontal') childEl.style.width = child.size + 'px';
+                    else childEl.style.height = child.size + 'px';
+                    childEl.style.flex = 'none';
+                } else {
+                    childEl.style.flex = '1';
+                }
+                container.appendChild(childEl);
             }
-            container.appendChild(childEl);
         });
         
         return container;
     } else if (node.type === 'panel') {
+        if (!node.tabs || node.tabs.length === 0) return null;
         return renderPanelContainer(node);
     }
+    return null;
 }
 
 function renderPanelContainer(node) {
     const container = document.createElement('div');
     container.className = 'panel-container';
-    container.dataset.nodeId = Math.random().toString(36).substr(2, 9);
     
-    // Tab bar
     const tabBar = document.createElement('div');
     tabBar.className = 'tab-bar';
     
     node.tabs.forEach(tabId => {
         const panel = PANELS[tabId];
         if (!panel) return;
-        
         const tab = document.createElement('div');
         tab.className = `tab ${node.activeTab === tabId ? 'active' : ''}`;
         tab.dataset.panelId = tabId;
-        tab.draggable = true;
-        tab.innerHTML = `<span>${panel.icon}</span> ${panel.title.replace(panel.icon + ' ', '')}`;
-        tab.onclick = () => activateTab(container, tabId);
+        tab.innerHTML = `<span>${panel.icon}</span> ${panel.title}`;
+        tab.onclick = (e) => { if (!draggedTab) activateTab(container, tabId); };
         tabBar.appendChild(tab);
     });
     
-    // Tab bar actions
     const actions = document.createElement('div');
     actions.className = 'tab-bar-actions';
     actions.innerHTML = `<button class="tab-bar-btn" onclick="maximizePanel(this)" title="Maximize">⤢</button>`;
@@ -353,21 +362,12 @@ function renderPanelContainer(node) {
     
     container.appendChild(tabBar);
     
-    // Panel contents
     node.tabs.forEach(tabId => {
         const content = document.createElement('div');
         content.className = `panel-content ${node.activeTab === tabId ? 'active' : ''}`;
         content.dataset.panelId = tabId;
         content.innerHTML = getPanelContent(tabId);
         container.appendChild(content);
-    });
-    
-    // Drop zones
-    ['center', 'top', 'bottom', 'left', 'right', 'tab-bar'].forEach(zone => {
-        const dropZone = document.createElement('div');
-        dropZone.className = `drop-zone ${zone}`;
-        dropZone.dataset.zone = zone;
-        container.appendChild(dropZone);
     });
     
     return container;
@@ -389,12 +389,22 @@ function getPanelContent(panelId) {
             <div class="papers-list" id="papers-list"><div class="empty">Loading...</div></div>
             <button class="paper-btn add-paper-btn" onclick="openAddModal()">➕ Add Paper</button>`;
         case 'pdf': return `
-            <div class="pdf-placeholder" id="pdf-placeholder"><div class="pdf-placeholder-icon">📄</div><p>Select a paper and click "PDF"</p></div>
+            <div class="pdf-placeholder" id="pdf-placeholder">
+                <div class="pdf-placeholder-icon">📄</div>
+                <p>Select a paper and click "PDF"<br>or upload your own PDF</p>
+                <div class="upload-zone" onclick="document.getElementById('pdf-upload').click()">
+                    <input type="file" id="pdf-upload" accept=".pdf" onchange="handlePdfUpload(event)">
+                    <div class="upload-zone-text">
+                        <strong>Click to upload</strong> or drag & drop<br>
+                        PDF files only
+                    </div>
+                </div>
+            </div>
             <div class="pdf-toolbar" id="pdf-toolbar" style="display:none;">
                 <div class="pdf-title" id="pdf-title"></div>
                 <div class="pdf-links">
                     <a href="#" id="pdf-newtab" target="_blank">New Tab ↗</a>
-                    <a href="#" id="pdf-page" target="_blank">Paper ↗</a>
+                    <a href="#" id="pdf-page" target="_blank" style="display:none">Paper ↗</a>
                     <button class="paper-btn" onclick="closePDF()">✕</button>
                 </div>
             </div>
@@ -402,7 +412,7 @@ function getPanelContent(panelId) {
         case 'chat': return `
             <div class="chat-context" id="chat-context">Select a paper to start</div>
             <div class="chat-messages" id="chat-messages">
-                <div class="msg ai"><div class="msg-avatar">🤖</div><div class="msg-content">Hi! Select a paper and open its PDF. I'll help you understand it.</div></div>
+                <div class="msg ai"><div class="msg-avatar">🤖</div><div class="msg-content">Hi! Select a paper or upload a PDF. I'll help you understand it.</div></div>
             </div>
             <div class="chat-input-area">
                 <div class="quick-btns">
@@ -436,233 +446,239 @@ function getPanelContent(panelId) {
 }
 
 function initPanelContents() {
-    // Papers
     renderTabs();
     filterPapers();
-    
-    // Canvas
     initCanvas();
-    
-    // Notes
     const notes = document.getElementById('notes');
-    if (notes) {
-        notes.value = localStorage.getItem('notes') || '';
-        notes.oninput = () => localStorage.setItem('notes', notes.value);
+    if (notes) { notes.value = localStorage.getItem('notes') || ''; notes.oninput = () => localStorage.setItem('notes', notes.value); }
+    
+    // Setup PDF drag & drop
+    const placeholder = document.getElementById('pdf-placeholder');
+    if (placeholder) {
+        placeholder.addEventListener('dragover', e => { e.preventDefault(); placeholder.style.background = 'rgba(88,166,255,0.1)'; });
+        placeholder.addEventListener('dragleave', e => { placeholder.style.background = ''; });
+        placeholder.addEventListener('drop', e => {
+            e.preventDefault();
+            placeholder.style.background = '';
+            const file = e.dataTransfer.files[0];
+            if (file && file.type === 'application/pdf') {
+                loadUploadedPdf(file);
+            }
+        });
     }
 }
 
 function activateTab(container, tabId) {
     container.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.panelId === tabId));
     container.querySelectorAll('.panel-content').forEach(c => c.classList.toggle('active', c.dataset.panelId === tabId));
-    
-    // Update layout state
     updateLayoutState();
-    
     if (tabId === 'whiteboard') setTimeout(resizeCanvas, 50);
 }
 
 function updateLayoutState() {
-    // Walk through DOM and update layoutState
-    function walkNode(node, el) {
-        if (node.type === 'panel') {
-            const activeTab = el.querySelector('.tab.active');
-            if (activeTab) node.activeTab = activeTab.dataset.panelId;
-        } else if (node.children) {
-            const children = el.querySelectorAll(':scope > .dock-area, :scope > .panel-container');
-            node.children.forEach((child, i) => {
-                if (children[i]) walkNode(child, children[i]);
-            });
-        }
-    }
-    walkNode(layoutState, document.getElementById('workspace').firstChild);
-    saveLayout();
-}
-
-// ============ DRAG & DROP ============
-function initDragDrop() {
-    document.addEventListener('dragstart', handleDragStart);
-    document.addEventListener('dragend', handleDragEnd);
-    document.addEventListener('dragover', handleDragOver);
-    document.addEventListener('drop', handleDrop);
-}
-
-function handleDragStart(e) {
-    if (!e.target.classList.contains('tab')) return;
-    
-    const tabId = e.target.dataset.panelId;
-    const container = e.target.closest('.panel-container');
-    
-    dragState = { tabId, sourceContainer: container };
-    e.target.classList.add('dragging');
-    
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', tabId);
-    
-    // Show drop zones
-    setTimeout(() => {
-        document.querySelectorAll('.panel-container').forEach(pc => {
-            pc.querySelectorAll('.drop-zone').forEach(dz => dz.classList.add('visible'));
-        });
-    }, 0);
-}
-
-function handleDragEnd(e) {
-    document.querySelectorAll('.tab.dragging').forEach(t => t.classList.remove('dragging'));
-    document.querySelectorAll('.drop-zone').forEach(dz => dz.classList.remove('visible'));
-    dragState = null;
-}
-
-function handleDragOver(e) {
-    if (!dragState) return;
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-}
-
-function handleDrop(e) {
-    if (!dragState) return;
-    e.preventDefault();
-    
-    const dropZone = e.target.closest('.drop-zone');
-    const targetContainer = e.target.closest('.panel-container');
-    
-    if (!targetContainer) return;
-    
-    const zone = dropZone?.dataset.zone || 'tab-bar';
-    const { tabId, sourceContainer } = dragState;
-    
-    if (zone === 'tab-bar' || zone === 'center') {
-        // Merge into existing panel
-        mergeTabIntoPanel(tabId, sourceContainer, targetContainer);
-    } else {
-        // Split and create new panel
-        splitPanel(tabId, sourceContainer, targetContainer, zone);
-    }
-    
-    cleanupEmptyPanels();
-    saveLayout();
-    renderLayout();
-}
-
-function mergeTabIntoPanel(tabId, sourceContainer, targetContainer) {
-    // Find nodes in layout
-    function findPanelNode(node, container) {
-        if (node.type === 'panel') {
-            return node;
-        }
-        if (node.children) {
-            for (let child of node.children) {
-                const found = findPanelNode(child, container);
-                if (found) return found;
-            }
+    function walkDOM(el) {
+        if (el.classList.contains('panel-container')) {
+            const tabs = Array.from(el.querySelectorAll('.tab-bar > .tab')).map(t => t.dataset.panelId);
+            const activeTab = el.querySelector('.tab.active')?.dataset.panelId || tabs[0];
+            return { type: 'panel', tabs, activeTab, size: parseInt(el.style.width) || parseInt(el.style.height) || null };
+        } else if (el.classList.contains('dock-area')) {
+            const isHorizontal = el.classList.contains('horizontal');
+            const children = Array.from(el.children).filter(c => !c.classList.contains('resizer')).map(walkDOM).filter(Boolean);
+            return { type: isHorizontal ? 'horizontal' : 'vertical', children, size: parseInt(el.style.width) || parseInt(el.style.height) || null };
         }
         return null;
     }
-    
-    // Remove from source
-    removeTabFromLayout(tabId);
-    
-    // Add to target (find target node)
-    function addToTarget(node) {
-        if (node.type === 'panel' && !node.tabs.includes(tabId)) {
-            // Check if this is our target by comparing tabs
-            const targetTabs = Array.from(targetContainer.querySelectorAll('.tab')).map(t => t.dataset.panelId);
-            if (node.tabs.some(t => targetTabs.includes(t))) {
-                node.tabs.push(tabId);
-                node.activeTab = tabId;
-                return true;
-            }
-        }
-        if (node.children) {
-            for (let child of node.children) {
-                if (addToTarget(child)) return true;
-            }
-        }
-        return false;
+    const workspace = document.getElementById('workspace');
+    if (workspace.firstChild) {
+        layoutState = walkDOM(workspace.firstChild) || layoutState;
+        saveLayout();
     }
-    addToTarget(layoutState);
 }
 
-function splitPanel(tabId, sourceContainer, targetContainer, zone) {
-    removeTabFromLayout(tabId);
+// Drag & Drop
+function initDragDrop() {
+    const workspace = document.getElementById('workspace');
+    const preview = document.getElementById('drag-preview');
+    const indicator = document.getElementById('drop-indicator');
     
-    const newPanel = { type: 'panel', tabs: [tabId], activeTab: tabId, size: zone === 'top' || zone === 'bottom' ? 250 : 300 };
+    workspace.addEventListener('mousedown', e => {
+        const tab = e.target.closest('.tab');
+        if (!tab || e.target.closest('.tab-bar-actions')) return;
+        
+        e.preventDefault();
+        draggedTab = tab;
+        draggedTabId = tab.dataset.panelId;
+        sourceContainer = tab.closest('.panel-container');
+        
+        // Show preview
+        preview.textContent = tab.textContent;
+        preview.style.display = 'block';
+        preview.style.left = e.clientX + 10 + 'px';
+        preview.style.top = e.clientY + 10 + 'px';
+        
+        tab.classList.add('dragging');
+    });
     
-    function findAndSplit(node, parent, index) {
-        if (node.type === 'panel') {
-            const targetTabs = Array.from(targetContainer.querySelectorAll('.tab')).map(t => t.dataset.panelId);
-            if (node.tabs.some(t => targetTabs.includes(t))) {
-                const direction = (zone === 'left' || zone === 'right') ? 'horizontal' : 'vertical';
-                const newNode = {
-                    type: direction,
-                    size: node.size,
-                    children: zone === 'left' || zone === 'top' 
-                        ? [newPanel, { ...node, size: null }]
-                        : [{ ...node, size: null }, newPanel]
-                };
-                if (parent) {
-                    parent.children[index] = newNode;
-                } else {
-                    Object.assign(layoutState, newNode);
-                }
-                return true;
+    document.addEventListener('mousemove', e => {
+        if (!draggedTab) return;
+        
+        const preview = document.getElementById('drag-preview');
+        preview.style.left = e.clientX + 10 + 'px';
+        preview.style.top = e.clientY + 10 + 'px';
+        
+        // Find panel under cursor
+        const elemUnder = document.elementFromPoint(e.clientX, e.clientY);
+        const panelContainer = elemUnder?.closest('.panel-container');
+        
+        if (panelContainer && panelContainer !== sourceContainer) {
+            const rect = panelContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const w = rect.width;
+            const h = rect.height;
+            
+            // Determine drop zone
+            let zone = 'center';
+            const edgeSize = 60;
+            
+            if (y < 40) zone = 'tabs'; // Tab bar area
+            else if (y < edgeSize) zone = 'top';
+            else if (y > h - edgeSize) zone = 'bottom';
+            else if (x < edgeSize) zone = 'left';
+            else if (x > w - edgeSize) zone = 'right';
+            
+            // Show indicator
+            indicator.style.display = 'block';
+            if (zone === 'tabs' || zone === 'center') {
+                indicator.style.left = rect.left + 'px';
+                indicator.style.top = rect.top + 'px';
+                indicator.style.width = rect.width + 'px';
+                indicator.style.height = '36px';
+            } else if (zone === 'top') {
+                indicator.style.left = rect.left + 'px';
+                indicator.style.top = rect.top + 'px';
+                indicator.style.width = rect.width + 'px';
+                indicator.style.height = rect.height * 0.5 + 'px';
+            } else if (zone === 'bottom') {
+                indicator.style.left = rect.left + 'px';
+                indicator.style.top = rect.top + rect.height * 0.5 + 'px';
+                indicator.style.width = rect.width + 'px';
+                indicator.style.height = rect.height * 0.5 + 'px';
+            } else if (zone === 'left') {
+                indicator.style.left = rect.left + 'px';
+                indicator.style.top = rect.top + 'px';
+                indicator.style.width = rect.width * 0.5 + 'px';
+                indicator.style.height = rect.height + 'px';
+            } else if (zone === 'right') {
+                indicator.style.left = rect.left + rect.width * 0.5 + 'px';
+                indicator.style.top = rect.top + 'px';
+                indicator.style.width = rect.width * 0.5 + 'px';
+                indicator.style.height = rect.height + 'px';
             }
+            
+            indicator.dataset.zone = zone;
+            indicator.dataset.targetId = Array.from(panelContainer.querySelectorAll('.tab')).map(t => t.dataset.panelId).join(',');
+        } else {
+            indicator.style.display = 'none';
         }
-        if (node.children) {
-            for (let i = 0; i < node.children.length; i++) {
-                if (findAndSplit(node.children[i], node, i)) return true;
+    });
+    
+    document.addEventListener('mouseup', e => {
+        if (!draggedTab) return;
+        
+        const indicator = document.getElementById('drop-indicator');
+        const preview = document.getElementById('drag-preview');
+        
+        preview.style.display = 'none';
+        draggedTab.classList.remove('dragging');
+        
+        if (indicator.style.display === 'block') {
+            const zone = indicator.dataset.zone;
+            const targetTabs = indicator.dataset.targetId.split(',');
+            
+            // Remove from source
+            removeTabFromLayout(draggedTabId);
+            
+            // Add to target
+            if (zone === 'tabs' || zone === 'center') {
+                addTabToPanel(draggedTabId, targetTabs);
+            } else {
+                splitPanel(draggedTabId, targetTabs, zone);
             }
+            
+            cleanupLayout();
+            saveLayout();
+            renderLayout();
         }
-        return false;
-    }
-    findAndSplit(layoutState, null, 0);
+        
+        indicator.style.display = 'none';
+        draggedTab = null;
+        draggedTabId = null;
+        sourceContainer = null;
+    });
 }
 
 function removeTabFromLayout(tabId) {
     function remove(node) {
         if (node.type === 'panel') {
             const idx = node.tabs.indexOf(tabId);
-            if (idx > -1) {
-                node.tabs.splice(idx, 1);
-                if (node.activeTab === tabId) {
-                    node.activeTab = node.tabs[0] || null;
-                }
-            }
-        }
-        if (node.children) {
-            node.children.forEach(remove);
-        }
+            if (idx > -1) { node.tabs.splice(idx, 1); if (node.activeTab === tabId) node.activeTab = node.tabs[0]; }
+        } else if (node.children) { node.children.forEach(remove); }
     }
     remove(layoutState);
 }
 
-function cleanupEmptyPanels() {
+function addTabToPanel(tabId, targetTabs) {
+    function add(node) {
+        if (node.type === 'panel' && targetTabs.some(t => node.tabs.includes(t))) {
+            if (!node.tabs.includes(tabId)) { node.tabs.push(tabId); node.activeTab = tabId; }
+            return true;
+        }
+        if (node.children) { for (let c of node.children) if (add(c)) return true; }
+        return false;
+    }
+    add(layoutState);
+}
+
+function splitPanel(tabId, targetTabs, zone) {
+    const newPanel = { type: 'panel', tabs: [tabId], activeTab: tabId, size: 300 };
+    
+    function split(node, parent, index) {
+        if (node.type === 'panel' && targetTabs.some(t => node.tabs.includes(t))) {
+            const direction = (zone === 'left' || zone === 'right') ? 'horizontal' : 'vertical';
+            const newNode = {
+                type: direction,
+                size: node.size,
+                children: (zone === 'left' || zone === 'top') ? [newPanel, { ...node, size: null }] : [{ ...node, size: null }, newPanel]
+            };
+            if (parent) { parent.children[index] = newNode; }
+            else { Object.assign(layoutState, newNode); }
+            return true;
+        }
+        if (node.children) { for (let i = 0; i < node.children.length; i++) if (split(node.children[i], node, i)) return true; }
+        return false;
+    }
+    split(layoutState, null, 0);
+}
+
+function cleanupLayout() {
     function cleanup(node, parent, index) {
         if (node.children) {
-            // Recursively clean children first
-            for (let i = node.children.length - 1; i >= 0; i--) {
-                cleanup(node.children[i], node, i);
-            }
-            // Remove empty children
-            node.children = node.children.filter(child => {
-                if (child.type === 'panel') return child.tabs.length > 0;
-                if (child.children) return child.children.length > 0;
-                return true;
-            });
-            // Collapse single-child containers
-            if (node.children.length === 1) {
-                const child = node.children[0];
-                if (parent) {
-                    parent.children[index] = { ...child, size: node.size };
-                } else {
-                    Object.assign(layoutState, child);
-                }
-            }
+            for (let i = node.children.length - 1; i >= 0; i--) cleanup(node.children[i], node, i);
+            node.children = node.children.filter(c => c.type === 'panel' ? c.tabs.length > 0 : c.children && c.children.length > 0);
+            if (node.children.length === 1 && parent) { parent.children[index] = { ...node.children[0], size: node.size }; }
+            else if (node.children.length === 1 && !parent) { Object.assign(layoutState, { ...node.children[0] }); }
         }
     }
     cleanup(layoutState, null, 0);
+    
+    // Final check - if root is empty panel
+    if (layoutState.type === 'panel' && (!layoutState.tabs || layoutState.tabs.length === 0)) {
+        layoutState = JSON.parse(JSON.stringify(DEFAULT_LAYOUT));
+    }
 }
 
-// ============ RESIZERS ============
+// Resizers
 function initResizers() {
     let activeResizer = null, startPos = 0, startSizes = [], siblings = [], isVertical = false;
     
@@ -672,7 +688,6 @@ function initResizers() {
             activeResizer = resizer;
             isVertical = resizer.classList.contains('vertical');
             startPos = isVertical ? e.clientY : e.clientX;
-            
             const parent = resizer.parentElement;
             siblings = Array.from(parent.children).filter(c => !c.classList.contains('resizer'));
             const idx = parseInt(resizer.dataset.index);
@@ -680,7 +695,6 @@ function initResizers() {
                 isVertical ? siblings[idx-1].offsetHeight : siblings[idx-1].offsetWidth,
                 isVertical ? siblings[idx].offsetHeight : siblings[idx].offsetWidth
             ];
-            
             resizer.classList.add('active');
             document.body.style.cursor = isVertical ? 'row-resize' : 'col-resize';
             document.body.style.userSelect = 'none';
@@ -693,17 +707,12 @@ function initResizers() {
         const delta = (isVertical ? e.clientY : e.clientX) - startPos;
         const newSize1 = Math.max(150, startSizes[0] + delta);
         const newSize2 = Math.max(150, startSizes[1] - delta);
-        
         if (isVertical) {
-            siblings[idx-1].style.height = newSize1 + 'px';
-            siblings[idx-1].style.flex = 'none';
-            siblings[idx].style.height = newSize2 + 'px';
-            siblings[idx].style.flex = 'none';
+            siblings[idx-1].style.height = newSize1 + 'px'; siblings[idx-1].style.flex = 'none';
+            siblings[idx].style.height = newSize2 + 'px'; siblings[idx].style.flex = 'none';
         } else {
-            siblings[idx-1].style.width = newSize1 + 'px';
-            siblings[idx-1].style.flex = 'none';
-            siblings[idx].style.width = newSize2 + 'px';
-            siblings[idx].style.flex = 'none';
+            siblings[idx-1].style.width = newSize1 + 'px'; siblings[idx-1].style.flex = 'none';
+            siblings[idx].style.width = newSize2 + 'px'; siblings[idx].style.flex = 'none';
         }
     });
     
@@ -713,27 +722,10 @@ function initResizers() {
             activeResizer = null;
             document.body.style.cursor = '';
             document.body.style.userSelect = '';
-            updateLayoutSizes();
+            updateLayoutState();
             resizeCanvas();
         }
     });
-}
-
-function updateLayoutSizes() {
-    function walk(node, el) {
-        if (!el) return;
-        if (node.type === 'panel') {
-            const w = el.style.width, h = el.style.height;
-            if (w && w !== 'auto') node.size = parseInt(w);
-            else if (h && h !== 'auto') node.size = parseInt(h);
-            else if (el.style.flex === '1') node.size = null;
-        } else if (node.children) {
-            const childEls = Array.from(el.children).filter(c => !c.classList.contains('resizer'));
-            node.children.forEach((child, i) => walk(child, childEls[i]));
-        }
-    }
-    walk(layoutState, document.getElementById('workspace').firstChild);
-    saveLayout();
 }
 
 function maximizePanel(btn) {
@@ -747,13 +739,42 @@ function maximizePanel(btn) {
     setTimeout(resizeCanvas, 50);
 }
 
-// ============ CANVAS ============
+// PDF Upload
+function handlePdfUpload(e) {
+    const file = e.target.files[0];
+    if (file && file.type === 'application/pdf') {
+        loadUploadedPdf(file);
+    }
+}
+
+function loadUploadedPdf(file) {
+    if (uploadedPdfUrl) URL.revokeObjectURL(uploadedPdfUrl);
+    uploadedPdfUrl = URL.createObjectURL(file);
+    uploadedPdfName = file.name;
+    
+    const ph = document.getElementById('pdf-placeholder'), tb = document.getElementById('pdf-toolbar'), fr = document.getElementById('pdf-frame');
+    const title = document.getElementById('pdf-title'), newtab = document.getElementById('pdf-newtab'), page = document.getElementById('pdf-page');
+    
+    if (ph) ph.style.display = 'none';
+    if (tb) tb.style.display = 'flex';
+    if (fr) { fr.style.display = 'block'; fr.src = uploadedPdfUrl; }
+    if (title) title.textContent = uploadedPdfName;
+    if (newtab) newtab.href = uploadedPdfUrl;
+    if (page) page.style.display = 'none';
+    
+    // Update chat context
+    selectedPaper = { title: uploadedPdfName, authors: 'Uploaded PDF', abstract: '', tags: [] };
+    const ctx = document.getElementById('chat-context');
+    if (ctx) ctx.innerHTML = 'Discussing: <strong>' + uploadedPdfName + '</strong>';
+    addMessage('ai', 'Opened your PDF "<strong>' + uploadedPdfName + '</strong>". What would you like to know?');
+}
+
+// Canvas
 function initCanvas() {
     canvas = document.getElementById('canvas');
     if (!canvas) return;
     ctx = canvas.getContext('2d');
     resizeCanvas();
-    
     canvas.addEventListener('mousedown', e => { drawing = true; [lastX, lastY] = [e.offsetX, e.offsetY]; });
     canvas.addEventListener('mousemove', e => {
         if (!drawing) return;
@@ -764,7 +785,6 @@ function initCanvas() {
     });
     canvas.addEventListener('mouseup', () => { drawing = false; saveCanvasData(); });
     canvas.addEventListener('mouseleave', () => { drawing = false; });
-    
     const saved = localStorage.getItem('canvasData');
     if (saved) { const img = new Image(); img.onload = () => ctx.drawImage(img, 0, 0); img.src = saved; }
 }
@@ -788,7 +808,7 @@ function setColor(c, btn) { penColor = c; tool = 'pen'; btn.closest('.wb-toolbar
 function clearCanvas() { ctx.clearRect(0, 0, canvas.width, canvas.height); localStorage.removeItem('canvasData'); }
 function askAboutCanvas() { askAI('Help me understand what I drew on the whiteboard'); }
 
-// ============ DATA ============
+// Data
 async function loadData() { try { const r = await fetch('papers.json'); if (r.ok) { const d = await r.json(); allPapers = d.papers || []; } } catch(e) { allPapers = getSamplePapers(); } renderTabs(); filterPapers(); }
 function getSamplePapers() { return [
     { id: '2412.01', title: 'Scaling Open-Ended Reasoning to Predict the Future', authors: 'Nikhil Chandak, Shashwat Goel', pubDateISO: '2025-12-31', score: 9, tags: ['cs.AI'], abstract: 'Novel approach...', pdf_link: 'https://arxiv.org/pdf/2412.01.pdf', link: 'https://arxiv.org/abs/2412.01' },
@@ -842,14 +862,19 @@ function selectPaper(id) { selectedPaper = [...allPapers, ...customPapers].find(
 function openPDF(id) {
     selectedPaper = [...allPapers, ...customPapers].find(p => p.id === id); if (!selectedPaper?.pdf_link) return;
     const ph = document.getElementById('pdf-placeholder'), tb = document.getElementById('pdf-toolbar'), fr = document.getElementById('pdf-frame');
-    if (ph) ph.style.display = 'none'; if (tb) tb.style.display = 'flex'; if (fr) { fr.style.display = 'block'; fr.src = selectedPaper.pdf_link; }
     const title = document.getElementById('pdf-title'), newtab = document.getElementById('pdf-newtab'), page = document.getElementById('pdf-page');
-    if (title) title.textContent = selectedPaper.title; if (newtab) newtab.href = selectedPaper.pdf_link; if (page) page.href = selectedPaper.link;
+    if (ph) ph.style.display = 'none'; if (tb) tb.style.display = 'flex'; if (fr) { fr.style.display = 'block'; fr.src = selectedPaper.pdf_link; }
+    if (title) title.textContent = selectedPaper.title; if (newtab) newtab.href = selectedPaper.pdf_link; if (page) { page.href = selectedPaper.link; page.style.display = ''; }
     const ctx = document.getElementById('chat-context'); if (ctx) ctx.innerHTML = 'Discussing: <strong>' + selectedPaper.title + '</strong>';
     addMessage('ai', 'Opened "<strong>' + selectedPaper.title + '</strong>". What would you like to know?'); filterPapers();
 }
 
-function closePDF() { const ph = document.getElementById('pdf-placeholder'), tb = document.getElementById('pdf-toolbar'), fr = document.getElementById('pdf-frame'); if (ph) ph.style.display = ''; if (tb) tb.style.display = 'none'; if (fr) { fr.style.display = 'none'; fr.src = ''; } }
+function closePDF() { 
+    const ph = document.getElementById('pdf-placeholder'), tb = document.getElementById('pdf-toolbar'), fr = document.getElementById('pdf-frame'); 
+    if (ph) ph.style.display = ''; if (tb) tb.style.display = 'none'; if (fr) { fr.style.display = 'none'; fr.src = ''; } 
+    if (uploadedPdfUrl) { URL.revokeObjectURL(uploadedPdfUrl); uploadedPdfUrl = null; uploadedPdfName = null; }
+}
+
 function toggleSave(id) { if (savedPapers.includes(id)) savedPapers = savedPapers.filter(x => x !== id); else savedPapers.push(id); localStorage.setItem('savedPapers', JSON.stringify(savedPapers)); renderTabs(); filterPapers(); }
 
 function openAddModal() { document.getElementById('add-modal').classList.add('show'); }
@@ -863,7 +888,7 @@ function saveCustomPaper(e) {
 function askAI(text) { const input = document.getElementById('chat-input'); if (input) { input.value = text; sendMessage(); } }
 async function sendMessage() {
     const input = document.getElementById('chat-input'), msg = input?.value.trim(); if (!msg || isTyping) return;
-    if (!selectedPaper) { addMessage('ai', 'Please select a paper first.'); return; }
+    if (!selectedPaper) { addMessage('ai', 'Please select a paper or upload a PDF first.'); return; }
     addMessage('user', msg); if (input) input.value = ''; chatHistory.push({ role: 'user', content: msg });
     isTyping = true; const sendBtn = document.getElementById('send-btn'); if (sendBtn) sendBtn.disabled = true; const typingEl = showTyping();
     try {
@@ -872,7 +897,7 @@ async function sendMessage() {
     } catch(e) { typingEl.remove(); const fb = getFallback(msg); addMessage('ai', fb); chatHistory.push({ role: 'assistant', content: fb }); }
     isTyping = false; if (sendBtn) sendBtn.disabled = false;
 }
-function getFallback(msg) { const p = selectedPaper, m = msg.toLowerCase(); if (m.includes('summar')) return '<strong>'+p.title+'</strong><br><br>'+(p.abstract?.slice(0,400)||'Open PDF.')+'<br><br>Score: '+p.score+'/10'; return 'Offline mode. "'+p.title+'": '+(p.abstract?.slice(0,200)||'Open PDF.')+'...'; }
+function getFallback(msg) { const p = selectedPaper, m = msg.toLowerCase(); if (m.includes('summar')) return '<strong>'+p.title+'</strong><br><br>'+(p.abstract?.slice(0,400)||'Open PDF to read.')+'<br><br>Score: '+(p.score||'N/A')+'/10'; return 'Offline mode. "'+p.title+'": '+(p.abstract?.slice(0,200)||'View PDF for details.')+'...'; }
 function addMessage(role, content) { const c = document.getElementById('chat-messages'); if (!c) return; c.innerHTML += '<div class="msg '+role+'"><div class="msg-avatar">'+(role==='ai'?'🤖':'👤')+'</div><div class="msg-content">'+content+'</div></div>'; c.scrollTop = c.scrollHeight; }
 function showTyping() { const c = document.getElementById('chat-messages'); if (!c) return document.createElement('div'); const el = document.createElement('div'); el.className = 'msg ai'; el.innerHTML = '<div class="msg-avatar">🤖</div><div class="msg-content typing"><span></span><span></span><span></span></div>'; c.appendChild(el); c.scrollTop = c.scrollHeight; return el; }
 
