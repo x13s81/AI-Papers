@@ -4,7 +4,7 @@
 <title>AI Papers - 2026-01-06</title>
 <link>https://arxiv.org</link>
 <description>AI papers as of 2026-01-06 - 242 papers</description>
-<lastBuildDate>Tue, 06 Jan 2026 11:11:37 +0000</lastBuildDate>
+<lastBuildDate>Tue, 06 Jan 2026 11:33:40 +0000</lastBuildDate>
 <item>
 <title><![CDATA[InfiniteVGGT: Visual Geometry Grounded Transformer for Endless Streams]]></title>
 <link>https://huggingface.co/papers/2601.02281</link>
@@ -196,7 +196,7 @@ Institution:
 Published: 2025-12-30
 Score: 6/10
 Citations: 0
-Upvotes: 18
+Upvotes: 19
 GitHub: 
 Stars: 0
 
@@ -340,12 +340,30 @@ Institution:
 Published: 2026-01-05
 Score: 4/10
 Citations: 0
-Upvotes: 38
+Upvotes: 39
 GitHub: 
 Stars: 0
 
 This technical report presents K-EXAONE, a large-scale multilingual language model developed by LG AI Research. K-EXAONE is built on a Mixture-of-Experts architecture with 236B total parameters, activating 23B parameters during inference. It supports a 256K-token context window and covers six languages: Korean, English, Spanish, German, Japanese, and Vietnamese. We evaluate K-EXAONE on a comprehensive benchmark suite spanning reasoning, agentic, general, Korean, and multilingual abilities. Across these evaluations, K-EXAONE demonstrates performance comparable to open-weight models of similar size. K-EXAONE, designed to advance AI for a better life, is positioned as a powerful proprietary AI foundation model for a wide range of industrial and research applications.]]></description>
 <pubDate>Mon, 05 Jan 2026 02:30:59 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[NextFlow: Unified Sequential Modeling Activates Multimodal Understanding and Generation]]></title>
+<link>https://huggingface.co/papers/2601.02204</link>
+<guid>2601.02204</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Huichao Zhang, Liao Qu, Yiheng Liu, Hang Chen, Yangyang Song
+Institution: 
+Published: 2026-01-05
+Score: 4/10
+Citations: 0
+Upvotes: 34
+GitHub: 
+Stars: 0
+
+We present NextFlow, a unified decoder-only autoregressive transformer trained on 6 trillion interleaved text-image discrete tokens. By leveraging a unified vision representation within a unified autoregressive architecture, NextFlow natively activates multimodal understanding and generation capabilities, unlocking abilities of image editing, interleaved content and video generation. Motivated by the distinct nature of modalities - where text is strictly sequential and images are inherently hierarchical - we retain next-token prediction for text but adopt next-scale prediction for visual generation. This departs from traditional raster-scan methods, enabling the generation of 1024x1024 images in just 5 seconds - orders of magnitude faster than comparable AR models. We address the instabilities of multi-scale generation through a robust training recipe. Furthermore, we introduce a prefix-tuning strategy for reinforcement learning. Experiments demonstrate that NextFlow achieves state-of-the-art performance among unified models and rivals specialized diffusion baselines in visual quality.]]></description>
+<pubDate>Mon, 05 Jan 2026 15:27:04 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[GaMO: Geometry-aware Multi-view Diffusion Outpainting for Sparse-View 3D Reconstruction]]></title>
@@ -366,24 +384,6 @@ Recent advances in 3D reconstruction have achieved remarkable progress in high-q
 <pubDate>Wed, 31 Dec 2025 18:59:55 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[NextFlow: Unified Sequential Modeling Activates Multimodal Understanding and Generation]]></title>
-<link>https://huggingface.co/papers/2601.02204</link>
-<guid>2601.02204</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Huichao Zhang, Liao Qu, Yiheng Liu, Hang Chen, Yangyang Song
-Institution: 
-Published: 2026-01-05
-Score: 4/10
-Citations: 0
-Upvotes: 33
-GitHub: 
-Stars: 0
-
-We present NextFlow, a unified decoder-only autoregressive transformer trained on 6 trillion interleaved text-image discrete tokens. By leveraging a unified vision representation within a unified autoregressive architecture, NextFlow natively activates multimodal understanding and generation capabilities, unlocking abilities of image editing, interleaved content and video generation. Motivated by the distinct nature of modalities - where text is strictly sequential and images are inherently hierarchical - we retain next-token prediction for text but adopt next-scale prediction for visual generation. This departs from traditional raster-scan methods, enabling the generation of 1024x1024 images in just 5 seconds - orders of magnitude faster than comparable AR models. We address the instabilities of multi-scale generation through a robust training recipe. Furthermore, we introduce a prefix-tuning strategy for reinforcement learning. Experiments demonstrate that NextFlow achieves state-of-the-art performance among unified models and rivals specialized diffusion baselines in visual quality.]]></description>
-<pubDate>Mon, 05 Jan 2026 15:27:04 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[DreamID-V:Bridging the Image-to-Video Gap for High-Fidelity Face Swapping via Diffusion Transformer]]></title>
 <link>https://huggingface.co/papers/2601.01425</link>
 <guid>2601.01425</guid>
@@ -394,7 +394,7 @@ Institution:
 Published: 2026-01-04
 Score: 4/10
 Citations: 0
-Upvotes: 31
+Upvotes: 32
 GitHub: 
 Stars: 0
 
@@ -420,6 +420,24 @@ While Vision-Language Models (VLMs) can solve complex tasks through agentic reas
 <pubDate>Tue, 30 Dec 2025 16:31:45 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[VAR RL Done Right: Tackling Asynchronous Policy Conflicts in Visual Autoregressive Generation]]></title>
+<link>https://huggingface.co/papers/2601.02256</link>
+<guid>2601.02256</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Shikun Sun, Liao Qu, Huichao Zhang, Yiheng Liu, Yangyang Song
+Institution: 
+Published: 2026-01-05
+Score: 4/10
+Citations: 0
+Upvotes: 26
+GitHub: 
+Stars: 0
+
+Visual generation is dominated by three paradigms: AutoRegressive (AR), diffusion, and Visual AutoRegressive (VAR) models. Unlike AR and diffusion, VARs operate on heterogeneous input structures across their generation steps, which creates severe asynchronous policy conflicts. This issue becomes particularly acute in reinforcement learning (RL) scenarios, leading to unstable training and suboptimal alignment. To resolve this, we propose a novel framework to enhance Group Relative Policy Optimization (GRPO) by explicitly managing these conflicts. Our method integrates three synergistic components: 1) a stabilizing intermediate reward to guide early-stage generation; 2) a dynamic time-step reweighting scheme for precise credit assignment; and 3) a novel mask propagation algorithm, derived from principles of Reward Feedback Learning (ReFL), designed to isolate optimization effects both spatially and temporally. Our approach demonstrates significant improvements in sample quality and objective alignment over the vanilla GRPO baseline, enabling robust and effective optimization for VAR models.]]></description>
+<pubDate>Mon, 05 Jan 2026 16:36:40 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Nested Learning: The Illusion of Deep Learning Architectures]]></title>
 <link>https://huggingface.co/papers/2512.24695</link>
 <guid>2512.24695</guid>
@@ -436,24 +454,6 @@ Stars: 0
 
 Despite the recent progresses, particularly in developing Language Models, there are fundamental challenges and unanswered questions about how such models can continually learn/memorize, self-improve, and find effective solutions. In this paper, we present a new learning paradigm, called Nested Learning (NL), that coherently represents a machine learning model with a set of nested, multi-level, and/or parallel optimization problems, each of which with its own context flow. Through the lenses of NL, existing deep learning methods learns from data through compressing their own context flow, and in-context learning naturally emerges in large models. NL suggests a philosophy to design more expressive learning algorithms with more levels, resulting in higher-order in-context learning and potentially unlocking effective continual learning capabilities. We advocate for NL by presenting three core contributions: (1) Expressive Optimizers: We show that known gradient-based optimizers, such as Adam, SGD with Momentum, etc., are in fact associative memory modules that aim to compress the gradients' information (by gradient descent). Building on this insight, we present other more expressive optimizers with deep memory and/or more powerful learning rules; (2) Self-Modifying Learning Module: Taking advantage of NL's insights on learning algorithms, we present a sequence model that learns how to modify itself by learning its own update algorithm; and (3) Continuum Memory System: We present a new formulation for memory system that generalizes the traditional viewpoint of long/short-term memory. Combining our self-modifying sequence model with the continuum memory system, we present a continual learning module, called Hope, showing promising results in language modeling, knowledge incorporation, and few-shot generalization tasks, continual learning, and long-context reasoning tasks.]]></description>
 <pubDate>Wed, 31 Dec 2025 07:59:43 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[VAR RL Done Right: Tackling Asynchronous Policy Conflicts in Visual Autoregressive Generation]]></title>
-<link>https://huggingface.co/papers/2601.02256</link>
-<guid>2601.02256</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Shikun Sun, Liao Qu, Huichao Zhang, Yiheng Liu, Yangyang Song
-Institution: 
-Published: 2026-01-05
-Score: 4/10
-Citations: 0
-Upvotes: 25
-GitHub: 
-Stars: 0
-
-Visual generation is dominated by three paradigms: AutoRegressive (AR), diffusion, and Visual AutoRegressive (VAR) models. Unlike AR and diffusion, VARs operate on heterogeneous input structures across their generation steps, which creates severe asynchronous policy conflicts. This issue becomes particularly acute in reinforcement learning (RL) scenarios, leading to unstable training and suboptimal alignment. To resolve this, we propose a novel framework to enhance Group Relative Policy Optimization (GRPO) by explicitly managing these conflicts. Our method integrates three synergistic components: 1) a stabilizing intermediate reward to guide early-stage generation; 2) a dynamic time-step reweighting scheme for precise credit assignment; and 3) a novel mask propagation algorithm, derived from principles of Reward Feedback Learning (ReFL), designed to isolate optimization effects both spatially and temporally. Our approach demonstrates significant improvements in sample quality and objective alignment over the vanilla GRPO baseline, enabling robust and effective optimization for VAR models.]]></description>
-<pubDate>Mon, 05 Jan 2026 16:36:40 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[AdaGaR: Adaptive Gabor Representation for Dynamic Scene Reconstruction]]></title>
