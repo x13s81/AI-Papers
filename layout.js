@@ -6,6 +6,7 @@ const Layout = {
         if (el) ws.appendChild(el);
         this.initPanels();
         this.initResizers();
+        this.updateDock();
     },
     
     renderNode(n) {
@@ -48,8 +49,15 @@ const Layout = {
             const t = document.createElement('div');
             t.className = 'tab' + (n.active === id ? ' active' : '');
             t.dataset.id = id;
-            t.innerHTML = `<span>${def.icon}</span>${def.title}`;
-            t.onclick = () => { if (!Drag.isDragging) this.activateTab(p, id); };
+            t.innerHTML = `<span>${def.icon}</span>${def.title}<span class="tab-close" data-close="${id}">✕</span>`;
+            t.onclick = (e) => { 
+                if (e.target.dataset.close) {
+                    e.stopPropagation();
+                    this.closeTab(id);
+                    return;
+                }
+                if (!Drag.isDragging) this.activateTab(p, id); 
+            };
             bar.appendChild(t);
         });
         const acts = document.createElement('div');
@@ -67,10 +75,31 @@ const Layout = {
         return p;
     },
     
+    closeTab(id) {
+        this.removeTab(id);
+        this.cleanup();
+        State.saveLayout();
+        this.render();
+    },
+    
     getContent(id) {
         const c = {
             papers: `<div class="search-area"><input class="search-input" id="search" placeholder="Search papers..."><select class="sort-select" id="sort"><option value="score-desc">⭐ Highest Rated</option><option value="score-asc">⭐ Lowest Rated</option><option value="date-desc">📅 Newest</option><option value="date-asc">📅 Oldest</option></select></div><div class="filter-tabs" id="filter-tabs"></div><div class="papers-list" id="papers-list"></div><div class="papers-footer"><button class="paper-btn add-paper-btn" id="btn-add">➕ Add Paper</button></div>`,
+            search: `<div class="search-panel"><div class="search-header"><select class="search-source" id="search-source"><option value="arxiv">arXiv</option><option value="semantic">Semantic Scholar</option></select><div class="search-box"><input class="search-input" id="web-search" placeholder="Search papers..."><button class="search-btn" id="web-search-btn">🔍</button></div></div><div class="search-results" id="search-results"><div class="empty-state"><p>Search arXiv or Semantic Scholar<br>to find papers</p></div></div></div>`,
             pdf: `<div class="pdf-placeholder" id="pdf-ph"><div class="pdf-placeholder-icon">📄</div><p>Select a paper and click "PDF"<br>or upload your own</p><div class="upload-zone" id="upload-zone"><input type="file" id="pdf-file" accept=".pdf"><div class="upload-text"><strong>Click to upload</strong> or drag & drop<br>PDF files only</div></div></div><div class="pdf-toolbar" id="pdf-bar"><div class="pdf-title" id="pdf-title"></div><div class="pdf-links"><a href="#" id="pdf-link" target="_blank">Open ↗</a><button class="paper-btn" id="pdf-close">✕</button></div></div><iframe class="pdf-frame" id="pdf-frame"></iframe>`,
+            editor: `<div class="editor-panel"><div class="editor-toolbar"><button class="editor-btn" data-cmd="bold" title="Bold">𝐁</button><button class="editor-btn" data-cmd="italic" title="Italic">𝐼</button><button class="editor-btn" data-cmd="heading" title="Section">§</button><button class="editor-btn" data-cmd="math" title="Inline Math">∑</button><button class="editor-btn" data-cmd="mathblock" title="Math Block">∫</button><button class="editor-btn" data-cmd="cite" title="Citation">📖</button><button class="editor-btn" data-cmd="ref" title="Reference">🔗</button><div class="editor-spacer"></div><button class="editor-btn" id="editor-preview-toggle">👁️ Preview</button><button class="editor-btn" id="editor-export">📥 Export .tex</button></div><div class="editor-container"><div class="editor-pane"><textarea class="editor-textarea" id="editor-textarea" placeholder="\\documentclass{article}
+\\usepackage{amsmath}
+
+\\title{Your Paper Title}
+\\author{Your Name}
+
+\\begin{document}
+\\maketitle
+
+\\section{Introduction}
+Write your paper here...
+
+\\end{document}"></textarea></div><div class="editor-preview" id="editor-preview"><div class="preview-content" id="preview-content"></div></div></div></div>`,
             chat: `<div class="chat-context" id="chat-ctx"><span class="status-dot"></span>Select a paper to start</div><div class="chat-messages" id="chat-msgs"><div class="message ai"><div class="message-avatar">🤖</div><div class="message-content">Hi! Select a paper or upload a PDF. I'll help you understand it.</div></div></div><div class="chat-input-area"><div class="quick-actions"><button class="quick-btn" data-q="Summarize this paper">Summarize</button><button class="quick-btn" data-q="What's the key contribution?">Key point</button><button class="quick-btn" data-q="Explain the method">Method</button><button class="quick-btn" data-q="What are the results?">Results</button></div><div class="chat-input-row"><textarea class="chat-input" id="chat-in" rows="1" placeholder="Ask about this paper..."></textarea><button class="chat-send" id="chat-send">Send</button></div></div>`,
             whiteboard: `<div class="wb-toolbar"><button class="wb-tool active" data-t="pen">✏️ Pen</button><button class="wb-tool" data-t="eraser">🧹 Eraser</button><button class="wb-tool" id="wb-clear">🗑️ Clear</button><div class="wb-separator"></div><button class="color-btn active" data-c="#ffffff" style="background:#ffffff"></button><button class="color-btn" data-c="#58a6ff" style="background:#58a6ff"></button><button class="color-btn" data-c="#f0883e" style="background:#f0883e"></button><button class="color-btn" data-c="#238636" style="background:#238636"></button><button class="color-btn" data-c="#da3633" style="background:#da3633"></button><div class="wb-spacer"></div><button class="wb-tool" id="wb-ai">🤖 Ask AI</button></div><div class="canvas-container"><canvas class="whiteboard-canvas" id="canvas"></canvas></div>`,
             notes: `<textarea class="notes-textarea" id="notes" placeholder="Your notes, equations, ideas..."></textarea>`
@@ -107,7 +136,7 @@ const Layout = {
         if (ws.firstChild) { State.layout = walk(ws.firstChild); State.saveLayout(); }
     },
     
-    initPanels() { Papers.init(); PDF.init(); Chat.init(); Whiteboard.init(); Notes.init(); },
+    initPanels() { Papers.init(); Search.init(); PDF.init(); Editor.init(); Chat.init(); Whiteboard.init(); Notes.init(); },
     
     initResizers() {
         // Attach mousedown to each resizer (these get recreated each render, so no duplication)
@@ -203,5 +232,24 @@ const Layout = {
         };
         cl(State.layout, null, 0);
         if (State.layout.type === 'panel' && (!State.layout.tabs || !State.layout.tabs.length)) State.resetLayout();
+    },
+    
+    getActiveTabs() {
+        const tabs = new Set();
+        const walk = n => {
+            if (n.type === 'panel' && n.tabs) n.tabs.forEach(t => tabs.add(t));
+            if (n.children) n.children.forEach(walk);
+        };
+        walk(State.layout);
+        return tabs;
+    },
+    
+    updateDock() {
+        const dock = document.getElementById('dock-items');
+        if (!dock) return;
+        const active = this.getActiveTabs();
+        dock.innerHTML = Object.entries(State.panels).map(([id, def]) => 
+            `<div class="dock-item${active.has(id) ? ' hidden' : ''}" data-panel="${id}">${def.icon} ${def.title}</div>`
+        ).join('');
     }
 };

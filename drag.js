@@ -2,22 +2,41 @@ const Drag = {
     isDragging: false,
     draggedId: null,
     sourcePanel: null,
+    fromDock: false,
     
     init() {
         const pv = document.getElementById('drag-preview');
         const ind = document.getElementById('drop-indicator');
         
-        // Use event delegation on document for mousedown on tabs
+        // Drag from tabs in workspace
         document.addEventListener('mousedown', e => {
+            // Check for dock item first
+            const dockItem = e.target.closest('.dock-item');
+            if (dockItem && !dockItem.classList.contains('hidden')) {
+                e.preventDefault();
+                this.isDragging = true;
+                this.fromDock = true;
+                this.draggedId = dockItem.dataset.panel;
+                this.sourcePanel = null;
+                pv.textContent = dockItem.textContent;
+                pv.style.display = 'block';
+                pv.style.left = (e.clientX + 12) + 'px';
+                pv.style.top = (e.clientY + 12) + 'px';
+                dockItem.classList.add('dragging');
+                return;
+            }
+            
+            // Check for tab
             const t = e.target.closest('.tab');
-            if (!t || e.target.closest('.tab-actions')) return;
+            if (!t || e.target.closest('.tab-actions') || e.target.closest('.tab-close')) return;
             if (!document.getElementById('workspace').contains(t)) return;
             
             e.preventDefault();
             this.isDragging = true;
+            this.fromDock = false;
             this.draggedId = t.dataset.id;
             this.sourcePanel = t.closest('.panel');
-            pv.textContent = t.textContent;
+            pv.textContent = t.textContent.replace('✕', '').trim();
             pv.style.display = 'block';
             pv.style.left = (e.clientX + 12) + 'px';
             pv.style.top = (e.clientY + 12) + 'px';
@@ -38,21 +57,30 @@ const Drag = {
             if (!this.isDragging) return;
             pv.style.display = 'none';
             document.querySelectorAll('.tab.dragging').forEach(t => t.classList.remove('dragging'));
+            document.querySelectorAll('.dock-item.dragging').forEach(d => d.classList.remove('dragging'));
+            
             if (ind.style.display === 'flex') {
                 const zone = ind.dataset.zone;
                 const tgt = ind.dataset.target.split(',');
-                Layout.removeTab(this.draggedId);
+                
+                // Only remove from layout if not from dock
+                if (!this.fromDock) {
+                    Layout.removeTab(this.draggedId);
+                }
+                
                 if (zone === 'center') Layout.addTab(this.draggedId, tgt);
                 else Layout.split(this.draggedId, tgt, zone);
                 Layout.cleanup();
                 State.saveLayout();
                 Layout.render();
             }
+            
             ind.style.display = 'none';
             ind.textContent = '';
             this.isDragging = false;
             this.draggedId = null;
             this.sourcePanel = null;
+            this.fromDock = false;
         });
     },
     
