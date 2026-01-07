@@ -1,81 +1,110 @@
 {
-  "date": "2026-01-06",
-  "generated_at": "2026-01-06T14:19:37Z",
-  "total_papers": 242,
+  "date": "2026-01-07",
+  "generated_at": "2026-01-07T03:15:27Z",
+  "total_papers": 247,
   "must_read_count": 14,
-  "notable_count": 25,
-  "daily_summary": "Today's top AI research papers, curated for serious researchers.",
-  "weekly_trends": {},
+  "notable_count": 24,
+  "daily_summary": "Today's top-scoring papers underscore significant advancements in AI research, particularly in the areas of depth estimation, language modeling, and multimodal learning. Notably, papers such as InfiniDepth and InfiniteVGGT demonstrate substantial progress in visual perception, while Recursive Language Models and Project Ariadne highlight innovative approaches to language understanding and causal frameworks for auditing large language models. Meanwhile, works like Can LLMs Predict Their Own Failures? and COMPASS push the boundaries of self-awareness and policy alignment in LLMs, offering valuable insights for researchers seeking to improve the reliability and transparency of AI systems.",
+  "weekly_trends": {
+    "hot_topics": [
+      {
+        "topic": "Natural Language Processing (cs.CL)",
+        "paper_count": 76,
+        "insight": "Research in NLP continues to thrive, with papers like Recursive Language Models and Project Ariadne: A Structural Causal Framework for Auditing Faithfulness in LLM Agents pushing the boundaries of language understanding and generation."
+      },
+      {
+        "topic": "Computer Vision (cs.CV)",
+        "paper_count": 54,
+        "insight": "Advances in computer vision are evident in papers such as InfiniteVGGT: Visual Geometry Grounded Transformer for Endless Streams and VINO: A Unified Visual Generator with Interleaved OmniModal Context, which demonstrate improved capabilities in image and video processing."
+      },
+      {
+        "topic": "Machine Learning (cs.LG)",
+        "paper_count": 63,
+        "insight": "Machine learning remains a vibrant area of research, with papers like InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural Implicit Fields and Falcon-H1R: Pushing the Reasoning Frontiers with a Hybrid Model for Efficient Test-Time Scaling showcasing innovations in depth estimation and model efficiency."
+      }
+    ],
+    "key_developments": [
+      "The development of neural implicit fields for arbitrary-resolution depth estimation, as seen in InfiniDepth, has significant implications for applications in robotics and autonomous systems.",
+      "The introduction of recursive language models has the potential to revolutionize natural language understanding and generation, as demonstrated in Recursive Language Models.",
+      "The creation of open foundation models for generalist gaming agents, such as NitroGen, marks an important step towards more generalizable and adaptable AI systems."
+    ],
+    "emerging_trends": [
+      "There is a growing focus on evaluating and improving the faithfulness and self-awareness of large language models, as seen in papers like Project Ariadne and Can LLMs Predict Their Own Failures? Self-Awareness via Internal Circuits.",
+      "The development of more efficient and scalable models, such as Falcon-H1R and LTX-2, is becoming increasingly important as AI systems are deployed in real-world applications."
+    ],
+    "summary": "This week in AI research, we saw significant advancements in natural language processing, computer vision, and machine learning, with a focus on developing more efficient, scalable, and generalizable models. Papers like InfiniDepth, Recursive Language Models, and Project Ariadne showcased innovations in depth estimation, language understanding, and model faithfulness. As AI systems become increasingly pervasive, researchers are prioritizing the development of more robust, adaptable, and transparent models, as evident in papers like NitroGen and Falcon-H1R."
+  },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 192
+    "arXiv": 197
   },
   "tags": {
-    "cs.AI": 75,
-    "cs.LG": 71,
-    "cs.CV": 71,
-    "cs.CL": 37,
-    "cs.SE": 8,
-    "cs.IR": 8,
-    "stat.ML": 5,
-    "cs.CR": 4,
-    "cs.RO": 4,
-    "cs.NE": 4,
-    "cs.SD": 3,
-    "cs.PL": 3,
-    "stat.ME": 2,
-    "cs.DC": 2,
-    "cs.DS": 2,
-    "cs.CY": 2,
-    "cs.GR": 2,
+    "cs.AI": 80,
+    "cs.CL": 76,
+    "cs.LG": 63,
+    "cs.CV": 54,
+    "stat.ML": 8,
+    "cs.RO": 8,
+    "cs.SD": 6,
+    "cs.CY": 5,
+    "cs.HC": 4,
+    "cs.IR": 4,
+    "cs.MA": 4,
+    "cs.CR": 3,
+    "cs.MM": 3,
+    "cs.LO": 2,
     "cs.DB": 2,
-    "cs.AR": 1,
-    "cs.SI": 1
+    "cs.PF": 2,
+    "cs.IT": 2,
+    "cs.SE": 2,
+    "cs.NI": 1,
+    "cs.NE": 1
   },
   "institutions": {
-    "MIT": 3
+    "MIT": 5,
+    "Mila": 1,
+    "Amazon": 1
   },
   "must_read_ids": [
-    "2601.02204",
+    "2512.20578",
     "2512.24601",
-    "2512.22280",
-    "2512.24617",
+    "2601.03252",
+    "2601.02314",
     "2512.24165",
     "2512.24330",
     "2512.24695",
-    "2512.23343",
     "2601.02281",
     "2601.02358",
-    "2512.20578",
     "2601.02346",
-    "2601.00830",
-    "2601.02314"
+    "2601.01836",
+    "2601.03233",
+    "2601.02427",
+    "2601.00830"
   ],
   "notable_ids": [
     "2512.24271",
-    "2512.25073",
+    "2601.02204",
     "2512.24138",
     "2601.00747",
     "2601.02356",
     "2512.24766",
-    "2512.24176",
+    "2601.00501",
+    "2601.03194",
     "2601.00575",
     "2601.00671",
     "2512.22877",
-    "2512.24880",
     "2601.00393",
     "2512.24615",
     "2601.01425",
     "2601.02256",
     "2601.00796",
     "2601.00417",
-    "2512.22630",
     "2512.24146",
-    "2601.01836",
-    "2512.24724",
-    "2512.24885",
+    "2601.02267",
     "2512.23035",
+    "2512.24724",
+    "2601.00863",
     "2601.01576",
-    "2601.00863"
+    "2601.01720"
   ]
 }

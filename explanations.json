@@ -394,5 +394,365 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-01-06"
+  },
+  "2601.03252": {
+    "title": "InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural Implicit Fields",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Neural Implicit Fields",
+          "brief": "A representation technique that allows for continuous and detailed modeling of 3D scenes"
+        },
+        {
+          "name": "Depth Estimation",
+          "brief": "The process of predicting the distance of objects from a camera in a scene"
+        },
+        {
+          "name": "Arbitrary-Resolution Depth Estimation",
+          "brief": "The ability to predict depth at any desired resolution, not limited to discrete image grids"
+        },
+        {
+          "name": "Fine-Grained Depth Estimation",
+          "brief": "The ability to recover detailed geometric information in a scene"
+        },
+        {
+          "name": "Local Implicit Decoder",
+          "brief": "A technique used to query depth at continuous 2D coordinates"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of image and video processing, 3D reconstruction, and depth estimation techniques"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Familiarity with neural networks, deep learning architectures, and training methods"
+        },
+        {
+          "topic": "Geometry and 3D Modeling",
+          "why_needed": "Knowledge of 3D scene representation, geometric details, and novel view synthesis"
+        },
+        {
+          "topic": "Image Processing",
+          "why_needed": "Understanding of image grids, resolution, and artifact removal"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-07"
+  },
+  "2601.02427": {
+    "title": "NitroGen: An Open Foundation Model for Generalist Gaming Agents",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Foundation Models",
+          "brief": "Large-scale models trained on diverse data to perform a wide range of tasks"
+        },
+        {
+          "name": "Vision-Action Models",
+          "brief": "Models that process visual inputs and generate actions as outputs"
+        },
+        {
+          "name": "Behavior Cloning",
+          "brief": "A machine learning technique for training agents to mimic human behavior"
+        },
+        {
+          "name": "Cross-Game Generalization",
+          "brief": "The ability of a model to perform well across multiple games or environments"
+        },
+        {
+          "name": "Embodied Agents",
+          "brief": "Agents that interact with and perceive their environment through sensors and actuators"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of NitroGen"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the processing of visual inputs from gameplay videos"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To grasp the concept of training agents to perform tasks through trial and error"
+        },
+        {
+          "topic": "Game Development and Game Theory",
+          "why_needed": "To understand the diverse range of games and tasks that NitroGen is trained on"
+        },
+        {
+          "topic": "Machine Learning and Artificial Intelligence",
+          "why_needed": "To appreciate the broader context and applications of generalist gaming agents"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-07"
+  },
+  "2601.03233": {
+    "title": "LTX-2: Efficient Joint Audio-Visual Foundation Model",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Text-to-Video Diffusion Models",
+          "brief": "Models that generate video sequences from text prompts"
+        },
+        {
+          "name": "Asymmetric Dual-Stream Transformer",
+          "brief": "Architecture used for joint audio-visual processing"
+        },
+        {
+          "name": "Cross-Modality AdaLN",
+          "brief": "Technique for shared timestep conditioning across audio and video streams"
+        },
+        {
+          "name": "Modality-Aware Classifier-Free Guidance (Modality-CFG)",
+          "brief": "Mechanism for improved audiovisual alignment and controllability"
+        },
+        {
+          "name": "Multilingual Text Encoder",
+          "brief": "Encoder used for broader prompt understanding"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Understanding of neural networks and transformer architectures"
+        },
+        {
+          "topic": "Audio-Visual Processing",
+          "why_needed": "Knowledge of audio and video signal processing techniques"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "Familiarity with text encoding and language models"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of video generation and image processing techniques"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Knowledge of model training, evaluation, and optimization techniques"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-01-07"
+  },
+  "2601.02281": {
+    "title": "InfiniteVGGT: Visual Geometry Grounded Transformer for Endless Streams",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Visual Geometry Grounded Transformer (VGGT)",
+          "brief": "A model that enables 3D visual geometry understanding"
+        },
+        {
+          "name": "Infinite-Horizon Inputs",
+          "brief": "The ability to process continuous, endless streams of data"
+        },
+        {
+          "name": "Rolling Memory",
+          "brief": "A concept that allows for efficient, adaptive storage and retrieval of information in a transformer model"
+        },
+        {
+          "name": "KV Cache",
+          "brief": "A cache that stores key-value pairs to facilitate efficient information retrieval"
+        },
+        {
+          "name": "Attention-Agnostic Pruning Strategy",
+          "brief": "A method to discard obsolete information without relying on attention mechanisms"
+        },
+        {
+          "name": "FlashAttention",
+          "brief": "A technique to improve the efficiency of attention mechanisms in transformer models"
+        },
+        {
+          "name": "Long3D Benchmark",
+          "brief": "A benchmark for evaluating continuous 3D geometry estimation over long sequences"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Transformer Models",
+          "why_needed": "To understand the architecture and components of the InfiniteVGGT model"
+        },
+        {
+          "topic": "3D Visual Geometry",
+          "why_needed": "To comprehend the application and requirements of the InfiniteVGGT model"
+        },
+        {
+          "topic": "Streaming Architectures",
+          "why_needed": "To appreciate the challenges and limitations of existing methods for live systems"
+        },
+        {
+          "topic": "Attention Mechanisms",
+          "why_needed": "To understand the role of attention in transformer models and the novelty of the attention-agnostic pruning strategy"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To grasp the fundamental concepts and techniques used in the development of the InfiniteVGGT model"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-01-07"
+  },
+  "2601.01836": {
+    "title": "COMPASS: A Framework for Evaluating Organization-Specific Policy Alignment in LLMs",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models that process and generate human-like language"
+        },
+        {
+          "name": "Organization-Specific Policy Alignment",
+          "brief": "Ensuring LLMs comply with company-specific rules and regulations"
+        },
+        {
+          "name": "Allowlist and Denylist Policies",
+          "brief": "Lists of approved and prohibited actions or content"
+        },
+        {
+          "name": "Adversarial Robustness",
+          "brief": "Ability of LLMs to withstand strategically designed edge cases or attacks"
+        },
+        {
+          "name": "COMPASS Framework",
+          "brief": "A systematic framework for evaluating LLM policy alignment"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence and Machine Learning",
+          "why_needed": "To understand the basics of LLMs and their applications"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend how LLMs process and generate human-like language"
+        },
+        {
+          "topic": "Computer Security and Policy Compliance",
+          "why_needed": "To recognize the importance of policy alignment in high-stakes enterprise applications"
+        },
+        {
+          "topic": "Data Science and Evaluation Metrics",
+          "why_needed": "To understand the methodology and results of the COMPASS framework evaluation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-07"
+  },
+  "2601.02346": {
+    "title": "Falcon-H1R: Pushing the Reasoning Frontiers with a Hybrid Model for Efficient Test-Time Scaling",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Hybrid Model",
+          "brief": "A model that combines different architectures or techniques to achieve better performance"
+        },
+        {
+          "name": "Reasoning-Optimized Model",
+          "brief": "A model designed to improve reasoning capabilities, such as logical and abstract thinking"
+        },
+        {
+          "name": "Small Language Models (SLMs)",
+          "brief": "Language models with fewer parameters, designed to be more efficient and compact"
+        },
+        {
+          "name": "Test-Time Scaling",
+          "brief": "The ability of a model to scale its performance during testing or inference time"
+        },
+        {
+          "name": "DeepConf Approach",
+          "brief": "A method for improving test-time scaling efficiency in deep learning models"
+        },
+        {
+          "name": "Chain-of-Thoughts Generation",
+          "brief": "The ability of a model to generate a sequence of thoughts or reasoning steps to solve a problem"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and model architectures"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the concepts of language models and their applications"
+        },
+        {
+          "topic": "Model Efficiency and Scaling",
+          "why_needed": "To appreciate the importance of efficient model design and test-time scaling"
+        },
+        {
+          "topic": "Reasoning and Problem-Solving",
+          "why_needed": "To understand the concepts of reasoning and how they are applied in AI models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-07"
+  },
+  "2512.24695": {
+    "title": "Nested Learning: The Illusion of Deep Learning Architectures",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Nested Learning (NL)",
+          "brief": "A new learning paradigm representing machine learning models as nested, multi-level optimization problems"
+        },
+        {
+          "name": "In-Context Learning",
+          "brief": "A type of learning where models learn from data by compressing their own context flow"
+        },
+        {
+          "name": "Expressive Optimizers",
+          "brief": "Optimizers with deep memory and powerful learning rules for more effective learning"
+        },
+        {
+          "name": "Self-Modifying Learning Module",
+          "brief": "A sequence model that learns to modify itself by learning its own update algorithm"
+        },
+        {
+          "name": "Continuum Memory System",
+          "brief": "A system for effective continual learning capabilities"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the limitations of current deep learning architectures and the need for new learning paradigms"
+        },
+        {
+          "topic": "Optimization Algorithms",
+          "why_needed": "To comprehend the concept of expressive optimizers and their role in Nested Learning"
+        },
+        {
+          "topic": "Language Models",
+          "why_needed": "To appreciate the challenges of continual learning and memorization in large models"
+        },
+        {
+          "topic": "Machine Learning Fundamentals",
+          "why_needed": "To grasp the basics of learning algorithms, context flow, and gradient descent"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-07"
   }
 }
