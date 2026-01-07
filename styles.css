@@ -70,10 +70,10 @@ body {
 }
 .btn-tool:hover { background: var(--border); color: var(--text); }
 
-.workspace { flex: 1; display: flex; overflow: hidden; }
+.workspace { flex: 1; display: flex; overflow: hidden; min-width: 0; }
 
-.dock-h { display: flex; flex-direction: row; flex: 1; overflow: hidden; }
-.dock-v { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+.dock-h { display: flex; flex-direction: row; flex: 1; overflow: hidden; min-width: 0; }
+.dock-v { display: flex; flex-direction: column; flex: 1; overflow: hidden; min-height: 0; }
 
 .resizer { background: var(--border); flex-shrink: 0; z-index: 10; }
 .resizer:hover, .resizer.active { background: var(--blue); }
@@ -87,6 +87,7 @@ body {
     background: var(--bg);
     min-width: 200px;
     min-height: 150px;
+    flex: 1;
 }
 
 .tab-bar {

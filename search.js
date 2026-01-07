@@ -29,10 +29,20 @@ const Search = {
     
     async searchArxiv(query) {
         const results = document.getElementById('search-results');
-        // arXiv API - search for papers
-        const url = `https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=0&max_results=20&sortBy=relevance&sortOrder=descending`;
+        const baseUrl = `https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=0&max_results=20&sortBy=relevance&sortOrder=descending`;
         
-        const response = await fetch(url);
+        let response;
+        try {
+            // Try direct first
+            response = await fetch(baseUrl);
+            if (!response.ok) throw new Error('Direct failed');
+        } catch (e) {
+            // Fallback to CORS proxy
+            console.log('Using CORS proxy for arXiv');
+            const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(baseUrl);
+            response = await fetch(proxyUrl);
+        }
+        
         if (!response.ok) throw new Error('arXiv API error');
         const text = await response.text();
         const parser = new DOMParser();

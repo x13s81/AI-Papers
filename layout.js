@@ -3,7 +3,11 @@ const Layout = {
         const ws = document.getElementById('workspace');
         ws.innerHTML = '';
         const el = this.renderNode(State.layout);
-        if (el) ws.appendChild(el);
+        if (el) {
+            // Ensure single panel fills workspace
+            el.style.flex = '1';
+            ws.appendChild(el);
+        }
         this.initPanels();
         this.initResizers();
         this.updateDock();
@@ -11,34 +15,51 @@ const Layout = {
     
     renderNode(n) {
         if (!n) return null;
+        
         if (n.type === 'h' || n.type === 'v') {
-            const valid = (n.children || []).filter(c => {
-                if (!c) return false;
-                if (c.type === 'panel') return c.tabs && c.tabs.length > 0;
-                if (c.children) return c.children.length > 0;
-                return false;
+            if (!n.children || !Array.isArray(n.children)) return null;
+            
+            // Filter and render valid children
+            const validChildren = [];
+            n.children.forEach(c => {
+                if (!c) return;
+                const el = this.renderNode(c);
+                if (el) {
+                    validChildren.push({ node: c, el: el });
+                }
             });
-            if (!valid.length) return null;
-            if (valid.length === 1) return this.renderNode(valid[0]);
+            
+            if (validChildren.length === 0) return null;
+            if (validChildren.length === 1) return validChildren[0].el;
+            
             const div = document.createElement('div');
             div.className = n.type === 'h' ? 'dock-h' : 'dock-v';
-            valid.forEach((c, i) => {
+            
+            validChildren.forEach((item, i) => {
                 if (i > 0) {
                     const r = document.createElement('div');
                     r.className = `resizer ${n.type === 'h' ? 'resizer-h' : 'resizer-v'}`;
                     r.dataset.idx = i;
                     div.appendChild(r);
                 }
-                const el = this.renderNode(c);
-                if (el) {
-                    if (c.size) { el.style[n.type === 'h' ? 'width' : 'height'] = c.size + 'px'; el.style.flexShrink = '0'; }
-                    else { el.style.flex = '1'; }
-                    div.appendChild(el);
+                
+                if (item.node.size) {
+                    item.el.style[n.type === 'h' ? 'width' : 'height'] = item.node.size + 'px';
+                    item.el.style.flexShrink = '0';
+                    item.el.style.flexGrow = '0';
+                } else {
+                    item.el.style.flex = '1';
                 }
+                div.appendChild(item.el);
             });
+            
             return div;
         }
-        if (n.type === 'panel') return this.renderPanel(n);
+        
+        if (n.type === 'panel') {
+            return this.renderPanel(n);
+        }
+        
         return null;
     },
     
@@ -217,59 +238,80 @@ Write your paper here...
         const sp = (n, p, i) => {
             if (n.type === 'panel' && tgt.some(t => n.tabs.includes(t))) {
                 const dir = zone === 'left' || zone === 'right' ? 'h' : 'v';
-                const nn = { type: dir, children: zone === 'left' || zone === 'top' ? [np, {...n, size: null}] : [{...n, size: null}, np] };
-                if (p) p.children[i] = nn; else Object.assign(State.layout, nn);
+                // Deep copy the target panel to avoid reference issues
+                const existingPanel = { type: 'panel', tabs: [...n.tabs], active: n.active };
+                const nn = { 
+                    type: dir, 
+                    children: zone === 'left' || zone === 'top' 
+                        ? [np, existingPanel] 
+                        : [existingPanel, np] 
+                };
+                if (p) {
+                    p.children[i] = nn;
+                } else {
+                    State.layout = nn;
+                }
                 return true;
             }
-            if (n.children) for (let j = 0; j < n.children.length; j++) if (sp(n.children[j], n, j)) return true;
+            if (n.children) {
+                for (let j = 0; j < n.children.length; j++) {
+                    if (sp(n.children[j], n, j)) return true;
+                }
+            }
             return false;
         };
         sp(State.layout, null, 0);
     },
     
     cleanup() {
-        const cl = (n, p, i) => {
-            if (n.children) {
-                // Recursively cleanup children first
-                for (let j = n.children.length - 1; j >= 0; j--) cl(n.children[j], n, j);
-                // Remove empty panels and containers
-                n.children = n.children.filter(c => {
-                    if (c.type === 'panel') return c.tabs && c.tabs.length > 0;
-                    if (c.children) return c.children.length > 0;
-                    return false;
-                });
-                // If only one child remains, replace this container with the child
-                if (n.children.length === 1) {
-                    const ch = n.children[0];
-                    if (p) {
-                        p.children[i] = {...ch, size: n.size || ch.size};
-                    } else {
-                        // This is the root - replace entire layout
-                        State.layout = {...ch};
+        // Recursively clean the layout tree
+        const clean = (node) => {
+            if (!node) return null;
+            
+            if (node.type === 'panel') {
+                // Keep panel only if it has tabs
+                if (node.tabs && node.tabs.length > 0) {
+                    return node;
+                }
+                return null;
+            }
+            
+            if (node.type === 'h' || node.type === 'v') {
+                // Recursively clean children
+                const cleanedChildren = (node.children || [])
+                    .map(child => clean(child))
+                    .filter(child => child !== null);
+                
+                if (cleanedChildren.length === 0) {
+                    return null;
+                }
+                
+                if (cleanedChildren.length === 1) {
+                    // Unwrap single child, preserving size
+                    const child = cleanedChildren[0];
+                    if (node.size && !child.size) {
+                        child.size = node.size;
                     }
+                    return child;
                 }
-                // If no children remain, mark for removal
-                if (n.children.length === 0 && p) {
-                    p.children[i] = null;
-                }
+                
+                return {
+                    type: node.type,
+                    children: cleanedChildren,
+                    size: node.size
+                };
             }
+            
+            return null;
         };
-        cl(State.layout, null, 0);
         
-        // Clean up any nulls
-        const cleanNulls = (n) => {
-            if (n.children) {
-                n.children = n.children.filter(c => c !== null);
-                n.children.forEach(cleanNulls);
-            }
-        };
-        cleanNulls(State.layout);
+        const cleaned = clean(State.layout);
         
-        // If layout is empty or invalid, reset
-        if (!State.layout || 
-            (State.layout.type === 'panel' && (!State.layout.tabs || !State.layout.tabs.length)) ||
-            (State.layout.children && State.layout.children.length === 0)) {
+        if (!cleaned) {
+            // Layout is empty, reset to default
             State.resetLayout();
+        } else {
+            State.layout = cleaned;
         }
     },
     
