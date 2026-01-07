@@ -1,6 +1,3 @@
-/**
- * Whiteboard
- */
 const Whiteboard = {
     canvas: null,
     ctx: null,
@@ -11,167 +8,76 @@ const Whiteboard = {
     init() {
         this.canvas = document.getElementById('canvas');
         if (!this.canvas) return;
-        
         this.ctx = this.canvas.getContext('2d');
         this.resize();
         
-        // Drawing events
-        this.canvas.addEventListener('mousedown', (e) => this.startDrawing(e));
-        this.canvas.addEventListener('mousemove', (e) => this.draw(e));
-        this.canvas.addEventListener('mouseup', () => this.stopDrawing());
-        this.canvas.addEventListener('mouseleave', () => this.stopDrawing());
+        this.canvas.onmousedown = e => { this.isDrawing = true; [this.lastX, this.lastY] = [e.offsetX, e.offsetY]; };
+        this.canvas.onmousemove = e => {
+            if (!this.isDrawing) return;
+            this.ctx.beginPath();
+            this.ctx.moveTo(this.lastX, this.lastY);
+            this.ctx.lineTo(e.offsetX, e.offsetY);
+            this.ctx.strokeStyle = State.wb.tool === 'eraser' ? '#1a1a2e' : State.wb.color;
+            this.ctx.lineWidth = State.wb.tool === 'eraser' ? 20 : 2;
+            this.ctx.lineCap = 'round';
+            this.ctx.stroke();
+            [this.lastX, this.lastY] = [e.offsetX, e.offsetY];
+        };
+        this.canvas.onmouseup = () => { if (this.isDrawing) { this.isDrawing = false; this.save(); } };
+        this.canvas.onmouseleave = () => { this.isDrawing = false; };
         
-        // Touch support
-        this.canvas.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            const touch = e.touches[0];
-            const rect = this.canvas.getBoundingClientRect();
-            this.startDrawing({
-                offsetX: touch.clientX - rect.left,
-                offsetY: touch.clientY - rect.top
-            });
+        document.querySelectorAll('.wb-tool[data-t]').forEach(b => b.onclick = () => {
+            State.wb.tool = b.dataset.t;
+            document.querySelectorAll('.wb-tool[data-t]').forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
         });
         
-        this.canvas.addEventListener('touchmove', (e) => {
-            e.preventDefault();
-            const touch = e.touches[0];
-            const rect = this.canvas.getBoundingClientRect();
-            this.draw({
-                offsetX: touch.clientX - rect.left,
-                offsetY: touch.clientY - rect.top
-            });
+        document.querySelectorAll('.color-btn').forEach(b => b.onclick = () => {
+            State.wb.color = b.dataset.c;
+            State.wb.tool = 'pen';
+            document.querySelectorAll('.color-btn').forEach(x => x.classList.remove('active'));
+            b.classList.add('active');
+            document.querySelectorAll('.wb-tool[data-t]').forEach(x => x.classList.remove('active'));
+            document.querySelector('.wb-tool[data-t="pen"]')?.classList.add('active');
         });
         
-        this.canvas.addEventListener('touchend', () => this.stopDrawing());
-        
-        // Tool buttons
-        document.querySelectorAll('.wb-tool[data-t]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                State.wb.tool = btn.dataset.t;
-                document.querySelectorAll('.wb-tool[data-t]').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
+        document.getElementById('wb-clear')?.addEventListener('click', () => {
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            localStorage.removeItem('canvasData');
         });
         
-        // Color buttons
-        document.querySelectorAll('.color-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                State.wb.color = btn.dataset.c;
-                State.wb.tool = 'pen';
-                
-                document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                document.querySelectorAll('.wb-tool[data-t]').forEach(b => b.classList.remove('active'));
-                document.querySelector('.wb-tool[data-t="pen"]')?.classList.add('active');
-            });
-        });
-        
-        // Clear button
-        document.getElementById('wb-clear')?.addEventListener('click', () => this.clear());
-        
-        // Ask AI button
         document.getElementById('wb-ai')?.addEventListener('click', () => {
-            const input = document.getElementById('chat-in');
-            if (input) {
-                input.value = 'Help me understand what I drew on the whiteboard';
-                Chat.send();
-            }
+            const inp = document.getElementById('chat-in');
+            if (inp) { inp.value = 'Help me understand my whiteboard notes'; Chat.send(); }
         });
         
-        // Load saved drawing
-        this.loadSaved();
-    },
-    
-    startDrawing(e) {
-        this.isDrawing = true;
-        this.lastX = e.offsetX;
-        this.lastY = e.offsetY;
-    },
-    
-    draw(e) {
-        if (!this.isDrawing || !this.ctx) return;
-        
-        this.ctx.beginPath();
-        this.ctx.moveTo(this.lastX, this.lastY);
-        this.ctx.lineTo(e.offsetX, e.offsetY);
-        
-        if (State.wb.tool === 'eraser') {
-            this.ctx.strokeStyle = '#1a1a2e';
-            this.ctx.lineWidth = 20;
-        } else {
-            this.ctx.strokeStyle = State.wb.color;
-            this.ctx.lineWidth = 2;
-        }
-        
-        this.ctx.lineCap = 'round';
-        this.ctx.lineJoin = 'round';
-        this.ctx.stroke();
-        
-        this.lastX = e.offsetX;
-        this.lastY = e.offsetY;
-    },
-    
-    stopDrawing() {
-        if (this.isDrawing) {
-            this.isDrawing = false;
-            this.save();
-        }
+        const saved = localStorage.getItem('canvasData');
+        if (saved) { const img = new Image(); img.onload = () => this.ctx.drawImage(img, 0, 0); img.src = saved; }
     },
     
     resize() {
         if (!this.canvas) return;
-        
-        const container = this.canvas.parentElement;
-        if (!container) return;
-        
-        const rect = container.getBoundingClientRect();
-        const savedData = this.canvas.toDataURL();
-        
-        this.canvas.width = rect.width || 400;
-        this.canvas.height = rect.height || 300;
-        
-        // Restore drawing
+        const c = this.canvas.parentElement;
+        if (!c) return;
+        const r = c.getBoundingClientRect();
+        const d = this.canvas.toDataURL();
+        this.canvas.width = r.width || 400;
+        this.canvas.height = r.height || 300;
         const img = new Image();
         img.onload = () => this.ctx.drawImage(img, 0, 0);
-        img.src = savedData;
+        img.src = d;
     },
     
-    clear() {
-        if (!this.ctx || !this.canvas) return;
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        localStorage.removeItem('canvasData');
-    },
-    
-    save() {
-        if (!this.canvas) return;
-        localStorage.setItem('canvasData', this.canvas.toDataURL());
-    },
-    
-    loadSaved() {
-        const saved = localStorage.getItem('canvasData');
-        if (saved && this.ctx) {
-            const img = new Image();
-            img.onload = () => this.ctx.drawImage(img, 0, 0);
-            img.src = saved;
-        }
-    }
+    save() { localStorage.setItem('canvasData', this.canvas.toDataURL()); }
 };
 
-// Notes
 const Notes = {
     init() {
-        const textarea = document.getElementById('notes');
-        if (!textarea) return;
-        
-        textarea.value = localStorage.getItem('notes') || '';
-        textarea.addEventListener('input', () => {
-            localStorage.setItem('notes', textarea.value);
-        });
+        const el = document.getElementById('notes');
+        if (!el) return;
+        el.value = localStorage.getItem('notes') || '';
+        el.oninput = () => localStorage.setItem('notes', el.value);
     }
 };
 
-// Handle window resize
-window.addEventListener('resize', () => {
-    setTimeout(() => Whiteboard.resize(), 100);
-});
+window.addEventListener('resize', () => setTimeout(() => Whiteboard.resize(), 100));

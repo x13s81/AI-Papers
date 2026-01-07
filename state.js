@@ -1,6 +1,3 @@
-/**
- * State Management
- */
 const State = {
     papers: {
         all: [],
@@ -9,39 +6,21 @@ const State = {
         selected: null,
         tab: 'all'
     },
-    
-    chat: {
-        history: [],
-        typing: false
-    },
-    
-    pdf: {
-        url: null,
-        name: null
-    },
-    
-    wb: {
-        tool: 'pen',
-        color: '#ffffff'
-    },
-    
+    chat: { history: [], typing: false },
+    pdf: { url: null, name: null },
+    wb: { tool: 'pen', color: '#ffffff' },
     layout: null,
-    
     defaultLayout: {
         type: 'h',
         children: [
             { type: 'panel', tabs: ['papers'], active: 'papers', size: 350 },
-            { 
-                type: 'v', 
-                children: [
-                    { type: 'panel', tabs: ['pdf'], active: 'pdf' },
-                    { type: 'panel', tabs: ['whiteboard', 'notes'], active: 'whiteboard', size: 300 }
-                ]
-            },
+            { type: 'v', children: [
+                { type: 'panel', tabs: ['pdf'], active: 'pdf' },
+                { type: 'panel', tabs: ['whiteboard', 'notes'], active: 'whiteboard', size: 300 }
+            ]},
             { type: 'panel', tabs: ['chat'], active: 'chat', size: 380 }
         ]
     },
-    
     panels: {
         papers: { id: 'papers', title: 'Papers', icon: '📚' },
         pdf: { id: 'pdf', title: 'PDF Viewer', icon: '📄' },
@@ -49,25 +28,17 @@ const State = {
         whiteboard: { id: 'whiteboard', title: 'Whiteboard', icon: '🎨' },
         notes: { id: 'notes', title: 'Notes', icon: '📝' }
     },
-    
     save() {
         localStorage.setItem('customPapers', JSON.stringify(this.papers.custom));
         localStorage.setItem('savedPapers', JSON.stringify(this.papers.saved));
     },
-    
-    saveLayout() {
-        localStorage.setItem('layout', JSON.stringify(this.layout));
-    },
-    
+    saveLayout() { localStorage.setItem('layout', JSON.stringify(this.layout)); },
     loadLayout() {
         try {
-            const saved = localStorage.getItem('layout');
-            this.layout = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(this.defaultLayout));
-        } catch {
-            this.layout = JSON.parse(JSON.stringify(this.defaultLayout));
-        }
+            const s = localStorage.getItem('layout');
+            this.layout = s ? JSON.parse(s) : JSON.parse(JSON.stringify(this.defaultLayout));
+        } catch { this.layout = JSON.parse(JSON.stringify(this.defaultLayout)); }
     },
-    
     resetLayout() {
         this.layout = JSON.parse(JSON.stringify(this.defaultLayout));
         this.saveLayout();

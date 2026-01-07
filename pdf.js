@@ -1,123 +1,61 @@
-/**
- * PDF Viewer
- */
 const PDF = {
     init() {
-        const uploadZone = document.getElementById('upload-zone');
-        const fileInput = document.getElementById('pdf-file');
-        const closeBtn = document.getElementById('pdf-close');
-        
-        // Click to upload
-        uploadZone?.addEventListener('click', () => fileInput?.click());
-        
-        // Drag and drop
-        uploadZone?.addEventListener('dragover', (e) => {
+        const zone = document.getElementById('upload-zone');
+        const file = document.getElementById('pdf-file');
+        zone?.addEventListener('click', () => file?.click());
+        zone?.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+        zone?.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+        zone?.addEventListener('drop', e => {
             e.preventDefault();
-            uploadZone.classList.add('drag-over');
+            zone.classList.remove('drag-over');
+            if (e.dataTransfer.files[0]?.type === 'application/pdf') this.loadFile(e.dataTransfer.files[0]);
         });
-        
-        uploadZone?.addEventListener('dragleave', () => {
-            uploadZone.classList.remove('drag-over');
-        });
-        
-        uploadZone?.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadZone.classList.remove('drag-over');
-            const file = e.dataTransfer.files[0];
-            if (file && file.type === 'application/pdf') {
-                this.loadFile(file);
-            }
-        });
-        
-        // File input change
-        fileInput?.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) this.loadFile(file);
-        });
-        
-        // Close button
-        closeBtn?.addEventListener('click', () => this.close());
+        file?.addEventListener('change', e => { if (e.target.files[0]) this.loadFile(e.target.files[0]); });
+        document.getElementById('pdf-close')?.addEventListener('click', () => this.close());
     },
     
-    openPaper(paperId) {
-        const paper = [...State.papers.all, ...State.papers.custom].find(p => p.id === paperId);
-        if (!paper || !paper.pdf_link) return;
-        
-        State.papers.selected = paper;
-        this.show(paper.pdf_link, paper.title, paper.link);
-        
-        // Update chat context
+    openPaper(id) {
+        const p = [...State.papers.all, ...State.papers.custom].find(x => x.id === id);
+        if (!p?.pdf_link) return;
+        State.papers.selected = p;
+        this.show(p.pdf_link, p.title, p.link);
         const ctx = document.getElementById('chat-ctx');
-        if (ctx) {
-            ctx.innerHTML = `<span class="status-dot"></span>Discussing: <strong>${paper.title}</strong>`;
-        }
-        
-        Chat.addMessage('ai', `Opened "<strong>${paper.title}</strong>". What would you like to know?`);
+        if (ctx) ctx.innerHTML = `<span class="status-dot"></span>Discussing: <strong>${p.title}</strong>`;
+        Chat.addMessage('ai', `Opened "<strong>${p.title}</strong>". What would you like to know?`);
         Papers.filter();
     },
     
     loadFile(file) {
-        // Clean up previous upload
-        if (State.pdf.url) {
-            URL.revokeObjectURL(State.pdf.url);
-        }
-        
+        if (State.pdf.url) URL.revokeObjectURL(State.pdf.url);
         State.pdf.url = URL.createObjectURL(file);
         State.pdf.name = file.name;
-        
-        // Create pseudo-paper for context
-        State.papers.selected = {
-            title: file.name,
-            authors: 'Uploaded PDF',
-            abstract: '',
-            tags: []
-        };
-        
+        State.papers.selected = { title: file.name, authors: 'Uploaded PDF', abstract: '', tags: [] };
         this.show(State.pdf.url, file.name, null);
-        
-        // Update chat context
         const ctx = document.getElementById('chat-ctx');
-        if (ctx) {
-            ctx.innerHTML = `<span class="status-dot"></span>Discussing: <strong>${file.name}</strong>`;
-        }
-        
+        if (ctx) ctx.innerHTML = `<span class="status-dot"></span>Discussing: <strong>${file.name}</strong>`;
         Chat.addMessage('ai', `Opened your PDF "<strong>${file.name}</strong>". What would you like to know?`);
     },
     
-    show(url, title, paperLink) {
-        const placeholder = document.getElementById('pdf-ph');
-        const toolbar = document.getElementById('pdf-bar');
+    show(url, title, link) {
+        const ph = document.getElementById('pdf-ph');
+        const bar = document.getElementById('pdf-bar');
         const frame = document.getElementById('pdf-frame');
-        const titleEl = document.getElementById('pdf-title');
-        const linkEl = document.getElementById('pdf-link');
-        
-        if (placeholder) placeholder.style.display = 'none';
-        if (toolbar) toolbar.classList.add('visible');
-        if (frame) {
-            frame.classList.add('visible');
-            frame.src = url;
-        }
-        if (titleEl) titleEl.textContent = title;
-        if (linkEl) linkEl.href = url;
+        if (ph) ph.style.display = 'none';
+        if (bar) bar.classList.add('visible');
+        if (frame) { frame.classList.add('visible'); frame.src = url; }
+        const t = document.getElementById('pdf-title');
+        const l = document.getElementById('pdf-link');
+        if (t) t.textContent = title;
+        if (l) l.href = url;
     },
     
     close() {
-        const placeholder = document.getElementById('pdf-ph');
-        const toolbar = document.getElementById('pdf-bar');
+        const ph = document.getElementById('pdf-ph');
+        const bar = document.getElementById('pdf-bar');
         const frame = document.getElementById('pdf-frame');
-        
-        if (placeholder) placeholder.style.display = '';
-        if (toolbar) toolbar.classList.remove('visible');
-        if (frame) {
-            frame.classList.remove('visible');
-            frame.src = '';
-        }
-        
-        // Clean up uploaded file
-        if (State.pdf.url) {
-            URL.revokeObjectURL(State.pdf.url);
-            State.pdf.url = null;
-            State.pdf.name = null;
-        }
+        if (ph) ph.style.display = '';
+        if (bar) bar.classList.remove('visible');
+        if (frame) { frame.classList.remove('visible'); frame.src = ''; }
+        if (State.pdf.url) { URL.revokeObjectURL(State.pdf.url); State.pdf.url = null; State.pdf.name = null; }
     }
 };

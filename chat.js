@@ -1,147 +1,71 @@
-/**
- * Chat
- */
 const Chat = {
     init() {
-        const sendBtn = document.getElementById('chat-send');
-        const input = document.getElementById('chat-in');
-        
-        sendBtn?.addEventListener('click', () => this.send());
-        
-        input?.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                this.send();
-            }
+        document.getElementById('chat-send')?.addEventListener('click', () => this.send());
+        document.getElementById('chat-in')?.addEventListener('keydown', e => {
+            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.send(); }
         });
-        
-        // Quick action buttons
-        document.querySelectorAll('.quick-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const input = document.getElementById('chat-in');
-                if (input) {
-                    input.value = btn.dataset.q;
-                    this.send();
-                }
-            });
-        });
+        document.querySelectorAll('.quick-btn').forEach(b => b.addEventListener('click', () => {
+            const inp = document.getElementById('chat-in');
+            if (inp) { inp.value = b.dataset.q; this.send(); }
+        }));
     },
     
     async send() {
-        const input = document.getElementById('chat-in');
-        const sendBtn = document.getElementById('chat-send');
-        
-        const message = input?.value.trim();
-        if (!message || State.chat.typing) return;
-        
-        // Check if paper is selected
-        if (!State.papers.selected) {
-            this.addMessage('ai', 'Please select a paper or upload a PDF first.');
-            return;
-        }
-        
-        // Add user message
-        this.addMessage('user', message);
-        input.value = '';
-        
-        // Add to history
-        State.chat.history.push({ role: 'user', content: message });
-        
-        // Show typing indicator
+        const inp = document.getElementById('chat-in');
+        const btn = document.getElementById('chat-send');
+        const msg = inp?.value.trim();
+        if (!msg || State.chat.typing) return;
+        if (!State.papers.selected) { this.addMessage('ai', 'Please select a paper or upload a PDF first.'); return; }
+        this.addMessage('user', msg);
+        inp.value = '';
+        State.chat.history.push({ role: 'user', content: msg });
         State.chat.typing = true;
-        if (sendBtn) sendBtn.disabled = true;
-        const typingEl = this.showTyping();
-        
+        if (btn) btn.disabled = true;
+        const typ = this.showTyping();
         try {
-            const response = await fetch('/api/chat', {
+            const r = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message,
-                    paper: {
-                        title: State.papers.selected.title,
-                        authors: State.papers.selected.authors,
-                        abstract: State.papers.selected.abstract,
-                        tags: State.papers.selected.tags
-                    },
-                    history: State.chat.history.slice(-8)
-                })
+                body: JSON.stringify({ message: msg, paper: State.papers.selected, history: State.chat.history.slice(-8) })
             });
-            
-            if (response.ok) {
-                const data = await response.json();
-                typingEl.remove();
-                this.addMessage('ai', data.response);
-                State.chat.history.push({ role: 'assistant', content: data.response });
-            } else {
-                throw new Error('API error');
-            }
+            if (r.ok) {
+                const d = await r.json();
+                typ.remove();
+                this.addMessage('ai', d.response);
+                State.chat.history.push({ role: 'assistant', content: d.response });
+            } else throw new Error();
         } catch {
-            typingEl.remove();
-            const fallback = this.getFallbackResponse(message);
-            this.addMessage('ai', fallback);
-            State.chat.history.push({ role: 'assistant', content: fallback });
+            typ.remove();
+            const fb = this.fallback(msg);
+            this.addMessage('ai', fb);
+            State.chat.history.push({ role: 'assistant', content: fb });
         }
-        
         State.chat.typing = false;
-        if (sendBtn) sendBtn.disabled = false;
+        if (btn) btn.disabled = false;
     },
     
     addMessage(role, content) {
-        const container = document.getElementById('chat-msgs');
-        if (!container) return;
-        
-        const messageEl = document.createElement('div');
-        messageEl.className = `message ${role}`;
-        messageEl.innerHTML = `
-            <div class="message-avatar">${role === 'ai' ? '🤖' : '👤'}</div>
-            <div class="message-content">${content}</div>
-        `;
-        
-        container.appendChild(messageEl);
-        container.scrollTop = container.scrollHeight;
+        const el = document.getElementById('chat-msgs');
+        if (!el) return;
+        el.innerHTML += `<div class="message ${role}"><div class="message-avatar">${role==='ai'?'🤖':'👤'}</div><div class="message-content">${content}</div></div>`;
+        el.scrollTop = el.scrollHeight;
     },
     
     showTyping() {
-        const container = document.getElementById('chat-msgs');
-        if (!container) return document.createElement('div');
-        
-        const el = document.createElement('div');
-        el.className = 'message ai';
-        el.innerHTML = `
-            <div class="message-avatar">🤖</div>
-            <div class="message-content">
-                <div class="typing-indicator">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        `;
-        
-        container.appendChild(el);
-        container.scrollTop = container.scrollHeight;
-        return el;
+        const el = document.getElementById('chat-msgs');
+        if (!el) return document.createElement('div');
+        const d = document.createElement('div');
+        d.className = 'message ai';
+        d.innerHTML = '<div class="message-avatar">🤖</div><div class="message-content"><div class="typing-indicator"><span></span><span></span><span></span></div></div>';
+        el.appendChild(d);
+        el.scrollTop = el.scrollHeight;
+        return d;
     },
     
-    getFallbackResponse(message) {
-        const paper = State.papers.selected;
-        const msg = message.toLowerCase();
-        
-        if (msg.includes('summar')) {
-            return `<strong>${paper.title}</strong><br><br>${paper.abstract?.slice(0, 400) || 'Please open the PDF to read the full content.'}<br><br>Score: ${paper.score || 'N/A'}/10`;
-        }
-        
-        if (msg.includes('key') || msg.includes('contribution')) {
-            return `The key contribution of "<strong>${paper.title}</strong>" relates to ${paper.tags?.join(', ') || 'advancing AI research'}. Please check the PDF for details.`;
-        }
-        
-        if (msg.includes('method')) {
-            return `For methodology details of "<strong>${paper.title}</strong>", please refer to Sections 3-4 in the PDF.`;
-        }
-        
-        if (msg.includes('result')) {
-            return `The results section can be found in the PDF. The paper achieved a relevance score of ${paper.score || 'N/A'}/10.`;
-        }
-        
-        return `I'm in offline mode. For "<strong>${paper.title}</strong>" by ${paper.authors || 'the authors'}, please refer to the PDF for detailed information.`;
+    fallback(msg) {
+        const p = State.papers.selected;
+        const m = msg.toLowerCase();
+        if (m.includes('summar')) return `<strong>${p.title}</strong><br><br>${p.abstract?.slice(0,400) || 'Open PDF for details.'}`;
+        return `Offline mode. "${p.title}": ${p.abstract?.slice(0,200) || 'Check PDF.'}...`;
     }
 };
