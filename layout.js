@@ -123,8 +123,11 @@ const Layout = {
     },
     
     closeTab(id) {
+        State.log('CLOSE_TAB', { id });
         this.removeTab(id);
+        State.log('AFTER_REMOVE_TAB');
         this.cleanup();
+        State.log('AFTER_CLEANUP');
         State.saveLayout();
         this.render();
     },
@@ -238,16 +241,31 @@ Write your paper here...
     },
     
     removeTab(id) {
+        State.log('REMOVE_TAB_START', { id, layout: State.layout });
         const rm = n => {
-            if (n.type === 'panel') { const i = n.tabs.indexOf(id); if (i > -1) { n.tabs.splice(i, 1); if (n.active === id) n.active = n.tabs[0]; } }
+            if (n.type === 'panel' && n.tabs) { 
+                const i = n.tabs.indexOf(id); 
+                if (i > -1) { 
+                    n.tabs.splice(i, 1); 
+                    if (n.active === id) n.active = n.tabs[0] || null;
+                    State.log('REMOVED_FROM_PANEL', { tabs: n.tabs, active: n.active });
+                } 
+            }
             else if (n.children) n.children.forEach(rm);
         };
         rm(State.layout);
     },
     
     addTab(id, tgt) {
+        State.log('ADD_TAB', { id, tgt });
         const add = n => {
-            if (n.type === 'panel' && tgt.some(t => n.tabs.includes(t))) { if (!n.tabs.includes(id)) { n.tabs.push(id); n.active = id; } return true; }
+            if (n.type === 'panel' && tgt.some(t => n.tabs.includes(t))) { 
+                if (!n.tabs.includes(id)) { 
+                    n.tabs.push(id); 
+                    n.active = id; 
+                } 
+                return true; 
+            }
             if (n.children) for (let c of n.children) if (add(c)) return true;
             return false;
         };
@@ -255,33 +273,42 @@ Write your paper here...
     },
     
     split(id, tgt, zone) {
-        const np = { type: 'panel', tabs: [id], active: id, size: 300 };
-        const sp = (n, p, i) => {
-            if (n.type === 'panel' && tgt.some(t => n.tabs.includes(t))) {
-                const dir = zone === 'left' || zone === 'right' ? 'h' : 'v';
-                // Deep copy the target panel to avoid reference issues
-                const existingPanel = { type: 'panel', tabs: [...n.tabs], active: n.active };
-                const nn = { 
-                    type: dir, 
-                    children: zone === 'left' || zone === 'top' 
-                        ? [np, existingPanel] 
-                        : [existingPanel, np] 
+        State.log('SPLIT_START', { id, tgt, zone });
+        
+        const findAndSplit = (node, parent, index) => {
+            if (node.type === 'panel' && node.tabs && tgt.some(t => node.tabs.includes(t))) {
+                // Found the target panel
+                const newPanel = { type: 'panel', tabs: [id], active: id };
+                const existingPanel = { type: 'panel', tabs: [...node.tabs], active: node.active };
+                const dir = (zone === 'left' || zone === 'right') ? 'h' : 'v';
+                const newContainer = {
+                    type: dir,
+                    children: (zone === 'left' || zone === 'top') 
+                        ? [newPanel, existingPanel] 
+                        : [existingPanel, newPanel]
                 };
-                if (p) {
-                    p.children[i] = nn;
+                
+                // Give the new panel a reasonable size
+                newPanel.size = 300;
+                
+                if (parent) {
+                    parent.children[index] = newContainer;
                 } else {
-                    State.layout = nn;
+                    State.layout = newContainer;
                 }
+                State.log('SPLIT_DONE', { newContainer });
                 return true;
             }
-            if (n.children) {
-                for (let j = 0; j < n.children.length; j++) {
-                    if (sp(n.children[j], n, j)) return true;
+            
+            if (node.children) {
+                for (let i = 0; i < node.children.length; i++) {
+                    if (findAndSplit(node.children[i], node, i)) return true;
                 }
             }
             return false;
         };
-        sp(State.layout, null, 0);
+        
+        findAndSplit(State.layout, null, 0);
     },
     
     cleanup() {

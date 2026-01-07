@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         Layout.render();
     });
     
+    document.getElementById('btn-clear-all')?.addEventListener('click', () => {
+        if (confirm('This will clear all saved data (layout, papers, notes). Continue?')) {
+            localStorage.clear();
+            location.reload();
+        }
+    });
+    
     document.getElementById('btn-help')?.addEventListener('click', () => {
         document.getElementById('help-tooltip').classList.toggle('visible');
     });
@@ -46,6 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') {
             document.querySelectorAll('.modal-overlay.visible').forEach(m => m.classList.remove('visible'));
             document.getElementById('help-tooltip')?.classList.remove('visible');
+        }
+        // Ctrl+Shift+D to dump layout state to console
+        if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+            console.log('=== CURRENT LAYOUT STATE ===');
+            console.log(JSON.stringify(State.layout, null, 2));
+            console.log('=== ACTIVE TABS ===');
+            console.log([...Layout.getActiveTabs()]);
         }
     });
 });

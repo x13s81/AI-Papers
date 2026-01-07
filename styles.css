@@ -69,6 +69,8 @@ body {
     cursor: pointer;
 }
 .btn-tool:hover { background: var(--border); color: var(--text); }
+.btn-tool.btn-danger { color: var(--red); }
+.btn-tool.btn-danger:hover { background: var(--red); color: white; }
 
 .workspace { flex: 1; display: flex; overflow: hidden; min-width: 0; }
 

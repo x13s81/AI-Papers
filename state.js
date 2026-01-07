@@ -1,4 +1,5 @@
 const State = {
+    debug: true, // Set to true to see layout changes in console
     papers: {
         all: [],
         custom: JSON.parse(localStorage.getItem('customPapers') || '[]'),
@@ -30,19 +31,38 @@ const State = {
         whiteboard: { id: 'whiteboard', title: 'Whiteboard', icon: '🎨' },
         notes: { id: 'notes', title: 'Notes', icon: '📝' }
     },
+    log(action, data) {
+        if (this.debug) {
+            console.log(`[${action}]`, JSON.stringify(data || this.layout, null, 2));
+        }
+    },
     save() {
         localStorage.setItem('customPapers', JSON.stringify(this.papers.custom));
         localStorage.setItem('savedPapers', JSON.stringify(this.papers.saved));
     },
-    saveLayout() { localStorage.setItem('layout', JSON.stringify(this.layout)); },
+    saveLayout() { 
+        this.log('SAVE_LAYOUT', this.layout);
+        localStorage.setItem('layout', JSON.stringify(this.layout)); 
+    },
     loadLayout() {
         try {
             const s = localStorage.getItem('layout');
-            this.layout = s ? JSON.parse(s) : JSON.parse(JSON.stringify(this.defaultLayout));
-        } catch { this.layout = JSON.parse(JSON.stringify(this.defaultLayout)); }
+            if (s) {
+                this.layout = JSON.parse(s);
+                this.log('LOAD_LAYOUT (from storage)');
+            } else {
+                this.layout = JSON.parse(JSON.stringify(this.defaultLayout));
+                this.log('LOAD_LAYOUT (default)');
+            }
+        } catch (e) { 
+            console.error('Failed to load layout:', e);
+            this.layout = JSON.parse(JSON.stringify(this.defaultLayout)); 
+        }
     },
     resetLayout() {
+        localStorage.removeItem('layout'); // Clear saved layout
         this.layout = JSON.parse(JSON.stringify(this.defaultLayout));
+        this.log('RESET_LAYOUT');
         this.saveLayout();
     }
 };
