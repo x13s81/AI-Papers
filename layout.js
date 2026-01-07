@@ -1,11 +1,15 @@
 const Layout = {
     render() {
+        // Always cleanup before rendering to ensure valid layout
+        this.cleanup();
+        
         const ws = document.getElementById('workspace');
         ws.innerHTML = '';
         const el = this.renderNode(State.layout);
         if (el) {
             // Ensure single panel fills workspace
             el.style.flex = '1';
+            el.style.minWidth = '0';
             ws.appendChild(el);
         }
         this.initPanels();
@@ -23,6 +27,11 @@ const Layout = {
             const validChildren = [];
             n.children.forEach(c => {
                 if (!c) return;
+                // Skip empty panels
+                if (c.type === 'panel' && (!c.tabs || c.tabs.length === 0)) return;
+                // Skip empty containers
+                if ((c.type === 'h' || c.type === 'v') && (!c.children || c.children.length === 0)) return;
+                
                 const el = this.renderNode(c);
                 if (el) {
                     validChildren.push({ node: c, el: el });
@@ -30,10 +39,17 @@ const Layout = {
             });
             
             if (validChildren.length === 0) return null;
-            if (validChildren.length === 1) return validChildren[0].el;
+            if (validChildren.length === 1) {
+                // Single child - ensure it can flex
+                validChildren[0].el.style.flex = '1';
+                return validChildren[0].el;
+            }
             
             const div = document.createElement('div');
             div.className = n.type === 'h' ? 'dock-h' : 'dock-v';
+            
+            // Count how many children have fixed sizes vs flex
+            const flexChildren = validChildren.filter(item => !item.node.size);
             
             validChildren.forEach((item, i) => {
                 if (i > 0) {
@@ -48,7 +64,10 @@ const Layout = {
                     item.el.style.flexShrink = '0';
                     item.el.style.flexGrow = '0';
                 } else {
+                    // Distribute flex evenly among flex children
                     item.el.style.flex = '1';
+                    item.el.style.minWidth = '0';
+                    item.el.style.minHeight = '0';
                 }
                 div.appendChild(item.el);
             });
@@ -57,6 +76,8 @@ const Layout = {
         }
         
         if (n.type === 'panel') {
+            // Skip empty panels
+            if (!n.tabs || n.tabs.length === 0) return null;
             return this.renderPanel(n);
         }
         
@@ -269,16 +290,18 @@ Write your paper here...
             if (!node) return null;
             
             if (node.type === 'panel') {
-                // Keep panel only if it has tabs
-                if (node.tabs && node.tabs.length > 0) {
-                    return node;
+                // Keep panel only if it has valid tabs
+                if (node.tabs && Array.isArray(node.tabs) && node.tabs.length > 0) {
+                    return { type: 'panel', tabs: [...node.tabs], active: node.active || node.tabs[0], size: node.size };
                 }
                 return null;
             }
             
             if (node.type === 'h' || node.type === 'v') {
+                if (!node.children || !Array.isArray(node.children)) return null;
+                
                 // Recursively clean children
-                const cleanedChildren = (node.children || [])
+                const cleanedChildren = node.children
                     .map(child => clean(child))
                     .filter(child => child !== null);
                 
@@ -287,7 +310,7 @@ Write your paper here...
                 }
                 
                 if (cleanedChildren.length === 1) {
-                    // Unwrap single child, preserving size
+                    // Unwrap single child, preserving size from parent if child doesn't have one
                     const child = cleanedChildren[0];
                     if (node.size && !child.size) {
                         child.size = node.size;
@@ -295,6 +318,7 @@ Write your paper here...
                     return child;
                 }
                 
+                // Return container with cleaned children
                 return {
                     type: node.type,
                     children: cleanedChildren,

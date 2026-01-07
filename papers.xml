@@ -4,7 +4,7 @@
 <title>AI Papers - 2026-01-07</title>
 <link>https://arxiv.org</link>
 <description>AI papers as of 2026-01-07 - 243 papers</description>
-<lastBuildDate>Wed, 07 Jan 2026 08:56:46 +0000</lastBuildDate>
+<lastBuildDate>Wed, 07 Jan 2026 09:23:29 +0000</lastBuildDate>
 <item>
 <title><![CDATA[MiMo-V2-Flash Technical Report]]></title>
 <link>https://huggingface.co/papers/2601.02780</link>
@@ -34,7 +34,7 @@ Institution:
 Published: 2025-12-26
 Score: 8/10
 Citations: 0
-Upvotes: 16
+Upvotes: 22
 GitHub: 
 Stars: 0
 
@@ -70,7 +70,7 @@ Institution:
 Published: 2026-01-06
 Score: 7/10
 Citations: 0
-Upvotes: 16
+Upvotes: 17
 GitHub: 
 Stars: 0
 
@@ -268,7 +268,7 @@ Institution:
 Published: 2026-01-05
 Score: 4/10
 Citations: 0
-Upvotes: 47
+Upvotes: 48
 GitHub: 
 Stars: 0
 
@@ -322,7 +322,7 @@ Institution:
 Published: 2026-01-05
 Score: 4/10
 Citations: 0
-Upvotes: 29
+Upvotes: 30
 GitHub: 
 Stars: 0
 
@@ -448,12 +448,30 @@ Institution:
 Published: 2026-01-06
 Score: 4/10
 Citations: 0
-Upvotes: 18
+Upvotes: 19
 GitHub: 
 Stars: 0
 
 Recent text-to-video diffusion models can generate compelling video sequences, yet they remain silent -- missing the semantic, emotional, and atmospheric cues that audio provides. We introduce LTX-2, an open-source foundational model capable of generating high-quality, temporally synchronized audiovisual content in a unified manner. LTX-2 consists of an asymmetric dual-stream transformer with a 14B-parameter video stream and a 5B-parameter audio stream, coupled through bidirectional audio-video cross-attention layers with temporal positional embeddings and cross-modality AdaLN for shared timestep conditioning. This architecture enables efficient training and inference of a unified audiovisual model while allocating more capacity for video generation than audio generation. We employ a multilingual text encoder for broader prompt understanding and introduce a modality-aware classifier-free guidance (modality-CFG) mechanism for improved audiovisual alignment and controllability. Beyond generating speech, LTX-2 produces rich, coherent audio tracks that follow the characters, environment, style, and emotion of each scene -- complete with natural background and foley elements. In our evaluations, the model achieves state-of-the-art audiovisual quality and prompt adherence among open-source systems, while delivering results comparable to proprietary models at a fraction of their computational cost and inference time. All model weights and code are publicly released.]]></description>
 <pubDate>Tue, 06 Jan 2026 18:24:41 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[DreamStyle: A Unified Framework for Video Stylization]]></title>
+<link>https://huggingface.co/papers/2601.02785</link>
+<guid>2601.02785</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Mengtian Li, Jinshu Chen, Songtao Zhao, Wanquan Feng, Pengqi Tu
+Institution: 
+Published: 2026-01-06
+Score: 4/10
+Citations: 0
+Upvotes: 16
+GitHub: 
+Stars: 0
+
+Video stylization, an important downstream task of video generation models, has not yet been thoroughly explored. Its input style conditions typically include text, style image, and stylized first frame. Each condition has a characteristic advantage: text is more flexible, style image provides a more accurate visual anchor, and stylized first frame makes long-video stylization feasible. However, existing methods are largely confined to a single type of style condition, which limits their scope of application. Additionally, their lack of high-quality datasets leads to style inconsistency and temporal flicker. To address these limitations, we introduce DreamStyle, a unified framework for video stylization, supporting (1) text-guided, (2) style-image-guided, and (3) first-frame-guided video stylization, accompanied by a well-designed data curation pipeline to acquire high-quality paired video data. DreamStyle is built on a vanilla Image-to-Video (I2V) model and trained using a Low-Rank Adaptation (LoRA) with token-specific up matrices that reduces the confusion among different condition tokens. Both qualitative and quantitative evaluations demonstrate that DreamStyle is competent in all three video stylization tasks, and outperforms the competitors in style consistency and video quality.]]></description>
+<pubDate>Tue, 06 Jan 2026 07:42:12 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[SWE-Lego: Pushing the Limits of Supervised Fine-tuning for Software Issue Resolving]]></title>
@@ -526,24 +544,6 @@ Stars: 0
 
 To support reliable long-term interaction in complex environments, LLM agents require memory systems that efficiently manage historical experiences. Existing approaches either retain full interaction histories via passive context extension, leading to substantial redundancy, or rely on iterative reasoning to filter noise, incurring high token costs. To address this challenge, we introduce SimpleMem, an efficient memory framework based on semantic lossless compression. We propose a three-stage pipeline designed to maximize information density and token utilization: (1) Semantic Structured Compression, which applies entropy-aware filtering to distill unstructured interactions into compact, multi-view indexed memory units; (2) Recursive Memory Consolidation, an asynchronous process that integrates related units into higher-level abstract representations to reduce redundancy; and (3) Adaptive Query-Aware Retrieval, which dynamically adjusts retrieval scope based on query complexity to construct precise context efficiently. Experiments on benchmark datasets show that our method consistently outperforms baseline approaches in accuracy, retrieval efficiency, and inference cost, achieving an average F1 improvement of 26.4% while reducing inference-time token consumption by up to 30-fold, demonstrating a superior balance between performance and efficiency. Code is available at https://github.com/aiming-lab/SimpleMem.]]></description>
 <pubDate>Mon, 05 Jan 2026 21:02:49 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[DreamStyle: A Unified Framework for Video Stylization]]></title>
-<link>https://huggingface.co/papers/2601.02785</link>
-<guid>2601.02785</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Mengtian Li, Jinshu Chen, Songtao Zhao, Wanquan Feng, Pengqi Tu
-Institution: 
-Published: 2026-01-06
-Score: 4/10
-Citations: 0
-Upvotes: 13
-GitHub: 
-Stars: 0
-
-Video stylization, an important downstream task of video generation models, has not yet been thoroughly explored. Its input style conditions typically include text, style image, and stylized first frame. Each condition has a characteristic advantage: text is more flexible, style image provides a more accurate visual anchor, and stylized first frame makes long-video stylization feasible. However, existing methods are largely confined to a single type of style condition, which limits their scope of application. Additionally, their lack of high-quality datasets leads to style inconsistency and temporal flicker. To address these limitations, we introduce DreamStyle, a unified framework for video stylization, supporting (1) text-guided, (2) style-image-guided, and (3) first-frame-guided video stylization, accompanied by a well-designed data curation pipeline to acquire high-quality paired video data. DreamStyle is built on a vanilla Image-to-Video (I2V) model and trained using a Low-Rank Adaptation (LoRA) with token-specific up matrices that reduces the confusion among different condition tokens. Both qualitative and quantitative evaluations demonstrate that DreamStyle is competent in all three video stylization tasks, and outperforms the competitors in style consistency and video quality.]]></description>
-<pubDate>Tue, 06 Jan 2026 07:42:12 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[NitroGen: An Open Foundation Model for Generalist Gaming Agents]]></title>
