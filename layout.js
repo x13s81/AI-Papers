@@ -12,7 +12,12 @@ const Layout = {
     renderNode(n) {
         if (!n) return null;
         if (n.type === 'h' || n.type === 'v') {
-            const valid = n.children.filter(c => c.type === 'panel' ? c.tabs && c.tabs.length > 0 : true);
+            const valid = (n.children || []).filter(c => {
+                if (!c) return false;
+                if (c.type === 'panel') return c.tabs && c.tabs.length > 0;
+                if (c.children) return c.children.length > 0;
+                return false;
+            });
             if (!valid.length) return null;
             if (valid.length === 1) return this.renderNode(valid[0]);
             const div = document.createElement('div');
@@ -85,7 +90,7 @@ const Layout = {
     getContent(id) {
         const c = {
             papers: `<div class="search-area"><input class="search-input" id="search" placeholder="Search papers..."><select class="sort-select" id="sort"><option value="score-desc">⭐ Highest Rated</option><option value="score-asc">⭐ Lowest Rated</option><option value="date-desc">📅 Newest</option><option value="date-asc">📅 Oldest</option></select></div><div class="filter-tabs" id="filter-tabs"></div><div class="papers-list" id="papers-list"></div><div class="papers-footer"><button class="paper-btn add-paper-btn" id="btn-add">➕ Add Paper</button></div>`,
-            search: `<div class="search-panel"><div class="search-header"><select class="search-source" id="search-source"><option value="arxiv">arXiv</option><option value="semantic">Semantic Scholar</option></select><div class="search-box"><input class="search-input" id="web-search" placeholder="Search papers..."><button class="search-btn" id="web-search-btn">🔍</button></div></div><div class="search-results" id="search-results"><div class="empty-state"><p>Search arXiv or Semantic Scholar<br>to find papers</p></div></div></div>`,
+            search: `<div class="search-panel"><div class="search-header"><select class="search-source" id="search-source"><option value="arxiv">arXiv (recommended)</option><option value="semantic">Semantic Scholar</option></select><div class="search-box"><input class="search-input" id="web-search" placeholder="Search for papers..."><button class="search-btn" id="web-search-btn">🔍</button></div></div><div class="search-results" id="search-results"><div class="empty-state"><p>Search arXiv or Semantic Scholar<br>to find research papers</p><p class="search-hint">Tip: Use arXiv for best results</p></div></div></div>`,
             pdf: `<div class="pdf-placeholder" id="pdf-ph"><div class="pdf-placeholder-icon">📄</div><p>Select a paper and click "PDF"<br>or upload your own</p><div class="upload-zone" id="upload-zone"><input type="file" id="pdf-file" accept=".pdf"><div class="upload-text"><strong>Click to upload</strong> or drag & drop<br>PDF files only</div></div></div><div class="pdf-toolbar" id="pdf-bar"><div class="pdf-title" id="pdf-title"></div><div class="pdf-links"><a href="#" id="pdf-link" target="_blank">Open ↗</a><button class="paper-btn" id="pdf-close">✕</button></div></div><iframe class="pdf-frame" id="pdf-frame"></iframe>`,
             editor: `<div class="editor-panel"><div class="editor-toolbar"><button class="editor-btn" data-cmd="bold" title="Bold">𝐁</button><button class="editor-btn" data-cmd="italic" title="Italic">𝐼</button><button class="editor-btn" data-cmd="heading" title="Section">§</button><button class="editor-btn" data-cmd="math" title="Inline Math">∑</button><button class="editor-btn" data-cmd="mathblock" title="Math Block">∫</button><button class="editor-btn" data-cmd="cite" title="Citation">📖</button><button class="editor-btn" data-cmd="ref" title="Reference">🔗</button><div class="editor-spacer"></div><button class="editor-btn" id="editor-preview-toggle">👁️ Preview</button><button class="editor-btn" id="editor-export">📥 Export .tex</button></div><div class="editor-container"><div class="editor-pane"><textarea class="editor-textarea" id="editor-textarea" placeholder="\\documentclass{article}
 \\usepackage{amsmath}
@@ -225,13 +230,47 @@ Write your paper here...
     cleanup() {
         const cl = (n, p, i) => {
             if (n.children) {
+                // Recursively cleanup children first
                 for (let j = n.children.length - 1; j >= 0; j--) cl(n.children[j], n, j);
-                n.children = n.children.filter(c => c.type === 'panel' ? c.tabs && c.tabs.length > 0 : c.children && c.children.length > 0);
-                if (n.children.length === 1) { const ch = n.children[0]; if (p) p.children[i] = {...ch, size: n.size || ch.size}; else Object.assign(State.layout, ch); }
+                // Remove empty panels and containers
+                n.children = n.children.filter(c => {
+                    if (c.type === 'panel') return c.tabs && c.tabs.length > 0;
+                    if (c.children) return c.children.length > 0;
+                    return false;
+                });
+                // If only one child remains, replace this container with the child
+                if (n.children.length === 1) {
+                    const ch = n.children[0];
+                    if (p) {
+                        p.children[i] = {...ch, size: n.size || ch.size};
+                    } else {
+                        // This is the root - replace entire layout
+                        State.layout = {...ch};
+                    }
+                }
+                // If no children remain, mark for removal
+                if (n.children.length === 0 && p) {
+                    p.children[i] = null;
+                }
             }
         };
         cl(State.layout, null, 0);
-        if (State.layout.type === 'panel' && (!State.layout.tabs || !State.layout.tabs.length)) State.resetLayout();
+        
+        // Clean up any nulls
+        const cleanNulls = (n) => {
+            if (n.children) {
+                n.children = n.children.filter(c => c !== null);
+                n.children.forEach(cleanNulls);
+            }
+        };
+        cleanNulls(State.layout);
+        
+        // If layout is empty or invalid, reset
+        if (!State.layout || 
+            (State.layout.type === 'panel' && (!State.layout.tabs || !State.layout.tabs.length)) ||
+            (State.layout.children && State.layout.children.length === 0)) {
+            State.resetLayout();
+        }
     },
     
     getActiveTabs() {

@@ -45,17 +45,17 @@ body {
 .dock-items { display: flex; gap: 6px; }
 .dock-item { 
     padding: 4px 10px; 
-    background: var(--bg3); 
-    border: 1px dashed var(--border); 
+    background: var(--bg); 
+    border: 1px dashed var(--blue); 
     border-radius: 4px; 
     font-size: 0.75rem; 
-    color: var(--text2); 
+    color: var(--blue); 
     cursor: grab; 
     white-space: nowrap;
     user-select: none;
     transition: all 0.15s;
 }
-.dock-item:hover { border-color: var(--blue); color: var(--text); background: var(--bg2); }
+.dock-item:hover { background: rgba(88, 166, 255, 0.1); color: var(--text); }
 .dock-item.dragging { opacity: 0.4; }
 .dock-item.hidden { display: none; }
 
@@ -459,6 +459,7 @@ body {
 .search-btn { padding: 8px 16px; background: var(--blue); border: none; border-radius: 6px; color: white; cursor: pointer; font-size: 1rem; }
 .search-btn:hover { opacity: 0.9; }
 .search-results { flex: 1; overflow-y: auto; padding: 12px; }
+.search-hint { font-size: 0.75rem; color: var(--blue); margin-top: 8px; }
 .search-loading { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; gap: 16px; }
 .search-loading p { color: var(--text2); }
 .search-result { padding: 14px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; background: var(--bg2); }
@@ -469,7 +470,8 @@ body {
 .result-date { color: var(--orange); }
 .result-authors { font-size: 0.8rem; color: var(--text2); margin-bottom: 8px; }
 .result-abstract { font-size: 0.8rem; color: var(--text2); line-height: 1.5; margin-bottom: 12px; }
-.result-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.result-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.no-pdf { font-size: 0.75rem; color: var(--text2); font-style: italic; }
 .error-hint { font-size: 0.75rem; color: var(--red); margin-top: 8px; }
 
 /* Editor Panel */

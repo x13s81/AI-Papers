@@ -4,97 +4,7 @@
 <title>AI Papers - 2026-01-07</title>
 <link>https://arxiv.org</link>
 <description>AI papers as of 2026-01-07 - 243 papers</description>
-<lastBuildDate>Wed, 07 Jan 2026 08:31:06 +0000</lastBuildDate>
-<item>
-<title><![CDATA[MiMo-V2-Flash Technical Report]]></title>
-<link>https://huggingface.co/papers/2601.02780</link>
-<guid>2601.02780</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Bangjun Xiao, Bingquan Xia, Bo Yang, Bofei Gao, Bowen Shen
-Institution: 
-Published: 2026-01-06
-Score: 8/10
-Citations: 0
-Upvotes: 13
-GitHub: 
-Stars: 0
-
-We present MiMo-V2-Flash, a Mixture-of-Experts (MoE) model with 309B total parameters and 15B active parameters, designed for fast, strong reasoning and agentic capabilities. MiMo-V2-Flash adopts a hybrid attention architecture that interleaves Sliding Window Attention (SWA) with global attention, with a 128-token sliding window under a 5:1 hybrid ratio. The model is pre-trained on 27 trillion tokens with Multi-Token Prediction (MTP), employing a native 32k context length and subsequently extended to 256k. To efficiently scale post-training compute, MiMo-V2-Flash introduces a novel Multi-Teacher On-Policy Distillation (MOPD) paradigm. In this framework, domain-specialized teachers (e.g., trained via large-scale reinforcement learning) provide dense and token-level reward, enabling the student model to perfectly master teacher expertise. MiMo-V2-Flash rivals top-tier open-weight models such as DeepSeek-V3.2 and Kimi-K2, despite using only 1/2 and 1/3 of their total parameters, respectively. During inference, by repurposing MTP as a draft model for speculative decoding, MiMo-V2-Flash achieves up to 3.6 acceptance length and 2.6x decoding speedup with three MTP layers. We open-source both the model weights and the three-layer MTP weights to foster open research and community collaboration.]]></description>
-<pubDate>Tue, 06 Jan 2026 07:31:47 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[SciEvalKit: An Open-source Evaluation Toolkit for Scientific General Intelligence]]></title>
-<link>https://huggingface.co/papers/2512.22334</link>
-<guid>2512.22334</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yiheng Wang, Yixin Chen, Shuo Li, Yifan Zhou, Bo Liu
-Institution: 
-Published: 2025-12-26
-Score: 8/10
-Citations: 0
-Upvotes: 12
-GitHub: 
-Stars: 0
-
-We introduce SciEvalKit, a unified benchmarking toolkit designed to evaluate AI models for science across a broad range of scientific disciplines and task capabilities. Unlike general-purpose evaluation platforms, SciEvalKit focuses on the core competencies of scientific intelligence, including Scientific Multimodal Perception, Scientific Multimodal Reasoning, Scientific Multimodal Understanding, Scientific Symbolic Reasoning, Scientific Code Generation, Science Hypothesis Generation and Scientific Knowledge Understanding. It supports six major scientific domains, spanning from physics and chemistry to astronomy and materials science. SciEvalKit builds a foundation of expert-grade scientific benchmarks, curated from real-world, domain-specific datasets, ensuring that tasks reflect authentic scientific challenges. The toolkit features a flexible, extensible evaluation pipeline that enables batch evaluation across models and datasets, supports custom model and dataset integration, and provides transparent, reproducible, and comparable results. By bridging capability-based evaluation and disciplinary diversity, SciEvalKit offers a standardized yet customizable infrastructure to benchmark the next generation of scientific foundation models and intelligent agents. The toolkit is open-sourced and actively maintained to foster community-driven development and progress in AI4Science.]]></description>
-<pubDate>Fri, 26 Dec 2025 17:36:02 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[UniCorn: Towards Self-Improving Unified Multimodal Models through Self-Generated Supervision]]></title>
-<link>https://huggingface.co/papers/2601.03193</link>
-<guid>2601.03193</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Ruiyan Han, Zhen Fang, XinYu Sun, Yuchen Ma, Ziheng Wang
-Institution: 
-Published: 2026-01-06
-Score: 7/10
-Citations: 0
-Upvotes: 16
-GitHub: 
-Stars: 0
-
-While Unified Multimodal Models (UMMs) have achieved remarkable success in cross-modal comprehension, a significant gap persists in their ability to leverage such internal knowledge for high-quality generation. We formalize this discrepancy as Conduction Aphasia, a phenomenon where models accurately interpret multimodal inputs but struggle to translate that understanding into faithful and controllable synthesis. To address this, we propose UniCorn, a simple yet elegant self-improvement framework that eliminates the need for external data or teacher supervision. By partitioning a single UMM into three collaborative roles: Proposer, Solver, and Judge, UniCorn generates high-quality interactions via self-play and employs cognitive pattern reconstruction to distill latent understanding into explicit generative signals. To validate the restoration of multimodal coherence, we introduce UniCycle, a cycle-consistency benchmark based on a Text to Image to Text reconstruction loop. Extensive experiments demonstrate that UniCorn achieves comprehensive and substantial improvements over the base model across six general image generation benchmarks. Notably, it achieves SOTA performance on TIIF(73.8), DPG(86.8), CompBench(88.5), and UniCycle while further delivering substantial gains of +5.0 on WISE and +6.5 on OneIG. These results highlight that our method significantly enhances T2I generation while maintaining robust comprehension, demonstrating the scalability of fully self-supervised refinement for unified multimodal intelligence.]]></description>
-<pubDate>Tue, 06 Jan 2026 17:15:50 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Steerability of Instrumental-Convergence Tendencies in LLMs]]></title>
-<link>https://huggingface.co/papers/2601.01584</link>
-<guid>2601.01584</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jakub Hoscilowicz
-Institution: 
-Published: 2026-01-04
-Score: 7/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-We examine two properties of AI systems: capability (what a system can do) and steerability (how reliably one can shift behavior toward intended outcomes). A central question is whether capability growth reduces steerability and risks control collapse. We also distinguish between authorized steerability (builders reliably reaching intended behaviors) and unauthorized steerability (attackers eliciting disallowed behaviors). This distinction highlights a fundamental safety--security dilemma of AI models: safety requires high steerability to enforce control (e.g., stop/refuse), while security requires low steerability for malicious actors to elicit harmful behaviors. This tension presents a significant challenge for open-weight models, which currently exhibit high steerability via common techniques like fine-tuning or adversarial attacks. Using Qwen3 and InstrumentalEval, we find that a short anti-instrumental prompt suffix sharply reduces the measured convergence rate (e.g., shutdown avoidance, self-replication). For Qwen3-30B Instruct, the convergence rate drops from 81.69% under a pro-instrumental suffix to 2.82% under an anti-instrumental suffix. Under anti-instrumental prompting, larger aligned models show lower convergence rates than smaller ones (Instruct: 2.82% vs. 4.23%; Thinking: 4.23% vs. 9.86%). Code is available at github.com/j-hoscilowicz/instrumental_steering.]]></description>
-<pubDate>Sun, 04 Jan 2026 16:15:59 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[WebGym: Scaling Training Environments for Visual Web Agents with Realistic Tasks]]></title>
-<link>https://huggingface.co/papers/2601.02439</link>
-<guid>2601.02439</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Hao Bai, Alexey Taymanov, Tong Zhang, Aviral Kumar, Spencer Whitehead
-Institution: 
-Published: 2026-01-05
-Score: 7/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-We present WebGym, the largest-to-date open-source environment for training realistic visual web agents. Real websites are non-stationary and diverse, making artificial or small-scale task sets insufficient for robust policy learning. WebGym contains nearly 300,000 tasks with rubric-based evaluations across diverse, real-world websites and difficulty levels. We train agents with a simple reinforcement learning (RL) recipe, which trains on the agent's own interaction traces (rollouts), using task rewards as feedback to guide learning. To enable scaling RL, we speed up sampling of trajectories in WebGym by developing a high-throughput asynchronous rollout system, designed specifically for web agents. Our system achieves a 4-5x rollout speedup compared to naive implementations. Second, we scale the task set breadth, depth, and size, which results in continued performance improvement. Fine-tuning a strong base vision-language model, Qwen-3-VL-8B-Instruct, on WebGym results in an improvement in success rate on an out-of-distribution test set from 26.2% to 42.9%, significantly outperforming agents based on proprietary models such as GPT-4o and GPT-5-Thinking that achieve 27.1% and 29.8%, respectively. This improvement is substantial because our test set consists only of tasks on websites never seen during training, unlike many other prior works on training visual web agents.]]></description>
-<pubDate>Mon, 05 Jan 2026 09:35:11 +0000</pubDate>
-</item>
+<lastBuildDate>Wed, 07 Jan 2026 08:42:17 +0000</lastBuildDate>
 <item>
 <title><![CDATA[NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos]]></title>
 <link>https://huggingface.co/papers/2601.00393</link>
@@ -142,7 +52,7 @@ Institution:
 Published: 2026-01-06
 Score: 6/10
 Citations: 0
-Upvotes: 58
+Upvotes: 59
 GitHub: 
 Stars: 0
 
@@ -160,102 +70,12 @@ Institution:
 Published: 2025-12-23
 Score: 6/10
 Citations: 0
-Upvotes: 55
+Upvotes: 56
 GitHub: 
 Stars: 0
 
 Large language models (LLMs) generate fluent and complex outputs but often fail to recognize their own mistakes and hallucinations. Existing approaches typically rely on external judges, multi-sample consistency, or text-based self-critique, which incur additional compute or correlate weakly with true correctness. We ask: can LLMs predict their own failures by inspecting internal states during inference? We introduce Gnosis, a lightweight self-awareness mechanism that enables frozen LLMs to perform intrinsic self-verification by decoding signals from hidden states and attention patterns. Gnosis passively observes internal traces, compresses them into fixed-budget descriptors, and predicts correctness with negligible inference cost, adding only ~5M parameters and operating independently of sequence length. Across math reasoning, open-domain question answering, and academic knowledge benchmarks, and over frozen backbones ranging from 1.7B to 20B parameters, Gnosis consistently outperforms strong internal baselines and large external judges in both accuracy and calibration. Moreover, it generalizes zero-shot to partial generations, enabling early detection of failing trajectories and compute-aware control. These results show that reliable correctness cues are intrinsic to generation process and can be extracted efficiently without external supervision.]]></description>
 <pubDate>Tue, 23 Dec 2025 18:21:32 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving]]></title>
-<link>https://huggingface.co/papers/2601.01874</link>
-<guid>2601.01874</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Shuhang Chen, Yunqiu Xu, Junjie Xie, Aojun Lu, Tao Feng
-Institution: 
-Published: 2026-01-05
-Score: 6/10
-Citations: 0
-Upvotes: 15
-GitHub: 
-Stars: 0
-
-Despite significant progress, multimodal large language models continue to struggle with visual mathematical problem solving. Some recent works recognize that visual perception is a bottleneck in visual mathematical reasoning, but their solutions are limited to improving the extraction and interpretation of visual inputs. Notably, they all ignore the key issue of whether the extracted visual cues are faithfully integrated and properly utilized in subsequent reasoning. Motivated by this, we present CogFlow, a novel cognitive-inspired three-stage framework that incorporates a knowledge internalization stage, explicitly simulating the hierarchical flow of human reasoning: perceptionRightarrowinternalizationRightarrowreasoning. Inline with this hierarchical flow, we holistically enhance all its stages. We devise Synergistic Visual Rewards to boost perception capabilities in parametric and semantic spaces, jointly improving visual information extraction from symbols and diagrams. To guarantee faithful integration of extracted visual cues into subsequent reasoning, we introduce a Knowledge Internalization Reward model in the internalization stage, bridging perception and reasoning. Moreover, we design a Visual-Gated Policy Optimization algorithm to further enforce the reasoning is grounded with the visual knowledge, preventing models seeking shortcuts that appear coherent but are visually ungrounded reasoning chains. Moreover, we contribute a new dataset MathCog for model training, which contains samples with over 120K high-quality perception-reasoning aligned annotations. Comprehensive experiments and analysis on commonly used visual mathematical reasoning benchmarks validate the superiority of the proposed CogFlow.]]></description>
-<pubDate>Mon, 05 Jan 2026 08:02:18 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[SOP: A Scalable Online Post-Training System for Vision-Language-Action Models]]></title>
-<link>https://huggingface.co/papers/2601.03044</link>
-<guid>2601.03044</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Mingjie Pan, Siyuan Feng, Qinglin Zhang, Xinchen Li, Jianheng Song
-Institution: 
-Published: 2026-01-06
-Score: 6/10
-Citations: 0
-Upvotes: 10
-GitHub: 
-Stars: 0
-
-Vision-language-action (VLA) models achieve strong generalization through large-scale pre-training, but real-world deployment requires expert-level task proficiency in addition to broad generality. Existing post-training approaches for VLA models are typically offline, single-robot, or task-specific, limiting effective on-policy adaptation and scalable learning from real-world interaction. We introduce a Scalable Online Post-training (SOP) system that enables online, distributed, multi-task post-training of generalist VLA models directly in the physical world. SOP tightly couples execution and learning through a closed-loop architecture in which a fleet of robots continuously streams on-policy experience and human intervention signals to a centralized cloud learner, and asynchronously receives updated policies. This design supports prompt on-policy correction, scales experience collection through parallel deployment, and preserves generality during adaptation. SOP is agnostic to the choice of post-training algorithm; we instantiate it with both interactive imitation learning (HG-DAgger) and reinforcement learning (RECAP). Across a range of real-world manipulation tasks including cloth folding, box assembly, and grocery restocking, we show that SOP substantially improves the performance of large pretrained VLA models while maintaining a single shared policy across tasks. Effective post-training can be achieved within hours of real-world interaction, and performance scales near-linearly with the number of robots in the fleet. These results suggest that tightly coupling online learning with fleet-scale deployment is instrumental to enabling efficient, reliable, and scalable post-training of generalist robot policies in the physical world.]]></description>
-<pubDate>Tue, 06 Jan 2026 14:25:11 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[OpenRT: An Open-Source Red Teaming Framework for Multimodal LLMs]]></title>
-<link>https://huggingface.co/papers/2601.01592</link>
-<guid>2601.01592</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Xin Wang, Yunhao Chen, Juncheng Li, Yixu Wang, Yang Yao
-Institution: 
-Published: 2026-01-04
-Score: 6/10
-Citations: 0
-Upvotes: 2
-GitHub: 
-Stars: 0
-
-The rapid integration of Multimodal Large Language Models (MLLMs) into critical applications is increasingly hindered by persistent safety vulnerabilities. However, existing red-teaming benchmarks are often fragmented, limited to single-turn text interactions, and lack the scalability required for systematic evaluation. To address this, we introduce OpenRT, a unified, modular, and high-throughput red-teaming framework designed for comprehensive MLLM safety evaluation. At its core, OpenRT architects a paradigm shift in automated red-teaming by introducing an adversarial kernel that enables modular separation across five critical dimensions: model integration, dataset management, attack strategies, judging methods, and evaluation metrics. By standardizing attack interfaces, it decouples adversarial logic from a high-throughput asynchronous runtime, enabling systematic scaling across diverse models. Our framework integrates 37 diverse attack methodologies, spanning white-box gradients, multi-modal perturbations, and sophisticated multi-agent evolutionary strategies. Through an extensive empirical study on 20 advanced models (including GPT-5.2, Claude 4.5, and Gemini 3 Pro), we expose critical safety gaps: even frontier models fail to generalize across attack paradigms, with leading models exhibiting average Attack Success Rates as high as 49.14%. Notably, our findings reveal that reasoning models do not inherently possess superior robustness against complex, multi-turn jailbreaks. By open-sourcing OpenRT, we provide a sustainable, extensible, and continuously maintained infrastructure that accelerates the development and standardization of AI safety.]]></description>
-<pubDate>Sun, 04 Jan 2026 16:41:33 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[The Sonar Moment: Benchmarking Audio-Language Models in Audio Geo-Localization]]></title>
-<link>https://huggingface.co/papers/2601.03227</link>
-<guid>2601.03227</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Ruixing Zhang, Zihan Liu, Leilei Sun, Tongyu Zhu, Weifeng Lv
-Institution: 
-Published: 2026-01-06
-Score: 5/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Geo-localization aims to infer the geographic origin of a given signal. In computer vision, geo-localization has served as a demanding benchmark for compositional reasoning and is relevant to public safety. In contrast, progress on audio geo-localization has been constrained by the lack of high-quality audio-location pairs. To address this gap, we introduce AGL1K, the first audio geo-localization benchmark for audio language models (ALMs), spanning 72 countries and territories. To extract reliably localizable samples from a crowd-sourced platform, we propose the Audio Localizability metric that quantifies the informativeness of each recording, yielding 1,444 curated audio clips. Evaluations on 16 ALMs show that ALMs have emerged with audio geo-localization capability. We find that closed-source models substantially outperform open-source models, and that linguistic clues often dominate as a scaffold for prediction. We further analyze ALMs' reasoning traces, regional bias, error causes, and the interpretability of the localizability metric. Overall, AGL1K establishes a benchmark for audio geo-localization and may advance ALMs with better geospatial reasoning capability.]]></description>
-<pubDate>Tue, 06 Jan 2026 18:13:24 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Parallel Latent Reasoning for Sequential Recommendation]]></title>
-<link>https://huggingface.co/papers/2601.03153</link>
-<guid>2601.03153</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jiakai Tang, Xu Chen, Wen Chen, Jian Wu, Yuning Jiang
-Institution: 
-Published: 2026-01-06
-Score: 5/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Capturing complex user preferences from sparse behavioral sequences remains a fundamental challenge in sequential recommendation. Recent latent reasoning methods have shown promise by extending test-time computation through multi-step reasoning, yet they exclusively rely on depth-level scaling along a single trajectory, suffering from diminishing returns as reasoning depth increases. To address this limitation, we propose Parallel Latent Reasoning (PLR), a novel framework that pioneers width-level computational scaling by exploring multiple diverse reasoning trajectories simultaneously. PLR constructs parallel reasoning streams through learnable trigger tokens in continuous latent space, preserves diversity across streams via global reasoning regularization, and adaptively synthesizes multi-stream outputs through mixture-of-reasoning-streams aggregation. Extensive experiments on three real-world datasets demonstrate that PLR substantially outperforms state-of-the-art baselines while maintaining real-time inference efficiency. Theoretical analysis further validates the effectiveness of parallel reasoning in improving generalization capability. Our work opens new avenues for enhancing reasoning capacity in sequential recommendation beyond existing depth scaling.]]></description>
-<pubDate>Tue, 06 Jan 2026 16:25:48 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[NextFlow: Unified Sequential Modeling Activates Multimodal Understanding and Generation]]></title>
@@ -339,7 +159,7 @@ Authors: Ali Behrouz, Meisam Razaviyayn, Peilin Zhong, Vahab Mirrokni
 Institution: 
 Published: 2025-12-31
 Score: 4/10
-Citations: 6
+Citations: 0
 Upvotes: 29
 GitHub: 
 Stars: 0
@@ -438,6 +258,24 @@ We study allowing large language models (LLMs) to process arbitrarily long promp
 <pubDate>Wed, 31 Dec 2025 03:43:41 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[UniCorn: Towards Self-Improving Unified Multimodal Models through Self-Generated Supervision]]></title>
+<link>https://huggingface.co/papers/2601.03193</link>
+<guid>2601.03193</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Ruiyan Han, Zhen Fang, XinYu Sun, Yuchen Ma, Ziheng Wang
+Institution: 
+Published: 2026-01-06
+Score: 4/10
+Citations: 0
+Upvotes: 16
+GitHub: 
+Stars: 0
+
+While Unified Multimodal Models (UMMs) have achieved remarkable success in cross-modal comprehension, a significant gap persists in their ability to leverage such internal knowledge for high-quality generation. We formalize this discrepancy as Conduction Aphasia, a phenomenon where models accurately interpret multimodal inputs but struggle to translate that understanding into faithful and controllable synthesis. To address this, we propose UniCorn, a simple yet elegant self-improvement framework that eliminates the need for external data or teacher supervision. By partitioning a single UMM into three collaborative roles: Proposer, Solver, and Judge, UniCorn generates high-quality interactions via self-play and employs cognitive pattern reconstruction to distill latent understanding into explicit generative signals. To validate the restoration of multimodal coherence, we introduce UniCycle, a cycle-consistency benchmark based on a Text to Image to Text reconstruction loop. Extensive experiments demonstrate that UniCorn achieves comprehensive and substantial improvements over the base model across six general image generation benchmarks. Notably, it achieves SOTA performance on TIIF(73.8), DPG(86.8), CompBench(88.5), and UniCycle while further delivering substantial gains of +5.0 on WISE and +6.5 on OneIG. These results highlight that our method significantly enhances T2I generation while maintaining robust comprehension, demonstrating the scalability of fully self-supervised refinement for unified multimodal intelligence.]]></description>
+<pubDate>Tue, 06 Jan 2026 17:15:50 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[LTX-2: Efficient Joint Audio-Visual Foundation Model]]></title>
 <link>https://huggingface.co/papers/2601.03233</link>
 <guid>2601.03233</guid>
@@ -492,6 +330,42 @@ State-of-the-art large language model (LLM) pipelines rely on bootstrapped reaso
 <pubDate>Fri, 02 Jan 2026 17:10:31 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[SciEvalKit: An Open-source Evaluation Toolkit for Scientific General Intelligence]]></title>
+<link>https://huggingface.co/papers/2512.22334</link>
+<guid>2512.22334</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yiheng Wang, Yixin Chen, Shuo Li, Yifan Zhou, Bo Liu
+Institution: 
+Published: 2025-12-26
+Score: 4/10
+Citations: 0
+Upvotes: 15
+GitHub: 
+Stars: 0
+
+We introduce SciEvalKit, a unified benchmarking toolkit designed to evaluate AI models for science across a broad range of scientific disciplines and task capabilities. Unlike general-purpose evaluation platforms, SciEvalKit focuses on the core competencies of scientific intelligence, including Scientific Multimodal Perception, Scientific Multimodal Reasoning, Scientific Multimodal Understanding, Scientific Symbolic Reasoning, Scientific Code Generation, Science Hypothesis Generation and Scientific Knowledge Understanding. It supports six major scientific domains, spanning from physics and chemistry to astronomy and materials science. SciEvalKit builds a foundation of expert-grade scientific benchmarks, curated from real-world, domain-specific datasets, ensuring that tasks reflect authentic scientific challenges. The toolkit features a flexible, extensible evaluation pipeline that enables batch evaluation across models and datasets, supports custom model and dataset integration, and provides transparent, reproducible, and comparable results. By bridging capability-based evaluation and disciplinary diversity, SciEvalKit offers a standardized yet customizable infrastructure to benchmark the next generation of scientific foundation models and intelligent agents. The toolkit is open-sourced and actively maintained to foster community-driven development and progress in AI4Science.]]></description>
+<pubDate>Fri, 26 Dec 2025 17:36:02 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving]]></title>
+<link>https://huggingface.co/papers/2601.01874</link>
+<guid>2601.01874</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Shuhang Chen, Yunqiu Xu, Junjie Xie, Aojun Lu, Tao Feng
+Institution: 
+Published: 2026-01-05
+Score: 4/10
+Citations: 0
+Upvotes: 15
+GitHub: 
+Stars: 0
+
+Despite significant progress, multimodal large language models continue to struggle with visual mathematical problem solving. Some recent works recognize that visual perception is a bottleneck in visual mathematical reasoning, but their solutions are limited to improving the extraction and interpretation of visual inputs. Notably, they all ignore the key issue of whether the extracted visual cues are faithfully integrated and properly utilized in subsequent reasoning. Motivated by this, we present CogFlow, a novel cognitive-inspired three-stage framework that incorporates a knowledge internalization stage, explicitly simulating the hierarchical flow of human reasoning: perceptionRightarrowinternalizationRightarrowreasoning. Inline with this hierarchical flow, we holistically enhance all its stages. We devise Synergistic Visual Rewards to boost perception capabilities in parametric and semantic spaces, jointly improving visual information extraction from symbols and diagrams. To guarantee faithful integration of extracted visual cues into subsequent reasoning, we introduce a Knowledge Internalization Reward model in the internalization stage, bridging perception and reasoning. Moreover, we design a Visual-Gated Policy Optimization algorithm to further enforce the reasoning is grounded with the visual knowledge, preventing models seeking shortcuts that appear coherent but are visually ungrounded reasoning chains. Moreover, we contribute a new dataset MathCog for model training, which contains samples with over 120K high-quality perception-reasoning aligned annotations. Comprehensive experiments and analysis on commonly used visual mathematical reasoning benchmarks validate the superiority of the proposed CogFlow.]]></description>
+<pubDate>Mon, 05 Jan 2026 08:02:18 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Falcon-H1R: Pushing the Reasoning Frontiers with a Hybrid Model for Efficient Test-Time Scaling]]></title>
 <link>https://huggingface.co/papers/2601.02346</link>
 <guid>2601.02346</guid>
@@ -508,6 +382,24 @@ Stars: 0
 
 This work introduces Falcon-H1R, a 7B-parameter reasoning-optimized model that establishes the feasibility of achieving competitive reasoning performance with small language models (SLMs). Falcon-H1R stands out for its parameter efficiency, consistently matching or outperforming SOTA reasoning models that are 2times to 7times larger across a variety of reasoning-intensive benchmarks. These results underscore the importance of careful data curation and targeted training strategies (via both efficient SFT and RL scaling) in delivering significant performance gains without increasing model size. Furthermore, Falcon-H1R advances the 3D limits of reasoning efficiency by combining faster inference (through its hybrid-parallel architecture design), token efficiency, and higher accuracy. This unique blend makes Falcon-H1R-7B a practical backbone for scaling advanced reasoning systems, particularly in scenarios requiring extensive chain-of-thoughts generation and parallel test-time scaling. Leveraging the recently introduced DeepConf approach, Falcon-H1R achieves state-of-the-art test-time scaling efficiency, offering substantial improvements in both accuracy and computational cost. As a result, Falcon-H1R demonstrates that compact models, through targeted model training and architectural choices, can deliver robust and scalable reasoning performance.]]></description>
 <pubDate>Mon, 05 Jan 2026 18:44:27 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[MiMo-V2-Flash Technical Report]]></title>
+<link>https://huggingface.co/papers/2601.02780</link>
+<guid>2601.02780</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Bangjun Xiao, Bingquan Xia, Bo Yang, Bofei Gao, Bowen Shen
+Institution: 
+Published: 2026-01-06
+Score: 4/10
+Citations: 0
+Upvotes: 14
+GitHub: 
+Stars: 0
+
+We present MiMo-V2-Flash, a Mixture-of-Experts (MoE) model with 309B total parameters and 15B active parameters, designed for fast, strong reasoning and agentic capabilities. MiMo-V2-Flash adopts a hybrid attention architecture that interleaves Sliding Window Attention (SWA) with global attention, with a 128-token sliding window under a 5:1 hybrid ratio. The model is pre-trained on 27 trillion tokens with Multi-Token Prediction (MTP), employing a native 32k context length and subsequently extended to 256k. To efficiently scale post-training compute, MiMo-V2-Flash introduces a novel Multi-Teacher On-Policy Distillation (MOPD) paradigm. In this framework, domain-specialized teachers (e.g., trained via large-scale reinforcement learning) provide dense and token-level reward, enabling the student model to perfectly master teacher expertise. MiMo-V2-Flash rivals top-tier open-weight models such as DeepSeek-V3.2 and Kimi-K2, despite using only 1/2 and 1/3 of their total parameters, respectively. During inference, by repurposing MTP as a draft model for speculative decoding, MiMo-V2-Flash achieves up to 3.6 acceptance length and 2.6x decoding speedup with three MTP layers. We open-source both the model weights and the three-layer MTP weights to foster open research and community collaboration.]]></description>
+<pubDate>Tue, 06 Jan 2026 07:31:47 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[SimpleMem: Efficient Lifelong Memory for LLM Agents]]></title>
@@ -556,7 +448,7 @@ Institution:
 Published: 2026-01-04
 Score: 4/10
 Citations: 0
-Upvotes: 12
+Upvotes: 13
 GitHub: 
 Stars: 0
 
@@ -580,6 +472,24 @@ Stars: 0
 
 We introduce Talk2Move, a reinforcement learning (RL) based diffusion framework for text-instructed spatial transformation of objects within scenes. Spatially manipulating objects in a scene through natural language poses a challenge for multimodal generation systems. While existing text-based manipulation methods can adjust appearance or style, they struggle to perform object-level geometric transformations-such as translating, rotating, or resizing objects-due to scarce paired supervision and pixel-level optimization limits. Talk2Move employs Group Relative Policy Optimization (GRPO) to explore geometric actions through diverse rollouts generated from input images and lightweight textual variations, removing the need for costly paired data. A spatial reward guided model aligns geometric transformations with linguistic description, while off-policy step evaluation and active step sampling improve learning efficiency by focusing on informative transformation stages. Furthermore, we design object-centric spatial rewards that evaluate displacement, rotation, and scaling behaviors directly, enabling interpretable and coherent transformations. Experiments on curated benchmarks demonstrate that Talk2Move achieves precise, consistent, and semantically faithful object transformations, outperforming existing text-guided editing approaches in both spatial accuracy and scene coherence.]]></description>
 <pubDate>Mon, 05 Jan 2026 18:55:32 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[SOP: A Scalable Online Post-Training System for Vision-Language-Action Models]]></title>
+<link>https://huggingface.co/papers/2601.03044</link>
+<guid>2601.03044</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Mingjie Pan, Siyuan Feng, Qinglin Zhang, Xinchen Li, Jianheng Song
+Institution: 
+Published: 2026-01-06
+Score: 4/10
+Citations: 0
+Upvotes: 10
+GitHub: 
+Stars: 0
+
+Vision-language-action (VLA) models achieve strong generalization through large-scale pre-training, but real-world deployment requires expert-level task proficiency in addition to broad generality. Existing post-training approaches for VLA models are typically offline, single-robot, or task-specific, limiting effective on-policy adaptation and scalable learning from real-world interaction. We introduce a Scalable Online Post-training (SOP) system that enables online, distributed, multi-task post-training of generalist VLA models directly in the physical world. SOP tightly couples execution and learning through a closed-loop architecture in which a fleet of robots continuously streams on-policy experience and human intervention signals to a centralized cloud learner, and asynchronously receives updated policies. This design supports prompt on-policy correction, scales experience collection through parallel deployment, and preserves generality during adaptation. SOP is agnostic to the choice of post-training algorithm; we instantiate it with both interactive imitation learning (HG-DAgger) and reinforcement learning (RECAP). Across a range of real-world manipulation tasks including cloth folding, box assembly, and grocery restocking, we show that SOP substantially improves the performance of large pretrained VLA models while maintaining a single shared policy across tasks. Effective post-training can be achieved within hours of real-world interaction, and performance scales near-linearly with the number of robots in the fleet. These results suggest that tightly coupling online learning with fleet-scale deployment is instrumental to enabling efficient, reliable, and scalable post-training of generalist robot policies in the physical world.]]></description>
+<pubDate>Tue, 06 Jan 2026 14:25:11 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning]]></title>
@@ -726,6 +636,24 @@ Semi-supervised remote sensing (RS) image semantic segmentation offers a promisi
 <pubDate>Sun, 28 Dec 2025 18:24:19 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[OpenRT: An Open-Source Red Teaming Framework for Multimodal LLMs]]></title>
+<link>https://huggingface.co/papers/2601.01592</link>
+<guid>2601.01592</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Xin Wang, Yunhao Chen, Juncheng Li, Yixu Wang, Yang Yao
+Institution: 
+Published: 2026-01-04
+Score: 4/10
+Citations: 0
+Upvotes: 2
+GitHub: 
+Stars: 0
+
+The rapid integration of Multimodal Large Language Models (MLLMs) into critical applications is increasingly hindered by persistent safety vulnerabilities. However, existing red-teaming benchmarks are often fragmented, limited to single-turn text interactions, and lack the scalability required for systematic evaluation. To address this, we introduce OpenRT, a unified, modular, and high-throughput red-teaming framework designed for comprehensive MLLM safety evaluation. At its core, OpenRT architects a paradigm shift in automated red-teaming by introducing an adversarial kernel that enables modular separation across five critical dimensions: model integration, dataset management, attack strategies, judging methods, and evaluation metrics. By standardizing attack interfaces, it decouples adversarial logic from a high-throughput asynchronous runtime, enabling systematic scaling across diverse models. Our framework integrates 37 diverse attack methodologies, spanning white-box gradients, multi-modal perturbations, and sophisticated multi-agent evolutionary strategies. Through an extensive empirical study on 20 advanced models (including GPT-5.2, Claude 4.5, and Gemini 3 Pro), we expose critical safety gaps: even frontier models fail to generalize across attack paradigms, with leading models exhibiting average Attack Success Rates as high as 49.14%. Notably, our findings reveal that reasoning models do not inherently possess superior robustness against complex, multi-turn jailbreaks. By open-sourcing OpenRT, we provide a sustainable, extensible, and continuously maintained infrastructure that accelerates the development and standardization of AI safety.]]></description>
+<pubDate>Sun, 04 Jan 2026 16:41:33 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[OpenNovelty: An LLM-powered Agentic System for Verifiable Scholarly Novelty Assessment]]></title>
 <link>https://huggingface.co/papers/2601.01576</link>
 <guid>2601.01576</guid>
@@ -760,6 +688,42 @@ Stars: 0
 
 When AI systems explain their reasoning step-by-step, practitioners often assume these explanations reveal what actually influenced the AI's answer. We tested this assumption by embedding hints into questions and measuring whether models mentioned them. In a study of over 9,000 test cases across 11 leading AI models, we found a troubling pattern: models almost never mention hints spontaneously, yet when asked directly, they admit noticing them. This suggests models see influential information but choose not to report it. Telling models they are being watched does not help. Forcing models to report hints works, but causes them to report hints even when none exist and reduces their accuracy. We also found that hints appealing to user preferences are especially dangerous-models follow them most often while reporting them least. These findings suggest that simply watching AI reasoning is not enough to catch hidden influences.]]></description>
 <pubDate>Thu, 25 Dec 2025 05:29:53 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[The Sonar Moment: Benchmarking Audio-Language Models in Audio Geo-Localization]]></title>
+<link>https://huggingface.co/papers/2601.03227</link>
+<guid>2601.03227</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Ruixing Zhang, Zihan Liu, Leilei Sun, Tongyu Zhu, Weifeng Lv
+Institution: 
+Published: 2026-01-06
+Score: 4/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+Geo-localization aims to infer the geographic origin of a given signal. In computer vision, geo-localization has served as a demanding benchmark for compositional reasoning and is relevant to public safety. In contrast, progress on audio geo-localization has been constrained by the lack of high-quality audio-location pairs. To address this gap, we introduce AGL1K, the first audio geo-localization benchmark for audio language models (ALMs), spanning 72 countries and territories. To extract reliably localizable samples from a crowd-sourced platform, we propose the Audio Localizability metric that quantifies the informativeness of each recording, yielding 1,444 curated audio clips. Evaluations on 16 ALMs show that ALMs have emerged with audio geo-localization capability. We find that closed-source models substantially outperform open-source models, and that linguistic clues often dominate as a scaffold for prediction. We further analyze ALMs' reasoning traces, regional bias, error causes, and the interpretability of the localizability metric. Overall, AGL1K establishes a benchmark for audio geo-localization and may advance ALMs with better geospatial reasoning capability.]]></description>
+<pubDate>Tue, 06 Jan 2026 18:13:24 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Parallel Latent Reasoning for Sequential Recommendation]]></title>
+<link>https://huggingface.co/papers/2601.03153</link>
+<guid>2601.03153</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Jiakai Tang, Xu Chen, Wen Chen, Jian Wu, Yuning Jiang
+Institution: 
+Published: 2026-01-06
+Score: 4/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+Capturing complex user preferences from sparse behavioral sequences remains a fundamental challenge in sequential recommendation. Recent latent reasoning methods have shown promise by extending test-time computation through multi-step reasoning, yet they exclusively rely on depth-level scaling along a single trajectory, suffering from diminishing returns as reasoning depth increases. To address this limitation, we propose Parallel Latent Reasoning (PLR), a novel framework that pioneers width-level computational scaling by exploring multiple diverse reasoning trajectories simultaneously. PLR constructs parallel reasoning streams through learnable trigger tokens in continuous latent space, preserves diversity across streams via global reasoning regularization, and adaptively synthesizes multi-stream outputs through mixture-of-reasoning-streams aggregation. Extensive experiments on three real-world datasets demonstrate that PLR substantially outperforms state-of-the-art baselines while maintaining real-time inference efficiency. Theoretical analysis further validates the effectiveness of parallel reasoning in improving generalization capability. Our work opens new avenues for enhancing reasoning capacity in sequential recommendation beyond existing depth scaling.]]></description>
+<pubDate>Tue, 06 Jan 2026 16:25:48 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[X-MuTeST: A Multilingual Benchmark for Explainable Hate Speech Detection and A Novel LLM-consulted Explanation Framework]]></title>
@@ -832,6 +796,42 @@ Stars: 0
 
 Large language models (LLMs) have demonstrated significant advancements in reasoning and code generation. However, efficiently creating new benchmarks to evaluate these capabilities remains a challenge. Traditional benchmark creation relies on manual human effort, a process that is both expensive and time-consuming. Furthermore, existing benchmarks often contaminate LLM training data, necessitating novel and diverse benchmarks to accurately assess their genuine capabilities. This work introduces InfoSynth, a novel framework for automatically generating and evaluating reasoning benchmarks guided by information-theoretic principles. We propose metrics based on KL-divergence and entropy to quantify benchmark novelty and diversity without relying on costly model evaluations. Building on this framework, we develop an end-to-end pipeline that synthesizes robust Python coding problems from seed datasets using genetic algorithms and iterative code feedback. Our method generates accurate test cases and solutions to new problems 97% of the time, and the synthesized benchmarks consistently exhibit higher novelty and diversity compared to their seed datasets. Moreover, our algorithm provides a method for controlling the novelty/diversity and difficulty of generated problems. InfoSynth offers a scalable, self-verifying pipeline for constructing high-quality, novel and diverse benchmarks for LLMs. Project Page: https://ishirgarg.github.io/infosynth_web/]]></description>
 <pubDate>Fri, 02 Jan 2026 05:26:27 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Steerability of Instrumental-Convergence Tendencies in LLMs]]></title>
+<link>https://huggingface.co/papers/2601.01584</link>
+<guid>2601.01584</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Jakub Hoscilowicz
+Institution: 
+Published: 2026-01-04
+Score: 4/10
+Citations: 0
+Upvotes: 0
+GitHub: 
+Stars: 0
+
+We examine two properties of AI systems: capability (what a system can do) and steerability (how reliably one can shift behavior toward intended outcomes). A central question is whether capability growth reduces steerability and risks control collapse. We also distinguish between authorized steerability (builders reliably reaching intended behaviors) and unauthorized steerability (attackers eliciting disallowed behaviors). This distinction highlights a fundamental safety--security dilemma of AI models: safety requires high steerability to enforce control (e.g., stop/refuse), while security requires low steerability for malicious actors to elicit harmful behaviors. This tension presents a significant challenge for open-weight models, which currently exhibit high steerability via common techniques like fine-tuning or adversarial attacks. Using Qwen3 and InstrumentalEval, we find that a short anti-instrumental prompt suffix sharply reduces the measured convergence rate (e.g., shutdown avoidance, self-replication). For Qwen3-30B Instruct, the convergence rate drops from 81.69% under a pro-instrumental suffix to 2.82% under an anti-instrumental suffix. Under anti-instrumental prompting, larger aligned models show lower convergence rates than smaller ones (Instruct: 2.82% vs. 4.23%; Thinking: 4.23% vs. 9.86%). Code is available at github.com/j-hoscilowicz/instrumental_steering.]]></description>
+<pubDate>Sun, 04 Jan 2026 16:15:59 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[WebGym: Scaling Training Environments for Visual Web Agents with Realistic Tasks]]></title>
+<link>https://huggingface.co/papers/2601.02439</link>
+<guid>2601.02439</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Hao Bai, Alexey Taymanov, Tong Zhang, Aviral Kumar, Spencer Whitehead
+Institution: 
+Published: 2026-01-05
+Score: 4/10
+Citations: 0
+Upvotes: 0
+GitHub: 
+Stars: 0
+
+We present WebGym, the largest-to-date open-source environment for training realistic visual web agents. Real websites are non-stationary and diverse, making artificial or small-scale task sets insufficient for robust policy learning. WebGym contains nearly 300,000 tasks with rubric-based evaluations across diverse, real-world websites and difficulty levels. We train agents with a simple reinforcement learning (RL) recipe, which trains on the agent's own interaction traces (rollouts), using task rewards as feedback to guide learning. To enable scaling RL, we speed up sampling of trajectories in WebGym by developing a high-throughput asynchronous rollout system, designed specifically for web agents. Our system achieves a 4-5x rollout speedup compared to naive implementations. Second, we scale the task set breadth, depth, and size, which results in continued performance improvement. Fine-tuning a strong base vision-language model, Qwen-3-VL-8B-Instruct, on WebGym results in an improvement in success rate on an out-of-distribution test set from 26.2% to 42.9%, significantly outperforming agents based on proprietary models such as GPT-4o and GPT-5-Thinking that achieve 27.1% and 29.8%, respectively. This improvement is substantial because our test set consists only of tasks on websites never seen during training, unlike many other prior works on training visual web agents.]]></description>
+<pubDate>Mon, 05 Jan 2026 09:35:11 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing]]></title>

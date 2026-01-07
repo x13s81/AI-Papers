@@ -22,7 +22,8 @@ const Search = {
                 await this.searchSemantic(query);
             }
         } catch (err) {
-            results.innerHTML = `<div class="empty-state"><p>Search failed. Try again.</p><p class="error-hint">${err.message}</p></div>`;
+            console.error('Search error:', err);
+            results.innerHTML = `<div class="empty-state"><p>Search failed. Try again.</p><p class="error-hint">${err.message}</p><p class="error-hint">Try switching to arXiv search.</p></div>`;
         }
     },
     
@@ -32,6 +33,7 @@ const Search = {
         const url = `https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=0&max_results=20&sortBy=relevance&sortOrder=descending`;
         
         const response = await fetch(url);
+        if (!response.ok) throw new Error('arXiv API error');
         const text = await response.text();
         const parser = new DOMParser();
         const xml = parser.parseFromString(text, 'text/xml');
@@ -62,10 +64,21 @@ const Search = {
     
     async searchSemantic(query) {
         const results = document.getElementById('search-results');
-        // Semantic Scholar API
-        const url = `https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(query)}&limit=20&fields=title,authors,abstract,year,externalIds,openAccessPdf,url`;
+        // Use CORS proxy for Semantic Scholar
+        const baseUrl = 'https://api.semanticscholar.org/graph/v1/paper/search';
+        const params = `?query=${encodeURIComponent(query)}&limit=20&fields=title,authors,abstract,year,externalIds,openAccessPdf,url`;
         
-        const response = await fetch(url);
+        // Try direct first, then fallback to proxy
+        let response;
+        try {
+            response = await fetch(baseUrl + params);
+        } catch (e) {
+            // Try with CORS proxy
+            const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(baseUrl + params);
+            response = await fetch(proxyUrl);
+        }
+        
+        if (!response.ok) throw new Error('Semantic Scholar API error');
         const data = await response.json();
         
         if (!data.data?.length) {
@@ -101,7 +114,7 @@ const Search = {
                 <div class="result-authors">${p.authors}</div>
                 <div class="result-abstract">${p.abstract?.slice(0, 200)}${p.abstract?.length > 200 ? '...' : ''}</div>
                 <div class="result-actions">
-                    ${p.pdf_link ? `<button class="paper-btn primary" data-action="view-pdf">📄 View PDF</button>` : ''}
+                    ${p.pdf_link ? `<button class="paper-btn primary" data-action="view-pdf">📄 View PDF</button>` : '<span class="no-pdf">No PDF available</span>'}
                     <button class="paper-btn" data-action="add-library">➕ Add to Library</button>
                     <a class="paper-btn" href="${p.link}" target="_blank">↗ Open</a>
                 </div>
@@ -127,7 +140,8 @@ const Search = {
                 }
             });
             
-            el.querySelector('[data-action="add-library"]')?.addEventListener('click', () => {
+            el.querySelector('[data-action="add-library"]')?.addEventListener('click', (e) => {
+                const btn = e.target;
                 // Add to custom papers
                 const exists = State.papers.custom.some(p => p.title === paper.title);
                 if (!exists) {
@@ -146,9 +160,10 @@ const Search = {
                     State.save();
                     Papers.renderTabs();
                     Papers.filter();
-                    el.querySelector('[data-action="add-library"]').textContent = '✓ Added';
-                    el.querySelector('[data-action="add-library"]').disabled = true;
                 }
+                btn.textContent = '✓ Added';
+                btn.disabled = true;
+                btn.classList.add('saved');
             });
         });
     }
