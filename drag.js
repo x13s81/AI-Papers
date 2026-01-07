@@ -4,13 +4,15 @@ const Drag = {
     sourcePanel: null,
     
     init() {
-        const ws = document.getElementById('workspace');
         const pv = document.getElementById('drag-preview');
         const ind = document.getElementById('drop-indicator');
         
-        ws.onmousedown = e => {
+        // Use event delegation on document for mousedown on tabs
+        document.addEventListener('mousedown', e => {
             const t = e.target.closest('.tab');
             if (!t || e.target.closest('.tab-actions')) return;
+            if (!document.getElementById('workspace').contains(t)) return;
+            
             e.preventDefault();
             this.isDragging = true;
             this.draggedId = t.dataset.id;
@@ -20,16 +22,17 @@ const Drag = {
             pv.style.left = (e.clientX + 12) + 'px';
             pv.style.top = (e.clientY + 12) + 'px';
             t.classList.add('dragging');
-        };
+        });
         
-        document.onmousemove = e => {
+        // Use addEventListener (not onmousemove) so it doesn't get overwritten
+        document.addEventListener('mousemove', e => {
             if (!this.isDragging) return;
             pv.style.left = (e.clientX + 12) + 'px';
             pv.style.top = (e.clientY + 12) + 'px';
             const el = document.elementFromPoint(e.clientX, e.clientY)?.closest('.panel');
             if (el && el !== this.sourcePanel) this.showInd(el, e.clientX, e.clientY);
             else { ind.style.display = 'none'; ind.textContent = ''; }
-        };
+        });
         
         document.addEventListener('mouseup', e => {
             if (!this.isDragging) return;

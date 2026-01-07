@@ -110,31 +110,55 @@ const Layout = {
     initPanels() { Papers.init(); PDF.init(); Chat.init(); Whiteboard.init(); Notes.init(); },
     
     initResizers() {
-        let active = null, start = 0, sizes = [], sibs = [], vert = false;
+        // Attach mousedown to each resizer (these get recreated each render, so no duplication)
         document.querySelectorAll('.resizer').forEach(r => {
             r.onmousedown = e => {
                 e.preventDefault();
-                active = r;
-                vert = r.classList.contains('resizer-v');
-                start = vert ? e.clientY : e.clientX;
-                sibs = [...r.parentElement.children].filter(c => !c.classList.contains('resizer'));
-                const idx = +r.dataset.idx;
-                sizes = [vert ? sibs[idx-1].offsetHeight : sibs[idx-1].offsetWidth, vert ? sibs[idx].offsetHeight : sibs[idx].offsetWidth];
+                Layout._resizer = {
+                    el: r,
+                    vert: r.classList.contains('resizer-v'),
+                    start: r.classList.contains('resizer-v') ? e.clientY : e.clientX,
+                    sibs: [...r.parentElement.children].filter(c => !c.classList.contains('resizer')),
+                    idx: +r.dataset.idx
+                };
+                const rs = Layout._resizer;
+                rs.sizes = [
+                    rs.vert ? rs.sibs[rs.idx-1].offsetHeight : rs.sibs[rs.idx-1].offsetWidth,
+                    rs.vert ? rs.sibs[rs.idx].offsetHeight : rs.sibs[rs.idx].offsetWidth
+                ];
                 r.classList.add('active');
-                document.body.style.cursor = vert ? 'row-resize' : 'col-resize';
+                document.body.style.cursor = rs.vert ? 'row-resize' : 'col-resize';
                 document.body.style.userSelect = 'none';
             };
         });
-        document.onmousemove = e => {
-            if (!active) return;
-            const idx = +active.dataset.idx, d = (vert ? e.clientY : e.clientX) - start;
-            const s1 = Math.max(150, sizes[0] + d), s2 = Math.max(150, sizes[1] - d);
-            if (vert) { sibs[idx-1].style.height = s1+'px'; sibs[idx-1].style.flex = 'none'; sibs[idx].style.height = s2+'px'; sibs[idx].style.flex = 'none'; }
-            else { sibs[idx-1].style.width = s1+'px'; sibs[idx-1].style.flex = 'none'; sibs[idx].style.width = s2+'px'; sibs[idx].style.flex = 'none'; }
-        };
-        document.onmouseup = () => {
-            if (active) { active.classList.remove('active'); active = null; document.body.style.cursor = ''; document.body.style.userSelect = ''; this.updateState(); Whiteboard.resize(); }
-        };
+    },
+    
+    _resizer: null,
+    
+    _onResizerMove(e) {
+        const rs = Layout._resizer;
+        if (!rs) return;
+        const d = (rs.vert ? e.clientY : e.clientX) - rs.start;
+        const s1 = Math.max(150, rs.sizes[0] + d);
+        const s2 = Math.max(150, rs.sizes[1] - d);
+        if (rs.vert) {
+            rs.sibs[rs.idx-1].style.height = s1+'px'; rs.sibs[rs.idx-1].style.flex = 'none';
+            rs.sibs[rs.idx].style.height = s2+'px'; rs.sibs[rs.idx].style.flex = 'none';
+        } else {
+            rs.sibs[rs.idx-1].style.width = s1+'px'; rs.sibs[rs.idx-1].style.flex = 'none';
+            rs.sibs[rs.idx].style.width = s2+'px'; rs.sibs[rs.idx].style.flex = 'none';
+        }
+    },
+    
+    _onResizerUp() {
+        const rs = Layout._resizer;
+        if (!rs) return;
+        rs.el.classList.remove('active');
+        Layout._resizer = null;
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+        Layout.updateState();
+        Whiteboard.resize();
     },
     
     removeTab(id) {

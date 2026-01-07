@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     Layout.render();
     Drag.init();
     
+    // Global listeners for resizers (registered once, not on every render)
+    document.addEventListener('mousemove', e => Layout._onResizerMove(e));
+    document.addEventListener('mouseup', () => Layout._onResizerUp());
+    
     document.getElementById('btn-reset')?.addEventListener('click', () => {
         State.resetLayout();
         Layout.render();
