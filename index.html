@@ -5,31 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Papers Daily</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/panels.css">
-    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
     <div class="app">
-        <!-- Top Toolbar -->
         <header class="toolbar">
             <h1>🔬 AI Papers Daily</h1>
             <div class="toolbar-actions">
-                <button class="btn-tool" id="btn-reset-layout">↺ Reset Layout</button>
+                <button class="btn-tool" id="btn-reset">↺ Reset Layout</button>
                 <button class="btn-tool" id="btn-help">? Help</button>
             </div>
         </header>
-        
-        <!-- Main Workspace -->
         <main class="workspace" id="workspace"></main>
     </div>
 
-    <!-- Drag Preview -->
     <div class="drag-preview" id="drag-preview"></div>
-    
-    <!-- Drop Indicator -->
-    <div class="drop-indicator" id="drop-indicator" style="display: none;"></div>
+    <div class="drop-indicator" id="drop-indicator"></div>
 
-    <!-- Help Tooltip -->
     <aside class="help-tooltip" id="help-tooltip">
         <button class="help-close" id="help-close">✕</button>
         <strong>Drag & Drop Panels</strong><br><br>
@@ -40,52 +31,49 @@
         • Upload your own PDFs!
     </aside>
 
-    <!-- Add Paper Modal -->
-    <div class="modal-overlay" id="modal-add-paper">
+    <div class="modal-overlay" id="modal-add">
         <div class="modal">
             <h2>➕ Add Paper</h2>
-            <form id="form-add-paper">
+            <form id="form-add">
                 <div class="form-group">
                     <label>Title *</label>
-                    <input type="text" id="input-title" required placeholder="Attention Is All You Need">
+                    <input type="text" id="inp-title" required placeholder="Attention Is All You Need">
                 </div>
                 <div class="form-group">
                     <label>URL *</label>
-                    <input type="url" id="input-url" required placeholder="https://arxiv.org/abs/...">
+                    <input type="url" id="inp-url" required placeholder="https://arxiv.org/abs/...">
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Authors</label>
-                        <input type="text" id="input-authors" placeholder="Vaswani et al.">
+                        <input type="text" id="inp-authors" placeholder="Vaswani et al.">
                     </div>
                     <div class="form-group">
                         <label>Date</label>
-                        <input type="date" id="input-date">
+                        <input type="date" id="inp-date">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Score (1-10)</label>
-                        <input type="number" id="input-score" min="1" max="10" placeholder="8">
+                        <input type="number" id="inp-score" min="1" max="10" placeholder="8">
                     </div>
                     <div class="form-group">
                         <label>Tags</label>
-                        <input type="text" id="input-tags" placeholder="transformers, nlp">
+                        <input type="text" id="inp-tags" placeholder="transformers, nlp">
                     </div>
                 </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-secondary" id="btn-cancel-paper">Cancel</button>
+                    <button type="button" class="btn btn-secondary" id="btn-cancel">Cancel</button>
                     <button type="submit" class="btn btn-primary">Add Paper</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="js/state.js"></script>
     <script src="js/layout.js"></script>
-    <script src="js/panels.js"></script>
-    <script src="js/drag-drop.js"></script>
+    <script src="js/drag.js"></script>
     <script src="js/papers.js"></script>
     <script src="js/pdf.js"></script>
     <script src="js/chat.js"></script>

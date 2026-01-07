@@ -1,61 +1,38 @@
 /**
  * Chat
- * AI chat functionality
  */
-
 const Chat = {
-    /**
-     * Initialize chat panel
-     */
     init() {
-        this.bindEvents();
-    },
-    
-    /**
-     * Bind event listeners
-     */
-    bindEvents() {
-        // Send button
-        const sendBtn = document.getElementById('btn-send');
-        if (sendBtn) {
-            sendBtn.addEventListener('click', () => this.send());
-        }
+        const sendBtn = document.getElementById('chat-send');
+        const input = document.getElementById('chat-in');
         
-        // Input enter key
-        const input = document.getElementById('chat-input');
-        if (input) {
-            input.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    this.send();
-                }
-            });
-        }
+        sendBtn?.addEventListener('click', () => this.send());
+        
+        input?.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                this.send();
+            }
+        });
         
         // Quick action buttons
         document.querySelectorAll('.quick-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                const prompt = btn.dataset.prompt;
-                if (prompt) {
-                    const input = document.getElementById('chat-input');
-                    if (input) {
-                        input.value = prompt;
-                        this.send();
-                    }
+                const input = document.getElementById('chat-in');
+                if (input) {
+                    input.value = btn.dataset.q;
+                    this.send();
                 }
             });
         });
     },
     
-    /**
-     * Send a message
-     */
     async send() {
-        const input = document.getElementById('chat-input');
-        const sendBtn = document.getElementById('btn-send');
+        const input = document.getElementById('chat-in');
+        const sendBtn = document.getElementById('chat-send');
         
         const message = input?.value.trim();
-        if (!message || State.chat.isTyping) return;
+        if (!message || State.chat.typing) return;
         
         // Check if paper is selected
         if (!State.papers.selected) {
@@ -71,12 +48,11 @@ const Chat = {
         State.chat.history.push({ role: 'user', content: message });
         
         // Show typing indicator
-        State.chat.isTyping = true;
+        State.chat.typing = true;
         if (sendBtn) sendBtn.disabled = true;
         const typingEl = this.showTyping();
         
         try {
-            // Try API call
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -100,27 +76,23 @@ const Chat = {
             } else {
                 throw new Error('API error');
             }
-        } catch (e) {
-            // Fallback response
+        } catch {
             typingEl.remove();
             const fallback = this.getFallbackResponse(message);
             this.addMessage('ai', fallback);
             State.chat.history.push({ role: 'assistant', content: fallback });
         }
         
-        State.chat.isTyping = false;
+        State.chat.typing = false;
         if (sendBtn) sendBtn.disabled = false;
     },
     
-    /**
-     * Add a message to the chat
-     */
     addMessage(role, content) {
-        const container = document.getElementById('chat-messages');
+        const container = document.getElementById('chat-msgs');
         if (!container) return;
         
         const messageEl = document.createElement('div');
-        messageEl.className = `message ${role} slide-up`;
+        messageEl.className = `message ${role}`;
         messageEl.innerHTML = `
             <div class="message-avatar">${role === 'ai' ? '🤖' : '👤'}</div>
             <div class="message-content">${content}</div>
@@ -130,11 +102,8 @@ const Chat = {
         container.scrollTop = container.scrollHeight;
     },
     
-    /**
-     * Show typing indicator
-     */
     showTyping() {
-        const container = document.getElementById('chat-messages');
+        const container = document.getElementById('chat-msgs');
         if (!container) return document.createElement('div');
         
         const el = document.createElement('div');
@@ -153,9 +122,6 @@ const Chat = {
         return el;
     },
     
-    /**
-     * Get fallback response when API is unavailable
-     */
     getFallbackResponse(message) {
         const paper = State.papers.selected;
         const msg = message.toLowerCase();
@@ -165,17 +131,17 @@ const Chat = {
         }
         
         if (msg.includes('key') || msg.includes('contribution')) {
-            return `The key contribution of "<strong>${paper.title}</strong>" relates to ${paper.tags?.join(', ') || 'advancing AI research'}. Check the PDF introduction and conclusion for specifics.`;
+            return `The key contribution of "<strong>${paper.title}</strong>" relates to ${paper.tags?.join(', ') || 'advancing AI research'}. Please check the PDF for details.`;
         }
         
         if (msg.includes('method')) {
-            return `For methodology details of "<strong>${paper.title}</strong>", please refer to Sections 3-4 in the PDF. The paper covers topics in: ${paper.tags?.join(', ') || 'AI/ML'}.`;
+            return `For methodology details of "<strong>${paper.title}</strong>", please refer to Sections 3-4 in the PDF.`;
         }
         
         if (msg.includes('result')) {
-            return `The results section of "<strong>${paper.title}</strong>" can be found in the PDF. The paper achieved a relevance score of ${paper.score || 'N/A'}/10 based on our analysis.`;
+            return `The results section can be found in the PDF. The paper achieved a relevance score of ${paper.score || 'N/A'}/10.`;
         }
         
-        return `I'm currently in offline mode. For "<strong>${paper.title}</strong>" by ${paper.authors || 'the authors'}, please refer to the PDF for detailed information. ${paper.abstract ? '<br><br>Abstract preview: ' + paper.abstract.slice(0, 200) + '...' : ''}`;
+        return `I'm in offline mode. For "<strong>${paper.title}</strong>" by ${paper.authors || 'the authors'}, please refer to the PDF for detailed information.`;
     }
 };

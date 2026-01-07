@@ -1,108 +1,62 @@
 /**
  * Layout Management
- * Handles the dock layout rendering and manipulation
  */
-
 const Layout = {
-    /**
-     * Render the entire layout
-     */
     render() {
         const workspace = document.getElementById('workspace');
         workspace.innerHTML = '';
-        
-        const rendered = this.renderNode(State.layout);
-        if (rendered) {
-            workspace.appendChild(rendered);
-        }
-        
-        // Initialize panel contents after rendering
-        Panels.initAll();
+        const el = this.renderNode(State.layout);
+        if (el) workspace.appendChild(el);
+        this.initPanels();
         this.initResizers();
     },
     
-    /**
-     * Render a single layout node (recursive)
-     */
     renderNode(node) {
         if (!node) return null;
         
-        if (node.type === 'horizontal' || node.type === 'vertical') {
-            return this.renderDockArea(node);
-        } else if (node.type === 'panel') {
+        if (node.type === 'h' || node.type === 'v') {
+            // Filter valid children
+            const validChildren = node.children.filter(c => 
+                c.type === 'panel' ? c.tabs && c.tabs.length > 0 : true
+            );
+            
+            if (validChildren.length === 0) return null;
+            if (validChildren.length === 1) return this.renderNode(validChildren[0]);
+            
+            const container = document.createElement('div');
+            container.className = node.type === 'h' ? 'dock-h' : 'dock-v';
+            
+            validChildren.forEach((child, i) => {
+                // Add resizer before each child except first
+                if (i > 0) {
+                    const resizer = document.createElement('div');
+                    resizer.className = `resizer ${node.type === 'h' ? 'resizer-h' : 'resizer-v'}`;
+                    resizer.dataset.idx = i;
+                    container.appendChild(resizer);
+                }
+                
+                const childEl = this.renderNode(child);
+                if (childEl) {
+                    if (child.size) {
+                        childEl.style[node.type === 'h' ? 'width' : 'height'] = child.size + 'px';
+                        childEl.style.flexShrink = '0';
+                    } else {
+                        childEl.style.flex = '1';
+                    }
+                    container.appendChild(childEl);
+                }
+            });
+            
+            return container;
+        }
+        
+        if (node.type === 'panel') {
             return this.renderPanel(node);
         }
         
         return null;
     },
     
-    /**
-     * Render a dock area (horizontal or vertical container)
-     */
-    renderDockArea(node) {
-        // Filter out empty panels
-        const validChildren = node.children.filter(child => {
-            if (child.type === 'panel') {
-                return child.tabs && child.tabs.length > 0;
-            }
-            return true;
-        });
-        
-        // If empty, return null
-        if (validChildren.length === 0) return null;
-        
-        // If only one child, just render that child
-        if (validChildren.length === 1) {
-            const child = this.renderNode(validChildren[0]);
-            if (child && node.size) {
-                if (node.type === 'horizontal') {
-                    child.style.width = node.size + 'px';
-                } else {
-                    child.style.height = node.size + 'px';
-                }
-            }
-            return child;
-        }
-        
-        // Create container
-        const container = document.createElement('div');
-        container.className = node.type === 'horizontal' ? 'dock-horizontal' : 'dock-vertical';
-        
-        // Render children with resizers between them
-        validChildren.forEach((child, index) => {
-            // Add resizer before each child except first
-            if (index > 0) {
-                const resizer = document.createElement('div');
-                resizer.className = `resizer ${node.type === 'horizontal' ? 'resizer-h' : 'resizer-v'}`;
-                resizer.dataset.index = index;
-                container.appendChild(resizer);
-            }
-            
-            // Render child
-            const childEl = this.renderNode(child);
-            if (childEl) {
-                // Apply size
-                if (child.size) {
-                    if (node.type === 'horizontal') {
-                        childEl.style.width = child.size + 'px';
-                        childEl.style.flexShrink = '0';
-                    } else {
-                        childEl.style.height = child.size + 'px';
-                        childEl.style.flexShrink = '0';
-                    }
-                } else {
-                    childEl.style.flex = '1';
-                }
-                container.appendChild(childEl);
-            }
-        });
-        
-        return container;
-    },
-    
-    /**
-     * Render a panel (tab container)
-     */
     renderPanel(node) {
         if (!node.tabs || node.tabs.length === 0) return null;
         
@@ -113,166 +67,215 @@ const Layout = {
         const tabBar = document.createElement('div');
         tabBar.className = 'tab-bar';
         
-        node.tabs.forEach(tabId => {
-            const def = State.panelDefs[tabId];
+        node.tabs.forEach(id => {
+            const def = State.panels[id];
             if (!def) return;
             
             const tab = document.createElement('div');
-            tab.className = `tab ${node.activeTab === tabId ? 'active' : ''}`;
-            tab.dataset.panelId = tabId;
-            tab.innerHTML = `<span class="tab-icon">${def.icon}</span>${def.title}`;
-            
+            tab.className = `tab${node.active === id ? ' active' : ''}`;
+            tab.dataset.id = id;
+            tab.innerHTML = `<span>${def.icon}</span>${def.title}`;
             tab.addEventListener('click', () => {
-                if (!DragDrop.isDragging) {
-                    this.activateTab(panel, tabId);
-                }
+                if (!Drag.isDragging) this.activateTab(panel, id);
             });
-            
             tabBar.appendChild(tab);
         });
         
         // Tab actions
         const actions = document.createElement('div');
         actions.className = 'tab-actions';
-        actions.innerHTML = `
-            <button class="tab-btn" data-tooltip="Maximize" onclick="Layout.toggleMaximize(this)">⤢</button>
-        `;
+        actions.innerHTML = '<button class="tab-btn" onclick="Layout.maximize(this)">⤢</button>';
         tabBar.appendChild(actions);
         
         panel.appendChild(tabBar);
         
         // Panel contents
-        node.tabs.forEach(tabId => {
+        node.tabs.forEach(id => {
             const content = document.createElement('div');
-            content.className = `panel-content ${node.activeTab === tabId ? 'active' : ''}`;
-            content.dataset.panelId = tabId;
-            content.innerHTML = Panels.getContent(tabId);
+            content.className = `panel-content${node.active === id ? ' active' : ''}`;
+            content.dataset.id = id;
+            content.innerHTML = this.getContent(id);
             panel.appendChild(content);
         });
         
         return panel;
     },
     
-    /**
-     * Activate a tab in a panel
-     */
-    activateTab(panelEl, tabId) {
-        // Update tab states
-        panelEl.querySelectorAll('.tab').forEach(tab => {
-            tab.classList.toggle('active', tab.dataset.panelId === tabId);
-        });
-        
-        // Update content visibility
-        panelEl.querySelectorAll('.panel-content').forEach(content => {
-            content.classList.toggle('active', content.dataset.panelId === tabId);
-        });
-        
-        // Update layout state
-        this.updateState();
-        
-        // Special handling for whiteboard
-        if (tabId === 'whiteboard') {
-            setTimeout(() => Whiteboard.resize(), 50);
-        }
+    getContent(id) {
+        const contents = {
+            papers: `
+                <div class="search-area">
+                    <input class="search-input" id="search" placeholder="Search papers...">
+                    <select class="sort-select" id="sort">
+                        <option value="score-desc">⭐ Highest Rated</option>
+                        <option value="score-asc">⭐ Lowest Rated</option>
+                        <option value="date-desc">📅 Newest</option>
+                        <option value="date-asc">📅 Oldest</option>
+                    </select>
+                </div>
+                <div class="filter-tabs" id="filter-tabs"></div>
+                <div class="papers-list" id="papers-list"></div>
+                <div class="papers-footer">
+                    <button class="paper-btn add-paper-btn" id="btn-add">➕ Add Paper</button>
+                </div>
+            `,
+            pdf: `
+                <div class="pdf-placeholder" id="pdf-ph">
+                    <div class="pdf-placeholder-icon">📄</div>
+                    <p>Select a paper and click "PDF"<br>or upload your own</p>
+                    <div class="upload-zone" id="upload-zone">
+                        <input type="file" id="pdf-file" accept=".pdf">
+                        <div class="upload-text">
+                            <strong>Click to upload</strong> or drag & drop<br>
+                            PDF files only
+                        </div>
+                    </div>
+                </div>
+                <div class="pdf-toolbar" id="pdf-bar">
+                    <div class="pdf-title" id="pdf-title"></div>
+                    <div class="pdf-links">
+                        <a href="#" id="pdf-link" target="_blank">Open ↗</a>
+                        <button class="paper-btn" id="pdf-close">✕</button>
+                    </div>
+                </div>
+                <iframe class="pdf-frame" id="pdf-frame"></iframe>
+            `,
+            chat: `
+                <div class="chat-context" id="chat-ctx">
+                    <span class="status-dot"></span>Select a paper to start
+                </div>
+                <div class="chat-messages" id="chat-msgs">
+                    <div class="message ai">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">Hi! Select a paper or upload a PDF. I'll help you understand it.</div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <div class="quick-actions">
+                        <button class="quick-btn" data-q="Summarize this paper">Summarize</button>
+                        <button class="quick-btn" data-q="What's the key contribution?">Key point</button>
+                        <button class="quick-btn" data-q="Explain the method">Method</button>
+                        <button class="quick-btn" data-q="What are the results?">Results</button>
+                    </div>
+                    <div class="chat-input-row">
+                        <textarea class="chat-input" id="chat-in" rows="1" placeholder="Ask about this paper..."></textarea>
+                        <button class="chat-send" id="chat-send">Send</button>
+                    </div>
+                </div>
+            `,
+            whiteboard: `
+                <div class="wb-toolbar">
+                    <button class="wb-tool active" data-t="pen">✏️ Pen</button>
+                    <button class="wb-tool" data-t="eraser">🧹 Eraser</button>
+                    <button class="wb-tool" id="wb-clear">🗑️ Clear</button>
+                    <div class="wb-separator"></div>
+                    <button class="color-btn active" data-c="#ffffff" style="background:#ffffff"></button>
+                    <button class="color-btn" data-c="#58a6ff" style="background:#58a6ff"></button>
+                    <button class="color-btn" data-c="#f0883e" style="background:#f0883e"></button>
+                    <button class="color-btn" data-c="#238636" style="background:#238636"></button>
+                    <button class="color-btn" data-c="#da3633" style="background:#da3633"></button>
+                    <div class="wb-spacer"></div>
+                    <button class="wb-tool" id="wb-ai">🤖 Ask AI</button>
+                </div>
+                <div class="canvas-container">
+                    <canvas class="whiteboard-canvas" id="canvas"></canvas>
+                </div>
+            `,
+            notes: `<textarea class="notes-textarea" id="notes" placeholder="Your notes, equations, ideas..."></textarea>`
+        };
+        return contents[id] || '<div class="empty-state">Unknown panel</div>';
     },
     
-    /**
-     * Toggle panel maximize
-     */
-    toggleMaximize(btn) {
+    activateTab(panel, id) {
+        panel.querySelectorAll('.tab').forEach(t => 
+            t.classList.toggle('active', t.dataset.id === id)
+        );
+        panel.querySelectorAll('.panel-content').forEach(c => 
+            c.classList.toggle('active', c.dataset.id === id)
+        );
+        this.updateState();
+        if (id === 'whiteboard') setTimeout(() => Whiteboard.resize(), 50);
+    },
+    
+    maximize(btn) {
         const panel = btn.closest('.panel');
         panel.classList.toggle('maximized');
-        
-        if (panel.classList.contains('maximized')) {
-            panel.style.cssText = 'position: fixed; inset: 48px 0 0 0; z-index: 200;';
-        } else {
-            panel.style.cssText = '';
-        }
-        
+        panel.style.cssText = panel.classList.contains('maximized') 
+            ? 'position:fixed;inset:48px 0 0 0;z-index:200;' 
+            : '';
         setTimeout(() => Whiteboard.resize(), 50);
     },
     
-    /**
-     * Update layout state from DOM
-     */
     updateState() {
-        const workspace = document.getElementById('workspace');
-        if (!workspace.firstChild) return;
+        const walk = (el) => {
+            if (el.classList.contains('panel')) {
+                const tabs = [...el.querySelectorAll('.tab-bar > .tab')].map(t => t.dataset.id);
+                const active = el.querySelector('.tab.active')?.dataset.id || tabs[0];
+                const size = parseInt(el.style.width) || parseInt(el.style.height) || null;
+                return { type: 'panel', tabs, active, size };
+            }
+            if (el.classList.contains('dock-h') || el.classList.contains('dock-v')) {
+                const type = el.classList.contains('dock-h') ? 'h' : 'v';
+                const children = [...el.children]
+                    .filter(c => !c.classList.contains('resizer'))
+                    .map(walk)
+                    .filter(Boolean);
+                return { type, children };
+            }
+            return null;
+        };
         
-        State.layout = this.walkDOM(workspace.firstChild);
-        State.saveLayout();
-    },
-    
-    /**
-     * Walk DOM and build layout state
-     */
-    walkDOM(el) {
-        if (el.classList.contains('panel')) {
-            const tabs = Array.from(el.querySelectorAll('.tab-bar > .tab'))
-                .map(t => t.dataset.panelId);
-            const activeTab = el.querySelector('.tab.active')?.dataset.panelId || tabs[0];
-            const size = parseInt(el.style.width) || parseInt(el.style.height) || null;
-            
-            return { type: 'panel', tabs, activeTab, size };
-        } else if (el.classList.contains('dock-horizontal') || el.classList.contains('dock-vertical')) {
-            const isHorizontal = el.classList.contains('dock-horizontal');
-            const children = Array.from(el.children)
-                .filter(c => !c.classList.contains('resizer'))
-                .map(c => this.walkDOM(c))
-                .filter(Boolean);
-            
-            return {
-                type: isHorizontal ? 'horizontal' : 'vertical',
-                children,
-                size: parseInt(el.style.width) || parseInt(el.style.height) || null
-            };
+        const workspace = document.getElementById('workspace');
+        if (workspace.firstChild) {
+            State.layout = walk(workspace.firstChild);
+            State.saveLayout();
         }
-        return null;
     },
     
-    /**
-     * Initialize resizers
-     */
+    initPanels() {
+        Papers.init();
+        PDF.init();
+        Chat.init();
+        Whiteboard.init();
+        Notes.init();
+    },
+    
     initResizers() {
-        let activeResizer = null;
+        let active = null;
         let startPos = 0;
         let startSizes = [];
         let siblings = [];
         let isVertical = false;
         
-        // Mouse down on resizer
-        document.querySelectorAll('.resizer').forEach(resizer => {
-            resizer.addEventListener('mousedown', (e) => {
+        document.querySelectorAll('.resizer').forEach(r => {
+            r.addEventListener('mousedown', (e) => {
                 e.preventDefault();
-                activeResizer = resizer;
-                isVertical = resizer.classList.contains('resizer-v');
+                active = r;
+                isVertical = r.classList.contains('resizer-v');
                 startPos = isVertical ? e.clientY : e.clientX;
                 
-                const parent = resizer.parentElement;
-                siblings = Array.from(parent.children).filter(c => !c.classList.contains('resizer'));
-                const idx = parseInt(resizer.dataset.index);
+                const parent = r.parentElement;
+                siblings = [...parent.children].filter(c => !c.classList.contains('resizer'));
+                const idx = parseInt(r.dataset.idx);
                 
                 startSizes = [
                     isVertical ? siblings[idx - 1].offsetHeight : siblings[idx - 1].offsetWidth,
                     isVertical ? siblings[idx].offsetHeight : siblings[idx].offsetWidth
                 ];
                 
-                resizer.classList.add('active');
+                r.classList.add('active');
                 document.body.style.cursor = isVertical ? 'row-resize' : 'col-resize';
                 document.body.style.userSelect = 'none';
             });
         });
         
-        // Mouse move
         document.addEventListener('mousemove', (e) => {
-            if (!activeResizer) return;
+            if (!active) return;
             
-            const idx = parseInt(activeResizer.dataset.index);
+            const idx = parseInt(active.dataset.idx);
             const delta = (isVertical ? e.clientY : e.clientX) - startPos;
-            const minSize = 150;
-            
-            const newSize1 = Math.max(minSize, startSizes[0] + delta);
-            const newSize2 = Math.max(minSize, startSizes[1] - delta);
+            const newSize1 = Math.max(150, startSizes[0] + delta);
+            const newSize2 = Math.max(150, startSizes[1] - delta);
             
             if (isVertical) {
                 siblings[idx - 1].style.height = newSize1 + 'px';
@@ -287,49 +290,42 @@ const Layout = {
             }
         });
         
-        // Mouse up
         document.addEventListener('mouseup', () => {
-            if (activeResizer) {
-                activeResizer.classList.remove('active');
-                activeResizer = null;
+            if (active) {
+                active.classList.remove('active');
+                active = null;
                 document.body.style.cursor = '';
                 document.body.style.userSelect = '';
-                
                 this.updateState();
                 Whiteboard.resize();
             }
         });
     },
     
-    /**
-     * Remove a tab from layout state
-     */
+    // Layout manipulation methods
     removeTab(tabId) {
-        function remove(node) {
+        const remove = (node) => {
             if (node.type === 'panel') {
                 const idx = node.tabs.indexOf(tabId);
                 if (idx > -1) {
                     node.tabs.splice(idx, 1);
-                    if (node.activeTab === tabId) {
-                        node.activeTab = node.tabs[0] || null;
+                    if (node.active === tabId) {
+                        node.active = node.tabs[0] || null;
                     }
                 }
             } else if (node.children) {
                 node.children.forEach(remove);
             }
-        }
+        };
         remove(State.layout);
     },
     
-    /**
-     * Add a tab to a panel
-     */
-    addTabToPanel(tabId, targetTabs) {
-        function add(node) {
+    addTab(tabId, targetTabs) {
+        const add = (node) => {
             if (node.type === 'panel' && targetTabs.some(t => node.tabs.includes(t))) {
                 if (!node.tabs.includes(tabId)) {
                     node.tabs.push(tabId);
-                    node.activeTab = tabId;
+                    node.active = tabId;
                 }
                 return true;
             }
@@ -339,22 +335,18 @@ const Layout = {
                 }
             }
             return false;
-        }
+        };
         add(State.layout);
     },
     
-    /**
-     * Split a panel
-     */
-    splitPanel(tabId, targetTabs, zone) {
-        const newPanel = { type: 'panel', tabs: [tabId], activeTab: tabId, size: 300 };
+    split(tabId, targetTabs, zone) {
+        const newPanel = { type: 'panel', tabs: [tabId], active: tabId, size: 300 };
         
-        function split(node, parent, index) {
+        const doSplit = (node, parent, index) => {
             if (node.type === 'panel' && targetTabs.some(t => node.tabs.includes(t))) {
-                const direction = (zone === 'left' || zone === 'right') ? 'horizontal' : 'vertical';
+                const direction = (zone === 'left' || zone === 'right') ? 'h' : 'v';
                 const newNode = {
                     type: direction,
-                    size: node.size,
                     children: (zone === 'left' || zone === 'top')
                         ? [newPanel, { ...node, size: null }]
                         : [{ ...node, size: null }, newPanel]
@@ -369,19 +361,17 @@ const Layout = {
             }
             if (node.children) {
                 for (let i = 0; i < node.children.length; i++) {
-                    if (split(node.children[i], node, i)) return true;
+                    if (doSplit(node.children[i], node, i)) return true;
                 }
             }
             return false;
-        }
-        split(State.layout, null, 0);
+        };
+        
+        doSplit(State.layout, null, 0);
     },
     
-    /**
-     * Clean up empty panels from layout
-     */
     cleanup() {
-        function clean(node, parent, index) {
+        const clean = (node, parent, index) => {
             if (node.children) {
                 // Clean children first
                 for (let i = node.children.length - 1; i >= 0; i--) {
@@ -389,11 +379,9 @@ const Layout = {
                 }
                 
                 // Remove empty children
-                node.children = node.children.filter(c => {
-                    if (c.type === 'panel') return c.tabs && c.tabs.length > 0;
-                    if (c.children) return c.children.length > 0;
-                    return true;
-                });
+                node.children = node.children.filter(c => 
+                    c.type === 'panel' ? c.tabs && c.tabs.length > 0 : c.children && c.children.length > 0
+                );
                 
                 // Collapse single-child containers
                 if (node.children.length === 1) {
@@ -405,10 +393,11 @@ const Layout = {
                     }
                 }
             }
-        }
+        };
+        
         clean(State.layout, null, 0);
         
-        // Final check - if root is empty
+        // If root is empty, reset
         if (State.layout.type === 'panel' && (!State.layout.tabs || State.layout.tabs.length === 0)) {
             State.resetLayout();
         }

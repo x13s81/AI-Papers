@@ -1,79 +1,48 @@
 /**
  * State Management
- * Central state store for the application
  */
-
 const State = {
-    // Papers data
     papers: {
         all: [],
         custom: JSON.parse(localStorage.getItem('customPapers') || '[]'),
         saved: JSON.parse(localStorage.getItem('savedPapers') || '[]'),
         selected: null,
-        currentTab: 'all'
+        tab: 'all'
     },
     
-    // Chat state
     chat: {
         history: [],
-        isTyping: false
+        typing: false
     },
     
-    // PDF state
     pdf: {
-        uploadedUrl: null,
-        uploadedName: null
+        url: null,
+        name: null
     },
     
-    // Whiteboard state
-    whiteboard: {
+    wb: {
         tool: 'pen',
-        color: '#ffffff',
-        isDrawing: false
+        color: '#ffffff'
     },
     
-    // Layout state
     layout: null,
     
-    // Default layout configuration
     defaultLayout: {
-        type: 'horizontal',
+        type: 'h',
         children: [
+            { type: 'panel', tabs: ['papers'], active: 'papers', size: 350 },
             { 
-                type: 'panel', 
-                tabs: ['papers'], 
-                activeTab: 'papers', 
-                size: 350 
-            },
-            { 
-                type: 'vertical', 
-                size: null, 
+                type: 'v', 
                 children: [
-                    { 
-                        type: 'panel', 
-                        tabs: ['pdf'], 
-                        activeTab: 'pdf', 
-                        size: null 
-                    },
-                    { 
-                        type: 'panel', 
-                        tabs: ['whiteboard', 'notes'], 
-                        activeTab: 'whiteboard', 
-                        size: 300 
-                    }
+                    { type: 'panel', tabs: ['pdf'], active: 'pdf' },
+                    { type: 'panel', tabs: ['whiteboard', 'notes'], active: 'whiteboard', size: 300 }
                 ]
             },
-            { 
-                type: 'panel', 
-                tabs: ['chat'], 
-                activeTab: 'chat', 
-                size: 380 
-            }
+            { type: 'panel', tabs: ['chat'], active: 'chat', size: 380 }
         ]
     },
     
-    // Panel definitions
-    panelDefs: {
+    panels: {
         papers: { id: 'papers', title: 'Papers', icon: '📚' },
         pdf: { id: 'pdf', title: 'PDF Viewer', icon: '📄' },
         chat: { id: 'chat', title: 'Ask AI', icon: '💬' },
@@ -81,25 +50,20 @@ const State = {
         notes: { id: 'notes', title: 'Notes', icon: '📝' }
     },
     
-    // Save methods
-    savePapers() {
+    save() {
         localStorage.setItem('customPapers', JSON.stringify(this.papers.custom));
         localStorage.setItem('savedPapers', JSON.stringify(this.papers.saved));
     },
     
     saveLayout() {
-        localStorage.setItem('dockLayout', JSON.stringify(this.layout));
+        localStorage.setItem('layout', JSON.stringify(this.layout));
     },
     
     loadLayout() {
-        const saved = localStorage.getItem('dockLayout');
-        if (saved) {
-            try {
-                this.layout = JSON.parse(saved);
-            } catch (e) {
-                this.layout = JSON.parse(JSON.stringify(this.defaultLayout));
-            }
-        } else {
+        try {
+            const saved = localStorage.getItem('layout');
+            this.layout = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(this.defaultLayout));
+        } catch {
             this.layout = JSON.parse(JSON.stringify(this.defaultLayout));
         }
     },
@@ -109,15 +73,3 @@ const State = {
         this.saveLayout();
     }
 };
-
-// Helper to get today's date
-function getToday() {
-    return new Date().toISOString().split('T')[0];
-}
-
-// Format date for display
-function formatDate(dateStr) {
-    if (!dateStr) return '?';
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-}

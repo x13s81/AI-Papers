@@ -1,52 +1,56 @@
 {
   "date": "2026-01-07",
-  "generated_at": "2026-01-07T03:15:27Z",
-  "total_papers": 247,
-  "must_read_count": 14,
+  "generated_at": "2026-01-07T06:56:43Z",
+  "total_papers": 243,
+  "must_read_count": 12,
   "notable_count": 24,
-  "daily_summary": "Today's top-scoring papers underscore significant advancements in AI research, particularly in the areas of depth estimation, language modeling, and multimodal learning. Notably, papers such as InfiniDepth and InfiniteVGGT demonstrate substantial progress in visual perception, while Recursive Language Models and Project Ariadne highlight innovative approaches to language understanding and causal frameworks for auditing large language models. Meanwhile, works like Can LLMs Predict Their Own Failures? and COMPASS push the boundaries of self-awareness and policy alignment in LLMs, offering valuable insights for researchers seeking to improve the reliability and transparency of AI systems.",
+  "daily_summary": "Today's top-scoring papers offer significant advancements in AI research, particularly in areas such as explainability, multimodal learning, and foundation models. Notably, \"Can We Trust AI Explanations?\" and \"Project Ariadne\" shed light on the crucial issue of trustworthiness in AI systems, while papers like \"MiMo-V2-Flash Technical Report\" and \"NitroGen\" push the boundaries of efficient and generalizable models. Meanwhile, works like \"InfiniDepth\" and \"InfiniteVGGT\" demonstrate innovative approaches to visual understanding and geometry, highlighting the rapid progress being made in these fields.",
   "weekly_trends": {
     "hot_topics": [
       {
         "topic": "Natural Language Processing (cs.CL)",
-        "paper_count": 76,
-        "insight": "Research in NLP continues to thrive, with papers like Recursive Language Models and Project Ariadne: A Structural Causal Framework for Auditing Faithfulness in LLM Agents pushing the boundaries of language understanding and generation."
+        "paper_count": 75,
+        "insight": "Research in NLP continues to thrive, with a focus on explainability, as seen in papers like 'Can We Trust AI Explanations? Evidence of Systematic Underreporting in Chain-of-Thought Reasoning'"
       },
       {
-        "topic": "Computer Vision (cs.CV)",
-        "paper_count": 54,
-        "insight": "Advances in computer vision are evident in papers such as InfiniteVGGT: Visual Geometry Grounded Transformer for Endless Streams and VINO: A Unified Visual Generator with Interleaved OmniModal Context, which demonstrate improved capabilities in image and video processing."
+        "topic": "Artificial Intelligence (cs.AI)",
+        "paper_count": 77,
+        "insight": "Advances in foundation models are prominent, with papers like 'MiMo-V2-Flash Technical Report' and 'NitroGen: An Open Foundation Model for Generalist Gaming Agents' showcasing progress in this area"
       },
       {
         "topic": "Machine Learning (cs.LG)",
         "paper_count": 63,
-        "insight": "Machine learning remains a vibrant area of research, with papers like InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural Implicit Fields and Falcon-H1R: Pushing the Reasoning Frontiers with a Hybrid Model for Efficient Test-Time Scaling showcasing innovations in depth estimation and model efficiency."
+        "insight": "Efficient and scalable models are being developed, as seen in 'WebGym: Scaling Training Environments for Visual Web Agents with Realistic Tasks' and 'Falcon-H1R: Pushing the Reasoning Frontiers with a Hybrid Model for Efficient Test-Time Scaling'"
       }
     ],
     "key_developments": [
-      "The development of neural implicit fields for arbitrary-resolution depth estimation, as seen in InfiniDepth, has significant implications for applications in robotics and autonomous systems.",
-      "The introduction of recursive language models has the potential to revolutionize natural language understanding and generation, as demonstrated in Recursive Language Models.",
-      "The creation of open foundation models for generalist gaming agents, such as NitroGen, marks an important step towards more generalizable and adaptable AI systems."
+      "The release of MiMo-V2-Flash Technical Report, which achieves state-of-the-art results in various tasks",
+      "The introduction of NitroGen, an open foundation model for generalist gaming agents, which has the potential to revolutionize game playing AI",
+      "The development of Project Ariadne, a structural causal framework for auditing faithfulness in large language models, which addresses the need for more transparent and explainable AI models"
     ],
     "emerging_trends": [
-      "There is a growing focus on evaluating and improving the faithfulness and self-awareness of large language models, as seen in papers like Project Ariadne and Can LLMs Predict Their Own Failures? Self-Awareness via Internal Circuits.",
-      "The development of more efficient and scalable models, such as Falcon-H1R and LTX-2, is becoming increasingly important as AI systems are deployed in real-world applications."
+      "There is a growing interest in developing more efficient and scalable AI models, with a focus on test-time scaling and realistic task environments.",
+      "Explainability and transparency in AI decision-making are becoming increasingly important, with researchers working on auditing faithfulness in large language models and developing more trustworthy AI explanations."
     ],
-    "summary": "This week in AI research, we saw significant advancements in natural language processing, computer vision, and machine learning, with a focus on developing more efficient, scalable, and generalizable models. Papers like InfiniDepth, Recursive Language Models, and Project Ariadne showcased innovations in depth estimation, language understanding, and model faithfulness. As AI systems become increasingly pervasive, researchers are prioritizing the development of more robust, adaptable, and transparent models, as evident in papers like NitroGen and Falcon-H1R."
+    "summary": [
+      "This week in AI research, we saw significant advancements in natural language processing, artificial intelligence, and machine learning, with a focus on developing more efficient, scalable, and transparent models.",
+      "Papers like 'Can We Trust AI Explanations?' and 'Project Ariadne' highlighted the need for more explainable and trustworthy AI models, while 'MiMo-V2-Flash Technical Report' and 'NitroGen' showcased progress in foundation models and game playing AI.",
+      "Overall, the field of AI research is rapidly evolving, with a growing emphasis on developing models that are not only highly performant but also transparent, explainable, and trustworthy."
+    ]
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 197
+    "arXiv": 193
   },
   "tags": {
-    "cs.AI": 80,
-    "cs.CL": 76,
+    "cs.AI": 77,
+    "cs.CL": 75,
     "cs.LG": 63,
-    "cs.CV": 54,
+    "cs.CV": 52,
     "stat.ML": 8,
     "cs.RO": 8,
-    "cs.SD": 6,
     "cs.CY": 5,
+    "cs.SD": 5,
     "cs.HC": 4,
     "cs.IR": 4,
     "cs.MA": 4,
@@ -66,45 +70,43 @@
     "Amazon": 1
   },
   "must_read_ids": [
-    "2512.20578",
-    "2512.24601",
+    "2601.02780",
+    "2601.00830",
     "2601.03252",
-    "2601.02314",
-    "2512.24165",
-    "2512.24330",
-    "2512.24695",
-    "2601.02281",
+    "2601.02204",
     "2601.02358",
+    "2601.02281",
+    "2601.00747",
     "2601.02346",
-    "2601.01836",
     "2601.03233",
     "2601.02427",
-    "2601.00830"
+    "2601.02439",
+    "2601.02314"
   ],
   "notable_ids": [
-    "2512.24271",
-    "2601.02204",
-    "2512.24138",
-    "2601.00747",
+    "2601.00393",
+    "2512.20578",
+    "2601.00796",
+    "2512.24601",
+    "2601.03193",
+    "2601.01426",
     "2601.02356",
-    "2512.24766",
+    "2601.02267",
+    "2601.01836",
+    "2601.01720",
+    "2512.24271",
+    "2601.01425",
+    "2601.01554",
+    "2601.02256",
+    "2512.24138",
+    "2601.01874",
+    "2512.24146",
+    "2601.03044",
     "2601.00501",
+    "2601.00204",
+    "2601.01576",
     "2601.03194",
     "2601.00575",
-    "2601.00671",
-    "2512.22877",
-    "2601.00393",
-    "2512.24615",
-    "2601.01425",
-    "2601.02256",
-    "2601.00796",
-    "2601.00417",
-    "2512.24146",
-    "2601.02267",
-    "2512.23035",
-    "2512.24724",
-    "2601.00863",
-    "2601.01576",
-    "2601.01720"
+    "2512.22877"
   ]
 }
