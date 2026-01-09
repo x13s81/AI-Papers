@@ -2194,5 +2194,421 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-01-08"
+  },
+  "2601.05138": {
+    "title": "VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "4D Geometric Control",
+          "brief": "A novel representation that encodes the world state through a static background point cloud and per-object 3D Gaussian trajectories"
+        },
+        {
+          "name": "Video World Models",
+          "brief": "Simulations of dynamic, real-world environments"
+        },
+        {
+          "name": "Video Diffusion Models",
+          "brief": "Pretrained models for generating high-fidelity videos"
+        },
+        {
+          "name": "3D Gaussian Trajectories",
+          "brief": "A way to capture an object's path and probabilistic 3D occupancy over time"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand video world models, 3D geometry, and object tracking"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend video diffusion models, 4D geometric control, and training data requirements"
+        },
+        {
+          "topic": "Geometry and Linear Algebra",
+          "why_needed": "To grasp 3D point clouds, Gaussian trajectories, and 4D geometric representations"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of video diffusion models"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-01-09"
+  },
+  "2601.03425": {
+    "title": "The Illusion of Specialization: Unveiling the Domain-Invariant \"Standing Committee\" in Mixture-of-Experts Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Mixture of Experts models",
+          "brief": "A type of neural network architecture that uses multiple expert models to achieve domain specialization"
+        },
+        {
+          "name": "Sparse routing",
+          "brief": "A technique used in Mixture of Experts models to selectively activate experts based on input data"
+        },
+        {
+          "name": "Domain-invariant Standing Committee",
+          "brief": "A compact group of experts that consistently captures the majority of routing mass across domains, layers, and routing budgets"
+        },
+        {
+          "name": "COMMITTEEAUDIT framework",
+          "brief": "A post hoc framework for analyzing routing behavior in Mixture of Experts models at the level of expert groups"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Neural networks",
+          "why_needed": "To understand the basics of Mixture of Experts models and their architecture"
+        },
+        {
+          "topic": "Deep learning",
+          "why_needed": "To comprehend the training objectives and optimization techniques used in Mixture of Experts models"
+        },
+        {
+          "topic": "Domain adaptation and specialization",
+          "why_needed": "To appreciate the concept of domain-invariant features and the implications of the Standing Committee on specialization"
+        },
+        {
+          "topic": "Model analysis and interpretation",
+          "why_needed": "To understand the importance of analyzing routing behavior and the insights gained from the COMMITTEEAUDIT framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-09"
+  },
+  "2601.05167": {
+    "title": "RelayLLM: Efficient Reasoning via Collaborative Decoding",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Complex AI models for natural language processing"
+        },
+        {
+          "name": "Small Language Models (SLMs)",
+          "brief": "Resource-efficient language models with limited reasoning capacity"
+        },
+        {
+          "name": "Collaborative Decoding",
+          "brief": "Technique for combining LLMs and SLMs for efficient reasoning"
+        },
+        {
+          "name": "Token-level Collaborative Decoding",
+          "brief": "Method for dynamic invocation of LLMs during generation process"
+        },
+        {
+          "name": "Group Relative Policy Optimization (GRPO)",
+          "brief": "Training framework for balancing independence with strategic help-seeking"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "Understanding of language models and their applications"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Familiarity with neural networks and training frameworks"
+        },
+        {
+          "topic": "Computer Architecture",
+          "why_needed": "Knowledge of computational costs and latency in AI systems"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "Understanding of policy optimization methods for AI models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-09"
+  },
+  "2601.03559": {
+    "title": "DiffCoT: Diffusion-styled Chain-of-Thought Reasoning in LLMs",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Chain-of-Thought (CoT) Reasoning",
+          "brief": "A method to improve multi-step mathematical problem solving in large language models"
+        },
+        {
+          "name": "Diffusion-styled CoT Framework",
+          "brief": "A framework that reformulates CoT reasoning as an iterative denoising process"
+        },
+        {
+          "name": "Autoregressive Decoding",
+          "brief": "A decoding process where the model generates output one token at a time, based on the previous tokens"
+        },
+        {
+          "name": "Exposure Bias and Error Accumulation",
+          "brief": "Phenomena where early mistakes in a model's output propagate and worsen over time"
+        },
+        {
+          "name": "Diffusion Principles",
+          "brief": "A set of principles inspired by diffusion processes, applied to the reasoning-step level"
+        },
+        {
+          "name": "Causal Diffusion Noise Schedule",
+          "brief": "A schedule that respects the temporal structure of reasoning chains to maintain causal consistency"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context and application of CoT reasoning"
+        },
+        {
+          "topic": "Multi-Step Mathematical Problem Solving",
+          "why_needed": "To comprehend the challenges and goals of CoT reasoning"
+        },
+        {
+          "topic": "Autoregressive Models and Decoding",
+          "why_needed": "To grasp the limitations and vulnerabilities of traditional CoT reasoning methods"
+        },
+        {
+          "topic": "Diffusion Processes and Denoising",
+          "why_needed": "To understand the inspiration and mechanisms behind the proposed DiffCoT framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-09"
+  },
+  "2601.03699": {
+    "title": "RedBench: A Universal Dataset for Comprehensive Red Teaming of Large Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models that process and generate human-like language"
+        },
+        {
+          "name": "Red Teaming",
+          "brief": "A methodology to test the robustness of LLMs against adversarial prompts"
+        },
+        {
+          "name": "Adversarial Prompts",
+          "brief": "Inputs designed to mislead or deceive LLMs"
+        },
+        {
+          "name": "Risk Categorization",
+          "brief": "Classification of potential threats or vulnerabilities in LLMs"
+        },
+        {
+          "name": "Dataset Aggregation",
+          "brief": "Combining multiple datasets to create a comprehensive dataset for evaluation"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "Understanding of NLP concepts and techniques is necessary to comprehend LLMs and their applications"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Knowledge of machine learning principles is required to understand how LLMs are trained and evaluated"
+        },
+        {
+          "topic": "Adversarial Attacks",
+          "why_needed": "Familiarity with adversarial attacks is necessary to understand the importance of red teaming and robustness evaluation"
+        },
+        {
+          "topic": "Data Curation and Standardization",
+          "why_needed": "Understanding of data curation and standardization principles is necessary to appreciate the value of a universal dataset like RedBench"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-09"
+  },
+  "2601.02996": {
+    "title": "Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Reasoning Models (LRMs)",
+          "brief": "AI models that achieve strong performance on mathematical reasoning tasks"
+        },
+        {
+          "name": "Chain-of-Thought (CoT) Explanations",
+          "brief": "Textual reasoning steps generated by LRMs to explain their answers"
+        },
+        {
+          "name": "Latent Reasoning",
+          "brief": "Internal, non-verbal computation encoded in hidden states of LRMs"
+        },
+        {
+          "name": "Multilingual Latent Reasoning",
+          "brief": "The ability of LRMs to perform latent reasoning across multiple languages"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the basics of LRMs and their applications"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the concept of chain-of-thought explanations and language models"
+        },
+        {
+          "topic": "Mathematical Reasoning",
+          "why_needed": "To understand the tasks that LRMs are designed to perform"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concept of latent reasoning and its relation to hidden states in neural networks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-09"
+  },
+  "2601.05111": {
+    "title": "Agent-as-a-Judge",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "LLM-as-a-Judge",
+          "brief": "Using large language models for scalable assessments"
+        },
+        {
+          "name": "Agent-as-a-Judge",
+          "brief": "Employing agentic judges with planning, verification, and collaboration for evaluations"
+        },
+        {
+          "name": "Agentic Evaluation Systems",
+          "brief": "Systems that use agents for evaluation, incorporating planning and multi-agent collaboration"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context of LLM-as-a-Judge and Agent-as-a-Judge"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the limitations and biases of large language models"
+        },
+        {
+          "topic": "Multi-Agent Systems",
+          "why_needed": "To grasp the concept of multi-agent collaboration in Agent-as-a-Judge"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the role of language models in evaluation systems"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-09"
+  },
+  "2601.03822": {
+    "title": "ROI-Reasoning: Rational Optimization for Inference via Pre-Computation Meta-Cognition",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models capable of processing and generating human-like language"
+        },
+        {
+          "name": "Ordered Stochastic Multiple-Choice Knapsack Problem (OS-MCKP)",
+          "brief": "A mathematical problem formulation for budgeted inference-time reasoning"
+        },
+        {
+          "name": "Meta-Cognitive Fine-Tuning",
+          "brief": "A technique to teach models to predict reasoning cost and expected utility"
+        },
+        {
+          "name": "Rationality-Aware Reinforcement Learning",
+          "brief": "A method to optimize sequential decision making under a hard token budget"
+        },
+        {
+          "name": "Return over Investment (ROI)",
+          "brief": "A measure to evaluate the efficiency of computational resources allocation"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context of LLMs and their applications"
+        },
+        {
+          "topic": "Mathematical Optimization",
+          "why_needed": "To comprehend the OS-MCKP formulation and its relevance to the problem"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To grasp the concepts of fine-tuning and reinforcement learning in LLMs"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To understand the computational aspects and token budget constraints"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-09"
+  },
+  "2601.04090": {
+    "title": "Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "3D Scene Generation",
+          "brief": "Generating 3D scenes from 2D images or videos"
+        },
+        {
+          "name": "Feed-Forward Reconstruction",
+          "brief": "Reconstructing 3D scenes using feed-forward neural networks"
+        },
+        {
+          "name": "Video Diffusion Models",
+          "brief": "Generative models that produce videos by iteratively refining noise"
+        },
+        {
+          "name": "Geometric Latents",
+          "brief": "Latent representations that capture geometric information of 3D scenes"
+        },
+        {
+          "name": "Appearance Latents",
+          "brief": "Latent representations that capture appearance information of 3D scenes"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of neural networks"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand 3D reconstruction, scene generation, and image processing"
+        },
+        {
+          "topic": "Generative Models",
+          "why_needed": "To understand video diffusion models and their application in 3D scene generation"
+        },
+        {
+          "topic": "Geometry and 3D Representation",
+          "why_needed": "To understand geometric latents, point clouds, and depth maps"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-09"
   }
 }
