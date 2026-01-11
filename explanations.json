@@ -3298,5 +3298,197 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-01-10"
+  },
+  "2601.05149": {
+    "title": "Multi-Scale Local Speculative Decoding for Image Generation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Autoregressive (AR) models",
+          "brief": "A type of machine learning model used for sequential data generation, such as image synthesis"
+        },
+        {
+          "name": "Speculative Decoding",
+          "brief": "A technique used to accelerate autoregressive models by predicting and verifying tokens in parallel"
+        },
+        {
+          "name": "Multi-Scale Local Speculative Decoding (MuLo-SD)",
+          "brief": "A novel framework that combines multi-resolution drafting with spatially informed verification for accelerated AR image generation"
+        },
+        {
+          "name": "Image synthesis",
+          "brief": "The process of generating images using machine learning models"
+        },
+        {
+          "name": "Token-level ambiguity",
+          "brief": "The uncertainty in predicting the next token in a sequence, which can limit the performance of speculative decoding approaches"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the basics of autoregressive models and image synthesis"
+        },
+        {
+          "topic": "Computer vision",
+          "why_needed": "To comprehend the concepts of image generation and evaluation metrics such as FID and HPSv2"
+        },
+        {
+          "topic": "Machine learning",
+          "why_needed": "To grasp the fundamentals of speculative decoding and its applications"
+        },
+        {
+          "topic": "Image processing",
+          "why_needed": "To understand the concepts of up-sampling, resampling, and spatial awareness in image generation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-11"
+  },
+  "2601.04754": {
+    "title": "ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "3D Gaussian Splatting (3DGS)",
+          "brief": "A technique for 3D scene understanding and reconstruction"
+        },
+        {
+          "name": "Cross-View Context Fusion",
+          "brief": "A method for combining information from multiple views of a 3D scene"
+        },
+        {
+          "name": "Open-Vocabulary 3D Scene Understanding",
+          "brief": "The ability of a model to understand and describe 3D scenes using a wide range of vocabulary"
+        },
+        {
+          "name": "Dense Correspondence-Guided Pre-Registration",
+          "brief": "A phase that initializes Gaussians with accurate geometry and constructs 3D Context Proposals"
+        },
+        {
+          "name": "Direct Registration",
+          "brief": "A technique for registering 3D models without render-supervised fine-tuning"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the concepts of 3D scene understanding, reconstruction, and registration"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the architecture and training of the ProFuse model"
+        },
+        {
+          "topic": "3D Geometry and Reconstruction",
+          "why_needed": "To grasp the concepts of 3DGS, Gaussians, and geometric refinement"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the concept of open-vocabulary and language coherence"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-11"
+  },
+  "2601.05241": {
+    "title": "RoboVIP: Multi-View Video Generation with Visual Identity Prompting Augments Robot Manipulation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Robot Manipulation",
+          "brief": "The use of robots to perform tasks that require physical interaction with objects"
+        },
+        {
+          "name": "Visual Identity Prompting",
+          "brief": "A technique that uses exemplar images to guide the generation of desired scene setups"
+        },
+        {
+          "name": "Multi-View Video Generation",
+          "brief": "The generation of videos from multiple viewpoints to provide a more comprehensive understanding of a scene"
+        },
+        {
+          "name": "Image Diffusion Models",
+          "brief": "A type of generative model that can alter images based on given conditions"
+        },
+        {
+          "name": "Visuomotor Policy Models",
+          "brief": "Models that learn to map visual observations to motor actions"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of image diffusion models and visuomotor policy models"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the generation of multi-view videos and visual identity prompting"
+        },
+        {
+          "topic": "Robotics",
+          "why_needed": "To understand the context of robot manipulation and the challenges of collecting large-scale real-world manipulation data"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the use of text prompts and vision-language-action models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-11"
+  },
+  "2601.03955": {
+    "title": "ResTok: Learning Hierarchical Residuals in 1D Visual Tokenizers for Autoregressive Image Generation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Autoregressive Image Generation",
+          "brief": "A technique for generating images one pixel or token at a time, based on previously generated content"
+        },
+        {
+          "name": "1D Visual Tokenizers",
+          "brief": "Models that convert images into sequences of tokens, similar to how language models process text"
+        },
+        {
+          "name": "Hierarchical Residuals",
+          "brief": "A design principle that allows models to capture features at multiple scales and levels of abstraction"
+        },
+        {
+          "name": "Transformers",
+          "brief": "A type of neural network architecture commonly used in natural language processing and other sequence-based tasks"
+        },
+        {
+          "name": "Residual Network Designs",
+          "brief": "A type of neural network architecture that uses residual connections to facilitate training and improve performance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of neural networks, transformers, and residual connections"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the challenges and techniques involved in image generation and processing"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the concepts of tokenization and sequence-based models"
+        },
+        {
+          "topic": "Mathematics and Linear Algebra",
+          "why_needed": "To understand the mathematical foundations of deep learning and neural networks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-11"
   }
 }

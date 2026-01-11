@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-<title>AI Papers - 2026-01-10</title>
+<title>AI Papers - 2026-01-11</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-01-10 - 232 papers</description>
-<lastBuildDate>Sat, 10 Jan 2026 14:16:23 +0000</lastBuildDate>
+<description>AI papers as of 2026-01-11 - 232 papers</description>
+<lastBuildDate>Sun, 11 Jan 2026 14:16:24 +0000</lastBuildDate>
 <item>
 <title><![CDATA[Benchmark^2: Systematic Evaluation of LLM Benchmarks]]></title>
 <link>https://huggingface.co/papers/2601.03986</link>
@@ -34,7 +34,7 @@ Institution:
 Published: 2026-01-08
 Score: 9/10
 Citations: 0
-Upvotes: 11
+Upvotes: 14
 GitHub: 
 Stars: 0
 
@@ -88,7 +88,7 @@ Institution:
 Published: 2026-01-08
 Score: 8/10
 Citations: 0
-Upvotes: 113
+Upvotes: 131
 GitHub: 
 Stars: 0
 
@@ -106,7 +106,7 @@ Institution:
 Published: 2026-01-07
 Score: 8/10
 Citations: 0
-Upvotes: 70
+Upvotes: 71
 GitHub: 
 Stars: 0
 
@@ -124,7 +124,7 @@ Institution:
 Published: 2026-01-06
 Score: 8/10
 Citations: 0
-Upvotes: 11
+Upvotes: 12
 GitHub: 
 Stars: 0
 
@@ -142,12 +142,30 @@ Institution:
 Published: 2026-01-07
 Score: 8/10
 Citations: 0
-Upvotes: 6
+Upvotes: 8
 GitHub: 
 Stars: 0
 
 Chain-of-Thought (CoT) reasoning improves multi-step mathematical problem solving in large language models but remains vulnerable to exposure bias and error accumulation, as early mistakes propagate irreversibly through autoregressive decoding. In this work, we propose DiffCoT, a diffusion-styled CoT framework that reformulates CoT reasoning as an iterative denoising process. DiffCoT integrates diffusion principles at the reasoning-step level via a sliding-window mechanism, enabling unified generation and retrospective correction of intermediate steps while preserving token-level autoregression. To maintain causal consistency, we further introduce a causal diffusion noise schedule that respects the temporal structure of reasoning chains. Extensive experiments on three multi-step CoT reasoning benchmarks across diverse model backbones demonstrate that DiffCoT consistently outperforms existing CoT preference optimization methods, yielding improved robustness and error-correction capability in CoT reasoning.]]></description>
 <pubDate>Wed, 07 Jan 2026 03:58:42 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[One Sample to Rule Them All: Extreme Data Efficiency in RL Scaling]]></title>
+<link>https://huggingface.co/papers/2601.03111</link>
+<guid>2601.03111</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yiyuan Li, Zhen Huang, Yanan Wu, Weixun Wang, Xuefeng Li
+Institution: 
+Published: 2026-01-06
+Score: 8/10
+Citations: 0
+Upvotes: 5
+GitHub: 
+Stars: 0
+
+The reasoning ability of large language models (LLMs) can be unleashed with reinforcement learning (RL) (OpenAI, 2024; DeepSeek-AI et al., 2025a; Zeng et al., 2025). The success of existing RL attempts in LLMs usually relies on high-quality samples of thousands or beyond. In this paper, we challenge fundamental assumptions about data requirements in RL for LLMs by demonstrating the remarkable effectiveness of one-shot learning. Specifically, we introduce polymath learning, a framework for designing one training sample that elicits multidisciplinary impact. We present three key findings: (1) A single, strategically selected math reasoning sample can produce significant performance improvements across multiple domains, including physics, chemistry, and biology with RL; (2) The math skills salient to reasoning suggest the characteristics of the optimal polymath sample; and (3) An engineered synthetic sample that integrates multidiscipline elements outperforms training with individual samples that naturally occur. Our approach achieves superior performance to training with larger datasets across various reasoning benchmarks, demonstrating that sample quality and design, rather than quantity, may be the key to unlock enhanced reasoning capabilities in language models. Our results suggest a shift, dubbed as sample engineering, toward precision engineering of training samples rather than simply increasing data volume.]]></description>
+<pubDate>Tue, 06 Jan 2026 15:41:35 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[RedBench: A Universal Dataset for Comprehensive Red Teaming of Large Language Models]]></title>
@@ -168,22 +186,40 @@ As large language models (LLMs) become integral to safety-critical applications,
 <pubDate>Wed, 07 Jan 2026 08:34:17 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[One Sample to Rule Them All: Extreme Data Efficiency in RL Scaling]]></title>
-<link>https://huggingface.co/papers/2601.03111</link>
-<guid>2601.03111</guid>
+<title><![CDATA[Multi-Scale Local Speculative Decoding for Image Generation]]></title>
+<link>https://huggingface.co/papers/2601.05149</link>
+<guid>2601.05149</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yiyuan Li, Zhen Huang, Yanan Wu, Weixun Wang, Xuefeng Li
+Authors: Elia Peruzzo, Guillaume Sautière, Amirhossein Habibian
 Institution: 
-Published: 2026-01-06
+Published: 2026-01-08
 Score: 8/10
 Citations: 0
-Upvotes: 3
+Upvotes: 2
 GitHub: 
 Stars: 0
 
-The reasoning ability of large language models (LLMs) can be unleashed with reinforcement learning (RL) (OpenAI, 2024; DeepSeek-AI et al., 2025a; Zeng et al., 2025). The success of existing RL attempts in LLMs usually relies on high-quality samples of thousands or beyond. In this paper, we challenge fundamental assumptions about data requirements in RL for LLMs by demonstrating the remarkable effectiveness of one-shot learning. Specifically, we introduce polymath learning, a framework for designing one training sample that elicits multidisciplinary impact. We present three key findings: (1) A single, strategically selected math reasoning sample can produce significant performance improvements across multiple domains, including physics, chemistry, and biology with RL; (2) The math skills salient to reasoning suggest the characteristics of the optimal polymath sample; and (3) An engineered synthetic sample that integrates multidiscipline elements outperforms training with individual samples that naturally occur. Our approach achieves superior performance to training with larger datasets across various reasoning benchmarks, demonstrating that sample quality and design, rather than quantity, may be the key to unlock enhanced reasoning capabilities in language models. Our results suggest a shift, dubbed as sample engineering, toward precision engineering of training samples rather than simply increasing data volume.]]></description>
-<pubDate>Tue, 06 Jan 2026 15:41:35 +0000</pubDate>
+Autoregressive (AR) models have achieved remarkable success in image synthesis, yet their sequential nature imposes significant latency constraints. Speculative Decoding offers a promising avenue for acceleration, but existing approaches are limited by token-level ambiguity and lack of spatial awareness. In this work, we introduce Multi-Scale Local Speculative Decoding (MuLo-SD), a novel framework that combines multi-resolution drafting with spatially informed verification to accelerate AR image generation. Our method leverages a low-resolution drafter paired with learned up-samplers to propose candidate image tokens, which are then verified in parallel by a high-resolution target model. Crucially, we incorporate a local rejection and resampling mechanism, enabling efficient correction of draft errors by focusing on spatial neighborhoods rather than raster-scan resampling after the first rejection. We demonstrate that MuLo-SD achieves substantial speedups - up to 1.7times - outperforming strong speculative decoding baselines such as EAGLE-2 and LANTERN in terms of acceleration, while maintaining comparable semantic alignment and perceptual quality. These results are validated using GenEval, DPG-Bench, and FID/HPSv2 on the MS-COCO 5k validation split. Extensive ablations highlight the impact of up-sampling design, probability pooling, and local rejection and resampling with neighborhood expansion. Our approach sets a new state-of-the-art in speculative decoding for image synthesis, bridging the gap between efficiency and fidelity.]]></description>
+<pubDate>Thu, 08 Jan 2026 17:39:35 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset]]></title>
+<link>https://huggingface.co/papers/2512.24160</link>
+<guid>2512.24160</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: TsaiChing Ni, ZhenQi Chen, YuanFu Yang
+Institution: 
+Published: 2025-12-30
+Score: 8/10
+Citations: 0
+Upvotes: 2
+GitHub: 
+Stars: 0
+
+We present IMDD-1M, the first large-scale Industrial Multimodal Defect Dataset comprising 1,000,000 aligned image-text pairs, designed to advance multimodal learning for manufacturing and quality inspection. IMDD-1M contains high-resolution real-world defects spanning over 60 material categories and more than 400 defect types, each accompanied by expert-verified annotations and fine-grained textual descriptions detailing defect location, severity, and contextual attributes. This dataset enables a wide spectrum of applications, including classification, segmentation, retrieval, captioning, and generative modeling. Building upon IMDD-1M, we train a diffusion-based vision-language foundation model from scratch, specifically tailored for industrial scenarios. The model serves as a generalizable foundation that can be efficiently adapted to specialized domains through lightweight fine-tuning. With less than 5% of the task-specific data required by dedicated expert models, it achieves comparable performance, highlighting the potential of data-efficient foundation model adaptation for industrial inspection and generation, paving the way for scalable, domain-adaptive, and knowledge-grounded manufacturing intelligence.]]></description>
+<pubDate>Tue, 30 Dec 2025 11:45:22 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents]]></title>
@@ -204,24 +240,6 @@ Memory-Augmented Generation (MAG) extends Large Language Models with external me
 <pubDate>Tue, 06 Jan 2026 18:29:43 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Scaling Behavior Cloning Improves Causal Reasoning: An Open Model for Real-Time Video Game Playing]]></title>
-<link>https://huggingface.co/papers/2601.04575</link>
-<guid>2601.04575</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yuguang Yue, Irakli Salia, Samuel Hunt, Chris Green, Wenzhe Shi
-Institution: 
-Published: 2026-01-08
-Score: 8/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Behavior cloning is enjoying a resurgence in popularity as scaling both model and data sizes proves to provide a strong starting point for many tasks of interest. In this work, we introduce an open recipe for training a video game playing foundation model designed for inference in realtime on a consumer GPU. We release all data (8300+ hours of high quality human gameplay), training and inference code, and pretrained checkpoints under an open license. We show that our best model is capable of playing a variety of 3D video games at a level competitive with human play. We use this recipe to systematically examine the scaling laws of behavior cloning to understand how the model's performance and causal reasoning varies with model and data scale. We first show in a simple toy problem that, for some types of causal reasoning, increasing both the amount of training data and the depth of the network results in the model learning a more causal policy. We then systematically study how causality varies with the number of parameters (and depth) and training steps in scaled models of up to 1.2 billion parameters, and we find similar scaling results to what we observe in the toy problem.]]></description>
-<pubDate>Thu, 08 Jan 2026 04:06:17 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[Beyond Binary Preference: Aligning Diffusion Models to Fine-grained Criteria by Decoupling Attributes]]></title>
 <link>https://huggingface.co/papers/2601.04300</link>
 <guid>2601.04300</guid>
@@ -238,24 +256,6 @@ Stars: 0
 
 Post-training alignment of diffusion models relies on simplified signals, such as scalar rewards or binary preferences. This limits alignment with complex human expertise, which is hierarchical and fine-grained. To address this, we first construct a hierarchical, fine-grained evaluation criteria with domain experts, which decomposes image quality into multiple positive and negative attributes organized in a tree structure. Building on this, we propose a two-stage alignment framework. First, we inject domain knowledge to an auxiliary diffusion model via Supervised Fine-Tuning. Second, we introduce Complex Preference Optimization (CPO) that extends DPO to align the target diffusion to our non-binary, hierarchical criteria. Specifically, we reformulate the alignment problem to simultaneously maximize the probability of positive attributes while minimizing the probability of negative attributes with the auxiliary diffusion. We instantiate our approach in the domain of painting generation and conduct CPO training with an annotated dataset of painting with fine-grained attributes based on our criteria. Extensive experiments demonstrate that CPO significantly enhances generation quality and alignment with expertise, opening new avenues for fine-grained criteria alignment.]]></description>
 <pubDate>Wed, 07 Jan 2026 18:11:22 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset]]></title>
-<link>https://huggingface.co/papers/2512.24160</link>
-<guid>2512.24160</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: TsaiChing Ni, ZhenQi Chen, YuanFu Yang
-Institution: 
-Published: 2025-12-30
-Score: 8/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-We present IMDD-1M, the first large-scale Industrial Multimodal Defect Dataset comprising 1,000,000 aligned image-text pairs, designed to advance multimodal learning for manufacturing and quality inspection. IMDD-1M contains high-resolution real-world defects spanning over 60 material categories and more than 400 defect types, each accompanied by expert-verified annotations and fine-grained textual descriptions detailing defect location, severity, and contextual attributes. This dataset enables a wide spectrum of applications, including classification, segmentation, retrieval, captioning, and generative modeling. Building upon IMDD-1M, we train a diffusion-based vision-language foundation model from scratch, specifically tailored for industrial scenarios. The model serves as a generalizable foundation that can be efficiently adapted to specialized domains through lightweight fine-tuning. With less than 5% of the task-specific data required by dedicated expert models, it achieves comparable performance, highlighting the potential of data-efficient foundation model adaptation for industrial inspection and generation, paving the way for scalable, domain-adaptive, and knowledge-grounded manufacturing intelligence.]]></description>
-<pubDate>Tue, 30 Dec 2025 11:45:22 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Atlas: Orchestrating Heterogeneous Models and Tools for Multi-Domain Complex Reasoning]]></title>
@@ -286,7 +286,7 @@ Institution:
 Published: 2026-01-08
 Score: 7/10
 Citations: 0
-Upvotes: 21
+Upvotes: 22
 GitHub: 
 Stars: 0
 
@@ -322,12 +322,31 @@ Institution:
 Published: 2026-01-08
 Score: 7/10
 Citations: 0
-Upvotes: 8
+Upvotes: 12
 GitHub: 
 Stars: 0
 
 LLM-as-a-Judge has revolutionized AI evaluation by leveraging large language models for scalable assessments. However, as evaluands become increasingly complex, specialized, and multi-step, the reliability of LLM-as-a-Judge has become constrained by inherent biases, shallow single-pass reasoning, and the inability to verify assessments against real-world observations. This has catalyzed the transition to Agent-as-a-Judge, where agentic judges employ planning, tool-augmented verification, multi-agent collaboration, and persistent memory to enable more robust, verifiable, and nuanced evaluations. Despite the rapid proliferation of agentic evaluation systems, the field lacks a unified framework to navigate this shifting landscape. To bridge this gap, we present the first comprehensive survey tracing this evolution. Specifically, we identify key dimensions that characterize this paradigm shift and establish a developmental taxonomy. We organize core methodologies and survey applications across general and professional domains. Furthermore, we analyze frontier challenges and identify promising research directions, ultimately providing a clear roadmap for the next generation of agentic evaluation.]]></description>
 <pubDate>Thu, 08 Jan 2026 16:58:10 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[CoV: Chain-of-View Prompting for Spatial Reasoning]]></title>
+<link>https://huggingface.co/papers/2601.05172</link>
+<guid>2601.05172</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Haoyu Zhao, Akide Liu, Zeyu Zhang, Weijie Wang, Feng Chen
+Institution: 
+Published: 2026-01-08
+Score: 7/10
+Citations: 0
+Upvotes: 8
+GitHub: 
+Stars: 0
+
+Embodied question answering (EQA) in 3D environments often requires collecting context that is distributed across multiple viewpoints and partially occluded. However, most recent vision--language models (VLMs) are constrained to a fixed and finite set of input views, which limits their ability to acquire question-relevant context at inference time and hinders complex spatial reasoning. We propose Chain-of-View (CoV) prompting, a training-free, test-time reasoning framework that transforms a VLM into an active viewpoint reasoner through a coarse-to-fine exploration process. CoV first employs a View Selection agent to filter redundant frames and identify question-aligned anchor views. It then performs fine-grained view adjustment by interleaving iterative reasoning with discrete camera actions, obtaining new observations from the underlying 3D scene representation until sufficient context is gathered or a step budget is reached.
+  We evaluate CoV on OpenEQA across four mainstream VLMs and obtain an average +11.56\% improvement in LLM-Match, with a maximum gain of +13.62\% on Qwen3-VL-Flash. CoV further exhibits test-time scaling: increasing the minimum action budget yields an additional +2.51\% average improvement, peaking at +3.73\% on Gemini-2.5-Flash. On ScanQA and SQA3D, CoV delivers strong performance (e.g., 116 CIDEr / 31.9 EM@1 on ScanQA and 51.1 EM@1 on SQA3D). Overall, these results suggest that question-aligned view selection coupled with open-view search is an effective, model-agnostic strategy for improving spatial reasoning in 3D EQA without additional training.]]></description>
+<pubDate>Thu, 08 Jan 2026 17:59:42 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Plenoptic Video Generation]]></title>
@@ -340,12 +359,30 @@ Institution:
 Published: 2026-01-08
 Score: 7/10
 Citations: 0
-Upvotes: 6
+Upvotes: 7
 GitHub: 
 Stars: 0
 
 Camera-controlled generative video re-rendering methods, such as ReCamMaster, have achieved remarkable progress. However, despite their success in single-view setting, these works often struggle to maintain consistency across multi-view scenarios. Ensuring spatio-temporal coherence in hallucinated regions remains challenging due to the inherent stochasticity of generative models. To address it, we introduce PlenopticDreamer, a framework that synchronizes generative hallucinations to maintain spatio-temporal memory. The core idea is to train a multi-in-single-out video-conditioned model in an autoregressive manner, aided by a camera-guided video retrieval strategy that adaptively selects salient videos from previous generations as conditional inputs. In addition, Our training incorporates progressive context-scaling to improve convergence, self-conditioning to enhance robustness against long-range visual degradation caused by error accumulation, and a long-video conditioning mechanism to support extended video generation. Extensive experiments on the Basic and Agibot benchmarks demonstrate that PlenopticDreamer achieves state-of-the-art video re-rendering, delivering superior view synchronization, high-fidelity visuals, accurate camera control, and diverse view transformations (e.g., third-person to third-person, and head-view to gripper-view in robotic manipulation). Project page: https://research.nvidia.com/labs/dir/plenopticdreamer/]]></description>
 <pubDate>Thu, 08 Jan 2026 18:58:32 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing]]></title>
+<link>https://huggingface.co/papers/2601.05124</link>
+<guid>2601.05124</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Runze He, Yiji Cheng, Tiankai Hang, Zhimin Li, Yu Xu
+Institution: 
+Published: 2026-01-08
+Score: 7/10
+Citations: 0
+Upvotes: 5
+GitHub: 
+Stars: 0
+
+In-context image generation and editing (ICGE) enables users to specify visual concepts through interleaved image-text prompts, demanding precise understanding and faithful execution of user intent. Although recent unified multimodal models exhibit promising understanding capabilities, these strengths often fail to transfer effectively to image generation. We introduce Re-Align, a unified framework that bridges the gap between understanding and generation through structured reasoning-guided alignment. At its core lies the In-Context Chain-of-Thought (IC-CoT), a structured reasoning paradigm that decouples semantic guidance and reference association, providing clear textual target and mitigating confusion among reference images. Furthermore, Re-Align introduces an effective RL training scheme that leverages a surrogate reward to measure the alignment between structured reasoning text and the generated image, thereby improving the model's overall performance on ICGE tasks. Extensive experiments verify that Re-Align outperforms competitive methods of comparable model scale and resources on both in-context image generation and editing tasks.]]></description>
+<pubDate>Thu, 08 Jan 2026 17:13:00 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[EpiQAL: Benchmarking Large Language Models in Epidemiological Question Answering for Enhanced Alignment and Reasoning]]></title>
@@ -364,24 +401,6 @@ Stars: 0
 
 Reliable epidemiological reasoning requires synthesizing study evidence to infer disease burden, transmission dynamics, and intervention effects at the population level. Existing medical question answering benchmarks primarily emphasize clinical knowledge or patient-level reasoning, yet few systematically evaluate evidence-grounded epidemiological inference. We present EpiQAL, the first diagnostic benchmark for epidemiological question answering across diverse diseases, comprising three subsets built from open-access literature. The subsets respectively evaluate text-grounded factual recall, multi-step inference linking document evidence with epidemiological principles, and conclusion reconstruction with the Discussion section withheld. Construction combines expert-designed taxonomy guidance, multi-model verification, and retrieval-based difficulty control. Experiments on ten open models reveal that current LLMs show limited performance on epidemiological reasoning, with multi-step inference posing the greatest challenge. Model rankings shift across subsets, and scale alone does not predict success. Chain-of-Thought prompting benefits multi-step inference but yields mixed results elsewhere. EpiQAL provides fine-grained diagnostic signals for evidence grounding, inferential reasoning, and conclusion reconstruction.]]></description>
 <pubDate>Tue, 06 Jan 2026 23:49:10 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing]]></title>
-<link>https://huggingface.co/papers/2601.05124</link>
-<guid>2601.05124</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Runze He, Yiji Cheng, Tiankai Hang, Zhimin Li, Yu Xu
-Institution: 
-Published: 2026-01-08
-Score: 7/10
-Citations: 0
-Upvotes: 4
-GitHub: 
-Stars: 0
-
-In-context image generation and editing (ICGE) enables users to specify visual concepts through interleaved image-text prompts, demanding precise understanding and faithful execution of user intent. Although recent unified multimodal models exhibit promising understanding capabilities, these strengths often fail to transfer effectively to image generation. We introduce Re-Align, a unified framework that bridges the gap between understanding and generation through structured reasoning-guided alignment. At its core lies the In-Context Chain-of-Thought (IC-CoT), a structured reasoning paradigm that decouples semantic guidance and reference association, providing clear textual target and mitigating confusion among reference images. Furthermore, Re-Align introduces an effective RL training scheme that leverages a surrogate reward to measure the alignment between structured reasoning text and the generated image, thereby improving the model's overall performance on ICGE tasks. Extensive experiments verify that Re-Align outperforms competitive methods of comparable model scale and resources on both in-context image generation and editing tasks.]]></description>
-<pubDate>Thu, 08 Jan 2026 17:13:00 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Learning User Preferences Through Interaction for Long-Term Collaboration]]></title>
@@ -448,7 +467,7 @@ Institution:
 Published: 2026-01-05
 Score: 6/10
 Citations: 0
-Upvotes: 85
+Upvotes: 86
 GitHub: 
 Stars: 0
 
@@ -466,7 +485,7 @@ Institution:
 Published: 2026-01-08
 Score: 6/10
 Citations: 0
-Upvotes: 26
+Upvotes: 29
 GitHub: 
 Stars: 0
 
@@ -484,7 +503,7 @@ Institution:
 Published: 2026-01-08
 Score: 6/10
 Citations: 0
-Upvotes: 23
+Upvotes: 25
 GitHub: 
 Stars: 0
 
@@ -502,7 +521,7 @@ Institution:
 Published: 2026-01-08
 Score: 6/10
 Citations: 0
-Upvotes: 21
+Upvotes: 22
 GitHub: 
 Stars: 0
 
@@ -546,25 +565,6 @@ Language models (LMs) are pre-trained on raw text datasets to generate text sequ
 <pubDate>Tue, 06 Jan 2026 22:28:15 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[CoV: Chain-of-View Prompting for Spatial Reasoning]]></title>
-<link>https://huggingface.co/papers/2601.05172</link>
-<guid>2601.05172</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Haoyu Zhao, Akide Liu, Zeyu Zhang, Weijie Wang, Feng Chen
-Institution: 
-Published: 2026-01-08
-Score: 6/10
-Citations: 0
-Upvotes: 6
-GitHub: 
-Stars: 0
-
-Embodied question answering (EQA) in 3D environments often requires collecting context that is distributed across multiple viewpoints and partially occluded. However, most recent vision--language models (VLMs) are constrained to a fixed and finite set of input views, which limits their ability to acquire question-relevant context at inference time and hinders complex spatial reasoning. We propose Chain-of-View (CoV) prompting, a training-free, test-time reasoning framework that transforms a VLM into an active viewpoint reasoner through a coarse-to-fine exploration process. CoV first employs a View Selection agent to filter redundant frames and identify question-aligned anchor views. It then performs fine-grained view adjustment by interleaving iterative reasoning with discrete camera actions, obtaining new observations from the underlying 3D scene representation until sufficient context is gathered or a step budget is reached.
-  We evaluate CoV on OpenEQA across four mainstream VLMs and obtain an average +11.56\% improvement in LLM-Match, with a maximum gain of +13.62\% on Qwen3-VL-Flash. CoV further exhibits test-time scaling: increasing the minimum action budget yields an additional +2.51\% average improvement, peaking at +3.73\% on Gemini-2.5-Flash. On ScanQA and SQA3D, CoV delivers strong performance (e.g., 116 CIDEr / 31.9 EM@1 on ScanQA and 51.1 EM@1 on SQA3D). Overall, these results suggest that question-aligned view selection coupled with open-view search is an effective, model-agnostic strategy for improving spatial reasoning in 3D EQA without additional training.]]></description>
-<pubDate>Thu, 08 Jan 2026 17:59:42 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[RGS-SLAM: Robust Gaussian Splatting SLAM with One-Shot Dense Initialization]]></title>
 <link>https://huggingface.co/papers/2601.00705</link>
 <guid>2601.00705</guid>
@@ -601,12 +601,12 @@ Recent advances in video diffusion models have shifted towards transformer-based
 <pubDate>Wed, 07 Jan 2026 19:26:30 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Multi-Scale Local Speculative Decoding for Image Generation]]></title>
-<link>https://huggingface.co/papers/2601.05149</link>
-<guid>2601.05149</guid>
+<title><![CDATA[Scaling Behavior Cloning Improves Causal Reasoning: An Open Model for Real-Time Video Game Playing]]></title>
+<link>https://huggingface.co/papers/2601.04575</link>
+<guid>2601.04575</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Elia Peruzzo, Guillaume Sautière, Amirhossein Habibian
+Authors: Yuguang Yue, Irakli Salia, Samuel Hunt, Chris Green, Wenzhe Shi
 Institution: 
 Published: 2026-01-08
 Score: 6/10
@@ -615,8 +615,8 @@ Upvotes: 2
 GitHub: 
 Stars: 0
 
-Autoregressive (AR) models have achieved remarkable success in image synthesis, yet their sequential nature imposes significant latency constraints. Speculative Decoding offers a promising avenue for acceleration, but existing approaches are limited by token-level ambiguity and lack of spatial awareness. In this work, we introduce Multi-Scale Local Speculative Decoding (MuLo-SD), a novel framework that combines multi-resolution drafting with spatially informed verification to accelerate AR image generation. Our method leverages a low-resolution drafter paired with learned up-samplers to propose candidate image tokens, which are then verified in parallel by a high-resolution target model. Crucially, we incorporate a local rejection and resampling mechanism, enabling efficient correction of draft errors by focusing on spatial neighborhoods rather than raster-scan resampling after the first rejection. We demonstrate that MuLo-SD achieves substantial speedups - up to 1.7times - outperforming strong speculative decoding baselines such as EAGLE-2 and LANTERN in terms of acceleration, while maintaining comparable semantic alignment and perceptual quality. These results are validated using GenEval, DPG-Bench, and FID/HPSv2 on the MS-COCO 5k validation split. Extensive ablations highlight the impact of up-sampling design, probability pooling, and local rejection and resampling with neighborhood expansion. Our approach sets a new state-of-the-art in speculative decoding for image synthesis, bridging the gap between efficiency and fidelity.]]></description>
-<pubDate>Thu, 08 Jan 2026 17:39:35 +0000</pubDate>
+Behavior cloning is enjoying a resurgence in popularity as scaling both model and data sizes proves to provide a strong starting point for many tasks of interest. In this work, we introduce an open recipe for training a video game playing foundation model designed for inference in realtime on a consumer GPU. We release all data (8300+ hours of high quality human gameplay), training and inference code, and pretrained checkpoints under an open license. We show that our best model is capable of playing a variety of 3D video games at a level competitive with human play. We use this recipe to systematically examine the scaling laws of behavior cloning to understand how the model's performance and causal reasoning varies with model and data scale. We first show in a simple toy problem that, for some types of causal reasoning, increasing both the amount of training data and the depth of the network results in the model learning a more causal policy. We then systematically study how causality varies with the number of parameters (and depth) and training steps in scaled models of up to 1.2 billion parameters, and we find similar scaling results to what we observe in the toy problem.]]></description>
+<pubDate>Thu, 08 Jan 2026 04:06:17 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting]]></title>
@@ -691,6 +691,24 @@ This paper investigates the integration of the Learning Using Privileged Informa
 <pubDate>Mon, 05 Jan 2026 11:24:34 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[VERSE: Visual Embedding Reduction and Space Exploration. Clustering-Guided Insights for Training Data Enhancement in Visually-Rich Document Understanding]]></title>
+<link>https://huggingface.co/papers/2601.05125</link>
+<guid>2601.05125</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Ignacio de Rodrigo, Alvaro J. Lopez-Lopez, Jaime Boal
+Institution: 
+Published: 2026-01-08
+Score: 6/10
+Citations: 0
+Upvotes: 0
+GitHub: 
+Stars: 0
+
+This work introduces VERSE, a methodology for analyzing and improving Vision-Language Models applied to Visually-rich Document Understanding by exploring their visual embedding space. VERSE enables the visualization of latent representations, supporting the assessment of model feasibility. It also facilitates the identification of problematic regions and guides the generation of synthetic data to enhance performance in those clusters. We validate the methodology by training on the synthetic MERIT Dataset and evaluating on its real-world counterpart, MERIT Secret. Results show that VERSE helps uncover the visual features associated with error-prone clusters, and that retraining with samples containing these features substantially boosts F1 performance without degrading generalization. Furthermore, we demonstrate that on-premise models such as Donut and Idefics2, when optimized with VERSE, match or even surpass the performance of SaaS solutions like GPT-4 and Pixtral.]]></description>
+<pubDate>Thu, 08 Jan 2026 17:15:15 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Learnable Multipliers: Freeing the Scale of Language Model Matrix Layers]]></title>
 <link>https://huggingface.co/papers/2601.04890</link>
 <guid>2601.04890</guid>
@@ -701,7 +719,7 @@ Institution:
 Published: 2026-01-08
 Score: 5/10
 Citations: 0
-Upvotes: 31
+Upvotes: 36
 GitHub: 
 Stars: 0
 
@@ -719,30 +737,12 @@ Institution:
 Published: 2026-01-08
 Score: 5/10
 Citations: 0
-Upvotes: 30
+Upvotes: 34
 GitHub: 
 Stars: 0
 
 Nighttime color constancy remains a challenging problem in computational photography due to low-light noise and complex illumination conditions. We present RL-AWB, a novel framework combining statistical methods with deep reinforcement learning for nighttime white balance. Our method begins with a statistical algorithm tailored for nighttime scenes, integrating salient gray pixel detection with novel illumination estimation. Building on this foundation, we develop the first deep reinforcement learning approach for color constancy that leverages the statistical algorithm as its core, mimicking professional AWB tuning experts by dynamically optimizing parameters for each image. To facilitate cross-sensor evaluation, we introduce the first multi-sensor nighttime dataset. Experiment results demonstrate that our method achieves superior generalization capability across low-light and well-illuminated images. Project page: https://ntuneillee.github.io/research/rl-awb/]]></description>
 <pubDate>Thu, 08 Jan 2026 18:59:55 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Few Tokens Matter: Entropy Guided Attacks on Vision-Language Models]]></title>
-<link>https://huggingface.co/papers/2512.21815</link>
-<guid>2512.21815</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Mengqi He, Xinyu Tian, Xin Shen, Jinhong Ni, Shu Zou
-Institution: 
-Published: 2025-12-26
-Score: 5/10
-Citations: 0
-Upvotes: 17
-GitHub: 
-Stars: 0
-
-Vision-language models (VLMs) achieve remarkable performance but remain vulnerable to adversarial attacks. Entropy, a measure of model uncertainty, is strongly correlated with the reliability of VLM. Prior entropy-based attacks maximize uncertainty at all decoding steps, implicitly assuming that every token contributes equally to generation instability. We show instead that a small fraction (about 20%) of high-entropy tokens, i.e., critical decision points in autoregressive generation, disproportionately governs output trajectories. By concentrating adversarial perturbations on these positions, we achieve semantic degradation comparable to global methods while using substantially smaller budgets. More importantly, across multiple representative VLMs, such selective attacks convert 35-49% of benign outputs into harmful ones, exposing a more critical safety risk. Remarkably, these vulnerable high-entropy forks recur across architecturally diverse VLMs, enabling feasible transferability (17-26% harmful rates on unseen targets). Motivated by these findings, we propose Entropy-bank Guided Adversarial attacks (EGA), which achieves competitive attack success rates (93-95%) alongside high harmful conversion, thereby revealing new weaknesses in current VLM safety mechanisms.]]></description>
-<pubDate>Fri, 26 Dec 2025 01:01:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice]]></title>
@@ -755,12 +755,30 @@ Institution:
 Published: 2026-01-08
 Score: 5/10
 Citations: 0
-Upvotes: 16
+Upvotes: 23
 GitHub: 
 Stars: 0
 
 Chain-of-thought (CoT) reasoning has emerged as a powerful tool for multimodal large language models on video understanding tasks. However, its necessity and advantages over direct answering remain underexplored. In this paper, we first demonstrate that for RL-trained video models, direct answering often matches or even surpasses CoT performance, despite CoT producing step-by-step analyses at a higher computational cost. Motivated by this, we propose VideoAuto-R1, a video understanding framework that adopts a reason-when-necessary strategy. During training, our approach follows a Thinking Once, Answering Twice paradigm: the model first generates an initial answer, then performs reasoning, and finally outputs a reviewed answer. Both answers are supervised via verifiable rewards. During inference, the model uses the confidence score of the initial answer to determine whether to proceed with reasoning. Across video QA and grounding benchmarks, VideoAuto-R1 achieves state-of-the-art accuracy with significantly improved efficiency, reducing the average response length by ~3.3x, e.g., from 149 to just 44 tokens. Moreover, we observe a low rate of thinking-mode activation on perception-oriented tasks, but a higher rate on reasoning-intensive tasks. This suggests that explicit language-based reasoning is generally beneficial but not always necessary.]]></description>
 <pubDate>Thu, 08 Jan 2026 18:00:59 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Few Tokens Matter: Entropy Guided Attacks on Vision-Language Models]]></title>
+<link>https://huggingface.co/papers/2512.21815</link>
+<guid>2512.21815</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Mengqi He, Xinyu Tian, Xin Shen, Jinhong Ni, Shu Zou
+Institution: 
+Published: 2025-12-26
+Score: 5/10
+Citations: 0
+Upvotes: 19
+GitHub: 
+Stars: 0
+
+Vision-language models (VLMs) achieve remarkable performance but remain vulnerable to adversarial attacks. Entropy, a measure of model uncertainty, is strongly correlated with the reliability of VLM. Prior entropy-based attacks maximize uncertainty at all decoding steps, implicitly assuming that every token contributes equally to generation instability. We show instead that a small fraction (about 20%) of high-entropy tokens, i.e., critical decision points in autoregressive generation, disproportionately governs output trajectories. By concentrating adversarial perturbations on these positions, we achieve semantic degradation comparable to global methods while using substantially smaller budgets. More importantly, across multiple representative VLMs, such selective attacks convert 35-49% of benign outputs into harmful ones, exposing a more critical safety risk. Remarkably, these vulnerable high-entropy forks recur across architecturally diverse VLMs, enabling feasible transferability (17-26% harmful rates on unseen targets). Motivated by these findings, we propose Entropy-bank Guided Adversarial attacks (EGA), which achieves competitive attack success rates (93-95%) alongside high harmful conversion, thereby revealing new weaknesses in current VLM safety mechanisms.]]></description>
+<pubDate>Fri, 26 Dec 2025 01:01:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Agentic Rubrics as Contextual Verifiers for SWE Agents]]></title>
@@ -887,24 +905,6 @@ Stars: 0
 
 Human evaluation is the gold standard for multilingual NLP, but is often skipped in practice and substituted with automatic metrics, because it is notoriously complex and slow to set up with existing tools with substantial engineering and operational overhead. We introduce Pearmut, a lightweight yet feature-rich platform that makes end-to-end human evaluation as easy to run as automatic evaluation. Pearmut removes common entry barriers and provides support for evaluating multilingual tasks, with a particular focus on machine translation. The platform implements standard evaluation protocols, including DA, ESA, or MQM, but is also extensible to allow prototyping new protocols. It features document-level context, absolute and contrastive evaluation, attention checks, ESAAI pre-annotations and both static and active learning-based assignment strategies. Pearmut enables reliable human evaluation to become a practical, routine component of model development and diagnosis rather than an occasional effort.]]></description>
 <pubDate>Tue, 06 Jan 2026 11:21:03 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[VERSE: Visual Embedding Reduction and Space Exploration. Clustering-Guided Insights for Training Data Enhancement in Visually-Rich Document Understanding]]></title>
-<link>https://huggingface.co/papers/2601.05125</link>
-<guid>2601.05125</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Ignacio de Rodrigo, Alvaro J. Lopez-Lopez, Jaime Boal
-Institution: 
-Published: 2026-01-08
-Score: 4/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-This work introduces VERSE, a methodology for analyzing and improving Vision-Language Models applied to Visually-rich Document Understanding by exploring their visual embedding space. VERSE enables the visualization of latent representations, supporting the assessment of model feasibility. It also facilitates the identification of problematic regions and guides the generation of synthetic data to enhance performance in those clusters. We validate the methodology by training on the synthetic MERIT Dataset and evaluating on its real-world counterpart, MERIT Secret. Results show that VERSE helps uncover the visual features associated with error-prone clusters, and that retraining with samples containing these features substantially boosts F1 performance without degrading generalization. Furthermore, we demonstrate that on-premise models such as Donut and Idefics2, when optimized with VERSE, match or even surpass the performance of SaaS solutions like GPT-4 and Pixtral.]]></description>
-<pubDate>Thu, 08 Jan 2026 17:15:15 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Mesh4D: 4D Mesh Reconstruction and Tracking from Monocular Video]]></title>
