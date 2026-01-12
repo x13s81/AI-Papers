@@ -3490,5 +3490,301 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-01-11"
+  },
+  "2601.04823": {
+    "title": "DR-LoRA: Dynamic Rank LoRA for Mixture-of-Experts Adaptation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Mixture-of-Experts (MoE)",
+          "brief": "A paradigm for scaling Large Language Models (LLMs) by dividing the model into multiple experts, each handling a specific part of the input data"
+        },
+        {
+          "name": "Parameter-Efficient Fine-Tuning (PEFT)",
+          "brief": "A technique for adapting pre-trained models to downstream tasks with minimal additional parameters"
+        },
+        {
+          "name": "LoRA (Low-Rank Adaptation)",
+          "brief": "A specific PEFT method that adapts pre-trained models by adding low-rank matrices to the model's weights"
+        },
+        {
+          "name": "Dynamic Rank LoRA (DR-LoRA)",
+          "brief": "A framework that dynamically adjusts the rank of LoRA matrices for each expert in a MoE model during fine-tuning"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context and applications of MoE and PEFT"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the concepts of model fine-tuning, parameter efficiency, and low-rank adaptations"
+        },
+        {
+          "topic": "Linear Algebra",
+          "why_needed": "To understand the mathematical concepts underlying LoRA and DR-LoRA, such as matrix ranks and low-rank approximations"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To appreciate the relevance of MoE and PEFT in NLP tasks and the benefits of efficient parameter utilization"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-12"
+  },
+  "2601.05966": {
+    "title": "VideoAR: Autoregressive Video Generation via Next-Frame & Scale Prediction",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Autoregressive Modeling",
+          "brief": "A statistical model that predicts the next value in a sequence based on past values"
+        },
+        {
+          "name": "Video Generation",
+          "brief": "The process of creating synthetic video content using machine learning models"
+        },
+        {
+          "name": "Multi-scale Next-Frame Prediction",
+          "brief": "A technique used to predict the next frame in a video sequence at multiple scales"
+        },
+        {
+          "name": "3D Multi-scale Tokenizer",
+          "brief": "A method for efficiently encoding spatio-temporal dynamics in video data"
+        },
+        {
+          "name": "Diffusion and Flow-matching Models",
+          "brief": "Types of machine learning models used for video generation, known for high-quality results but computational intensity"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the underlying architecture and training procedures of VideoAR"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the concepts of video generation, object detection, and image processing"
+        },
+        {
+          "topic": "Probability and Statistics",
+          "why_needed": "To grasp the autoregressive modeling and statistical techniques used in VideoAR"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of model training, evaluation, and optimization"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-12"
+  },
+  "2601.04890": {
+    "title": "Learnable Multipliers: Freeing the Scale of Language Model Matrix Layers",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Weight Decay (WD)",
+          "brief": "A regularization technique used to prevent overfitting in neural networks"
+        },
+        {
+          "name": "Stochastic Gradient Noise",
+          "brief": "Random fluctuations in the gradient of the loss function during training"
+        },
+        {
+          "name": "Brownian-like Expansion",
+          "brief": "A phenomenon where the weight matrices of a neural network expand in a Brownian-like manner due to stochastic gradient noise"
+        },
+        {
+          "name": "Learnable Multipliers",
+          "brief": "A technique to learn the optimal scale of matrix layers in neural networks"
+        },
+        {
+          "name": "muP Multipliers",
+          "brief": "A method to adapt the scale of matrix layers using a fixed multiplier"
+        },
+        {
+          "name": "Adam and Muon Optimizers",
+          "brief": "Popular optimization algorithms used for training neural networks"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the context of large-language-model pretraining and the role of weight decay"
+        },
+        {
+          "topic": "Neural Network Architecture",
+          "why_needed": "To comprehend the structure of matrix layers and the impact of learnable multipliers"
+        },
+        {
+          "topic": "Optimization Algorithms",
+          "why_needed": "To appreciate the differences between Adam and Muon optimizers and their interaction with learnable multipliers"
+        },
+        {
+          "topic": "Linear Algebra",
+          "why_needed": "To understand the concepts of matrix norms, row and column norms, and their role in learnable multipliers"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-12"
+  },
+  "2601.05573": {
+    "title": "Orient Anything V2: Unifying Orientation and Rotation Understanding",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "3D Orientation Understanding",
+          "brief": "Comprehending an object's orientation in 3D space"
+        },
+        {
+          "name": "Rotation Estimation",
+          "brief": "Estimating the rotation of an object from single or paired images"
+        },
+        {
+          "name": "Object Symmetry Recognition",
+          "brief": "Identifying the rotational symmetries of objects"
+        },
+        {
+          "name": "Generative Models",
+          "brief": "Using models to synthesize 3D assets for training data"
+        },
+        {
+          "name": "Model-in-the-Loop Annotation",
+          "brief": "Efficiently annotating data with model assistance"
+        },
+        {
+          "name": "Periodic Distribution Fitting",
+          "brief": "Fitting distributions to model object rotational symmetry"
+        },
+        {
+          "name": "Multi-Frame Architecture",
+          "brief": "Predicting relative object rotations from multiple frames"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of image and video processing techniques"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Knowledge of model training, annotation, and evaluation"
+        },
+        {
+          "topic": "3D Geometry",
+          "why_needed": "Familiarity with 3D spatial reasoning and transformations"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Understanding of neural network architectures and training methods"
+        },
+        {
+          "topic": "Object Recognition",
+          "why_needed": "Knowledge of object detection, classification, and pose estimation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-01-12"
+  },
+  "2601.06021": {
+    "title": "Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A machine learning technique for training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Deep Search Agents",
+          "brief": "AI models that search for information and answer questions using natural language processing and machine learning"
+        },
+        {
+          "name": "Citation-aware Rubric Rewards (CaRR)",
+          "brief": "A reward framework that emphasizes reasoning comprehensiveness, factual grounding, and evidence connectivity"
+        },
+        {
+          "name": "Citation-aware Group Relative Policy Optimization (C-GRPO)",
+          "brief": "A training method that combines CaRR and outcome rewards for robust deep search agents"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and applications of deep search agents"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the fundamentals of reinforcement learning and policy optimization"
+        },
+        {
+          "topic": "Information Retrieval",
+          "why_needed": "To grasp the concept of search agents and their role in retrieving relevant information"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To appreciate the broader implications and applications of the proposed techniques"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-12"
+  },
+  "2601.04888": {
+    "title": "SmartSearch: Process Reward-Guided Query Refinement for Search Agents",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models that process and understand human language"
+        },
+        {
+          "name": "Search Agents",
+          "brief": "AI systems that retrieve information from large datasets"
+        },
+        {
+          "name": "Query Refinement",
+          "brief": "The process of improving search queries to get more accurate results"
+        },
+        {
+          "name": "Process Rewards",
+          "brief": "A mechanism to provide feedback on the quality of intermediate search queries"
+        },
+        {
+          "name": "Curriculum Learning",
+          "brief": "A framework for training AI models in a progressive and structured manner"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Information Retrieval",
+          "why_needed": "To understand how search agents work and the importance of query quality"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend how LLMs process and understand human language"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To understand how process rewards can be used to guide the search agent's learning"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of training and optimization in AI models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-12"
   }
 }

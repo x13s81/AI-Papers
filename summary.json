@@ -1,115 +1,108 @@
 {
-  "date": "2026-01-11",
-  "generated_at": "2026-01-11T14:16:24Z",
-  "total_papers": 232,
+  "date": "2026-01-12",
+  "generated_at": "2026-01-12T03:24:01Z",
+  "total_papers": 242,
   "must_read_count": 14,
-  "notable_count": 25,
-  "daily_summary": "Today's top papers offer significant advancements in AI research, particularly in the areas of multimodal learning, language models, and reinforcement learning. Notably, LEMAS and VerseCrafter push the boundaries of generative models, with the former introducing a large-scale multilingual audio suite and the latter presenting a dynamic video world model with 4D geometric control. Meanwhile, papers like Safety at One Shot and Benchmark^2 provide crucial insights into the safety and evaluation of large language models, highlighting the importance of robustness and systematic assessment in AI development.",
+  "notable_count": 24,
+  "daily_summary": "Today's top-scoring papers offer significant advancements in AI research, particularly in the areas of generative models, large-scale datasets, and efficient adaptation techniques. Notably, papers such as GenCtrl, LEMAS, and VerseCrafter demonstrate substantial progress in controlling and generating complex data, including speech and video, with potential applications in fields like content creation and human-computer interaction. Meanwhile, works like Safety at One Shot, DR-LoRA, and One Sample to Rule Them All highlight innovative approaches to improving the safety, adaptability, and data efficiency of AI systems, which are crucial for real-world deployment and scalability.",
   "weekly_trends": {
     "hot_topics": [
       {
-        "topic": "Large Language Models (LLMs)",
-        "paper_count": 58,
-        "insight": "Research in LLMs continues to advance, with papers like 'Safety at One Shot: Patching Fine-Tuned LLMs with A Single Instance' and 'Benchmark^2: Systematic Evaluation of LLM Benchmarks' focusing on safety, evaluation, and efficiency."
+        "topic": "Generative Models",
+        "paper_count": 80,
+        "insight": "Research in cs.AI is flourishing, with notable papers like GenCtrl, a formal controllability toolkit, and LEMAS, a large-scale multilingual audio suite, pushing the boundaries of generative models."
+      },
+      {
+        "topic": "Large Language Models",
+        "paper_count": 76,
+        "insight": "cs.LG papers, such as Safety at One Shot and Learnable Multipliers, are focusing on improving the efficiency, safety, and scalability of large language models."
       },
       {
         "topic": "Computer Vision",
-        "paper_count": 47,
-        "insight": "Advances in image generation are being driven by papers like 'Multi-Scale Local Speculative Decoding for Image Generation' and 'Beyond Binary Preference: Aligning Diffusion Models to Fine-grained Criteria by Decoupling Attributes'."
-      },
-      {
-        "topic": "Multimodal Learning",
-        "paper_count": 20,
-        "insight": "The release of large-scale datasets like LEMAS and research on multimodal understanding, such as 'Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset', are pushing the boundaries of multimodal AI research."
+        "paper_count": 49,
+        "insight": "cs.CV papers, including VerseCrafter and VideoAR, are exploring new frontiers in video generation, 4D geometric control, and autoregressive video modeling."
       }
     ],
     "key_developments": [
-      "The introduction of LEMAS, a 150K-hour large-scale extensible multilingual audio suite, which promises to significantly advance speech recognition and generation capabilities.",
-      "The development of methods like 'One Sample to Rule Them All: Extreme Data Efficiency in RL Scaling' that achieve extreme data efficiency in reinforcement learning.",
-      "The proposal of 'VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control', which enables dynamic and realistic video world modeling with fine-grained control."
+      "The development of GenCtrl, a formal controllability toolkit for generative models, has significant implications for ensuring the reliability and trustworthiness of AI systems.",
+      "The introduction of LEMAS, a large-scale multilingual audio suite, has the potential to revolutionize speech recognition and generation tasks.",
+      "The proposal of Safety at One Shot, a method for patching fine-tuned LLMs with a single instance, highlights the growing importance of safety and robustness in AI research."
     ],
     "emerging_trends": [
-      "There is a growing focus on efficiency, safety, and evaluation in AI research, as evidenced by papers like 'Safety at One Shot' and 'Benchmark^2'.",
-      "Multimodal learning is becoming increasingly important, with large-scale datasets and models being developed to facilitate more comprehensive understanding and generation of multimodal data."
+      "There is a growing trend towards developing more efficient and scalable AI models, as seen in papers like DR-LoRA and One Sample to Rule Them All, which focus on dynamic rank adaptation and extreme data efficiency in RL scaling.",
+      "The increasing intersection of AI with other fields, such as computer vision and natural language processing, is leading to the development of more sophisticated and multimodal models, as evident in papers like VerseCrafter and Towards Open-Vocabulary Industrial Defect Understanding."
     ],
-    "summary": [
-      "This week in AI research saw significant advancements in large language models, computer vision, and multimodal learning, with a focus on efficiency, safety, and evaluation.",
-      "The release of large-scale datasets like LEMAS and the development of models like VerseCrafter are pushing the boundaries of what is possible in AI.",
-      "As the field continues to evolve, we can expect to see further innovations in areas like reinforcement learning, diffusion models, and mixture-of-experts models, driving progress towards more general and capable AI systems."
-    ]
+    "summary": "This week in AI research, we saw significant advancements in generative models, large language models, and computer vision, with papers like GenCtrl, LEMAS, and VerseCrafter pushing the boundaries of what is possible. The development of more efficient and scalable models, such as DR-LoRA and One Sample to Rule Them All, is also gaining traction. Overall, the field of AI is rapidly evolving, with a growing focus on safety, robustness, and multimodal understanding, as seen in papers like Safety at One Shot and Towards Open-Vocabulary Industrial Defect Understanding."
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 182
+    "arXiv": 192
   },
   "tags": {
-    "cs.AI": 91,
-    "cs.LG": 58,
-    "cs.CL": 55,
-    "cs.CV": 47,
-    "stat.ML": 6,
-    "cs.IR": 4,
-    "cs.NE": 4,
-    "cs.HC": 4,
-    "cs.SD": 4,
-    "cs.RO": 3,
-    "cs.CY": 3,
-    "cs.DL": 3,
+    "cs.AI": 80,
+    "cs.LG": 76,
+    "cs.CL": 64,
+    "cs.CV": 49,
+    "cs.CR": 12,
+    "stat.ML": 8,
+    "cs.SE": 7,
+    "cs.CY": 6,
+    "cs.HC": 6,
+    "cs.RO": 5,
+    "stat.AP": 4,
     "cs.MA": 3,
-    "cs.CR": 3,
-    "cs.PF": 2,
+    "stat.ME": 3,
     "cs.GR": 2,
-    "cs.AR": 2,
-    "cs.MM": 2,
-    "cs.DS": 1,
-    "cs.ET": 1
+    "cs.IR": 2,
+    "cs.SD": 2,
+    "cs.NI": 1,
+    "cs.LO": 1,
+    "cs.DB": 1,
+    "cs.CE": 1
   },
   "institutions": {
-    "Mila": 1,
-    "MIT": 1,
-    "Tsinghua": 1
+    "Mila": 1
   },
   "must_read_ids": [
-    "2601.03986",
     "2601.05138",
     "2601.04233",
+    "2601.05637",
     "2601.01887",
     "2601.05242",
     "2601.03509",
+    "2601.04890",
     "2601.03425",
     "2601.03559",
     "2601.03111",
-    "2601.03699",
-    "2601.05149",
+    "2601.05966",
+    "2601.04575",
     "2512.24160",
-    "2601.03236",
-    "2601.04300"
+    "2601.04823"
   ],
   "notable_ids": [
-    "2601.03872",
     "2601.04767",
     "2601.03822",
+    "2601.06021",
     "2601.05111",
-    "2601.05172",
     "2601.05239",
+    "2601.05573",
     "2601.05124",
-    "2601.03471",
+    "2601.04300",
     "2601.02702",
-    "2601.04620",
     "2601.04090",
-    "2601.02151",
     "2601.05106",
     "2601.05167",
     "2601.05241",
-    "2601.04151",
-    "2601.03448",
-    "2601.00705",
+    "2601.05172",
+    "2601.03315",
     "2601.04342",
-    "2601.04575",
+    "2601.04888",
+    "2601.05848",
+    "2601.05149",
     "2601.04754",
     "2601.03362",
     "2601.03955",
     "2601.02016",
-    "2601.05125"
+    "2601.05870"
   ]
 }
