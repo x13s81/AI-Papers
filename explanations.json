@@ -5698,5 +5698,197 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-01-15"
+  },
+  "2601.08472": {
+    "title": "sui-1: Grounded and Verifiable Long-Form Summarization",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Abstractive Summarization",
+          "brief": "The process of generating a summary of a text that captures its main ideas and content, but does not necessarily use the same words or phrases as the original text."
+        },
+        {
+          "name": "Chain-of-Thought Prompting",
+          "brief": "A technique used to generate text by providing a sequence of prompts that guide the model to produce a specific output."
+        },
+        {
+          "name": "Citation-Grounded Summarization",
+          "brief": "A type of summarization that provides inline citations to support the claims made in the summary, enabling users to verify the information against the source text."
+        },
+        {
+          "name": "Large Language Models",
+          "brief": "Artificial intelligence models trained on vast amounts of text data to generate human-like language and perform various natural language processing tasks."
+        },
+        {
+          "name": "Multi-Stage Verification",
+          "brief": "A process of verifying the accuracy and validity of generated text through multiple stages or iterations to ensure its quality and reliability."
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the concepts and techniques used in the paper, such as language models, summarization, and verification."
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the training process of large language models and the evaluation metrics used to assess their performance."
+        },
+        {
+          "topic": "Information Retrieval",
+          "why_needed": "To understand the importance of citation-grounded summarization and the need for verifiable summaries in various domains."
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To appreciate the broader context of the research and its potential applications in areas like government, law, and education."
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-16"
+  },
+  "2601.09142": {
+    "title": "EvasionBench: Detecting Evasive Answers in Financial Q&A via Multi-Model Consensus and LLM-as-Judge",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Evasive Answers Detection",
+          "brief": "Identifying answers that intentionally avoid or obscure the truth in financial Q&A"
+        },
+        {
+          "name": "Multi-Model Consensus",
+          "brief": "Combining predictions from multiple models to improve overall performance"
+        },
+        {
+          "name": "LLM-as-Judge",
+          "brief": "Using large language models as a judge to resolve conflicts between annotators"
+        },
+        {
+          "name": "Disagreement Mining",
+          "brief": "Identifying and leveraging cases where models disagree to improve training and generalization"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the concepts of language models, text analysis, and annotation"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the ideas of model training, distillation, and ensemble methods"
+        },
+        {
+          "topic": "Financial Transparency and Earnings Calls",
+          "why_needed": "To grasp the context and importance of detecting evasive answers in financial Q&A"
+        },
+        {
+          "topic": "Deep Learning and Large Language Models",
+          "why_needed": "To understand the architecture and capabilities of models like Eva-4B and frontier LLMs"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-16"
+  },
+  "2601.10332": {
+    "title": "Think-Then-Generate: Reasoning-Aware Text-to-Image Diffusion with LLM Encoders",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Text-to-Image Diffusion Models",
+          "brief": "AI models that generate images from text prompts"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models trained on vast amounts of text data to understand and generate human-like language"
+        },
+        {
+          "name": "Think-Then-Generate (T2G) Paradigm",
+          "brief": "A novel approach that leverages LLMs to reason about and rewrite text prompts before generating images"
+        },
+        {
+          "name": "Diffusion Conditioning",
+          "brief": "A technique used to guide the image generation process based on the rewritten text prompts"
+        },
+        {
+          "name": "Dual-GRPO",
+          "brief": "A co-optimization method for the LLM encoder and diffusion backbone to ensure faithful reasoning and accurate rendering"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the fundamentals of neural networks and their applications in computer vision and natural language processing"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the concepts of image generation, editing, and evaluation metrics"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To grasp the principles of language models, text encoding, and reasoning"
+        },
+        {
+          "topic": "Image-Text Retrieval and Generation",
+          "why_needed": "To understand the challenges and existing approaches in generating images from text prompts"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-16"
+  },
+  "2601.09088": {
+    "title": "Distribution-Aligned Sequence Distillation for Superior Long-CoT Reasoning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Sequence Distillation",
+          "brief": "A process of transferring knowledge from a teacher model to a student model"
+        },
+        {
+          "name": "Distribution-Aligned Sequence Distillation",
+          "brief": "A method that aligns the student model's output distribution with the teacher model's output distribution"
+        },
+        {
+          "name": "Long-CoT Reasoning",
+          "brief": "A type of reasoning that involves complex, long-term cognitive processes"
+        },
+        {
+          "name": "Teacher-Student Interaction",
+          "brief": "A paradigm where a teacher model guides a student model to learn and improve"
+        },
+        {
+          "name": "Sequence-Level Distillation",
+          "brief": "A type of distillation that focuses on the sequence-level output of the teacher model"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of teacher-student interaction, sequence distillation, and distribution alignment"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the application of sequence distillation in language models and reasoning tasks"
+        },
+        {
+          "topic": "Mathematics and Scientific Reasoning",
+          "why_needed": "To understand the types of reasoning tasks that the proposed model is designed to tackle"
+        },
+        {
+          "topic": "Code Generation",
+          "why_needed": "To appreciate the model's capabilities in generating code and its potential applications"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the fundamentals of model training, evaluation, and optimization"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-16"
   }
 }
