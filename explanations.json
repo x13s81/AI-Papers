@@ -6126,5 +6126,217 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-01-16"
+  },
+  "2601.10592": {
+    "title": "Action100M: A Large-scale Video Action Dataset",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Video Action Recognition",
+          "brief": "The ability of machines to identify and understand physical actions from visual observations in videos"
+        },
+        {
+          "name": "Large-scale Datasets",
+          "brief": "Extensive collections of data used for training machine learning models"
+        },
+        {
+          "name": "Open-Vocabulary Action Supervision",
+          "brief": "The ability of a model to learn from a wide range of actions without being limited to a predefined set"
+        },
+        {
+          "name": "Temporal Segmentation",
+          "brief": "The process of dividing a video into smaller segments based on time"
+        },
+        {
+          "name": "Tree-of-Captions",
+          "brief": "A hierarchical organization of captions for frames and segments in a video"
+        },
+        {
+          "name": "Self-Refine Procedure",
+          "brief": "An iterative process for refining annotations and improving model performance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of model training, data scaling, and zero-shot performance"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the process of visual observation and action recognition in videos"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the generation of captions and the use of language models like GPT-OSS-120B"
+        },
+        {
+          "topic": "Data Preprocessing",
+          "why_needed": "To understand the importance of data cleaning, annotation, and organization in machine learning"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-17"
+  },
+  "2601.10131": {
+    "title": "M^4olGen: Multi-Agent, Multi-Stage Molecular Generation under Precise Multi-Property Constraints",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multi-Agent Systems",
+          "brief": "Systems that consist of multiple agents interacting with each other to achieve a common goal"
+        },
+        {
+          "name": "Molecular Generation",
+          "brief": "The process of generating molecules that satisfy certain properties or constraints"
+        },
+        {
+          "name": "Multi-Property Constraints",
+          "brief": "Constraints that require a molecule to satisfy multiple physicochemical properties simultaneously"
+        },
+        {
+          "name": "Fragment-Level Editing",
+          "brief": "A method of editing molecules by adding or removing fragments to achieve desired properties"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A type of machine learning that involves training an agent to take actions to maximize a reward"
+        },
+        {
+          "name": "Group Relative Policy Optimization (GRPO)",
+          "brief": "A reinforcement learning algorithm that optimizes policies for multiple agents"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Chemistry",
+          "why_needed": "To understand the properties and constraints of molecules"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the concepts of multi-agent systems, reinforcement learning, and policy optimization"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of large language models and graph-based algorithms"
+        },
+        {
+          "topic": "Molecular Biology",
+          "why_needed": "To understand the importance of generating molecules with specific properties"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-17"
+  },
+  "2601.10657": {
+    "title": "PACEvolve: Enabling Long-Horizon Progress-Aware Consistent Evolution",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Powerful operators for evolutionary search"
+        },
+        {
+          "name": "Progress-Aware Consistent Evolution (PACEvolve)",
+          "brief": "A framework for governing the agent's context and search dynamics"
+        },
+        {
+          "name": "Context Pollution",
+          "brief": "Experiment history biasing future candidate generation"
+        },
+        {
+          "name": "Mode Collapse",
+          "brief": "Agents stagnating in local minima due to poor exploration-exploitation balance"
+        },
+        {
+          "name": "Weak Collaboration",
+          "brief": "Ineffective crossover strategies in parallel search trajectories"
+        },
+        {
+          "name": "Hierarchical Context Management (HCM)",
+          "brief": "Managing agent context to address context pollution"
+        },
+        {
+          "name": "Momentum-Based Backtracking (MBB)",
+          "brief": "Escaping local minima through backtracking"
+        },
+        {
+          "name": "Self-Adaptive Sampling Policy",
+          "brief": "Unifying backtracking and crossover for dynamic search coordination"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Evolutionary Search",
+          "why_needed": "Understanding the basics of evolutionary search is necessary to comprehend the challenges addressed by PACEvolve"
+        },
+        {
+          "topic": "Large Language Models",
+          "why_needed": "Knowledge of LLMs is required to understand their role in evolutionary search and the limitations of current LLM-in-the-loop systems"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Familiarity with machine learning concepts, such as exploration-exploitation balance and local minima, is necessary to understand the challenges addressed by PACEvolve"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "Understanding optimization techniques, such as pruning and backtracking, is necessary to comprehend the components of the PACEvolve framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-17"
+  },
+  "2601.02242": {
+    "title": "VIBE: Visual Instruction Based Editor",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Instruction-based Image Editing",
+          "brief": "A technique in generative AI that allows editing images based on text instructions"
+        },
+        {
+          "name": "Diffusion Models",
+          "brief": "A type of deep learning model used for image generation and editing"
+        },
+        {
+          "name": "Qwen3-VL Model",
+          "brief": "A specific 2B-parameter model used for guiding the editing process"
+        },
+        {
+          "name": "Sana1.5 Diffusion Model",
+          "brief": "A 1.6B-parameter model used for image generation"
+        },
+        {
+          "name": "ImgEdit and GEdit Benchmarks",
+          "brief": "Standard evaluation metrics for image editing tasks"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Generative AI",
+          "why_needed": "To understand the context and applications of instruction-based image editing"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the architecture and training of diffusion models and other neural networks"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand image processing and editing techniques"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand how text instructions are used to guide image editing"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-17"
   }
 }
