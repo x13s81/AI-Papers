@@ -6338,5 +6338,197 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-01-17"
+  },
+  "2601.08297": {
+    "title": "Demystifying the Slash Pattern in Attention: The Role of RoPE",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Slash Pattern in Attention",
+          "brief": "A phenomenon in Large Language Models where attention scores concentrate along a specific sub-diagonal"
+        },
+        {
+          "name": "Rotary Position Embedding (RoPE)",
+          "brief": "A technique used in Transformers to encode positional information"
+        },
+        {
+          "name": "Slash-Dominant Heads (SDHs)",
+          "brief": "Attention heads that exhibit the slash pattern, playing a key role in passing information across tokens"
+        },
+        {
+          "name": "Transformer Architecture",
+          "brief": "A type of neural network architecture commonly used in Natural Language Processing tasks"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and applications of Large Language Models"
+        },
+        {
+          "topic": "Transformer Architecture",
+          "why_needed": "To comprehend the components and mechanisms involved in the emergence of SDHs"
+        },
+        {
+          "topic": "Linear Algebra and Matrix Operations",
+          "why_needed": "To understand the mathematical analysis of queries, keys, and RoPE"
+        },
+        {
+          "topic": "Deep Learning and Gradient Descent",
+          "why_needed": "To appreciate the training dynamics and theoretical analysis of the model"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-18"
+  },
+  "2601.10129": {
+    "title": "LaViT: Aligning Latent Visual Thoughts for Multi-modal Reasoning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Latent Reasoning",
+          "brief": "A type of reasoning that combines multiple forms of data, such as text and images, to make inferences or decisions"
+        },
+        {
+          "name": "Perception Gap in Distillation",
+          "brief": "A phenomenon where student models mimic teacher models' textual output but attend to different visual regions"
+        },
+        {
+          "name": "LaViT Framework",
+          "brief": "A proposed framework that aligns latent visual thoughts between teacher and student models to improve multimodal reasoning"
+        },
+        {
+          "name": "Visual Grounding",
+          "brief": "The ability of a model to connect textual output to relevant visual regions or objects"
+        },
+        {
+          "name": "Autoregressive Reconstruction",
+          "brief": "A technique where a model reconstructs a teacher's visual semantics and attention trajectories before generating text"
+        },
+        {
+          "name": "Curriculum Sensory Gating Mechanism",
+          "brief": "A mechanism that prevents shortcut learning by controlling the flow of sensory information to the model"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of multimodal latent reasoning, perception gap, and model distillation"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the importance of visual grounding and attention mechanisms in multimodal models"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To appreciate the role of text generation and language priors in multimodal reasoning"
+        },
+        {
+          "topic": "Model Distillation",
+          "why_needed": "To understand the concept of teacher-student models and the need for aligning latent visual thoughts"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-18"
+  },
+  "2601.10712": {
+    "title": "MatchTIR: Fine-Grained Supervision for Tool-Integrated Reasoning via Bipartite Matching",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Tool-Integrated Reasoning (TIR)",
+          "brief": "A method that enables large language models to perform complex tasks by combining reasoning steps with external tool interactions"
+        },
+        {
+          "name": "Bipartite Matching",
+          "brief": "A mathematical technique used to assign rewards in the MatchTIR framework"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A machine learning approach used to train models through trial and error by providing rewards or penalties"
+        },
+        {
+          "name": "Credit Assignment",
+          "brief": "The process of assigning rewards or penalties to individual actions or steps in a sequence"
+        },
+        {
+          "name": "Dual-Level Advantage Estimation",
+          "brief": "A technique used to balance local step precision with global task success by integrating turn-level and trajectory-level signals"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context and capabilities of LLMs in performing complex tasks"
+        },
+        {
+          "topic": "Reinforcement Learning Fundamentals",
+          "why_needed": "To comprehend the basics of reinforcement learning and its application in TIR"
+        },
+        {
+          "topic": "Machine Learning and Deep Learning",
+          "why_needed": "To grasp the underlying concepts and techniques used in the MatchTIR framework"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the application of TIR and MatchTIR in NLP tasks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-18"
+  },
+  "2601.08763": {
+    "title": "Rewarding the Rare: Uniqueness-Aware RL for Creative Problem Solving in LLMs",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A machine learning paradigm for training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models designed to process and generate human-like language"
+        },
+        {
+          "name": "Exploration Collapse",
+          "brief": "A phenomenon where RL policies converge to a limited set of solutions, reducing diversity"
+        },
+        {
+          "name": "Uniqueness-Aware Reinforcement Learning",
+          "brief": "A proposed method to reward rare and novel solutions in RL"
+        },
+        {
+          "name": "Clustering and Reweighting",
+          "brief": "Techniques used to group similar solutions and adjust rewards based on their rarity"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of LLMs and RL"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the application of LLMs in language tasks"
+        },
+        {
+          "topic": "Mathematics and Problem-Solving",
+          "why_needed": "To appreciate the benchmarks used in the research (e.g., mathematics, physics, medical reasoning)"
+        },
+        {
+          "topic": "Machine Learning Evaluation Metrics",
+          "why_needed": "To understand metrics like pass@1, pass@k, and AUC@K"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-18"
   }
 }

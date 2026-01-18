@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-<title>AI Papers - 2026-01-17</title>
+<title>AI Papers - 2026-01-18</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-01-17 - 231 papers</description>
-<lastBuildDate>Sat, 17 Jan 2026 14:16:01 +0000</lastBuildDate>
+<description>AI papers as of 2026-01-18 - 231 papers</description>
+<lastBuildDate>Sun, 18 Jan 2026 14:15:46 +0000</lastBuildDate>
 <item>
 <title><![CDATA[Toward Ultra-Long-Horizon Agentic Science: Cognitive Accumulation for Machine Learning Engineering]]></title>
 <link>https://huggingface.co/papers/2601.10402</link>
@@ -16,7 +16,7 @@ Institution:
 Published: 2026-01-15
 Score: 9/10
 Citations: 0
-Upvotes: 29
+Upvotes: 31
 GitHub: 
 Stars: 0
 
@@ -52,7 +52,7 @@ Institution:
 Published: 2026-01-14
 Score: 8/10
 Citations: 0
-Upvotes: 144
+Upvotes: 155
 GitHub: 
 Stars: 0
 
@@ -70,7 +70,7 @@ Institution:
 Published: 2026-01-12
 Score: 8/10
 Citations: 0
-Upvotes: 38
+Upvotes: 41
 GitHub: 
 Stars: 0
 
@@ -88,7 +88,7 @@ Institution:
 Published: 2026-01-15
 Score: 8/10
 Citations: 0
-Upvotes: 19
+Upvotes: 20
 GitHub: 
 Stars: 0
 
@@ -106,7 +106,7 @@ Institution:
 Published: 2026-01-15
 Score: 8/10
 Citations: 0
-Upvotes: 13
+Upvotes: 14
 GitHub: 
 Stars: 0
 
@@ -124,7 +124,7 @@ Institution:
 Published: 2026-01-15
 Score: 8/10
 Citations: 0
-Upvotes: 12
+Upvotes: 14
 GitHub: 
 Stars: 0
 
@@ -232,30 +232,12 @@ Institution:
 Published: 2026-01-13
 Score: 7/10
 Citations: 0
-Upvotes: 116
+Upvotes: 122
 GitHub: 
 Stars: 0
 
 Reinforcement learning (RL) has become a central paradigm for post-training large language models (LLMs), particularly for complex reasoning tasks, yet it often suffers from exploration collapse: policies prematurely concentrate on a small set of dominant reasoning patterns, improving pass@1 while limiting rollout-level diversity and gains in pass@k. We argue that this failure stems from regularizing local token behavior rather than diversity over sets of solutions. To address this, we propose Uniqueness-Aware Reinforcement Learning, a rollout-level objective that explicitly rewards correct solutions that exhibit rare high-level strategies. Our method uses an LLM-based judge to cluster rollouts for the same problem according to their high-level solution strategies, ignoring superficial variations, and reweights policy advantages inversely with cluster size. As a result, correct but novel strategies receive higher rewards than redundant ones. Across mathematics, physics, and medical reasoning benchmarks, our approach consistently improves pass@k across large sampling budgets and increases the area under the pass@k curve (AUC@K) without sacrificing pass@1, while sustaining exploration and uncovering more diverse solution strategies at scale.]]></description>
 <pubDate>Tue, 13 Jan 2026 17:48:43 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Distribution-Aligned Sequence Distillation for Superior Long-CoT Reasoning]]></title>
-<link>https://huggingface.co/papers/2601.09088</link>
-<guid>2601.09088</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Shaotian Yan, Kaiyuan Liu, Chen Shen, Bing Wang, Sinan Fan
-Institution: 
-Published: 2026-01-14
-Score: 7/10
-Citations: 0
-Upvotes: 51
-GitHub: 
-Stars: 0
-
-In this report, we introduce DASD-4B-Thinking, a lightweight yet highly capable, fully open-source reasoning model. It achieves SOTA performance among open-source models of comparable scale across challenging benchmarks in mathematics, scientific reasoning, and code generation -- even outperforming several larger models. We begin by critically reexamining a widely adopted distillation paradigm in the community: SFT on teacher-generated responses, also known as sequence-level distillation. Although a series of recent works following this scheme have demonstrated remarkable efficiency and strong empirical performance, they are primarily grounded in the SFT perspective. Consequently, these approaches focus predominantly on designing heuristic rules for SFT data filtering, while largely overlooking the core principle of distillation itself -- enabling the student model to learn the teacher's full output distribution so as to inherit its generalization capability. Specifically, we identify three critical limitations in current practice: i) Inadequate representation of the teacher's sequence-level distribution; ii) Misalignment between the teacher's output distribution and the student's learning capacity; and iii) Exposure bias arising from teacher-forced training versus autoregressive inference. In summary, these shortcomings reflect a systemic absence of explicit teacher-student interaction throughout the distillation process, leaving the essence of distillation underexploited. To address these issues, we propose several methodological innovations that collectively form an enhanced sequence-level distillation training pipeline. Remarkably, DASD-4B-Thinking obtains competitive results using only 448K training samples -- an order of magnitude fewer than those employed by most existing open-source efforts. To support community research, we publicly release our models and the training dataset.]]></description>
-<pubDate>Wed, 14 Jan 2026 02:43:17 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[VIBE: Visual Instruction Based Editor]]></title>
@@ -268,12 +250,30 @@ Institution:
 Published: 2026-01-05
 Score: 7/10
 Citations: 0
-Upvotes: 50
+Upvotes: 53
 GitHub: 
 Stars: 0
 
 Instruction-based image editing is among the fastest developing areas in generative AI. Over the past year, the field has reached a new level, with dozens of open-source models released alongside highly capable commercial systems. However, only a limited number of open-source approaches currently achieve real-world quality. In addition, diffusion backbones, the dominant choice for these pipelines, are often large and computationally expensive for many deployments and research settings, with widely used variants typically containing 6B to 20B parameters. This paper presents a compact, high-throughput instruction-based image editing pipeline that uses a modern 2B-parameter Qwen3-VL model to guide the editing process and the 1.6B-parameter diffusion model Sana1.5 for image generation. Our design decisions across architecture, data processing, training configuration, and evaluation target low-cost inference and strict source consistency while maintaining high quality across the major edit categories feasible at this scale. Evaluated on the ImgEdit and GEdit benchmarks, the proposed method matches or exceeds the performance of substantially heavier baselines, including models with several times as many parameters and higher inference cost, and is particularly strong on edits that require preserving the input image, such as an attribute adjustment, object removal, background edits, and targeted replacement. The model fits within 24 GB of GPU memory and generates edited images at up to 2K resolution in approximately 4 seconds on an NVIDIA H100 in BF16, without additional inference optimizations or distillation.]]></description>
 <pubDate>Mon, 05 Jan 2026 16:17:20 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Distribution-Aligned Sequence Distillation for Superior Long-CoT Reasoning]]></title>
+<link>https://huggingface.co/papers/2601.09088</link>
+<guid>2601.09088</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Shaotian Yan, Kaiyuan Liu, Chen Shen, Bing Wang, Sinan Fan
+Institution: 
+Published: 2026-01-14
+Score: 7/10
+Citations: 0
+Upvotes: 52
+GitHub: 
+Stars: 0
+
+In this report, we introduce DASD-4B-Thinking, a lightweight yet highly capable, fully open-source reasoning model. It achieves SOTA performance among open-source models of comparable scale across challenging benchmarks in mathematics, scientific reasoning, and code generation -- even outperforming several larger models. We begin by critically reexamining a widely adopted distillation paradigm in the community: SFT on teacher-generated responses, also known as sequence-level distillation. Although a series of recent works following this scheme have demonstrated remarkable efficiency and strong empirical performance, they are primarily grounded in the SFT perspective. Consequently, these approaches focus predominantly on designing heuristic rules for SFT data filtering, while largely overlooking the core principle of distillation itself -- enabling the student model to learn the teacher's full output distribution so as to inherit its generalization capability. Specifically, we identify three critical limitations in current practice: i) Inadequate representation of the teacher's sequence-level distribution; ii) Misalignment between the teacher's output distribution and the student's learning capacity; and iii) Exposure bias arising from teacher-forced training versus autoregressive inference. In summary, these shortcomings reflect a systemic absence of explicit teacher-student interaction throughout the distillation process, leaving the essence of distillation underexploited. To address these issues, we propose several methodological innovations that collectively form an enhanced sequence-level distillation training pipeline. Remarkably, DASD-4B-Thinking obtains competitive results using only 448K training samples -- an order of magnitude fewer than those employed by most existing open-source efforts. To support community research, we publicly release our models and the training dataset.]]></description>
+<pubDate>Wed, 14 Jan 2026 02:43:17 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Think-Then-Generate: Reasoning-Aware Text-to-Image Diffusion with LLM Encoders]]></title>
@@ -286,12 +286,30 @@ Institution:
 Published: 2026-01-15
 Score: 7/10
 Citations: 0
-Upvotes: 21
+Upvotes: 23
 GitHub: 
 Stars: 0
 
 Recent progress in text-to-image (T2I) diffusion models (DMs) has enabled high-quality visual synthesis from diverse textual prompts. Yet, most existing T2I DMs, even those equipped with large language model (LLM)-based text encoders, remain text-pixel mappers -- they employ LLMs merely as text encoders, without leveraging their inherent reasoning capabilities to infer what should be visually depicted given the textual prompt. To move beyond such literal generation, we propose the think-then-generate (T2G) paradigm, where the LLM-based text encoder is encouraged to reason about and rewrite raw user prompts; the states of the rewritten prompts then serve as diffusion conditioning. To achieve this, we first activate the think-then-rewrite pattern of the LLM encoder with a lightweight supervised fine-tuning process. Subsequently, the LLM encoder and diffusion backbone are co-optimized to ensure faithful reasoning about the context and accurate rendering of the semantics via Dual-GRPO. In particular, the text encoder is reinforced using image-grounded rewards to infer and recall world knowledge, while the diffusion backbone is pushed to produce semantically consistent and visually coherent images. Experiments show substantial improvements in factual consistency, semantic alignment, and visual realism across reasoning-based image generation and editing benchmarks, achieving 0.79 on WISE score, nearly on par with GPT-4. Our results constitute a promising step toward next-generation unified models with reasoning, expression, and demonstration capacities.]]></description>
 <pubDate>Thu, 15 Jan 2026 12:19:05 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Transition Matching Distillation for Fast Video Generation]]></title>
+<link>https://huggingface.co/papers/2601.09881</link>
+<guid>2601.09881</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Weili Nie, Julius Berner, Nanye Ma, Chao Liu, Saining Xie
+Institution: 
+Published: 2026-01-14
+Score: 7/10
+Citations: 0
+Upvotes: 20
+GitHub: 
+Stars: 0
+
+Large video diffusion and flow models have achieved remarkable success in high-quality video generation, but their use in real-time interactive applications remains limited due to their inefficient multi-step sampling process. In this work, we present Transition Matching Distillation (TMD), a novel framework for distilling video diffusion models into efficient few-step generators. The central idea of TMD is to match the multi-step denoising trajectory of a diffusion model with a few-step probability transition process, where each transition is modeled as a lightweight conditional flow. To enable efficient distillation, we decompose the original diffusion backbone into two components: (1) a main backbone, comprising the majority of early layers, that extracts semantic representations at each outer transition step; and (2) a flow head, consisting of the last few layers, that leverages these representations to perform multiple inner flow updates. Given a pretrained video diffusion model, we first introduce a flow head to the model, and adapt it into a conditional flow map. We then apply distribution matching distillation to the student model with flow head rollout in each transition step. Extensive experiments on distilling Wan2.1 1.3B and 14B text-to-video models demonstrate that TMD provides a flexible and strong trade-off between generation speed and visual quality. In particular, TMD outperforms existing distilled models under comparable inference costs in terms of visual fidelity and prompt adherence. Project page: https://research.nvidia.com/labs/genair/tmd]]></description>
+<pubDate>Wed, 14 Jan 2026 21:30:03 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[MatchTIR: Fine-Grained Supervision for Tool-Integrated Reasoning via Bipartite Matching]]></title>
@@ -322,30 +340,12 @@ Institution:
 Published: 2026-01-15
 Score: 7/10
 Citations: 0
-Upvotes: 15
+Upvotes: 16
 GitHub: 
 Stars: 0
 
 Large Language Models (LLMs) have emerged as powerful operators for evolutionary search, yet the design of efficient search scaffolds remains ad hoc. While promising, current LLM-in-the-loop systems lack a systematic approach to managing the evolutionary process. We identify three distinct failure modes: Context Pollution, where experiment history biases future candidate generation; Mode Collapse, where agents stagnate in local minima due to poor exploration-exploitation balance; and Weak Collaboration, where rigid crossover strategies fail to leverage parallel search trajectories effectively. We introduce Progress-Aware Consistent Evolution (PACEvolve), a framework designed to robustly govern the agent's context and search dynamics, to address these challenges. PACEvolve combines hierarchical context management (HCM) with pruning to address context pollution; momentum-based backtracking (MBB) to escape local minima; and a self-adaptive sampling policy that unifies backtracking and crossover for dynamic search coordination (CE), allowing agents to balance internal refinement with cross-trajectory collaboration. We demonstrate that PACEvolve provides a systematic path to consistent, long-horizon self-improvement, achieving state-of-the-art results on LLM-SR and KernelBench, while discovering solutions surpassing the record on Modded NanoGPT.]]></description>
 <pubDate>Thu, 15 Jan 2026 18:25:23 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Transition Matching Distillation for Fast Video Generation]]></title>
-<link>https://huggingface.co/papers/2601.09881</link>
-<guid>2601.09881</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Weili Nie, Julius Berner, Nanye Ma, Chao Liu, Saining Xie
-Institution: 
-Published: 2026-01-14
-Score: 7/10
-Citations: 0
-Upvotes: 14
-GitHub: 
-Stars: 0
-
-Large video diffusion and flow models have achieved remarkable success in high-quality video generation, but their use in real-time interactive applications remains limited due to their inefficient multi-step sampling process. In this work, we present Transition Matching Distillation (TMD), a novel framework for distilling video diffusion models into efficient few-step generators. The central idea of TMD is to match the multi-step denoising trajectory of a diffusion model with a few-step probability transition process, where each transition is modeled as a lightweight conditional flow. To enable efficient distillation, we decompose the original diffusion backbone into two components: (1) a main backbone, comprising the majority of early layers, that extracts semantic representations at each outer transition step; and (2) a flow head, consisting of the last few layers, that leverages these representations to perform multiple inner flow updates. Given a pretrained video diffusion model, we first introduce a flow head to the model, and adapt it into a conditional flow map. We then apply distribution matching distillation to the student model with flow head rollout in each transition step. Extensive experiments on distilling Wan2.1 1.3B and 14B text-to-video models demonstrate that TMD provides a flexible and strong trade-off between generation speed and visual quality. In particular, TMD outperforms existing distilled models under comparable inference costs in terms of visual fidelity and prompt adherence. Project page: https://research.nvidia.com/labs/genair/tmd]]></description>
-<pubDate>Wed, 14 Jan 2026 21:30:03 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[M^4olGen: Multi-Agent, Multi-Stage Molecular Generation under Precise Multi-Property Constraints]]></title>
@@ -358,7 +358,7 @@ Institution:
 Published: 2026-01-15
 Score: 7/10
 Citations: 0
-Upvotes: 12
+Upvotes: 14
 GitHub: 
 Stars: 0
 
@@ -376,7 +376,7 @@ Institution:
 Published: 2026-01-14
 Score: 7/10
 Citations: 0
-Upvotes: 7
+Upvotes: 8
 GitHub: 
 Stars: 0
 
@@ -394,7 +394,7 @@ Institution:
 Published: 2026-01-15
 Score: 7/10
 Citations: 0
-Upvotes: 5
+Upvotes: 6
 GitHub: 
 Stars: 0
 
@@ -456,6 +456,24 @@ We present WildRayZer, a self-supervised framework for novel view synthesis (NVS
 <pubDate>Thu, 15 Jan 2026 18:59:58 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[Urban Socio-Semantic Segmentation with Vision-Language Reasoning]]></title>
+<link>https://huggingface.co/papers/2601.10477</link>
+<guid>2601.10477</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yu Wang, Yi Wang, Rui Dai, Yujie Wang, Kaikui Liu
+Institution: 
+Published: 2026-01-15
+Score: 6/10
+Citations: 0
+Upvotes: 144
+GitHub: 
+Stars: 0
+
+As hubs of human activity, urban surfaces consist of a wealth of semantic entities. Segmenting these various entities from satellite imagery is crucial for a range of downstream applications. Current advanced segmentation models can reliably segment entities defined by physical attributes (e.g., buildings, water bodies) but still struggle with socially defined categories (e.g., schools, parks). In this work, we achieve socio-semantic segmentation by vision-language model reasoning. To facilitate this, we introduce the Urban Socio-Semantic Segmentation dataset named SocioSeg, a new resource comprising satellite imagery, digital maps, and pixel-level labels of social semantic entities organized in a hierarchical structure. Additionally, we propose a novel vision-language reasoning framework called SocioReasoner that simulates the human process of identifying and annotating social semantic entities via cross-modal recognition and multi-stage reasoning. We employ reinforcement learning to optimize this non-differentiable process and elicit the reasoning capabilities of the vision-language model. Experiments demonstrate our approach's gains over state-of-the-art models and strong zero-shot generalization. Our dataset and code are available in https://github.com/AMAP-ML/SocioReasoner.]]></description>
+<pubDate>Thu, 15 Jan 2026 15:00:36 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Collaborative Multi-Agent Test-Time Reinforcement Learning for Reasoning]]></title>
 <link>https://huggingface.co/papers/2601.09667</link>
 <guid>2601.09667</guid>
@@ -466,12 +484,30 @@ Institution:
 Published: 2026-01-14
 Score: 6/10
 Citations: 0
-Upvotes: 67
+Upvotes: 71
 GitHub: 
 Stars: 0
 
 Multi-agent systems have evolved into practical LLM-driven collaborators for many applications, gaining robustness from diversity and cross-checking. However, multi-agent RL (MARL) training is resource-intensive and unstable: co-adapting teammates induce non-stationarity, and rewards are often sparse and high-variance. Therefore, we introduce Multi-Agent Test-Time Reinforcement Learning (MATTRL), a framework that injects structured textual experience into multi-agent deliberation at inference time. MATTRL forms a multi-expert team of specialists for multi-turn discussions, retrieves and integrates test-time experiences, and reaches consensus for final decision-making. We also study credit assignment for constructing a turn-level experience pool, then reinjecting it into the dialogue. Across challenging benchmarks in medicine, math, and education, MATTRL improves accuracy by an average of 3.67\% over a multi-agent baseline, and by 8.67\% over comparable single-agent baselines. Ablation studies examine different credit-assignment schemes and provide a detailed comparison of how they affect training outcomes. MATTRL offers a stable, effective and efficient path to distribution-shift-robust multi-agent reasoning without tuning.]]></description>
 <pubDate>Wed, 14 Jan 2026 17:57:43 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[OpenDecoder: Open Large Language Model Decoding to Incorporate Document Quality in RAG]]></title>
+<link>https://huggingface.co/papers/2601.09028</link>
+<guid>2601.09028</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Fengran Mo, Zhan Su, Yuchen Hui, Jinghan Zhang, Jia Ao Sun
+Institution: 
+Published: 2026-01-13
+Score: 6/10
+Citations: 0
+Upvotes: 30
+GitHub: 
+Stars: 0
+
+The development of large language models (LLMs) has achieved superior performance in a range of downstream tasks, including LLM-based retrieval-augmented generation (RAG). The quality of generated content heavily relies on the usefulness of the retrieved information and the capacity of LLMs' internal information processing mechanism to incorporate it in answer generation. It is generally assumed that the retrieved information is relevant to the question. However, the retrieved information may have a variable degree of relevance and usefulness, depending on the question and the document collection. It is important to take into account the relevance of the retrieved information in answer generation. In this paper, we propose OpenDecoder, a new approach that leverages explicit evaluation of the retrieved information as quality indicator features for generation. We aim to build a RAG model that is more robust to varying levels of noisy context. Three types of explicit evaluation information are considered: relevance score, ranking score, and QPP (query performance prediction) score. The experimental results on five benchmark datasets demonstrate the effectiveness and better robustness of OpenDecoder by outperforming various baseline methods. Importantly, this paradigm is flexible to be integrated with the post-training of LLMs for any purposes and incorporated with any type of external indicators.]]></description>
+<pubDate>Tue, 13 Jan 2026 23:26:30 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[CoF-T2I: Video Models as Pure Visual Reasoners for Text-to-Image Generation]]></title>
@@ -484,12 +520,30 @@ Institution:
 Published: 2026-01-15
 Score: 6/10
 Citations: 0
-Upvotes: 26
+Upvotes: 27
 GitHub: 
 Stars: 0
 
 Recent video generation models have revealed the emergence of Chain-of-Frame (CoF) reasoning, enabling frame-by-frame visual inference. With this capability, video models have been successfully applied to various visual tasks (e.g., maze solving, visual puzzles). However, their potential to enhance text-to-image (T2I) generation remains largely unexplored due to the absence of a clearly defined visual reasoning starting point and interpretable intermediate states in the T2I generation process. To bridge this gap, we propose CoF-T2I, a model that integrates CoF reasoning into T2I generation via progressive visual refinement, where intermediate frames act as explicit reasoning steps and the final frame is taken as output. To establish such an explicit generation process, we curate CoF-Evol-Instruct, a dataset of CoF trajectories that model the generation process from semantics to aesthetics. To further improve quality and avoid motion artifacts, we enable independent encoding operation for each frame. Experiments show that CoF-T2I significantly outperforms the base video model and achieves competitive performance on challenging benchmarks, reaching 0.86 on GenEval and 7.468 on Imagine-Bench. These results indicate the substantial promise of video models for advancing high-quality text-to-image generation.]]></description>
 <pubDate>Thu, 15 Jan 2026 04:33:06 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding]]></title>
+<link>https://huggingface.co/papers/2601.10611</link>
+<guid>2601.10611</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Christopher Clark, Jieyu Zhang, Zixian Ma, Jae Sung Park, Mohammadreza Salehi
+Institution: 
+Published: 2026-01-15
+Score: 6/10
+Citations: 0
+Upvotes: 19
+GitHub: 
+Stars: 0
+
+Today's strongest video-language models (VLMs) remain proprietary. The strongest open-weight models either rely on synthetic data from proprietary VLMs, effectively distilling from them, or do not disclose their training data or recipe. As a result, the open-source community lacks the foundations needed to improve on the state-of-the-art video (and image) language models. Crucially, many downstream applications require more than just high-level video understanding; they require grounding -- either by pointing or by tracking in pixels. Even proprietary models lack this capability. We present Molmo2, a new family of VLMs that are state-of-the-art among open-source models and demonstrate exceptional new capabilities in point-driven grounding in single image, multi-image, and video tasks. Our key contribution is a collection of 7 new video datasets and 2 multi-image datasets, including a dataset of highly detailed video captions for pre-training, a free-form video Q&A dataset for fine-tuning, a new object tracking dataset with complex queries, and an innovative new video pointing dataset, all collected without the use of closed VLMs. We also present a training recipe for this data utilizing an efficient packing and message-tree encoding scheme, and show bi-directional attention on vision tokens and a novel token-weight strategy improves performance. Our best-in-class 8B model outperforms others in the class of open weight and data models on short videos, counting, and captioning, and is competitive on long-videos. On video-grounding Molmo2 significantly outperforms existing open-weight models like Qwen3-VL (35.5 vs 29.6 accuracy on video counting) and surpasses proprietary models like Gemini 3 Pro on some tasks (38.4 vs 20.0 F1 on video pointing and 56.2 vs 41.1 J&F on video tracking).]]></description>
+<pubDate>Thu, 15 Jan 2026 17:27:44 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback]]></title>
@@ -510,24 +564,6 @@ While LLM-based agents can interact with environments via invoking external tool
 <pubDate>Thu, 15 Jan 2026 07:54:32 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding]]></title>
-<link>https://huggingface.co/papers/2601.10611</link>
-<guid>2601.10611</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Christopher Clark, Jieyu Zhang, Zixian Ma, Jae Sung Park, Mohammadreza Salehi
-Institution: 
-Published: 2026-01-15
-Score: 6/10
-Citations: 0
-Upvotes: 17
-GitHub: 
-Stars: 0
-
-Today's strongest video-language models (VLMs) remain proprietary. The strongest open-weight models either rely on synthetic data from proprietary VLMs, effectively distilling from them, or do not disclose their training data or recipe. As a result, the open-source community lacks the foundations needed to improve on the state-of-the-art video (and image) language models. Crucially, many downstream applications require more than just high-level video understanding; they require grounding -- either by pointing or by tracking in pixels. Even proprietary models lack this capability. We present Molmo2, a new family of VLMs that are state-of-the-art among open-source models and demonstrate exceptional new capabilities in point-driven grounding in single image, multi-image, and video tasks. Our key contribution is a collection of 7 new video datasets and 2 multi-image datasets, including a dataset of highly detailed video captions for pre-training, a free-form video Q&A dataset for fine-tuning, a new object tracking dataset with complex queries, and an innovative new video pointing dataset, all collected without the use of closed VLMs. We also present a training recipe for this data utilizing an efficient packing and message-tree encoding scheme, and show bi-directional attention on vision tokens and a novel token-weight strategy improves performance. Our best-in-class 8B model outperforms others in the class of open weight and data models on short videos, counting, and captioning, and is competitive on long-videos. On video-grounding Molmo2 significantly outperforms existing open-weight models like Qwen3-VL (35.5 vs 29.6 accuracy on video counting) and surpasses proprietary models like Gemini 3 Pro on some tasks (38.4 vs 20.0 F1 on video pointing and 56.2 vs 41.1 J&F on video tracking).]]></description>
-<pubDate>Thu, 15 Jan 2026 17:27:44 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[FlowAct-R1: Towards Interactive Humanoid Video Generation]]></title>
 <link>https://huggingface.co/papers/2601.10103</link>
 <guid>2601.10103</guid>
@@ -538,7 +574,7 @@ Institution:
 Published: 2026-01-15
 Score: 6/10
 Citations: 0
-Upvotes: 14
+Upvotes: 16
 GitHub: 
 Stars: 0
 
@@ -556,7 +592,7 @@ Institution:
 Published: 2026-01-10
 Score: 6/10
 Citations: 0
-Upvotes: 6
+Upvotes: 7
 GitHub: 
 Stars: 0
 
@@ -574,12 +610,48 @@ Institution:
 Published: 2026-01-10
 Score: 6/10
 Citations: 0
-Upvotes: 4
+Upvotes: 5
 GitHub: 
 Stars: 0
 
 Despite significant progress in 4D generation, rig and motion, the core structural and dynamic components of animation are typically modeled as separate problems. Existing pipelines rely on ground-truth skeletons and skinning weights for motion generation and treat auto-rigging as an independent process, undermining scalability and interpretability. We present RigMo, a unified generative framework that jointly learns rig and motion directly from raw mesh sequences, without any human-provided rig annotations. RigMo encodes per-vertex deformations into two compact latent spaces: a rig latent that decodes into explicit Gaussian bones and skinning weights, and a motion latent that produces time-varying SE(3) transformations. Together, these outputs define an animatable mesh with explicit structure and coherent motion, enabling feed-forward rig and motion inference for deformable objects. Beyond unified rig-motion discovery, we introduce a Motion-DiT model operating in RigMo's latent space and demonstrate that these structure-aware latents can naturally support downstream motion generation tasks. Experiments on DeformingThings4D, Objaverse-XL, and TrueBones demonstrate that RigMo learns smooth, interpretable, and physically plausible rigs, while achieving superior reconstruction and category-level generalization compared to existing auto-rigging and deformation baselines. RigMo establishes a new paradigm for unified, structure-aware, and scalable dynamic 3D modeling.]]></description>
 <pubDate>Sat, 10 Jan 2026 01:26:28 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[V-DPM: 4D Video Reconstruction with Dynamic Point Maps]]></title>
+<link>https://huggingface.co/papers/2601.09499</link>
+<guid>2601.09499</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Edgar Sucar, Eldar Insafutdinov, Zihang Lai, Andrea Vedaldi
+Institution: 
+Published: 2026-01-14
+Score: 6/10
+Citations: 0
+Upvotes: 4
+GitHub: 
+Stars: 0
+
+Powerful 3D representations such as DUSt3R invariant point maps, which encode 3D shape and camera parameters, have significantly advanced feed forward 3D reconstruction. While point maps assume static scenes, Dynamic Point Maps (DPMs) extend this concept to dynamic 3D content by additionally representing scene motion. However, existing DPMs are limited to image pairs and, like DUSt3R, require post processing via optimization when more than two views are involved. We argue that DPMs are more useful when applied to videos and introduce V-DPM to demonstrate this. First, we show how to formulate DPMs for video input in a way that maximizes representational power, facilitates neural prediction, and enables reuse of pretrained models. Second, we implement these ideas on top of VGGT, a recent and powerful 3D reconstructor. Although VGGT was trained on static scenes, we show that a modest amount of synthetic data is sufficient to adapt it into an effective V-DPM predictor. Our approach achieves state of the art performance in 3D and 4D reconstruction for dynamic scenes. In particular, unlike recent dynamic extensions of VGGT such as P3, DPMs recover not only dynamic depth but also the full 3D motion of every point in the scene.]]></description>
+<pubDate>Wed, 14 Jan 2026 14:03:42 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Deriving Character Logic from Storyline as Codified Decision Trees]]></title>
+<link>https://huggingface.co/papers/2601.10080</link>
+<guid>2601.10080</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Letian Peng, Kun Zhou, Longfei Yun, Yupeng Hou, Jingbo Shang
+Institution: 
+Published: 2026-01-15
+Score: 6/10
+Citations: 0
+Upvotes: 4
+GitHub: 
+Stars: 0
+
+Role-playing (RP) agents rely on behavioral profiles to act consistently across diverse narrative contexts, yet existing profiles are largely unstructured, non-executable, and weakly validated, leading to brittle agent behavior. We propose Codified Decision Trees (CDT), a data-driven framework that induces an executable and interpretable decision structure from large-scale narrative data. CDT represents behavioral profiles as a tree of conditional rules, where internal nodes correspond to validated scene conditions and leaves encode grounded behavioral statements, enabling deterministic retrieval of context-appropriate rules at execution time. The tree is learned by iteratively inducing candidate scene-action rules, validating them against data, and refining them through hierarchical specialization, yielding profiles that support transparent inspection and principled updates. Across multiple benchmarks, CDT substantially outperforms human-written profiles and prior profile induction methods on 85 characters across 16 artifacts, indicating that codified and validated behavioral representations lead to more reliable agent grounding.]]></description>
+<pubDate>Thu, 15 Jan 2026 05:12:43 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Flow Equivariant World Models: Memory for Partially Observed Dynamic Environments]]></title>
@@ -600,40 +672,40 @@ Embodied systems experience the world as 'a symphony of flows': a combination of
 <pubDate>Sat, 03 Jan 2026 05:22:27 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[V-DPM: 4D Video Reconstruction with Dynamic Point Maps]]></title>
-<link>https://huggingface.co/papers/2601.09499</link>
-<guid>2601.09499</guid>
+<title><![CDATA[Focal Guidance: Unlocking Controllability from Semantic-Weak Layers in Video Diffusion Models]]></title>
+<link>https://huggingface.co/papers/2601.07287</link>
+<guid>2601.07287</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Edgar Sucar, Eldar Insafutdinov, Zihang Lai, Andrea Vedaldi
+Authors: Yuanyang Yin, Yufan Deng, Shenghai Yuan, Kaipeng Zhang, Xiao Yang
 Institution: 
-Published: 2026-01-14
+Published: 2026-01-12
 Score: 6/10
 Citations: 0
-Upvotes: 3
+Upvotes: 2
 GitHub: 
 Stars: 0
 
-Powerful 3D representations such as DUSt3R invariant point maps, which encode 3D shape and camera parameters, have significantly advanced feed forward 3D reconstruction. While point maps assume static scenes, Dynamic Point Maps (DPMs) extend this concept to dynamic 3D content by additionally representing scene motion. However, existing DPMs are limited to image pairs and, like DUSt3R, require post processing via optimization when more than two views are involved. We argue that DPMs are more useful when applied to videos and introduce V-DPM to demonstrate this. First, we show how to formulate DPMs for video input in a way that maximizes representational power, facilitates neural prediction, and enables reuse of pretrained models. Second, we implement these ideas on top of VGGT, a recent and powerful 3D reconstructor. Although VGGT was trained on static scenes, we show that a modest amount of synthetic data is sufficient to adapt it into an effective V-DPM predictor. Our approach achieves state of the art performance in 3D and 4D reconstruction for dynamic scenes. In particular, unlike recent dynamic extensions of VGGT such as P3, DPMs recover not only dynamic depth but also the full 3D motion of every point in the scene.]]></description>
-<pubDate>Wed, 14 Jan 2026 14:03:42 +0000</pubDate>
+The task of Image-to-Video (I2V) generation aims to synthesize a video from a reference image and a text prompt. This requires diffusion models to reconcile high-frequency visual constraints and low-frequency textual guidance during the denoising process. However, while existing I2V models prioritize visual consistency, how to effectively couple this dual guidance to ensure strong adherence to the text prompt remains underexplored. In this work, we observe that in Diffusion Transformer (DiT)-based I2V models, certain intermediate layers exhibit weak semantic responses (termed Semantic-Weak Layers), as indicated by a measurable drop in text-visual similarity. We attribute this to a phenomenon called Condition Isolation, where attention to visual features becomes partially detached from text guidance and overly relies on learned visual priors. To address this, we propose Focal Guidance (FG), which enhances the controllability from Semantic-Weak Layers. FG comprises two mechanisms: (1) Fine-grained Semantic Guidance (FSG) leverages CLIP to identify key regions in the reference frame and uses them as anchors to guide Semantic-Weak Layers. (2) Attention Cache transfers attention maps from semantically responsive layers to Semantic-Weak Layers, injecting explicit semantic signals and alleviating their over-reliance on the model's learned visual priors, thereby enhancing adherence to textual instructions. To further validate our approach and address the lack of evaluation in this direction, we introduce a benchmark for assessing instruction following in I2V models. On this benchmark, Focal Guidance proves its effectiveness and generalizability, raising the total score on Wan2.1-I2V to 0.7250 (+3.97\%) and boosting the MMDiT-based HunyuanVideo-I2V to 0.5571 (+7.44\%).]]></description>
+<pubDate>Mon, 12 Jan 2026 07:48:26 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Deriving Character Logic from Storyline as Codified Decision Trees]]></title>
-<link>https://huggingface.co/papers/2601.10080</link>
-<guid>2601.10080</guid>
+<title><![CDATA[Memory Bank Compression for Continual Adaptation of Large Language Models]]></title>
+<link>https://huggingface.co/papers/2601.00756</link>
+<guid>2601.00756</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Letian Peng, Kun Zhou, Longfei Yun, Yupeng Hou, Jingbo Shang
-Institution: 
-Published: 2026-01-15
+Authors: Thomas Katraouras, Dimitrios Rafailidis
+Institution: MIT
+Published: 2026-01-02
 Score: 6/10
 Citations: 0
-Upvotes: 3
+Upvotes: 1
 GitHub: 
 Stars: 0
 
-Role-playing (RP) agents rely on behavioral profiles to act consistently across diverse narrative contexts, yet existing profiles are largely unstructured, non-executable, and weakly validated, leading to brittle agent behavior. We propose Codified Decision Trees (CDT), a data-driven framework that induces an executable and interpretable decision structure from large-scale narrative data. CDT represents behavioral profiles as a tree of conditional rules, where internal nodes correspond to validated scene conditions and leaves encode grounded behavioral statements, enabling deterministic retrieval of context-appropriate rules at execution time. The tree is learned by iteratively inducing candidate scene-action rules, validating them against data, and refining them through hierarchical specialization, yielding profiles that support transparent inspection and principled updates. Across multiple benchmarks, CDT substantially outperforms human-written profiles and prior profile induction methods on 85 characters across 16 artifacts, indicating that codified and validated behavioral representations lead to more reliable agent grounding.]]></description>
-<pubDate>Thu, 15 Jan 2026 05:12:43 +0000</pubDate>
+Large Language Models (LLMs) have become a mainstay for many everyday applications. However, as data evolve their knowledge quickly becomes outdated. Continual learning aims to update LLMs with new information without erasing previously acquired knowledge. Although methods such as full fine-tuning can incorporate new data, they are computationally expensive and prone to catastrophic forgetting, where prior knowledge is overwritten. Memory-augmented approaches address this by equipping LLMs with a memory bank, that is an external memory module which stores information for future use. However, these methods face a critical limitation, in particular, the memory bank constantly grows in the real-world scenario when large-scale data streams arrive. In this paper, we propose MBC, a model that compresses the memory bank through a codebook optimization strategy during online adaptation learning. To ensure stable learning, we also introduce an online resetting mechanism that prevents codebook collapse. In addition, we employ Key-Value Low-Rank Adaptation in the attention layers of the LLM, enabling efficient utilization of the compressed memory representations. Experiments with benchmark question-answering datasets demonstrate that MBC reduces the memory bank size to 0.3% when compared against the most competitive baseline, while maintaining high retention accuracy during online adaptation learning. Our code is publicly available at https://github.com/Thomkat/MBC.]]></description>
+<pubDate>Fri, 02 Jan 2026 17:22:34 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation]]></title>
@@ -654,24 +726,6 @@ Consistency learning with feature perturbation is a widely used strategy in semi
 <pubDate>Thu, 15 Jan 2026 07:09:00 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Memory Bank Compression for Continual Adaptation of Large Language Models]]></title>
-<link>https://huggingface.co/papers/2601.00756</link>
-<guid>2601.00756</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Thomas Katraouras, Dimitrios Rafailidis
-Institution: MIT
-Published: 2026-01-02
-Score: 6/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Large Language Models (LLMs) have become a mainstay for many everyday applications. However, as data evolve their knowledge quickly becomes outdated. Continual learning aims to update LLMs with new information without erasing previously acquired knowledge. Although methods such as full fine-tuning can incorporate new data, they are computationally expensive and prone to catastrophic forgetting, where prior knowledge is overwritten. Memory-augmented approaches address this by equipping LLMs with a memory bank, that is an external memory module which stores information for future use. However, these methods face a critical limitation, in particular, the memory bank constantly grows in the real-world scenario when large-scale data streams arrive. In this paper, we propose MBC, a model that compresses the memory bank through a codebook optimization strategy during online adaptation learning. To ensure stable learning, we also introduce an online resetting mechanism that prevents codebook collapse. In addition, we employ Key-Value Low-Rank Adaptation in the attention layers of the LLM, enabling efficient utilization of the compressed memory representations. Experiments with benchmark question-answering datasets demonstrate that MBC reduces the memory bank size to 0.3% when compared against the most competitive baseline, while maintaining high retention accuracy during online adaptation learning. Our code is publicly available at https://github.com/Thomkat/MBC.]]></description>
-<pubDate>Fri, 02 Jan 2026 17:22:34 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[Cluster Workload Allocation: Semantic Soft Affinity Using Natural Language Processing]]></title>
 <link>https://huggingface.co/papers/2601.09282</link>
 <guid>2601.09282</guid>
@@ -690,24 +744,6 @@ Cluster workload allocation often requires complex configurations, creating a us
 <pubDate>Wed, 14 Jan 2026 08:36:21 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Urban Socio-Semantic Segmentation with Vision-Language Reasoning]]></title>
-<link>https://huggingface.co/papers/2601.10477</link>
-<guid>2601.10477</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yu Wang, Yi Wang, Rui Dai, Yujie Wang, Kaikui Liu
-Institution: 
-Published: 2026-01-15
-Score: 5/10
-Citations: 0
-Upvotes: 143
-GitHub: 
-Stars: 0
-
-As hubs of human activity, urban surfaces consist of a wealth of semantic entities. Segmenting these various entities from satellite imagery is crucial for a range of downstream applications. Current advanced segmentation models can reliably segment entities defined by physical attributes (e.g., buildings, water bodies) but still struggle with socially defined categories (e.g., schools, parks). In this work, we achieve socio-semantic segmentation by vision-language model reasoning. To facilitate this, we introduce the Urban Socio-Semantic Segmentation dataset named SocioSeg, a new resource comprising satellite imagery, digital maps, and pixel-level labels of social semantic entities organized in a hierarchical structure. Additionally, we propose a novel vision-language reasoning framework called SocioReasoner that simulates the human process of identifying and annotating social semantic entities via cross-modal recognition and multi-stage reasoning. We employ reinforcement learning to optimize this non-differentiable process and elicit the reasoning capabilities of the vision-language model. Experiments demonstrate our approach's gains over state-of-the-art models and strong zero-shot generalization. Our dataset and code are available in https://github.com/AMAP-ML/SocioReasoner.]]></description>
-<pubDate>Thu, 15 Jan 2026 15:00:36 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[DanQing: An Up-to-Date Large-Scale Chinese Vision-Language Pre-training Dataset]]></title>
 <link>https://huggingface.co/papers/2601.10305</link>
 <guid>2601.10305</guid>
@@ -718,30 +754,12 @@ Institution:
 Published: 2026-01-15
 Score: 5/10
 Citations: 0
-Upvotes: 30
+Upvotes: 31
 GitHub: 
 Stars: 0
 
 Vision-Language Pre-training (VLP) models demonstrate strong performance across various downstream tasks by learning from large-scale image-text pairs through contrastive pretraining. The release of extensive English image-text datasets (e.g., COYO-700M and LAION-400M) has enabled widespread adoption of models such as CLIP and SigLIP in tasks including cross-modal retrieval and image captioning. However, the advancement of Chinese vision-language pretraining has substantially lagged behind, due to the scarcity of high-quality Chinese image-text data. To address this gap, we develop a comprehensive pipeline for constructing a high-quality Chinese cross-modal dataset. As a result, we propose DanQing, which contains 100 million image-text pairs collected from Common Crawl. Different from existing datasets, DanQing is curated through a more rigorous selection process, yielding superior data quality. Moreover, DanQing is primarily built from 2024-2025 web data, enabling models to better capture evolving semantic trends and thus offering greater practical utility. We compare DanQing with existing datasets by continual pre-training of the SigLIP2 model. Experimental results show that DanQing consistently achieves superior performance across a range of Chinese downstream tasks, including zero-shot classification, cross-modal retrieval, and LMM-based evaluations. To facilitate further research in Chinese vision-language pre-training, we will open-source the DanQing dataset under the Creative Common CC-BY 4.0 license.]]></description>
 <pubDate>Thu, 15 Jan 2026 11:28:58 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[OpenDecoder: Open Large Language Model Decoding to Incorporate Document Quality in RAG]]></title>
-<link>https://huggingface.co/papers/2601.09028</link>
-<guid>2601.09028</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Fengran Mo, Zhan Su, Yuchen Hui, Jinghan Zhang, Jia Ao Sun
-Institution: 
-Published: 2026-01-13
-Score: 5/10
-Citations: 0
-Upvotes: 29
-GitHub: 
-Stars: 0
-
-The development of large language models (LLMs) has achieved superior performance in a range of downstream tasks, including LLM-based retrieval-augmented generation (RAG). The quality of generated content heavily relies on the usefulness of the retrieved information and the capacity of LLMs' internal information processing mechanism to incorporate it in answer generation. It is generally assumed that the retrieved information is relevant to the question. However, the retrieved information may have a variable degree of relevance and usefulness, depending on the question and the document collection. It is important to take into account the relevance of the retrieved information in answer generation. In this paper, we propose OpenDecoder, a new approach that leverages explicit evaluation of the retrieved information as quality indicator features for generation. We aim to build a RAG model that is more robust to varying levels of noisy context. Three types of explicit evaluation information are considered: relevance score, ranking score, and QPP (query performance prediction) score. The experimental results on five benchmark datasets demonstrate the effectiveness and better robustness of OpenDecoder by outperforming various baseline methods. Importantly, this paradigm is flexible to be integrated with the post-training of LLMs for any purposes and incorporated with any type of external indicators.]]></description>
-<pubDate>Tue, 13 Jan 2026 23:26:30 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Patient-Similarity Cohort Reasoning in Clinical Text-to-SQL]]></title>
@@ -814,24 +832,6 @@ Stars: 0
 
 Reinforcement learning (RL)-based enhancement of large language models (LLMs) often leads to reduced output diversity, undermining their utility in open-ended tasks like creative writing. Current methods lack explicit mechanisms for guiding diverse exploration and instead prioritize optimization efficiency and performance over diversity. This paper proposes an RL framework structured around a semi-structured long Chain-of-Thought (CoT), in which the generation process is decomposed into explicitly planned intermediate steps. We introduce a Diverse Planning Branching method that strategically introduces divergence at the planning phase based on diversity variation, alongside a group-aware diversity reward to encourage distinct trajectories. Experimental results on creative writing benchmarks demonstrate that our approach significantly improves output diversity without compromising generation quality, consistently outperforming existing baselines.]]></description>
 <pubDate>Wed, 14 Jan 2026 16:30:20 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Focal Guidance: Unlocking Controllability from Semantic-Weak Layers in Video Diffusion Models]]></title>
-<link>https://huggingface.co/papers/2601.07287</link>
-<guid>2601.07287</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yuanyang Yin, Yufan Deng, Shenghai Yuan, Kaipeng Zhang, Xiao Yang
-Institution: 
-Published: 2026-01-12
-Score: 5/10
-Citations: 0
-Upvotes: 2
-GitHub: 
-Stars: 0
-
-The task of Image-to-Video (I2V) generation aims to synthesize a video from a reference image and a text prompt. This requires diffusion models to reconcile high-frequency visual constraints and low-frequency textual guidance during the denoising process. However, while existing I2V models prioritize visual consistency, how to effectively couple this dual guidance to ensure strong adherence to the text prompt remains underexplored. In this work, we observe that in Diffusion Transformer (DiT)-based I2V models, certain intermediate layers exhibit weak semantic responses (termed Semantic-Weak Layers), as indicated by a measurable drop in text-visual similarity. We attribute this to a phenomenon called Condition Isolation, where attention to visual features becomes partially detached from text guidance and overly relies on learned visual priors. To address this, we propose Focal Guidance (FG), which enhances the controllability from Semantic-Weak Layers. FG comprises two mechanisms: (1) Fine-grained Semantic Guidance (FSG) leverages CLIP to identify key regions in the reference frame and uses them as anchors to guide Semantic-Weak Layers. (2) Attention Cache transfers attention maps from semantically responsive layers to Semantic-Weak Layers, injecting explicit semantic signals and alleviating their over-reliance on the model's learned visual priors, thereby enhancing adherence to textual instructions. To further validate our approach and address the lack of evaluation in this direction, we introduce a benchmark for assessing instruction following in I2V models. On this benchmark, Focal Guidance proves its effectiveness and generalizability, raising the total score on Wan2.1-I2V to 0.7250 (+3.97\%) and boosting the MMDiT-based HunyuanVideo-I2V to 0.5571 (+7.44\%).]]></description>
-<pubDate>Mon, 12 Jan 2026 07:48:26 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Enhancing Sentiment Classification and Irony Detection in Large Language Models through Advanced Prompt Engineering Techniques]]></title>
