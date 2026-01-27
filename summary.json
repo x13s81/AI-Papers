@@ -1,48 +1,48 @@
 {
   "date": "2026-01-27",
-  "generated_at": "2026-01-27T03:23:12Z",
-  "total_papers": 250,
-  "must_read_count": 13,
-  "notable_count": 24,
-  "daily_summary": "Today's top-scoring papers highlight significant advancements in AI research, particularly in areas such as multimodal generation and uncertainty quantification. Notably, papers like 360Anything and ActionMesh push the boundaries of image and video processing, while AR-Omni and VisGym demonstrate promising approaches to unified autoregressive models and scalable environments for multimodal agents. Meanwhile, works like From Passive Metric to Active Signal and Towards Automated Kernel Generation in the Era of LLMs shed light on the evolving role of uncertainty quantification and kernel generation in large language models, underscoring the complex interplay between these components in driving AI progress.",
+  "generated_at": "2026-01-27T14:26:48Z",
+  "total_papers": 244,
+  "must_read_count": 12,
+  "notable_count": 27,
+  "daily_summary": "Today's top-scoring papers offer significant advancements in areas crucial to the development of more sophisticated and efficient AI systems, such as the unified autoregressive modeling approach presented in AR-Omni, which has the potential to revolutionize any-to-any generation tasks. Additionally, papers like HalluGuard and The Side Effects of Being Smart shed light on critical issues like hallucinations in large language models and safety risks in multi-image reasoning, providing valuable insights for researchers working on large language models and multimodal processing. The inclusion of innovative frameworks like DeepPlanning and Jet-RL, alongside foundational models such as VISTA-PATH, underscores the diversity and depth of research currently pushing the boundaries of AI capabilities.",
   "weekly_trends": {
     "hot_topics": [
       {
         "topic": "Machine Learning (cs.LG)",
-        "paper_count": 100,
-        "insight": "Research in machine learning continues to dominate, with a focus on efficient attention mechanisms, such as SALAD, which achieves high-sparsity attention via efficient linear attention tuning for video diffusion transformer."
+        "paper_count": 96,
+        "insight": "Researchers are actively exploring new architectures and techniques, such as autoregressive models (e.g., AR-Omni) and efficient transformers (e.g., Elastic Attention)."
       },
       {
         "topic": "Artificial Intelligence (cs.AI)",
-        "paper_count": 81,
-        "insight": "Autoregressive models are gaining traction, with papers like AR-Omni, which presents a unified autoregressive model for any-to-any generation, and LongCat-Flash-Thinking-2601 Technical Report, which explores new frontiers in AI research."
+        "paper_count": 77,
+        "insight": "There is a growing interest in long-horizon planning and decision-making, as seen in papers like DeepPlanning and The Script is All You Need."
       },
       {
         "topic": "Computer Vision (cs.CV)",
-        "paper_count": 56,
-        "insight": "Geometry-free lifting of images and videos to 360°, as seen in 360Anything, is an emerging area of interest, enabling new applications in immersive technologies."
+        "paper_count": 55,
+        "insight": "Advances in image segmentation and analysis are being driven by papers like VISTA-PATH, which introduces an interactive foundation model for pathology image segmentation."
       }
     ],
     "key_developments": [
-      "The development of efficient attention mechanisms, such as SALAD, is improving the performance of video diffusion transformers.",
-      "The introduction of unified autoregressive models, like AR-Omni, is simplifying the process of any-to-any generation.",
-      "The exploration of new frontiers in AI research, as seen in LongCat-Flash-Thinking-2601 Technical Report, is pushing the boundaries of what is possible in the field."
+      "The introduction of AR-Omni, a unified autoregressive model for any-to-any generation, has the potential to significantly impact the field of generative models.",
+      "The HalluGuard paper has shed light on the importance of understanding and mitigating data-driven and reasoning-driven hallucinations in large language models.",
+      "The development of Jet-RL, which enables on-policy FP8 reinforcement learning, represents a major step forward in efficient reinforcement learning."
     ],
     "emerging_trends": [
-      "The increasing focus on multimodal agents, as seen in VisGym, is enabling the development of more sophisticated and interactive AI systems.",
-      "The shift towards automated kernel generation, as discussed in Towards Automated Kernel Generation in the Era of LLMs, is likely to improve the efficiency and effectiveness of large language models."
+      "There is a growing focus on developing more efficient and adaptive models, such as Elastic Attention, which can adjust to changing computational requirements at test-time.",
+      "Researchers are increasingly exploring the intersection of AI and other fields, such as pathology, as seen in the VISTA-PATH paper."
     ],
-    "summary": "This week in AI research, machine learning, artificial intelligence, and computer vision continue to be the most active areas, with a focus on efficient attention mechanisms, autoregressive models, and geometry-free lifting of images and videos. Key developments include the introduction of unified autoregressive models and the exploration of new frontiers in AI research. Emerging trends include the increasing focus on multimodal agents and the shift towards automated kernel generation, which are likely to shape the future of AI research."
+    "summary": "This week in AI research, we saw significant advancements in machine learning, artificial intelligence, and computer vision, with a focus on developing more efficient and adaptive models. Papers like AR-Omni and Elastic Attention are pushing the boundaries of generative models and transformer architectures. As the field continues to evolve, we can expect to see more research at the intersection of AI and other disciplines, driving innovation and progress in areas like healthcare and robotics."
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 200
+    "arXiv": 194
   },
   "tags": {
-    "cs.LG": 100,
-    "cs.AI": 81,
-    "cs.CL": 61,
-    "cs.CV": 56,
+    "cs.LG": 96,
+    "cs.AI": 77,
+    "cs.CL": 59,
+    "cs.CV": 55,
     "cs.HC": 8,
     "cs.SD": 8,
     "stat.ML": 6,
@@ -52,56 +52,58 @@
     "cs.CY": 4,
     "cs.MM": 4,
     "cs.GR": 3,
-    "cs.SE": 3,
     "cs.CR": 2,
     "cs.CC": 2,
     "cs.DB": 2,
     "cs.NI": 2,
     "cs.DL": 2,
-    "stat.ME": 2
+    "stat.ME": 2,
+    "cs.MA": 2
   },
   "institutions": {
-    "MIT": 5
+    "MIT": 4
   },
   "must_read_ids": [
     "2601.16725",
-    "2601.16192",
-    "2601.16206",
-    "2601.16208",
-    "2601.16175",
-    "2601.16973",
-    "2601.15727",
-    "2601.16148",
-    "2601.16515",
-    "2601.13606",
+    "2601.17761",
+    "2601.17737",
+    "2601.17367",
+    "2601.15808",
+    "2601.14243",
+    "2601.18778",
+    "2601.18137",
     "2601.16443",
-    "2601.15690",
-    "2601.17761"
+    "2601.14127",
+    "2601.16451",
+    "2601.18753"
   ],
   "notable_ids": [
-    "2601.15892",
-    "2601.11868",
-    "2601.15808",
-    "2601.16296",
-    "2601.14243",
-    "2601.14255",
-    "2601.15703",
-    "2601.15778",
-    "2601.15549",
-    "2601.17111",
-    "2601.16451",
-    "2601.15876",
-    "2601.14724",
-    "2601.15165",
-    "2601.15197",
-    "2601.14133",
-    "2601.16125",
-    "2601.15224",
-    "2601.16276",
+    "2601.16973",
+    "2601.15849",
     "2601.07251",
+    "2601.16344",
+    "2601.13606",
+    "2601.18202",
+    "2601.18081",
     "2601.11258",
-    "2601.17367",
+    "2601.13599",
+    "2601.18731",
     "2601.16207",
-    "2601.08118"
+    "2601.12042",
+    "2601.17958",
+    "2601.17058",
+    "2601.14133",
+    "2601.17027",
+    "2601.16296",
+    "2601.16515",
+    "2601.18184",
+    "2601.16276",
+    "2601.18217",
+    "2601.18157",
+    "2601.17323",
+    "2601.17067",
+    "2601.15015",
+    "2601.17277",
+    "2601.18130"
   ]
 }
