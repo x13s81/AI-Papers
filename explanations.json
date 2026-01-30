@@ -11338,5 +11338,245 @@
       "estimated_study_time": "6-12 months"
     },
     "last_updated": "2026-01-30"
+  },
+  "2601.22158": {
+    "title": "One-step Latent-free Image Generation with Pixel Mean Flows",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion/Flow-based Models",
+          "brief": "A type of generative model that uses a process to transform noise into a realistic image"
+        },
+        {
+          "name": "Latent Space",
+          "brief": "A lower-dimensional representation of the input data, used for generative modeling"
+        },
+        {
+          "name": "Pixel Mean Flows",
+          "brief": "A technique for one-step latent-free image generation using a presumed low-dimensional image manifold"
+        },
+        {
+          "name": "Image Manifold",
+          "brief": "A geometric space that represents the structure of an image"
+        },
+        {
+          "name": "MeanFlow",
+          "brief": "A loss function defined in the velocity space for training generative models"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and generative models"
+        },
+        {
+          "topic": "Generative Models",
+          "why_needed": "To comprehend the concepts of diffusion/flow-based models and latent space"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand image processing and analysis techniques"
+        },
+        {
+          "topic": "Mathematics (Linear Algebra, Calculus)",
+          "why_needed": "To grasp the mathematical formulations of the proposed method"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-30"
+  },
+  "2601.22054": {
+    "title": "MetricAnything: Scaling Metric Depth Pretraining with Noisy Heterogeneous Sources",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Metric Depth Estimation",
+          "brief": "Estimating the depth of objects in a scene using metric units"
+        },
+        {
+          "name": "Pretraining Framework",
+          "brief": "A method for training models on large datasets before fine-tuning for specific tasks"
+        },
+        {
+          "name": "Sparse Metric Prompt",
+          "brief": "A technique for creating a universal interface for decoupling spatial reasoning from sensor and camera biases"
+        },
+        {
+          "name": "Vision Foundation Models",
+          "brief": "Large-scale models that serve as a foundation for various computer vision tasks"
+        },
+        {
+          "name": "Multimodal Large Language Models",
+          "brief": "Models that process and generate multiple forms of data, including text, images, and audio"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of computer vision concepts, such as depth estimation and image processing"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Familiarity with machine learning concepts, including pretraining, fine-tuning, and model architectures"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Knowledge of deep learning techniques, including convolutional neural networks and transformers"
+        },
+        {
+          "topic": "3D Reconstruction",
+          "why_needed": "Understanding of 3D reconstruction techniques and challenges, such as handling noisy and heterogeneous data"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "Familiarity with natural language processing concepts, including language models and multimodal processing"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-30"
+  },
+  "2601.22069": {
+    "title": "VTC-R1: Vision-Text Compression for Efficient Long-Context Reasoning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Text Compression",
+          "brief": "A technique to compress textual data into compact images for efficient reasoning"
+        },
+        {
+          "name": "Long-Context Reasoning",
+          "brief": "A process that enables large language models to tackle complex tasks by considering lengthy contextual information"
+        },
+        {
+          "name": "Vision-Language Models",
+          "brief": "AI models that can process and understand both visual and textual data"
+        },
+        {
+          "name": "Optical Memory",
+          "brief": "A concept where compact images are used as a form of memory to store and retrieve information in vision-language models"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context and limitations of long-context reasoning"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the concept of vision-text compression and optical memory"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the challenges and opportunities in long-context reasoning and vision-language models"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To appreciate the training and fine-tuning of vision-language models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-30"
+  },
+  "2601.18150": {
+    "title": "FP8-RL: A Practical and Stable Low-Precision Stack for LLM Reinforcement Learning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A type of machine learning that involves training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models designed to process and understand human language"
+        },
+        {
+          "name": "FP8 (8-bit Floating Point)",
+          "brief": "A low-precision data type used to reduce computational cost and memory usage"
+        },
+        {
+          "name": "Quantization",
+          "brief": "The process of converting high-precision data to lower precision"
+        },
+        {
+          "name": "Importance Sampling",
+          "brief": "A technique used to correct for discrepancies between training and inference environments"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the context of LLMs and RL"
+        },
+        {
+          "topic": "Computer Architecture",
+          "why_needed": "To appreciate the benefits and challenges of using low-precision data types like FP8"
+        },
+        {
+          "topic": "Machine Learning Optimization",
+          "why_needed": "To understand the importance of mitigating train-inference mismatch"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the applications and challenges of LLMs"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-30"
+  },
+  "2601.22143": {
+    "title": "JUST-DUB-IT: Video Dubbing via Joint Audio-Visual Diffusion",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Audio-Visual Foundation Models",
+          "brief": "Pretrained models that jointly generate sound and visual content"
+        },
+        {
+          "name": "Diffusion Models",
+          "brief": "Deep learning models that use a process called diffusion-based image synthesis"
+        },
+        {
+          "name": "LoRA (Low-Rank Adaptation)",
+          "brief": "A technique for adapting large pre-trained models to new tasks with minimal additional parameters"
+        },
+        {
+          "name": "Video Dubbing",
+          "brief": "The process of replacing the original audio of a video with a new audio track, often in a different language"
+        },
+        {
+          "name": "Multimodal Generation and Editing",
+          "brief": "The ability of models to generate and edit multiple forms of data, such as audio and video"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of diffusion models, foundation models, and LoRA"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand video processing, facial motion, and lip synchronization"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the challenges of multilingual video dubbing and the importance of preserving speaker identity"
+        },
+        {
+          "topic": "Signal Processing",
+          "why_needed": "To understand audio processing and synchronization"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-01-30"
   }
 }
