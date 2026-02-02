@@ -12210,5 +12210,393 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-01"
+  },
+  "2601.22664": {
+    "title": "Real-Time Aligned Reward Model beyond Semantics",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning from Human Feedback (RLHF)",
+          "brief": "A technique for aligning large language models with human preferences"
+        },
+        {
+          "name": "Reward Overoptimization",
+          "brief": "The phenomenon where policy models overfit to the reward model and exploit spurious reward patterns"
+        },
+        {
+          "name": "Real-Time Aligned Reward Model (R2M)",
+          "brief": "A novel lightweight RLHF framework that leverages policy feedback to align with the real-time distribution shift of the policy"
+        },
+        {
+          "name": "Policy Distribution Shift",
+          "brief": "The change in the policy model's distribution during the reinforcement learning process"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To understand the basics of RL and its applications"
+        },
+        {
+          "topic": "Large Language Models",
+          "why_needed": "To comprehend the context and limitations of LLMs"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To grasp the concepts of policy models, reward models, and their interactions"
+        },
+        {
+          "topic": "Human-Computer Interaction",
+          "why_needed": "To understand the importance of aligning AI models with human preferences and intent"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-02"
+  },
+  "2601.21420": {
+    "title": "ConceptMoE: Adaptive Token-to-Concept Compression for Implicit Compute Allocation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "ConceptMoE",
+          "brief": "A model that dynamically merges semantically similar tokens into concept representations for adaptive token-to-concept compression"
+        },
+        {
+          "name": "Mixture of Experts (MoE)",
+          "brief": "A deep learning architecture that enables multiple models to be trained together and used for a single task"
+        },
+        {
+          "name": "Token-level Compute Allocation",
+          "brief": "The process of allocating computational resources to different tokens in a sequence based on their semantic similarity"
+        },
+        {
+          "name": "Learnable Chunk Module",
+          "brief": "A module that identifies optimal boundaries for merging tokens into concept representations"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models",
+          "why_needed": "To understand the limitations of uniform computation allocation across all tokens"
+        },
+        {
+          "topic": "Deep Learning Architectures",
+          "why_needed": "To comprehend the MoE architecture and its applications"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the importance of semantic similarity in token representation"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To appreciate the model's performance on vision-language tasks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-02"
+  },
+  "2601.21358": {
+    "title": "Latent Chain-of-Thought as Planning: Decoupling Reasoning from Verbalization",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Chain-of-Thought (CoT)",
+          "brief": "A method that enables Large Language Models (LLMs) to solve complex problems by generating a sequence of intermediate reasoning steps"
+        },
+        {
+          "name": "Latent Reasoning",
+          "brief": "A technique that performs reasoning within continuous hidden states to improve efficiency"
+        },
+        {
+          "name": "Planning with Latent Thoughts (PLaT)",
+          "brief": "A framework that decouples reasoning from verbalization by modeling reasoning as a deterministic trajectory of latent planning states"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models designed to process and generate human-like language"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and applications of LLMs and CoT"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the concepts of latent reasoning, planning, and model architecture"
+        },
+        {
+          "topic": "Mathematical Benchmarks",
+          "why_needed": "To evaluate the performance of PLaT and understand the trade-offs in reasoning diversity and accuracy"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-02"
+  },
+  "2601.21558": {
+    "title": "ASTRA: Automated Synthesis of agentic Trajectories and Reinforcement Arenas",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models that process and generate human-like language"
+        },
+        {
+          "name": "Tool-Augmented Agents",
+          "brief": "Agents that use external tools to make decisions"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "Machine learning approach that involves training agents through trial and error"
+        },
+        {
+          "name": "Supervised Fine-Tuning (SFT)",
+          "brief": "Technique to fine-tune pre-trained models on specific tasks"
+        },
+        {
+          "name": "Trajectory Synthesis",
+          "brief": "Generating diverse paths for agents to follow"
+        },
+        {
+          "name": "Environment Synthesis",
+          "brief": "Creating simulated environments for agents to learn in"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the basics of RL, SFT, and LLMs"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To comprehend the concept of tool-augmented agents and their applications"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To grasp the role of LLMs in generating human-like language"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To understand the concepts of programming, code execution, and software development"
+        },
+        {
+          "topic": "Mathematics",
+          "why_needed": "To understand the mathematical foundations of RL and SFT"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6-12 months"
+    },
+    "last_updated": "2026-02-02"
+  },
+  "2601.22156": {
+    "title": "Hybrid Linear Attention Done Right: Efficient Distillation and Effective Architectures for Extremely Long Contexts",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Hybrid Transformer architectures",
+          "brief": "Combining softmax attention blocks and recurrent neural networks (RNNs) for long-context modeling"
+        },
+        {
+          "name": "Knowledge distillation",
+          "brief": "Transferring knowledge from pre-trained models to smaller models"
+        },
+        {
+          "name": "Parameter transfer",
+          "brief": "Converting pre-trained softmax attention blocks into RNN blocks"
+        },
+        {
+          "name": "Position encoding schemes",
+          "brief": "Techniques for encoding positional information in sequence models"
+        },
+        {
+          "name": "Layer optimization",
+          "brief": "Optimizing neural network layers for efficient distillation"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Transformer models",
+          "why_needed": "Understanding the basics of Transformer models is necessary to comprehend the conversion process"
+        },
+        {
+          "topic": "Recurrent neural networks (RNNs)",
+          "why_needed": "Knowledge of RNNs is required to understand the hybrid architecture"
+        },
+        {
+          "topic": "Deep learning",
+          "why_needed": "Familiarity with deep learning concepts, such as training and optimization, is necessary to understand the paper"
+        },
+        {
+          "topic": "Natural language processing",
+          "why_needed": "Understanding NLP concepts, such as language modeling, is necessary to appreciate the application of the proposed method"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-02"
+  },
+  "2601.20833": {
+    "title": "Idea2Story: An Automated Pipeline for Transforming Research Concepts into Complete Scientific Narratives",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models that process and generate human-like language"
+        },
+        {
+          "name": "Autonomous Scientific Discovery",
+          "brief": "Using AI to automate the scientific research process"
+        },
+        {
+          "name": "Pre-computation-driven Framework",
+          "brief": "A approach that relies on pre-processing and storing data for efficient retrieval"
+        },
+        {
+          "name": "Methodological Knowledge Graph",
+          "brief": "A structured graph that represents research methods and patterns"
+        },
+        {
+          "name": "Research Intent Alignment",
+          "brief": "Aligning user research goals with established research paradigms"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the capabilities and limitations of LLMs"
+        },
+        {
+          "topic": "Scientific Research Methods",
+          "why_needed": "To comprehend the research process and the importance of methodological knowledge"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To grasp the concepts of language generation and understanding"
+        },
+        {
+          "topic": "Graph Theory",
+          "why_needed": "To understand the structure and organization of the methodological knowledge graph"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To appreciate the computational aspects of the pre-computation-driven framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-02"
+  },
+  "2601.22153": {
+    "title": "DynamicVLA: A Vision-Language-Action Model for Dynamic Object Manipulation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Language-Action (VLA) models",
+          "brief": "Models that integrate vision, language, and action to manipulate objects"
+        },
+        {
+          "name": "Dynamic object manipulation",
+          "brief": "The ability to manipulate objects that are moving or changing"
+        },
+        {
+          "name": "Temporal reasoning",
+          "brief": "The ability to reason about time and sequences of events"
+        },
+        {
+          "name": "Closed-loop adaptation",
+          "brief": "The ability to adapt to changing situations through continuous feedback and adjustment"
+        },
+        {
+          "name": "Convolutional vision encoder",
+          "brief": "A type of neural network architecture for efficient image processing"
+        },
+        {
+          "name": "Continuous Inference",
+          "brief": "A technique for overlapping reasoning and execution to reduce latency"
+        },
+        {
+          "name": "Latent-aware Action Streaming",
+          "brief": "A technique for bridging the perception-execution gap through temporally aligned action execution"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the architecture and training of VLA models"
+        },
+        {
+          "topic": "Computer vision",
+          "why_needed": "To understand the processing and analysis of visual data"
+        },
+        {
+          "topic": "Natural language processing",
+          "why_needed": "To understand the integration of language and action in VLA models"
+        },
+        {
+          "topic": "Robotics and control",
+          "why_needed": "To understand the manipulation of dynamic objects and the importance of timely adaptation"
+        },
+        {
+          "topic": "Machine learning benchmarks and datasets",
+          "why_needed": "To understand the creation and use of the Dynamic Object Manipulation (DOM) benchmark"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-02"
+  },
+  "2601.22491": {
+    "title": "SSL: Sweet Spot Learning for Differentiated Guidance in Agentic Optimization",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A machine learning paradigm for training agents to take actions in an environment to maximize rewards"
+        },
+        {
+          "name": "Sweet Spot Learning (SSL)",
+          "brief": "A novel framework providing differentiated guidance for agent optimization through tiered rewards"
+        },
+        {
+          "name": "Agentic Optimization",
+          "brief": "The process of optimizing agent performance in complex tasks"
+        },
+        {
+          "name": "Gradient Signal-to-Noise Ratio",
+          "brief": "A measure of the quality of the gradient signal in optimization algorithms"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning Fundamentals",
+          "why_needed": "To understand the basics of reinforcement learning and optimization algorithms"
+        },
+        {
+          "topic": "Reinforcement Learning Algorithms",
+          "why_needed": "To appreciate the limitations of existing methods and the novelty of SSL"
+        },
+        {
+          "topic": "Mathematical Optimization",
+          "why_needed": "To comprehend the theoretical analysis of SSL and its implications on solution ordering and gradient signal-to-noise ratio"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the implementation details of SSL and its applications in various tasks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-02"
   }
 }
