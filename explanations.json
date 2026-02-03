@@ -13326,5 +13326,365 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-03"
+  },
+  "2602.02276": {
+    "title": "Kimi K2.5: Visual Agentic Intelligence",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Agentic Model",
+          "brief": "A model that combines text and vision to enhance each other"
+        },
+        {
+          "name": "Joint Text-Vision Pre-training",
+          "brief": "A technique to pre-train models on both text and vision data simultaneously"
+        },
+        {
+          "name": "Zero-Vision SFT",
+          "brief": "A technique to fine-tune models without vision data"
+        },
+        {
+          "name": "Joint Text-Vision Reinforcement Learning",
+          "brief": "A technique to train models using reinforcement learning on both text and vision data"
+        },
+        {
+          "name": "Agent Swarm",
+          "brief": "A self-directed parallel agent orchestration framework to execute complex tasks concurrently"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of multimodal models"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the vision component of the multimodal model"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the text component of the multimodal model"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To understand the training objective of the model"
+        },
+        {
+          "topic": "Parallel Computing",
+          "why_needed": "To understand the Agent Swarm framework"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-02-03"
+  },
+  "2602.01897": {
+    "title": "Internal Flow Signatures for Self-Checking and Refinement in LLMs",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Internal Flow Signatures",
+          "brief": "A method to audit decision formation in large language models"
+        },
+        {
+          "name": "Self-Checking",
+          "brief": "The ability of a model to verify its own outputs"
+        },
+        {
+          "name": "Refinement in LLMs",
+          "brief": "The process of improving large language models' performance and accuracy"
+        },
+        {
+          "name": "Depthwise Dynamics",
+          "brief": "The analysis of how models process information at different depths or layers"
+        },
+        {
+          "name": "GRU Validator",
+          "brief": "A lightweight validator using Gated Recurrent Units to perform self-checking"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context and limitations of LLMs"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the concepts of depthwise dynamics and internal flow signatures"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To appreciate the applications and challenges of LLMs in NLP tasks"
+        },
+        {
+          "topic": "Gated Recurrent Units (GRUs)",
+          "why_needed": "To understand the architecture and functionality of the GRU validator"
+        },
+        {
+          "topic": "Orthogonal Transport",
+          "why_needed": "To grasp the mathematical concepts used in aligning neighboring window frames"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-03"
+  },
+  "2602.01675": {
+    "title": "TRIP-Bench: A Benchmark for Long-Horizon Interactive Agents in Real-World Scenarios",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Long-Horizon Interactive Agents",
+          "brief": "Agents that interact with users over an extended period, handling complex and dynamic scenarios"
+        },
+        {
+          "name": "LLM-based Agents",
+          "brief": "Agents powered by Large Language Models, capable of understanding and generating human-like text"
+        },
+        {
+          "name": "Multi-Tool Reasoning",
+          "brief": "The ability of agents to utilize multiple tools and resources to achieve a goal"
+        },
+        {
+          "name": "Real-World Scenarios",
+          "brief": "Scenarios that mimic real-world situations, making agents more applicable to practical problems"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A type of machine learning where agents learn through trial and error, receiving rewards or penalties for their actions"
+        },
+        {
+          "name": "TRIP-Bench",
+          "brief": "A benchmark for evaluating the performance of long-horizon interactive agents in real-world scenarios"
+        },
+        {
+          "name": "GTPO",
+          "brief": "An online multi-turn reinforcement learning method for training robust long-horizon agents"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand how LLM-based agents work and interact with users"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the concepts of reinforcement learning and multi-tool reasoning"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To grasp the broader context of interactive agents and their applications"
+        },
+        {
+          "topic": "Travel Planning",
+          "why_needed": "To understand the specific scenario used in TRIP-Bench and its requirements"
+        },
+        {
+          "topic": "Benchmarking",
+          "why_needed": "To appreciate the importance of evaluating agent performance in real-world scenarios"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-03"
+  },
+  "2602.02343": {
+    "title": "Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Language Model Parameter Dynamics",
+          "brief": "The study of how language model parameters change and adapt during training and fine-tuning"
+        },
+        {
+          "name": "Local Weight Fine-Tuning",
+          "brief": "A method for adjusting model weights to fit specific tasks or datasets"
+        },
+        {
+          "name": "LoRA-based Adaptation",
+          "brief": "A technique for adapting language models using low-rank updates"
+        },
+        {
+          "name": "Activation-Based Interventions",
+          "brief": "Methods for modifying model activations to control output"
+        },
+        {
+          "name": "Preference-Utility Analysis",
+          "brief": "A framework for evaluating the trade-off between model preference and utility"
+        },
+        {
+          "name": "Activation Manifold Perspective",
+          "brief": "A geometric interpretation of model representations and their relationship to control signals"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of language models and their training"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To appreciate the applications and challenges of language models"
+        },
+        {
+          "topic": "Linear Algebra and Geometry",
+          "why_needed": "To grasp the mathematical concepts underlying the activation manifold perspective"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the principles of model fine-tuning and adaptation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-03"
+  },
+  "2602.01077": {
+    "title": "PISA: Piecewise Sparse Attention Is Wiser for Efficient Diffusion Transformers",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion Transformers",
+          "brief": "A type of neural network architecture used for video and image generation"
+        },
+        {
+          "name": "Sparse Attention",
+          "brief": "A technique to reduce computational complexity of attention mechanisms in neural networks"
+        },
+        {
+          "name": "Piecewise Sparse Attention (PISA)",
+          "brief": "A novel attention mechanism that combines exact and approximate computation for efficient diffusion transformers"
+        },
+        {
+          "name": "Block-wise Taylor Expansion",
+          "brief": "A mathematical technique used to approximate attention scores in non-critical blocks"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Transformer Architecture",
+          "why_needed": "To understand the context and limitations of attention mechanisms in neural networks"
+        },
+        {
+          "topic": "Attention Mechanisms",
+          "why_needed": "To comprehend the role of attention in transformer architectures and its computational complexity"
+        },
+        {
+          "topic": "Sparse Neural Networks",
+          "why_needed": "To appreciate the concept of sparsity in neural networks and its application to attention mechanisms"
+        },
+        {
+          "topic": "Mathematical Optimization Techniques",
+          "why_needed": "To understand the block-wise Taylor expansion used in PISA for approximating attention scores"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-03"
+  },
+  "2602.02486": {
+    "title": "RE-TRAC: REcursive TRAjectory Compression for Deep Search Agents",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Re-TRAC",
+          "brief": "A framework for recursive trajectory compression in deep search agents"
+        },
+        {
+          "name": "ReAct Framework",
+          "brief": "A linear framework for building deep research agents"
+        },
+        {
+          "name": "Cross-Trajectory Exploration",
+          "brief": "A method for generating structured state representations to guide search agents"
+        },
+        {
+          "name": "LLM (Large Language Models)",
+          "brief": "A type of artificial intelligence model used in natural language processing"
+        },
+        {
+          "name": "Deep Search Agents",
+          "brief": "Artificial intelligence agents that use deep learning to search for information"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of LLMs and deep search agents"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the application of LLMs in text-based search tasks"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To grasp the concept of search agents and their role in information retrieval"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the supervised fine-tuning process mentioned in the paper"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To familiarize oneself with the overall architecture and design of search agents"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-03"
+  },
+  "2602.02488": {
+    "title": "RLAnything: Forge Environment, Policy, and Reward Model in Completely Dynamic RL System",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A subfield of machine learning that involves training agents to take actions in an environment to maximize a reward"
+        },
+        {
+          "name": "Dynamic Environment Adaptation",
+          "brief": "The ability of an RL system to adapt its environment during training to improve learning efficiency"
+        },
+        {
+          "name": "Policy and Reward Model Training",
+          "brief": "The process of training a policy to take actions and a reward model to evaluate the quality of those actions"
+        },
+        {
+          "name": "Closed-Loop Optimization",
+          "brief": "A method of optimization where the system's performance is continuously evaluated and improved through feedback loops"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models designed to process and understand human language"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning Fundamentals",
+          "why_needed": "To understand the basics of RL, policy and reward models, and optimization techniques"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the implementation of LLMs and the integration of RL with deep learning techniques"
+        },
+        {
+          "topic": "Reinforcement Learning Algorithms",
+          "why_needed": "To understand the different types of RL algorithms and their applications"
+        },
+        {
+          "topic": "Mathematical Optimization",
+          "why_needed": "To grasp the concepts of closed-loop optimization and feedback mechanisms"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-03"
   }
 }
