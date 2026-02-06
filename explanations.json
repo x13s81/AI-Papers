@@ -14826,5 +14826,345 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-05"
+  },
+  "2602.05986": {
+    "title": "RISE-Video: Can Video Generators Decode Implicit World Rules?",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Generative Video Models",
+          "brief": "AI models that generate videos based on input data"
+        },
+        {
+          "name": "Implicit World Rules",
+          "brief": "Unspoken rules that govern the behavior of objects and events in the world"
+        },
+        {
+          "name": "Text-Image-to-Video (TI2V) Synthesis",
+          "brief": "The process of generating videos from text and image inputs"
+        },
+        {
+          "name": "Large Multimodal Models (LMMs)",
+          "brief": "AI models that can process and generate multiple forms of data, such as text, images, and videos"
+        },
+        {
+          "name": "Reasoning-Oriented Benchmark",
+          "brief": "A framework for evaluating the reasoning capabilities of AI models"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of generative video models"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the visual aspects of video generation and evaluation"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To grasp the text-based input and output aspects of TI2V synthesis"
+        },
+        {
+          "topic": "Cognitive Psychology",
+          "why_needed": "To understand human reasoning and decision-making processes, which are emulated in the evaluation protocol"
+        },
+        {
+          "topic": "Machine Learning Evaluation Metrics",
+          "why_needed": "To understand the four metrics used in the evaluation protocol: Reasoning Alignment, Temporal Consistency, Physical Rationality, and Visual Quality"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-06"
+  },
+  "2602.04581": {
+    "title": "Trust The Typical",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "LLM Safety",
+          "brief": "Large Language Model safety, focusing on preventing harmful outputs"
+        },
+        {
+          "name": "Out-of-Distribution Detection",
+          "brief": "Identifying data points that significantly deviate from the expected distribution"
+        },
+        {
+          "name": "Semantic Space",
+          "brief": "A representation of text data in a high-dimensional space based on meaning and context"
+        },
+        {
+          "name": "Guardrails",
+          "brief": "Mechanisms to prevent or mitigate harmful outputs in LLMs"
+        },
+        {
+          "name": "Trust The Typical (T3) Framework",
+          "brief": "A novel approach to LLM safety that focuses on understanding safe prompts rather than harmful ones"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and applications of LLM safety"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the concepts of out-of-distribution detection and semantic space"
+        },
+        {
+          "topic": "Language Models",
+          "why_needed": "To grasp the basics of LLMs and their potential risks"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the training and optimization of models like T3"
+        },
+        {
+          "topic": "Toxicity and Hate Speech Detection",
+          "why_needed": "To recognize the importance of LLM safety in preventing harmful content"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-06"
+  },
+  "2602.05327": {
+    "title": "ProAct: Agentic Lookahead in Interactive Environments",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Model (LLM) agents",
+          "brief": "Artificial intelligence models that process and generate human-like language"
+        },
+        {
+          "name": "Grounded LookAhead Distillation (GLAD)",
+          "brief": "A training paradigm that enables agents to internalize accurate lookahead reasoning"
+        },
+        {
+          "name": "Monte-Carlo Critic (MC-Critic)",
+          "brief": "An auxiliary value estimator designed to enhance policy-gradient algorithms"
+        },
+        {
+          "name": "Policy-gradient algorithms (e.g., PPO and GRPO)",
+          "brief": "Reinforcement learning methods that optimize policies directly"
+        },
+        {
+          "name": "Model-based value approximation",
+          "brief": "A technique used to estimate the value of a state or action in a reinforcement learning environment"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To understand the context and challenges of training LLM agents in interactive environments"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the architecture and training of LLM agents"
+        },
+        {
+          "topic": "Markov Decision Processes",
+          "why_needed": "To understand the mathematical framework underlying the interactive environments"
+        },
+        {
+          "topic": "Stochastic and Deterministic Environments",
+          "why_needed": "To appreciate the differences in planning and decision-making in various environments"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-06"
+  },
+  "2602.05842": {
+    "title": "Reinforcement World Model Learning for LLM-based Agents",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A subfield of machine learning that involves training agents to take actions in an environment to maximize a reward"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models designed to process and understand human language, often used for tasks like text generation and language translation"
+        },
+        {
+          "name": "World Modeling",
+          "brief": "The ability of an agent to predict the consequences of its actions and understand the dynamics of its environment"
+        },
+        {
+          "name": "Self-Supervised Learning",
+          "brief": "A type of machine learning where the model is trained on unlabeled data, using its own predictions as supervision"
+        },
+        {
+          "name": "Sim-to-Real Gap Rewards",
+          "brief": "A reward function that encourages the alignment of simulated and real-world outcomes"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of LLMs"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the language-centric tasks and the role of LLMs in these tasks"
+        },
+        {
+          "topic": "Reinforcement Learning Algorithms",
+          "why_needed": "To appreciate the challenges of training agents in complex environments and the need for world modeling capabilities"
+        },
+        {
+          "topic": "Agent-Environment Interactions",
+          "why_needed": "To understand how agents perceive and respond to their environment, and the importance of world modeling in this context"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-06"
+  },
+  "2602.03955": {
+    "title": "AgentArk: Distilling Multi-Agent Intelligence into a Single LLM Agent",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models that process and understand human language"
+        },
+        {
+          "name": "Multi-Agent Systems",
+          "brief": "Systems that consist of multiple agents interacting with each other to achieve a common goal"
+        },
+        {
+          "name": "Distillation",
+          "brief": "A technique to transfer knowledge from one model to another, often used to reduce computational complexity"
+        },
+        {
+          "name": "Hierarchical Distillation Strategies",
+          "brief": "Methods to distill knowledge from multiple models into a single model, including reasoning-enhanced fine-tuning, trajectory-based augmentation, and process-aware distillation"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of LLMs and model distillation"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To comprehend the context of multi-agent systems and their applications"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To grasp the fundamentals of programming and software development, necessary for implementing and experimenting with the proposed framework"
+        },
+        {
+          "topic": "Mathematics",
+          "why_needed": "To understand the mathematical formulations and optimizations involved in the distillation process"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-06"
+  },
+  "2602.04271": {
+    "title": "SkeletonGaussian: Editable 4D Generation through Gaussian Skeletonization",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "4D Generation",
+          "brief": "Generating dynamic 3D objects from input text, images, or videos"
+        },
+        {
+          "name": "Gaussian Skeletonization",
+          "brief": "A novel framework for generating editable dynamic 3D Gaussians from monocular video input"
+        },
+        {
+          "name": "Hierarchical Articulated Representation",
+          "brief": "Decomposing motion into sparse rigid motion and fine-grained non-rigid motion"
+        },
+        {
+          "name": "Linear Blend Skinning",
+          "brief": "A technique for driving rigid motion via a skeleton"
+        },
+        {
+          "name": "Hexplane-based Refinement",
+          "brief": "A method for refining non-rigid deformations"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of image and video processing techniques"
+        },
+        {
+          "topic": "3D Graphics",
+          "why_needed": "Knowledge of 3D modeling and animation principles"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Familiarity with deep learning architectures and training methods"
+        },
+        {
+          "topic": "Linear Algebra",
+          "why_needed": "Understanding of mathematical concepts such as transformations and skinning"
+        },
+        {
+          "topic": "Signal Processing",
+          "why_needed": "Knowledge of filtering and refinement techniques"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-02-06"
+  },
+  "2602.03916": {
+    "title": "SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Language Models (VLMs)",
+          "brief": "Artificial intelligence models that combine visual and linguistic information to understand and generate human-like responses"
+        },
+        {
+          "name": "Spatial Reasoning",
+          "brief": "The ability to think about and understand the relationships between objects in space"
+        },
+        {
+          "name": "SpatiaLab Benchmark",
+          "brief": "A comprehensive benchmark for evaluating VLMs' spatial reasoning capabilities in realistic contexts"
+        },
+        {
+          "name": "Deep Learning Models",
+          "brief": "A subset of machine learning models that use neural networks to analyze and interpret data"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand how VLMs process and analyze visual information"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend how VLMs generate and understand human-like language"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the fundamentals of training and evaluating AI models like VLMs"
+        },
+        {
+          "topic": "Cognitive Psychology",
+          "why_needed": "To appreciate the human spatial reasoning capabilities that VLMs aim to replicate"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-06"
   }
 }
