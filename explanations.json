@@ -15402,5 +15402,289 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-06"
+  },
+  "2601.22345": {
+    "title": "Failing to Explore: Language Models on Interactive Tasks",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Language Models",
+          "brief": "Artificial intelligence models that process and generate human-like language"
+        },
+        {
+          "name": "Interactive Tasks",
+          "brief": "Tasks that require models to interact with an environment and make decisions based on feedback"
+        },
+        {
+          "name": "Exploration-Exploitation Trade-off",
+          "brief": "The balance between exploring new possibilities and exploiting known solutions to maximize performance"
+        },
+        {
+          "name": "Parametric Tasks",
+          "brief": "Tasks with adjustable parameters to control difficulty or complexity"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand language models and their applications"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To comprehend the exploration-exploitation trade-off and interactive tasks"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To grasp the broader context of language models and their limitations"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of model training, evaluation, and optimization"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-07"
+  },
+  "2602.05293": {
+    "title": "Fast-SAM3D: 3Dfy Anything in Images but Faster",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "3D Reconstruction",
+          "brief": "The process of creating a 3D model from 2D images"
+        },
+        {
+          "name": "SAM3D",
+          "brief": "A scalable, open-world 3D reconstruction framework"
+        },
+        {
+          "name": "Inference Latency",
+          "brief": "The time it takes for a model to make predictions"
+        },
+        {
+          "name": "Multi-Level Heterogeneity",
+          "brief": "The presence of different types of data or processes in a system"
+        },
+        {
+          "name": "Modality-Aware Step Caching",
+          "brief": "A technique to optimize computation by caching intermediate results"
+        },
+        {
+          "name": "Joint Spatiotemporal Token Carving",
+          "brief": "A method to concentrate refinement on high-entropy regions"
+        },
+        {
+          "name": "Spectral-Aware Token Aggregation",
+          "brief": "A technique to adapt decoding resolution based on spectral variance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the context of 3D reconstruction and image processing"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the concepts of inference latency, caching, and token carving"
+        },
+        {
+          "topic": "Geometry and Linear Algebra",
+          "why_needed": "To understand the mathematical foundations of 3D reconstruction and spectral variance"
+        },
+        {
+          "topic": "Software Optimization",
+          "why_needed": "To appreciate the importance of efficient computation and caching techniques"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-07"
+  },
+  "2602.04683": {
+    "title": "UniAudio 2.0: A Unified Audio Language Model with Text-Aligned Factorized Audio Tokenization",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Audio Language Models",
+          "brief": "Models that process and generate audio data based on linguistic patterns"
+        },
+        {
+          "name": "Text-Aligned Factorized Audio Tokenization",
+          "brief": "Method of breaking down audio into tokens that align with text representations"
+        },
+        {
+          "name": "Discrete Audio Codec",
+          "brief": "Technique for converting audio into discrete tokens for efficient processing"
+        },
+        {
+          "name": "Autoregressive Architecture",
+          "brief": "Type of neural network architecture that generates output sequences one step at a time"
+        },
+        {
+          "name": "Few-shot and Zero-shot Learning",
+          "brief": "Ability of a model to perform well on new tasks with limited or no training data"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of UniAudio 2.0"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To appreciate the text-aligned aspect of the audio tokenization"
+        },
+        {
+          "topic": "Audio Signal Processing",
+          "why_needed": "To comprehend the audio codec and reconstruction aspects"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concept of few-shot and zero-shot learning"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-07"
+  },
+  "2602.06036": {
+    "title": "DFlash: Block Diffusion for Flash Speculative Decoding",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Autoregressive Large Language Models (LLMs)",
+          "brief": "Sequential models that generate text one token at a time"
+        },
+        {
+          "name": "Speculative Decoding",
+          "brief": "A technique to speed up decoding by using a fast draft model and verifying its outputs in parallel"
+        },
+        {
+          "name": "Diffusion LLMs",
+          "brief": "Models that enable parallel generation of text using a process called diffusion"
+        },
+        {
+          "name": "Block Diffusion",
+          "brief": "A specific type of diffusion model used for parallel drafting in the DFlash framework"
+        },
+        {
+          "name": "DFlash Framework",
+          "brief": "A speculative decoding framework that uses block diffusion for parallel drafting"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and applications of LLMs and speculative decoding"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the architecture and training of LLMs and diffusion models"
+        },
+        {
+          "topic": "Parallel Computing",
+          "why_needed": "To appreciate the benefits and challenges of parallelizing decoding processes"
+        },
+        {
+          "topic": "Language Model Evaluation Metrics",
+          "why_needed": "To understand the metrics used to compare the performance of different models and decoding methods"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-07"
+  },
+  "2602.05115": {
+    "title": "SocialVeil: Probing Social Intelligence of Language Agents under Communication Barriers",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Social Intelligence of Language Agents",
+          "brief": "Evaluating language models' ability to understand and interact with humans in a social context"
+        },
+        {
+          "name": "Communication Barriers",
+          "brief": "Obstacles that hinder effective communication, such as semantic vagueness, sociocultural mismatch, and emotional interference"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models designed to process and generate human-like language"
+        },
+        {
+          "name": "Social Learning Environment",
+          "brief": "A simulated environment for testing social intelligence of language agents, such as SocialVeil"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the basics of language models and their applications"
+        },
+        {
+          "topic": "Artificial Intelligence (AI)",
+          "why_needed": "To comprehend the concepts of machine learning and social intelligence"
+        },
+        {
+          "topic": "Human-Computer Interaction (HCI)",
+          "why_needed": "To recognize the importance of effective communication between humans and machines"
+        },
+        {
+          "topic": "Social Psychology",
+          "why_needed": "To understand the complexities of human communication and social interactions"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-07"
+  },
+  "2602.05933": {
+    "title": "Approximation of Log-Partition Function in Policy Mirror Descent Induces Implicit Regularization for LLM Post-Training",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Policy Mirror Descent (PMD)",
+          "brief": "A framework for reinforcement learning that iteratively solves KL-regularized policy improvement subproblems"
+        },
+        {
+          "name": "Log-Partition Function",
+          "brief": "A mathematical function used in PMD to estimate the partition function"
+        },
+        {
+          "name": "KL--χ^2 Regularizer",
+          "brief": "A type of regularizer that constrains large probability changes and enhances robustness against finite-sample estimation errors"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Advanced language models that require efficient and stable training algorithms"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Reinforcement Learning (RL)",
+          "why_needed": "To understand the context and applications of Policy Mirror Descent"
+        },
+        {
+          "topic": "Mathematical Optimization",
+          "why_needed": "To comprehend the derivation and analysis of the PMD-mean algorithm"
+        },
+        {
+          "topic": "Probability Theory",
+          "why_needed": "To understand the concepts of partition functions, KL-divergence, and χ^2 regularization"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To appreciate the importance of efficient and stable training algorithms for LLMs"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-07"
   }
 }
