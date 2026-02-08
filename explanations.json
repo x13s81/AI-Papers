@@ -15686,5 +15686,277 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-07"
+  },
+  "2602.02393": {
+    "title": "Infinite-World: Scaling Interactive World Models to 1000-Frame Horizons via Pose-Free Hierarchical Memory",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Interactive World Models",
+          "brief": "Models that can generate and predict future frames in a video sequence"
+        },
+        {
+          "name": "Hierarchical Pose-free Memory Compressor (HPMC)",
+          "brief": "A module that compresses historical data into a fixed-budget representation"
+        },
+        {
+          "name": "Uncertainty-aware Action Labeling",
+          "brief": "A strategy to discretize continuous motion into a tri-state logic for robust action-response learning"
+        },
+        {
+          "name": "Revisit-Dense Finetuning Strategy",
+          "brief": "A method to fine-tune the model using a compact dataset for long-range loop-closure capabilities"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of interactive world models"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the concepts of pose estimation, visual memory, and video generation"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To grasp the idea of action-response learning and control"
+        },
+        {
+          "topic": "Mathematics (Linear Algebra, Calculus)",
+          "why_needed": "To understand the underlying mathematical concepts used in the paper"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-08"
+  },
+  "2602.06035": {
+    "title": "InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Generative Control",
+          "brief": "A method to generate human-object interactions based on physical and motor priors"
+        },
+        {
+          "name": "Physics-Based Human-Object Interactions",
+          "brief": "Simulating interactions between humans and objects using physical laws"
+        },
+        {
+          "name": "Imitation Learning",
+          "brief": "Learning from demonstrations or expert behaviors"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "brief": "Learning through trial and error by receiving rewards or penalties"
+        },
+        {
+          "name": "Variational Policy",
+          "brief": "A type of policy that learns to reconstruct motion from multimodal observations and high-level intent"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Robotics and Humanoid Robotics",
+          "why_needed": "To understand the context and application of the research"
+        },
+        {
+          "topic": "Machine Learning and Deep Learning",
+          "why_needed": "To comprehend the methods and techniques used in the paper"
+        },
+        {
+          "topic": "Physics and Mechanics",
+          "why_needed": "To understand the physical and motor priors used in the research"
+        },
+        {
+          "topic": "Computer Vision and Sensorimotor Control",
+          "why_needed": "To understand the multimodal observations and high-level intent used in the research"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-08"
+  },
+  "2602.05386": {
+    "title": "Spider-Sense: Intrinsic Risk Sensing for Efficient Agent Defense with Hierarchical Adaptive Screening",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Intrinsic Risk Sensing (IRS)",
+          "brief": "A mechanism that allows agents to maintain latent vigilance and trigger defenses only upon risk perception"
+        },
+        {
+          "name": "Hierarchical Adaptive Screening",
+          "brief": "A defense mechanism that trades off efficiency and precision by resolving known patterns via lightweight similarity matching and escalating ambiguous cases to deep internal reasoning"
+        },
+        {
+          "name": "Spider-Sense Framework",
+          "brief": "An event-driven defense framework based on IRS that invokes a hierarchical defense mechanism upon risk perception"
+        },
+        {
+          "name": "S^2Bench Benchmark",
+          "brief": "A lifecycle-aware benchmark featuring realistic tool execution and multi-stage attacks for evaluating agent defense mechanisms"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context of autonomous agents and their security challenges"
+        },
+        {
+          "topic": "Agent Defense Mechanisms",
+          "why_needed": "To appreciate the limitations of existing mandatory checking paradigms and the need for intrinsic and selective defense approaches"
+        },
+        {
+          "topic": "Machine Learning and Deep Learning",
+          "why_needed": "To understand the concepts of similarity matching, deep internal reasoning, and the trade-offs between efficiency and precision"
+        },
+        {
+          "topic": "Computer Security and Risk Management",
+          "why_needed": "To comprehend the importance of risk perception, attack success rate, and false positive rate in evaluating defense mechanisms"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-08"
+  },
+  "2602.05393": {
+    "title": "Late-to-Early Training: LET LLMs Learn Earlier, So Faster and Better",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models designed to process and understand human language"
+        },
+        {
+          "name": "Pretraining",
+          "brief": "The process of training a model on a large dataset before fine-tuning it for a specific task"
+        },
+        {
+          "name": "Late-to-Early Training (LET) paradigm",
+          "brief": "A method that enables LLMs to learn later knowledge in earlier steps and earlier layers"
+        },
+        {
+          "name": "Late-to-early-step learning and late-to-early-layer learning",
+          "brief": "Mechanisms that drive LET's effectiveness in accelerating training convergence and enhancing language modeling capabilities"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of LLMs"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the applications and challenges of LLMs in language modeling and downstream tasks"
+        },
+        {
+          "topic": "Model Optimization and Efficiency",
+          "why_needed": "To appreciate the importance of accelerating training convergence and reducing computational costs"
+        },
+        {
+          "topic": "Transfer Learning",
+          "why_needed": "To understand how pretrained models can be leveraged to improve the training of larger models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-08"
+  },
+  "2602.06040": {
+    "title": "SwimBird: Eliciting Switchable Reasoning Mode in Hybrid Autoregressive MLLMs",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "Models that combine vision and language for perception and reasoning"
+        },
+        {
+          "name": "Hybrid Autoregressive Formulation",
+          "brief": "A method that unifies next-token prediction for textual thoughts with next-embedding prediction for visual thoughts"
+        },
+        {
+          "name": "Reasoning Modes",
+          "brief": "Different ways of thinking, including text-only, vision-only, and interleaved vision-text reasoning"
+        },
+        {
+          "name": "SwimBird",
+          "brief": "A reasoning-switchable MLLM that dynamically switches among different reasoning modes"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of MLLMs"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the text-based logical reasoning and language understanding aspects of MLLMs"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To grasp the vision-intensive tasks and visual perception aspects of MLLMs"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the supervised fine-tuning dataset construction and model training process"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-08"
+  },
+  "2602.05871": {
+    "title": "Pathwise Test-Time Correction for Autoregressive Long Video Generation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Autoregressive Diffusion Models",
+          "brief": "A type of generative model that uses a Markov chain to generate data"
+        },
+        {
+          "name": "Test-Time Optimization (TTO)",
+          "brief": "A method to adapt a model at test time to improve performance"
+        },
+        {
+          "name": "Test-Time Correction (TTC)",
+          "brief": "A training-free method to correct errors in long video generation"
+        },
+        {
+          "name": "Distilled Autoregressive Diffusion Models",
+          "brief": "A type of model that facilitates real-time short video synthesis"
+        },
+        {
+          "name": "Long Video Generation",
+          "brief": "The task of generating videos of extended lengths"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of generative models and autoregressive diffusion models"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand video generation and analysis"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of model optimization and adaptation"
+        },
+        {
+          "topic": "Signal Processing",
+          "why_needed": "To understand the concepts of video sequences and temporal dependencies"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-08"
   }
 }
