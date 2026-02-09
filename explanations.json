@@ -16350,5 +16350,417 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-09"
+  },
+  "2602.06130": {
+    "title": "Self-Improving World Modelling with Latent Actions",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Latent Actions",
+          "brief": "Treating actions as hidden variables to improve world modelling"
+        },
+        {
+          "name": "Forward World Modelling (FWM)",
+          "brief": "Predicting next states based on current states and actions"
+        },
+        {
+          "name": "Inverse Dynamics Modelling (IDM)",
+          "brief": "Inferring actions from current and next states"
+        },
+        {
+          "name": "Variational Information Maximisation",
+          "brief": "Updating FWM to maximise mutual information between latent actions and next states"
+        },
+        {
+          "name": "ELBO Maximisation",
+          "brief": "Updating IDM to explain observed transitions using evidence lower bound"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "Training models using reward signals, specifically GRPO"
+        },
+        {
+          "name": "Self-Improvement Framework",
+          "brief": "Alternating between FWM and IDM to improve world modelling"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Understanding of ML fundamentals, including RL and deep learning"
+        },
+        {
+          "topic": "Probabilistic Modelling",
+          "why_needed": "Knowledge of probability theory and variational inference"
+        },
+        {
+          "topic": "World Modelling",
+          "why_needed": "Familiarity with internal modelling of the world and its importance in LLMs and VLMs"
+        },
+        {
+          "topic": "Latent Variable Models",
+          "why_needed": "Understanding of latent variable models and their applications"
+        },
+        {
+          "topic": "Optimisation Techniques",
+          "why_needed": "Knowledge of optimisation methods, including coordinate ascent and gradient-based methods"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-09"
+  },
+  "2602.04837": {
+    "title": "Group-Evolving Agents: Open-Ended Self-Improvement via Experience Sharing",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Open-Ended Self-Improvement",
+          "brief": "The ability of agents to autonomously modify their own structural designs to advance their capabilities"
+        },
+        {
+          "name": "Group-Evolving Agents (GEA)",
+          "brief": "A paradigm for open-ended self-improvements that treats a group of agents as the fundamental evolutionary unit"
+        },
+        {
+          "name": "Experience Sharing",
+          "brief": "The ability of agents to share and reuse experiences within a group to improve their capabilities"
+        },
+        {
+          "name": "Evolutionary Algorithms",
+          "brief": "Algorithms that use principles of evolution to search for optimal solutions"
+        },
+        {
+          "name": "Tree-Structured Evolution",
+          "brief": "A type of evolutionary algorithm that uses a tree-like structure to represent the evolution of agents"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context and applications of open-ended self-improvement"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of evolutionary algorithms and experience sharing"
+        },
+        {
+          "topic": "Evolutionary Computation",
+          "why_needed": "To understand the principles of evolutionary algorithms and their applications"
+        },
+        {
+          "topic": "Software Engineering",
+          "why_needed": "To understand the context of coding benchmarks and the evaluation of GEA"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To understand the fundamental concepts of algorithms, data structures, and software design"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-09"
+  },
+  "2602.06129": {
+    "title": "Urban Spatio-Temporal Foundation Models for Climate-Resilient Housing: Scaling Diffusion Transformers for Disaster Risk Prediction",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion Transformers",
+          "brief": "A type of deep learning model that integrates heterogeneous data to forecast climate-risk indicators"
+        },
+        {
+          "name": "Spatio-Temporal Modeling",
+          "brief": "A technique to analyze data with spatial and temporal components to understand urban dynamics"
+        },
+        {
+          "name": "Climate-Resilient Housing",
+          "brief": "The ability of housing to withstand and recover from climate-related disasters"
+        },
+        {
+          "name": "Transportation-Network Structure",
+          "brief": "The organization and accessibility of transportation networks in urban areas"
+        },
+        {
+          "name": "Intelligent Vehicles",
+          "brief": "Vehicles that use artificial intelligence and sensors to navigate and respond to emergency situations"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the diffusion-transformer framework and its applications"
+        },
+        {
+          "topic": "Urban Planning",
+          "why_needed": "To comprehend the importance of climate-resilient housing and transportation-network structure"
+        },
+        {
+          "topic": "Climate Science",
+          "why_needed": "To understand the impact of climate hazards on urban areas and the need for climate-risk prediction"
+        },
+        {
+          "topic": "Geographic Information Systems (GIS)",
+          "why_needed": "To work with spatial data and understand the integration of heterogeneous urban data"
+        },
+        {
+          "topic": "Probability and Statistics",
+          "why_needed": "To understand the probabilistic risk trajectories and uncertainty-aware accessibility layers"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6-12 months"
+    },
+    "last_updated": "2026-02-09"
+  },
+  "2602.01734": {
+    "title": "MSign: An Optimizer Preventing Training Instability in Large Language Models via Stable Rank Restoration",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models designed to process and understand human language"
+        },
+        {
+          "name": "Training Instability",
+          "brief": "Phenomenon where model training fails due to sudden gradient explosions"
+        },
+        {
+          "name": "Stable Rank Restoration",
+          "brief": "Technique to restore model stability by maintaining a stable rank in weight matrices"
+        },
+        {
+          "name": "Matrix Sign Operations",
+          "brief": "Mathematical operations used to restore stable rank in matrices"
+        },
+        {
+          "name": "Optimizer (MSign)",
+          "brief": "Proposed optimizer designed to prevent training instability in LLMs"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of large language models and training processes"
+        },
+        {
+          "topic": "Linear Algebra",
+          "why_needed": "To comprehend matrix operations, norms, and rank concepts"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To understand the role of optimizers in model training and the proposed MSign optimizer"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concept of model training, gradient descent, and instability issues"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-09"
+  },
+  "2602.05711": {
+    "title": "OmniMoE: An Efficient MoE by Orchestrating Atomic Experts at Scale",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Mixture-of-Experts (MoE) architectures",
+          "brief": "A type of neural network architecture that combines multiple expert models to improve performance"
+        },
+        {
+          "name": "Atomic Experts",
+          "brief": "A fine-grained expert specialization approach that enables vector-level processing"
+        },
+        {
+          "name": "System-algorithm co-design",
+          "brief": "A design approach that integrates both system and algorithm aspects to optimize performance"
+        },
+        {
+          "name": "Cartesian Product Router",
+          "brief": "A routing algorithm that reduces complexity by decomposing the index space"
+        },
+        {
+          "name": "Expert-Centric Scheduling",
+          "brief": "A scheduling approach that optimizes execution order to reduce memory access overhead"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Neural Networks",
+          "why_needed": "To understand the basics of MoE architectures and their applications"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the concepts of expert models, parameter efficiency, and routing complexity"
+        },
+        {
+          "topic": "Computer Architecture",
+          "why_needed": "To appreciate the system-algorithm co-design approach and its impact on hardware execution efficiency"
+        },
+        {
+          "topic": "Algorithm Design",
+          "why_needed": "To understand the trade-offs between granularity, routing complexity, and memory access"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-09"
+  },
+  "2602.06669": {
+    "title": "compar:IA: The French Government's LLM arena to collect French-language human prompts and preference data",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models that process and generate human-like language"
+        },
+        {
+          "name": "Reinforcement Learning from Human Feedback (RLHF)",
+          "brief": "A training method that uses human feedback to improve LLMs"
+        },
+        {
+          "name": "Direct Preference Optimization (DPO)",
+          "brief": "A training method that optimizes LLMs based on human preferences"
+        },
+        {
+          "name": "Human-Computer Interaction",
+          "brief": "The study of how humans interact with computers and AI systems"
+        },
+        {
+          "name": "Natural Language Processing (NLP)",
+          "brief": "A subfield of AI that deals with the interaction between computers and humans in natural language"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context and applications of LLMs"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the training methods used for LLMs, such as RLHF and DPO"
+        },
+        {
+          "topic": "Human-Computer Interaction",
+          "why_needed": "To appreciate the importance of human feedback and preference data in LLM development"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the challenges and opportunities of working with non-English languages"
+        },
+        {
+          "topic": "Data Privacy and Ethics",
+          "why_needed": "To recognize the importance of privacy-preserving methods in data collection and usage"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-09"
+  },
+  "2602.06883": {
+    "title": "Vision Transformer Finetuning Benefits from Non-Smooth Components",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision Transformer",
+          "brief": "A type of neural network architecture that applies transformer models to vision tasks"
+        },
+        {
+          "name": "Finetuning",
+          "brief": "The process of adjusting a pre-trained model to fit a new task or dataset"
+        },
+        {
+          "name": "Plasticity",
+          "brief": "A measure of how sensitive a model's outputs are to changes in its inputs"
+        },
+        {
+          "name": "Smoothness",
+          "brief": "A measure of how stable a model's outputs are to small changes in its inputs"
+        },
+        {
+          "name": "Transfer Learning",
+          "brief": "The process of applying a model trained on one task to a different task"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and transformer architectures"
+        },
+        {
+          "topic": "Transformer Models",
+          "why_needed": "To comprehend the specific architecture and components of vision transformers"
+        },
+        {
+          "topic": "Generalization and Adversarial Robustness",
+          "why_needed": "To appreciate the importance of smoothness and plasticity in machine learning models"
+        },
+        {
+          "topic": "Mathematical Analysis",
+          "why_needed": "To follow the theoretical analysis and derivations in the paper"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-09"
+  },
+  "2602.06570": {
+    "title": "Baichuan-M3: Modeling Clinical Inquiry for Reliable Medical Decision-Making",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models",
+          "brief": "AI models that process and generate human-like language"
+        },
+        {
+          "name": "Clinical Decision Support Systems",
+          "brief": "Systems that provide healthcare professionals with clinical decision-making support"
+        },
+        {
+          "name": "Natural Language Processing",
+          "brief": "Techniques for computers to understand and generate human language"
+        },
+        {
+          "name": "Deep Learning",
+          "brief": "A subset of machine learning that uses neural networks to analyze data"
+        },
+        {
+          "name": "Medical Informatics",
+          "brief": "The application of computer technology to healthcare and medicine"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning Fundamentals",
+          "why_needed": "To understand the training pipeline and model architecture of Baichuan-M3"
+        },
+        {
+          "topic": "Clinical Workflow and Decision-Making",
+          "why_needed": "To appreciate the systematic workflow of a physician and the limitations of existing systems"
+        },
+        {
+          "topic": "Natural Language Processing Techniques",
+          "why_needed": "To comprehend the proactive information acquisition and long-horizon reasoning capabilities of Baichuan-M3"
+        },
+        {
+          "topic": "Medical Terminology and Concepts",
+          "why_needed": "To understand the clinical context and applications of Baichuan-M3"
+        },
+        {
+          "topic": "Evaluation Metrics and Benchmarks",
+          "why_needed": "To interpret the empirical evaluations and comparisons with other models like GPT-5.2"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-09"
   }
 }
