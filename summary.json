@@ -1,108 +1,112 @@
 {
-  "date": "2026-02-08",
-  "generated_at": "2026-02-08T14:24:44Z",
-  "total_papers": 237,
-  "must_read_count": 11,
-  "notable_count": 26,
-  "daily_summary": "Today's top-scoring papers tackle some of the most pressing challenges in AI research, including the ability of video generators to decode implicit world rules, as explored in RISE-Video, and the limitations of language models in interactive tasks, as discussed in Failing to Explore. Meanwhile, papers like Infinite-World and InterPrior push the boundaries of interactive world models and generative control, respectively, with potential applications in areas like robotics and human-computer interaction. The presence of papers like PhysicsAgentABM and ProAct also highlights the growing interest in integrating physical and agentic reasoning into AI systems, which could have significant implications for fields like autonomous systems and decision-making under uncertainty.",
+  "date": "2026-02-09",
+  "generated_at": "2026-02-09T04:06:48Z",
+  "total_papers": 246,
+  "must_read_count": 10,
+  "notable_count": 27,
+  "daily_summary": "Today's top-scoring papers underscore significant advancements in AI research, particularly in areas such as world modeling, reasoning, and video understanding. Notably, papers like DreamDojo and Infinite-World push the boundaries of generalist robot world models and interactive world models, respectively, with implications for long-horizon planning and decision-making. Meanwhile, works like Thinking in Frames, RISE-Video, and PhysicsAgentABM demonstrate innovative approaches to video reasoning, world rule decoding, and physics-guided modeling, highlighting the rapid progress being made in these critical areas of AI research.",
   "weekly_trends": {
     "hot_topics": [
       {
-        "topic": "Machine Learning (cs.LG)",
-        "paper_count": 101,
-        "insight": "A significant number of papers focused on machine learning, with notable works like RISE-Video exploring video generators' ability to decode implicit world rules."
+        "topic": "Robotics and World Models",
+        "paper_count": 103,
+        "insight": "Research in cs.LG is dominating, with notable papers like DreamDojo and Infinite-World, which focus on generalist robot world models and scaling interactive world models to 1000-frame horizons."
       },
       {
-        "topic": "Artificial Intelligence (cs.AI)",
-        "paper_count": 75,
-        "insight": "Papers in this area, such as PhysicsAgentABM, showcased advancements in physics-guided generative agent-based modeling, highlighting the growing interest in integrating physical principles into AI systems."
+        "topic": "Computer Vision",
+        "paper_count": 44,
+        "insight": "cs.CV papers, such as Thinking in Frames and RISE-Video, are exploring video reasoning, visual context, and test-time scaling, indicating a growing interest in video-based AI applications."
       },
       {
-        "topic": "Computer Vision (cs.CV)",
-        "paper_count": 40,
-        "insight": "Research in computer vision, including works like Fast-SAM3D, which enables faster 3D reconstruction from images, continues to advance with applications in various domains."
+        "topic": "Natural Language Processing",
+        "paper_count": 33,
+        "insight": "cs.CL papers, including Self-Improving Multilingual Long Reasoning, are advancing multilingual reasoning and translation-reasoning integrated training, highlighting the importance of language understanding in AI research."
       }
     ],
     "key_developments": [
-      "The development of Infinite-World, which scales interactive world models to 1000-frame horizons via pose-free hierarchical memory, marks a significant step in long-term planning and decision-making in complex environments.",
-      "The introduction of V-Retrver, a system for evidence-driven agentic reasoning for universal multimodal retrieval, demonstrates progress in multimodal understanding and reasoning.",
-      "The release of UniAudio 2.0, a unified audio language model with text-aligned factorized audio tokenization, highlights advancements in audio processing and understanding."
+      "The development of generalist robot world models, as seen in DreamDojo, which learns from large-scale human videos.",
+      "The introduction of pose-free hierarchical memory in Infinite-World, enabling interactive world models to scale to 1000-frame horizons.",
+      "The integration of reinforcement learning with infinite-horizon reasoning, as demonstrated in InftyThink+, to improve efficiency and effectiveness."
     ],
     "emerging_trends": [
-      "There is a noticeable shift towards integrating physical principles and hierarchical memory structures into AI systems, as seen in papers like PhysicsAgentABM and Infinite-World, indicating a growing interest in more realistic and generalizable models.",
-      "Advancements in multimodal processing, such as the V-Retrver and UniAudio 2.0, suggest a trend towards more comprehensive and interactive AI systems that can handle diverse data types."
+      "There is a growing emphasis on developing AI models that can reason and learn from complex, dynamic environments, such as those found in video-based applications.",
+      "Researchers are increasingly exploring the intersection of language understanding, visual context, and reinforcement learning to create more sophisticated and generalizable AI systems."
     ],
-    "summary": "This week in AI research saw significant advancements across machine learning, artificial intelligence, and computer vision, with a focus on more realistic modeling, long-term planning, and multimodal understanding. Notable papers like RISE-Video, PhysicsAgentABM, and Infinite-World showcased the community's push towards more sophisticated and generalizable AI systems. Overall, the field is moving towards more integrated, physically informed, and interactive models, setting the stage for future breakthroughs in AI capabilities."
+    "summary": [
+      "This week in AI research, we saw significant advancements in robotics and world models, with papers like DreamDojo and Infinite-World pushing the boundaries of generalist robot capabilities.",
+      "Computer vision and natural language processing also made notable progress, with research focusing on video reasoning, visual context, and multilingual reasoning.",
+      "Overall, the field is shifting towards more complex, dynamic, and generalizable AI systems, with a growing emphasis on integrating multiple modalities and learning paradigms to achieve more human-like intelligence."
+    ]
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 187
+    "arXiv": 196
   },
   "tags": {
-    "cs.LG": 101,
-    "cs.AI": 75,
-    "cs.CV": 40,
-    "cs.CL": 35,
-    "stat.ML": 22,
-    "cs.RO": 5,
-    "cs.IT": 5,
-    "cs.HC": 4,
-    "cs.MA": 3,
-    "stat.ME": 3,
-    "cs.NE": 3,
-    "cs.IR": 3,
-    "cs.SE": 3,
-    "cs.CE": 2,
-    "cs.CR": 2,
-    "cs.DB": 2,
-    "cs.DC": 2,
-    "cs.GR": 2,
-    "cs.DL": 1,
-    "cs.ET": 1
+    "cs.LG": 103,
+    "cs.AI": 79,
+    "cs.CV": 44,
+    "cs.CL": 33,
+    "stat.ML": 17,
+    "cs.CR": 12,
+    "cs.HC": 7,
+    "cs.RO": 7,
+    "cs.NE": 5,
+    "cs.MA": 4,
+    "cs.SD": 3,
+    "cs.DC": 3,
+    "cs.LO": 2,
+    "cs.SE": 2,
+    "cs.GT": 2,
+    "cs.ET": 2,
+    "stat.ME": 2,
+    "cs.PL": 1,
+    "cs.IT": 1,
+    "cs.MM": 1
   },
   "institutions": {
     "MIT": 3,
-    "Max Planck": 1
+    "Mila": 1
   },
   "must_read_ids": [
-    "2602.05986",
-    "2602.05327",
-    "2602.06035",
-    "2602.05842",
-    "2601.21937",
-    "2602.06034",
     "2602.02393",
-    "2601.22345",
-    "2602.05293",
-    "2602.04683",
+    "2602.06949",
+    "2602.06036",
+    "2602.05986",
+    "2601.21037",
+    "2602.05940",
+    "2602.06960",
+    "2602.04789",
+    "2602.00298",
     "2602.06030"
   ],
   "notable_ids": [
-    "2602.05386",
-    "2602.06036",
+    "2601.22027",
+    "2602.02474",
     "2602.03338",
-    "2602.05216",
-    "2602.05115",
-    "2601.21037",
+    "2601.21937",
     "2602.05975",
     "2602.06040",
+    "2602.02016",
     "2602.05073",
+    "2602.06034",
+    "2602.05711",
+    "2602.05281",
+    "2602.05386",
+    "2602.06035",
+    "2602.04942",
+    "2602.05115",
+    "2602.04210",
+    "2602.03036",
+    "2602.05547",
     "2602.05933",
     "2602.05393",
-    "2602.05871",
-    "2601.22027",
-    "2602.06028",
-    "2602.04942",
-    "2602.04210",
-    "2602.04884",
-    "2602.02016",
-    "2602.05857",
-    "2602.05547",
-    "2602.05258",
-    "2602.01965",
-    "2602.04789",
-    "2601.23174",
-    "2602.05000",
-    "2602.02159"
+    "2602.06075",
+    "2601.22345",
+    "2602.05023",
+    "2602.04220",
+    "2602.04683",
+    "2602.01064",
+    "2602.06139"
   ]
 }
