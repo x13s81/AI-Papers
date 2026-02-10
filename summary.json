@@ -1,81 +1,110 @@
 {
   "date": "2026-02-10",
-  "generated_at": "2026-02-10T04:14:24Z",
-  "total_papers": 50,
-  "must_read_count": 11,
-  "notable_count": 22,
-  "daily_summary": "Today's top-scoring papers offer significant advancements in areas crucial to the development of more sophisticated AI systems, such as generalist robot world models, as seen in DreamDojo, and efficient quantization of large language models, as proposed in NanoQuant. These breakthroughs, alongside innovative approaches like ReMiT's RL-guided mid-training for iterative LLM evolution and OdysseyArena's benchmarking for long-horizon interactions, have the potential to reshape our understanding of AI reasoning, exploration, and self-improvement. By exploring the intersections of world models, reinforcement learning, and language models, as discussed in papers like When and How Much to Imagine and SeeUPO, researchers can gain a deeper insight into the complex dynamics of AI decision-making and its applications.",
+  "generated_at": "2026-02-10T14:55:30Z",
+  "total_papers": 238,
+  "must_read_count": 9,
+  "notable_count": 24,
+  "daily_summary": "Today's top-scoring papers underscore significant advancements in autonomous scientific discovery, causal reasoning, and efficient language modeling, with notable contributions from InternAgent-1.5 and Aster, which demonstrate substantial speedups in autonomous scientific discovery. Meanwhile, papers like CauScale and LatentChem push the boundaries of neural causal discovery and chemical reasoning, respectively, while LLaDA2.1 and NanoQuant showcase innovative approaches to accelerating text diffusion and quantizing large language models. These breakthroughs, alongside others like MotionCrafter and MOVA, collectively drive progress in key areas of AI research, warranting close attention from the academic community.",
   "weekly_trends": {
     "hot_topics": [
       {
-        "topic": "Reinforcement Learning and World Models",
-        "paper_count": 5,
-        "insight": "Research is advancing in areas like DreamDojo, which presents a generalist robot world model, and SeeUPO, which introduces sequence-level agentic-RL with convergence guarantees, indicating a growing interest in integrating reinforcement learning with world models for more robust and generalizable AI systems."
+        "topic": "Autonomous Scientific Discovery",
+        "paper_count": 2,
+        "insight": "Research is accelerating in autonomous scientific discovery, with papers like InternAgent-1.5 and Aster showcasing significant advancements, achieving up to 20x faster discovery rates than existing methods."
       },
       {
-        "topic": "Large Language Models (LLMs) Efficiency and Evolution",
+        "topic": "Language Models",
         "paper_count": 4,
-        "insight": "Papers like NanoQuant and ReMiT are focusing on the efficient quantization and iterative evolution of LLMs, highlighting the community's efforts to make these models more computationally efficient and adaptable over time."
+        "insight": "Language models continue to be a focal point, with developments such as Fundamental Reasoning Paradigms Induce Out-of-Domain Generalization in Language Models, LLaDA2.1, LatentChem, and NanoQuant, highlighting improvements in generalization, efficiency, and quantization."
       },
       {
-        "topic": "Multi-Objective Alignment and Reasoning",
-        "paper_count": 3,
-        "insight": "Works such as Outcome Accuracy is Not Enough and Uncovering Cross-Objective Interference in Multi-Objective Alignment are delving into the complexities of aligning reward models and managing cross-objective interference, suggesting a deeper exploration into the reasoning processes and ethical considerations of AI systems."
+        "topic": "Neural Causal Discovery and Generation",
+        "paper_count": 2,
+        "insight": "Advances in neural causal discovery and generation are evident with papers like CauScale and MOVA, demonstrating the ability to perform causal discovery at scale and generate synchronized video-audio content efficiently."
       }
     ],
     "key_developments": [
-      "The introduction of DreamDojo, a generalist robot world model from large-scale human videos, marks a significant step in robotics and world model research.",
-      "NanoQuant's approach to sub-1-bit quantization of large language models could significantly reduce computational requirements for AI models.",
-      "The development of OdysseyArena for benchmarking large language models underscores the need for comprehensive evaluation frameworks for AI systems."
+      "The introduction of InternAgent-1.5, a unified agentic framework for long-horizon autonomous scientific discovery, marks a significant step forward in AI-driven scientific research.",
+      "The development of NanoQuant, which achieves efficient sub-1-bit quantization of large language models, has important implications for deploying AI models in resource-constrained environments.",
+      "The emergence of f-GRPO and Beyond, focusing on divergence-based reinforcement learning algorithms for general LLM alignment, indicates growing interest in aligning language models with specific objectives and values."
     ],
     "emerging_trends": [
-      "There is a noticeable shift towards making AI systems, particularly large language models, more efficient and adaptable, with research focusing on quantization, iterative evolution, and robust world models.",
-      "The community is also placing greater emphasis on the ethical and alignment aspects of AI, including the development of more nuanced reward models and the mitigation of cross-objective interference."
+      "There is a noticeable shift towards more autonomous and efficient AI systems, with research focusing on scientific discovery, language model optimization, and causal discovery at scale.",
+      "Advancements in quantization, token editing, and reinforcement learning algorithms are poised to significantly impact the deployment and application of AI models across various domains."
     ],
-    "summary": "This week in AI research saw significant advancements in reinforcement learning, large language model efficiency, and multi-objective alignment. Papers like DreamDojo and NanoQuant highlighted innovations in world models and quantization techniques, respectively. The field is evolving towards more efficient, adaptable, and ethically aligned AI systems, with a growing focus on comprehensive benchmarking and the mitigation of interference in multi-objective scenarios."
+    "summary": [
+      "This week in AI research saw significant advancements in autonomous scientific discovery, with InternAgent-1.5 and Aster leading the charge.",
+      "Language models remain a vibrant area of research, with improvements in generalization, efficiency, and quantization, as evidenced by papers like Fundamental Reasoning Paradigms Induce Out-of-Domain Generalization in Language Models and NanoQuant.",
+      "The field is also witnessing a surge in interest in neural causal discovery and generation, with CauScale and MOVA showcasing the potential for AI in understanding and generating complex data, underscoring the rapid evolution of AI capabilities."
+    ]
   },
   "sources": {
-    "HuggingFace": 50
+    "HuggingFace": 50,
+    "arXiv": 188
   },
-  "tags": {},
+  "tags": {
+    "cs.LG": 90,
+    "cs.AI": 74,
+    "cs.CV": 44,
+    "cs.CL": 32,
+    "stat.ML": 12,
+    "cs.CY": 11,
+    "cs.CR": 10,
+    "cs.HC": 9,
+    "cs.IR": 9,
+    "cs.RO": 7,
+    "cs.SE": 5,
+    "cs.SI": 3,
+    "cs.SD": 3,
+    "cs.NE": 3,
+    "stat.ME": 3,
+    "cs.MA": 2,
+    "cs.NI": 2,
+    "cs.SC": 2,
+    "cs.ET": 2,
+    "cs.DS": 2
+  },
   "institutions": {
-    "MIT": 1
+    "Microsoft": 1,
+    "MIT": 1,
+    "Meta AI": 1,
+    "Apple": 1
   },
   "must_read_ids": [
-    "2602.06949",
-    "2602.05843",
-    "2602.05281",
-    "2602.06869",
-    "2602.04837",
-    "2602.05711",
-    "2602.04649",
-    "2602.03075",
-    "2602.06554",
+    "2602.08990",
+    "2602.08794",
+    "2602.08676",
+    "2602.07075",
+    "2602.08658",
     "2602.06694",
-    "2602.08236"
+    "2602.08961",
+    "2602.08629",
+    "2602.07040"
   ],
   "notable_ids": [
-    "2602.06570",
-    "2602.01734",
-    "2602.06291",
-    "2602.05940",
-    "2602.05847",
-    "2602.06540",
-    "2601.21363",
-    "2602.06883",
-    "2602.06181",
-    "2602.06129",
+    "2602.08222",
+    "2602.07845",
+    "2602.07962",
+    "2602.07055",
+    "2602.09022",
+    "2602.04649",
+    "2602.08808",
+    "2602.08829",
+    "2602.05708",
+    "2602.07491",
+    "2602.05946",
     "2602.07026",
-    "2601.18415",
-    "2602.06130",
-    "2602.07075",
-    "2602.06139",
-    "2602.06454",
-    "2602.05367",
-    "2602.06566",
-    "2602.06724",
-    "2602.04454",
-    "2602.01064",
-    "2602.06964"
+    "2602.09007",
+    "2602.08439",
+    "2602.06855",
+    "2602.03784",
+    "2602.08236",
+    "2601.21363",
+    "2602.08145",
+    "2602.07803",
+    "2602.07775",
+    "2602.05929",
+    "2602.08818",
+    "2602.02285"
   ]
 }
