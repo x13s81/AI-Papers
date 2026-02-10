@@ -16762,5 +16762,309 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-09"
+  },
+  "2602.06694": {
+    "title": "NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Post-Training Quantization (PTQ)",
+          "brief": "A technique to reduce the precision of model weights after training to improve efficiency"
+        },
+        {
+          "name": "Low-Rank Binary Factorization",
+          "brief": "A method to approximate a matrix using a low-rank binary representation"
+        },
+        {
+          "name": "Alternating Direction Method of Multipliers (ADMM)",
+          "brief": "An optimization algorithm used to solve constrained optimization problems"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "A type of artificial intelligence model designed to process and understand human language"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the context and applications of large language models and quantization techniques"
+        },
+        {
+          "topic": "Linear Algebra",
+          "why_needed": "To comprehend the low-rank binary factorization and ADMM algorithm"
+        },
+        {
+          "topic": "Optimization Methods",
+          "why_needed": "To understand the ADMM algorithm and its application in quantization"
+        },
+        {
+          "topic": "Computer Architecture",
+          "why_needed": "To appreciate the implications of model compression on hardware and deployment"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-10"
+  },
+  "2602.06869": {
+    "title": "Uncovering Cross-Objective Interference in Multi-Objective Alignment",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multi-Objective Alignment",
+          "brief": "A technique used in large language models to optimize multiple objectives simultaneously"
+        },
+        {
+          "name": "Cross-Objective Interference",
+          "brief": "A phenomenon where improving one objective causes others to degrade"
+        },
+        {
+          "name": "Scalarization Algorithms",
+          "brief": "Methods used to combine multiple objectives into a single objective function"
+        },
+        {
+          "name": "Covariance Law",
+          "brief": "A mathematical principle describing the relationship between objective rewards and the scalarized score"
+        },
+        {
+          "name": "Covariance Targeted Weight Adaptation (CTWA)",
+          "brief": "A method proposed to mitigate cross-objective interference by maintaining positive covariance between objective rewards and the training signal"
+        },
+        {
+          "name": "Polyak--Łojasiewicz Condition",
+          "brief": "A mathematical condition used to establish global convergence in non-convex optimization"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context and application of multi-objective alignment"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To comprehend scalarization algorithms and the Polyak--Łojasiewicz condition"
+        },
+        {
+          "topic": "Linear Algebra and Covariance",
+          "why_needed": "To understand the mathematical principles underlying the covariance law and CTWA"
+        },
+        {
+          "topic": "Machine Learning and Deep Learning",
+          "why_needed": "To appreciate the challenges and limitations of multi-objective optimization in LLMs"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-10"
+  },
+  "2602.03075": {
+    "title": "ReMiT: RL-Guided Mid-Training for Iterative LLM Evolution",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models designed to process and understand human language"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A type of machine learning where models learn by interacting with an environment and receiving rewards or penalties"
+        },
+        {
+          "name": "Mid-Training (Annealing) Phase",
+          "brief": "A critical phase in the training process of LLMs where the learning rate decays rapidly"
+        },
+        {
+          "name": "ReMiT (Reinforcement Learning-Guided Mid-Training)",
+          "brief": "A novel approach that leverages RL-tuned models to dynamically reweight tokens during the mid-training phase"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the training process of LLMs and the role of mid-training phase"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the applications and challenges of LLMs"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the fundamentals of reinforcement learning and its integration with LLMs"
+        },
+        {
+          "topic": "Mathematics and Code Reasoning",
+          "why_needed": "To understand the benchmarks and evaluation metrics used in the paper"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-10"
+  },
+  "2602.06554": {
+    "title": "SeeUPO: Sequence-Level Agentic-RL with Convergence Guarantees",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A machine learning paradigm for training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Agentic-RL",
+          "brief": "A type of RL that focuses on training agents to achieve goals in multi-turn scenarios"
+        },
+        {
+          "name": "Convergence Guarantees",
+          "brief": "Mathematical proofs that an algorithm will converge to an optimal solution"
+        },
+        {
+          "name": "Policy Update Mechanisms",
+          "brief": "Methods for updating an agent's policy in RL, such as REINFORCE and PPO"
+        },
+        {
+          "name": "Advantage Estimation Methods",
+          "brief": "Techniques for estimating the advantage of taking a particular action in RL, such as Group Relative Advantage Estimation (GRAE)"
+        },
+        {
+          "name": "Multi-Turn Scenarios",
+          "brief": "Environments where agents interact with each other over multiple turns or episodes"
+        },
+        {
+          "name": "Sequence-Level Agentic-RL",
+          "brief": "A type of RL that focuses on training agents to make decisions at the sequence level, rather than individual actions"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Reinforcement Learning Fundamentals",
+          "why_needed": "To understand the basics of RL and its applications"
+        },
+        {
+          "topic": "Markov Decision Processes (MDPs)",
+          "why_needed": "To understand the mathematical framework underlying RL"
+        },
+        {
+          "topic": "Multi-Agent Systems",
+          "why_needed": "To understand how multiple agents interact with each other in complex environments"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To understand the mathematical techniques used to optimize RL algorithms"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the neural network architectures used in RL, such as large language models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-10"
+  },
+  "2602.06540": {
+    "title": "AgentCPM-Report: Interleaving Drafting and Deepening for Open-Ended Deep Research",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "AgentCPM-Report",
+          "brief": "A lightweight framework for generating deep research reports"
+        },
+        {
+          "name": "Writing As Reasoning Policy (WARP)",
+          "brief": "A policy that enables models to dynamically revise outlines during report generation"
+        },
+        {
+          "name": "Multi-Stage Agentic Training",
+          "brief": "A training strategy for equipping small models with the capability to generate deep research reports"
+        },
+        {
+          "name": "Evidence-Based Drafting",
+          "brief": "A process of drafting reports based on evidence"
+        },
+        {
+          "name": "Reasoning-Driven Deepening",
+          "brief": "A process of refining knowledge and outlines through reasoning"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and challenges of generating deep research reports"
+        },
+        {
+          "topic": "Language Models",
+          "why_needed": "To comprehend the limitations of current language models in generating deep research reports"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of the 8B-parameter deep research agent"
+        },
+        {
+          "topic": "Reinforcement Learning (RL)",
+          "why_needed": "To understand the Multi-Stage Agentic Training strategy"
+        },
+        {
+          "topic": "Human Writing Process",
+          "why_needed": "To appreciate the inspiration behind the AgentCPM-Report framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-10"
+  },
+  "2601.21363": {
+    "title": "Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A subfield of machine learning that involves training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Proximal Policy Optimization (PPO)",
+          "brief": "An on-policy RL algorithm that enables robust training via large-scale parallel simulation"
+        },
+        {
+          "name": "Off-policy RL",
+          "brief": "A type of RL that allows learning from experiences gathered without following the same policy used for deployment"
+        },
+        {
+          "name": "Model-based RL",
+          "brief": "A type of RL that involves learning a model of the environment and using it to make decisions"
+        },
+        {
+          "name": "Soft Actor-Critic (SAC)",
+          "brief": "An off-policy RL algorithm that combines policy-based and value-based methods"
+        },
+        {
+          "name": "Humanoid Control",
+          "brief": "The application of RL to control humanoid robots"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the basics of RL and its applications"
+        },
+        {
+          "topic": "Robotics",
+          "why_needed": "To understand the challenges and requirements of humanoid control"
+        },
+        {
+          "topic": "Linear Algebra and Calculus",
+          "why_needed": "To understand the mathematical formulations of RL algorithms"
+        },
+        {
+          "topic": "Programming (e.g., Python)",
+          "why_needed": "To implement and experiment with RL algorithms"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6-12 months"
+    },
+    "last_updated": "2026-02-10"
   }
 }
