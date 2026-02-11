@@ -1,110 +1,103 @@
 {
-  "date": "2026-02-10",
-  "generated_at": "2026-02-10T14:55:30Z",
-  "total_papers": 238,
-  "must_read_count": 9,
+  "date": "2026-02-11",
+  "generated_at": "2026-02-11T04:11:32Z",
+  "total_papers": 242,
+  "must_read_count": 11,
   "notable_count": 24,
-  "daily_summary": "Today's top-scoring papers underscore significant advancements in autonomous scientific discovery, causal reasoning, and efficient language modeling, with notable contributions from InternAgent-1.5 and Aster, which demonstrate substantial speedups in autonomous scientific discovery. Meanwhile, papers like CauScale and LatentChem push the boundaries of neural causal discovery and chemical reasoning, respectively, while LLaDA2.1 and NanoQuant showcase innovative approaches to accelerating text diffusion and quantizing large language models. These breakthroughs, alongside others like MotionCrafter and MOVA, collectively drive progress in key areas of AI research, warranting close attention from the academic community.",
+  "daily_summary": "Today's top-scoring papers tackle critical challenges in AI research, including mitigating copyright risks and promoting out-of-domain generalization in language models, as seen in \"Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model\" and \"Fundamental Reasoning Paradigms Induce Out-of-Domain Generalization in Language Models\". Meanwhile, papers like \"CauScale: Neural Causal Discovery at Scale\" and \"Reasoning-Augmented Representations for Multimodal Retrieval\" push the boundaries of causal discovery and multimodal understanding. These advancements, along with innovations in reinforcement learning and embodied AI, such as \"SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning\" and \"RLinf-USER: A Unified and Extensible System for Real-World Online Policy Learning in Embodied AI\", have significant implications for the development of more robust, generalizable, and aligned AI systems.",
   "weekly_trends": {
     "hot_topics": [
       {
-        "topic": "Autonomous Scientific Discovery",
-        "paper_count": 2,
-        "insight": "Research is accelerating in autonomous scientific discovery, with papers like InternAgent-1.5 and Aster showcasing significant advancements, achieving up to 20x faster discovery rates than existing methods."
-      },
-      {
         "topic": "Language Models",
-        "paper_count": 4,
-        "insight": "Language models continue to be a focal point, with developments such as Fundamental Reasoning Paradigms Induce Out-of-Domain Generalization in Language Models, LLaDA2.1, LatentChem, and NanoQuant, highlighting improvements in generalization, efficiency, and quantization."
+        "paper_count": 71,
+        "insight": "Research in language models continues to thrive, with papers like 'Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model' and 'Fundamental Reasoning Paradigms Induce Out-of-Domain Generalization in Language Models' pushing the boundaries of language understanding and generation."
       },
       {
-        "topic": "Neural Causal Discovery and Generation",
-        "paper_count": 2,
-        "insight": "Advances in neural causal discovery and generation are evident with papers like CauScale and MOVA, demonstrating the ability to perform causal discovery at scale and generate synchronized video-audio content efficiently."
+        "topic": "Computer Vision",
+        "paper_count": 64,
+        "insight": "Computer vision remains a vibrant area, with advancements in image and video processing, as seen in papers like 'Covo-Audio Technical Report' which explores multimodal processing."
+      },
+      {
+        "topic": "Machine Learning",
+        "paper_count": 78,
+        "insight": "Machine learning fundamentals are being re-examined and improved, with 'CauScale: Neural Causal Discovery at Scale' offering insights into causal discovery and 'f-GRPO and Beyond: Divergence-Based Reinforcement Learning Algorithms for General LLM Alignment' advancing reinforcement learning techniques."
       }
     ],
     "key_developments": [
-      "The introduction of InternAgent-1.5, a unified agentic framework for long-horizon autonomous scientific discovery, marks a significant step forward in AI-driven scientific research.",
-      "The development of NanoQuant, which achieves efficient sub-1-bit quantization of large language models, has important implications for deploying AI models in resource-constrained environments.",
-      "The emergence of f-GRPO and Beyond, focusing on divergence-based reinforcement learning algorithms for general LLM alignment, indicates growing interest in aligning language models with specific objectives and values."
+      "The introduction of 'Anchored Decoding' for reducing copyright risk in language models",
+      "Advancements in causal discovery with 'CauScale: Neural Causal Discovery at Scale'",
+      "The development of 'SHARP: Social Harm Analysis via Risk Profiles' for measuring inequities in large language models"
     ],
-    "emerging_trends": [
-      "There is a noticeable shift towards more autonomous and efficient AI systems, with research focusing on scientific discovery, language model optimization, and causal discovery at scale.",
-      "Advancements in quantization, token editing, and reinforcement learning algorithms are poised to significantly impact the deployment and application of AI models across various domains."
-    ],
-    "summary": [
-      "This week in AI research saw significant advancements in autonomous scientific discovery, with InternAgent-1.5 and Aster leading the charge.",
-      "Language models remain a vibrant area of research, with improvements in generalization, efficiency, and quantization, as evidenced by papers like Fundamental Reasoning Paradigms Induce Out-of-Domain Generalization in Language Models and NanoQuant.",
-      "The field is also witnessing a surge in interest in neural causal discovery and generation, with CauScale and MOVA showcasing the potential for AI in understanding and generating complex data, underscoring the rapid evolution of AI capabilities."
-    ]
+    "emerging_trends": "There is a noticeable shift towards enhancing the reasoning capabilities of AI models, as seen in 'Fundamental Reasoning Paradigms Induce Out-of-Domain Generalization in Language Models' and 'Reasoning-Augmented Representations for Multimodal Retrieval'. Additionally, the integration of reinforcement learning with skill augmentation, such as in 'SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning', is gaining traction.",
+    "summary": "This week in AI research saw significant advancements in language models, computer vision, and machine learning, with a focus on improving reasoning, reducing risks, and enhancing performance. Papers like 'Anchored Decoding' and 'CauScale' highlight the push towards more responsible and capable AI systems. The field is also witnessing a trend towards multimodal processing and the integration of reinforcement learning with other techniques to achieve more sophisticated AI behaviors."
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 188
+    "arXiv": 192
   },
   "tags": {
-    "cs.LG": 90,
-    "cs.AI": 74,
-    "cs.CV": 44,
-    "cs.CL": 32,
+    "cs.LG": 78,
+    "cs.AI": 71,
+    "cs.CV": 64,
+    "cs.CL": 45,
     "stat.ML": 12,
-    "cs.CY": 11,
-    "cs.CR": 10,
-    "cs.HC": 9,
-    "cs.IR": 9,
+    "cs.IR": 8,
     "cs.RO": 7,
-    "cs.SE": 5,
-    "cs.SI": 3,
-    "cs.SD": 3,
-    "cs.NE": 3,
-    "stat.ME": 3,
-    "cs.MA": 2,
-    "cs.NI": 2,
-    "cs.SC": 2,
+    "cs.CR": 5,
+    "cs.HC": 5,
+    "stat.ME": 4,
+    "cs.CY": 4,
+    "cs.SD": 2,
+    "cs.MM": 2,
+    "cs.NE": 2,
     "cs.ET": 2,
-    "cs.DS": 2
+    "cs.MA": 1,
+    "cs.GR": 1,
+    "cs.GT": 1,
+    "cs.SI": 1,
+    "cs.NI": 1
   },
   "institutions": {
-    "Microsoft": 1,
-    "MIT": 1,
-    "Meta AI": 1,
-    "Apple": 1
+    "MIT": 3,
+    "Amazon": 1
   },
   "must_read_ids": [
-    "2602.08990",
-    "2602.08794",
-    "2602.08676",
-    "2602.07075",
     "2602.08658",
-    "2602.06694",
-    "2602.08961",
+    "2602.07120",
     "2602.08629",
-    "2602.07040"
+    "2602.07837",
+    "2602.08234",
+    "2602.10063",
+    "2602.09823",
+    "2601.21235",
+    "2602.07125",
+    "2602.05946",
+    "2602.02285"
   ],
   "notable_ids": [
     "2602.08222",
-    "2602.07845",
-    "2602.07962",
-    "2602.07055",
-    "2602.09022",
-    "2602.04649",
-    "2602.08808",
-    "2602.08829",
-    "2602.05708",
-    "2602.07491",
-    "2602.05946",
-    "2602.07026",
-    "2602.09007",
-    "2602.08439",
     "2602.06855",
+    "2602.00169",
+    "2602.08321",
+    "2602.07274",
     "2602.03784",
-    "2602.08236",
-    "2601.21363",
-    "2602.08145",
-    "2602.07803",
-    "2602.07775",
-    "2602.05929",
+    "2602.04208",
+    "2602.10102",
+    "2602.09849",
+    "2602.07153",
+    "2602.10116",
+    "2602.07491",
+    "2602.09082",
+    "2602.09007",
+    "2602.08344",
+    "2602.09782",
+    "2602.07080",
+    "2602.06600",
+    "2602.10104",
+    "2602.09024",
+    "2602.05708",
     "2602.08818",
-    "2602.02285"
+    "2602.10098",
+    "2602.04908"
   ]
 }
