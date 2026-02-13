@@ -19014,5 +19014,289 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-13"
+  },
+  "2602.11748": {
+    "title": "Think Longer to Explore Deeper: Learn to Explore In-Context via Length-Incentivized Reinforcement Learning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "In-Context Exploration",
+          "brief": "The ability of models to generate, verify, and refine multiple reasoning hypotheses within a single continuous context"
+        },
+        {
+          "name": "State Coverage theory",
+          "brief": "A theory that explains how models can achieve broader state coverage by generating longer reasoning trajectories"
+        },
+        {
+          "name": "Shallow Exploration Trap",
+          "brief": "A phenomenon where the probability of sampling longer reasoning sequences decays exponentially during autoregressive generation"
+        },
+        {
+          "name": "Length-Incentivized Exploration",
+          "brief": "A method that encourages models to explore more by using a length-based reward coupled with a redundancy penalty"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A type of machine learning that involves training models to make decisions based on rewards or penalties"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of autoregressive generation and reinforcement learning"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the context of in-context exploration and its applications"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the basics of model training and evaluation"
+        },
+        {
+          "topic": "State Space Theory",
+          "why_needed": "To understand the concept of state coverage and its importance in exploration"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-13"
+  },
+  "2602.12262": {
+    "title": "T3D: Few-Step Diffusion Language Models via Trajectory Self-Distillation with Direct Discriminative Optimization",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion Large Language Models (DLLMs)",
+          "brief": "Language models that enable fast text generation by decoding multiple tokens in parallel"
+        },
+        {
+          "name": "Trajectory Self-Distillation",
+          "brief": "A framework that improves few-step decoding by distilling the model's own generative trajectories"
+        },
+        {
+          "name": "Direct Discriminative Optimization (DDO)",
+          "brief": "A reverse-KL objective that promotes mode-seeking distillation and encourages the student to concentrate on high-probability teacher modes"
+        },
+        {
+          "name": "Few-Step Decoding",
+          "brief": "A technique that reduces the number of refinement steps in language models to improve inference efficiency"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Language Models",
+          "why_needed": "To understand the context and applications of DLLMs"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the concepts of self-distillation, DDO, and mode-seeking"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To appreciate the challenges and opportunities in text generation and language modeling"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To understand the role of DDO in promoting efficient decoding"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-13"
+  },
+  "2602.11683": {
+    "title": "ThinkRouter: Efficient Reasoning via Routing Thinking between Latent and Discrete Spaces",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Latent Reasoning",
+          "brief": "A method of improving reasoning efficiency by using continuous representations in a latent space"
+        },
+        {
+          "name": "Discrete Token Space",
+          "brief": "A space where thinking trajectories are represented as discrete tokens"
+        },
+        {
+          "name": "Confidence-Aware Routing",
+          "brief": "A mechanism that routes thinking between latent and discrete spaces based on model confidence"
+        },
+        {
+          "name": "ThinkRouter",
+          "brief": "A proposed inference-time confidence-aware routing mechanism for efficient reasoning"
+        },
+        {
+          "name": "STEM Reasoning and Coding Benchmarks",
+          "brief": "Benchmarks used to evaluate the performance of ThinkRouter"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of latent space, discrete token space, and model confidence"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the application of ThinkRouter in STEM reasoning and coding benchmarks"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of model training, evaluation, and optimization"
+        },
+        {
+          "topic": "Mathematics and Logic",
+          "why_needed": "To understand the underlying mathematical and logical concepts used in ThinkRouter"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-13"
+  },
+  "2602.12099": {
+    "title": "GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Language-Action (VLA) Models",
+          "brief": "Models that predict multi-step action chunks from current observations"
+        },
+        {
+          "name": "World Model-Based Reinforcement Learning",
+          "brief": "A learning approach that utilizes pre-trained world models for robust spatiotemporal reasoning and future prediction"
+        },
+        {
+          "name": "Reinforcement Learning via World Model-Conditioned Policy (RAMP)",
+          "brief": "A method that integrates world models with reinforcement learning for cross-task adaptation"
+        },
+        {
+          "name": "Robotic Manipulation",
+          "brief": "The use of robots to perform complex tasks that require manipulation of objects"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of VLA models and world models"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To comprehend the concept of learning from trial and error and the role of world models in reinforcement learning"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand how VLA models process visual observations and predict actions"
+        },
+        {
+          "topic": "Robotics",
+          "why_needed": "To appreciate the application of VLA models and world models in robotic manipulation tasks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-02-13"
+  },
+  "2602.10367": {
+    "title": "LiveMedBench: A Contamination-Free Medical Benchmark for LLMs with Automated Rubric Evaluation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models that process and generate human-like language"
+        },
+        {
+          "name": "Medical Benchmarking",
+          "brief": "Evaluating the performance of LLMs in clinical settings"
+        },
+        {
+          "name": "Data Contamination",
+          "brief": "The issue of test data being inadvertently used in model training"
+        },
+        {
+          "name": "Temporal Misalignment",
+          "brief": "The problem of medical knowledge evolving faster than model updates"
+        },
+        {
+          "name": "Clinical Curation Framework",
+          "brief": "A framework for filtering and validating clinical data"
+        },
+        {
+          "name": "Automated Rubric-based Evaluation",
+          "brief": "A method for evaluating LLM performance using case-specific criteria"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand how LLMs work and their applications"
+        },
+        {
+          "topic": "Medical Informatics",
+          "why_needed": "To comprehend the clinical context and the importance of accurate medical evaluations"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concepts of model training, testing, and evaluation"
+        },
+        {
+          "topic": "Clinical Decision Support Systems",
+          "why_needed": "To understand the role of LLMs in high-stakes clinical settings"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-13"
+  },
+  "2602.10106": {
+    "title": "EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Egocentric Demonstration",
+          "brief": "Using human demonstrations from a first-person perspective to learn robot control policies"
+        },
+        {
+          "name": "Loco-Manipulation",
+          "brief": "The ability of a robot to both locomote and manipulate objects in its environment"
+        },
+        {
+          "name": "Embodiment Gap",
+          "brief": "The differences in physical morphology and viewpoint between humans and robots"
+        },
+        {
+          "name": "View Alignment",
+          "brief": "Techniques to reduce visual domain discrepancies between human and robot perspectives"
+        },
+        {
+          "name": "Action Alignment",
+          "brief": "Methods to map human motions into a unified action space for humanoid control"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Robotics",
+          "why_needed": "Understanding of robot control, locomotion, and manipulation"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Knowledge of visual perception, camera systems, and image processing"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Familiarity with policy learning, reinforcement learning, and deep learning"
+        },
+        {
+          "topic": "Human-Robot Interaction",
+          "why_needed": "Understanding of human motion, behavior, and interaction with robots"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-13"
   }
 }
