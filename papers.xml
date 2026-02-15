@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-<title>AI Papers - 2026-02-14</title>
+<title>AI Papers - 2026-02-15</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-02-14 - 235 papers</description>
-<lastBuildDate>Sat, 14 Feb 2026 14:23:30 +0000</lastBuildDate>
+<description>AI papers as of 2026-02-15 - 235 papers</description>
+<lastBuildDate>Sun, 15 Feb 2026 14:23:55 +0000</lastBuildDate>
+<item>
+<title><![CDATA[DeepGen 1.0: A Lightweight Unified Multimodal Model for Advancing Image Generation and Editing]]></title>
+<link>https://huggingface.co/papers/2602.12205</link>
+<guid>2602.12205</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Dianyi Wang, Ruihang Li, Feng Han, Chaofan Ma, Wei Song
+Institution: 
+Published: 2026-02-12
+Score: 9/10
+Citations: 0
+Upvotes: 73
+GitHub: 
+Stars: 0
+
+Current unified multimodal models for image generation and editing typically rely on massive parameter scales (e.g., >10B), entailing prohibitive training costs and deployment footprints. In this work, we present DeepGen 1.0, a lightweight 5B unified model that achieves comprehensive capabilities competitive with or surpassing much larger counterparts. To overcome the limitations of compact models in semantic understanding and fine-grained control, we introduce Stacked Channel Bridging (SCB), a deep alignment framework that extracts hierarchical features from multiple VLM layers and fuses them with learnable 'think tokens' to provide the generative backbone with structured, reasoning-rich guidance. We further design a data-centric training strategy spanning three progressive stages: (1) Alignment Pre-training on large-scale image-text pairs and editing triplets to synchronize VLM and DiT representations, (2) Joint Supervised Fine-tuning on a high-quality mixture of generation, editing, and reasoning tasks to foster omni-capabilities, and (3) Reinforcement Learning with MR-GRPO, which leverages a mixture of reward functions and supervision signals, resulting in substantial gains in generation quality and alignment with human preferences, while maintaining stable training progress and avoiding visual artifacts. Despite being trained on only ~50M samples, DeepGen 1.0 achieves leading performance across diverse benchmarks, surpassing the 80B HunyuanImage by 28% on WISE and the 27B Qwen-Image-Edit by 37% on UniREditBench. By open-sourcing our training code, weights, and datasets, we provide an efficient, high-performance alternative to democratize unified multimodal research.]]></description>
+<pubDate>Thu, 12 Feb 2026 17:44:24 +0000</pubDate>
+</item>
 <item>
 <title><![CDATA[Voxtral Realtime]]></title>
 <link>https://huggingface.co/papers/2602.11298</link>
@@ -16,30 +34,12 @@ Institution:
 Published: 2026-02-11
 Score: 9/10
 Citations: 0
-Upvotes: 6
+Upvotes: 12
 GitHub: 
 Stars: 0
 
 We introduce Voxtral Realtime, a natively streaming automatic speech recognition model that matches offline transcription quality at sub-second latency. Unlike approaches that adapt offline models through chunking or sliding windows, Voxtral Realtime is trained end-to-end for streaming, with explicit alignment between audio and text streams. Our architecture builds on the Delayed Streams Modeling framework, introducing a new causal audio encoder and Ada RMS-Norm for improved delay conditioning. We scale pretraining to a large-scale dataset spanning 13 languages. At a delay of 480ms, Voxtral Realtime achieves performance on par with Whisper, the most widely deployed offline transcription system. We release the model weights under the Apache 2.0 license.]]></description>
 <pubDate>Wed, 11 Feb 2026 19:17:10 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[DeepGen 1.0: A Lightweight Unified Multimodal Model for Advancing Image Generation and Editing]]></title>
-<link>https://huggingface.co/papers/2602.12205</link>
-<guid>2602.12205</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Dianyi Wang, Ruihang Li, Feng Han, Chaofan Ma, Wei Song
-Institution: 
-Published: 2026-02-12
-Score: 8/10
-Citations: 0
-Upvotes: 67
-GitHub: 
-Stars: 0
-
-Current unified multimodal models for image generation and editing typically rely on massive parameter scales (e.g., >10B), entailing prohibitive training costs and deployment footprints. In this work, we present DeepGen 1.0, a lightweight 5B unified model that achieves comprehensive capabilities competitive with or surpassing much larger counterparts. To overcome the limitations of compact models in semantic understanding and fine-grained control, we introduce Stacked Channel Bridging (SCB), a deep alignment framework that extracts hierarchical features from multiple VLM layers and fuses them with learnable 'think tokens' to provide the generative backbone with structured, reasoning-rich guidance. We further design a data-centric training strategy spanning three progressive stages: (1) Alignment Pre-training on large-scale image-text pairs and editing triplets to synchronize VLM and DiT representations, (2) Joint Supervised Fine-tuning on a high-quality mixture of generation, editing, and reasoning tasks to foster omni-capabilities, and (3) Reinforcement Learning with MR-GRPO, which leverages a mixture of reward functions and supervision signals, resulting in substantial gains in generation quality and alignment with human preferences, while maintaining stable training progress and avoiding visual artifacts. Despite being trained on only ~50M samples, DeepGen 1.0 achieves leading performance across diverse benchmarks, surpassing the 80B HunyuanImage by 28% on WISE and the 27B Qwen-Image-Edit by 37% on UniREditBench. By open-sourcing our training code, weights, and datasets, we provide an efficient, high-performance alternative to democratize unified multimodal research.]]></description>
-<pubDate>Thu, 12 Feb 2026 17:44:24 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning]]></title>
@@ -52,7 +52,7 @@ Institution:
 Published: 2026-02-12
 Score: 8/10
 Citations: 0
-Upvotes: 40
+Upvotes: 47
 GitHub: 
 Stars: 0
 
@@ -88,7 +88,7 @@ Institution:
 Published: 2026-02-11
 Score: 8/10
 Citations: 0
-Upvotes: 18
+Upvotes: 26
 GitHub: 
 Stars: 0
 
@@ -106,7 +106,7 @@ Institution:
 Published: 2026-02-10
 Score: 8/10
 Citations: 0
-Upvotes: 14
+Upvotes: 20
 GitHub: 
 Stars: 0
 
@@ -150,6 +150,24 @@ As the development of Large Models (LMs) progresses rapidly, their safety is als
 <pubDate>Thu, 12 Feb 2026 15:43:14 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[T3D: Few-Step Diffusion Language Models via Trajectory Self-Distillation with Direct Discriminative Optimization]]></title>
+<link>https://huggingface.co/papers/2602.12262</link>
+<guid>2602.12262</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Tunyu Zhang, Xinxi Zhang, Ligong Han, Haizhou Shi, Xiaoxiao He
+Institution: 
+Published: 2026-02-12
+Score: 8/10
+Citations: 0
+Upvotes: 8
+GitHub: 
+Stars: 0
+
+Diffusion large language models (DLLMs) have the potential to enable fast text generation by decoding multiple tokens in parallel. However, in practice, their inference efficiency is constrained by the need for many refinement steps, while aggressively reducing the number of steps leads to a substantial degradation in generation quality. To alleviate this, we propose a trajectory self-distillation framework that improves few-step decoding by distilling the model's own generative trajectories. We incorporate Direct Discriminative Optimization (DDO), a reverse-KL objective that promotes mode-seeking distillation and encourages the student to concentrate on high-probability teacher modes. Across benchmarks, our approach consistently outperforms strong few-step baselines and standard training under tight step budgets. Although full-step decoding remains superior, we substantially narrow the gap, establishing a strong foundation towards practical few-step DLLMs. The source code is available at https://github.com/Tyrion58/T3D.]]></description>
+<pubDate>Thu, 12 Feb 2026 18:52:35 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Latent Thoughts Tuning: Bridging Context and Reasoning with Fused Information in Latent Tokens]]></title>
 <link>https://huggingface.co/papers/2602.10229</link>
 <guid>2602.10229</guid>
@@ -178,12 +196,30 @@ Institution:
 Published: 2026-02-12
 Score: 8/10
 Citations: 0
-Upvotes: 2
+Upvotes: 3
 GitHub: 
 Stars: 0
 
 Large language models (LLMs) have demonstrated exceptional reasoning capabilities, and co-evolving paradigms have shown promising results in domains such as code and math. However, in scientific reasoning tasks, these models remain fragile due to unreliable solution evaluation and limited diversity in verification strategies. In this work, we propose Sci-CoE, a two-stage scientific co-evolving framework that enables models to self-evolve as both solver and verifier through a transition from sparse supervision to unsupervised learning. In the first stage, the model uses a small set of annotated data to establish fundamental correctness judgment anchors for the Verifier. In the second stage, we introduce a geometric reward mechanism that jointly considers consensus, reliability, and diversity, driving large-scale self-iteration on unlabeled data. Experiments on several general scientific benchmarks demonstrate that Sci-CoE enhances complex reasoning capabilities and exhibits strong scalability, facilitating the construction of more robust and diverse evaluation systems. Codes are available at https://github.com/InternScience/Sci-CoE.]]></description>
 <pubDate>Thu, 12 Feb 2026 16:46:00 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Multimodal Fact-Level Attribution for Verifiable Reasoning]]></title>
+<link>https://huggingface.co/papers/2602.11509</link>
+<guid>2602.11509</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: David Wan, Han Wang, Ziyang Wang, Elias Stengel-Eskin, Hyunji Lee
+Institution: 
+Published: 2026-02-12
+Score: 8/10
+Citations: 0
+Upvotes: 3
+GitHub: 
+Stars: 0
+
+Multimodal large language models (MLLMs) are increasingly used for real-world tasks involving multi-step reasoning and long-form generation, where reliability requires grounding model outputs in heterogeneous input sources and verifying individual factual claims. However, existing multimodal grounding benchmarks and evaluation methods focus on simplified, observation-based scenarios or limited modalities and fail to assess attribution in complex multimodal reasoning. We introduce MuRGAt (Multimodal Reasoning with Grounded Attribution), a benchmark for evaluating fact-level multimodal attribution in settings that require reasoning beyond direct observation. Given inputs spanning video, audio, and other modalities, MuRGAt requires models to generate answers with explicit reasoning and precise citations, where each citation specifies both modality and temporal segments. To enable reliable assessment, we introduce an automatic evaluation framework that strongly correlates with human judgments. Benchmarking with human and automated scores reveals that even strong MLLMs frequently hallucinate citations despite correct reasoning. Moreover, we observe a key trade-off: increasing reasoning depth or enforcing structured grounding often degrades accuracy, highlighting a significant gap between internal reasoning and verifiable attribution.]]></description>
+<pubDate>Thu, 12 Feb 2026 03:10:02 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[ABot-N0: Technical Report on the VLA Foundation Model for Versatile Embodied Navigation]]></title>
@@ -215,7 +251,7 @@ Institution:
 Published: 2026-02-12
 Score: 7/10
 Citations: 0
-Upvotes: 25
+Upvotes: 26
 GitHub: 
 Stars: 0
 
@@ -237,13 +273,49 @@ Authors: Checheng Yu, Chonghao Sima, Gangcheng Jiang, Hai Zhang, Haoguang Mai
 Institution: 
 Published: 2026-02-09
 Score: 7/10
-Citations: 0
-Upvotes: 18
+Citations: 1
+Upvotes: 25
 GitHub: 
 Stars: 0
 
 High-reliability long-horizon robotic manipulation has traditionally relied on large-scale data and compute to understand complex real-world dynamics. However, we identify that the primary bottleneck to real-world robustness is not resource scale alone, but the distributional shift among the human demonstration distribution, the inductive bias learned by the policy, and the test-time execution distribution -- a systematic inconsistency that causes compounding errors in multi-stage tasks. To mitigate these inconsistencies, we propose χ_{0}, a resource-efficient framework with effective modules designated to achieve production-level robustness in robotic manipulation. Our approach builds off three technical pillars: (i) Model Arithmetic, a weight-space merging strategy that efficiently soaks up diverse distributions of different demonstrations, varying from object appearance to state variations; (ii) Stage Advantage, a stage-aware advantage estimator that provides stable, dense progress signals, overcoming the numerical instability of prior non-stage approaches; and (iii) Train-Deploy Alignment, which bridges the distribution gap via spatio-temporal augmentation, heuristic DAgger corrections, and temporal chunk-wise smoothing. χ_{0} enables two sets of dual-arm robots to collaboratively orchestrate long-horizon garment manipulation, spanning tasks from flattening, folding, to hanging different clothes. Our method exhibits high-reliability autonomy; we are able to run the system from arbitrary initial state for consecutive 24 hours non-stop. Experiments validate that χ_{0} surpasses the state-of-the-art π_{0.5} in success rate by nearly 250%, with only 20-hour data and 8 A100 GPUs. Code, data and models will be released to facilitate the community.]]></description>
 <pubDate>Mon, 09 Feb 2026 18:59:45 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Sparse Video Generation Propels Real-World Beyond-the-View Vision-Language Navigation]]></title>
+<link>https://huggingface.co/papers/2602.05827</link>
+<guid>2602.05827</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Hai Zhang, Siqi Liang, Li Chen, Yuxian Li, Yukuan Xu
+Institution: 
+Published: 2026-02-05
+Score: 7/10
+Citations: 1
+Upvotes: 17
+GitHub: 
+Stars: 0
+
+Why must vision-language navigation be bound to detailed and verbose language instructions? While such details ease decision-making, they fundamentally contradict the goal for navigation in the real-world. Ideally, agents should possess the autonomy to navigate in unknown environments guided solely by simple and high-level intents. Realizing this ambition introduces a formidable challenge: Beyond-the-View Navigation (BVN), where agents must locate distant, unseen targets without dense and step-by-step guidance. Existing large language model (LLM)-based methods, though adept at following dense instructions, often suffer from short-sighted behaviors due to their reliance on short-horimzon supervision. Simply extending the supervision horizon, however, destabilizes LLM training. In this work, we identify that video generation models inherently benefit from long-horizon supervision to align with language instructions, rendering them uniquely suitable for BVN tasks. Capitalizing on this insight, we propose introducing the video generation model into this field for the first time. Yet, the prohibitive latency for generating videos spanning tens of seconds makes real-world deployment impractical. To bridge this gap, we propose SparseVideoNav, achieving sub-second trajectory inference guided by a generated sparse future spanning a 20-second horizon. This yields a remarkable 27x speed-up compared to the unoptimized counterpart. Extensive real-world zero-shot experiments demonstrate that SparseVideoNav achieves 2.5x the success rate of state-of-the-art LLM baselines on BVN tasks and marks the first realization of such capability in challenging night scenes.]]></description>
+<pubDate>Thu, 05 Feb 2026 16:16:13 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[The Pensieve Paradigm: Stateful Language Models Mastering Their Own Context]]></title>
+<link>https://huggingface.co/papers/2602.12108</link>
+<guid>2602.12108</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Xiaoyuan Liu, Tian Liang, Dongyang Ma, Deyu Zhou, Haitao Mi
+Institution: 
+Published: 2026-02-12
+Score: 7/10
+Citations: 0
+Upvotes: 13
+GitHub: 
+Stars: 0
+
+In the world of Harry Potter, when Dumbledore's mind is overburdened, he extracts memories into a Pensieve to be revisited later. In the world of AI, while we possess the Pensieve-mature databases and retrieval systems, our models inexplicably lack the "wand" to operate it. They remain like a Dumbledore without agency, passively accepting a manually engineered context as their entire memory. This work finally places the wand in the model's hand. We introduce StateLM, a new class of foundation models endowed with an internal reasoning loop to manage their own state. We equip our model with a suite of memory tools, such as context pruning, document indexing, and note-taking, and train it to actively manage these tools. By learning to dynamically engineering its own context, our model breaks free from the architectural prison of a fixed window. Experiments across various model sizes demonstrate StateLM's effectiveness across diverse scenarios. On long-document QA tasks, StateLMs consistently outperform standard LLMs across all model scales; on the chat memory task, they achieve absolute accuracy improvements of 10% to 20% over standard LLMs. On the deep research task BrowseComp-Plus, the performance gap becomes even more pronounced: StateLM achieves up to 52% accuracy, whereas standard LLM counterparts struggle around 5%. Ultimately, our approach shifts LLMs from passive predictors to state-aware agents where reasoning becomes a stateful and manageable process.]]></description>
+<pubDate>Thu, 12 Feb 2026 16:00:01 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[LiveMedBench: A Contamination-Free Medical Benchmark for LLMs with Automated Rubric Evaluation]]></title>
@@ -264,58 +336,58 @@ The deployment of Large Language Models (LLMs) in high-stakes clinical settings 
 <pubDate>Tue, 10 Feb 2026 23:38:25 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Sparse Video Generation Propels Real-World Beyond-the-View Vision-Language Navigation]]></title>
-<link>https://huggingface.co/papers/2602.05827</link>
-<guid>2602.05827</guid>
+<title><![CDATA[ECHO-2: A Large-Scale Distributed Rollout Framework for Cost-Efficient Reinforcement Learning]]></title>
+<link>https://huggingface.co/papers/2602.02192</link>
+<guid>2602.02192</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Hai Zhang, Siqi Liang, Li Chen, Yuxian Li, Yukuan Xu
+Authors: Jie Xiao, Meng Chen, Qingnan Ren, Jingwei Song, Jiaqi Huang
 Institution: 
-Published: 2026-02-05
+Published: 2026-02-02
 Score: 7/10
-Citations: 1
-Upvotes: 11
+Citations: 0
+Upvotes: 12
 GitHub: 
 Stars: 0
 
-Why must vision-language navigation be bound to detailed and verbose language instructions? While such details ease decision-making, they fundamentally contradict the goal for navigation in the real-world. Ideally, agents should possess the autonomy to navigate in unknown environments guided solely by simple and high-level intents. Realizing this ambition introduces a formidable challenge: Beyond-the-View Navigation (BVN), where agents must locate distant, unseen targets without dense and step-by-step guidance. Existing large language model (LLM)-based methods, though adept at following dense instructions, often suffer from short-sighted behaviors due to their reliance on short-horimzon supervision. Simply extending the supervision horizon, however, destabilizes LLM training. In this work, we identify that video generation models inherently benefit from long-horizon supervision to align with language instructions, rendering them uniquely suitable for BVN tasks. Capitalizing on this insight, we propose introducing the video generation model into this field for the first time. Yet, the prohibitive latency for generating videos spanning tens of seconds makes real-world deployment impractical. To bridge this gap, we propose SparseVideoNav, achieving sub-second trajectory inference guided by a generated sparse future spanning a 20-second horizon. This yields a remarkable 27x speed-up compared to the unoptimized counterpart. Extensive real-world zero-shot experiments demonstrate that SparseVideoNav achieves 2.5x the success rate of state-of-the-art LLM baselines on BVN tasks and marks the first realization of such capability in challenging night scenes.]]></description>
-<pubDate>Thu, 05 Feb 2026 16:16:13 +0000</pubDate>
+Reinforcement learning (RL) is a critical stage in post-training large language models (LLMs), involving repeated interaction between rollout generation, reward evaluation, and centralized learning. Distributing rollout execution offers opportunities to leverage more cost-efficient inference resources, but introduces challenges in wide-area coordination and policy dissemination. We present ECHO-2, a distributed RL framework for post-training with remote inference workers and non-negligible dissemination latency. ECHO-2 combines centralized learning with distributed rollouts and treats bounded policy staleness as a user-controlled parameter, enabling rollout generation, dissemination, and training to overlap. We introduce an overlap-based capacity model that relates training time, dissemination latency, and rollout throughput, yielding a practical provisioning rule for sustaining learner utilization. To mitigate dissemination bottlenecks and lower cost, ECHO-2 employs peer-assisted pipelined broadcast and cost-aware activation of heterogeneous workers. Experiments on GRPO post-training of 4B and 8B models under real wide-area bandwidth regimes show that ECHO-2 significantly improves cost efficiency while preserving RL reward comparable to strong baselines.]]></description>
+<pubDate>Mon, 02 Feb 2026 14:57:53 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[The Pensieve Paradigm: Stateful Language Models Mastering Their Own Context]]></title>
-<link>https://huggingface.co/papers/2602.12108</link>
-<guid>2602.12108</guid>
+<title><![CDATA[PISCO: Precise Video Instance Insertion with Sparse Control]]></title>
+<link>https://huggingface.co/papers/2602.08277</link>
+<guid>2602.08277</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Xiaoyuan Liu, Tian Liang, Dongyang Ma, Deyu Zhou, Haitao Mi
+Authors: Xiangbo Gao, Renjie Li, Xinghao Chen, Yuheng Wu, Suofei Feng
+Institution: 
+Published: 2026-02-09
+Score: 7/10
+Citations: 0
+Upvotes: 10
+GitHub: 
+Stars: 0
+
+The landscape of AI video generation is undergoing a pivotal shift: moving beyond general generation - which relies on exhaustive prompt-engineering and "cherry-picking" - towards fine-grained, controllable generation and high-fidelity post-processing. In professional AI-assisted filmmaking, it is crucial to perform precise, targeted modifications. A cornerstone of this transition is video instance insertion, which requires inserting a specific instance into existing footage while maintaining scene integrity. Unlike traditional video editing, this task demands several requirements: precise spatial-temporal placement, physically consistent scene interaction, and the faithful preservation of original dynamics - all achieved under minimal user effort. In this paper, we propose PISCO, a video diffusion model for precise video instance insertion with arbitrary sparse keyframe control. PISCO allows users to specify a single keyframe, start-and-end keyframes, or sparse keyframes at arbitrary timestamps, and automatically propagates object appearance, motion, and interaction. To address the severe distribution shift induced by sparse conditioning in pretrained video diffusion models, we introduce Variable-Information Guidance for robust conditioning and Distribution-Preserving Temporal Masking to stabilize temporal generation, together with geometry-aware conditioning for realistic scene adaptation. We further construct PISCO-Bench, a benchmark with verified instance annotations and paired clean background videos, and evaluate performance using both reference-based and reference-free perceptual metrics. Experiments demonstrate that PISCO consistently outperforms strong inpainting and video editing baselines under sparse control, and exhibits clear, monotonic performance improvements as additional control signals are provided. Project page: xiangbogaobarry.github.io/PISCO.]]></description>
+<pubDate>Mon, 09 Feb 2026 05:15:39 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments]]></title>
+<link>https://huggingface.co/papers/2602.11964</link>
+<guid>2602.11964</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Romain Froger, Pierre Andrews, Matteo Bettini, Amar Budhiraja, Ricardo Silveira Cabral
 Institution: 
 Published: 2026-02-12
 Score: 7/10
 Citations: 0
-Upvotes: 11
+Upvotes: 8
 GitHub: 
 Stars: 0
 
-In the world of Harry Potter, when Dumbledore's mind is overburdened, he extracts memories into a Pensieve to be revisited later. In the world of AI, while we possess the Pensieve-mature databases and retrieval systems, our models inexplicably lack the "wand" to operate it. They remain like a Dumbledore without agency, passively accepting a manually engineered context as their entire memory. This work finally places the wand in the model's hand. We introduce StateLM, a new class of foundation models endowed with an internal reasoning loop to manage their own state. We equip our model with a suite of memory tools, such as context pruning, document indexing, and note-taking, and train it to actively manage these tools. By learning to dynamically engineering its own context, our model breaks free from the architectural prison of a fixed window. Experiments across various model sizes demonstrate StateLM's effectiveness across diverse scenarios. On long-document QA tasks, StateLMs consistently outperform standard LLMs across all model scales; on the chat memory task, they achieve absolute accuracy improvements of 10% to 20% over standard LLMs. On the deep research task BrowseComp-Plus, the performance gap becomes even more pronounced: StateLM achieves up to 52% accuracy, whereas standard LLM counterparts struggle around 5%. Ultimately, our approach shifts LLMs from passive predictors to state-aware agents where reasoning becomes a stateful and manageable process.]]></description>
-<pubDate>Thu, 12 Feb 2026 16:00:01 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[T3D: Few-Step Diffusion Language Models via Trajectory Self-Distillation with Direct Discriminative Optimization]]></title>
-<link>https://huggingface.co/papers/2602.12262</link>
-<guid>2602.12262</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Tunyu Zhang, Xinxi Zhang, Ligong Han, Haizhou Shi, Xiaoxiao He
-Institution: 
-Published: 2026-02-12
-Score: 7/10
-Citations: 0
-Upvotes: 6
-GitHub: 
-Stars: 0
-
-Diffusion large language models (DLLMs) have the potential to enable fast text generation by decoding multiple tokens in parallel. However, in practice, their inference efficiency is constrained by the need for many refinement steps, while aggressively reducing the number of steps leads to a substantial degradation in generation quality. To alleviate this, we propose a trajectory self-distillation framework that improves few-step decoding by distilling the model's own generative trajectories. We incorporate Direct Discriminative Optimization (DDO), a reverse-KL objective that promotes mode-seeking distillation and encourages the student to concentrate on high-probability teacher modes. Across benchmarks, our approach consistently outperforms strong few-step baselines and standard training under tight step budgets. Although full-step decoding remains superior, we substantially narrow the gap, establishing a strong foundation towards practical few-step DLLMs. The source code is available at https://github.com/Tyrion58/T3D.]]></description>
-<pubDate>Thu, 12 Feb 2026 18:52:35 +0000</pubDate>
+We introduce Gaia2, a benchmark for evaluating large language model agents in realistic, asynchronous environments. Unlike prior static or synchronous evaluations, Gaia2 introduces scenarios where environments evolve independently of agent actions, requiring agents to operate under temporal constraints, adapt to noisy and dynamic events, resolve ambiguity, and collaborate with other agents. Each scenario is paired with a write-action verifier, enabling fine-grained, action-level evaluation and making Gaia2 directly usable for reinforcement learning from verifiable rewards. Our evaluation of state-of-the-art proprietary and open-source models shows that no model dominates across capabilities: GPT-5 (high) reaches the strongest overall score of 42% pass@1 but fails on time-sensitive tasks, Claude-4 Sonnet trades accuracy and speed for cost, Kimi-K2 leads among open-source models with 21% pass@1. These results highlight fundamental trade-offs between reasoning, efficiency, robustness, and expose challenges in closing the "sim2real" gap. Gaia2 is built on a consumer environment with the open-source Agents Research Environments platform and designed to be easy to extend. By releasing Gaia2 alongside the foundational ARE framework, we aim to provide the community with a flexible infrastructure for developing, benchmarking, and training the next generation of practical agent systems.]]></description>
+<pubDate>Thu, 12 Feb 2026 13:58:27 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[ThinkRouter: Efficient Reasoning via Routing Thinking between Latent and Discrete Spaces]]></title>
@@ -355,12 +427,12 @@ Metaphorical comprehension in images remains a critical challenge for Nowadays A
 <pubDate>Wed, 11 Feb 2026 06:59:36 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments]]></title>
-<link>https://huggingface.co/papers/2602.11964</link>
-<guid>2602.11964</guid>
+<title><![CDATA[Pretraining A Large Language Model using Distributed GPUs: A Memory-Efficient Decentralized Paradigm]]></title>
+<link>https://huggingface.co/papers/2602.11543</link>
+<guid>2602.11543</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Romain Froger, Pierre Andrews, Matteo Bettini, Amar Budhiraja, Ricardo Silveira Cabral
+Authors: Jinrui Zhang, Chaodong Xiao, Aoqi Wu, Xindong Zhang, Lei Zhang
 Institution: 
 Published: 2026-02-12
 Score: 7/10
@@ -369,44 +441,26 @@ Upvotes: 4
 GitHub: 
 Stars: 0
 
-We introduce Gaia2, a benchmark for evaluating large language model agents in realistic, asynchronous environments. Unlike prior static or synchronous evaluations, Gaia2 introduces scenarios where environments evolve independently of agent actions, requiring agents to operate under temporal constraints, adapt to noisy and dynamic events, resolve ambiguity, and collaborate with other agents. Each scenario is paired with a write-action verifier, enabling fine-grained, action-level evaluation and making Gaia2 directly usable for reinforcement learning from verifiable rewards. Our evaluation of state-of-the-art proprietary and open-source models shows that no model dominates across capabilities: GPT-5 (high) reaches the strongest overall score of 42% pass@1 but fails on time-sensitive tasks, Claude-4 Sonnet trades accuracy and speed for cost, Kimi-K2 leads among open-source models with 21% pass@1. These results highlight fundamental trade-offs between reasoning, efficiency, robustness, and expose challenges in closing the "sim2real" gap. Gaia2 is built on a consumer environment with the open-source Agents Research Environments platform and designed to be easy to extend. By releasing Gaia2 alongside the foundational ARE framework, we aim to provide the community with a flexible infrastructure for developing, benchmarking, and training the next generation of practical agent systems.]]></description>
-<pubDate>Thu, 12 Feb 2026 13:58:27 +0000</pubDate>
+Pretraining large language models (LLMs) typically requires centralized clusters with thousands of high-memory GPUs (e.g., H100/A100). Recent decentralized training methods reduce communication overhead by employing federated optimization; however, they still need to train the entire model on each node, remaining constrained by GPU memory limitations. In this work, we propose SParse Expert Synchronization (SPES), a memory-efficient decentralized framework for pretraining mixture-of-experts (MoE) LLMs. SPES trains only a subset of experts per node, substantially lowering the memory footprint. Each node updates its local experts and periodically synchronizes with other nodes, eliminating full-parameter transmission while ensuring efficient knowledge sharing. To accelerate convergence, we introduce an expert-merging warm-up strategy, where experts exchange knowledge early in training, to rapidly establish foundational capabilities. With SPES, we train a 2B-parameter MoE LLM using 16 standalone 48GB GPUs over internet connections, which achieves competitive performance with centrally trained LLMs under similar computational budgets. We further demonstrate scalability by training a 7B model from scratch and a 9B model upcycled from a dense checkpoint, both of which match prior centralized baselines. Our code is available at https://github.com/zjr2000/SPES.]]></description>
+<pubDate>Thu, 12 Feb 2026 04:02:45 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Multimodal Fact-Level Attribution for Verifiable Reasoning]]></title>
-<link>https://huggingface.co/papers/2602.11509</link>
-<guid>2602.11509</guid>
+<title><![CDATA[Neural Additive Experts: Context-Gated Experts for Controllable Model Additivity]]></title>
+<link>https://huggingface.co/papers/2602.10585</link>
+<guid>2602.10585</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: David Wan, Han Wang, Ziyang Wang, Elias Stengel-Eskin, Hyunji Lee
+Authors: Guangzhi Xiong, Sanchit Sinha, Aidong Zhang
 Institution: 
-Published: 2026-02-12
+Published: 2026-02-11
 Score: 7/10
 Citations: 0
-Upvotes: 3
+Upvotes: 2
 GitHub: 
 Stars: 0
 
-Multimodal large language models (MLLMs) are increasingly used for real-world tasks involving multi-step reasoning and long-form generation, where reliability requires grounding model outputs in heterogeneous input sources and verifying individual factual claims. However, existing multimodal grounding benchmarks and evaluation methods focus on simplified, observation-based scenarios or limited modalities and fail to assess attribution in complex multimodal reasoning. We introduce MuRGAt (Multimodal Reasoning with Grounded Attribution), a benchmark for evaluating fact-level multimodal attribution in settings that require reasoning beyond direct observation. Given inputs spanning video, audio, and other modalities, MuRGAt requires models to generate answers with explicit reasoning and precise citations, where each citation specifies both modality and temporal segments. To enable reliable assessment, we introduce an automatic evaluation framework that strongly correlates with human judgments. Benchmarking with human and automated scores reveals that even strong MLLMs frequently hallucinate citations despite correct reasoning. Moreover, we observe a key trade-off: increasing reasoning depth or enforcing structured grounding often degrades accuracy, highlighting a significant gap between internal reasoning and verifiable attribution.]]></description>
-<pubDate>Thu, 12 Feb 2026 03:10:02 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[StealthRL: Reinforcement Learning Paraphrase Attacks for Multi-Detector Evasion of AI-Text Detectors]]></title>
-<link>https://huggingface.co/papers/2602.08934</link>
-<guid>2602.08934</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Suraj Ranganath, Atharv Ramesh
-Institution: 
-Published: 2026-02-09
-Score: 7/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-AI-text detectors face a critical robustness challenge: adversarial paraphrasing attacks that preserve semantics while evading detection. We introduce StealthRL, a reinforcement learning framework that stress-tests detector robustness under realistic adversarial conditions. StealthRL trains a paraphrase policy against a multi-detector ensemble using Group Relative Policy Optimization (GRPO) with LoRA adapters on Qwen3-4B, optimizing a composite reward that balances detector evasion with semantic preservation. We evaluate six attack settings (M0-M5) against three detector families (RoBERTa, FastDetectGPT, and Binoculars) at the security-relevant 1% false positive rate operating point. StealthRL achieves near-zero detection (0.001 mean TPR@1%FPR), reduces mean AUROC from 0.74 to 0.27, and attains a 99.9% attack success rate. Critically, attacks transfer to a held-out detector family not seen during training, revealing shared architectural vulnerabilities rather than detector-specific brittleness. We additionally conduct LLM-based quality evaluation via Likert scoring, analyze detector score distributions to explain why evasion succeeds, and provide per-detector AUROC with bootstrap confidence intervals. Our results expose significant robustness gaps in current AI-text detection and establish StealthRL as a principled adversarial evaluation protocol. Code and evaluation pipeline are publicly available at https://github.com/suraj-ranganath/StealthRL.]]></description>
-<pubDate>Mon, 09 Feb 2026 17:33:46 +0000</pubDate>
+The trade-off between interpretability and accuracy remains a core challenge in machine learning. Standard Generalized Additive Models (GAMs) offer clear feature attributions but are often constrained by their strictly additive nature, which can limit predictive performance. Introducing feature interactions can boost accuracy yet may obscure individual feature contributions. To address these issues, we propose Neural Additive Experts (NAEs), a novel framework that seamlessly balances interpretability and accuracy. NAEs employ a mixture of experts framework, learning multiple specialized networks per feature, while a dynamic gating mechanism integrates information across features, thereby relaxing rigid additive constraints. Furthermore, we propose targeted regularization techniques to mitigate variance among expert predictions, facilitating a smooth transition from an exclusively additive model to one that captures intricate feature interactions while maintaining clarity in feature attributions. Our theoretical analysis and experiments on synthetic data illustrate the model's flexibility, and extensive evaluations on real-world datasets confirm that NAEs achieve an optimal balance between predictive accuracy and transparent, feature-level explanations. The code is available at https://github.com/Teddy-XiongGZ/NAE.]]></description>
+<pubDate>Wed, 11 Feb 2026 07:19:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Composition-RL: Compose Your Verifiable Prompts for Reinforcement Learning of Large Language Models]]></title>
@@ -437,7 +491,7 @@ Institution:
 Published: 2026-02-12
 Score: 6/10
 Citations: 0
-Upvotes: 54
+Upvotes: 56
 GitHub: 
 Stars: 0
 
@@ -455,7 +509,7 @@ Institution:
 Published: 2026-02-11
 Score: 6/10
 Citations: 0
-Upvotes: 45
+Upvotes: 47
 GitHub: 
 Stars: 0
 
@@ -509,7 +563,7 @@ Institution:
 Published: 2026-02-12
 Score: 6/10
 Citations: 0
-Upvotes: 25
+Upvotes: 26
 GitHub: 
 Stars: 0
 
@@ -535,6 +589,24 @@ Despite rapid progress on coding agents, progress on their multimodal counterpar
 <pubDate>Wed, 11 Feb 2026 18:15:11 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[Unveiling Implicit Advantage Symmetry: Why GRPO Struggles with Exploration and Difficulty Adaptation]]></title>
+<link>https://huggingface.co/papers/2602.05548</link>
+<guid>2602.05548</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Zhiqi Yu, Zhangquan Chen, Mengting Liu, Heye Zhang, Liangqiong Qu
+Institution: 
+Published: 2026-02-05
+Score: 6/10
+Citations: 0
+Upvotes: 11
+GitHub: 
+Stars: 0
+
+Reinforcement Learning with Verifiable Rewards (RLVR), particularly GRPO, has become the standard for eliciting LLM reasoning. However, its efficiency in exploration and difficulty adaptation remains an open challenge. In this work, we argue that these bottlenecks stem from an implicit advantage symmetry inherent in Group Relative Advantage Estimation (GRAE). This symmetry induces two critical limitations: (i) at the group level, strict symmetry in weights between correct and incorrect trajectories leaves unsampled action logits unchanged, thereby hindering exploration of novel correct solution. (ii) at the sample level, the algorithm implicitly prioritizes medium-difficulty samples, remaining agnostic to the non-stationary demands of difficulty focus. Through controlled experiments, we reveal that this symmetric property is sub-optimal, yielding two pivotal insights: (i) asymmetrically suppressing the advantages of correct trajectories encourages essential exploration. (ii) learning efficiency is maximized by a curriculum-like transition-prioritizing simpler samples initially before gradually shifting to complex ones. Motivated by these findings, we propose Asymmetric GRAE (A-GRAE), which dynamically modulates exploration incentives and sample-difficulty focus. Experiments across seven benchmarks demonstrate that A-GRAE consistently improves GRPO and its variants across both LLMs and MLLMs.]]></description>
+<pubDate>Thu, 05 Feb 2026 11:07:14 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Adapting Vision-Language Models for E-commerce Understanding at Scale]]></title>
 <link>https://huggingface.co/papers/2602.11733</link>
 <guid>2602.11733</guid>
@@ -553,42 +625,6 @@ E-commerce product understanding demands by nature, strong multimodal comprehens
 <pubDate>Thu, 12 Feb 2026 08:59:22 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Unveiling Implicit Advantage Symmetry: Why GRPO Struggles with Exploration and Difficulty Adaptation]]></title>
-<link>https://huggingface.co/papers/2602.05548</link>
-<guid>2602.05548</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Zhiqi Yu, Zhangquan Chen, Mengting Liu, Heye Zhang, Liangqiong Qu
-Institution: 
-Published: 2026-02-05
-Score: 6/10
-Citations: 0
-Upvotes: 10
-GitHub: 
-Stars: 0
-
-Reinforcement Learning with Verifiable Rewards (RLVR), particularly GRPO, has become the standard for eliciting LLM reasoning. However, its efficiency in exploration and difficulty adaptation remains an open challenge. In this work, we argue that these bottlenecks stem from an implicit advantage symmetry inherent in Group Relative Advantage Estimation (GRAE). This symmetry induces two critical limitations: (i) at the group level, strict symmetry in weights between correct and incorrect trajectories leaves unsampled action logits unchanged, thereby hindering exploration of novel correct solution. (ii) at the sample level, the algorithm implicitly prioritizes medium-difficulty samples, remaining agnostic to the non-stationary demands of difficulty focus. Through controlled experiments, we reveal that this symmetric property is sub-optimal, yielding two pivotal insights: (i) asymmetrically suppressing the advantages of correct trajectories encourages essential exploration. (ii) learning efficiency is maximized by a curriculum-like transition-prioritizing simpler samples initially before gradually shifting to complex ones. Motivated by these findings, we propose Asymmetric GRAE (A-GRAE), which dynamically modulates exploration incentives and sample-difficulty focus. Experiments across seven benchmarks demonstrate that A-GRAE consistently improves GRPO and its variants across both LLMs and MLLMs.]]></description>
-<pubDate>Thu, 05 Feb 2026 11:07:14 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[PISCO: Precise Video Instance Insertion with Sparse Control]]></title>
-<link>https://huggingface.co/papers/2602.08277</link>
-<guid>2602.08277</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Xiangbo Gao, Renjie Li, Xinghao Chen, Yuheng Wu, Suofei Feng
-Institution: 
-Published: 2026-02-09
-Score: 6/10
-Citations: 0
-Upvotes: 8
-GitHub: 
-Stars: 0
-
-The landscape of AI video generation is undergoing a pivotal shift: moving beyond general generation - which relies on exhaustive prompt-engineering and "cherry-picking" - towards fine-grained, controllable generation and high-fidelity post-processing. In professional AI-assisted filmmaking, it is crucial to perform precise, targeted modifications. A cornerstone of this transition is video instance insertion, which requires inserting a specific instance into existing footage while maintaining scene integrity. Unlike traditional video editing, this task demands several requirements: precise spatial-temporal placement, physically consistent scene interaction, and the faithful preservation of original dynamics - all achieved under minimal user effort. In this paper, we propose PISCO, a video diffusion model for precise video instance insertion with arbitrary sparse keyframe control. PISCO allows users to specify a single keyframe, start-and-end keyframes, or sparse keyframes at arbitrary timestamps, and automatically propagates object appearance, motion, and interaction. To address the severe distribution shift induced by sparse conditioning in pretrained video diffusion models, we introduce Variable-Information Guidance for robust conditioning and Distribution-Preserving Temporal Masking to stabilize temporal generation, together with geometry-aware conditioning for realistic scene adaptation. We further construct PISCO-Bench, a benchmark with verified instance annotations and paired clean background videos, and evaluate performance using both reference-based and reference-free perceptual metrics. Experiments demonstrate that PISCO consistently outperforms strong inpainting and video editing baselines under sparse control, and exhibits clear, monotonic performance improvements as additional control signals are provided. Project page: xiangbogaobarry.github.io/PISCO.]]></description>
-<pubDate>Mon, 09 Feb 2026 05:15:39 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[MemFly: On-the-Fly Memory Optimization via Information Bottleneck]]></title>
 <link>https://huggingface.co/papers/2602.07885</link>
 <guid>2602.07885</guid>
@@ -599,7 +635,7 @@ Institution:
 Published: 2026-02-08
 Score: 6/10
 Citations: 0
-Upvotes: 5
+Upvotes: 7
 GitHub: 
 Stars: 0
 
@@ -617,7 +653,7 @@ Institution:
 Published: 2026-02-11
 Score: 6/10
 Citations: 0
-Upvotes: 4
+Upvotes: 5
 GitHub: 
 Stars: 0
 
@@ -661,24 +697,6 @@ Large-scale Visual Instruction Tuning (VIT) has become a key paradigm for advanc
 <pubDate>Thu, 12 Feb 2026 06:38:49 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Neural Additive Experts: Context-Gated Experts for Controllable Model Additivity]]></title>
-<link>https://huggingface.co/papers/2602.10585</link>
-<guid>2602.10585</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Guangzhi Xiong, Sanchit Sinha, Aidong Zhang
-Institution: 
-Published: 2026-02-11
-Score: 6/10
-Citations: 0
-Upvotes: 2
-GitHub: 
-Stars: 0
-
-The trade-off between interpretability and accuracy remains a core challenge in machine learning. Standard Generalized Additive Models (GAMs) offer clear feature attributions but are often constrained by their strictly additive nature, which can limit predictive performance. Introducing feature interactions can boost accuracy yet may obscure individual feature contributions. To address these issues, we propose Neural Additive Experts (NAEs), a novel framework that seamlessly balances interpretability and accuracy. NAEs employ a mixture of experts framework, learning multiple specialized networks per feature, while a dynamic gating mechanism integrates information across features, thereby relaxing rigid additive constraints. Furthermore, we propose targeted regularization techniques to mitigate variance among expert predictions, facilitating a smooth transition from an exclusively additive model to one that captures intricate feature interactions while maintaining clarity in feature attributions. Our theoretical analysis and experiments on synthetic data illustrate the model's flexibility, and extensive evaluations on real-world datasets confirm that NAEs achieve an optimal balance between predictive accuracy and transparent, feature-level explanations. The code is available at https://github.com/Teddy-XiongGZ/NAE.]]></description>
-<pubDate>Wed, 11 Feb 2026 07:19:25 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[TIC-VLA: A Think-in-Control Vision-Language-Action Model for Robot Navigation in Dynamic Environments]]></title>
 <link>https://huggingface.co/papers/2602.02459</link>
 <guid>2602.02459</guid>
@@ -707,30 +725,12 @@ Institution:
 Published: 2026-02-12
 Score: 5/10
 Citations: 0
-Upvotes: 18
+Upvotes: 19
 GitHub: 
 Stars: 0
 
 Diffusion Large Language Models (dLLMs) represent a new paradigm beyond autoregressive modeling, offering competitive performance while naturally enabling a flexible decoding process. Specifically, dLLMs can generate tokens at arbitrary positions in parallel, endowing them with significant potential for parallel test-time scaling, which was previously constrained by severe inefficiency in autoregressive modeling. In this work, we introduce dVoting, a fast voting technique that boosts reasoning capability without training, with only an acceptable extra computational overhead. dVoting is motivated by the observation that, across multiple samples for the same prompt, token predictions remain largely consistent, whereas performance is determined by a small subset of tokens exhibiting cross-sample variability. Leveraging the arbitrary-position generation capability of dLLMs, dVoting performs iterative refinement by sampling, identifying uncertain tokens via consistency analysis, regenerating them through voting, and repeating this process until convergence. Extensive evaluations demonstrate that dVoting consistently improves performance across various benchmarks. It achieves gains of 6.22%-7.66% on GSM8K, 4.40%-7.20% on MATH500, 3.16%-14.84% on ARC-C, and 4.83%-5.74% on MMLU. Our code is available at https://github.com/fscdc/dVoting]]></description>
 <pubDate>Thu, 12 Feb 2026 16:35:05 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[ECHO-2: A Large-Scale Distributed Rollout Framework for Cost-Efficient Reinforcement Learning]]></title>
-<link>https://huggingface.co/papers/2602.02192</link>
-<guid>2602.02192</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jie Xiao, Meng Chen, Qingnan Ren, Jingwei Song, Jiaqi Huang
-Institution: 
-Published: 2026-02-02
-Score: 5/10
-Citations: 0
-Upvotes: 12
-GitHub: 
-Stars: 0
-
-Reinforcement learning (RL) is a critical stage in post-training large language models (LLMs), involving repeated interaction between rollout generation, reward evaluation, and centralized learning. Distributing rollout execution offers opportunities to leverage more cost-efficient inference resources, but introduces challenges in wide-area coordination and policy dissemination. We present ECHO-2, a distributed RL framework for post-training with remote inference workers and non-negligible dissemination latency. ECHO-2 combines centralized learning with distributed rollouts and treats bounded policy staleness as a user-controlled parameter, enabling rollout generation, dissemination, and training to overlap. We introduce an overlap-based capacity model that relates training time, dissemination latency, and rollout throughput, yielding a practical provisioning rule for sustaining learner utilization. To mitigate dissemination bottlenecks and lower cost, ECHO-2 employs peer-assisted pipelined broadcast and cost-aware activation of heterogeneous workers. Experiments on GRPO post-training of 4B and 8B models under real wide-area bandwidth regimes show that ECHO-2 significantly improves cost efficiency while preserving RL reward comparable to strong baselines.]]></description>
-<pubDate>Mon, 02 Feb 2026 14:57:53 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[MiniCPM-SALA: Hybridizing Sparse and Linear Attention for Efficient Long-Context Modeling]]></title>
@@ -767,24 +767,6 @@ Stars: 0
 
 Enterprise documents, such as forms and reports, embed critical information for downstream applications like data archiving, automated workflows, and analytics. Although generalist Vision Language Models (VLMs) perform well on established document understanding benchmarks, their ability to conduct holistic, fine-grained structured extraction across diverse document types and flexible schemas is not well studied. Existing Key Entity Extraction (KEE), Relation Extraction (RE), and Visual Question Answering (VQA) datasets are limited by narrow entity ontologies, simple queries, or homogeneous document types, often overlooking the need for adaptable and structured extraction. To address these gaps, we introduce ExStrucTiny, a new benchmark dataset for structured Information Extraction (IE) from document images, unifying aspects of KEE, RE, and VQA. Built through a novel pipeline combining manual and synthetic human-validated samples, ExStrucTiny covers more varied document types and extraction scenarios. We analyze open and closed VLMs on this benchmark, highlighting challenges such as schema adaptation, query under-specification, and answer localization. We hope our work provides a bedrock for improving generalist models for structured IE in documents.]]></description>
 <pubDate>Thu, 12 Feb 2026 17:38:57 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Pretraining A Large Language Model using Distributed GPUs: A Memory-Efficient Decentralized Paradigm]]></title>
-<link>https://huggingface.co/papers/2602.11543</link>
-<guid>2602.11543</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jinrui Zhang, Chaodong Xiao, Aoqi Wu, Xindong Zhang, Lei Zhang
-Institution: 
-Published: 2026-02-12
-Score: 5/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-Pretraining large language models (LLMs) typically requires centralized clusters with thousands of high-memory GPUs (e.g., H100/A100). Recent decentralized training methods reduce communication overhead by employing federated optimization; however, they still need to train the entire model on each node, remaining constrained by GPU memory limitations. In this work, we propose SParse Expert Synchronization (SPES), a memory-efficient decentralized framework for pretraining mixture-of-experts (MoE) LLMs. SPES trains only a subset of experts per node, substantially lowering the memory footprint. Each node updates its local experts and periodically synchronizes with other nodes, eliminating full-parameter transmission while ensuring efficient knowledge sharing. To accelerate convergence, we introduce an expert-merging warm-up strategy, where experts exchange knowledge early in training, to rapidly establish foundational capabilities. With SPES, we train a 2B-parameter MoE LLM using 16 standalone 48GB GPUs over internet connections, which achieves competitive performance with centrally trained LLMs under similar computational budgets. We further demonstrate scalability by training a 7B model from scratch and a 9B model upcycled from a dense checkpoint, both of which match prior centralized baselines. Our code is available at https://github.com/zjr2000/SPES.]]></description>
-<pubDate>Thu, 12 Feb 2026 04:02:45 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Budget-Constrained Agentic Large Language Models: Intention-Based Planning for Costly Tool Use]]></title>
@@ -861,6 +843,24 @@ Over the last decade, explainable AI has primarily focused on interpreting indiv
 <pubDate>Fri, 06 Feb 2026 16:34:29 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[StealthRL: Reinforcement Learning Paraphrase Attacks for Multi-Detector Evasion of AI-Text Detectors]]></title>
+<link>https://huggingface.co/papers/2602.08934</link>
+<guid>2602.08934</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Suraj Ranganath, Atharv Ramesh
+Institution: 
+Published: 2026-02-09
+Score: 5/10
+Citations: 0
+Upvotes: 0
+GitHub: 
+Stars: 0
+
+AI-text detectors face a critical robustness challenge: adversarial paraphrasing attacks that preserve semantics while evading detection. We introduce StealthRL, a reinforcement learning framework that stress-tests detector robustness under realistic adversarial conditions. StealthRL trains a paraphrase policy against a multi-detector ensemble using Group Relative Policy Optimization (GRPO) with LoRA adapters on Qwen3-4B, optimizing a composite reward that balances detector evasion with semantic preservation. We evaluate six attack settings (M0-M5) against three detector families (RoBERTa, FastDetectGPT, and Binoculars) at the security-relevant 1% false positive rate operating point. StealthRL achieves near-zero detection (0.001 mean TPR@1%FPR), reduces mean AUROC from 0.74 to 0.27, and attains a 99.9% attack success rate. Critically, attacks transfer to a held-out detector family not seen during training, revealing shared architectural vulnerabilities rather than detector-specific brittleness. We additionally conduct LLM-based quality evaluation via Likert scoring, analyze detector score distributions to explain why evasion succeeds, and provide per-detector AUROC with bootstrap confidence intervals. Our results expose significant robustness gaps in current AI-text detection and establish StealthRL as a principled adversarial evaluation protocol. Code and evaluation pipeline are publicly available at https://github.com/suraj-ranganath/StealthRL.]]></description>
+<pubDate>Mon, 09 Feb 2026 17:33:46 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[The Devil Behind Moltbook: Anthropic Safety is Always Vanishing in Self-Evolving AI Societies]]></title>
 <link>https://huggingface.co/papers/2602.09877</link>
 <guid>2602.09877</guid>
@@ -871,7 +871,7 @@ Institution:
 Published: 2026-02-10
 Score: 4/10
 Citations: 0
-Upvotes: 179
+Upvotes: 182
 GitHub: 
 Stars: 0
 
@@ -4252,7 +4252,7 @@ Institution:
 Published: 2026-02-12
 Score: 2/10
 Citations: 0
-Upvotes: 4
+Upvotes: 6
 GitHub: 
 Stars: 0
 
