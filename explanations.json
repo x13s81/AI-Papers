@@ -21458,5 +21458,345 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-17"
+  },
+  "2602.15322": {
+    "title": "On Surprising Effectiveness of Masking Updates in Adaptive Optimizers",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Adaptive Optimizers",
+          "brief": "Algorithms used for training large language models, such as Adam and RMSProp"
+        },
+        {
+          "name": "Masking Updates",
+          "brief": "Randomly masking parameter updates to induce geometric regularization"
+        },
+        {
+          "name": "Momentum-aligned Gradient Masking (Magma)",
+          "brief": "A technique that modulates masked updates using momentum-gradient alignment"
+        },
+        {
+          "name": "Preconditioners",
+          "brief": "Methods used to improve the conditioning of optimization problems"
+        },
+        {
+          "name": "Geometric Regularization",
+          "brief": "A technique used to smooth the optimization trajectory by adding curvature-dependent regularization"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the context of large language models and adaptive optimizers"
+        },
+        {
+          "topic": "Optimization Algorithms",
+          "why_needed": "To comprehend the concepts of adaptive optimizers, preconditioners, and geometric regularization"
+        },
+        {
+          "topic": "Linear Algebra",
+          "why_needed": "To understand the mathematical concepts underlying the optimization algorithms and geometric regularization"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concept of training large language models and evaluating their performance using metrics like perplexity"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-18"
+  },
+  "2602.14941": {
+    "title": "AnchorWeave: World-Consistent Video Generation with Retrieved Local Spatial Memories",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "AnchorWeave",
+          "brief": "A memory-augmented video generation framework for maintaining spatial world consistency"
+        },
+        {
+          "name": "Local Spatial Memories",
+          "brief": "Clean local geometric memories used to replace a single misaligned global memory"
+        },
+        {
+          "name": "Multi-Anchor Weaving Controller",
+          "brief": "A controller that integrates selected local memories during video generation"
+        },
+        {
+          "name": "Coverage-Driven Local Memory Retrieval",
+          "brief": "A method for retrieving local memories aligned with the target trajectory"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of computer vision concepts, such as 3D scene reconstruction and pose estimation"
+        },
+        {
+          "topic": "Video Generation",
+          "why_needed": "Familiarity with video generation techniques and challenges, such as maintaining spatial consistency"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Knowledge of deep learning concepts, such as memory-augmented frameworks and controller architectures"
+        },
+        {
+          "topic": "Geometry and 3D Reconstruction",
+          "why_needed": "Understanding of geometric concepts, such as 3D scene reconstruction and cross-view misalignment"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-18"
+  },
+  "2602.14721": {
+    "title": "WebWorld: A Large-Scale World Model for Web Agent Training",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Web Agents",
+          "brief": "Autonomous programs that interact with the web to achieve tasks"
+        },
+        {
+          "name": "World Models",
+          "brief": "Simulated environments that mimic real-world scenarios for training agents"
+        },
+        {
+          "name": "Simulators",
+          "brief": "Tools that replicate real-world environments for testing and training purposes"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A type of machine learning that involves training agents through trial and error"
+        },
+        {
+          "name": "Large-Scale Training",
+          "brief": "Training models on massive datasets to improve performance and generalization"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context and applications of web agents and world models"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the training processes and algorithms used in the paper"
+        },
+        {
+          "topic": "Web Development",
+          "why_needed": "To understand the web environment and its interactions with web agents"
+        },
+        {
+          "topic": "Data Pipelines",
+          "why_needed": "To grasp the scalable data pipeline used in WebWorld"
+        },
+        {
+          "topic": "Evaluation Metrics",
+          "why_needed": "To understand the dual metrics and WebWorld-Bench used for intrinsic evaluation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-18"
+  },
+  "2602.15620": {
+    "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A machine learning approach where an agent learns by interacting with an environment and receiving rewards or penalties"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models designed to process and understand human language"
+        },
+        {
+          "name": "Spurious Tokens",
+          "brief": "Rare tokens that contribute little to the reasoning outcome but inherit the full sequence-level reward, leading to abnormally amplified gradient updates"
+        },
+        {
+          "name": "Policy Gradients",
+          "brief": "A type of reinforcement learning algorithm that updates the policy based on the gradient of the expected cumulative reward"
+        },
+        {
+          "name": "Entropy Regularization",
+          "brief": "A technique used to encourage exploration in reinforcement learning by adding a penalty term to the loss function"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of large language models and reinforcement learning"
+        },
+        {
+          "topic": "Mathematical Reasoning",
+          "why_needed": "To comprehend the mathematical reasoning benchmarks used in the paper"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the context and applications of large language models"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To grasp the concepts of policy gradients, entropy regularization, and reweighting"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-18"
+  },
+  "2602.11574": {
+    "title": "Learning to Configure Agentic AI Systems",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Agentic AI Systems",
+          "brief": "AI systems that can perform tasks autonomously"
+        },
+        {
+          "name": "LLM (Large Language Models)",
+          "brief": "AI models trained on large amounts of text data to generate human-like language"
+        },
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A type of machine learning where an agent learns to make decisions based on rewards or penalties"
+        },
+        {
+          "name": "Hierarchical Policy",
+          "brief": "A policy that uses a hierarchical structure to make decisions"
+        },
+        {
+          "name": "Query-wise Decision Problem",
+          "brief": "A problem that involves making decisions based on individual queries or inputs"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context and basics of AI systems"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of reinforcement learning and hierarchical policies"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the role of LLMs in agentic AI systems"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To understand the basics of algorithms, data structures, and software design"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-18"
+  },
+  "2602.07824": {
+    "title": "Data Darwinism Part I: Unlocking the Value of Scientific Data for Pre-training",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Data Darwinism",
+          "brief": "A ten-level taxonomy for data-model co-evolution to improve foundation model performance"
+        },
+        {
+          "name": "Data-Model Co-evolution",
+          "brief": "The process of advanced models producing superior data for next-generation systems"
+        },
+        {
+          "name": "Foundation Models",
+          "brief": "Large-scale models that serve as a foundation for various downstream tasks"
+        },
+        {
+          "name": "Generative Refinement",
+          "brief": "A process to refine and improve the quality of raw scientific text using generative models"
+        },
+        {
+          "name": "Cognitive Completion",
+          "brief": "A process to complete and explicate reasoning and terminology in scientific text using cognitive models"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concept of foundation models and data-model co-evolution"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the processing of scientific text and the use of large language models"
+        },
+        {
+          "topic": "Scientific Literature",
+          "why_needed": "To understand the context and application of Data Darwinism in scientific data"
+        },
+        {
+          "topic": "Taxonomy and Classification",
+          "why_needed": "To grasp the ten-level taxonomy of Data Darwinism"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-18"
+  },
+  "2602.14534": {
+    "title": "MoRL: Reinforced Reasoning for Unified Motion Understanding and Generation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A machine learning approach where an agent learns to take actions to maximize rewards"
+        },
+        {
+          "name": "Multimodal Motion Model",
+          "brief": "A model that combines multiple forms of data (e.g., text, images) to understand and generate motion"
+        },
+        {
+          "name": "Chain-of-Motion (CoM)",
+          "brief": "A test-time reasoning method for step-by-step planning and reflection in motion understanding and generation"
+        },
+        {
+          "name": "Semantic Alignment",
+          "brief": "The process of aligning semantic information (e.g., text, labels) with motion data"
+        },
+        {
+          "name": "Physical Plausibility",
+          "brief": "The concept of ensuring generated motion is physically realistic and feasible"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of the proposed MoRL model"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the motion understanding and generation tasks"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the text-motion consistency aspect of the reward design"
+        },
+        {
+          "topic": "Robotics",
+          "why_needed": "To appreciate the applications and implications of the proposed model in robotics and vision"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the fundamentals of reinforcement learning and supervised fine-tuning"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-18"
   }
 }
