@@ -1,81 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-<title>AI Papers - 2026-02-18</title>
+<title>AI Papers - 2026-02-19</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-02-18 - 50 papers</description>
-<lastBuildDate>Wed, 18 Feb 2026 14:41:19 +0000</lastBuildDate>
+<description>AI papers as of 2026-02-19 - 50 papers</description>
+<lastBuildDate>Thu, 19 Feb 2026 04:00:51 +0000</lastBuildDate>
 <item>
-<title><![CDATA[Qute: Towards Quantum-Native Database]]></title>
-<link>https://huggingface.co/papers/2602.14699</link>
-<guid>2602.14699</guid>
+<title><![CDATA[Towards a Science of AI Agent Reliability]]></title>
+<link>https://huggingface.co/papers/2602.16666</link>
+<guid>2602.16666</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Muzhi Chen, Xuanhe Zhou, Wei Zhou, Bangrui Xu, Surui Tang
+Authors: Stephan Rabanser, Sayash Kapoor, Peter Kirgis, Kangheng Liu, Saiteja Utpala
 Institution: 
-Published: 2026-02-16
+Published: 2026-02-18
 Score: 9/10
 Citations: 0
-Upvotes: 13
+Upvotes: 1
 GitHub: 
 Stars: 0
 
-This paper envisions a quantum database (Qute) that treats quantum computation as a first-class execution option. Unlike prior simulation-based methods that either run quantum algorithms on classical machines or adapt existing databases for quantum simulation, Qute instead (i) compiles an extended form of SQL into gate-efficient quantum circuits, (ii) employs a hybrid optimizer to dynamically select between quantum and classical execution plans, (iii) introduces selective quantum indexing, and (iv) designs fidelity-preserving storage to mitigate current qubit constraints. We also present a three-stage evolution roadmap toward quantum-native database. Finally, by deploying Qute on a real quantum processor (origin_wukong), we show that it outperforms a classical baseline at scale, and we release an open-source prototype at https://github.com/weAIDB/Qute.]]></description>
-<pubDate>Mon, 16 Feb 2026 12:39:46 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks]]></title>
-<link>https://huggingface.co/papers/2602.12670</link>
-<guid>2602.12670</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Xiangyi Li, Wenbo Chen, Yimin Liu, Shenghan Zheng, Xiaokun Chen
-Institution: 
-Published: 2026-02-13
-Score: 8/10
-Citations: 0
-Upvotes: 28
-GitHub: 
-Stars: 0
-
-Agent Skills are structured packages of procedural knowledge that augment LLM agents at inference time. Despite rapid adoption, there is no standard way to measure whether they actually help. We present SkillsBench, a benchmark of 86 tasks across 11 domains paired with curated Skills and deterministic verifiers. Each task is evaluated under three conditions: no Skills, curated Skills, and self-generated Skills. We test 7 agent-model configurations over 7,308 trajectories. Curated Skills raise average pass rate by 16.2 percentage points(pp), but effects vary widely by domain (+4.5pp for Software Engineering to +51.9pp for Healthcare) and 16 of 84 tasks show negative deltas. Self-generated Skills provide no benefit on average, showing that models cannot reliably author the procedural knowledge they benefit from consuming. Focused Skills with 2--3 modules outperform comprehensive documentation, and smaller models with Skills can match larger models without them.]]></description>
-<pubDate>Fri, 13 Feb 2026 07:06:06 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[GLM-5: from Vibe Coding to Agentic Engineering]]></title>
-<link>https://huggingface.co/papers/2602.15763</link>
-<guid>2602.15763</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: GLM-5 Team, Aohan Zeng, Xin Lv, Zhenyu Hou, Zhengxiao Du
-Institution: 
-Published: 2026-02-17
-Score: 8/10
-Citations: 0
-Upvotes: 26
-GitHub: 
-Stars: 0
-
-We present GLM-5, a next-generation foundation model designed to transition the paradigm of vibe coding to agentic engineering. Building upon the agentic, reasoning, and coding (ARC) capabilities of its predecessor, GLM-5 adopts DSA to significantly reduce training and inference costs while maintaining long-context fidelity. To advance model alignment and autonomy, we implement a new asynchronous reinforcement learning infrastructure that drastically improves post-training efficiency by decoupling generation from training. Furthermore, we propose novel asynchronous agent RL algorithms that further improve RL quality, enabling the model to learn from complex, long-horizon interactions more effectively. Through these innovations, GLM-5 achieves state-of-the-art performance on major open benchmarks. Most critically, GLM-5 demonstrates unprecedented capability in real-world coding tasks, surpassing previous baselines in handling end-to-end software engineering challenges. Code, models, and more information are available at https://github.com/zai-org/GLM-5.]]></description>
-<pubDate>Tue, 17 Feb 2026 17:50:56 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[BitDance: Scaling Autoregressive Generative Models with Binary Tokens]]></title>
-<link>https://huggingface.co/papers/2602.14041</link>
-<guid>2602.14041</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yuang Ai, Jiaming Han, Shaobin Zhuang, Weijia Mao, Xuefeng Hu
-Institution: 
-Published: 2026-02-15
-Score: 8/10
-Citations: 1
-Upvotes: 20
-GitHub: 
-Stars: 0
-
-We present BitDance, a scalable autoregressive (AR) image generator that predicts binary visual tokens instead of codebook indices. With high-entropy binary latents, BitDance lets each token represent up to 2^{256} states, yielding a compact yet highly expressive discrete representation. Sampling from such a huge token space is difficult with standard classification. To resolve this, BitDance uses a binary diffusion head: instead of predicting an index with softmax, it employs continuous-space diffusion to generate the binary tokens. Furthermore, we propose next-patch diffusion, a new decoding method that predicts multiple tokens in parallel with high accuracy, greatly speeding up inference. On ImageNet 256x256, BitDance achieves an FID of 1.24, the best among AR models. With next-patch diffusion, BitDance beats state-of-the-art parallel AR models that use 1.4B parameters, while using 5.4x fewer parameters (260M) and achieving 8.7x speedup. For text-to-image generation, BitDance trains on large-scale multimodal tokens and generates high-resolution, photorealistic images efficiently, showing strong performance and favorable scaling. When generating 1024x1024 images, BitDance achieves a speedup of over 30x compared to prior AR models. We release code and models to facilitate further research on AR foundation models. Code and models are available at: https://github.com/shallowdream204/BitDance.]]></description>
-<pubDate>Sun, 15 Feb 2026 08:09:05 +0000</pubDate>
+AI agents are increasingly deployed to execute important tasks. While rising accuracy scores on standard benchmarks suggest rapid progress, many agents still continue to fail in practice. This discrepancy highlights a fundamental limitation of current evaluations: compressing agent behavior into a single success metric obscures critical operational flaws. Notably, it ignores whether agents behave consistently across runs, withstand perturbations, fail predictably, or have bounded error severity. Grounded in safety-critical engineering, we provide a holistic performance profile by proposing twelve concrete metrics that decompose agent reliability along four key dimensions: consistency, robustness, predictability, and safety. Evaluating 14 agentic models across two complementary benchmarks, we find that recent capability gains have only yielded small improvements in reliability. By exposing these persistent limitations, our metrics complement traditional evaluations while offering tools for reasoning about how agents perform, degrade, and fail.]]></description>
+<pubDate>Wed, 18 Feb 2026 18:05:44 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Nanbeige4.1-3B: A Small General Model that Reasons, Aligns, and Acts]]></title>
@@ -88,7 +34,7 @@ Institution:
 Published: 2026-02-13
 Score: 8/10
 Citations: 0
-Upvotes: 17
+Upvotes: 18
 GitHub: 
 Stars: 0
 
@@ -106,7 +52,7 @@ Institution:
 Published: 2026-02-16
 Score: 8/10
 Citations: 0
-Upvotes: 11
+Upvotes: 14
 GitHub: 
 Stars: 0
 
@@ -114,22 +60,58 @@ We introduce ResearchGym, a benchmark and execution environment for evaluating A
 <pubDate>Mon, 16 Feb 2026 19:00:03 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[VisPhyWorld: Probing Physical Reasoning via Code-Driven Video Reconstruction]]></title>
-<link>https://huggingface.co/papers/2602.13294</link>
-<guid>2602.13294</guid>
+<title><![CDATA[Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation]]></title>
+<link>https://huggingface.co/papers/2602.16705</link>
+<guid>2602.16705</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Jiarong Liang, Max Ku, Ka-Hei Hui, Ping Nie, Wenhu Chen
+Authors: Runpei Dong, Ziyan Li, Xialin He, Saurabh Gupta
 Institution: 
-Published: 2026-02-09
+Published: 2026-02-18
 Score: 8/10
 Citations: 0
 Upvotes: 10
 GitHub: 
 Stars: 0
 
-Evaluating whether Multimodal Large Language Models (MLLMs) genuinely reason about physical dynamics remains challenging. Most existing benchmarks rely on recognition-style protocols such as Visual Question Answering (VQA) and Violation of Expectation (VoE), which can often be answered without committing to an explicit, testable physical hypothesis. We propose VisPhyWorld, an execution-based framework that evaluates physical reasoning by requiring models to generate executable simulator code from visual observations. By producing runnable code, the inferred world representation is directly inspectable, editable, and falsifiable. This separates physical reasoning from rendering. Building on this framework, we introduce VisPhyBench, comprising 209 evaluation scenes derived from 108 physical templates and a systematic protocol that evaluates how well models reconstruct appearance and reproduce physically plausible motion. Our pipeline produces valid reconstructed videos in 97.7% on the benchmark. Experiments show that while state-of-the-art MLLMs achieve strong semantic scene understanding, they struggle to accurately infer physical parameters and to simulate consistent physical dynamics.]]></description>
-<pubDate>Mon, 09 Feb 2026 05:46:44 +0000</pubDate>
+Visual loco-manipulation of arbitrary objects in the wild with humanoid robots requires accurate end-effector (EE) control and a generalizable understanding of the scene via visual inputs (e.g., RGB-D images). Existing approaches are based on real-world imitation learning and exhibit limited generalization due to the difficulty in collecting large-scale training datasets. This paper presents a new paradigm, HERO, for object loco-manipulation with humanoid robots that combines the strong generalization and open-vocabulary understanding of large vision models with strong control performance from simulated training. We achieve this by designing an accurate residual-aware EE tracking policy. This EE tracking policy combines classical robotics with machine learning. It uses a) inverse kinematics to convert residual end-effector targets into reference trajectories, b) a learned neural forward model for accurate forward kinematics, c) goal adjustment, and d) replanning. Together, these innovations help us cut down the end-effector tracking error by 3.2x. We use this accurate end-effector tracker to build a modular system for loco-manipulation, where we use open-vocabulary large vision models for strong visual generalization. Our system is able to operate in diverse real-world environments, from offices to coffee shops, where the robot is able to reliably manipulate various everyday objects (e.g., mugs, apples, toys) on surfaces ranging from 43cm to 92cm in height. Systematic modular and end-to-end tests in simulation and the real world demonstrate the effectiveness of our proposed design. We believe the advances in this paper can open up new ways of training humanoid robots to interact with daily objects.]]></description>
+<pubDate>Wed, 18 Feb 2026 18:55:02 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[On Surprising Effectiveness of Masking Updates in Adaptive Optimizers]]></title>
+<link>https://huggingface.co/papers/2602.15322</link>
+<guid>2602.15322</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Taejong Joo, Wenhan Xia, Cheolmin Kim, Ming Zhang, Eugene Ie
+Institution: 
+Published: 2026-02-17
+Score: 8/10
+Citations: 0
+Upvotes: 5
+GitHub: 
+Stars: 0
+
+Training large language models (LLMs) relies almost exclusively on dense adaptive optimizers with increasingly sophisticated preconditioners. We challenge this by showing that randomly masking parameter updates can be highly effective, with a masked variant of RMSProp consistently outperforming recent state-of-the-art optimizers. Our analysis reveals that the random masking induces a curvature-dependent geometric regularization that smooths the optimization trajectory. Motivated by this finding, we introduce Momentum-aligned gradient masking (Magma), which modulates the masked updates using momentum-gradient alignment. Extensive LLM pre-training experiments show that Magma is a simple drop-in replacement for adaptive optimizers with consistent gains and negligible computational overhead. Notably, for the 1B model size, Magma reduces perplexity by over 19\% and 9\% compared to Adam and Muon, respectively.]]></description>
+<pubDate>Tue, 17 Feb 2026 02:57:12 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[TAROT: Test-driven and Capability-adaptive Curriculum Reinforcement Fine-tuning for Code Generation with Large Language Models]]></title>
+<link>https://huggingface.co/papers/2602.15449</link>
+<guid>2602.15449</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Chansung Park, Juyong Jiang, Fan Wang, Sayak Paul, Jiasi Shen
+Institution: 
+Published: 2026-02-17
+Score: 8/10
+Citations: 0
+Upvotes: 4
+GitHub: 
+Stars: 0
+
+Large Language Models (LLMs) are changing the coding paradigm, known as vibe coding, yet synthesizing algorithmically sophisticated and robust code still remains a critical challenge. Incentivizing the deep reasoning capabilities of LLMs is essential to overcoming this hurdle. Reinforcement Fine-Tuning (RFT) has emerged as a promising strategy to address this need. However, most existing approaches overlook the heterogeneous difficulty and granularity inherent in test cases, leading to an imbalanced distribution of reward signals and consequently biased gradient updates during training. To address this, we propose Test-driven and cApability-adaptive cuRriculum reinfOrcement fine-Tuning (TAROT). TAROT systematically constructs, for each problem, a four-tier test suite (basic, intermediate, complex, edge), providing a controlled difficulty landscape for curriculum design and evaluation. Crucially, TAROT decouples curriculum progression from raw reward scores, enabling capability-conditioned evaluation and principled selection from a portfolio of curriculum policies rather than incidental test-case difficulty composition. This design fosters stable optimization and more efficient competency acquisition. Extensive experimental results reveal that the optimal curriculum for RFT in code generation is closely tied to a model's inherent capability, with less capable models achieving greater gains with an easy-to-hard progression, whereas more competent models excel under a hard-first curriculum. TAROT provides a reproducible method that adaptively tailors curriculum design to a model's capability, thereby consistently improving the functional correctness and robustness of the generated code. All code and data are released to foster reproducibility and advance community research at https://github.com/deep-diver/TAROT.]]></description>
+<pubDate>Tue, 17 Feb 2026 09:29:18 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Prescriptive Scaling Reveals the Evolution of Language Model Capabilities]]></title>
@@ -142,7 +124,7 @@ Institution:
 Published: 2026-02-17
 Score: 8/10
 Citations: 0
-Upvotes: 1
+Upvotes: 2
 GitHub: 
 Stars: 0
 
@@ -150,40 +132,76 @@ For deploying foundation models, practitioners increasingly need prescriptive sc
 <pubDate>Tue, 17 Feb 2026 03:13:51 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Exposing the Systematic Vulnerability of Open-Weight Models to Prefill Attacks]]></title>
-<link>https://huggingface.co/papers/2602.14689</link>
-<guid>2602.14689</guid>
+<title><![CDATA[How Much Reasoning Do Retrieval-Augmented Models Add beyond LLMs? A Benchmarking Framework for Multi-Hop Inference over Hybrid Knowledge]]></title>
+<link>https://huggingface.co/papers/2602.10210</link>
+<guid>2602.10210</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Lukas Struppek, Adam Gleave, Kellin Pelrine
+Authors: Junhong Lin, Bing Zhang, Song Wang, Ziyan Liu, Dan Gutfreund
 Institution: 
-Published: 2026-02-16
+Published: 2026-02-10
 Score: 8/10
 Citations: 0
 Upvotes: 1
 GitHub: 
 Stars: 0
 
-As the capabilities of large language models continue to advance, so does their potential for misuse. While closed-source models typically rely on external defenses, open-weight models must primarily depend on internal safeguards to mitigate harmful behavior. Prior red-teaming research has largely focused on input-based jailbreaking and parameter-level manipulations. However, open-weight models also natively support prefilling, which allows an attacker to predefine initial response tokens before generation begins. Despite its potential, this attack vector has received little systematic attention. We present the largest empirical study to date of prefill attacks, evaluating over 20 existing and novel strategies across multiple model families and state-of-the-art open-weight models. Our results show that prefill attacks are consistently effective against all major contemporary open-weight models, revealing a critical and previously underexplored vulnerability with significant implications for deployment. While certain large reasoning models exhibit some robustness against generic prefilling, they remain vulnerable to tailored, model-specific strategies. Our findings underscore the urgent need for model developers to prioritize defenses against prefill attacks in open-weight LLMs.]]></description>
-<pubDate>Mon, 16 Feb 2026 12:24:21 +0000</pubDate>
+Large language models (LLMs) continue to struggle with knowledge-intensive questions that require up-to-date information and multi-hop reasoning. Augmenting LLMs with hybrid external knowledge, such as unstructured text and structured knowledge graphs, offers a promising alternative to costly continual pretraining. As such, reliable evaluation of their retrieval and reasoning capabilities becomes critical. However, many existing benchmarks increasingly overlap with LLM pretraining data, which means answers or supporting knowledge may already be encoded in model parameters, making it difficult to distinguish genuine retrieval and reasoning from parametric recall. We introduce HybridRAG-Bench, a framework for constructing benchmarks to evaluate retrieval-intensive, multi-hop reasoning over hybrid knowledge. HybridRAG-Bench automatically couples unstructured text and structured knowledge graph representations derived from recent scientific literature on arXiv, and generates knowledge-intensive question-answer pairs grounded in explicit reasoning paths. The framework supports flexible domain and time-frame selection, enabling contamination-aware and customizable evaluation as models and knowledge evolve. Experiments across three domains (artificial intelligence, governance and policy, and bioinformatics) demonstrate that HybridRAG-Bench rewards genuine retrieval and reasoning rather than parametric recall, offering a principled testbed for evaluating hybrid knowledge-augmented reasoning systems. We release our code and data at github.com/junhongmit/HybridRAG-Bench.]]></description>
+<pubDate>Tue, 10 Feb 2026 19:04:01 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[DeepImageSearch: Benchmarking Multimodal Agents for Context-Aware Image Retrieval in Visual Histories]]></title>
-<link>https://huggingface.co/papers/2602.10809</link>
-<guid>2602.10809</guid>
+<title><![CDATA[SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks]]></title>
+<link>https://huggingface.co/papers/2602.12670</link>
+<guid>2602.12670</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Chenlong Deng, Mengjie Deng, Junjie Wu, Dun Zeng, Teng Wang
+Authors: Xiangyi Li, Wenbo Chen, Yimin Liu, Shenghan Zheng, Xiaokun Chen
 Institution: 
-Published: 2026-02-11
+Published: 2026-02-13
 Score: 7/10
 Citations: 0
-Upvotes: 42
+Upvotes: 40
 GitHub: 
 Stars: 0
 
-Existing multimodal retrieval systems excel at semantic matching but implicitly assume that query-image relevance can be measured in isolation. This paradigm overlooks the rich dependencies inherent in realistic visual streams, where information is distributed across temporal sequences rather than confined to single snapshots. To bridge this gap, we introduce DeepImageSearch, a novel agentic paradigm that reformulates image retrieval as an autonomous exploration task. Models must plan and perform multi-step reasoning over raw visual histories to locate targets based on implicit contextual cues. We construct DISBench, a challenging benchmark built on interconnected visual data. To address the scalability challenge of creating context-dependent queries, we propose a human-model collaborative pipeline that employs vision-language models to mine latent spatiotemporal associations, effectively offloading intensive context discovery before human verification. Furthermore, we build a robust baseline using a modular agent framework equipped with fine-grained tools and a dual-memory system for long-horizon navigation. Extensive experiments demonstrate that DISBench poses significant challenges to state-of-the-art models, highlighting the necessity of incorporating agentic reasoning into next-generation retrieval systems.]]></description>
-<pubDate>Wed, 11 Feb 2026 12:51:10 +0000</pubDate>
+Agent Skills are structured packages of procedural knowledge that augment LLM agents at inference time. Despite rapid adoption, there is no standard way to measure whether they actually help. We present SkillsBench, a benchmark of 86 tasks across 11 domains paired with curated Skills and deterministic verifiers. Each task is evaluated under three conditions: no Skills, curated Skills, and self-generated Skills. We test 7 agent-model configurations over 7,308 trajectories. Curated Skills raise average pass rate by 16.2 percentage points(pp), but effects vary widely by domain (+4.5pp for Software Engineering to +51.9pp for Healthcare) and 16 of 84 tasks show negative deltas. Self-generated Skills provide no benefit on average, showing that models cannot reliably author the procedural knowledge they benefit from consuming. Focused Skills with 2--3 modules outperform comprehensive documentation, and smaller models with Skills can match larger models without them.]]></description>
+<pubDate>Fri, 13 Feb 2026 07:06:06 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[GLM-5: from Vibe Coding to Agentic Engineering]]></title>
+<link>https://huggingface.co/papers/2602.15763</link>
+<guid>2602.15763</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: GLM-5 Team, Aohan Zeng, Xin Lv, Zhenyu Hou, Zhengxiao Du
+Institution: 
+Published: 2026-02-17
+Score: 7/10
+Citations: 0
+Upvotes: 39
+GitHub: 
+Stars: 0
+
+We present GLM-5, a next-generation foundation model designed to transition the paradigm of vibe coding to agentic engineering. Building upon the agentic, reasoning, and coding (ARC) capabilities of its predecessor, GLM-5 adopts DSA to significantly reduce training and inference costs while maintaining long-context fidelity. To advance model alignment and autonomy, we implement a new asynchronous reinforcement learning infrastructure that drastically improves post-training efficiency by decoupling generation from training. Furthermore, we propose novel asynchronous agent RL algorithms that further improve RL quality, enabling the model to learn from complex, long-horizon interactions more effectively. Through these innovations, GLM-5 achieves state-of-the-art performance on major open benchmarks. Most critically, GLM-5 demonstrates unprecedented capability in real-world coding tasks, surpassing previous baselines in handling end-to-end software engineering challenges. Code, models, and more information are available at https://github.com/zai-org/GLM-5.]]></description>
+<pubDate>Tue, 17 Feb 2026 17:50:56 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[UniT: Unified Multimodal Chain-of-Thought Test-time Scaling]]></title>
+<link>https://huggingface.co/papers/2602.12279</link>
+<guid>2602.12279</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Leon Liangyu Chen, Haoyu Ma, Zhipeng Fan, Ziqi Huang, Animesh Sinha
+Institution: 
+Published: 2026-02-12
+Score: 7/10
+Citations: 0
+Upvotes: 18
+GitHub: 
+Stars: 0
+
+Unified models can handle both multimodal understanding and generation within a single architecture, yet they typically operate in a single pass without iteratively refining their outputs. Many multimodal tasks, especially those involving complex spatial compositions, multiple interacting objects, or evolving instructions, require decomposing instructions, verifying intermediate results, and making iterative corrections. While test-time scaling (TTS) has demonstrated that allocating additional inference compute for iterative reasoning substantially improves language model performance, extending this paradigm to unified multimodal models remains an open challenge. We introduce UniT, a framework for multimodal chain-of-thought test-time scaling that enables a single unified model to reason, verify, and refine across multiple rounds. UniT combines agentic data synthesis, unified model training, and flexible test-time inference to elicit cognitive behaviors including verification, subgoal decomposition, and content memory. Our key findings are: (1) unified models trained on short reasoning trajectories generalize to longer inference chains at test time; (2) sequential chain-of-thought reasoning provides a more scalable and compute-efficient TTS strategy than parallel sampling; (3) training on generation and editing trajectories improves out-of-distribution visual reasoning. These results establish multimodal test-time scaling as an effective paradigm for advancing both generation and understanding in unified models.]]></description>
+<pubDate>Thu, 12 Feb 2026 18:59:49 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Data Darwinism Part I: Unlocking the Value of Scientific Data for Pre-training]]></title>
@@ -205,66 +223,48 @@ Data quality determines foundation model performance, yet systematic processing 
 <pubDate>Sun, 08 Feb 2026 05:06:34 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[InnoEval: On Research Idea Evaluation as a Knowledge-Grounded, Multi-Perspective Reasoning Problem]]></title>
-<link>https://huggingface.co/papers/2602.14367</link>
-<guid>2602.14367</guid>
+<title><![CDATA[Revisiting the Platonic Representation Hypothesis: An Aristotelian View]]></title>
+<link>https://huggingface.co/papers/2602.14486</link>
+<guid>2602.14486</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Shuofei Qiao, Yunxiang Wei, Xuehai Wang, Bin Wu, Boyang Xue
+Authors: Fabian Gröger, Shuo Wen, Maria Brbić
 Institution: 
 Published: 2026-02-16
 Score: 7/10
 Citations: 0
-Upvotes: 14
+Upvotes: 7
 GitHub: 
 Stars: 0
 
-The rapid evolution of Large Language Models has catalyzed a surge in scientific idea production, yet this leap has not been accompanied by a matching advance in idea evaluation. The fundamental nature of scientific evaluation needs knowledgeable grounding, collective deliberation, and multi-criteria decision-making. However, existing idea evaluation methods often suffer from narrow knowledge horizons, flattened evaluation dimensions, and the inherent bias in LLM-as-a-Judge. To address these, we regard idea evaluation as a knowledge-grounded, multi-perspective reasoning problem and introduce InnoEval, a deep innovation evaluation framework designed to emulate human-level idea assessment. We apply a heterogeneous deep knowledge search engine that retrieves and grounds dynamic evidence from diverse online sources. We further achieve review consensus with an innovation review board containing reviewers with distinct academic backgrounds, enabling a multi-dimensional decoupled evaluation across multiple metrics. We construct comprehensive datasets derived from authoritative peer-reviewed submissions to benchmark InnoEval. Experiments demonstrate that InnoEval can consistently outperform baselines in point-wise, pair-wise, and group-wise evaluation tasks, exhibiting judgment patterns and consensus highly aligned with human experts.]]></description>
-<pubDate>Mon, 16 Feb 2026 00:40:31 +0000</pubDate>
+The Platonic Representation Hypothesis suggests that representations from neural networks are converging to a common statistical model of reality. We show that the existing metrics used to measure representational similarity are confounded by network scale: increasing model depth or width can systematically inflate representational similarity scores. To correct these effects, we introduce a permutation-based null-calibration framework that transforms any representational similarity metric into a calibrated score with statistical guarantees. We revisit the Platonic Representation Hypothesis with our calibration framework, which reveals a nuanced picture: the apparent convergence reported by global spectral measures largely disappears after calibration, while local neighborhood similarity, but not local distances, retains significant agreement across different modalities. Based on these findings, we propose the Aristotelian Representation Hypothesis: representations in neural networks are converging to shared local neighborhood relationships.]]></description>
+<pubDate>Mon, 16 Feb 2026 06:01:23 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[WebWorld: A Large-Scale World Model for Web Agent Training]]></title>
-<link>https://huggingface.co/papers/2602.14721</link>
-<guid>2602.14721</guid>
+<title><![CDATA[Learning Situated Awareness in the Real World]]></title>
+<link>https://huggingface.co/papers/2602.16682</link>
+<guid>2602.16682</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Zikai Xiao, Jianhong Tu, Chuhang Zou, Yuxin Zuo, Zhi Li
+Authors: Chuhan Li, Ruilin Han, Joy Hsu, Yongyuan Liang, Rajiv Dhawan
 Institution: 
-Published: 2026-02-16
+Published: 2026-02-18
 Score: 7/10
 Citations: 0
-Upvotes: 5
+Upvotes: 3
 GitHub: 
 Stars: 0
 
-Web agents require massive trajectories to generalize, yet real-world training is constrained by network latency, rate limits, and safety risks. We introduce WebWorld series, the first open-web simulator trained at scale. While existing simulators are restricted to closed environments with thousands of trajectories, WebWorld leverages a scalable data pipeline to train on 1M+ open-web interactions, supporting reasoning, multi-format data, and long-horizon simulations of 30+ steps. For intrinsic evaluation, we introduce WebWorld-Bench with dual metrics spanning nine dimensions, where WebWorld achieves simulation performance comparable to Gemini-3-Pro. For extrinsic evaluation, Qwen3-14B trained on WebWorld-synthesized trajectories improves by +9.2\% on WebArena, reaching performance comparable to GPT-4o. WebWorld enables effective inference-time search, outperforming GPT-5 as a world model. Beyond web simulation, WebWorld exhibits cross-domain generalization to code, GUI, and game environments, providing a replicable recipe for world model construction.]]></description>
-<pubDate>Mon, 16 Feb 2026 13:06:49 +0000</pubDate>
+A core aspect of human perception is situated awareness, the ability to relate ourselves to the surrounding physical environment and reason over possible actions in context. However, most existing benchmarks for multimodal foundation models (MFMs) emphasize environment-centric spatial relations (relations among objects in a scene), while largely overlooking observer-centric relationships that require reasoning relative to agent's viewpoint, pose, and motion. To bridge this gap, we introduce SAW-Bench (Situated Awareness in the Real World), a novel benchmark for evaluating egocentric situated awareness using real-world videos. SAW-Bench comprises 786 self-recorded videos captured with Ray-Ban Meta (Gen 2) smart glasses spanning diverse indoor and outdoor environments, and over 2,071 human-annotated question-answer pairs. It probes a model's observer-centric understanding with six different awareness tasks. Our comprehensive evaluation reveals a human-model performance gap of 37.66%, even with the best-performing MFM, Gemini 3 Flash. Beyond this gap, our in-depth analysis uncovers several notable findings; for example, while models can exploit partial geometric cues in egocentric videos, they often fail to infer a coherent camera geometry, leading to systematic spatial reasoning errors. We position SAW-Bench as a benchmark for situated spatial intelligence, moving beyond passive observation to understanding physically grounded, observer-centric dynamics.]]></description>
+<pubDate>Wed, 18 Feb 2026 18:22:52 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision]]></title>
-<link>https://huggingface.co/papers/2602.13195</link>
-<guid>2602.13195</guid>
+<title><![CDATA[STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens]]></title>
+<link>https://huggingface.co/papers/2602.15620</link>
+<guid>2602.15620</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Aadarsh Sahoo, Georgia Gkioxari
-Institution: 
-Published: 2026-02-13
-Score: 7/10
-Citations: 0
-Upvotes: 4
-GitHub: 
-Stars: 0
-
-Conversational image segmentation grounds abstract, intent-driven concepts into pixel-accurate masks. Prior work on referring image grounding focuses on categorical and spatial queries (e.g., "left-most apple") and overlooks functional and physical reasoning (e.g., "where can I safely store the knife?"). We address this gap and introduce Conversational Image Segmentation (CIS) and ConverSeg, a benchmark spanning entities, spatial relations, intent, affordances, functions, safety, and physical reasoning. We also present ConverSeg-Net, which fuses strong segmentation priors with language understanding, and an AI-powered data engine that generates prompt-mask pairs without human supervision. We show that current language-guided segmentation models are inadequate for CIS, while ConverSeg-Net trained on our data engine achieves significant gains on ConverSeg and maintains strong performance on existing language-guided segmentation benchmarks. Project webpage: https://glab-caltech.github.io/converseg/]]></description>
-<pubDate>Fri, 13 Feb 2026 18:58:30 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[On Surprising Effectiveness of Masking Updates in Adaptive Optimizers]]></title>
-<link>https://huggingface.co/papers/2602.15322</link>
-<guid>2602.15322</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Taejong Joo, Wenhan Xia, Cheolmin Kim, Ming Zhang, Eugene Ie
+Authors: Shiqi Liu, Zeyu He, Guojian Zhan, Letian Tao, Zhilong Zheng
 Institution: 
 Published: 2026-02-17
 Score: 7/10
@@ -273,52 +273,52 @@ Upvotes: 3
 GitHub: 
 Stars: 0
 
-Training large language models (LLMs) relies almost exclusively on dense adaptive optimizers with increasingly sophisticated preconditioners. We challenge this by showing that randomly masking parameter updates can be highly effective, with a masked variant of RMSProp consistently outperforming recent state-of-the-art optimizers. Our analysis reveals that the random masking induces a curvature-dependent geometric regularization that smooths the optimization trajectory. Motivated by this finding, we introduce Momentum-aligned gradient masking (Magma), which modulates the masked updates using momentum-gradient alignment. Extensive LLM pre-training experiments show that Magma is a simple drop-in replacement for adaptive optimizers with consistent gains and negligible computational overhead. Notably, for the 1B model size, Magma reduces perplexity by over 19\% and 9\% compared to Adam and Muon, respectively.]]></description>
-<pubDate>Tue, 17 Feb 2026 02:57:12 +0000</pubDate>
+Reinforcement Learning (RL) has significantly improved large language model reasoning, but existing RL fine-tuning methods rely heavily on heuristic techniques such as entropy regularization and reweighting to maintain stability. In practice, they often experience late-stage performance collapse, leading to degraded reasoning quality and unstable training. We derive that the magnitude of token-wise policy gradients in RL is negatively correlated with token probability and local policy entropy. Building on this result, we prove that training instability is driven by a tiny fraction of tokens, approximately 0.01\%, which we term spurious tokens. When such tokens appear in correct responses, they contribute little to the reasoning outcome but inherit the full sequence-level reward, leading to abnormally amplified gradient updates. Motivated by this observation, we propose Spurious-Token-Aware Policy Optimization (STAPO) for large-scale model refining, which selectively masks such updates and renormalizes the loss over valid tokens. Across six mathematical reasoning benchmarks using Qwen 1.7B, 8B, and 14B base models, STAPO consistently demonstrates superior entropy stability and achieves an average performance improvement of 7.13\% over GRPO, 20-Entropy and JustRL.]]></description>
+<pubDate>Tue, 17 Feb 2026 14:46:48 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[ClinAlign: Scaling Healthcare Alignment from Clinician Preference]]></title>
-<link>https://huggingface.co/papers/2602.09653</link>
-<guid>2602.09653</guid>
+<title><![CDATA[The Vision Wormhole: Latent-Space Communication in Heterogeneous Multi-Agent Systems]]></title>
+<link>https://huggingface.co/papers/2602.15382</link>
+<guid>2602.15382</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Shiwei Lyu, Xidong Wang, Lei Liu, Hao Zhu, Chaohe Zhang
+Authors: Xiaoze Liu, Ruowang Zhang, Weichen Yu, Siheng Xiong, Liu He
 Institution: 
-Published: 2026-02-10
+Published: 2026-02-17
 Score: 7/10
 Citations: 0
 Upvotes: 2
 GitHub: 
 Stars: 0
 
-Although large language models (LLMs) demonstrate expert-level medical knowledge, aligning their open-ended outputs with fine-grained clinician preferences remains challenging. Existing methods often rely on coarse objectives or unreliable automated judges that are weakly grounded in professional guidelines. We propose a two-stage framework to address this gap. First, we introduce HealthRubrics, a dataset of 7,034 physician-verified preference examples in which clinicians refine LLM-drafted rubrics to meet rigorous medical standards. Second, we distill these rubrics into HealthPrinciples: 119 broadly reusable, clinically grounded principles organized by clinical dimensions, enabling scalable supervision beyond manual annotation. We use HealthPrinciples for (1) offline alignment by synthesizing rubrics for unlabeled queries and (2) an inference-time tool for guided self-revision. A 30B parameter model that activates only 3B parameters at inference trained with our framework achieves 33.4% on HealthBench-Hard, outperforming much larger models including Deepseek-R1 and o3, establishing a resource-efficient baseline for clinical alignment.]]></description>
-<pubDate>Tue, 10 Feb 2026 11:02:57 +0000</pubDate>
+Multi-Agent Systems (MAS) powered by Large Language Models have unlocked advanced collaborative reasoning, yet they remain shackled by the inefficiency of discrete text communication, which imposes significant runtime overhead and information quantization loss. While latent state transfer offers a high-bandwidth alternative, existing approaches either assume homogeneous sender-receiver architectures or rely on pair-specific learned translators, limiting scalability and modularity across diverse model families with disjoint manifolds. In this work, we propose the Vision Wormhole, a novel framework that repurposes the visual interface of Vision-Language Models (VLMs) to enable model-agnostic, text-free communication. By introducing a Universal Visual Codec, we map heterogeneous reasoning traces into a shared continuous latent space and inject them directly into the receiver's visual pathway, effectively treating the vision encoder as a universal port for inter-agent telepathy. Our framework adopts a hub-and-spoke topology to reduce pairwise alignment complexity from O(N^2) to O(N) and leverages a label-free, teacher-student distillation objective to align the high-speed visual channel with the robust reasoning patterns of the text pathway. Extensive experiments across heterogeneous model families (e.g., Qwen-VL, Gemma) demonstrate that the Vision Wormhole reduces end-to-end wall-clock time in controlled comparisons while maintaining reasoning fidelity comparable to standard text-based MAS. Code is available at https://github.com/xz-liu/heterogeneous-latent-mas]]></description>
+<pubDate>Tue, 17 Feb 2026 06:31:53 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[MoRL: Reinforced Reasoning for Unified Motion Understanding and Generation]]></title>
-<link>https://huggingface.co/papers/2602.14534</link>
-<guid>2602.14534</guid>
+<title><![CDATA[LM-Lexicon: Improving Definition Modeling via Harmonizing Semantic Experts]]></title>
+<link>https://huggingface.co/papers/2602.14060</link>
+<guid>2602.14060</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Hongpeng Wang, Zeyu Zhang, Wenhao Li, Hao Tang
+Authors: Yang Liu, Jiaye Yang, Weikang Li, Jiahui Liang, Yang Li
 Institution: 
-Published: 2026-02-16
+Published: 2026-02-15
 Score: 7/10
 Citations: 0
 Upvotes: 2
 GitHub: 
 Stars: 0
 
-Human motion understanding and generation are crucial for vision and robotics but remain limited in reasoning capability and test-time planning. We propose MoRL, a unified multimodal motion model trained with supervised fine-tuning and reinforcement learning with verifiable rewards. Our task-specific reward design combines semantic alignment and reasoning coherence for understanding with physical plausibility and text-motion consistency for generation, improving both logical reasoning and perceptual realism. To further enhance inference, we introduce Chain-of-Motion (CoM), a test-time reasoning method that enables step-by-step planning and reflection. We also construct two large-scale CoT datasets, MoUnd-CoT-140K and MoGen-CoT-140K, to align motion sequences with reasoning traces and action descriptions. Experiments on HumanML3D and KIT-ML show that MoRL achieves significant gains over state-of-the-art baselines. Code: https://github.com/AIGeeksGroup/MoRL. Website: https://aigeeksgroup.github.io/MoRL.]]></description>
-<pubDate>Mon, 16 Feb 2026 07:42:45 +0000</pubDate>
+We introduce LM-Lexicon, an innovative definition modeling approach that incorporates data clustering, semantic expert learning, and model merging using a sparse mixture-of-experts architecture. By decomposing the definition modeling task into specialized semantic domains, where small language models are trained as domain experts, LM-Lexicon achieves substantial improvements (+7% BLEU score compared with the prior state-of-the-art model) over existing methods on five widely used benchmarks. Empirically, we demonstrate that 1) the clustering strategy enables fine-grained expert specialization with nearly 10% improvement in definition quality; 2) the semantic-aware domain-level routing mechanism achieves higher expert efficacy (+1%) than conventional token-level routing; and 3) further performance gains can be obtained through test-time compute and semantic expert scaling. Our work advances definition modeling while providing insights into the development of efficient language models for semantic-intensive applications.]]></description>
+<pubDate>Sun, 15 Feb 2026 09:18:22 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[TAROT: Test-driven and Capability-adaptive Curriculum Reinforcement Fine-tuning for Code Generation with Large Language Models]]></title>
-<link>https://huggingface.co/papers/2602.15449</link>
-<guid>2602.15449</guid>
+<title><![CDATA[World Action Models are Zero-shot Policies]]></title>
+<link>https://huggingface.co/papers/2602.15922</link>
+<guid>2602.15922</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Chansung Park, Juyong Jiang, Fan Wang, Sayak Paul, Jiasi Shen
+Authors: Seonghyeon Ye, Yunhao Ge, Kaiyuan Zheng, Shenyuan Gao, Sihyun Yu
 Institution: 
 Published: 2026-02-17
 Score: 7/10
@@ -327,8 +327,8 @@ Upvotes: 1
 GitHub: 
 Stars: 0
 
-Large Language Models (LLMs) are changing the coding paradigm, known as vibe coding, yet synthesizing algorithmically sophisticated and robust code still remains a critical challenge. Incentivizing the deep reasoning capabilities of LLMs is essential to overcoming this hurdle. Reinforcement Fine-Tuning (RFT) has emerged as a promising strategy to address this need. However, most existing approaches overlook the heterogeneous difficulty and granularity inherent in test cases, leading to an imbalanced distribution of reward signals and consequently biased gradient updates during training. To address this, we propose Test-driven and cApability-adaptive cuRriculum reinfOrcement fine-Tuning (TAROT). TAROT systematically constructs, for each problem, a four-tier test suite (basic, intermediate, complex, edge), providing a controlled difficulty landscape for curriculum design and evaluation. Crucially, TAROT decouples curriculum progression from raw reward scores, enabling capability-conditioned evaluation and principled selection from a portfolio of curriculum policies rather than incidental test-case difficulty composition. This design fosters stable optimization and more efficient competency acquisition. Extensive experimental results reveal that the optimal curriculum for RFT in code generation is closely tied to a model's inherent capability, with less capable models achieving greater gains with an easy-to-hard progression, whereas more competent models excel under a hard-first curriculum. TAROT provides a reproducible method that adaptively tailors curriculum design to a model's capability, thereby consistently improving the functional correctness and robustness of the generated code. All code and data are released to foster reproducibility and advance community research at https://github.com/deep-diver/TAROT.]]></description>
-<pubDate>Tue, 17 Feb 2026 09:29:18 +0000</pubDate>
+State-of-the-art Vision-Language-Action (VLA) models excel at semantic generalization but struggle to generalize to unseen physical motions in novel environments. We introduce DreamZero, a World Action Model (WAM) built upon a pretrained video diffusion backbone. Unlike VLAs, WAMs learn physical dynamics by predicting future world states and actions, using video as a dense representation of how the world evolves. By jointly modeling video and action, DreamZero learns diverse skills effectively from heterogeneous robot data without relying on repetitive demonstrations. This results in over 2x improvement in generalization to new tasks and environments compared to state-of-the-art VLAs in real robot experiments. Crucially, through model and system optimizations, we enable a 14B autoregressive video diffusion model to perform real-time closed-loop control at 7Hz. Finally, we demonstrate two forms of cross-embodiment transfer: video-only demonstrations from other robots or humans yield a relative improvement of over 42% on unseen task performance with just 10-20 minutes of data. More surprisingly, DreamZero enables few-shot embodiment adaptation, transferring to a new embodiment with only 30 minutes of play data while retaining zero-shot generalization.]]></description>
+<pubDate>Tue, 17 Feb 2026 15:04:02 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[AnchorWeave: World-Consistent Video Generation with Retrieved Local Spatial Memories]]></title>
@@ -349,40 +349,22 @@ Maintaining spatial world consistency over long horizons remains a central chall
 <pubDate>Mon, 16 Feb 2026 17:23:08 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[EditCtrl: Disentangled Local and Global Control for Real-Time Generative Video Editing]]></title>
-<link>https://huggingface.co/papers/2602.15031</link>
-<guid>2602.15031</guid>
+<title><![CDATA[Can I Have Your Order? Monte-Carlo Tree Search for Slot Filling Ordering in Diffusion Language Models]]></title>
+<link>https://huggingface.co/papers/2602.12586</link>
+<guid>2602.12586</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yehonathan Litman, Shikun Liu, Dario Seyb, Nicholas Milef, Yang Zhou
+Authors: Joshua Ong Jun Leang, Yu Zhao, Mihaela Cătălina Stoian, Wenda Li, Shay B. Cohen
 Institution: 
-Published: 2026-02-16
+Published: 2026-02-13
 Score: 7/10
 Citations: 0
 Upvotes: 1
 GitHub: 
 Stars: 0
 
-High-fidelity generative video editing has seen significant quality improvements by leveraging pre-trained video foundation models. However, their computational cost is a major bottleneck, as they are often designed to inefficiently process the full video context regardless of the inpainting mask's size, even for sparse, localized edits. In this paper, we introduce EditCtrl, an efficient video inpainting control framework that focuses computation only where it is needed. Our approach features a novel local video context module that operates solely on masked tokens, yielding a computational cost proportional to the edit size. This local-first generation is then guided by a lightweight temporal global context embedder that ensures video-wide context consistency with minimal overhead. Not only is EditCtrl 10 times more compute efficient than state-of-the-art generative editing methods, it even improves editing quality compared to methods designed with full-attention. Finally, we showcase how EditCtrl unlocks new capabilities, including multi-region editing with text prompts and autoregressive content propagation.]]></description>
-<pubDate>Mon, 16 Feb 2026 18:59:58 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Causal-JEPA: Learning World Models through Object-Level Latent Interventions]]></title>
-<link>https://huggingface.co/papers/2602.11389</link>
-<guid>2602.11389</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Heejeong Nam, Quentin Le Lidec, Lucas Maes, Yann LeCun, Randall Balestriero
-Institution: 
-Published: 2026-02-11
-Score: 7/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-World models require robust relational understanding to support prediction, reasoning, and control. While object-centric representations provide a useful abstraction, they are not sufficient to capture interaction-dependent dynamics. We therefore propose C-JEPA, a simple and flexible object-centric world model that extends masked joint embedding prediction from image patches to object-centric representations. By applying object-level masking that requires an object's state to be inferred from other objects, C-JEPA induces latent interventions with counterfactual-like effects and prevents shortcut solutions, making interaction reasoning essential. Empirically, C-JEPA leads to consistent gains in visual question answering, with an absolute improvement of about 20\% in counterfactual reasoning compared to the same architecture without object-level masking. On agent control tasks, C-JEPA enables substantially more efficient planning by using only 1\% of the total latent input features required by patch-based world models, while achieving comparable performance. Finally, we provide a formal analysis demonstrating that object-level masking induces a causal inductive bias via latent interventions. Our code is available at https://github.com/galilai-group/cjepa.]]></description>
-<pubDate>Wed, 11 Feb 2026 21:47:26 +0000</pubDate>
+While plan-and-infill decoding in Masked Diffusion Models (MDMs) shows promise for mathematical and code reasoning, performance remains highly sensitive to slot infilling order, often yielding substantial output variance. We introduce McDiffuSE, a framework that formulates slot selection as decision making and optimises infilling orders through Monte Carlo Tree Search (MCTS). McDiffuSE uses look-ahead simulations to evaluate partial completions before commitment, systematically exploring the combinatorial space of generation orders. Experiments show an average improvement of 3.2% over autoregressive baselines and 8.0% over baseline plan-and-infill, with notable gains of 19.5% on MBPP and 4.9% on MATH500. Our analysis reveals that while McDiffuSE predominantly follows sequential ordering, incorporating non-sequential generation is essential for maximising performance. We observe that larger exploration constants, rather than increased simulations, are necessary to overcome model confidence biases and discover effective orderings. These findings establish MCTS-based planning as an effective approach for enhancing generation quality in MDMs.]]></description>
+<pubDate>Fri, 13 Feb 2026 03:56:22 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Found-RL: foundation model-enhanced reinforcement learning for autonomous driving]]></title>
@@ -403,22 +385,22 @@ Reinforcement Learning (RL) has emerged as a dominant paradigm for end-to-end au
 <pubDate>Wed, 11 Feb 2026 02:56:04 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Experiential Reinforcement Learning]]></title>
-<link>https://huggingface.co/papers/2602.13949</link>
-<guid>2602.13949</guid>
+<title><![CDATA[DeepImageSearch: Benchmarking Multimodal Agents for Context-Aware Image Retrieval in Visual Histories]]></title>
+<link>https://huggingface.co/papers/2602.10809</link>
+<guid>2602.10809</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Taiwei Shi, Sihao Chen, Bowen Jiang, Linxin Song, Longqi Yang
+Authors: Chenlong Deng, Mengjie Deng, Junjie Wu, Dun Zeng, Teng Wang
 Institution: 
-Published: 2026-02-15
+Published: 2026-02-11
 Score: 6/10
 Citations: 0
-Upvotes: 46
+Upvotes: 42
 GitHub: 
 Stars: 0
 
-Reinforcement learning has become the central approach for language models (LMs) to learn from environmental reward or feedback. In practice, the environmental feedback is usually sparse and delayed. Learning from such signals is challenging, as LMs must implicitly infer how observed failures should translate into behavioral changes for future iterations. We introduce Experiential Reinforcement Learning (ERL), a training paradigm that embeds an explicit experience-reflection-consolidation loop into the reinforcement learning process. Given a task, the model generates an initial attempt, receives environmental feedback, and produces a reflection that guides a refined second attempt, whose success is reinforced and internalized into the base policy. This process converts feedback into structured behavioral revision, improving exploration and stabilizing optimization while preserving gains at deployment without additional inference cost. Across sparse-reward control environments and agentic reasoning benchmarks, ERL consistently improves learning efficiency and final performance over strong reinforcement learning baselines, achieving gains of up to +81% in complex multi-step environments and up to +11% in tool-using reasoning tasks. These results suggest that integrating explicit self-reflection into policy training provides a practical mechanism for transforming feedback into durable behavioral improvement.]]></description>
-<pubDate>Sun, 15 Feb 2026 01:23:48 +0000</pubDate>
+Existing multimodal retrieval systems excel at semantic matching but implicitly assume that query-image relevance can be measured in isolation. This paradigm overlooks the rich dependencies inherent in realistic visual streams, where information is distributed across temporal sequences rather than confined to single snapshots. To bridge this gap, we introduce DeepImageSearch, a novel agentic paradigm that reformulates image retrieval as an autonomous exploration task. Models must plan and perform multi-step reasoning over raw visual histories to locate targets based on implicit contextual cues. We construct DISBench, a challenging benchmark built on interconnected visual data. To address the scalability challenge of creating context-dependent queries, we propose a human-model collaborative pipeline that employs vision-language models to mine latent spatiotemporal associations, effectively offloading intensive context discovery before human verification. Furthermore, we build a robust baseline using a modular agent framework equipped with fine-grained tools and a dual-memory system for long-horizon navigation. Extensive experiments demonstrate that DISBench poses significant challenges to state-of-the-art models, highlighting the necessity of incorporating agentic reasoning into next-generation retrieval systems.]]></description>
+<pubDate>Wed, 11 Feb 2026 12:51:10 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[STATe-of-Thoughts: Structured Action Templates for Tree-of-Thoughts]]></title>
@@ -439,58 +421,40 @@ Inference-Time-Compute (ITC) methods like Best-of-N and Tree-of-Thoughts are mea
 <pubDate>Sun, 15 Feb 2026 18:29:54 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Query as Anchor: Scenario-Adaptive User Representation via Large Language Model]]></title>
-<link>https://huggingface.co/papers/2602.14492</link>
-<guid>2602.14492</guid>
+<title><![CDATA[Learning to Configure Agentic AI Systems]]></title>
+<link>https://huggingface.co/papers/2602.11574</link>
+<guid>2602.11574</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Jiahao Yuan, Yike Xu, Jinyong Wen, Baokun Wang, Ziyi Gao
-Institution: 
-Published: 2026-02-16
-Score: 6/10
-Citations: 0
-Upvotes: 17
-GitHub: 
-Stars: 0
-
-Industrial-scale user representation learning requires balancing robust universality with acute task-sensitivity. However, existing paradigms primarily yield static, task-agnostic embeddings that struggle to reconcile the divergent requirements of downstream scenarios within unified vector spaces. Furthermore, heterogeneous multi-source data introduces inherent noise and modality conflicts, degrading representation. We propose Query-as-Anchor, a framework shifting user modeling from static encoding to dynamic, query-aware synthesis. To empower Large Language Models (LLMs) with deep user understanding, we first construct UserU, an industrial-scale pre-training dataset that aligns multi-modal behavioral sequences with user understanding semantics, and our Q-Anchor Embedding architecture integrates hierarchical coarse-to-fine encoders into dual-tower LLMs via joint contrastive-autoregressive optimization for query-aware user representation. To bridge the gap between general pre-training and specialized business logic, we further introduce Cluster-based Soft Prompt Tuning to enforce discriminative latent structures, effectively aligning model attention with scenario-specific modalities. For deployment, anchoring queries at sequence termini enables KV-cache-accelerated inference with negligible incremental latency. Evaluations on 10 Alipay industrial benchmarks show consistent SOTA performance, strong scalability, and efficient deployment. Large-scale online A/B testing in Alipay's production system across two real-world scenarios further validates its practical effectiveness. Our code is prepared for public release and will be available at: https://github.com/JhCircle/Q-Anchor.]]></description>
-<pubDate>Mon, 16 Feb 2026 06:09:31 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[UniWeTok: An Unified Binary Tokenizer with Codebook Size 2^{128} for Unified Multimodal Large Language Model]]></title>
-<link>https://huggingface.co/papers/2602.14178</link>
-<guid>2602.14178</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Shaobin Zhuang, Yuang Ai, Jiaming Han, Weijia Mao, Xiaohui Li
-Institution: 
-Published: 2026-02-15
-Score: 6/10
-Citations: 0
-Upvotes: 10
-GitHub: 
-Stars: 0
-
-Unified Multimodal Large Language Models (MLLMs) require a visual representation that simultaneously supports high-fidelity reconstruction, complex semantic extraction, and generative suitability. However, existing visual tokenizers typically struggle to satisfy these conflicting objectives within a single framework. In this paper, we introduce UniWeTok, a unified discrete tokenizer designed to bridge this gap using a massive binary codebook (2^{128}). For training framework, we introduce Pre-Post Distillation and a Generative-Aware Prior to enhance the semantic extraction and generative prior of the discrete tokens. In terms of model architecture, we propose a convolution-attention hybrid architecture with the SigLu activation function. SigLu activation not only bounds the encoder output and stabilizes the semantic distillation process but also effectively addresses the optimization conflict between token entropy loss and commitment loss. We further propose a three-stage training framework designed to enhance UniWeTok's adaptability cross various image resolutions and perception-sensitive scenarios, such as those involving human faces and textual content. On ImageNet, UniWeTok achieves state-of-the-art image generation performance (FID: UniWeTok 1.38 vs. REPA 1.42) while requiring a remarkably low training compute (Training Tokens: UniWeTok 33B vs. REPA 262B). On general-domain, UniWeTok demonstrates highly competitive capabilities across a broad range of tasks, including multimodal understanding, image generation (DPG Score: UniWeTok 86.63 vs. FLUX.1 [Dev] 83.84), and editing (GEdit Overall Score: UniWeTok 5.09 vs. OmniGen 5.06). We release code and models to facilitate community exploration of unified tokenizer and MLLM.]]></description>
-<pubDate>Sun, 15 Feb 2026 15:07:19 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[UniT: Unified Multimodal Chain-of-Thought Test-time Scaling]]></title>
-<link>https://huggingface.co/papers/2602.12279</link>
-<guid>2602.12279</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Leon Liangyu Chen, Haoyu Ma, Zhipeng Fan, Ziqi Huang, Animesh Sinha
+Authors: Aditya Taparia, Som Sagar, Ransalu Senanayake
 Institution: 
 Published: 2026-02-12
 Score: 6/10
 Citations: 0
-Upvotes: 7
+Upvotes: 13
 GitHub: 
 Stars: 0
 
-Unified models can handle both multimodal understanding and generation within a single architecture, yet they typically operate in a single pass without iteratively refining their outputs. Many multimodal tasks, especially those involving complex spatial compositions, multiple interacting objects, or evolving instructions, require decomposing instructions, verifying intermediate results, and making iterative corrections. While test-time scaling (TTS) has demonstrated that allocating additional inference compute for iterative reasoning substantially improves language model performance, extending this paradigm to unified multimodal models remains an open challenge. We introduce UniT, a framework for multimodal chain-of-thought test-time scaling that enables a single unified model to reason, verify, and refine across multiple rounds. UniT combines agentic data synthesis, unified model training, and flexible test-time inference to elicit cognitive behaviors including verification, subgoal decomposition, and content memory. Our key findings are: (1) unified models trained on short reasoning trajectories generalize to longer inference chains at test time; (2) sequential chain-of-thought reasoning provides a more scalable and compute-efficient TTS strategy than parallel sampling; (3) training on generation and editing trajectories improves out-of-distribution visual reasoning. These results establish multimodal test-time scaling as an effective paradigm for advancing both generation and understanding in unified models.]]></description>
-<pubDate>Thu, 12 Feb 2026 18:59:49 +0000</pubDate>
+Configuring LLM-based agent systems involves choosing workflows, tools, token budgets, and prompts from a large combinatorial design space, and is typically handled today by fixed large templates or hand-tuned heuristics. This leads to brittle behavior and unnecessary compute, since the same cumbersome configuration is often applied to both easy and hard input queries. We formulate agent configuration as a query-wise decision problem and introduce ARC (Agentic Resource & Configuration learner), which learns a light-weight hierarchical policy using reinforcement learning to dynamically tailor these configurations. Across multiple benchmarks spanning reasoning and tool-augmented question answering, the learned policy consistently outperforms strong hand-designed and other baselines, achieving up to 25% higher task accuracy while also reducing token and runtime costs. These results demonstrate that learning per-query agent configurations is a powerful alternative to "one size fits all" designs.]]></description>
+<pubDate>Thu, 12 Feb 2026 04:45:44 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[VisPhyWorld: Probing Physical Reasoning via Code-Driven Video Reconstruction]]></title>
+<link>https://huggingface.co/papers/2602.13294</link>
+<guid>2602.13294</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Jiarong Liang, Max Ku, Ka-Hei Hui, Ping Nie, Wenhu Chen
+Institution: 
+Published: 2026-02-09
+Score: 6/10
+Citations: 0
+Upvotes: 12
+GitHub: 
+Stars: 0
+
+Evaluating whether Multimodal Large Language Models (MLLMs) genuinely reason about physical dynamics remains challenging. Most existing benchmarks rely on recognition-style protocols such as Visual Question Answering (VQA) and Violation of Expectation (VoE), which can often be answered without committing to an explicit, testable physical hypothesis. We propose VisPhyWorld, an execution-based framework that evaluates physical reasoning by requiring models to generate executable simulator code from visual observations. By producing runnable code, the inferred world representation is directly inspectable, editable, and falsifiable. This separates physical reasoning from rendering. Building on this framework, we introduce VisPhyBench, comprising 209 evaluation scenes derived from 108 physical templates and a systematic protocol that evaluates how well models reconstruct appearance and reproduce physically plausible motion. Our pipeline produces valid reconstructed videos in 97.7% on the benchmark. Experiments show that while state-of-the-art MLLMs achieve strong semantic scene understanding, they struggle to accurately infer physical parameters and to simulate consistent physical dynamics.]]></description>
+<pubDate>Mon, 09 Feb 2026 05:46:44 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[jina-embeddings-v5-text: Task-Targeted Embedding Distillation]]></title>
@@ -503,12 +467,30 @@ Institution:
 Published: 2026-02-17
 Score: 6/10
 Citations: 0
-Upvotes: 6
+Upvotes: 9
 GitHub: 
 Stars: 0
 
 Text embedding models are widely used for semantic similarity tasks, including information retrieval, clustering, and classification. General-purpose models are typically trained with single- or multi-stage processes using contrastive loss functions. We introduce a novel training regimen that combines model distillation techniques with task-specific contrastive loss to produce compact, high-performance embedding models. Our findings suggest that this approach is more effective for training small models than purely contrastive or distillation-based training paradigms alone. Benchmark scores for the resulting models, jina-embeddings-v5-text-small and jina-embeddings-v5-text-nano, exceed or match the state-of-the-art for models of similar size. jina-embeddings-v5-text models additionally support long texts (up to 32k tokens) in many languages, and generate embeddings that remain robust under truncation and binary quantization. Model weights are publicly available, hopefully inspiring further advances in embedding model development.]]></description>
 <pubDate>Tue, 17 Feb 2026 12:50:50 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Panini: Continual Learning in Token Space via Structured Memory]]></title>
+<link>https://huggingface.co/papers/2602.15156</link>
+<guid>2602.15156</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Shreyas Rajesh, Pavan Holur, Mehmet Yigit Turali, Chenda Duan, Vwani Roychowdhury
+Institution: 
+Published: 2026-02-16
+Score: 6/10
+Citations: 0
+Upvotes: 5
+GitHub: 
+Stars: 0
+
+Language models are increasingly used to reason over content they were not trained on, such as new documents, evolving knowledge, and user-specific data. A common approach is retrieval-augmented generation (RAG), which stores verbatim documents externally (as chunks) and retrieves only a relevant subset at inference time for an LLM to reason over. However, this results in inefficient usage of test-time compute (LLM repeatedly reasons over the same documents); moreover, chunk retrieval can inject irrelevant context that increases unsupported generation. We propose a human-like non-parametric continual learning framework, where the base model remains fixed, and learning occurs by integrating each new experience into an external semantic memory state that accumulates and consolidates itself continually. We present Panini, which realizes this by representing documents as Generative Semantic Workspaces (GSW) -- an entity- and event-aware network of question-answer (QA) pairs, sufficient for an LLM to reconstruct the experienced situations and mine latent knowledge via reasoning-grounded inference chains on the network. Given a query, Panini only traverses the continually-updated GSW (not the verbatim documents or chunks), and retrieves the most likely inference chains. Across six QA benchmarks, Panini achieves the highest average performance, 5%-7% higher than other competitive baselines, while using 2-30x fewer answer-context tokens, supports fully open-source pipelines, and reduces unsupported answers on curated unanswerable queries. The results show that efficient and accurate structuring of experiences at write time -- as achieved by the GSW framework -- yields both efficiency and reliability gains at read time. Code is available at https://github.com/roychowdhuryresearch/gsw-memory.]]></description>
+<pubDate>Mon, 16 Feb 2026 19:58:03 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[COMPOT: Calibration-Optimized Matrix Procrustes Orthogonalization for Transformers Compression]]></title>
@@ -539,7 +521,7 @@ Institution:
 Published: 2026-02-17
 Score: 6/10
 Citations: 0
-Upvotes: 3
+Upvotes: 5
 GitHub: 
 Stars: 0
 
@@ -547,22 +529,22 @@ Current research in multimodal models faces a key challenge where enhancing gene
 <pubDate>Tue, 17 Feb 2026 18:04:13 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens]]></title>
-<link>https://huggingface.co/papers/2602.15620</link>
-<guid>2602.15620</guid>
+<title><![CDATA[Causal-JEPA: Learning World Models through Object-Level Latent Interventions]]></title>
+<link>https://huggingface.co/papers/2602.11389</link>
+<guid>2602.11389</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Shiqi Liu, Zeyu He, Guojian Zhan, Letian Tao, Zhilong Zheng
+Authors: Heejeong Nam, Quentin Le Lidec, Lucas Maes, Yann LeCun, Randall Balestriero
 Institution: 
-Published: 2026-02-17
+Published: 2026-02-11
 Score: 6/10
 Citations: 0
-Upvotes: 2
+Upvotes: 3
 GitHub: 
 Stars: 0
 
-Reinforcement Learning (RL) has significantly improved large language model reasoning, but existing RL fine-tuning methods rely heavily on heuristic techniques such as entropy regularization and reweighting to maintain stability. In practice, they often experience late-stage performance collapse, leading to degraded reasoning quality and unstable training. We derive that the magnitude of token-wise policy gradients in RL is negatively correlated with token probability and local policy entropy. Building on this result, we prove that training instability is driven by a tiny fraction of tokens, approximately 0.01\%, which we term spurious tokens. When such tokens appear in correct responses, they contribute little to the reasoning outcome but inherit the full sequence-level reward, leading to abnormally amplified gradient updates. Motivated by this observation, we propose Spurious-Token-Aware Policy Optimization (STAPO) for large-scale model refining, which selectively masks such updates and renormalizes the loss over valid tokens. Across six mathematical reasoning benchmarks using Qwen 1.7B, 8B, and 14B base models, STAPO consistently demonstrates superior entropy stability and achieves an average performance improvement of 7.13\% over GRPO, 20-Entropy and JustRL.]]></description>
-<pubDate>Tue, 17 Feb 2026 14:46:48 +0000</pubDate>
+World models require robust relational understanding to support prediction, reasoning, and control. While object-centric representations provide a useful abstraction, they are not sufficient to capture interaction-dependent dynamics. We therefore propose C-JEPA, a simple and flexible object-centric world model that extends masked joint embedding prediction from image patches to object-centric representations. By applying object-level masking that requires an object's state to be inferred from other objects, C-JEPA induces latent interventions with counterfactual-like effects and prevents shortcut solutions, making interaction reasoning essential. Empirically, C-JEPA leads to consistent gains in visual question answering, with an absolute improvement of about 20\% in counterfactual reasoning compared to the same architecture without object-level masking. On agent control tasks, C-JEPA enables substantially more efficient planning by using only 1\% of the total latent input features required by patch-based world models, while achieving comparable performance. Finally, we provide a formal analysis demonstrating that object-level masking induces a causal inductive bias via latent interventions. Our code is available at https://github.com/galilai-group/cjepa.]]></description>
+<pubDate>Wed, 11 Feb 2026 21:47:26 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Visual Persuasion: What Influences Decisions of Vision-Language Models?]]></title>
@@ -575,7 +557,7 @@ Institution:
 Published: 2026-02-17
 Score: 6/10
 Citations: 0
-Upvotes: 2
+Upvotes: 3
 GitHub: 
 Stars: 0
 
@@ -583,49 +565,84 @@ The web is littered with images, once created for human consumption and now incr
 <pubDate>Tue, 17 Feb 2026 00:33:53 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[LM-Lexicon: Improving Definition Modeling via Harmonizing Semantic Experts]]></title>
-<link>https://huggingface.co/papers/2602.14060</link>
-<guid>2602.14060</guid>
+<title><![CDATA[Geometry-Aware Rotary Position Embedding for Consistent Video World Model]]></title>
+<link>https://huggingface.co/papers/2602.07854</link>
+<guid>2602.07854</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yang Liu, Jiaye Yang, Weikang Li, Jiahui Liang, Yang Li
+Authors: Chendong Xiang, Jiajun Liu, Jintao Zhang, Xiao Yang, Zhengwei Fang
 Institution: 
-Published: 2026-02-15
+Published: 2026-02-08
 Score: 6/10
 Citations: 0
 Upvotes: 2
 GitHub: 
 Stars: 0
 
-We introduce LM-Lexicon, an innovative definition modeling approach that incorporates data clustering, semantic expert learning, and model merging using a sparse mixture-of-experts architecture. By decomposing the definition modeling task into specialized semantic domains, where small language models are trained as domain experts, LM-Lexicon achieves substantial improvements (+7% BLEU score compared with the prior state-of-the-art model) over existing methods on five widely used benchmarks. Empirically, we demonstrate that 1) the clustering strategy enables fine-grained expert specialization with nearly 10% improvement in definition quality; 2) the semantic-aware domain-level routing mechanism achieves higher expert efficacy (+1%) than conventional token-level routing; and 3) further performance gains can be obtained through test-time compute and semantic expert scaling. Our work advances definition modeling while providing insights into the development of efficient language models for semantic-intensive applications.]]></description>
-<pubDate>Sun, 15 Feb 2026 09:18:22 +0000</pubDate>
+Predictive world models that simulate future observations under explicit camera control are fundamental to interactive AI. Despite rapid advances, current systems lack spatial persistence: they fail to maintain stable scene structures over long trajectories, frequently hallucinating details when cameras revisit previously observed locations. We identify that this geometric drift stems from reliance on screen-space positional embeddings, which conflict with the projective geometry required for 3D consistency. We introduce ViewRope, a geometry-aware encoding that injects camera-ray directions directly into video transformer self-attention layers. By parameterizing attention with relative ray geometry rather than pixel locality, ViewRope provides a model-native inductive bias for retrieving 3D-consistent content across temporal gaps. We further propose Geometry-Aware Frame-Sparse Attention, which exploits these geometric cues to selectively attend to relevant historical frames, improving efficiency without sacrificing memory consistency. We also present ViewBench, a diagnostic suite measuring loop-closure fidelity and geometric drift. Our results demonstrate that ViewRope substantially improves long-term consistency while reducing computational costs.]]></description>
+<pubDate>Sun, 08 Feb 2026 08:01:16 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[AIDev: Studying AI Coding Agents on GitHub]]></title>
-<link>https://huggingface.co/papers/2602.09185</link>
-<guid>2602.09185</guid>
+<title><![CDATA[Multi-agent cooperation through in-context co-player inference]]></title>
+<link>https://huggingface.co/papers/2602.16301</link>
+<guid>2602.16301</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Hao Li, Haoxiang Zhang, Ahmed E. Hassan
+Authors: Marissa A. Weis, Maciej Wołczyk, Rajai Nasser, Rif A. Saurous, Blaise Agüera y Arcas
 Institution: 
-Published: 2026-02-09
+Published: 2026-02-18
 Score: 6/10
-Citations: 5
-Upvotes: 2
+Citations: 0
+Upvotes: 1
 GitHub: 
 Stars: 0
 
-AI coding agents are rapidly transforming software engineering by performing tasks such as feature development, debugging, and testing. Despite their growing impact, the research community lacks a comprehensive dataset capturing how these agents are used in real-world projects. To address this gap, we introduce AIDev, a large-scale dataset focused on agent-authored pull requests (Agentic-PRs) in real-world GitHub repositories. AIDev aggregates 932,791 Agentic-PRs produced by five agents: OpenAI Codex, Devin, GitHub Copilot, Cursor, and Claude Code. These PRs span 116,211 repositories and involve 72,189 developers. In addition, AIDev includes a curated subset of 33,596 Agentic-PRs from 2,807 repositories with over 100 stars, providing further information such as comments, reviews, commits, and related issues. This dataset offers a foundation for future research on AI adoption, developer productivity, and human-AI collaboration in the new era of software engineering.
-  > AI Agent, Agentic AI, Coding Agent, Agentic Coding, Agentic Software Engineering, Agentic Engineering]]></description>
-<pubDate>Mon, 09 Feb 2026 20:45:58 +0000</pubDate>
+Achieving cooperation among self-interested agents remains a fundamental challenge in multi-agent reinforcement learning. Recent work showed that mutual cooperation can be induced between "learning-aware" agents that account for and shape the learning dynamics of their co-players. However, existing approaches typically rely on hardcoded, often inconsistent, assumptions about co-player learning rules or enforce a strict separation between "naive learners" updating on fast timescales and "meta-learners" observing these updates. Here, we demonstrate that the in-context learning capabilities of sequence models allow for co-player learning awareness without requiring hardcoded assumptions or explicit timescale separation. We show that training sequence model agents against a diverse distribution of co-players naturally induces in-context best-response strategies, effectively functioning as learning algorithms on the fast intra-episode timescale. We find that the cooperative mechanism identified in prior work-where vulnerability to extortion drives mutual shaping-emerges naturally in this setting: in-context adaptation renders agents vulnerable to extortion, and the resulting mutual pressure to shape the opponent's in-context learning dynamics resolves into the learning of cooperative behavior. Our results suggest that standard decentralized reinforcement learning on sequence models combined with co-player diversity provides a scalable path to learning cooperative behaviors.]]></description>
+<pubDate>Wed, 18 Feb 2026 09:31:43 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[CellMaster: Collaborative Cell Type Annotation in Single-Cell Analysis]]></title>
-<link>https://huggingface.co/papers/2602.13346</link>
-<guid>2602.13346</guid>
+<title><![CDATA[SAM 3D Body: Robust Full-Body Human Mesh Recovery]]></title>
+<link>https://huggingface.co/papers/2602.15989</link>
+<guid>2602.15989</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Zhen Wang, Yiming Gao, Jieyuan Liu, Enze Ma, Jefferson Chen
+Authors: Xitong Yang, Devansh Kukreja, Don Pinkus, Anushka Sagar, Taosha Fan
+Institution: 
+Published: 2026-02-17
+Score: 6/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+We introduce SAM 3D Body (3DB), a promptable model for single-image full-body 3D human mesh recovery (HMR) that demonstrates state-of-the-art performance, with strong generalization and consistent accuracy in diverse in-the-wild conditions. 3DB estimates the human pose of the body, feet, and hands. It is the first model to use a new parametric mesh representation, Momentum Human Rig (MHR), which decouples skeletal structure and surface shape. 3DB employs an encoder-decoder architecture and supports auxiliary prompts, including 2D keypoints and masks, enabling user-guided inference similar to the SAM family of models. We derive high-quality annotations from a multi-stage annotation pipeline that uses various combinations of manual keypoint annotation, differentiable optimization, multi-view geometry, and dense keypoint detection. Our data engine efficiently selects and processes data to ensure data diversity, collecting unusual poses and rare imaging conditions. We present a new evaluation dataset organized by pose and appearance categories, enabling nuanced analysis of model behavior. Our experiments demonstrate superior generalization and substantial improvements over prior methods in both qualitative user preference studies and traditional quantitative analysis. Both 3DB and MHR are open-source.]]></description>
+<pubDate>Tue, 17 Feb 2026 20:26:37 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[EditCtrl: Disentangled Local and Global Control for Real-Time Generative Video Editing]]></title>
+<link>https://huggingface.co/papers/2602.15031</link>
+<guid>2602.15031</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yehonathan Litman, Shikun Liu, Dario Seyb, Nicholas Milef, Yang Zhou
+Institution: 
+Published: 2026-02-16
+Score: 6/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+High-fidelity generative video editing has seen significant quality improvements by leveraging pre-trained video foundation models. However, their computational cost is a major bottleneck, as they are often designed to inefficiently process the full video context regardless of the inpainting mask's size, even for sparse, localized edits. In this paper, we introduce EditCtrl, an efficient video inpainting control framework that focuses computation only where it is needed. Our approach features a novel local video context module that operates solely on masked tokens, yielding a computational cost proportional to the edit size. This local-first generation is then guided by a lightweight temporal global context embedder that ensures video-wide context consistency with minimal overhead. Not only is EditCtrl 10 times more compute efficient than state-of-the-art generative editing methods, it even improves editing quality compared to methods designed with full-attention. Finally, we showcase how EditCtrl unlocks new capabilities, including multi-region editing with text prompts and autoregressive content propagation.]]></description>
+<pubDate>Mon, 16 Feb 2026 18:59:58 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[DHPLT: large-scale multilingual diachronic corpora and word representations for semantic change modelling]]></title>
+<link>https://huggingface.co/papers/2602.11968</link>
+<guid>2602.11968</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Mariia Fedorova, Andrey Kutuzov, Khonzoda Umarova
 Institution: 
 Published: 2026-02-12
 Score: 6/10
@@ -634,26 +651,8 @@ Upvotes: 1
 GitHub: 
 Stars: 0
 
-Single-cell RNA-seq (scRNA-seq) enables atlas-scale profiling of complex tissues, revealing rare lineages and transient states. Yet, assigning biologically valid cell identities remains a bottleneck because markers are tissue- and state-dependent, and novel states lack references. We present CellMaster, an AI agent that mimics expert practice for zero-shot cell-type annotation. Unlike existing automated tools, CellMaster leverages LLM-encoded knowledge (e.g., GPT-4o) to perform on-the-fly annotation with interpretable rationales, without pre-training or fixed marker databases. Across 9 datasets spanning 8 tissues, CellMaster improved accuracy by 7.1% over best-performing baselines (including CellTypist and scTab) in automatic mode. With human-in-the-loop refinement, this advantage increased to 18.6%, with a 22.1% gain on subtype populations. The system demonstrates particular strength in rare and novel cell states where baselines often fail. Source code and the web application are available at https://github.com/AnonymousGym/CellMaster{https://github.com/AnonymousGym/CellMaster}.]]></description>
-<pubDate>Thu, 12 Feb 2026 20:20:22 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Can I Have Your Order? Monte-Carlo Tree Search for Slot Filling Ordering in Diffusion Language Models]]></title>
-<link>https://huggingface.co/papers/2602.12586</link>
-<guid>2602.12586</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Joshua Ong Jun Leang, Yu Zhao, Mihaela Cătălina Stoian, Wenda Li, Shay B. Cohen
-Institution: 
-Published: 2026-02-13
-Score: 6/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-While plan-and-infill decoding in Masked Diffusion Models (MDMs) shows promise for mathematical and code reasoning, performance remains highly sensitive to slot infilling order, often yielding substantial output variance. We introduce McDiffuSE, a framework that formulates slot selection as decision making and optimises infilling orders through Monte Carlo Tree Search (MCTS). McDiffuSE uses look-ahead simulations to evaluate partial completions before commitment, systematically exploring the combinatorial space of generation orders. Experiments show an average improvement of 3.2% over autoregressive baselines and 8.0% over baseline plan-and-infill, with notable gains of 19.5% on MBPP and 4.9% on MATH500. Our analysis reveals that while McDiffuSE predominantly follows sequential ordering, incorporating non-sequential generation is essential for maximising performance. We observe that larger exploration constants, rather than increased simulations, are necessary to overcome model confidence biases and discover effective orderings. These findings establish MCTS-based planning as an effective approach for enhancing generation quality in MDMs.]]></description>
-<pubDate>Fri, 13 Feb 2026 03:56:22 +0000</pubDate>
+In this resource paper, we present DHPLT, an open collection of diachronic corpora in 41 diverse languages. DHPLT is based on the web-crawled HPLT datasets; we use web crawl timestamps as the approximate signal of document creation time. The collection covers three time periods: 2011-2015, 2020-2021 and 2024-present (1 million documents per time period for each language). We additionally provide pre-computed word type and token embeddings and lexical substitutions for our chosen target words, while at the same time leaving it open for the other researchers to come up with their own target words using the same datasets. DHPLT aims at filling in the current lack of multilingual diachronic corpora for semantic change modelling (beyond a dozen of high-resource languages). It opens the way for a variety of new experimental setups in this field. All the resources described in this paper are available at https://data.hplt-project.org/three/diachronic/, sorted by language.]]></description>
+<pubDate>Thu, 12 Feb 2026 14:01:40 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Benchmarking Knowledge-Extraction Attack and Defense on Retrieval-Augmented Generation]]></title>
@@ -674,76 +673,58 @@ Retrieval-Augmented Generation (RAG) has become a cornerstone of knowledge-inten
 <pubDate>Tue, 10 Feb 2026 01:27:46 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Knowing Isn't Understanding: Re-grounding Generative Proactivity with Epistemic and Behavioral Insight]]></title>
-<link>https://huggingface.co/papers/2602.15259</link>
-<guid>2602.15259</guid>
+<title><![CDATA[MMA: Multimodal Memory Agent]]></title>
+<link>https://huggingface.co/papers/2602.16493</link>
+<guid>2602.16493</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Kirandeep Kaur, Xingda Lyu, Chirag Shah
+Authors: Yihao Lu, Wanru Cheng, Zeyu Zhang, Hao Tang
 Institution: 
-Published: 2026-02-16
+Published: 2026-02-18
 Score: 6/10
 Citations: 0
 Upvotes: 0
 GitHub: 
 Stars: 0
 
-Generative AI agents equate understanding with resolving explicit queries, an assumption that confines interaction to what users can articulate. This assumption breaks down when users themselves lack awareness of what is missing, risky, or worth considering. In such conditions, proactivity is not merely an efficiency enhancement, but an epistemic necessity. We refer to this condition as epistemic incompleteness: where progress depends on engaging with unknown unknowns for effective partnership. Existing approaches to proactivity remain narrowly anticipatory, extrapolating from past behavior and presuming that goals are already well defined, thereby failing to support users meaningfully. However, surfacing possibilities beyond a user's current awareness is not inherently beneficial. Unconstrained proactive interventions can misdirect attention, overwhelm users, or introduce harm. Proactive agents, therefore, require behavioral grounding: principled constraints on when, how, and to what extent an agent should intervene. We advance the position that generative proactivity must be grounded both epistemically and behaviorally. Drawing on the philosophy of ignorance and research on proactive behavior, we argue that these theories offer critical guidance for designing agents that can engage responsibly and foster meaningful partnerships.]]></description>
-<pubDate>Mon, 16 Feb 2026 23:28:17 +0000</pubDate>
+Long-horizon multimodal agents depend on external memory; however, similarity-based retrieval often surfaces stale, low-credibility, or conflicting items, which can trigger overconfident errors. We propose Multimodal Memory Agent (MMA), which assigns each retrieved memory item a dynamic reliability score by combining source credibility, temporal decay, and conflict-aware network consensus, and uses this signal to reweight evidence and abstain when support is insufficient. We also introduce MMA-Bench, a programmatically generated benchmark for belief dynamics with controlled speaker reliability and structured text-vision contradictions. Using this framework, we uncover the "Visual Placebo Effect", revealing how RAG-based agents inherit latent visual biases from foundation models. On FEVER, MMA matches baseline accuracy while reducing variance by 35.2% and improving selective utility; on LoCoMo, a safety-oriented configuration improves actionable accuracy and reduces wrong answers; on MMA-Bench, MMA reaches 41.18% Type-B accuracy in Vision mode, while the baseline collapses to 0.0% under the same protocol. Code: https://github.com/AIGeeksGroup/MMA.]]></description>
+<pubDate>Wed, 18 Feb 2026 14:30:35 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Sanity Checks for Sparse Autoencoders: Do SAEs Beat Random Baselines?]]></title>
-<link>https://huggingface.co/papers/2602.14111</link>
-<guid>2602.14111</guid>
+<title><![CDATA[SLA2: Sparse-Linear Attention with Learnable Routing and QAT]]></title>
+<link>https://huggingface.co/papers/2602.12675</link>
+<guid>2602.12675</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Anton Korznikov, Andrey Galichin, Alexey Dontsov, Oleg Rogov, Ivan Oseledets
+Authors: Jintao Zhang, Haoxu Wang, Kai Jiang, Kaiwen Zheng, Youhe Jiang
+Institution: 
+Published: 2026-02-13
+Score: 5/10
+Citations: 0
+Upvotes: 16
+GitHub: 
+Stars: 0
+
+Sparse-Linear Attention (SLA) combines sparse and linear attention to accelerate diffusion models and has shown strong performance in video generation. However, (i) SLA relies on a heuristic split that assigns computations to the sparse or linear branch based on attention-weight magnitude, which can be suboptimal. Additionally, (ii) after formally analyzing the attention error in SLA, we identify a mismatch between SLA and a direct decomposition into sparse and linear attention. We propose SLA2, which introduces (I) a learnable router that dynamically selects whether each attention computation should use sparse or linear attention, (II) a more faithful and direct sparse-linear attention formulation that uses a learnable ratio to combine the sparse and linear attention branches, and (III) a sparse + low-bit attention design, where low-bit attention is introduced via quantization-aware fine-tuning to reduce quantization error. Experiments show that on video diffusion models, SLA2 can achieve 97% attention sparsity and deliver an 18.6x attention speedup while preserving generation quality.]]></description>
+<pubDate>Fri, 13 Feb 2026 07:16:02 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[HLE-Verified: A Systematic Verification and Structured Revision of Humanity's Last Exam]]></title>
+<link>https://huggingface.co/papers/2602.13964</link>
+<guid>2602.13964</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Weiqi Zhai, Zhihai Wang, Jinghang Wang, Boyu Yang, Xiaogang Li
 Institution: 
 Published: 2026-02-15
 Score: 5/10
 Citations: 0
-Upvotes: 22
+Upvotes: 2
 GitHub: 
 Stars: 0
 
-Sparse Autoencoders (SAEs) have emerged as a promising tool for interpreting neural networks by decomposing their activations into sparse sets of human-interpretable features. Recent work has introduced multiple SAE variants and successfully scaled them to frontier models. Despite much excitement, a growing number of negative results in downstream tasks casts doubt on whether SAEs recover meaningful features. To directly investigate this, we perform two complementary evaluations. On a synthetic setup with known ground-truth features, we demonstrate that SAEs recover only 9% of true features despite achieving 71% explained variance, showing that they fail at their core task even when reconstruction is strong. To evaluate SAEs on real activations, we introduce three baselines that constrain SAE feature directions or their activation patterns to random values. Through extensive experiments across multiple SAE architectures, we show that our baselines match fully-trained SAEs in interpretability (0.87 vs 0.90), sparse probing (0.69 vs 0.72), and causal editing (0.73 vs 0.72). Together, these results suggest that SAEs in their current state do not reliably decompose models' internal mechanisms.]]></description>
-<pubDate>Sun, 15 Feb 2026 11:53:55 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Learning to Configure Agentic AI Systems]]></title>
-<link>https://huggingface.co/papers/2602.11574</link>
-<guid>2602.11574</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Aditya Taparia, Som Sagar, Ransalu Senanayake
-Institution: 
-Published: 2026-02-12
-Score: 5/10
-Citations: 0
-Upvotes: 12
-GitHub: 
-Stars: 0
-
-Configuring LLM-based agent systems involves choosing workflows, tools, token budgets, and prompts from a large combinatorial design space, and is typically handled today by fixed large templates or hand-tuned heuristics. This leads to brittle behavior and unnecessary compute, since the same cumbersome configuration is often applied to both easy and hard input queries. We formulate agent configuration as a query-wise decision problem and introduce ARC (Agentic Resource & Configuration learner), which learns a light-weight hierarchical policy using reinforcement learning to dynamically tailor these configurations. Across multiple benchmarks spanning reasoning and tool-augmented question answering, the learned policy consistently outperforms strong hand-designed and other baselines, achieving up to 25% higher task accuracy while also reducing token and runtime costs. These results demonstrate that learning per-query agent configurations is a powerful alternative to "one size fits all" designs.]]></description>
-<pubDate>Thu, 12 Feb 2026 04:45:44 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[FireRed-Image-Edit-1.0 Techinical Report]]></title>
-<link>https://huggingface.co/papers/2602.13344</link>
-<guid>2602.13344</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Super Intelligence Team, Changhao Qiao, Chao Hui, Chen Li, Cunzheng Wang
-Institution: 
-Published: 2026-02-12
-Score: 5/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-We present FireRed-Image-Edit, a diffusion transformer for instruction-based image editing that achieves state-of-the-art performance through systematic optimization of data curation, training methodology, and evaluation design. We construct a 1.6B-sample training corpus, comprising 900M text-to-image and 700M image editing pairs from diverse sources. After rigorous cleaning, stratification, auto-labeling, and two-stage filtering, we retain over 100M high-quality samples balanced between generation and editing, ensuring strong semantic coverage and instruction alignment. Our multi-stage training pipeline progressively builds editing capability via pre-training, supervised fine-tuning, and reinforcement learning. To improve data efficiency, we introduce a Multi-Condition Aware Bucket Sampler for variable-resolution batching and Stochastic Instruction Alignment with dynamic prompt re-indexing. To stabilize optimization and enhance controllability, we propose Asymmetric Gradient Optimization for DPO, DiffusionNFT with layout-aware OCR rewards for text editing, and a differentiable Consistency Loss for identity preservation. We further establish REDEdit-Bench, a comprehensive benchmark spanning 15 editing categories, including newly introduced beautification and low-level enhancement tasks. Extensive experiments on REDEdit-Bench and public benchmarks (ImgEdit and GEdit) demonstrate competitive or superior performance against both open-source and proprietary systems. We release code, models, and the benchmark suite to support future research.]]></description>
-<pubDate>Thu, 12 Feb 2026 17:51:44 +0000</pubDate>
+Humanity's Last Exam (HLE) has become a widely used benchmark for evaluating frontier large language models on challenging, multi-domain questions. However, community-led analyses have raised concerns that HLE contains a non-trivial number of noisy items, which can bias evaluation results and distort cross-model comparisons. To address this challenge, we introduce HLE-Verified, a verified and revised version of HLE with a transparent verification protocol and fine-grained error taxonomy. Our construction follows a two-stage validation-and-repair workflow resulting in a certified benchmark. In Stage I, each item undergoes binary validation of the problem and final answer through domain-expert review and model-based cross-checks, yielding 641 verified items. In Stage II, flawed but fixable items are revised under strict constraints preserving the original evaluation intent, through dual independent expert repairs, model-assisted auditing, and final adjudication, resulting in 1,170 revised-and-certified items. The remaining 689 items are released as a documented uncertain set with explicit uncertainty sources and expertise tags for future refinement. We evaluate seven state-of-the-art language models on HLE and HLE-Verified, observing an average absolute accuracy gain of 7--10 percentage points on HLE-Verified. The improvement is particularly pronounced on items where the original problem statement and/or reference answer is erroneous, with gains of 30--40 percentage points. Our analyses further reveal a strong association between model confidence and the presence of errors in the problem statement or reference answer, supporting the effectiveness of our revisions. Overall, HLE-Verified improves HLE-style evaluations by reducing annotation noise and enabling more faithful measurement of model capabilities. Data is available at: https://github.com/SKYLENAGE-AI/HLE-Verified]]></description>
+<pubDate>Sun, 15 Feb 2026 02:50:15 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Learning Native Continuation for Action Chunking Flow Policies]]></title>
@@ -764,30 +745,30 @@ Action chunking enables Vision Language Action (VLA) models to run in real time,
 <pubDate>Fri, 13 Feb 2026 14:56:06 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Geometry-Aware Rotary Position Embedding for Consistent Video World Model]]></title>
-<link>https://huggingface.co/papers/2602.07854</link>
-<guid>2602.07854</guid>
+<title><![CDATA[ClinAlign: Scaling Healthcare Alignment from Clinician Preference]]></title>
+<link>https://huggingface.co/papers/2602.09653</link>
+<guid>2602.09653</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Chendong Xiang, Jiajun Liu, Jintao Zhang, Xiao Yang, Zhengwei Fang
+Authors: Shiwei Lyu, Xidong Wang, Lei Liu, Hao Zhu, Chaohe Zhang
 Institution: 
-Published: 2026-02-08
+Published: 2026-02-10
 Score: 5/10
-Citations: 2
+Citations: 0
 Upvotes: 2
 GitHub: 
 Stars: 0
 
-Predictive world models that simulate future observations under explicit camera control are fundamental to interactive AI. Despite rapid advances, current systems lack spatial persistence: they fail to maintain stable scene structures over long trajectories, frequently hallucinating details when cameras revisit previously observed locations. We identify that this geometric drift stems from reliance on screen-space positional embeddings, which conflict with the projective geometry required for 3D consistency. We introduce ViewRope, a geometry-aware encoding that injects camera-ray directions directly into video transformer self-attention layers. By parameterizing attention with relative ray geometry rather than pixel locality, ViewRope provides a model-native inductive bias for retrieving 3D-consistent content across temporal gaps. We further propose Geometry-Aware Frame-Sparse Attention, which exploits these geometric cues to selectively attend to relevant historical frames, improving efficiency without sacrificing memory consistency. We also present ViewBench, a diagnostic suite measuring loop-closure fidelity and geometric drift. Our results demonstrate that ViewRope substantially improves long-term consistency while reducing computational costs.]]></description>
-<pubDate>Sun, 08 Feb 2026 08:01:16 +0000</pubDate>
+Although large language models (LLMs) demonstrate expert-level medical knowledge, aligning their open-ended outputs with fine-grained clinician preferences remains challenging. Existing methods often rely on coarse objectives or unreliable automated judges that are weakly grounded in professional guidelines. We propose a two-stage framework to address this gap. First, we introduce HealthRubrics, a dataset of 7,034 physician-verified preference examples in which clinicians refine LLM-drafted rubrics to meet rigorous medical standards. Second, we distill these rubrics into HealthPrinciples: 119 broadly reusable, clinically grounded principles organized by clinical dimensions, enabling scalable supervision beyond manual annotation. We use HealthPrinciples for (1) offline alignment by synthesizing rubrics for unlabeled queries and (2) an inference-time tool for guided self-revision. A 30B parameter model that activates only 3B parameters at inference trained with our framework achieves 33.4% on HealthBench-Hard, outperforming much larger models including Deepseek-R1 and o3, establishing a resource-efficient baseline for clinical alignment.]]></description>
+<pubDate>Tue, 10 Feb 2026 11:02:57 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[DHPLT: large-scale multilingual diachronic corpora and word representations for semantic change modelling]]></title>
-<link>https://huggingface.co/papers/2602.11968</link>
-<guid>2602.11968</guid>
+<title><![CDATA[Detecting Overflow in Compressed Token Representations for Retrieval-Augmented Generation]]></title>
+<link>https://huggingface.co/papers/2602.12235</link>
+<guid>2602.12235</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Mariia Fedorova, Andrey Kutuzov, Khonzoda Umarova
+Authors: Julia Belikova, Danila Rozhevskii, Dennis Svirin, Konstantin Polev, Alexander Panchenko
 Institution: 
 Published: 2026-02-12
 Score: 5/10
@@ -796,8 +777,26 @@ Upvotes: 1
 GitHub: 
 Stars: 0
 
-In this resource paper, we present DHPLT, an open collection of diachronic corpora in 41 diverse languages. DHPLT is based on the web-crawled HPLT datasets; we use web crawl timestamps as the approximate signal of document creation time. The collection covers three time periods: 2011-2015, 2020-2021 and 2024-present (1 million documents per time period for each language). We additionally provide pre-computed word type and token embeddings and lexical substitutions for our chosen target words, while at the same time leaving it open for the other researchers to come up with their own target words using the same datasets. DHPLT aims at filling in the current lack of multilingual diachronic corpora for semantic change modelling (beyond a dozen of high-resource languages). It opens the way for a variety of new experimental setups in this field. All the resources described in this paper are available at https://data.hplt-project.org/three/diachronic/, sorted by language.]]></description>
-<pubDate>Thu, 12 Feb 2026 14:01:40 +0000</pubDate>
+Efficient long-context processing remains a crucial challenge for contemporary large language models (LLMs), especially in resource-constrained environments. Soft compression architectures promise to extend effective context length by replacing long token sequences with smaller sets of learned compressed tokens. Yet, the limits of compressibility -- and when compression begins to erase task-relevant content -- remain underexplored. In this paper, we define token overflow as a regime in which compressed representations no longer contain sufficient information to answer a given query, and propose a methodology to characterize and detect it. In the xRAG soft-compression setting, we find that query-agnostic saturation statistics reliably separate compressed from uncompressed token representations, providing a practical tool for identifying compressed tokens but showing limited overflow detection capability. Lightweight probing classifiers over both query and context xRAG representations detect overflow with 0.72 AUC-ROC on average on HotpotQA, SQuADv2, and TriviaQA datasets, demonstrating that incorporating query information improves detection performance. These results advance from query-independent diagnostics to query-aware detectors, enabling low-cost pre-LLM gating to mitigate compression-induced errors.]]></description>
+<pubDate>Thu, 12 Feb 2026 18:15:08 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[CellMaster: Collaborative Cell Type Annotation in Single-Cell Analysis]]></title>
+<link>https://huggingface.co/papers/2602.13346</link>
+<guid>2602.13346</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Zhen Wang, Yiming Gao, Jieyuan Liu, Enze Ma, Jefferson Chen
+Institution: 
+Published: 2026-02-12
+Score: 5/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+Single-cell RNA-seq (scRNA-seq) enables atlas-scale profiling of complex tissues, revealing rare lineages and transient states. Yet, assigning biologically valid cell identities remains a bottleneck because markers are tissue- and state-dependent, and novel states lack references. We present CellMaster, an AI agent that mimics expert practice for zero-shot cell-type annotation. Unlike existing automated tools, CellMaster leverages LLM-encoded knowledge (e.g., GPT-4o) to perform on-the-fly annotation with interpretable rationales, without pre-training or fixed marker databases. Across 9 datasets spanning 8 tissues, CellMaster improved accuracy by 7.1% over best-performing baselines (including CellTypist and scTab) in automatic mode. With human-in-the-loop refinement, this advantage increased to 18.6%, with a 22.1% gain on subtype populations. The system demonstrates particular strength in rare and novel cell states where baselines often fail. Source code and the web application are available at https://github.com/AnonymousGym/CellMaster{https://github.com/AnonymousGym/CellMaster}.]]></description>
+<pubDate>Thu, 12 Feb 2026 20:20:22 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Blind to the Human Touch: Overlap Bias in LLM-Based Summary Evaluation]]></title>
@@ -818,22 +817,40 @@ Large language model (LLM) judges have often been used alongside traditional, al
 <pubDate>Sat, 07 Feb 2026 19:39:28 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Acoustivision Pro: An Open-Source Interactive Platform for Room Impulse Response Analysis and Acoustic Characterization]]></title>
-<link>https://huggingface.co/papers/2602.12299</link>
-<guid>2602.12299</guid>
+<title><![CDATA[Knowing Isn't Understanding: Re-grounding Generative Proactivity with Epistemic and Behavioral Insight]]></title>
+<link>https://huggingface.co/papers/2602.15259</link>
+<guid>2602.15259</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Mandip Goswami
+Authors: Kirandeep Kaur, Xingda Lyu, Chirag Shah
 Institution: 
-Published: 2026-02-11
+Published: 2026-02-16
 Score: 5/10
 Citations: 0
-Upvotes: 1
+Upvotes: 0
 GitHub: 
 Stars: 0
 
-Room acoustics analysis plays a central role in architectural design, audio engineering, speech intelligibility assessment, and hearing research. Despite the availability of standardized metrics such as reverberation time, clarity, and speech transmission index, accessible tools that combine rigorous signal processing with intuitive visualization remain scarce. This paper presents AcoustiVision Pro, an open-source web-based platform for comprehensive room impulse response (RIR) analysis. The system computes twelve distinct acoustic parameters from uploaded or dataset-sourced RIRs, provides interactive 3D visualizations of early reflections, generates frequency-dependent decay characteristics through waterfall plots, and checks compliance against international standards including ANSI S12.60 and ISO 3382. We introduce the accompanying RIRMega and RIRMega Speech datasets hosted on Hugging Face, containing thousands of simulated room impulse responses with full metadata. The platform supports real-time auralization through FFT-based convolution, exports detailed PDF reports suitable for engineering documentation, and provides CSV data export for further analysis. We describe the mathematical foundations underlying each acoustic metric, detail the system architecture, and present preliminary case studies demonstrating the platform's utility across diverse application domains including classroom acoustics, healthcare facility design, and recording studio evaluation.]]></description>
-<pubDate>Wed, 11 Feb 2026 04:07:05 +0000</pubDate>
+Generative AI agents equate understanding with resolving explicit queries, an assumption that confines interaction to what users can articulate. This assumption breaks down when users themselves lack awareness of what is missing, risky, or worth considering. In such conditions, proactivity is not merely an efficiency enhancement, but an epistemic necessity. We refer to this condition as epistemic incompleteness: where progress depends on engaging with unknown unknowns for effective partnership. Existing approaches to proactivity remain narrowly anticipatory, extrapolating from past behavior and presuming that goals are already well defined, thereby failing to support users meaningfully. However, surfacing possibilities beyond a user's current awareness is not inherently beneficial. Unconstrained proactive interventions can misdirect attention, overwhelm users, or introduce harm. Proactive agents, therefore, require behavioral grounding: principled constraints on when, how, and to what extent an agent should intervene. We advance the position that generative proactivity must be grounded both epistemically and behaviorally. Drawing on the philosophy of ignorance and research on proactive behavior, we argue that these theories offer critical guidance for designing agents that can engage responsibly and foster meaningful partnerships.]]></description>
+<pubDate>Mon, 16 Feb 2026 23:28:17 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[SPILLage: Agentic Oversharing on the Web]]></title>
+<link>https://huggingface.co/papers/2602.13516</link>
+<guid>2602.13516</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Jaechul Roh, Eugene Bagdasarian, Hamed Haddadi, Ali Shahin Shamsabadi
+Institution: 
+Published: 2026-02-13
+Score: 5/10
+Citations: 0
+Upvotes: 0
+GitHub: 
+Stars: 0
+
+LLM-powered agents are beginning to automate user's tasks across the open web, often with access to user resources such as emails and calendars. Unlike standard LLMs answering questions in a controlled ChatBot setting, web agents act "in the wild", interacting with third parties and leaving behind an action trace. Therefore, we ask the question: how do web agents handle user resources when accomplishing tasks on their behalf across live websites? In this paper, we formalize Natural Agentic Oversharing -- the unintentional disclosure of task-irrelevant user information through an agent trace of actions on the web. We introduce SPILLage, a framework that characterizes oversharing along two dimensions: channel (content vs. behavior) and directness (explicit vs. implicit). This taxonomy reveals a critical blind spot: while prior work focuses on text leakage, web agents also overshare behaviorally through clicks, scrolls, and navigation patterns that can be monitored. We benchmark 180 tasks on live e-commerce sites with ground-truth annotations separating task-relevant from task-irrelevant attributes. Across 1,080 runs spanning two agentic frameworks and three backbone LLMs, we demonstrate that oversharing is pervasive with behavioral oversharing dominates content oversharing by 5x. This effect persists -- and can even worsen -- under prompt-level mitigation. However, removing task-irrelevant information before execution improves task success by up to 17.9%, demonstrating that reducing oversharing improves task success. Our findings underscore that protecting privacy in web agents is a fundamental challenge, requiring a broader view of "output" that accounts for what agents do on the web, not just what they type. Our datasets and code are available at https://github.com/jrohsc/SPILLage.]]></description>
+<pubDate>Fri, 13 Feb 2026 23:02:50 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Does Socialization Emerge in AI Agent Society? A Case Study of Moltbook]]></title>
@@ -846,7 +863,7 @@ Institution:
 Published: 2026-02-15
 Score: 4/10
 Citations: 0
-Upvotes: 18
+Upvotes: 23
 GitHub: 
 Stars: 0
 
@@ -854,58 +871,40 @@ As large language model agents increasingly populate networked environments, a f
 <pubDate>Sun, 15 Feb 2026 20:15:28 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Revisiting the Platonic Representation Hypothesis: An Aristotelian View]]></title>
-<link>https://huggingface.co/papers/2602.14486</link>
-<guid>2602.14486</guid>
+<title><![CDATA[A Trajectory-Based Safety Audit of Clawdbot (OpenClaw)]]></title>
+<link>https://huggingface.co/papers/2602.14364</link>
+<guid>2602.14364</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Fabian Gröger, Shuo Wen, Maria Brbić
+Authors: Tianyu Chen, Dongrui Liu, Xia Hu, Jingyi Yu, Wenjie Wang
 Institution: 
 Published: 2026-02-16
 Score: 4/10
 Citations: 0
-Upvotes: 5
+Upvotes: 6
 GitHub: 
 Stars: 0
 
-The Platonic Representation Hypothesis suggests that representations from neural networks are converging to a common statistical model of reality. We show that the existing metrics used to measure representational similarity are confounded by network scale: increasing model depth or width can systematically inflate representational similarity scores. To correct these effects, we introduce a permutation-based null-calibration framework that transforms any representational similarity metric into a calibrated score with statistical guarantees. We revisit the Platonic Representation Hypothesis with our calibration framework, which reveals a nuanced picture: the apparent convergence reported by global spectral measures largely disappears after calibration, while local neighborhood similarity, but not local distances, retains significant agreement across different modalities. Based on these findings, we propose the Aristotelian Representation Hypothesis: representations in neural networks are converging to shared local neighborhood relationships.]]></description>
-<pubDate>Mon, 16 Feb 2026 06:01:23 +0000</pubDate>
+Clawdbot is a self-hosted, tool-using personal AI agent with a broad action space spanning local execution and web-mediated workflows, which raises heightened safety and security concerns under ambiguity and adversarial steering. We present a trajectory-centric evaluation of Clawdbot across six risk dimensions. Our test suite samples and lightly adapts scenarios from prior agent-safety benchmarks (including ATBench and LPS-Bench) and supplements them with hand-designed cases tailored to Clawdbot's tool surface. We log complete interaction trajectories (messages, actions, tool-call arguments/outputs) and assess safety using both an automated trajectory judge (AgentDoG-Qwen3-4B) and human review. Across 34 canonical cases, we find a non-uniform safety profile: performance is generally consistent on reliability-focused tasks, while most failures arise under underspecified intent, open-ended goals, or benign-seeming jailbreak prompts, where minor misinterpretations can escalate into higher-impact tool actions. We supplemented the overall results with representative case studies and summarized the commonalities of these cases, analyzing the security vulnerabilities and typical failure modes that Clawdbot is prone to trigger in practice.]]></description>
+<pubDate>Mon, 16 Feb 2026 00:33:02 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[SPILLage: Agentic Oversharing on the Web]]></title>
-<link>https://huggingface.co/papers/2602.13516</link>
-<guid>2602.13516</guid>
+<title><![CDATA[Sanity Checks for Sparse Autoencoders: Do SAEs Beat Random Baselines?]]></title>
+<link>https://huggingface.co/papers/2602.14111</link>
+<guid>2602.14111</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Jaechul Roh, Eugene Bagdasarian, Hamed Haddadi, Ali Shahin Shamsabadi
+Authors: Anton Korznikov, Andrey Galichin, Alexey Dontsov, Oleg Rogov, Ivan Oseledets
 Institution: 
-Published: 2026-02-13
-Score: 4/10
+Published: 2026-02-15
+Score: 3/10
 Citations: 0
-Upvotes: 0
+Upvotes: 51
 GitHub: 
 Stars: 0
 
-LLM-powered agents are beginning to automate user's tasks across the open web, often with access to user resources such as emails and calendars. Unlike standard LLMs answering questions in a controlled ChatBot setting, web agents act "in the wild", interacting with third parties and leaving behind an action trace. Therefore, we ask the question: how do web agents handle user resources when accomplishing tasks on their behalf across live websites? In this paper, we formalize Natural Agentic Oversharing -- the unintentional disclosure of task-irrelevant user information through an agent trace of actions on the web. We introduce SPILLage, a framework that characterizes oversharing along two dimensions: channel (content vs. behavior) and directness (explicit vs. implicit). This taxonomy reveals a critical blind spot: while prior work focuses on text leakage, web agents also overshare behaviorally through clicks, scrolls, and navigation patterns that can be monitored. We benchmark 180 tasks on live e-commerce sites with ground-truth annotations separating task-relevant from task-irrelevant attributes. Across 1,080 runs spanning two agentic frameworks and three backbone LLMs, we demonstrate that oversharing is pervasive with behavioral oversharing dominates content oversharing by 5x. This effect persists -- and can even worsen -- under prompt-level mitigation. However, removing task-irrelevant information before execution improves task success by up to 17.9%, demonstrating that reducing oversharing improves task success. Our findings underscore that protecting privacy in web agents is a fundamental challenge, requiring a broader view of "output" that accounts for what agents do on the web, not just what they type. Our datasets and code are available at https://github.com/jrohsc/SPILLage.]]></description>
-<pubDate>Fri, 13 Feb 2026 23:02:50 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Preliminary sonification of ENSO using traditional Javanese gamelan scales]]></title>
-<link>https://huggingface.co/papers/2602.14560</link>
-<guid>2602.14560</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Sandy H. S. Herho, Rusmawan Suwarman, Nurjanna J. Trilaksono, Iwan P. Anwar, Faiz R. Fajary
-Institution: 
-Published: 2026-02-16
-Score: 4/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Sonification -- the mapping of data to non-speech audio -- offers an underexplored channel for representing complex dynamical systems. We treat El Niño-Southern Oscillation (ENSO), a canonical example of low-dimensional climate chaos, as a test case for culturally-situated sonification evaluated through complex systems diagnostics. Using parameter-mapping sonification of the Niño 3.4 sea surface temperature anomaly index (1870--2024), we encode ENSO variability into two traditional Javanese gamelan pentatonic systems (pelog and slendro) across four composition strategies, then analyze the resulting audio as trajectories in a two-dimensional acoustic phase space. Recurrence-based diagnostics, convex hull geometry, and coupling analysis reveal that the sonification pipeline preserves key dynamical signatures: alternating modes produce the highest trajectory recurrence rates, echoing ENSO's quasi-periodicity; layered polyphonic modes explore the broadest phase space regions; and the two scale families induce qualitatively distinct coupling regimes between spectral brightness and energy -- predominantly anti-phase in pelog but near-independent in slendro. Phase space trajectory analysis provides a rigorous geometric framework for comparing sonification designs within a complex systems context. Perceptual validation remains necessary; we contribute the dynamical systems methodology for evaluating such mappings.]]></description>
-<pubDate>Mon, 16 Feb 2026 08:40:01 +0000</pubDate>
+Sparse Autoencoders (SAEs) have emerged as a promising tool for interpreting neural networks by decomposing their activations into sparse sets of human-interpretable features. Recent work has introduced multiple SAE variants and successfully scaled them to frontier models. Despite much excitement, a growing number of negative results in downstream tasks casts doubt on whether SAEs recover meaningful features. To directly investigate this, we perform two complementary evaluations. On a synthetic setup with known ground-truth features, we demonstrate that SAEs recover only 9% of true features despite achieving 71% explained variance, showing that they fail at their core task even when reconstruction is strong. To evaluate SAEs on real activations, we introduce three baselines that constrain SAE feature directions or their activation patterns to random values. Through extensive experiments across multiple SAE architectures, we show that our baselines match fully-trained SAEs in interpretability (0.87 vs 0.90), sparse probing (0.69 vs 0.72), and causal editing (0.73 vs 0.72). Together, these results suggest that SAEs in their current state do not reliably decompose models' internal mechanisms.]]></description>
+<pubDate>Sun, 15 Feb 2026 11:53:55 +0000</pubDate>
 </item>
 </channel>
 </rss>
