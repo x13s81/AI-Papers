@@ -25354,5 +25354,481 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-02-24"
+  },
+  "2602.19626": {
+    "title": "Nacrith: Neural Lossless Compression via Ensemble Context Modeling and High-Precision CDF Coding",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Neural Lossless Compression",
+          "brief": "A technique using neural networks to compress data without losing information"
+        },
+        {
+          "name": "Ensemble Context Modeling",
+          "brief": "A method combining multiple models to improve prediction accuracy"
+        },
+        {
+          "name": "High-Precision CDF Coding",
+          "brief": "A coding technique using cumulative distribution functions (CDFs) with high precision"
+        },
+        {
+          "name": "Transformer Language Model",
+          "brief": "A type of neural network model for natural language processing"
+        },
+        {
+          "name": "Arithmetic Coding",
+          "brief": "A variable-length prefix code encoding technique"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Information Theory",
+          "why_needed": "To understand the fundamentals of data compression and entropy"
+        },
+        {
+          "topic": "Neural Networks",
+          "why_needed": "To comprehend the transformer language model and ensemble context modeling"
+        },
+        {
+          "topic": "Data Compression Algorithms",
+          "why_needed": "To compare and contrast Nacrith with existing compression algorithms like gzip, bzip2, and CMIX"
+        },
+        {
+          "topic": "Computer Architecture",
+          "why_needed": "To understand the implementation details of the system, including parallel multi-GPU compression and native KV cache sliding window"
+        },
+        {
+          "topic": "Probability Theory",
+          "why_needed": "To grasp the concept of cumulative distribution functions (CDFs) and their application in high-precision CDF coding"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.18662": {
+    "title": "Large Causal Models for Temporal Causal Discovery",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Causal Discovery",
+          "brief": "The process of identifying cause-and-effect relationships in data"
+        },
+        {
+          "name": "Temporal Causal Discovery",
+          "brief": "Causal discovery in time-series data, where the goal is to identify causal relationships between variables over time"
+        },
+        {
+          "name": "Large Causal Models (LCMs)",
+          "brief": "A class of pre-trained neural architectures designed for temporal causal discovery, allowing for learning at scale"
+        },
+        {
+          "name": "Multi-Dataset Pretraining",
+          "brief": "Training a model on multiple datasets to improve its generalization capabilities"
+        },
+        {
+          "name": "Synthetic and Semi-Synthetic Data",
+          "brief": "Artificially generated data used for training and testing models, often combined with real-world data"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Neural Networks",
+          "why_needed": "To understand the architecture and training of LCMs"
+        },
+        {
+          "topic": "Time-Series Analysis",
+          "why_needed": "To comprehend the challenges and opportunities of temporal causal discovery"
+        },
+        {
+          "topic": "Causal Inference",
+          "why_needed": "To grasp the fundamental concepts of causal relationships and discovery"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To appreciate the scalability and performance of LCMs"
+        },
+        {
+          "topic": "Statistical Modeling",
+          "why_needed": "To understand the evaluation metrics and benchmarks used in the paper"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.20093": {
+    "title": "ManCAR: Manifold-Constrained Latent Reasoning with Adaptive Test-Time Computation for Sequential Recommendation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Manifold-Constrained Latent Reasoning",
+          "brief": "A framework that grounds reasoning within the topology of a global interaction graph to prevent latent drift"
+        },
+        {
+          "name": "Adaptive Test-Time Computation",
+          "brief": "A mechanism that allows reasoning to proceed adaptively until the predictive distribution stabilizes, avoiding over-refinement"
+        },
+        {
+          "name": "Collaborative Manifold",
+          "brief": "A representation of the global interaction graph that captures the topology of user-item interactions"
+        },
+        {
+          "name": "Variational Interpretation",
+          "brief": "A theoretical framework that provides a probabilistic interpretation of the proposed model"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of latent reasoning, neural networks, and variational inference"
+        },
+        {
+          "topic": "Recommendation Systems",
+          "why_needed": "To understand the problem of sequential recommendation and the importance of effective reasoning mechanisms"
+        },
+        {
+          "topic": "Graph Theory",
+          "why_needed": "To understand the concept of a collaborative manifold and its representation as a graph"
+        },
+        {
+          "topic": "Probabilistic Modeling",
+          "why_needed": "To understand the variational interpretation of the proposed model and its theoretical validation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.18532": {
+    "title": "VLANeXt: Recipes for Building Strong VLA Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Language-Action (VLA) models",
+          "brief": "Models that combine visual and language understanding for policy learning"
+        },
+        {
+          "name": "Foundation models",
+          "brief": "Large models that serve as a base for various downstream tasks"
+        },
+        {
+          "name": "VLANeXt",
+          "brief": "A simple yet effective VLA model that outperforms prior state-of-the-art methods"
+        },
+        {
+          "name": "LIBERO and LIBERO-plus benchmarks",
+          "brief": "Standard evaluation benchmarks for VLA models"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the concepts of foundation models and VLA models"
+        },
+        {
+          "topic": "Computer vision",
+          "why_needed": "To comprehend the visual understanding aspect of VLA models"
+        },
+        {
+          "topic": "Natural language processing",
+          "why_needed": "To grasp the language understanding aspect of VLA models"
+        },
+        {
+          "topic": "Policy learning",
+          "why_needed": "To understand the action modeling perspective in VLA models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.19672": {
+    "title": "SkillOrchestra: Learning to Route Agents via Skill Transfer",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Compound AI Systems",
+          "brief": "AI systems composed of multiple models to achieve capabilities beyond individual models"
+        },
+        {
+          "name": "Skill-Aware Orchestration",
+          "brief": "Orchestration approach that considers the skills and competence of individual agents"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "Machine learning approach for training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Routing Policies",
+          "brief": "Policies that determine the selection of agents in a compound AI system"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "Understanding of AI concepts and systems"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Familiarity with machine learning approaches, including RL"
+        },
+        {
+          "topic": "Multi-Agent Systems",
+          "why_needed": "Knowledge of systems composed of multiple agents with different skills and capabilities"
+        },
+        {
+          "topic": "Orchestration and Routing",
+          "why_needed": "Understanding of the importance of effective orchestration in compound AI systems"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.10693": {
+    "title": "VESPO: Variational Sequence-Level Soft Policy Optimization for Stable Off-Policy LLM Training",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A subfield of machine learning that involves training agents to take actions in an environment to maximize a reward"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models designed to process and generate human-like language"
+        },
+        {
+          "name": "Importance Sampling",
+          "brief": "A technique used to correct for distribution shift in RL"
+        },
+        {
+          "name": "Variational Inference",
+          "brief": "A method for approximating complex probability distributions"
+        },
+        {
+          "name": "Policy Optimization",
+          "brief": "The process of adjusting the parameters of an RL policy to improve performance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of LLMs"
+        },
+        {
+          "topic": "Probability Theory",
+          "why_needed": "To comprehend the mathematical foundations of importance sampling and variational inference"
+        },
+        {
+          "topic": "Reinforcement Learning Fundamentals",
+          "why_needed": "To grasp the concepts of policies, actions, and rewards"
+        },
+        {
+          "topic": "Mathematical Optimization",
+          "why_needed": "To understand the optimization techniques used in policy optimization"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.17393": {
+    "title": "Contact-Anchored Proprioceptive Odometry for Quadruped Robots",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Proprioceptive Odometry",
+          "brief": "Estimating a robot's state using only internal sensors, such as IMU and motor measurements"
+        },
+        {
+          "name": "Kinematic Anchors",
+          "brief": "Using contacting legs as references to constrain the robot's pose and velocity"
+        },
+        {
+          "name": "Foot Wrench Estimation",
+          "brief": "Estimating the force and torque applied to the foot using joint-torque measurements"
+        },
+        {
+          "name": "Cubature Kalman Filter",
+          "brief": "A mathematical filter used to estimate the state of a system from noisy measurements"
+        },
+        {
+          "name": "Geometric Consistency",
+          "brief": "Using multiple contacts to constrain the robot's pose and prevent drift"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Robotics and Legged Locomotion",
+          "why_needed": "Understanding of how legged robots move and the challenges associated with estimating their state"
+        },
+        {
+          "topic": "Sensor Fusion and State Estimation",
+          "why_needed": "Knowledge of how to combine data from different sensors to estimate a robot's state"
+        },
+        {
+          "topic": "Kalman Filters and Estimation Theory",
+          "why_needed": "Understanding of mathematical filters and estimation techniques used in the paper"
+        },
+        {
+          "topic": "Kinematics and Dynamics of Robotic Systems",
+          "why_needed": "Knowledge of how to model and analyze the motion of robotic systems"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.18996": {
+    "title": "Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Cross-View Object Correspondence",
+          "brief": "Establishing object-level visual correspondence across different viewpoints in videos"
+        },
+        {
+          "name": "Conditional Binary Segmentation",
+          "brief": "A technique used to encode an object query mask into a latent representation"
+        },
+        {
+          "name": "Cycle-Consistency Training Objective",
+          "brief": "A training objective that projects predicted masks back to the source view to reconstruct the original query mask"
+        },
+        {
+          "name": "Test-Time Training (TTT)",
+          "brief": "A strategy that enables training at inference time without requiring ground-truth annotations"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the concepts of object correspondence, segmentation, and view-invariant representations"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the conditional binary segmentation and cycle-consistency training objective"
+        },
+        {
+          "topic": "Video Analysis",
+          "why_needed": "To grasp the challenges of egocentric-to-exocentric and exocentric-to-egocentric scenarios in videos"
+        },
+        {
+          "topic": "Self-Supervised Learning",
+          "why_needed": "To understand the concept of self-supervisory signals and their application in training objectives"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.12100": {
+    "title": "AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Autoregressive Transformer",
+          "brief": "A type of neural network architecture used for sequential data generation"
+        },
+        {
+          "name": "Modular 3D Assets",
+          "brief": "3D models composed of smaller, reusable components"
+        },
+        {
+          "name": "Text-to-3D Generation",
+          "brief": "Generating 3D models from textual descriptions"
+        },
+        {
+          "name": "Module Sequencing and Decoding",
+          "brief": "Techniques for generating and arranging 3D asset components"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Understanding of neural networks and their applications"
+        },
+        {
+          "topic": "3D Computer Graphics",
+          "why_needed": "Familiarity with 3D modeling and rendering concepts"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "Knowledge of language models and text processing techniques"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of image and 3D data processing and generation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-02-24"
+  },
+  "2602.18915": {
+    "title": "AAVGen: Precision Engineering of Adeno-associated Viral Capsids for Renal Selective Targeting",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Adeno-associated viruses (AAVs)",
+          "brief": "Viruses used as vectors for gene therapy"
+        },
+        {
+          "name": "Gene therapy",
+          "brief": "Medical treatment that uses genes to prevent or treat diseases"
+        },
+        {
+          "name": "Capsid engineering",
+          "brief": "Design and modification of viral capsids for improved functionality"
+        },
+        {
+          "name": "Artificial intelligence (AI) in biotechnology",
+          "brief": "Use of AI techniques for biological system design and optimization"
+        },
+        {
+          "name": "Protein language models (PLMs)",
+          "brief": "AI models that predict protein structure and function"
+        },
+        {
+          "name": "Reinforcement learning",
+          "brief": "Machine learning technique for training agents to make decisions in complex environments"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Molecular biology",
+          "why_needed": "Understanding of viral vectors, gene therapy, and protein structure"
+        },
+        {
+          "topic": "Biotechnology",
+          "why_needed": "Familiarity with gene editing and vector design"
+        },
+        {
+          "topic": "Artificial intelligence and machine learning",
+          "why_needed": "Understanding of AI techniques and their applications in biotechnology"
+        },
+        {
+          "topic": "Protein structure and function",
+          "why_needed": "Knowledge of protein folding and stability"
+        },
+        {
+          "topic": "Kidney anatomy and physiology",
+          "why_needed": "Understanding of the kidney's unique structure and function"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-02-24"
   }
 }
