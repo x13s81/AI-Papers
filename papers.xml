@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-<title>AI Papers - 2026-02-28</title>
+<title>AI Papers - 2026-03-01</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-02-28 - 237 papers</description>
-<lastBuildDate>Sat, 28 Feb 2026 14:19:02 +0000</lastBuildDate>
+<description>AI papers as of 2026-03-01 - 237 papers</description>
+<lastBuildDate>Sun, 01 Mar 2026 14:21:08 +0000</lastBuildDate>
 <item>
 <title><![CDATA[OmniGAIA: Towards Native Omni-Modal AI Agents]]></title>
 <link>https://huggingface.co/papers/2602.22897</link>
@@ -16,12 +16,30 @@ Institution:
 Published: 2026-02-26
 Score: 9/10
 Citations: 0
-Upvotes: 48
+Upvotes: 49
 GitHub: 
 Stars: 0
 
 Human intelligence naturally intertwines omni-modal perception -- spanning vision, audio, and language -- with complex reasoning and tool usage to interact with the world. However, current multi-modal LLMs are primarily confined to bi-modal interactions (e.g., vision-language), lacking the unified cognitive capabilities required for general AI assistants. To bridge this gap, we introduce OmniGAIA, a comprehensive benchmark designed to evaluate omni-modal agents on tasks necessitating deep reasoning and multi-turn tool execution across video, audio, and image modalities. Constructed via a novel omni-modal event graph approach, OmniGAIA synthesizes complex, multi-hop queries derived from real-world data that require cross-modal reasoning and external tool integration. Furthermore, we propose OmniAtlas, a native omni-modal foundation agent under tool-integrated reasoning paradigm with active omni-modal perception. Trained on trajectories synthesized via a hindsight-guided tree exploration strategy and OmniDPO for fine-grained error correction, OmniAtlas effectively enhances the tool-use capabilities of existing open-source models. This work marks a step towards next-generation native omni-modal AI assistants for real-world scenarios.]]></description>
 <pubDate>Thu, 26 Feb 2026 11:35:04 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[AI Gamestore: Scalable, Open-Ended Evaluation of Machine General Intelligence with Human Games]]></title>
+<link>https://huggingface.co/papers/2602.17594</link>
+<guid>2602.17594</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Lance Ying, Ryan Truong, Prafull Sharma, Kaiya Ivy Zhao, Nathan Cloos
+Institution: 
+Published: 2026-02-19
+Score: 9/10
+Citations: 0
+Upvotes: 8
+GitHub: 
+Stars: 0
+
+Rigorously evaluating machine intelligence against the broad spectrum of human general intelligence has become increasingly important and challenging in this era of rapid technological advance. Conventional AI benchmarks typically assess only narrow capabilities in a limited range of human activity. Most are also static, quickly saturating as developers explicitly or implicitly optimize for them. We propose that a more promising way to evaluate human-like general intelligence in AI systems is through a particularly strong form of general game playing: studying how and how well they play and learn to play all conceivable human games, in comparison to human players with the same level of experience, time, or other resources. We define a "human game" to be a game designed by humans for humans, and argue for the evaluative suitability of this space of all such games people can imagine and enjoy -- the "Multiverse of Human Games". Taking a first step towards this vision, we introduce the AI GameStore, a scalable and open-ended platform that uses LLMs with humans-in-the-loop to synthesize new representative human games, by automatically sourcing and adapting standardized and containerized variants of game environments from popular human digital gaming platforms. As a proof of concept, we generated 100 such games based on the top charts of Apple App Store and Steam, and evaluated seven frontier vision-language models (VLMs) on short episodes of play. The best models achieved less than 10\% of the human average score on the majority of the games, and especially struggled with games that challenge world-model learning, memory and planning. We conclude with a set of next steps for building out the AI GameStore as a practical way to measure and drive progress toward human-like general intelligence in machines.]]></description>
+<pubDate>Thu, 19 Feb 2026 18:17:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[The Trinity of Consistency as a Defining Principle for General World Models]]></title>
@@ -34,7 +52,7 @@ Institution:
 Published: 2026-02-26
 Score: 8/10
 Citations: 0
-Upvotes: 183
+Upvotes: 188
 GitHub: 
 Stars: 0
 
@@ -52,7 +70,7 @@ Institution:
 Published: 2026-02-12
 Score: 8/10
 Citations: 0
-Upvotes: 36
+Upvotes: 37
 GitHub: 
 Stars: 0
 
@@ -88,30 +106,12 @@ Institution:
 Published: 2026-02-16
 Score: 8/10
 Citations: 0
-Upvotes: 12
+Upvotes: 13
 GitHub: 
 Stars: 0
 
 We introduce the Sphere Encoder, an efficient generative framework capable of producing images in a single forward pass and competing with many-step diffusion models using fewer than five steps. Our approach works by learning an encoder that maps natural images uniformly onto a spherical latent space, and a decoder that maps random latent vectors back to the image space. Trained solely through image reconstruction losses, the model generates an image by simply decoding a random point on the sphere. Our architecture naturally supports conditional generation, and looping the encoder/decoder a few times can further enhance image quality. Across several datasets, the sphere encoder approach yields performance competitive with state of the art diffusions, but with a small fraction of the inference cost. Project page is available at https://sphere-encoder.github.io .]]></description>
 <pubDate>Mon, 16 Feb 2026 18:59:57 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[AI Gamestore: Scalable, Open-Ended Evaluation of Machine General Intelligence with Human Games]]></title>
-<link>https://huggingface.co/papers/2602.17594</link>
-<guid>2602.17594</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Lance Ying, Ryan Truong, Prafull Sharma, Kaiya Ivy Zhao, Nathan Cloos
-Institution: 
-Published: 2026-02-19
-Score: 8/10
-Citations: 0
-Upvotes: 8
-GitHub: 
-Stars: 0
-
-Rigorously evaluating machine intelligence against the broad spectrum of human general intelligence has become increasingly important and challenging in this era of rapid technological advance. Conventional AI benchmarks typically assess only narrow capabilities in a limited range of human activity. Most are also static, quickly saturating as developers explicitly or implicitly optimize for them. We propose that a more promising way to evaluate human-like general intelligence in AI systems is through a particularly strong form of general game playing: studying how and how well they play and learn to play all conceivable human games, in comparison to human players with the same level of experience, time, or other resources. We define a "human game" to be a game designed by humans for humans, and argue for the evaluative suitability of this space of all such games people can imagine and enjoy -- the "Multiverse of Human Games". Taking a first step towards this vision, we introduce the AI GameStore, a scalable and open-ended platform that uses LLMs with humans-in-the-loop to synthesize new representative human games, by automatically sourcing and adapting standardized and containerized variants of game environments from popular human digital gaming platforms. As a proof of concept, we generated 100 such games based on the top charts of Apple App Store and Steam, and evaluated seven frontier vision-language models (VLMs) on short episodes of play. The best models achieved less than 10\% of the human average score on the majority of the games, and especially struggled with games that challenge world-model learning, memory and planning. We conclude with a set of next steps for building out the AI GameStore as a practical way to measure and drive progress toward human-like general intelligence in machines.]]></description>
-<pubDate>Thu, 19 Feb 2026 18:17:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[From Statics to Dynamics: Physics-Aware Image Editing with Latent Transition Priors]]></title>
@@ -124,7 +124,7 @@ Institution:
 Published: 2026-02-25
 Score: 8/10
 Citations: 0
-Upvotes: 8
+Upvotes: 9
 GitHub: 
 Stars: 0
 
@@ -142,7 +142,7 @@ Institution:
 Published: 2026-02-26
 Score: 8/10
 Citations: 0
-Upvotes: 4
+Upvotes: 5
 GitHub: 
 Stars: 0
 
@@ -186,6 +186,42 @@ We systematically evaluate the quality of widely used AI safety datasets from tw
 <pubDate>Tue, 17 Feb 2026 18:29:22 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[Efficient Continual Learning in Language Models via Thalamically Routed Cortical Columns]]></title>
+<link>https://huggingface.co/papers/2602.22479</link>
+<guid>2602.22479</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Afshin Khadangi
+Institution: 
+Published: 2026-02-25
+Score: 8/10
+Citations: 0
+Upvotes: 0
+GitHub: 
+Stars: 0
+
+Continual learning is a core requirement for deployed language models, yet standard training and fine-tuning pipelines remain brittle under non-stationary data. Online updates often induce catastrophic forgetting, while methods that improve stability frequently increase latency, memory footprint, or dense computation in ways that do not scale well to long contexts. We introduce TRC^{2} (Thalamically Routed Cortical Columns), a decoder-only backbone that addresses continual learning at the architectural level. TRC^{2} combines sparse thalamic routing over cortical columns with mechanisms for modulation, prediction, memory, and feedback, together with a fast corrective pathway that supports rapid adaptation without destabilizing slower parameters. The resulting block is sparse and chunk-parallel, enabling efficient training and inference while preserving clean ablations of each subsystem. We instantiate a reproducible training and evaluation stack and a continual-learning harness that measures proxy forgetting under streaming domain shifts. Across language modeling and continual learning benchmarks, TRC^{2} improves the stability-plasticity tradeoff at comparable compute, enabling rapid on-stream adaptation while preserving previously acquired behavior.]]></description>
+<pubDate>Wed, 25 Feb 2026 23:38:16 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[From Blind Spots to Gains: Diagnostic-Driven Iterative Training for Large Multimodal Models]]></title>
+<link>https://huggingface.co/papers/2602.22859</link>
+<guid>2602.22859</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Hongrui Jia, Chaoya Jiang, Shikun Zhang, Wei Ye
+Institution: 
+Published: 2026-02-26
+Score: 7/10
+Citations: 0
+Upvotes: 147
+GitHub: 
+Stars: 0
+
+As Large Multimodal Models (LMMs) scale up and reinforcement learning (RL) methods mature, LMMs have made notable progress in complex reasoning and decision making. Yet training still relies on static data and fixed recipes, making it difficult to diagnose capability blind spots or provide dynamic, targeted reinforcement. Motivated by findings that test driven error exposure and feedback based correction outperform repetitive practice, we propose Diagnostic-driven Progressive Evolution (DPE), a spiral loop where diagnosis steers data generation and reinforcement, and each iteration re-diagnoses the updated model to drive the next round of targeted improvement. DPE has two key components. First, multiple agents annotate and quality control massive unlabeled multimodal data, using tools such as web search and image editing to produce diverse, realistic samples. Second, DPE attributes failures to specific weaknesses, dynamically adjusts the data mixture, and guides agents to generate weakness focused data for targeted reinforcement. Experiments on Qwen3-VL-8B-Instruct and Qwen2.5-VL-7B-Instruct show stable, continual gains across eleven benchmarks, indicating DPE as a scalable paradigm for continual LMM training under open task distributions. Our code, models, and data are publicly available at https://github.com/hongruijia/DPE.]]></description>
+<pubDate>Thu, 26 Feb 2026 10:53:57 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[MolHIT: Advancing Molecular-Graph Generation with Hierarchical Discrete Diffusion Models]]></title>
 <link>https://huggingface.co/papers/2602.17602</link>
 <guid>2602.17602</guid>
@@ -196,7 +232,7 @@ Institution:
 Published: 2026-02-19
 Score: 7/10
 Citations: 0
-Upvotes: 52
+Upvotes: 53
 GitHub: 
 Stars: 0
 
@@ -214,30 +250,12 @@ Institution:
 Published: 2026-02-26
 Score: 7/10
 Citations: 1
-Upvotes: 27
+Upvotes: 30
 GitHub: 
 Stars: 0
 
 Exploration remains the key bottleneck for large language model agents trained with reinforcement learning. While prior methods exploit pretrained knowledge, they fail in environments requiring the discovery of novel states. We propose Exploratory Memory-Augmented On- and Off-Policy Optimization (EMPO^2), a hybrid RL framework that leverages memory for exploration and combines on- and off-policy updates to make LLMs perform well with memory while also ensuring robustness without it. On ScienceWorld and WebShop, EMPO^2 achieves 128.6% and 11.3% improvements over GRPO, respectively. Moreover, in out-of-distribution tests, EMPO^2 demonstrates superior adaptability to new tasks, requiring only a few trials with memory and no parameter updates. These results highlight EMPO^2 as a promising framework for building more exploratory and generalizable LLM-based agents.]]></description>
 <pubDate>Thu, 26 Feb 2026 13:50:57 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Search More, Think Less: Rethinking Long-Horizon Agentic Search for Efficiency and Generalization]]></title>
-<link>https://huggingface.co/papers/2602.22675</link>
-<guid>2602.22675</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Qianben Chen, Tianrui Qin, King Zhu, Qiexiang Wang, Chengjun Yu
-Institution: 
-Published: 2026-02-26
-Score: 7/10
-Citations: 0
-Upvotes: 17
-GitHub: 
-Stars: 0
-
-Recent deep research agents primarily improve performance by scaling reasoning depth, but this leads to high inference cost and latency in search-intensive scenarios. Moreover, generalization across heterogeneous research settings remains challenging. In this work, we propose Search More, Think Less (SMTL), a framework for long-horizon agentic search that targets both efficiency and generalization. SMTL replaces sequential reasoning with parallel evidence acquisition, enabling efficient context management under constrained context budgets. To support generalization across task types, we further introduce a unified data synthesis pipeline that constructs search tasks spanning both deterministic question answering and open-ended research scenarios with task appropriate evaluation metrics. We train an end-to-end agent using supervised fine-tuning and reinforcement learning, achieving strong and often state of the art performance across benchmarks including BrowseComp (48.6\%), GAIA (75.7\%), Xbench (82.0\%), and DeepResearch Bench (45.9\%). Compared to Mirothinker-v1.0, SMTL with maximum 100 interaction steps reduces the average number of reasoning steps on BrowseComp by 70.7\%, while improving accuracy.]]></description>
-<pubDate>Thu, 26 Feb 2026 06:46:41 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[VecGlypher: Unified Vector Glyph Generation with Language Models]]></title>
@@ -286,7 +304,7 @@ Institution:
 Published: 2026-02-26
 Score: 7/10
 Citations: 0
-Upvotes: 5
+Upvotes: 7
 GitHub: 
 Stars: 0
 
@@ -304,7 +322,7 @@ Institution:
 Published: 2026-02-24
 Score: 7/10
 Citations: 0
-Upvotes: 2
+Upvotes: 3
 GitHub: 
 Stars: 0
 
@@ -402,42 +420,6 @@ Object hallucination is a critical issue in Large Vision-Language Models (LVLMs)
 <pubDate>Wed, 25 Feb 2026 17:50:41 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Efficient Continual Learning in Language Models via Thalamically Routed Cortical Columns]]></title>
-<link>https://huggingface.co/papers/2602.22479</link>
-<guid>2602.22479</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Afshin Khadangi
-Institution: 
-Published: 2026-02-25
-Score: 7/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Continual learning is a core requirement for deployed language models, yet standard training and fine-tuning pipelines remain brittle under non-stationary data. Online updates often induce catastrophic forgetting, while methods that improve stability frequently increase latency, memory footprint, or dense computation in ways that do not scale well to long contexts. We introduce TRC^{2} (Thalamically Routed Cortical Columns), a decoder-only backbone that addresses continual learning at the architectural level. TRC^{2} combines sparse thalamic routing over cortical columns with mechanisms for modulation, prediction, memory, and feedback, together with a fast corrective pathway that supports rapid adaptation without destabilizing slower parameters. The resulting block is sparse and chunk-parallel, enabling efficient training and inference while preserving clean ablations of each subsystem. We instantiate a reproducible training and evaluation stack and a continual-learning harness that measures proxy forgetting under streaming domain shifts. Across language modeling and continual learning benchmarks, TRC^{2} improves the stability-plasticity tradeoff at comparable compute, enabling rapid on-stream adaptation while preserving previously acquired behavior.]]></description>
-<pubDate>Wed, 25 Feb 2026 23:38:16 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[From Blind Spots to Gains: Diagnostic-Driven Iterative Training for Large Multimodal Models]]></title>
-<link>https://huggingface.co/papers/2602.22859</link>
-<guid>2602.22859</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Hongrui Jia, Chaoya Jiang, Shikun Zhang, Wei Ye
-Institution: 
-Published: 2026-02-26
-Score: 6/10
-Citations: 0
-Upvotes: 143
-GitHub: 
-Stars: 0
-
-As Large Multimodal Models (LMMs) scale up and reinforcement learning (RL) methods mature, LMMs have made notable progress in complex reasoning and decision making. Yet training still relies on static data and fixed recipes, making it difficult to diagnose capability blind spots or provide dynamic, targeted reinforcement. Motivated by findings that test driven error exposure and feedback based correction outperform repetitive practice, we propose Diagnostic-driven Progressive Evolution (DPE), a spiral loop where diagnosis steers data generation and reinforcement, and each iteration re-diagnoses the updated model to drive the next round of targeted improvement. DPE has two key components. First, multiple agents annotate and quality control massive unlabeled multimodal data, using tools such as web search and image editing to produce diverse, realistic samples. Second, DPE attributes failures to specific weaknesses, dynamically adjusts the data mixture, and guides agents to generate weakness focused data for targeted reinforcement. Experiments on Qwen3-VL-8B-Instruct and Qwen2.5-VL-7B-Instruct show stable, continual gains across eleven benchmarks, indicating DPE as a scalable paradigm for continual LMM training under open task distributions. Our code, models, and data are publicly available at https://github.com/hongruijia/DPE.]]></description>
-<pubDate>Thu, 26 Feb 2026 10:53:57 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[MobilityBench: A Benchmark for Evaluating Route-Planning Agents in Real-World Mobility Scenarios]]></title>
 <link>https://huggingface.co/papers/2602.22638</link>
 <guid>2602.22638</guid>
@@ -448,7 +430,7 @@ Institution:
 Published: 2026-02-26
 Score: 6/10
 Citations: 0
-Upvotes: 94
+Upvotes: 98
 GitHub: 
 Stars: 0
 
@@ -484,30 +466,12 @@ Institution:
 Published: 2026-02-26
 Score: 6/10
 Citations: 0
-Upvotes: 34
+Upvotes: 36
 GitHub: 
 Stars: 0
 
 Latent visual reasoning aims to mimic human's imagination process by meditating through hidden states of Multimodal Large Language Models. While recognized as a promising paradigm for visual reasoning, the underlying mechanisms driving its effectiveness remain unclear. Motivated to demystify the true source of its efficacy, we investigate the validity of latent reasoning using Causal Mediation Analysis. We model the process as a causal chain: the input as the treatment, the latent tokens as the mediator, and the final answer as the outcome. Our findings uncover two critical disconnections: (a) Input-Latent Disconnect: dramatic perturbations on the input result in negligible changes to the latent tokens, suggesting that latent tokens do not effectively attend to the input sequence. (b) Latent-Answer Disconnect: perturbations on the latent tokens yield minimal impact on the final answer, indicating the limited causal effect latent tokens imposing on the outcome. Furthermore, extensive probing analysis reveals that latent tokens encode limited visual information and exhibit high similarity. Consequently, we challenge the necessity of latent reasoning and propose a straightforward alternative named CapImagine, which teaches the model to explicitly imagine using text. Experiments on vision-centric benchmarks show that CapImagine significantly outperforms complex latent-space baselines, highlighting the superior potential of visual reasoning through explicit imagination.]]></description>
 <pubDate>Thu, 26 Feb 2026 08:56:23 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[AgentDropoutV2: Optimizing Information Flow in Multi-Agent Systems via Test-Time Rectify-or-Reject Pruning]]></title>
-<link>https://huggingface.co/papers/2602.23258</link>
-<guid>2602.23258</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yutong Wang, Siyuan Xiong, Xuebo Liu, Wenkang Zhou, Liang Ding
-Institution: 
-Published: 2026-02-26
-Score: 6/10
-Citations: 0
-Upvotes: 24
-GitHub: 
-Stars: 0
-
-While Multi-Agent Systems (MAS) excel in complex reasoning, they suffer from the cascading impact of erroneous information generated by individual participants. Current solutions often resort to rigid structural engineering or expensive fine-tuning, limiting their deployability and adaptability. We propose AgentDropoutV2, a test-time rectify-or-reject pruning framework designed to dynamically optimize MAS information flow without retraining. Our approach acts as an active firewall, intercepting agent outputs and employing a retrieval-augmented rectifier to iteratively correct errors based on a failure-driven indicator pool. This mechanism allows for the precise identification of potential errors using distilled failure patterns as prior knowledge. Irreparable outputs are subsequently pruned to prevent error propagation, while a fallback strategy preserves system integrity. Empirical results on extensive math benchmarks show that AgentDropoutV2 significantly boosts the MAS's task performance, achieving an average accuracy gain of 6.3 percentage points on math benchmarks. Furthermore, the system exhibits robust generalization and adaptivity, dynamically modulating rectification efforts based on task difficulty while leveraging context-aware indicators to resolve a wide spectrum of error patterns. Our code and dataset are released at https://github.com/TonySY2/AgentDropoutV2.]]></description>
-<pubDate>Thu, 26 Feb 2026 17:31:43 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[DualPath: Breaking the Storage Bandwidth Bottleneck in Agentic LLM Inference]]></title>
@@ -520,7 +484,7 @@ Institution:
 Published: 2026-02-25
 Score: 6/10
 Citations: 0
-Upvotes: 24
+Upvotes: 28
 GitHub: 
 Stars: 0
 
@@ -528,6 +492,24 @@ The performance of multi-turn, agentic LLM inference is increasingly dominated b
   We present DualPath, an inference system that breaks this bottleneck by introducing dual-path KV-Cache loading. Beyond the traditional storage-to-prefill path, DualPath enables a novel storage-to-decode path, in which the KV-Cache is loaded into decoding engines and then efficiently transferred to prefill engines via RDMA over the compute network. DualPath combines this optimized data path -- which inherently avoids network congestion and avoids interference with latency-critical model execution communications -- with a global scheduler that dynamically balances load across prefill and decode engines.
   Our evaluation on three models with production agentic workloads demonstrates that DualPath improves offline inference throughput by up to 1.87times on our in-house inference system. It can also improve online serving throughput by an average factor of 1.96times without violating SLO.]]></description>
 <pubDate>Wed, 25 Feb 2026 04:10:58 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Search More, Think Less: Rethinking Long-Horizon Agentic Search for Efficiency and Generalization]]></title>
+<link>https://huggingface.co/papers/2602.22675</link>
+<guid>2602.22675</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Qianben Chen, Tianrui Qin, King Zhu, Qiexiang Wang, Chengjun Yu
+Institution: 
+Published: 2026-02-26
+Score: 6/10
+Citations: 0
+Upvotes: 18
+GitHub: 
+Stars: 0
+
+Recent deep research agents primarily improve performance by scaling reasoning depth, but this leads to high inference cost and latency in search-intensive scenarios. Moreover, generalization across heterogeneous research settings remains challenging. In this work, we propose Search More, Think Less (SMTL), a framework for long-horizon agentic search that targets both efficiency and generalization. SMTL replaces sequential reasoning with parallel evidence acquisition, enabling efficient context management under constrained context budgets. To support generalization across task types, we further introduce a unified data synthesis pipeline that constructs search tasks spanning both deterministic question answering and open-ended research scenarios with task appropriate evaluation metrics. We train an end-to-end agent using supervised fine-tuning and reinforcement learning, achieving strong and often state of the art performance across benchmarks including BrowseComp (48.6\%), GAIA (75.7\%), Xbench (82.0\%), and DeepResearch Bench (45.9\%). Compared to Mirothinker-v1.0, SMTL with maximum 100 interaction steps reduces the average number of reasoning steps on BrowseComp by 70.7\%, while improving accuracy.]]></description>
+<pubDate>Thu, 26 Feb 2026 06:46:41 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[GUI-Libra: Training Native GUI Agents to Reason and Act with Action-aware Supervision and Partially Verifiable RL]]></title>
@@ -546,6 +528,24 @@ Stars: 0
 
 Open-source native GUI agents still lag behind closed-source systems on long-horizon navigation tasks. This gap stems from two limitations: a shortage of high-quality, action-aligned reasoning data, and the direct adoption of generic post-training pipelines that overlook the unique challenges of GUI agents. We identify two fundamental issues in these pipelines: (i) standard SFT with CoT reasoning often hurts grounding, and (ii) step-wise RLVR-tyle training faces partial verifiability, where multiple actions can be correct but only a single demonstrated action is used for verification. This makes offline step-wise metrics weak predictors of online task success. In this work, we present GUI-Libra, a tailored training recipe that addresses these challenges. First, to mitigate the scarcity of action-aligned reasoning data, we introduce a data construction and filtering pipeline and release a curated 81K GUI reasoning dataset. Second, to reconcile reasoning with grounding, we propose action-aware SFT that mixes reasoning-then-action and direct-action data and reweights tokens to emphasize action and grounding. Third, to stabilize RL under partial verifiability, we identify the overlooked importance of KL regularization in RLVR and show that a KL trust region is critical for improving offline-to-online predictability; we further introduce success-adaptive scaling to downweight unreliable negative gradients. Across diverse web and mobile benchmarks, GUI-Libra consistently improves both step-wise accuracy and end-to-end task completion. Our results suggest that carefully designed post-training and data curation can unlock significantly stronger task-solving capabilities without costly online data collection. We release our dataset, code, and models to facilitate further research on data-efficient post-training for reasoning-capable GUI agents.]]></description>
 <pubDate>Wed, 25 Feb 2026 18:34:57 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling]]></title>
+<link>https://huggingface.co/papers/2602.21760</link>
+<guid>2602.21760</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Euisoo Jung, Byunghyun Kim, Hyunjin Kim, Seonghye Cho, Jae-Gil Lee
+Institution: 
+Published: 2026-02-25
+Score: 6/10
+Citations: 0
+Upvotes: 12
+GitHub: 
+Stars: 0
+
+Diffusion models have achieved remarkable progress in high-fidelity image, video, and audio generation, yet inference remains computationally expensive. Nevertheless, current diffusion acceleration methods based on distributed parallelism suffer from noticeable generation artifacts and fail to achieve substantial acceleration proportional to the number of GPUs. Therefore, we propose a hybrid parallelism framework that combines a novel data parallel strategy, condition-based partitioning, with an optimal pipeline scheduling method, adaptive parallelism switching, to reduce generation latency and achieve high generation quality in conditional diffusion models. The key ideas are to (i) leverage the conditional and unconditional denoising paths as a new data-partitioning perspective and (ii) adaptively enable optimal pipeline parallelism according to the denoising discrepancy between these two paths. Our framework achieves 2.31times and 2.07times latency reductions on SDXL and SD3, respectively, using two NVIDIA RTX~3090 GPUs, while preserving image quality. This result confirms the generality of our approach across U-Net-based diffusion models and DiT-based flow-matching architectures. Our approach also outperforms existing methods in acceleration under high-resolution synthesis settings. Code is available at https://github.com/kaist-dmlab/Hybridiff.]]></description>
+<pubDate>Wed, 25 Feb 2026 10:23:07 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[VGG-T^3: Offline Feed-Forward 3D Reconstruction at Scale]]></title>
@@ -692,22 +692,40 @@ Scaling multimodal alignment between video and audio is challenging, particularl
 <pubDate>Tue, 24 Feb 2026 15:01:39 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling]]></title>
-<link>https://huggingface.co/papers/2602.21760</link>
-<guid>2602.21760</guid>
+<title><![CDATA[Yor-Sarc: A gold-standard dataset for sarcasm detection in a low-resource African language]]></title>
+<link>https://huggingface.co/papers/2602.18964</link>
+<guid>2602.18964</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Euisoo Jung, Byunghyun Kim, Hyunjin Kim, Seonghye Cho, Jae-Gil Lee
+Authors: Toheeb Aduramomi Jimoh, Tabea De Wille, Nikola S. Nikolov
 Institution: 
-Published: 2026-02-25
-Score: 5/10
+Published: 2026-02-21
+Score: 6/10
 Citations: 0
-Upvotes: 12
+Upvotes: 0
 GitHub: 
 Stars: 0
 
-Diffusion models have achieved remarkable progress in high-fidelity image, video, and audio generation, yet inference remains computationally expensive. Nevertheless, current diffusion acceleration methods based on distributed parallelism suffer from noticeable generation artifacts and fail to achieve substantial acceleration proportional to the number of GPUs. Therefore, we propose a hybrid parallelism framework that combines a novel data parallel strategy, condition-based partitioning, with an optimal pipeline scheduling method, adaptive parallelism switching, to reduce generation latency and achieve high generation quality in conditional diffusion models. The key ideas are to (i) leverage the conditional and unconditional denoising paths as a new data-partitioning perspective and (ii) adaptively enable optimal pipeline parallelism according to the denoising discrepancy between these two paths. Our framework achieves 2.31times and 2.07times latency reductions on SDXL and SD3, respectively, using two NVIDIA RTX~3090 GPUs, while preserving image quality. This result confirms the generality of our approach across U-Net-based diffusion models and DiT-based flow-matching architectures. Our approach also outperforms existing methods in acceleration under high-resolution synthesis settings. Code is available at https://github.com/kaist-dmlab/Hybridiff.]]></description>
-<pubDate>Wed, 25 Feb 2026 10:23:07 +0000</pubDate>
+Sarcasm detection poses a fundamental challenge in computational semantics, requiring models to resolve disparities between literal and intended meaning. The challenge is amplified in low-resource languages where annotated datasets are scarce or nonexistent. We present Yor-Sarc, the first gold-standard dataset for sarcasm detection in Yorùbá, a tonal Niger-Congo language spoken by over 50 million people. The dataset comprises 436 instances annotated by three native speakers from diverse dialectal backgrounds using an annotation protocol specifically designed for Yorùbá sarcasm by taking culture into account. This protocol incorporates context-sensitive interpretation and community-informed guidelines and is accompanied by a comprehensive analysis of inter-annotator agreement to support replication in other African languages. Substantial to almost perfect agreement was achieved (Fleiss' κ= 0.7660; pairwise Cohen's κ= 0.6732--0.8743), with 83.3% unanimous consensus. One annotator pair achieved almost perfect agreement (κ= 0.8743; 93.8% raw agreement), exceeding a number of reported benchmarks for English sarcasm research works. The remaining 16.7% majority-agreement cases are preserved as soft labels for uncertainty-aware modelling. Yor-Sarchttps://github.com/toheebadura/yor-sarc is expected to facilitate research on semantic interpretation and culturally informed NLP for low-resource African languages.]]></description>
+<pubDate>Sat, 21 Feb 2026 22:10:18 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[AgentDropoutV2: Optimizing Information Flow in Multi-Agent Systems via Test-Time Rectify-or-Reject Pruning]]></title>
+<link>https://huggingface.co/papers/2602.23258</link>
+<guid>2602.23258</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yutong Wang, Siyuan Xiong, Xuebo Liu, Wenkang Zhou, Liang Ding
+Institution: 
+Published: 2026-02-26
+Score: 5/10
+Citations: 0
+Upvotes: 24
+GitHub: 
+Stars: 0
+
+While Multi-Agent Systems (MAS) excel in complex reasoning, they suffer from the cascading impact of erroneous information generated by individual participants. Current solutions often resort to rigid structural engineering or expensive fine-tuning, limiting their deployability and adaptability. We propose AgentDropoutV2, a test-time rectify-or-reject pruning framework designed to dynamically optimize MAS information flow without retraining. Our approach acts as an active firewall, intercepting agent outputs and employing a retrieval-augmented rectifier to iteratively correct errors based on a failure-driven indicator pool. This mechanism allows for the precise identification of potential errors using distilled failure patterns as prior knowledge. Irreparable outputs are subsequently pruned to prevent error propagation, while a fallback strategy preserves system integrity. Empirical results on extensive math benchmarks show that AgentDropoutV2 significantly boosts the MAS's task performance, achieving an average accuracy gain of 6.3 percentage points on math benchmarks. Furthermore, the system exhibits robust generalization and adaptivity, dynamically modulating rectification efforts based on task difficulty while leveraging context-aware indicators to resolve a wide spectrum of error patterns. Our code and dataset are released at https://github.com/TonySY2/AgentDropoutV2.]]></description>
+<pubDate>Thu, 26 Feb 2026 17:31:43 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[General Agent Evaluation]]></title>
@@ -720,7 +738,7 @@ Institution:
 Published: 2026-02-26
 Score: 5/10
 Citations: 0
-Upvotes: 7
+Upvotes: 8
 GitHub: 
 Stars: 0
 
@@ -774,7 +792,7 @@ Institution:
 Published: 2026-02-25
 Score: 5/10
 Citations: 0
-Upvotes: 3
+Upvotes: 4
 GitHub: 
 Stars: 0
 
@@ -836,22 +854,22 @@ We aim to learn a joint representation between inertial measurement unit (IMU) s
 <pubDate>Sun, 22 Feb 2026 01:54:29 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Yor-Sarc: A gold-standard dataset for sarcasm detection in a low-resource African language]]></title>
-<link>https://huggingface.co/papers/2602.18964</link>
-<guid>2602.18964</guid>
+<title><![CDATA[Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting]]></title>
+<link>https://huggingface.co/papers/2602.20933</link>
+<guid>2602.20933</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Toheeb Aduramomi Jimoh, Tabea De Wille, Nikola S. Nikolov
+Authors: Shuangkang Fang, I-Chao Shen, Xuanyang Zhang, Zesheng Wang, Yufeng Wang
 Institution: 
-Published: 2026-02-21
-Score: 5/10
+Published: 2026-02-24
+Score: 4/10
 Citations: 0
-Upvotes: 0
+Upvotes: 4
 GitHub: 
 Stars: 0
 
-Sarcasm detection poses a fundamental challenge in computational semantics, requiring models to resolve disparities between literal and intended meaning. The challenge is amplified in low-resource languages where annotated datasets are scarce or nonexistent. We present Yor-Sarc, the first gold-standard dataset for sarcasm detection in Yorùbá, a tonal Niger-Congo language spoken by over 50 million people. The dataset comprises 436 instances annotated by three native speakers from diverse dialectal backgrounds using an annotation protocol specifically designed for Yorùbá sarcasm by taking culture into account. This protocol incorporates context-sensitive interpretation and community-informed guidelines and is accompanied by a comprehensive analysis of inter-annotator agreement to support replication in other African languages. Substantial to almost perfect agreement was achieved (Fleiss' κ= 0.7660; pairwise Cohen's κ= 0.6732--0.8743), with 83.3% unanimous consensus. One annotator pair achieved almost perfect agreement (κ= 0.8743; 93.8% raw agreement), exceeding a number of reported benchmarks for English sarcasm research works. The remaining 16.7% majority-agreement cases are preserved as soft labels for uncertainty-aware modelling. Yor-Sarchttps://github.com/toheebadura/yor-sarc is expected to facilitate research on semantic interpretation and culturally informed NLP for low-resource African languages.]]></description>
-<pubDate>Sat, 21 Feb 2026 22:10:18 +0000</pubDate>
+Recent 3D Gaussian Splatting (3DGS) Dropout methods address overfitting under sparse-view conditions by randomly nullifying Gaussian opacities. However, we identify a neighbor compensation effect in these approaches: dropped Gaussians are often compensated by their neighbors, weakening the intended regularization. Moreover, these methods overlook the contribution of high-degree spherical harmonic coefficients (SH) to overfitting. To address these issues, we propose DropAnSH-GS, a novel anchor-based Dropout strategy. Rather than dropping Gaussians independently, our method randomly selects certain Gaussians as anchors and simultaneously removes their spatial neighbors. This effectively disrupts local redundancies near anchors and encourages the model to learn more robust, globally informed representations. Furthermore, we extend the Dropout to color attributes by randomly dropping higher-degree SH to concentrate appearance information in lower-degree SH. This strategy further mitigates overfitting and enables flexible post-training model compression via SH truncation. Experimental results demonstrate that DropAnSH-GS substantially outperforms existing Dropout methods with negligible computational overhead, and can be readily integrated into various 3DGS variants to enhance their performances. Project Website: https://sk-fun.fun/DropAnSH-GS]]></description>
+<pubDate>Tue, 24 Feb 2026 14:11:56 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[NanoKnow: How to Know What Your Language Model Knows]]></title>
@@ -870,24 +888,6 @@ Stars: 0
 
 How do large language models (LLMs) know what they know? Answering this question has been difficult because pre-training data is often a "black box" -- unknown or inaccessible. The recent release of nanochat -- a family of small LLMs with fully open pre-training data -- addresses this as it provides a transparent view into where a model's parametric knowledge comes from. Towards the goal of understanding how knowledge is encoded by LLMs, we release NanoKnow, a benchmark dataset that partitions questions from Natural Questions and SQuAD into splits based on whether their answers are present in nanochat's pre-training corpus. Using these splits, we can now properly disentangle the sources of knowledge that LLMs rely on when producing an output. To demonstrate NanoKnow's utility, we conduct experiments using eight nanochat checkpoints. Our findings show: (1) closed-book accuracy is strongly influenced by answer frequency in the pre-training data, (2) providing external evidence can mitigate this frequency dependence, (3) even with external evidence, models are more accurate when answers were seen during pre-training, demonstrating that parametric and external knowledge are complementary, and (4) non-relevant information is harmful, with accuracy decreasing based on both the position and the number of non-relevant contexts. We release all NanoKnow artifacts at https://github.com/castorini/NanoKnow.]]></description>
 <pubDate>Mon, 23 Feb 2026 18:37:49 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting]]></title>
-<link>https://huggingface.co/papers/2602.20933</link>
-<guid>2602.20933</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Shuangkang Fang, I-Chao Shen, Xuanyang Zhang, Zesheng Wang, Yufeng Wang
-Institution: 
-Published: 2026-02-24
-Score: 4/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-Recent 3D Gaussian Splatting (3DGS) Dropout methods address overfitting under sparse-view conditions by randomly nullifying Gaussian opacities. However, we identify a neighbor compensation effect in these approaches: dropped Gaussians are often compensated by their neighbors, weakening the intended regularization. Moreover, these methods overlook the contribution of high-degree spherical harmonic coefficients (SH) to overfitting. To address these issues, we propose DropAnSH-GS, a novel anchor-based Dropout strategy. Rather than dropping Gaussians independently, our method randomly selects certain Gaussians as anchors and simultaneously removes their spatial neighbors. This effectively disrupts local redundancies near anchors and encourages the model to learn more robust, globally informed representations. Furthermore, we extend the Dropout to color attributes by randomly dropping higher-degree SH to concentrate appearance information in lower-degree SH. This strategy further mitigates overfitting and enables flexible post-training model compression via SH truncation. Experimental results demonstrate that DropAnSH-GS substantially outperforms existing Dropout methods with negligible computational overhead, and can be readily integrated into various 3DGS variants to enhance their performances. Project Website: https://sk-fun.fun/DropAnSH-GS]]></description>
-<pubDate>Tue, 24 Feb 2026 14:11:56 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[DLT-Corpus: A Large-Scale Text Collection for the Distributed Ledger Technology Domain]]></title>
