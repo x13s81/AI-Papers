@@ -29330,5 +29330,241 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-01"
+  },
+  "2602.24281": {
+    "title": "Memory Caching: RNNs with Growing Memory",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Recurrent Neural Networks (RNNs)",
+          "brief": "A type of neural network designed to handle sequential data"
+        },
+        {
+          "name": "Transformers",
+          "brief": "A type of neural network architecture introduced for sequence-to-sequence tasks"
+        },
+        {
+          "name": "Memory Caching (MC)",
+          "brief": "A technique to enhance RNNs by caching checkpoints of their memory states"
+        },
+        {
+          "name": "Sequence Modeling",
+          "brief": "A task in natural language processing that involves predicting the next item in a sequence"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and their applications"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and applications of sequence modeling and language modeling"
+        },
+        {
+          "topic": "Computer Architecture",
+          "why_needed": "To understand the implications of memory capacity and complexity on model performance"
+        },
+        {
+          "topic": "Mathematics (Linear Algebra and Calculus)",
+          "why_needed": "To understand the mathematical formulations and optimizations used in the paper"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-02"
+  },
+  "2602.24208": {
+    "title": "SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion Models",
+          "brief": "A type of deep learning model used for video generation"
+        },
+        {
+          "name": "Caching",
+          "brief": "A technique to reduce computation by reusing previously computed model outputs"
+        },
+        {
+          "name": "Sensitivity-Aware Caching",
+          "brief": "A caching framework that adaptively selects caching timesteps based on model output sensitivity"
+        },
+        {
+          "name": "Denoising Steps",
+          "brief": "A process in diffusion models to refine the generated output"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of diffusion models and caching techniques"
+        },
+        {
+          "topic": "Video Generation",
+          "why_needed": "To appreciate the application of diffusion models in video generation tasks"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To understand the motivation behind accelerating diffusion model inference"
+        },
+        {
+          "topic": "Mathematical Analysis",
+          "why_needed": "To comprehend the theoretical basis of the proposed sensitivity-aware caching framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-02"
+  },
+  "2602.23898": {
+    "title": "Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Referring Expression Comprehension (REC)",
+          "brief": "Linking language to region-level visual perception"
+        },
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "Models that process and understand both text and images"
+        },
+        {
+          "name": "Visual Reasoning",
+          "brief": "The ability to reason and draw conclusions based on visual information"
+        },
+        {
+          "name": "Grounding",
+          "brief": "The process of connecting language to the physical world"
+        },
+        {
+          "name": "Ref-Adv Benchmark",
+          "brief": "A dataset designed to test visual reasoning and grounding in MLLMs"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand how images are processed and analyzed"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend how language is understood and generated"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp how models are trained and evaluated"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and functionality of MLLMs"
+        },
+        {
+          "topic": "Cognitive Science",
+          "why_needed": "To appreciate the cognitive aspects of visual reasoning and grounding"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-02"
+  },
+  "2602.22953": {
+    "title": "General Agent Evaluation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "General-purpose agents",
+          "brief": "Systems that perform tasks in unfamiliar environments without domain-specific engineering"
+        },
+        {
+          "name": "Agent evaluation",
+          "brief": "Assessing the performance of agents in various environments"
+        },
+        {
+          "name": "Unified Protocol",
+          "brief": "A framework enabling agent-benchmark integration"
+        },
+        {
+          "name": "Exgentic framework",
+          "brief": "A practical framework for general agent evaluation"
+        },
+        {
+          "name": "Open General Agent Leaderboard",
+          "brief": "A benchmark for evaluating general agents across diverse environments"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "Understanding of AI concepts and agents"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Knowledge of machine learning techniques and their applications"
+        },
+        {
+          "topic": "Software Engineering",
+          "why_needed": "Familiarity with software development and integration"
+        },
+        {
+          "topic": "Benchmarking and Evaluation",
+          "why_needed": "Understanding of evaluation methodologies and metrics"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-02"
+  },
+  "2602.22437": {
+    "title": "veScale-FSDP: Flexible and High-Performance FSDP at Scale",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Fully Sharded Data Parallel (FSDP)",
+          "brief": "A technique for training large-scale models in parallel across multiple GPUs"
+        },
+        {
+          "name": "Structure-aware training methods",
+          "brief": "Methods that take into account the structure of the model, such as block-wise quantized training"
+        },
+        {
+          "name": "Non-element-wise optimizers",
+          "brief": "Optimization algorithms that do not operate element-wise, such as Shampoo and Muon"
+        },
+        {
+          "name": "RaggedShard",
+          "brief": "A flexible sharding format that can accommodate block-structured computations"
+        },
+        {
+          "name": "Scalability",
+          "brief": "The ability of a system to efficiently handle large-scale models and thousands of GPUs"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Distributed computing",
+          "why_needed": "To understand how FSDP works and how veScale-FSDP improves upon it"
+        },
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the context and applications of FSDP and veScale-FSDP"
+        },
+        {
+          "topic": "Parallel processing",
+          "why_needed": "To understand how veScale-FSDP achieves efficient scaling"
+        },
+        {
+          "topic": "Model optimization",
+          "why_needed": "To understand the importance of non-element-wise optimizers and structure-aware training methods"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-02"
   }
 }
