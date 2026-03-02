@@ -3,8 +3,8 @@
 <channel>
 <title>AI Papers - 2026-03-02</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-03-02 - 244 papers</description>
-<lastBuildDate>Mon, 02 Mar 2026 03:54:31 +0000</lastBuildDate>
+<description>AI papers as of 2026-03-02 - 240 papers</description>
+<lastBuildDate>Mon, 02 Mar 2026 14:40:06 +0000</lastBuildDate>
 <item>
 <title><![CDATA[The Trinity of Consistency as a Defining Principle for General World Models]]></title>
 <link>https://huggingface.co/papers/2602.23152</link>
@@ -16,30 +16,12 @@ Institution:
 Published: 2026-02-26
 Score: 9/10
 Citations: 0
-Upvotes: 190
+Upvotes: 191
 GitHub: 
 Stars: 0
 
 The construction of World Models capable of learning, simulating, and reasoning about objective physical laws constitutes a foundational challenge in the pursuit of Artificial General Intelligence. Recent advancements represented by video generation models like Sora have demonstrated the potential of data-driven scaling laws to approximate physical dynamics, while the emerging Unified Multimodal Model (UMM) offers a promising architectural paradigm for integrating perception, language, and reasoning. Despite these advances, the field still lacks a principled theoretical framework that defines the essential properties requisite for a General World Model. In this paper, we propose that a World Model must be grounded in the Trinity of Consistency: Modal Consistency as the semantic interface, Spatial Consistency as the geometric basis, and Temporal Consistency as the causal engine. Through this tripartite lens, we systematically review the evolution of multimodal learning, revealing a trajectory from loosely coupled specialized modules toward unified architectures that enable the synergistic emergence of internal world simulators. To complement this conceptual framework, we introduce CoW-Bench, a benchmark centered on multi-frame reasoning and generation scenarios. CoW-Bench evaluates both video generation models and UMMs under a unified evaluation protocol. Our work establishes a principled pathway toward general world models, clarifying both the limitations of current systems and the architectural requirements for future progress.]]></description>
 <pubDate>Thu, 26 Feb 2026 16:15:55 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[From Statics to Dynamics: Physics-Aware Image Editing with Latent Transition Priors]]></title>
-<link>https://huggingface.co/papers/2602.21778</link>
-<guid>2602.21778</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Liangbing Zhao, Le Zhuo, Sayak Paul, Hongsheng Li, Mohamed Elhoseiny
-Institution: 
-Published: 2026-02-25
-Score: 9/10
-Citations: 0
-Upvotes: 9
-GitHub: 
-Stars: 0
-
-Instruction-based image editing has achieved remarkable success in semantic alignment, yet state-of-the-art models frequently fail to render physically plausible results when editing involves complex causal dynamics, such as refraction or material deformation. We attribute this limitation to the dominant paradigm that treats editing as a discrete mapping between image pairs, which provides only boundary conditions and leaves transition dynamics underspecified. To address this, we reformulate physics-aware editing as predictive physical state transitions and introduce PhysicTran38K, a large-scale video-based dataset comprising 38K transition trajectories across five physical domains, constructed via a two-stage filtering and constraint-aware annotation pipeline. Building on this supervision, we propose PhysicEdit, an end-to-end framework equipped with a textual-visual dual-thinking mechanism. It combines a frozen Qwen2.5-VL for physically grounded reasoning with learnable transition queries that provide timestep-adaptive visual guidance to a diffusion backbone. Experiments show that PhysicEdit improves over Qwen-Image-Edit by 5.9% in physical realism and 10.1% in knowledge-grounded editing, setting a new state-of-the-art for open-source methods, while remaining competitive with leading proprietary models.]]></description>
-<pubDate>Wed, 25 Feb 2026 10:54:46 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[AI Gamestore: Scalable, Open-Ended Evaluation of Machine General Intelligence with Human Games]]></title>
@@ -52,7 +34,7 @@ Institution:
 Published: 2026-02-19
 Score: 9/10
 Citations: 0
-Upvotes: 8
+Upvotes: 9
 GitHub: 
 Stars: 0
 
@@ -78,40 +60,40 @@ As Large Multimodal Models (LMMs) scale up and reinforcement learning (RL) metho
 <pubDate>Thu, 26 Feb 2026 10:53:57 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[MolHIT: Advancing Molecular-Graph Generation with Hierarchical Discrete Diffusion Models]]></title>
-<link>https://huggingface.co/papers/2602.17602</link>
-<guid>2602.17602</guid>
+<title><![CDATA[CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation]]></title>
+<link>https://huggingface.co/papers/2602.24286</link>
+<guid>2602.24286</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Hojung Jung, Rodrigo Hormazabal, Jaehyeong Jo, Youngrok Park, Kyunggeun Roh
+Authors: Weinan Dai, Hanlin Wu, Qiying Yu, Huan-ang Gao, Jiahao Li
 Institution: 
-Published: 2026-02-19
+Published: 2026-02-27
 Score: 8/10
 Citations: 0
-Upvotes: 54
+Upvotes: 29
 GitHub: 
 Stars: 0
 
-Molecular generation with diffusion models has emerged as a promising direction for AI-driven drug discovery and materials science. While graph diffusion models have been widely adopted due to the discrete nature of 2D molecular graphs, existing models suffer from low chemical validity and struggle to meet the desired properties compared to 1D modeling. In this work, we introduce MolHIT, a powerful molecular graph generation framework that overcomes long-standing performance limitations in existing methods. MolHIT is based on the Hierarchical Discrete Diffusion Model, which generalizes discrete diffusion to additional categories that encode chemical priors, and decoupled atom encoding that splits the atom types according to their chemical roles. Overall, MolHIT achieves new state-of-the-art performance on the MOSES dataset with near-perfect validity for the first time in graph diffusion, surpassing strong 1D baselines across multiple metrics. We further demonstrate strong performance in downstream tasks, including multi-property guided generation and scaffold extension.]]></description>
-<pubDate>Thu, 19 Feb 2026 18:27:11 +0000</pubDate>
+GPU kernel optimization is fundamental to modern deep learning but remains a highly specialized task requiring deep hardware expertise. Despite strong performance in general programming, large language models (LLMs) remain uncompetitive with compiler-based systems such as torch.compile for CUDA kernel generation. Existing CUDA code generation approaches either rely on training-free refinement or fine-tune models within fixed multi-turn execution-feedback loops, but both paradigms fail to fundamentally improve the model's intrinsic CUDA optimization ability, resulting in limited performance gains. We present CUDA Agent, a large-scale agentic reinforcement learning system that develops CUDA kernel expertise through three components: a scalable data synthesis pipeline, a skill-augmented CUDA development environment with automated verification and profiling to provide reliable reward signals, and reinforcement learning algorithmic techniques enabling stable training. CUDA Agent achieves state-of-the-art results on KernelBench, delivering 100\%, 100\%, and 92\% faster rate over torch.compile on KernelBench Level-1, Level-2, and Level-3 splits, outperforming the strongest proprietary models such as Claude Opus 4.5 and Gemini 3 Pro by about 40\% on the hardest Level-3 setting.]]></description>
+<pubDate>Fri, 27 Feb 2026 18:58:05 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[MediX-R1: Open Ended Medical Reinforcement Learning]]></title>
-<link>https://huggingface.co/papers/2602.23363</link>
-<guid>2602.23363</guid>
+<title><![CDATA[Mode Seeking meets Mean Seeking for Fast Long Video Generation]]></title>
+<link>https://huggingface.co/papers/2602.24289</link>
+<guid>2602.24289</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Sahal Shaji Mullappilly, Mohammed Irfan Kurpath, Omair Mohamed, Mohamed Zidan, Fahad Khan
+Authors: Shengqu Cai, Weili Nie, Chao Liu, Julius Berner, Lvmin Zhang
 Institution: 
-Published: 2026-02-26
+Published: 2026-02-27
 Score: 8/10
 Citations: 0
-Upvotes: 19
+Upvotes: 18
 GitHub: 
 Stars: 0
 
-We introduce MediX-R1, an open-ended Reinforcement Learning (RL) framework for medical multimodal large language models (MLLMs) that enables clinically grounded, free-form answers beyond multiple-choice formats. MediX-R1 fine-tunes a baseline vision-language backbone with Group Based RL and a composite reward tailored for medical reasoning: an LLM-based accuracy reward that judges semantic correctness with a strict YES/NO decision, a medical embedding-based semantic reward to capture paraphrases and terminology variants, and lightweight format and modality rewards that enforce interpretable reasoning and modality recognition. This multi-signal design provides stable, informative feedback for open-ended outputs where traditional verifiable or MCQ-only rewards fall short. To measure progress, we propose a unified evaluation framework for both text-only and image+text tasks that uses a Reference-based LLM-as-judge in place of brittle string-overlap metrics, capturing semantic correctness, reasoning, and contextual alignment. Despite using only sim51K instruction examples, MediX-R1 achieves excellent results across standard medical LLM (text-only) and VLM (image + text) benchmarks, outperforming strong open-source baselines and delivering particularly large gains on open-ended clinical tasks. Our results demonstrate that open-ended RL with comprehensive reward signals and LLM-based evaluation is a practical path toward reliable medical reasoning in multimodal models. Our trained models, curated datasets and source code are available at https://medix.cvmbzuai.com]]></description>
-<pubDate>Thu, 26 Feb 2026 18:59:46 +0000</pubDate>
+Scaling video generation from seconds to minutes faces a critical bottleneck: while short-video data is abundant and high-fidelity, coherent long-form data is scarce and limited to narrow domains. To address this, we propose a training paradigm where Mode Seeking meets Mean Seeking, decoupling local fidelity from long-term coherence based on a unified representation via a Decoupled Diffusion Transformer. Our approach utilizes a global Flow Matching head trained via supervised learning on long videos to capture narrative structure, while simultaneously employing a local Distribution Matching head that aligns sliding windows to a frozen short-video teacher via a mode-seeking reverse-KL divergence. This strategy enables the synthesis of minute-scale videos that learns long-range coherence and motions from limited long videos via supervised flow matching, while inheriting local realism by aligning every sliding-window segment of the student to a frozen short-video teacher, resulting in a few-step fast long video generator. Evaluations show that our method effectively closes the fidelity-horizon gap by jointly improving local sharpness, motion and long-range consistency. Project website: https://primecai.github.io/mmm/.]]></description>
+<pubDate>Fri, 27 Feb 2026 18:59:02 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[VGG-T^3: Offline Feed-Forward 3D Reconstruction at Scale]]></title>
@@ -130,6 +112,24 @@ Stars: 0
 
 We present a scalable 3D reconstruction model that addresses a critical limitation in offline feed-forward methods: their computational and memory requirements grow quadratically w.r.t. the number of input images. Our approach is built on the key insight that this bottleneck stems from the varying-length Key-Value (KV) space representation of scene geometry, which we distill into a fixed-size Multi-Layer Perceptron (MLP) via test-time training. VGG-T^3 (Visual Geometry Grounded Test Time Training) scales linearly w.r.t. the number of input views, similar to online models, and reconstructs a 1k image collection in just 54 seconds, achieving a 11.6times speed-up over baselines that rely on softmax attention. Since our method retains global scene aggregation capability, our point map reconstruction error outperforming other linear-time methods by large margins. Finally, we demonstrate visual localization capabilities of our model by querying the scene representation with unseen images.]]></description>
 <pubDate>Thu, 26 Feb 2026 18:59:33 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Compositional Generalization Requires Linear, Orthogonal Representations in Vision Embedding Models]]></title>
+<link>https://huggingface.co/papers/2602.24264</link>
+<guid>2602.24264</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Arnas Uselis, Andrea Dittadi, Seong Joon Oh
+Institution: 
+Published: 2026-02-27
+Score: 8/10
+Citations: 0
+Upvotes: 11
+GitHub: 
+Stars: 0
+
+Compositional generalization, the ability to recognize familiar parts in novel contexts, is a defining property of intelligent systems. Although modern models are trained on massive datasets, they still cover only a tiny fraction of the combinatorial space of possible inputs, raising the question of what structure representations must have to support generalization to unseen combinations. We formalize three desiderata for compositional generalization under standard training (divisibility, transferability, stability) and show they impose necessary geometric constraints: representations must decompose linearly into per-concept components, and these components must be orthogonal across concepts. This provides theoretical grounding for the Linear Representation Hypothesis: the linear structure widely observed in neural representations is a necessary consequence of compositional generalization. We further derive dimension bounds linking the number of composable concepts to the embedding geometry. Empirically, we evaluate these predictions across modern vision models (CLIP, SigLIP, DINO) and find that representations exhibit partial linear factorization with low-rank, near-orthogonal per-concept factors, and that the degree of this structure correlates with compositional generalization on unseen combinations. As models continue to scale, these conditions predict the representational geometry they may converge to. Code is available at https://github.com/oshapio/necessary-compositionality.]]></description>
+<pubDate>Fri, 27 Feb 2026 18:32:31 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents]]></title>
@@ -186,60 +186,6 @@ Energy-based predictive world models provide a powerful approach for multi-step 
 <pubDate>Thu, 26 Feb 2026 14:42:53 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation]]></title>
-<link>https://huggingface.co/papers/2602.24286</link>
-<guid>2602.24286</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Weinan Dai, Hanlin Wu, Qiying Yu, Huan-ang Gao, Jiahao Li
-Institution: 
-Published: 2026-02-27
-Score: 8/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-GPU kernel optimization is fundamental to modern deep learning but remains a highly specialized task requiring deep hardware expertise. Despite strong performance in general programming, large language models (LLMs) remain uncompetitive with compiler-based systems such as torch.compile for CUDA kernel generation. Existing CUDA code generation approaches either rely on training-free refinement or fine-tune models within fixed multi-turn execution-feedback loops, but both paradigms fail to fundamentally improve the model's intrinsic CUDA optimization ability, resulting in limited performance gains. We present CUDA Agent, a large-scale agentic reinforcement learning system that develops CUDA kernel expertise through three components: a scalable data synthesis pipeline, a skill-augmented CUDA development environment with automated verification and profiling to provide reliable reward signals, and reinforcement learning algorithmic techniques enabling stable training. CUDA Agent achieves state-of-the-art results on KernelBench, delivering 100\%, 100\%, and 92\% faster rate over torch.compile on KernelBench Level-1, Level-2, and Level-3 splits, outperforming the strongest proprietary models such as Claude Opus 4.5 and Gemini 3 Pro by about 40\% on the hardest Level-3 setting.]]></description>
-<pubDate>Fri, 27 Feb 2026 18:58:05 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Intent Laundering: AI Safety Datasets Are Not What They Seem]]></title>
-<link>https://huggingface.co/papers/2602.16729</link>
-<guid>2602.16729</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Shahriar Golchin, Marc Wetter
-Institution: 
-Published: 2026-02-17
-Score: 8/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-We systematically evaluate the quality of widely used AI safety datasets from two perspectives: in isolation and in practice. In isolation, we examine how well these datasets reflect real-world adversarial attacks based on three key properties: being driven by ulterior intent, well-crafted, and out-of-distribution. We find that these datasets overrely on "triggering cues": words or phrases with overt negative/sensitive connotations that are intended to trigger safety mechanisms explicitly, which is unrealistic compared to real-world attacks. In practice, we evaluate whether these datasets genuinely measure safety risks or merely provoke refusals through triggering cues. To explore this, we introduce "intent laundering": a procedure that abstracts away triggering cues from adversarial attacks (data points) while strictly preserving their malicious intent and all relevant details. Our results indicate that current AI safety datasets fail to faithfully represent real-world adversarial behavior due to their overreliance on triggering cues. Once these cues are removed, all previously evaluated "reasonably safe" models become unsafe, including Gemini 3 Pro and Claude Sonnet 3.7. Moreover, when intent laundering is adapted as a jailbreaking technique, it consistently achieves high attack success rates, ranging from 90% to over 98%, under fully black-box access. Overall, our findings expose a significant disconnect between how model safety is evaluated by existing datasets and how real-world adversaries behave.]]></description>
-<pubDate>Tue, 17 Feb 2026 18:29:22 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction]]></title>
-<link>https://huggingface.co/papers/2602.18589</link>
-<guid>2602.18589</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jiayang Shi, Daniel M. Pelt, K. Joost Batenburg
-Institution: 
-Published: 2026-02-20
-Score: 8/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Diffusion models have recently emerged as powerful priors for solving inverse problems. While computed tomography (CT) is theoretically a linear inverse problem, it poses many practical challenges. These include correlated noise, artifact structures, reliance on system geometry, and misaligned value ranges, which make the direct application of diffusion models more difficult than in domains like natural image generation. To systematically evaluate how diffusion models perform in this context and compare them with established reconstruction methods, we introduce DM4CT, a comprehensive benchmark for CT reconstruction. DM4CT includes datasets from both medical and industrial domains with sparse-view and noisy configurations. To explore the challenges of deploying diffusion models in practice, we additionally acquire a high-resolution CT dataset at a high-energy synchrotron facility and evaluate all methods under real experimental conditions. We benchmark ten recent diffusion-based methods alongside seven strong baselines, including model-based, unsupervised, and supervised approaches. Our analysis provides detailed insights into the behavior, strengths, and limitations of diffusion models for CT reconstruction. The real-world dataset is publicly available at zenodo.org/records/15420527, and the codebase is open-sourced at github.com/DM4CT/DM4CT.]]></description>
-<pubDate>Fri, 20 Feb 2026 19:54:47 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[OmniGAIA: Towards Native Omni-Modal AI Agents]]></title>
 <link>https://huggingface.co/papers/2602.22897</link>
 <guid>2602.22897</guid>
@@ -250,32 +196,12 @@ Institution:
 Published: 2026-02-26
 Score: 7/10
 Citations: 0
-Upvotes: 49
+Upvotes: 51
 GitHub: 
 Stars: 0
 
 Human intelligence naturally intertwines omni-modal perception -- spanning vision, audio, and language -- with complex reasoning and tool usage to interact with the world. However, current multi-modal LLMs are primarily confined to bi-modal interactions (e.g., vision-language), lacking the unified cognitive capabilities required for general AI assistants. To bridge this gap, we introduce OmniGAIA, a comprehensive benchmark designed to evaluate omni-modal agents on tasks necessitating deep reasoning and multi-turn tool execution across video, audio, and image modalities. Constructed via a novel omni-modal event graph approach, OmniGAIA synthesizes complex, multi-hop queries derived from real-world data that require cross-modal reasoning and external tool integration. Furthermore, we propose OmniAtlas, a native omni-modal foundation agent under tool-integrated reasoning paradigm with active omni-modal perception. Trained on trajectories synthesized via a hindsight-guided tree exploration strategy and OmniDPO for fine-grained error correction, OmniAtlas effectively enhances the tool-use capabilities of existing open-source models. This work marks a step towards next-generation native omni-modal AI assistants for real-world scenarios.]]></description>
 <pubDate>Thu, 26 Feb 2026 11:35:04 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[DualPath: Breaking the Storage Bandwidth Bottleneck in Agentic LLM Inference]]></title>
-<link>https://huggingface.co/papers/2602.21548</link>
-<guid>2602.21548</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yongtong Wu, Shaoyuan Chen, Yinmin Zhong, Rilin Huang, Yixuan Tan
-Institution: 
-Published: 2026-02-25
-Score: 7/10
-Citations: 0
-Upvotes: 30
-GitHub: 
-Stars: 0
-
-The performance of multi-turn, agentic LLM inference is increasingly dominated by KV-Cache storage I/O rather than computation. In prevalent disaggregated architectures, loading the massive KV-Cache from external storage creates a fundamental imbalance: storage NICs on prefill engines become bandwidth-saturated, while those on decoding engines remain idle. This asymmetry severely constrains overall system throughput.
-  We present DualPath, an inference system that breaks this bottleneck by introducing dual-path KV-Cache loading. Beyond the traditional storage-to-prefill path, DualPath enables a novel storage-to-decode path, in which the KV-Cache is loaded into decoding engines and then efficiently transferred to prefill engines via RDMA over the compute network. DualPath combines this optimized data path -- which inherently avoids network congestion and avoids interference with latency-critical model execution communications -- with a global scheduler that dynamically balances load across prefill and decode engines.
-  Our evaluation on three models with production agentic workloads demonstrates that DualPath improves offline inference throughput by up to 1.87times on our in-house inference system. It can also improve online serving throughput by an average factor of 1.96times without violating SLO.]]></description>
-<pubDate>Wed, 25 Feb 2026 04:10:58 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Search More, Think Less: Rethinking Long-Horizon Agentic Search for Efficiency and Generalization]]></title>
@@ -288,12 +214,66 @@ Institution:
 Published: 2026-02-26
 Score: 7/10
 Citations: 0
-Upvotes: 18
+Upvotes: 19
 GitHub: 
 Stars: 0
 
 Recent deep research agents primarily improve performance by scaling reasoning depth, but this leads to high inference cost and latency in search-intensive scenarios. Moreover, generalization across heterogeneous research settings remains challenging. In this work, we propose Search More, Think Less (SMTL), a framework for long-horizon agentic search that targets both efficiency and generalization. SMTL replaces sequential reasoning with parallel evidence acquisition, enabling efficient context management under constrained context budgets. To support generalization across task types, we further introduce a unified data synthesis pipeline that constructs search tasks spanning both deterministic question answering and open-ended research scenarios with task appropriate evaluation metrics. We train an end-to-end agent using supervised fine-tuning and reinforcement learning, achieving strong and often state of the art performance across benchmarks including BrowseComp (48.6\%), GAIA (75.7\%), Xbench (82.0\%), and DeepResearch Bench (45.9\%). Compared to Mirothinker-v1.0, SMTL with maximum 100 interaction steps reduces the average number of reasoning steps on BrowseComp by 70.7\%, while improving accuracy.]]></description>
 <pubDate>Thu, 26 Feb 2026 06:46:41 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[InfoNCE Induces Gaussian Distribution]]></title>
+<link>https://huggingface.co/papers/2602.24012</link>
+<guid>2602.24012</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Roy Betser, Eyal Gofer, Meir Yossef Levi, Guy Gilboa
+Institution: 
+Published: 2026-02-27
+Score: 7/10
+Citations: 0
+Upvotes: 8
+GitHub: 
+Stars: 0
+
+Contrastive learning has become a cornerstone of modern representation learning, allowing training with massive unlabeled data for both task-specific and general (foundation) models. A prototypical loss in contrastive training is InfoNCE and its variants. In this work, we show that the InfoNCE objective induces Gaussian structure in representations that emerge from contrastive training. We establish this result in two complementary regimes. First, we show that under certain alignment and concentration assumptions, projections of the high-dimensional representation asymptotically approach a multivariate Gaussian distribution. Next, under less strict assumptions, we show that adding a small asymptotically vanishing regularization term that promotes low feature norm and high feature entropy leads to similar asymptotic results. We support our analysis with experiments on synthetic and CIFAR-10 datasets across multiple encoder architectures and sizes, demonstrating consistent Gaussian behavior. This perspective provides a principled explanation for commonly observed Gaussianity in contrastive representations. The resulting Gaussian model enables principled analytical treatment of learned representations and is expected to support a wide range of applications in contrastive learning.]]></description>
+<pubDate>Fri, 27 Feb 2026 13:35:58 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Memory Caching: RNNs with Growing Memory]]></title>
+<link>https://huggingface.co/papers/2602.24281</link>
+<guid>2602.24281</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Ali Behrouz, Zeman Li, Yuan Deng, Peilin Zhong, Meisam Razaviyayn
+Institution: 
+Published: 2026-02-27
+Score: 7/10
+Citations: 0
+Upvotes: 6
+GitHub: 
+Stars: 0
+
+Transformers have been established as the de-facto backbones for most recent advances in sequence modeling, mainly due to their growing memory capacity that scales with the context length. While plausible for retrieval tasks, it causes quadratic complexity and so has motivated recent studies to explore viable subquadratic recurrent alternatives. Despite showing promising preliminary results in diverse domains, such recurrent architectures underperform Transformers in recall-intensive tasks, often attributed to their fixed-size memory. In this paper, we introduce Memory Caching (MC), a simple yet effective technique that enhances recurrent models by caching checkpoints of their memory states (a.k.a. hidden states). Memory Caching allows the effective memory capacity of RNNs to grow with sequence length, offering a flexible trade-off that interpolates between the fixed memory (i.e., O(L) complexity) of RNNs and the growing memory (i.e., O(L^2) complexity) of Transformers. We propose four variants of MC, including gated aggregation and sparse selective mechanisms, and discuss their implications on both linear and deep memory modules. Our experimental results on language modeling, and long-context understanding tasks show that MC enhances the performance of recurrent models, supporting its effectiveness. The results of in-context recall tasks indicate that while Transformers achieve the best accuracy, our MC variants show competitive performance, close the gap with Transformers, and performs better than state-of-the-art recurrent models.]]></description>
+<pubDate>Fri, 27 Feb 2026 18:53:41 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching]]></title>
+<link>https://huggingface.co/papers/2602.24208</link>
+<guid>2602.24208</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yasaman Haghighi, Alexandre Alahi
+Institution: 
+Published: 2026-02-27
+Score: 7/10
+Citations: 0
+Upvotes: 4
+GitHub: 
+Stars: 0
+
+Diffusion models achieve state-of-the-art video generation quality, but their inference remains expensive due to the large number of sequential denoising steps. This has motivated a growing line of research on accelerating diffusion inference. Among training-free acceleration methods, caching reduces computation by reusing previously computed model outputs across timesteps. Existing caching methods rely on heuristic criteria to choose cache/reuse timesteps and require extensive tuning. We address this limitation with a principled sensitivity-aware caching framework. Specifically, we formalize the caching error through an analysis of the model output sensitivity to perturbations in the denoising inputs, i.e., the noisy latent and the timestep, and show that this sensitivity is a key predictor of caching error. Based on this analysis, we propose Sensitivity-Aware Caching (SenCache), a dynamic caching policy that adaptively selects caching timesteps on a per-sample basis. Our framework provides a theoretical basis for adaptive caching, explains why prior empirical heuristics can be partially effective, and extends them to a dynamic, sample-specific approach. Experiments on Wan 2.1, CogVideoX, and LTX-Video show that SenCache achieves better visual quality than existing caching methods under similar computational budgets.]]></description>
+<pubDate>Fri, 27 Feb 2026 17:36:09 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation]]></title>
@@ -332,22 +312,22 @@ With advances in imitation learning (IL) and large-scale driving datasets, end-t
 <pubDate>Thu, 26 Feb 2026 17:32:30 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Memory Caching: RNNs with Growing Memory]]></title>
-<link>https://huggingface.co/papers/2602.24281</link>
-<guid>2602.24281</guid>
+<title><![CDATA[CL4SE: A Context Learning Benchmark For Software Engineering Tasks]]></title>
+<link>https://huggingface.co/papers/2602.23047</link>
+<guid>2602.23047</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Ali Behrouz, Zeman Li, Yuan Deng, Peilin Zhong, Meisam Razaviyayn
+Authors: Haichuan Hu, Ye Shang, Guoqing Xie, Congqing He, Quanjun Zhang
 Institution: 
-Published: 2026-02-27
+Published: 2026-02-26
 Score: 7/10
 Citations: 0
 Upvotes: 1
 GitHub: 
 Stars: 0
 
-Transformers have been established as the de-facto backbones for most recent advances in sequence modeling, mainly due to their growing memory capacity that scales with the context length. While plausible for retrieval tasks, it causes quadratic complexity and so has motivated recent studies to explore viable subquadratic recurrent alternatives. Despite showing promising preliminary results in diverse domains, such recurrent architectures underperform Transformers in recall-intensive tasks, often attributed to their fixed-size memory. In this paper, we introduce Memory Caching (MC), a simple yet effective technique that enhances recurrent models by caching checkpoints of their memory states (a.k.a. hidden states). Memory Caching allows the effective memory capacity of RNNs to grow with sequence length, offering a flexible trade-off that interpolates between the fixed memory (i.e., O(L) complexity) of RNNs and the growing memory (i.e., O(L^2) complexity) of Transformers. We propose four variants of MC, including gated aggregation and sparse selective mechanisms, and discuss their implications on both linear and deep memory modules. Our experimental results on language modeling, and long-context understanding tasks show that MC enhances the performance of recurrent models, supporting its effectiveness. The results of in-context recall tasks indicate that while Transformers achieve the best accuracy, our MC variants show competitive performance, close the gap with Transformers, and performs better than state-of-the-art recurrent models.]]></description>
-<pubDate>Fri, 27 Feb 2026 18:53:41 +0000</pubDate>
+Context engineering has emerged as a pivotal paradigm for unlocking the potential of Large Language Models (LLMs) in Software Engineering (SE) tasks, enabling performance gains at test time without model fine-tuning. Despite its success, existing research lacks a systematic taxonomy of SE-specific context types and a dedicated benchmark to quantify the heterogeneous effects of different contexts across core SE workflows. To address this gap, we propose CL4SE (Context Learning for Software Engineering), a comprehensive benchmark featuring a fine-grained taxonomy of four SE-oriented context types (interpretable examples, project-specific context, procedural decision-making context, and positive & negative context), each mapped to a representative task (code generation, code summarization, code review, and patch correctness assessment). We construct high-quality datasets comprising over 13,000 samples from more than 30 open-source projects and evaluate five mainstream LLMs across nine metrics. Extensive experiments demonstrate that context learning yields an average performance improvement of 24.7% across all tasks. Specifically, procedural context boosts code review performance by up to 33% (Qwen3-Max), mixed positive-negative context improves patch assessment by 30% (DeepSeek-V3), project-specific context increases code summarization BLEU by 14.78% (GPT-Oss-120B), and interpretable examples enhance code generation PASS@1 by 5.72% (DeepSeek-V3). CL4SE establishes the first standardized evaluation framework for SE context learning, provides actionable empirical insights into task-specific context design, and releases a large-scale dataset to facilitate reproducible research in this domain.]]></description>
+<pubDate>Thu, 26 Feb 2026 14:28:57 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[MEG-to-MEG Transfer Learning and Cross-Task Speech/Silence Detection with Limited Data]]></title>
@@ -366,42 +346,6 @@ Stars: 0
 
 Data-efficient neural decoding is a central challenge for speech brain-computer interfaces. We present the first demonstration of transfer learning and cross-task decoding for MEG-based speech models spanning perception and production. We pre-train a Conformer-based model on 50 hours of single-subject listening data and fine-tune on just 5 minutes per subject across 18 participants. Transfer learning yields consistent improvements, with in-task accuracy gains of 1-4% and larger cross-task gains of up to 5-6%. Not only does pre-training improve performance within each task, but it also enables reliable cross-task decoding between perception and production. Critically, models trained on speech production decode passive listening above chance, confirming that learned representations reflect shared neural processes rather than task-specific motor activity.]]></description>
 <pubDate>Fri, 20 Feb 2026 14:39:50 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[The Truthfulness Spectrum Hypothesis]]></title>
-<link>https://huggingface.co/papers/2602.20273</link>
-<guid>2602.20273</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Zhuofan Josh Ying, Shauli Ravfogel, Nikolaus Kriegeskorte, Peter Hase
-Institution: 
-Published: 2026-02-23
-Score: 7/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Large language models (LLMs) have been reported to linearly encode truthfulness, yet recent work questions this finding's generality. We reconcile these views with the truthfulness spectrum hypothesis: the representational space contains directions ranging from broadly domain-general to narrowly domain-specific. To test this hypothesis, we systematically evaluate probe generalization across five truth types (definitional, empirical, logical, fictional, and ethical), sycophantic and expectation-inverted lying, and existing honesty benchmarks. Linear probes generalize well across most domains but fail on sycophantic and expectation-inverted lying. Yet training on all domains jointly recovers strong performance, confirming that domain-general directions exist despite poor pairwise transfer. The geometry of probe directions explains these patterns: Mahalanobis cosine similarity between probes near-perfectly predicts cross-domain generalization (R^2=0.98). Concept-erasure methods further isolate truth directions that are (1) domain-general, (2) domain-specific, or (3) shared only across particular domain subsets. Causal interventions reveal that domain-specific directions steer more effectively than domain-general ones. Finally, post-training reshapes truth geometry, pushing sycophantic lying further from other truth types, suggesting a representational basis for chat models' sycophantic tendencies. Together, our results support the truthfulness spectrum hypothesis: truth directions of varying generality coexist in representational space, with post-training reshaping their geometry. Code for all experiments is provided in https://github.com/zfying/truth_spec.]]></description>
-<pubDate>Mon, 23 Feb 2026 19:01:31 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching]]></title>
-<link>https://huggingface.co/papers/2602.24208</link>
-<guid>2602.24208</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yasaman Haghighi, Alexandre Alahi
-Institution: 
-Published: 2026-02-27
-Score: 7/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Diffusion models achieve state-of-the-art video generation quality, but their inference remains expensive due to the large number of sequential denoising steps. This has motivated a growing line of research on accelerating diffusion inference. Among training-free acceleration methods, caching reduces computation by reusing previously computed model outputs across timesteps. Existing caching methods rely on heuristic criteria to choose cache/reuse timesteps and require extensive tuning. We address this limitation with a principled sensitivity-aware caching framework. Specifically, we formalize the caching error through an analysis of the model output sensitivity to perturbations in the denoising inputs, i.e., the noisy latent and the timestep, and show that this sensitivity is a key predictor of caching error. Based on this analysis, we propose Sensitivity-Aware Caching (SenCache), a dynamic caching policy that adaptively selects caching timesteps on a per-sample basis. Our framework provides a theoretical basis for adaptive caching, explains why prior empirical heuristics can be partially effective, and extends them to a dynamic, sample-specific approach. Experiments on Wan 2.1, CogVideoX, and LTX-Video show that SenCache achieves better visual quality than existing caching methods under similar computational budgets.]]></description>
-<pubDate>Fri, 27 Feb 2026 17:36:09 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Efficient Continual Learning in Language Models via Thalamically Routed Cortical Columns]]></title>
@@ -432,12 +376,30 @@ Institution:
 Published: 2026-02-26
 Score: 6/10
 Citations: 0
-Upvotes: 100
+Upvotes: 102
 GitHub: 
 Stars: 0
 
 Route-planning agents powered by large language models (LLMs) have emerged as a promising paradigm for supporting everyday human mobility through natural language interaction and tool-mediated decision making. However, systematic evaluation in real-world mobility settings is hindered by diverse routing demands, non-deterministic mapping services, and limited reproducibility. In this study, we introduce MobilityBench, a scalable benchmark for evaluating LLM-based route-planning agents in real-world mobility scenarios. MobilityBench is constructed from large-scale, anonymized real user queries collected from Amap and covers a broad spectrum of route-planning intents across multiple cities worldwide. To enable reproducible, end-to-end evaluation, we design a deterministic API-replay sandbox that eliminates environmental variance from live services. We further propose a multi-dimensional evaluation protocol centered on outcome validity, complemented by assessments of instruction understanding, planning, tool use, and efficiency. Using MobilityBench, we evaluate multiple LLM-based route-planning agents across diverse real-world mobility scenarios and provide an in-depth analysis of their behaviors and performance. Our findings reveal that current models perform competently on Basic information retrieval and Route Planning tasks, yet struggle considerably with Preference-Constrained Route Planning, underscoring significant room for improvement in personalized mobility applications. We publicly release the benchmark data, evaluation toolkit, and documentation at https://github.com/AMAP-ML/MobilityBench .]]></description>
 <pubDate>Thu, 26 Feb 2026 05:39:38 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets]]></title>
+<link>https://huggingface.co/papers/2602.22207</link>
+<guid>2602.22207</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Hanna Yukhymenko, Anton Alexandrov, Martin Vechev
+Institution: 
+Published: 2026-02-25
+Score: 6/10
+Citations: 0
+Upvotes: 34
+GitHub: 
+Stars: 0
+
+The reliability of multilingual Large Language Model (LLM) evaluation is currently compromised by the inconsistent quality of translated benchmarks. Existing resources often suffer from semantic drift and context loss, which can lead to misleading performance metrics. In this work, we present a fully automated framework designed to address these challenges by enabling scalable, high-quality translation of datasets and benchmarks. We demonstrate that adapting test-time compute scaling strategies, specifically Universal Self-Improvement (USI) and our proposed multi-round ranking method, T-RANK, allows for significantly higher quality outputs compared to traditional pipelines. Our framework ensures that benchmarks preserve their original task structure and linguistic nuances during localization. We apply this approach to translate popular benchmarks and datasets into eight Eastern and Southern European languages (Ukrainian, Bulgarian, Slovak, Romanian, Lithuanian, Estonian, Turkish, Greek). Evaluations using both reference-based metrics and LLM-as-a-judge show that our translations surpass existing resources, resulting in more accurate downstream model assessment. We release both the framework and the improved benchmarks to facilitate robust and reproducible multilingual AI development.]]></description>
+<pubDate>Wed, 25 Feb 2026 18:58:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization]]></title>
@@ -449,8 +411,8 @@ Authors: Zeyuan Liu, Jeonghye Kim, Xufang Luo, Dongsheng Li, Yuqing Yang
 Institution: 
 Published: 2026-02-26
 Score: 6/10
-Citations: 1
-Upvotes: 32
+Citations: 0
+Upvotes: 33
 GitHub: 
 Stars: 0
 
@@ -458,40 +420,58 @@ Exploration remains the key bottleneck for large language model agents trained w
 <pubDate>Thu, 26 Feb 2026 13:50:57 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[AgentDropoutV2: Optimizing Information Flow in Multi-Agent Systems via Test-Time Rectify-or-Reject Pruning]]></title>
-<link>https://huggingface.co/papers/2602.23258</link>
-<guid>2602.23258</guid>
+<title><![CDATA[MediX-R1: Open Ended Medical Reinforcement Learning]]></title>
+<link>https://huggingface.co/papers/2602.23363</link>
+<guid>2602.23363</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yutong Wang, Siyuan Xiong, Xuebo Liu, Wenkang Zhou, Liang Ding
+Authors: Sahal Shaji Mullappilly, Mohammed Irfan Kurpath, Omair Mohamed, Mohamed Zidan, Fahad Khan
 Institution: 
 Published: 2026-02-26
 Score: 6/10
 Citations: 0
-Upvotes: 26
+Upvotes: 19
 GitHub: 
 Stars: 0
 
-While Multi-Agent Systems (MAS) excel in complex reasoning, they suffer from the cascading impact of erroneous information generated by individual participants. Current solutions often resort to rigid structural engineering or expensive fine-tuning, limiting their deployability and adaptability. We propose AgentDropoutV2, a test-time rectify-or-reject pruning framework designed to dynamically optimize MAS information flow without retraining. Our approach acts as an active firewall, intercepting agent outputs and employing a retrieval-augmented rectifier to iteratively correct errors based on a failure-driven indicator pool. This mechanism allows for the precise identification of potential errors using distilled failure patterns as prior knowledge. Irreparable outputs are subsequently pruned to prevent error propagation, while a fallback strategy preserves system integrity. Empirical results on extensive math benchmarks show that AgentDropoutV2 significantly boosts the MAS's task performance, achieving an average accuracy gain of 6.3 percentage points on math benchmarks. Furthermore, the system exhibits robust generalization and adaptivity, dynamically modulating rectification efforts based on task difficulty while leveraging context-aware indicators to resolve a wide spectrum of error patterns. Our code and dataset are released at https://github.com/TonySY2/AgentDropoutV2.]]></description>
-<pubDate>Thu, 26 Feb 2026 17:31:43 +0000</pubDate>
+We introduce MediX-R1, an open-ended Reinforcement Learning (RL) framework for medical multimodal large language models (MLLMs) that enables clinically grounded, free-form answers beyond multiple-choice formats. MediX-R1 fine-tunes a baseline vision-language backbone with Group Based RL and a composite reward tailored for medical reasoning: an LLM-based accuracy reward that judges semantic correctness with a strict YES/NO decision, a medical embedding-based semantic reward to capture paraphrases and terminology variants, and lightweight format and modality rewards that enforce interpretable reasoning and modality recognition. This multi-signal design provides stable, informative feedback for open-ended outputs where traditional verifiable or MCQ-only rewards fall short. To measure progress, we propose a unified evaluation framework for both text-only and image+text tasks that uses a Reference-based LLM-as-judge in place of brittle string-overlap metrics, capturing semantic correctness, reasoning, and contextual alignment. Despite using only sim51K instruction examples, MediX-R1 achieves excellent results across standard medical LLM (text-only) and VLM (image + text) benchmarks, outperforming strong open-source baselines and delivering particularly large gains on open-ended clinical tasks. Our results demonstrate that open-ended RL with comprehensive reward signals and LLM-based evaluation is a practical path toward reliable medical reasoning in multimodal models. Our trained models, curated datasets and source code are available at https://medix.cvmbzuai.com]]></description>
+<pubDate>Thu, 26 Feb 2026 18:59:46 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[VecGlypher: Unified Vector Glyph Generation with Language Models]]></title>
-<link>https://huggingface.co/papers/2602.21461</link>
-<guid>2602.21461</guid>
+<title><![CDATA[CiteAudit: You Cited It, But Did You Read It? A Benchmark for Verifying Scientific References in the LLM Era]]></title>
+<link>https://huggingface.co/papers/2602.23452</link>
+<guid>2602.23452</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Xiaoke Huang, Bhavul Gauri, Kam Woh Ng, Tony Ng, Mengmeng Xu
+Authors: Zhengqing Yuan, Kaiwen Shi, Zheyuan Zhang, Lichao Sun, Nitesh V. Chawla
+Institution: 
+Published: 2026-02-26
+Score: 6/10
+Citations: 0
+Upvotes: 13
+GitHub: 
+Stars: 0
+
+Scientific research relies on accurate citation for attribution and integrity, yet large language models (LLMs) introduce a new risk: fabricated references that appear plausible but correspond to no real publications. Such hallucinated citations have already been observed in submissions and accepted papers at major machine learning venues, exposing vulnerabilities in peer review. Meanwhile, rapidly growing reference lists make manual verification impractical, and existing automated tools remain fragile to noisy and heterogeneous citation formats and lack standardized evaluation. We present the first comprehensive benchmark and detection framework for hallucinated citations in scientific writing. Our multi-agent verification pipeline decomposes citation checking into claim extraction, evidence retrieval, passage matching, reasoning, and calibrated judgment to assess whether a cited source truly supports its claim. We construct a large-scale human-validated dataset across domains and define unified metrics for citation faithfulness and evidence alignment. Experiments with state-of-the-art LLMs reveal substantial citation errors and show that our framework significantly outperforms prior methods in both accuracy and interpretability. This work provides the first scalable infrastructure for auditing citations in the LLM era and practical tools to improve the trustworthiness of scientific references.]]></description>
+<pubDate>Thu, 26 Feb 2026 19:17:39 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling]]></title>
+<link>https://huggingface.co/papers/2602.21760</link>
+<guid>2602.21760</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Euisoo Jung, Byunghyun Kim, Hyunjin Kim, Seonghye Cho, Jae-Gil Lee
 Institution: 
 Published: 2026-02-25
 Score: 6/10
 Citations: 0
-Upvotes: 11
+Upvotes: 12
 GitHub: 
 Stars: 0
 
-Vector glyphs are the atomic units of digital typography, yet most learning-based pipelines still depend on carefully curated exemplar sheets and raster-to-vector postprocessing, which limits accessibility and editability. We introduce VecGlypher, a single multimodal language model that generates high-fidelity vector glyphs directly from text descriptions or image exemplars. Given a style prompt, optional reference glyph images, and a target character, VecGlypher autoregressively emits SVG path tokens, avoiding raster intermediates and producing editable, watertight outlines in one pass. A typography-aware data and training recipe makes this possible: (i) a large-scale continuation stage on 39K noisy Envato fonts to master SVG syntax and long-horizon geometry, followed by (ii) post-training on 2.5K expert-annotated Google Fonts with descriptive tags and exemplars to align language and imagery with geometry; preprocessing normalizes coordinate frames, canonicalizes paths, de-duplicates families, and quantizes coordinates for stable long-sequence decoding. On cross-family OOD evaluation, VecGlypher substantially outperforms both general-purpose LLMs and specialized vector-font baselines for text-only generation, while image-referenced generation reaches a state-of-the-art performance, with marked gains over DeepVecFont-v2 and DualVector. Ablations show that model scale and the two-stage recipe are critical and that absolute-coordinate serialization yields the best geometry. VecGlypher lowers the barrier to font creation by letting users design with words or exemplars, and provides a scalable foundation for future multimodal design tools.]]></description>
-<pubDate>Wed, 25 Feb 2026 00:27:23 +0000</pubDate>
+Diffusion models have achieved remarkable progress in high-fidelity image, video, and audio generation, yet inference remains computationally expensive. Nevertheless, current diffusion acceleration methods based on distributed parallelism suffer from noticeable generation artifacts and fail to achieve substantial acceleration proportional to the number of GPUs. Therefore, we propose a hybrid parallelism framework that combines a novel data parallel strategy, condition-based partitioning, with an optimal pipeline scheduling method, adaptive parallelism switching, to reduce generation latency and achieve high generation quality in conditional diffusion models. The key ideas are to (i) leverage the conditional and unconditional denoising paths as a new data-partitioning perspective and (ii) adaptively enable optimal pipeline parallelism according to the denoising discrepancy between these two paths. Our framework achieves 2.31times and 2.07times latency reductions on SDXL and SD3, respectively, using two NVIDIA RTX~3090 GPUs, while preserving image quality. This result confirms the generality of our approach across U-Net-based diffusion models and DiT-based flow-matching architectures. Our approach also outperforms existing methods in acceleration under high-resolution synthesis settings. Code is available at https://github.com/kaist-dmlab/Hybridiff.]]></description>
+<pubDate>Wed, 25 Feb 2026 10:23:07 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[General Agent Evaluation]]></title>
@@ -504,12 +484,66 @@ Institution:
 Published: 2026-02-26
 Score: 6/10
 Citations: 0
-Upvotes: 10
+Upvotes: 11
 GitHub: 
 Stars: 0
 
 The promise of general-purpose agents - systems that perform tasks in unfamiliar environments without domain-specific engineering - remains largely unrealized. Existing agents are predominantly specialized, and while emerging implementations like OpenAI SDK Agent and Claude Code hint at broader capabilities, no systematic evaluation of their general performance has been pursued. Current agentic benchmarks assume domain-specific integration, encoding task information in ways that preclude fair evaluation of general agents. This paper frames general-agent evaluation as a first-class research objective. We propose conceptual principles for such evaluation, a Unified Protocol enabling agent-benchmark integration, and Exgentic - a practical framework for general agent evaluation. We benchmark five prominent agent implementations across six environments as the first Open General Agent Leaderboard. Our experiments show that general agents generalize across diverse environments, achieving performance comparable to domain-specific agents without any environment-specific tuning. We release our evaluation protocol, framework, and leaderboard to establish a foundation for systematic research on general-purpose agents.]]></description>
 <pubDate>Thu, 26 Feb 2026 12:48:02 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding]]></title>
+<link>https://huggingface.co/papers/2602.23881</link>
+<guid>2602.23881</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Alexander Samarin, Sergei Krutikov, Anton Shevtsov, Sergei Skvortsov, Filipp Fisin
+Institution: 
+Published: 2026-02-27
+Score: 6/10
+Citations: 0
+Upvotes: 10
+GitHub: 
+Stars: 0
+
+Speculative decoding accelerates autoregressive large language model (LLM) inference by using a lightweight draft model to propose candidate tokens that are then verified in parallel by the target model. The speedup is significantly determined by the acceptance rate, yet standard training minimizes Kullback-Leibler (KL) divergence as a proxy objective. While KL divergence and acceptance rate share the same global optimum, small draft models, having limited capacity, typically converge to suboptimal solutions where minimizing KL does not guarantee maximizing acceptance rate. To address this issue, we propose LK losses, special training objectives that directly target acceptance rate. Comprehensive experiments across four draft architectures and six target models, ranging from 8B to 685B parameters, demonstrate consistent improvements in acceptance metrics across all configurations compared to the standard KL-based training. We evaluate our approach on general, coding and math domains and report gains of up to 8-10% in average acceptance length. LK losses are easy to implement, introduce no computational overhead and can be directly integrated into any existing speculator training framework, making them a compelling alternative to the existing draft training objectives.]]></description>
+<pubDate>Fri, 27 Feb 2026 10:20:11 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Accelerating Masked Image Generation by Learning Latent Controlled Dynamics]]></title>
+<link>https://huggingface.co/papers/2602.23996</link>
+<guid>2602.23996</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Kaiwen Zhu, Quansheng Zeng, Yuandong Pu, Shuo Cao, Xiaohui Li
+Institution: 
+Published: 2026-02-27
+Score: 6/10
+Citations: 0
+Upvotes: 8
+GitHub: 
+Stars: 0
+
+Masked Image Generation Models (MIGMs) have achieved great success, yet their efficiency is hampered by the multiple steps of bi-directional attention. In fact, there exists notable redundancy in their computation: when sampling discrete tokens, the rich semantics contained in the continuous features are lost. Some existing works attempt to cache the features to approximate future features. However, they exhibit considerable approximation error under aggressive acceleration rates. We attribute this to their limited expressivity and the failure to account for sampling information. To fill this gap, we propose to learn a lightweight model that incorporates both previous features and sampled tokens, and regresses the average velocity field of feature evolution. The model has moderate complexity that suffices to capture the subtle dynamics while keeping lightweight compared to the original base model. We apply our method, MIGM-Shortcut, to two representative MIGM architectures and tasks. In particular, on the state-of-the-art Lumina-DiMOO, it achieves over 4x acceleration of text-to-image generation while maintaining quality, significantly pushing the Pareto frontier of masked image generation. The code and model weights are available at https://github.com/Kaiwen-Zhu/MIGM-Shortcut.]]></description>
+<pubDate>Fri, 27 Feb 2026 13:16:58 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Causal Motion Diffusion Models for Autoregressive Motion Generation]]></title>
+<link>https://huggingface.co/papers/2602.22594</link>
+<guid>2602.22594</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Qing Yu, Akihisa Watanabe, Kent Fujiwara
+Institution: 
+Published: 2026-02-26
+Score: 6/10
+Citations: 0
+Upvotes: 7
+GitHub: 
+Stars: 0
+
+Recent advances in motion diffusion models have substantially improved the realism of human motion synthesis. However, existing approaches either rely on full-sequence diffusion models with bidirectional generation, which limits temporal causality and real-time applicability, or autoregressive models that suffer from instability and cumulative errors. In this work, we present Causal Motion Diffusion Models (CMDM), a unified framework for autoregressive motion generation based on a causal diffusion transformer that operates in a semantically aligned latent space. CMDM builds upon a Motion-Language-Aligned Causal VAE (MAC-VAE), which encodes motion sequences into temporally causal latent representations. On top of this latent representation, an autoregressive diffusion transformer is trained using causal diffusion forcing to perform temporally ordered denoising across motion frames. To achieve fast inference, we introduce a frame-wise sampling schedule with causal uncertainty, where each subsequent frame is predicted from partially denoised previous frames. The resulting framework supports high-quality text-to-motion generation, streaming synthesis, and long-horizon motion generation at interactive rates. Experiments on HumanML3D and SnapMoGen demonstrate that CMDM outperforms existing diffusion and autoregressive models in both semantic fidelity and temporal smoothness, while substantially reducing inference latency.]]></description>
+<pubDate>Thu, 26 Feb 2026 03:58:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[veScale-FSDP: Flexible and High-Performance FSDP at Scale]]></title>
@@ -530,22 +564,22 @@ Fully Sharded Data Parallel (FSDP), also known as ZeRO, is widely used for train
 <pubDate>Wed, 25 Feb 2026 21:55:43 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Overconfident Errors Need Stronger Correction: Asymmetric Confidence Penalties for Reinforcement Learning]]></title>
-<link>https://huggingface.co/papers/2602.21420</link>
-<guid>2602.21420</guid>
+<title><![CDATA[Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks]]></title>
+<link>https://huggingface.co/papers/2602.23898</link>
+<guid>2602.23898</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yuanda Xu, Hejian Sang, Zhengze Zhou, Ran He, Zhipeng Wang
+Authors: Qihua Dong, Kuo Yang, Lin Ju, Handong Zhao, Yitian Zhang
 Institution: 
-Published: 2026-02-24
+Published: 2026-02-27
 Score: 6/10
 Citations: 0
 Upvotes: 5
 GitHub: 
 Stars: 0
 
-Reinforcement Learning with Verifiable Rewards (RLVR) has become the leading paradigm for enhancing reasoning in Large Language Models (LLMs). However, standard RLVR algorithms suffer from a well-documented pathology: while they improve Pass@1 accuracy through sharpened sampling, they simultaneously narrow the model's reasoning boundary and reduce generation diversity. We identify a root cause that existing methods overlook: the uniform penalization of errors. Current approaches -- whether data-filtering methods that select prompts by difficulty, or advantage normalization schemes -- treat all incorrect rollouts within a group identically. We show that this uniformity allows overconfident errors (incorrect reasoning paths that the RL process has spuriously reinforced) to persist and monopolize probability mass, ultimately suppressing valid exploratory trajectories. To address this, we propose the Asymmetric Confidence-aware Error Penalty (ACE). ACE introduces a per-rollout confidence shift metric, c_i = log(pi_theta(y_i|x) / pi_ref(y_i|x)), to dynamically modulate negative advantages. Theoretically, we demonstrate that ACE's gradient can be decomposed into the gradient of a selective regularizer restricted to overconfident errors, plus a well-characterized residual that partially moderates the regularizer's strength. We conduct extensive experiments fine-tuning Qwen2.5-Math-7B, Qwen3-8B-Base, and Llama-3.1-8B-Instruct on the DAPO-Math-17K dataset using GRPO and DAPO within the VERL framework. Evaluated on MATH-500 and AIME 2025, ACE composes seamlessly with existing methods and consistently improves the full Pass@k spectrum across all three model families and benchmarks.]]></description>
-<pubDate>Tue, 24 Feb 2026 22:46:43 +0000</pubDate>
+Referring Expression Comprehension (REC) links language to region level visual perception. Standard benchmarks (RefCOCO, RefCOCO+, RefCOCOg) have progressed rapidly with multimodal LLMs but remain weak tests of visual reasoning and grounding: (i) many expressions are very short, leaving little reasoning demand; (ii) images often contain few distractors, making the target easy to find; and (iii) redundant descriptors enable shortcut solutions that bypass genuine text understanding and visual reasoning. We introduce Ref-Adv, a modern REC benchmark that suppresses shortcuts by pairing linguistically nontrivial expressions with only the information necessary to uniquely identify the target. The dataset contains referring expressions on real images, curated with hard distractors and annotated with reasoning facets including negation. We conduct comprehensive ablations (word order perturbations and descriptor deletion sufficiency) to show that solving Ref-Adv requires reasoning beyond simple cues, and we evaluate a broad suite of contemporary multimodal LLMs on Ref-Adv. Despite strong results on RefCOCO, RefCOCO+, and RefCOCOg, models drop markedly on Ref-Adv, revealing reliance on shortcuts and gaps in visual reasoning and grounding. We provide an in depth failure analysis and aim for Ref-Adv to guide future work on visual reasoning and grounding in MLLMs.]]></description>
+<pubDate>Fri, 27 Feb 2026 10:47:26 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Hepato-LLaVA: An Expert MLLM with Sparse Topo-Pack Attention for Hepatocellular Pathology Analysis on Whole Slide Images]]></title>
@@ -566,24 +600,6 @@ Hepatocellular Carcinoma diagnosis relies heavily on the interpretation of gigap
 <pubDate>Mon, 23 Feb 2026 01:43:32 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Accelerating Masked Image Generation by Learning Latent Controlled Dynamics]]></title>
-<link>https://huggingface.co/papers/2602.23996</link>
-<guid>2602.23996</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Kaiwen Zhu, Quansheng Zeng, Yuandong Pu, Shuo Cao, Xiaohui Li
-Institution: 
-Published: 2026-02-27
-Score: 6/10
-Citations: 0
-Upvotes: 4
-GitHub: 
-Stars: 0
-
-Masked Image Generation Models (MIGMs) have achieved great success, yet their efficiency is hampered by the multiple steps of bi-directional attention. In fact, there exists notable redundancy in their computation: when sampling discrete tokens, the rich semantics contained in the continuous features are lost. Some existing works attempt to cache the features to approximate future features. However, they exhibit considerable approximation error under aggressive acceleration rates. We attribute this to their limited expressivity and the failure to account for sampling information. To fill this gap, we propose to learn a lightweight model that incorporates both previous features and sampled tokens, and regresses the average velocity field of feature evolution. The model has moderate complexity that suffices to capture the subtle dynamics while keeping lightweight compared to the original base model. We apply our method, MIGM-Shortcut, to two representative MIGM architectures and tasks. In particular, on the state-of-the-art Lumina-DiMOO, it achieves over 4x acceleration of text-to-image generation while maintaining quality, significantly pushing the Pareto frontier of masked image generation. The code and model weights are available at https://github.com/Kaiwen-Zhu/MIGM-Shortcut.]]></description>
-<pubDate>Fri, 27 Feb 2026 13:16:58 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[What Makes a Good Query? Measuring the Impact of Human-Confusing Linguistic Features on LLM Performance]]></title>
 <link>https://huggingface.co/papers/2602.20300</link>
 <guid>2602.20300</guid>
@@ -602,22 +618,22 @@ Large Language Model (LLM) hallucinations are usually treated as defects of the 
 <pubDate>Mon, 23 Feb 2026 19:30:08 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[ISO-Bench: Can Coding Agents Optimize Real-World Inference Workloads?]]></title>
-<link>https://huggingface.co/papers/2602.19594</link>
-<guid>2602.19594</guid>
+<title><![CDATA[Vectorizing the Trie: Efficient Constrained Decoding for LLM-based Generative Retrieval on Accelerators]]></title>
+<link>https://huggingface.co/papers/2602.22647</link>
+<guid>2602.22647</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Ayush Nangia, Shikhar Mishra, Aman Gokrani, Paras Chopra
+Authors: Zhengyang Su, Isay Katsman, Yueqi Wang, Ruining He, Lukasz Heldt
 Institution: 
-Published: 2026-02-23
+Published: 2026-02-26
 Score: 6/10
 Citations: 0
 Upvotes: 2
 GitHub: 
 Stars: 0
 
-We introduce ISO-Bench, a benchmark for coding agents to test their capabilities on real-world inference optimization tasks. These tasks were taken from vLLM and SGLang, two of the most popular LLM serving frameworks. Each task provides an agent with a codebase and bottleneck description, whereby the agent must produce an optimization patch evaluated against expert human solutions. We curated 54 tasks from merged pull requests with measurable performance improvements. While existing benchmarks heavily use runtime-based metrics, such approaches can be gamed to pass tests without capturing the actual intent of the code changes. Therefore, we combine both hard (execution-based) and soft (LLM-based) metrics to show that both are necessary for complete evaluation. While evaluating both closed and open-source coding agents, we find no single agent dominates across codebases. Surprisingly, agents often identify correct bottlenecks but fail to execute working solutions. We also show that agents with identical underlying models differ substantially, suggesting scaffolding is as important as the model.]]></description>
-<pubDate>Mon, 23 Feb 2026 08:37:53 +0000</pubDate>
+Generative retrieval has emerged as a powerful paradigm for LLM-based recommendation. However, industrial recommender systems often benefit from restricting the output space to a constrained subset of items based on business logic (e.g. enforcing content freshness or product category), which standard autoregressive decoding cannot natively support. Moreover, existing constrained decoding methods that make use of prefix trees (Tries) incur severe latency penalties on hardware accelerators (TPUs/GPUs). In this work, we introduce STATIC (Sparse Transition Matrix-Accelerated Trie Index for Constrained Decoding), an efficient and scalable constrained decoding technique designed specifically for high-throughput LLM-based generative retrieval on TPUs/GPUs. By flattening the prefix tree into a static Compressed Sparse Row (CSR) matrix, we transform irregular tree traversals into fully vectorized sparse matrix operations, unlocking massive efficiency gains on hardware accelerators. We deploy STATIC on a large-scale industrial video recommendation platform serving billions of users. STATIC produces significant product metric impact with minimal latency overhead (0.033 ms per step and 0.25% of inference time), achieving a 948x speedup over a CPU trie implementation and a 47-1033x speedup over a hardware-accelerated binary-search baseline. Furthermore, the runtime overhead of STATIC remains extremely low across a wide range of practical configurations. To the best of our knowledge, STATIC enables the first production-scale deployment of strictly constrained generative retrieval. In addition, evaluation on academic benchmarks demonstrates that STATIC can considerably improve cold-start performance for generative retrieval. Our code is available at https://github.com/youtube/static-constraint-decoding.]]></description>
+<pubDate>Thu, 26 Feb 2026 06:00:56 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Small Language Models for Privacy-Preserving Clinical Information Extraction in Low-Resource Languages]]></title>
@@ -638,58 +654,41 @@ Extracting clinical information from medical transcripts in low-resource languag
 <pubDate>Tue, 24 Feb 2026 21:10:29 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks]]></title>
-<link>https://huggingface.co/papers/2602.23898</link>
-<guid>2602.23898</guid>
+<title><![CDATA[dLLM: Simple Diffusion Language Modeling]]></title>
+<link>https://huggingface.co/papers/2602.22661</link>
+<guid>2602.22661</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Qihua Dong, Kuo Yang, Lin Ju, Handong Zhao, Yitian Zhang
-Institution: 
-Published: 2026-02-27
-Score: 6/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Referring Expression Comprehension (REC) links language to region level visual perception. Standard benchmarks (RefCOCO, RefCOCO+, RefCOCOg) have progressed rapidly with multimodal LLMs but remain weak tests of visual reasoning and grounding: (i) many expressions are very short, leaving little reasoning demand; (ii) images often contain few distractors, making the target easy to find; and (iii) redundant descriptors enable shortcut solutions that bypass genuine text understanding and visual reasoning. We introduce Ref-Adv, a modern REC benchmark that suppresses shortcuts by pairing linguistically nontrivial expressions with only the information necessary to uniquely identify the target. The dataset contains referring expressions on real images, curated with hard distractors and annotated with reasoning facets including negation. We conduct comprehensive ablations (word order perturbations and descriptor deletion sufficiency) to show that solving Ref-Adv requires reasoning beyond simple cues, and we evaluate a broad suite of contemporary multimodal LLMs on Ref-Adv. Despite strong results on RefCOCO, RefCOCO+, and RefCOCOg, models drop markedly on Ref-Adv, revealing reliance on shortcuts and gaps in visual reasoning and grounding. We provide an in depth failure analysis and aim for Ref-Adv to guide future work on visual reasoning and grounding in MLLMs.]]></description>
-<pubDate>Fri, 27 Feb 2026 10:47:26 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling]]></title>
-<link>https://huggingface.co/papers/2602.21760</link>
-<guid>2602.21760</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Euisoo Jung, Byunghyun Kim, Hyunjin Kim, Seonghye Cho, Jae-Gil Lee
-Institution: 
-Published: 2026-02-25
-Score: 5/10
-Citations: 0
-Upvotes: 12
-GitHub: 
-Stars: 0
-
-Diffusion models have achieved remarkable progress in high-fidelity image, video, and audio generation, yet inference remains computationally expensive. Nevertheless, current diffusion acceleration methods based on distributed parallelism suffer from noticeable generation artifacts and fail to achieve substantial acceleration proportional to the number of GPUs. Therefore, we propose a hybrid parallelism framework that combines a novel data parallel strategy, condition-based partitioning, with an optimal pipeline scheduling method, adaptive parallelism switching, to reduce generation latency and achieve high generation quality in conditional diffusion models. The key ideas are to (i) leverage the conditional and unconditional denoising paths as a new data-partitioning perspective and (ii) adaptively enable optimal pipeline parallelism according to the denoising discrepancy between these two paths. Our framework achieves 2.31times and 2.07times latency reductions on SDXL and SD3, respectively, using two NVIDIA RTX~3090 GPUs, while preserving image quality. This result confirms the generality of our approach across U-Net-based diffusion models and DiT-based flow-matching architectures. Our approach also outperforms existing methods in acceleration under high-resolution synthesis settings. Code is available at https://github.com/kaist-dmlab/Hybridiff.]]></description>
-<pubDate>Wed, 25 Feb 2026 10:23:07 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Causal Motion Diffusion Models for Autoregressive Motion Generation]]></title>
-<link>https://huggingface.co/papers/2602.22594</link>
-<guid>2602.22594</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Qing Yu, Akihisa Watanabe, Kent Fujiwara
+Authors: Zhanhui Zhou, Lingjie Chen, Hanghang Tong, Dawn Song
 Institution: 
 Published: 2026-02-26
 Score: 5/10
 Citations: 0
-Upvotes: 7
+Upvotes: 50
 GitHub: 
 Stars: 0
 
-Recent advances in motion diffusion models have substantially improved the realism of human motion synthesis. However, existing approaches either rely on full-sequence diffusion models with bidirectional generation, which limits temporal causality and real-time applicability, or autoregressive models that suffer from instability and cumulative errors. In this work, we present Causal Motion Diffusion Models (CMDM), a unified framework for autoregressive motion generation based on a causal diffusion transformer that operates in a semantically aligned latent space. CMDM builds upon a Motion-Language-Aligned Causal VAE (MAC-VAE), which encodes motion sequences into temporally causal latent representations. On top of this latent representation, an autoregressive diffusion transformer is trained using causal diffusion forcing to perform temporally ordered denoising across motion frames. To achieve fast inference, we introduce a frame-wise sampling schedule with causal uncertainty, where each subsequent frame is predicted from partially denoised previous frames. The resulting framework supports high-quality text-to-motion generation, streaming synthesis, and long-horizon motion generation at interactive rates. Experiments on HumanML3D and SnapMoGen demonstrate that CMDM outperforms existing diffusion and autoregressive models in both semantic fidelity and temporal smoothness, while substantially reducing inference latency.]]></description>
-<pubDate>Thu, 26 Feb 2026 03:58:25 +0000</pubDate>
+Although diffusion language models (DLMs) are evolving quickly, many recent models converge on a set of shared components. These components, however, are distributed across ad-hoc research codebases or lack transparent implementations, making them difficult to reproduce or extend. As the field accelerates, there is a clear need for a unified framework that standardizes these common components while remaining flexible enough to support new methods and architectures.
+  To address this gap, we introduce dLLM, an open-source framework that unifies the core components of diffusion language modeling -- training, inference, and evaluation -- and makes them easy to customize for new designs. With dLLM, users can reproduce, finetune, deploy, and evaluate open-source large DLMs such as LLaDA and Dream through a standardized pipeline. The framework also provides minimal, reproducible recipes for building small DLMs from scratch with accessible compute, including converting any BERT-style encoder or autoregressive LM into a DLM. We also release the checkpoints of these small DLMs to make DLMs more accessible and accelerate future research.]]></description>
+<pubDate>Thu, 26 Feb 2026 06:26:02 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Imagination Helps Visual Reasoning, But Not Yet in Latent Space]]></title>
+<link>https://huggingface.co/papers/2602.22766</link>
+<guid>2602.22766</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: You Li, Chi Chen, Yanghao Li, Fanhu Zeng, Kaiyu Huang
+Institution: 
+Published: 2026-02-26
+Score: 5/10
+Citations: 0
+Upvotes: 38
+GitHub: 
+Stars: 0
+
+Latent visual reasoning aims to mimic human's imagination process by meditating through hidden states of Multimodal Large Language Models. While recognized as a promising paradigm for visual reasoning, the underlying mechanisms driving its effectiveness remain unclear. Motivated to demystify the true source of its efficacy, we investigate the validity of latent reasoning using Causal Mediation Analysis. We model the process as a causal chain: the input as the treatment, the latent tokens as the mediator, and the final answer as the outcome. Our findings uncover two critical disconnections: (a) Input-Latent Disconnect: dramatic perturbations on the input result in negligible changes to the latent tokens, suggesting that latent tokens do not effectively attend to the input sequence. (b) Latent-Answer Disconnect: perturbations on the latent tokens yield minimal impact on the final answer, indicating the limited causal effect latent tokens imposing on the outcome. Furthermore, extensive probing analysis reveals that latent tokens encode limited visual information and exhibit high similarity. Consequently, we challenge the necessity of latent reasoning and propose a straightforward alternative named CapImagine, which teaches the model to explicitly imagine using text. Experiments on vision-centric benchmarks show that CapImagine significantly outperforms complex latent-space baselines, highlighting the superior potential of visual reasoning through explicit imagination.]]></description>
+<pubDate>Thu, 26 Feb 2026 08:56:23 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Enhancing Spatial Understanding in Image Generation via Reward Modeling]]></title>
@@ -702,12 +701,66 @@ Institution:
 Published: 2026-02-27
 Score: 5/10
 Citations: 0
-Upvotes: 5
+Upvotes: 37
 GitHub: 
 Stars: 0
 
 Recent progress in text-to-image generation has greatly advanced visual fidelity and creativity, but it has also imposed higher demands on prompt complexity-particularly in encoding intricate spatial relationships. In such cases, achieving satisfactory results often requires multiple sampling attempts. To address this challenge, we introduce a novel method that strengthens the spatial understanding of current image generation models. We first construct the SpatialReward-Dataset with over 80k preference pairs. Building on this dataset, we build SpatialScore, a reward model designed to evaluate the accuracy of spatial relationships in text-to-image generation, achieving performance that even surpasses leading proprietary models on spatial evaluation. We further demonstrate that this reward model effectively enables online reinforcement learning for the complex spatial generation. Extensive experiments across multiple benchmarks show that our specialized reward model yields significant and consistent gains in spatial understanding for image generation.]]></description>
 <pubDate>Fri, 27 Feb 2026 17:59:57 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[AgentDropoutV2: Optimizing Information Flow in Multi-Agent Systems via Test-Time Rectify-or-Reject Pruning]]></title>
+<link>https://huggingface.co/papers/2602.23258</link>
+<guid>2602.23258</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yutong Wang, Siyuan Xiong, Xuebo Liu, Wenkang Zhou, Liang Ding
+Institution: 
+Published: 2026-02-26
+Score: 5/10
+Citations: 0
+Upvotes: 27
+GitHub: 
+Stars: 0
+
+While Multi-Agent Systems (MAS) excel in complex reasoning, they suffer from the cascading impact of erroneous information generated by individual participants. Current solutions often resort to rigid structural engineering or expensive fine-tuning, limiting their deployability and adaptability. We propose AgentDropoutV2, a test-time rectify-or-reject pruning framework designed to dynamically optimize MAS information flow without retraining. Our approach acts as an active firewall, intercepting agent outputs and employing a retrieval-augmented rectifier to iteratively correct errors based on a failure-driven indicator pool. This mechanism allows for the precise identification of potential errors using distilled failure patterns as prior knowledge. Irreparable outputs are subsequently pruned to prevent error propagation, while a fallback strategy preserves system integrity. Empirical results on extensive math benchmarks show that AgentDropoutV2 significantly boosts the MAS's task performance, achieving an average accuracy gain of 6.3 percentage points on math benchmarks. Furthermore, the system exhibits robust generalization and adaptivity, dynamically modulating rectification efforts based on task difficulty while leveraging context-aware indicators to resolve a wide spectrum of error patterns. Our code and dataset are released at https://github.com/TonySY2/AgentDropoutV2.]]></description>
+<pubDate>Thu, 26 Feb 2026 17:31:43 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding]]></title>
+<link>https://huggingface.co/papers/2602.20913</link>
+<guid>2602.20913</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Jihao Qiu, Lingxi Xie, Xinyue Huo, Qi Tian, Qixiang Ye
+Institution: 
+Published: 2026-02-24
+Score: 5/10
+Citations: 0
+Upvotes: 6
+GitHub: 
+Stars: 0
+
+This paper addresses the critical and underexplored challenge of long video understanding with low computational budgets. We propose LongVideo-R1, an active, reasoning-equipped multimodal large language model (MLLM) agent designed for efficient video context navigation, avoiding the redundancy of exhaustive search. At the core of LongVideo-R1 lies a reasoning module that leverages high-level visual cues to infer the most informative video clip for subsequent processing. During inference, the agent initiates traversal from top-level visual summaries and iteratively refines its focus, immediately halting the exploration process upon acquiring sufficient knowledge to answer the query. To facilitate training, we first extract hierarchical video captions from CGBench, a video corpus with grounding annotations, and guide GPT-5 to generate 33K high-quality chain-of-thought-with-tool trajectories. The LongVideo-R1 agent is fine-tuned upon the Qwen-3-8B model through a two-stage paradigm: supervised fine-tuning (SFT) followed by reinforcement learning (RL), where RL employs a specifically designed reward function to maximize selective and efficient clip navigation. Experiments on multiple long video benchmarks validate the effectiveness of name, which enjoys superior tradeoff between QA accuracy and efficiency. All curated data and source code are provided in the supplementary material and will be made publicly available. Code and data are available at: https://github.com/qiujihao19/LongVideo-R1]]></description>
+<pubDate>Tue, 24 Feb 2026 13:49:47 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Overconfident Errors Need Stronger Correction: Asymmetric Confidence Penalties for Reinforcement Learning]]></title>
+<link>https://huggingface.co/papers/2602.21420</link>
+<guid>2602.21420</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yuanda Xu, Hejian Sang, Zhengze Zhou, Ran He, Zhipeng Wang
+Institution: 
+Published: 2026-02-24
+Score: 5/10
+Citations: 0
+Upvotes: 5
+GitHub: 
+Stars: 0
+
+Reinforcement Learning with Verifiable Rewards (RLVR) has become the leading paradigm for enhancing reasoning in Large Language Models (LLMs). However, standard RLVR algorithms suffer from a well-documented pathology: while they improve Pass@1 accuracy through sharpened sampling, they simultaneously narrow the model's reasoning boundary and reduce generation diversity. We identify a root cause that existing methods overlook: the uniform penalization of errors. Current approaches -- whether data-filtering methods that select prompts by difficulty, or advantage normalization schemes -- treat all incorrect rollouts within a group identically. We show that this uniformity allows overconfident errors (incorrect reasoning paths that the RL process has spuriously reinforced) to persist and monopolize probability mass, ultimately suppressing valid exploratory trajectories. To address this, we propose the Asymmetric Confidence-aware Error Penalty (ACE). ACE introduces a per-rollout confidence shift metric, c_i = log(pi_theta(y_i|x) / pi_ref(y_i|x)), to dynamically modulate negative advantages. Theoretically, we demonstrate that ACE's gradient can be decomposed into the gradient of a selective regularizer restricted to overconfident errors, plus a well-characterized residual that partially moderates the regularizer's strength. We conduct extensive experiments fine-tuning Qwen2.5-Math-7B, Qwen3-8B-Base, and Llama-3.1-8B-Instruct on the DAPO-Math-17K dataset using GRPO and DAPO within the VERL framework. Evaluated on MATH-500 and AIME 2025, ACE composes seamlessly with existing methods and consistently improves the full Pass@k spectrum across all three model families and benchmarks.]]></description>
+<pubDate>Tue, 24 Feb 2026 22:46:43 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Revisiting Text Ranking in Deep Research]]></title>
@@ -746,6 +799,24 @@ Advanced reasoning capabilities in Large Language Models (LLMs) have led to more
 <pubDate>Mon, 23 Feb 2026 20:28:48 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[How to Take a Memorable Picture? Empowering Users with Actionable Feedback]]></title>
+<link>https://huggingface.co/papers/2602.21877</link>
+<guid>2602.21877</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Francesco Laiti, Davide Talon, Jacopo Staiano, Elisa Ricci
+Institution: 
+Published: 2026-02-25
+Score: 5/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+Image memorability, i.e., how likely an image is to be remembered, has traditionally been studied in computer vision either as a passive prediction task, with models regressing a scalar score, or with generative methods altering the visual input to boost the image likelihood of being remembered. Yet, none of these paradigms supports users at capture time, when the crucial question is how to improve a photo memorability. We introduce the task of Memorability Feedback (MemFeed), where an automated model should provide actionable, human-interpretable guidance to users with the goal to enhance an image future recall. We also present MemCoach, the first approach designed to provide concrete suggestions in natural language for memorability improvement (e.g., "emphasize facial expression," "bring the subject forward"). Our method, based on Multimodal Large Language Models (MLLMs), is training-free and employs a teacher-student steering strategy, aligning the model internal activations toward more memorable patterns learned from a teacher model progressing along least-to-most memorable samples. To enable systematic evaluation on this novel task, we further introduce MemBench, a new benchmark featuring sequence-aligned photoshoots with annotated memorability scores. Our experiments, considering multiple MLLMs, demonstrate the effectiveness of MemCoach, showing consistently improved performance over several zero-shot models. The results indicate that memorability can not only be predicted but also taught and instructed, shifting the focus from mere prediction to actionable feedback for human creators.]]></description>
+<pubDate>Wed, 25 Feb 2026 13:02:35 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models]]></title>
 <link>https://huggingface.co/papers/2602.20981</link>
 <guid>2602.20981</guid>
@@ -780,60 +851,6 @@ Stars: 0
 
 Generating realistic conversational gestures are essential for achieving natural, socially engaging interactions with digital humans. However, existing methods typically map a single audio stream to a single speaker's motion, without considering social context or modeling the mutual dynamics between two people engaging in conversation. We present DyaDiT, a multi-modal diffusion transformer that generates contextually appropriate human motion from dyadic audio signals. Trained on Seamless Interaction Dataset, DyaDiT takes dyadic audio with optional social-context tokens to produce context-appropriate motion. It fuses information from both speakers to capture interaction dynamics, uses a motion dictionary to encode motion priors, and can optionally utilize the conversational partner's gestures to produce more responsive motion. We evaluate DyaDiT on standard motion generation metrics and conduct quantitative user studies, demonstrating that it not only surpasses existing methods on objective metrics but is also strongly preferred by users, highlighting its robustness and socially favorable motion generation. Code and models will be released upon acceptance.]]></description>
 <pubDate>Thu, 26 Feb 2026 16:30:07 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Yor-Sarc: A gold-standard dataset for sarcasm detection in a low-resource African language]]></title>
-<link>https://huggingface.co/papers/2602.18964</link>
-<guid>2602.18964</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Toheeb Aduramomi Jimoh, Tabea De Wille, Nikola S. Nikolov
-Institution: 
-Published: 2026-02-21
-Score: 5/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Sarcasm detection poses a fundamental challenge in computational semantics, requiring models to resolve disparities between literal and intended meaning. The challenge is amplified in low-resource languages where annotated datasets are scarce or nonexistent. We present Yor-Sarc, the first gold-standard dataset for sarcasm detection in Yorùbá, a tonal Niger-Congo language spoken by over 50 million people. The dataset comprises 436 instances annotated by three native speakers from diverse dialectal backgrounds using an annotation protocol specifically designed for Yorùbá sarcasm by taking culture into account. This protocol incorporates context-sensitive interpretation and community-informed guidelines and is accompanied by a comprehensive analysis of inter-annotator agreement to support replication in other African languages. Substantial to almost perfect agreement was achieved (Fleiss' κ= 0.7660; pairwise Cohen's κ= 0.6732--0.8743), with 83.3% unanimous consensus. One annotator pair achieved almost perfect agreement (κ= 0.8743; 93.8% raw agreement), exceeding a number of reported benchmarks for English sarcasm research works. The remaining 16.7% majority-agreement cases are preserved as soft labels for uncertainty-aware modelling. Yor-Sarchttps://github.com/toheebadura/yor-sarc is expected to facilitate research on semantic interpretation and culturally informed NLP for low-resource African languages.]]></description>
-<pubDate>Sat, 21 Feb 2026 22:10:18 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Vectorizing the Trie: Efficient Constrained Decoding for LLM-based Generative Retrieval on Accelerators]]></title>
-<link>https://huggingface.co/papers/2602.22647</link>
-<guid>2602.22647</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Zhengyang Su, Isay Katsman, Yueqi Wang, Ruining He, Lukasz Heldt
-Institution: 
-Published: 2026-02-26
-Score: 5/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Generative retrieval has emerged as a powerful paradigm for LLM-based recommendation. However, industrial recommender systems often benefit from restricting the output space to a constrained subset of items based on business logic (e.g. enforcing content freshness or product category), which standard autoregressive decoding cannot natively support. Moreover, existing constrained decoding methods that make use of prefix trees (Tries) incur severe latency penalties on hardware accelerators (TPUs/GPUs). In this work, we introduce STATIC (Sparse Transition Matrix-Accelerated Trie Index for Constrained Decoding), an efficient and scalable constrained decoding technique designed specifically for high-throughput LLM-based generative retrieval on TPUs/GPUs. By flattening the prefix tree into a static Compressed Sparse Row (CSR) matrix, we transform irregular tree traversals into fully vectorized sparse matrix operations, unlocking massive efficiency gains on hardware accelerators. We deploy STATIC on a large-scale industrial video recommendation platform serving billions of users. STATIC produces significant product metric impact with minimal latency overhead (0.033 ms per step and 0.25% of inference time), achieving a 948x speedup over a CPU trie implementation and a 47-1033x speedup over a hardware-accelerated binary-search baseline. Furthermore, the runtime overhead of STATIC remains extremely low across a wide range of practical configurations. To the best of our knowledge, STATIC enables the first production-scale deployment of strictly constrained generative retrieval. In addition, evaluation on academic benchmarks demonstrates that STATIC can considerably improve cold-start performance for generative retrieval. Our code is available at https://github.com/youtube/static-constraint-decoding.]]></description>
-<pubDate>Thu, 26 Feb 2026 06:00:56 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Imagination Helps Visual Reasoning, But Not Yet in Latent Space]]></title>
-<link>https://huggingface.co/papers/2602.22766</link>
-<guid>2602.22766</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: You Li, Chi Chen, Yanghao Li, Fanhu Zeng, Kaiyu Huang
-Institution: 
-Published: 2026-02-26
-Score: 4/10
-Citations: 0
-Upvotes: 38
-GitHub: 
-Stars: 0
-
-Latent visual reasoning aims to mimic human's imagination process by meditating through hidden states of Multimodal Large Language Models. While recognized as a promising paradigm for visual reasoning, the underlying mechanisms driving its effectiveness remain unclear. Motivated to demystify the true source of its efficacy, we investigate the validity of latent reasoning using Causal Mediation Analysis. We model the process as a causal chain: the input as the treatment, the latent tokens as the mediator, and the final answer as the outcome. Our findings uncover two critical disconnections: (a) Input-Latent Disconnect: dramatic perturbations on the input result in negligible changes to the latent tokens, suggesting that latent tokens do not effectively attend to the input sequence. (b) Latent-Answer Disconnect: perturbations on the latent tokens yield minimal impact on the final answer, indicating the limited causal effect latent tokens imposing on the outcome. Furthermore, extensive probing analysis reveals that latent tokens encode limited visual information and exhibit high similarity. Consequently, we challenge the necessity of latent reasoning and propose a straightforward alternative named CapImagine, which teaches the model to explicitly imagine using text. Experiments on vision-centric benchmarks show that CapImagine significantly outperforms complex latent-space baselines, highlighting the superior potential of visual reasoning through explicit imagination.]]></description>
-<pubDate>Thu, 26 Feb 2026 08:56:23 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting]]></title>
@@ -874,24 +891,6 @@ We introduce DLT-Corpus, the largest domain-specific text collection for Distrib
 <pubDate>Wed, 25 Feb 2026 15:53:41 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Functional Continuous Decomposition]]></title>
-<link>https://huggingface.co/papers/2602.20857</link>
-<guid>2602.20857</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Teymur Aghayev
-Institution: 
-Published: 2026-02-24
-Score: 4/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-The analysis of non-stationary time-series data requires insight into its local and global patterns with physical interpretability. However, traditional smoothing algorithms, such as B-splines, Savitzky-Golay filtering, and Empirical Mode Decomposition (EMD), lack the ability to perform parametric optimization with guaranteed continuity. In this paper, we propose Functional Continuous Decomposition (FCD), a JAX-accelerated framework that performs parametric, continuous optimization on a wide range of mathematical functions. By using Levenberg-Marquardt optimization to achieve up to C^1 continuous fitting, FCD transforms raw time-series data into M modes that capture different temporal patterns from short-term to long-term trends. Applications of FCD include physics, medicine, financial analysis, and machine learning, where it is commonly used for the analysis of signal temporal patterns, optimized parameters, derivatives, and integrals of decomposition. Furthermore, FCD can be applied for physical analysis and feature extraction with an average SRMSE of 0.735 per segment and a speed of 0.47s on full decomposition of 1,000 points. Finally, we demonstrate that a Convolutional Neural Network (CNN) enhanced with FCD features, such as optimized function values, parameters, and derivatives, achieved 16.8% faster convergence and 2.5% higher accuracy over a standard CNN.]]></description>
-<pubDate>Tue, 24 Feb 2026 12:58:21 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[DLEBench: Evaluating Small-scale Object Editing Ability for Instruction-based Image Editing Model]]></title>
 <link>https://huggingface.co/papers/2602.23622</link>
 <guid>2602.23622</guid>
@@ -902,7 +901,7 @@ Institution:
 Published: 2026-02-27
 Score: 4/10
 Citations: 0
-Upvotes: 0
+Upvotes: 1
 GitHub: 
 Stars: 0
 
@@ -926,24 +925,6 @@ Stars: 0
 
 Dense 4D reconstruction from unposed images remains a critical challenge, with current methods relying on slow test-time optimization or fragmented, task-specific feedforward models. We introduce UFO-4D, a unified feedforward framework to reconstruct a dense, explicit 4D representation from just a pair of unposed images. UFO-4D directly estimates dynamic 3D Gaussian Splats, enabling the joint and consistent estimation of 3D geometry, 3D motion, and camera pose in a feedforward manner. Our core insight is that differentiably rendering multiple signals from a single Dynamic 3D Gaussian representation offers major training advantages. This approach enables a self-supervised image synthesis loss while tightly coupling appearance, depth, and motion. Since all modalities share the same geometric primitives, supervising one inherently regularizes and improves the others. This synergy overcomes data scarcity, allowing UFO-4D to outperform prior work by up to 3 times in joint geometry, motion, and camera pose estimation. Our representation also enables high-fidelity 4D interpolation across novel views and time. Please visit our project page for visual results: https://ufo-4d.github.io/]]></description>
 <pubDate>Fri, 27 Feb 2026 18:59:54 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Mode Seeking meets Mean Seeking for Fast Long Video Generation]]></title>
-<link>http://arxiv.org/abs/2602.24289v1</link>
-<guid>2602.24289v1</guid>
-<description><![CDATA[Source: arXiv
-Tags: cs.CV, cs.LG
-Authors: Shengqu Cai, Weili Nie, Chao Liu, Julius Berner, Lvmin Zhang et al.
-Institution: 
-Published: 2026-02-27
-Score: 4/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Scaling video generation from seconds to minutes faces a critical bottleneck: while short-video data is abundant and high-fidelity, coherent long-form data is scarce and limited to narrow domains. To address this, we propose a training paradigm where Mode Seeking meets Mean Seeking, decoupling local fidelity from long-term coherence based on a unified representation via a Decoupled Diffusion Transformer. Our approach utilizes a global Flow Matching head trained via supervised learning on long videos to capture narrative structure, while simultaneously employing a local Distribution Matching head that aligns sliding windows to a frozen short-video teacher via a mode-seeking reverse-KL divergence. This strategy enables the synthesis of minute-scale videos that learns long-range coherence and motions from limited long videos via supervised flow matching, while inheriting local realism by aligning every sliding-window segment of the student to a frozen short-video teacher, resulting in a few-step fast long video generator. Evaluations show that our method effectively closes the fidelity-horizon gap by jointly improving local sharpness, motion and long-range consistency. Project website: https://primecai.github.io/mmm/.]]></description>
-<pubDate>Fri, 27 Feb 2026 18:59:02 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science]]></title>
@@ -1088,24 +1069,6 @@ Stars: 0
 
 Neural networks are hypothesized to implement interpretable causal mechanisms, yet verifying this requires finding a causal abstraction -- a simpler, high-level Structural Causal Model (SCM) faithful to the network under interventions. Discovering such abstractions is hard: it typically demands brute-force interchange interventions or retraining. We reframe the problem by viewing structured pruning as a search over approximate abstractions. Treating a trained network as a deterministic SCM, we derive an Interventional Risk objective whose second-order expansion yields closed-form criteria for replacing units with constants or folding them into neighbors. Under uniform curvature, our score reduces to activation variance, recovering variance-based pruning as a special case while clarifying when it fails. The resulting procedure efficiently extracts sparse, intervention-faithful abstractions from pretrained networks, which we validate via interchange interventions.]]></description>
 <pubDate>Fri, 27 Feb 2026 18:35:10 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Compositional Generalization Requires Linear, Orthogonal Representations in Vision Embedding Models]]></title>
-<link>http://arxiv.org/abs/2602.24264v1</link>
-<guid>2602.24264v1</guid>
-<description><![CDATA[Source: arXiv
-Tags: cs.CV, cs.LG
-Authors: Arnas Uselis, Andrea Dittadi, Seong Joon Oh
-Institution: 
-Published: 2026-02-27
-Score: 4/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Compositional generalization, the ability to recognize familiar parts in novel contexts, is a defining property of intelligent systems. Although modern models are trained on massive datasets, they still cover only a tiny fraction of the combinatorial space of possible inputs, raising the question of what structure representations must have to support generalization to unseen combinations. We formalize three desiderata for compositional generalization under standard training (divisibility, transferability, stability) and show they impose necessary geometric constraints: representations must decompose linearly into per-concept components, and these components must be orthogonal across concepts. This provides theoretical grounding for the Linear Representation Hypothesis: the linear structure widely observed in neural representations is a necessary consequence of compositional generalization. We further derive dimension bounds linking the number of composable concepts to the embedding geometry. Empirically, we evaluate these predictions across modern vision models (CLIP, SigLIP, DINO) and find that representations exhibit partial linear factorization with low-rank, near-orthogonal per-concept factors, and that the degree of this structure correlates with compositional generalization on unseen combinations. As models continue to scale, these conditions predict the representational geometry they may converge to. Code is available at https://github.com/oshapio/necessary-compositionality.]]></description>
-<pubDate>Fri, 27 Feb 2026 18:32:31 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Active Bipartite Ranking with Smooth Posterior Distributions]]></title>
@@ -2499,24 +2462,6 @@ It has been suggested that generative image models such as diffusion models can 
 <pubDate>Fri, 27 Feb 2026 13:36:28 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[InfoNCE Induces Gaussian Distribution]]></title>
-<link>http://arxiv.org/abs/2602.24012v1</link>
-<guid>2602.24012v1</guid>
-<description><![CDATA[Source: arXiv
-Tags: cs.LG
-Authors: Roy Betser, Eyal Gofer, Meir Yossef Levi, Guy Gilboa
-Institution: 
-Published: 2026-02-27
-Score: 4/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Contrastive learning has become a cornerstone of modern representation learning, allowing training with massive unlabeled data for both task-specific and general (foundation) models. A prototypical loss in contrastive training is InfoNCE and its variants. In this work, we show that the InfoNCE objective induces Gaussian structure in representations that emerge from contrastive training. We establish this result in two complementary regimes. First, we show that under certain alignment and concentration assumptions, projections of the high-dimensional representation asymptotically approach a multivariate Gaussian distribution. Next, under less strict assumptions, we show that adding a small asymptotically vanishing regularization term that promotes low feature norm and high feature entropy leads to similar asymptotic results. We support our analysis with experiments on synthetic and CIFAR-10 datasets across multiple encoder architectures and sizes, demonstrating consistent Gaussian behavior. This perspective provides a principled explanation for commonly observed Gaussianity in contrastive representations. The resulting Gaussian model enables principled analytical treatment of learned representations and is expected to support a wide range of applications in contrastive learning.]]></description>
-<pubDate>Fri, 27 Feb 2026 13:35:58 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[Jailbreak Foundry: From Papers to Runnable Attacks for Reproducible Benchmarking]]></title>
 <link>http://arxiv.org/abs/2602.24009v1</link>
 <guid>2602.24009v1</guid>
@@ -3271,24 +3216,6 @@ Stars: 0
 
 Personal care formulations often contain synthetic and non-biodegradable ingredients, such as silicone and mineral oils, which can offer a unique performance. However, due to regulations like the EU ban of Octamethylcyclotetrasiloxane (D4), Decamethyl-cyclopentasiloxane (D5), Dodecamethylcyclohexasiloxane (D6) already in effect for rinse off and for leave on cosmetics by June 2027 coupled with growing consumer awareness and expectations on sustainability, personal care brands face significant pressure to replace these synthetic ingredients with natural alternatives without compromising performance and cost. As a result, formulators are confronted with the challenge to find natural-based solutions within a short timeframe. In this study, we propose a pioneering approach that utilizes predicting modelling and simulation-based digital services to obtain natural-based ingredient combinations as recommendations to commonly used synthetic ingredients. We will demonstrate the effectiveness of our predictions through the application of these proposals in specific formulations. By offering a platform of digital services, it is aimed to empower formulators to explore good performing novel and environmentally friendly alternatives, ultimately driving a substantial and genuine transformation in the personal care industry.]]></description>
 <pubDate>Fri, 27 Feb 2026 10:24:49 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding]]></title>
-<link>http://arxiv.org/abs/2602.23881v1</link>
-<guid>2602.23881v1</guid>
-<description><![CDATA[Source: arXiv
-Tags: cs.LG, cs.CL
-Authors: Alexander Samarin, Sergei Krutikov, Anton Shevtsov, Sergei Skvortsov, Filipp Fisin et al.
-Institution: 
-Published: 2026-02-27
-Score: 4/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Speculative decoding accelerates autoregressive large language model (LLM) inference by using a lightweight draft model to propose candidate tokens that are then verified in parallel by the target model. The speedup is significantly determined by the acceptance rate, yet standard training minimizes Kullback-Leibler (KL) divergence as a proxy objective. While KL divergence and acceptance rate share the same global optimum, small draft models, having limited capacity, typically converge to suboptimal solutions where minimizing KL does not guarantee maximizing acceptance rate. To address this issue, we propose LK losses, special training objectives that directly target acceptance rate. Comprehensive experiments across four draft architectures and six target models, ranging from 8B to 685B parameters, demonstrate consistent improvements in acceptance metrics across all configurations compared to the standard KL-based training. We evaluate our approach on general, coding and math domains and report gains of up to 8-10% in average acceptance length. LK losses are easy to implement, introduce no computational overhead and can be directly integrated into any existing speculator training framework, making them a compelling alternative to the existing draft training objectives.]]></description>
-<pubDate>Fri, 27 Feb 2026 10:20:11 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[A Theory of Random Graph Shift in Truncated-Spectrum vRKHS]]></title>
