@@ -30026,5 +30026,397 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-02"
+  },
+  "2603.01068": {
+    "title": "LLaDA-o: An Effective and Length-Adaptive Omni Diffusion Model",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion Models",
+          "brief": "A type of deep learning model that generates data by iteratively refining a random noise signal"
+        },
+        {
+          "name": "Mixture of Diffusion (MoD) Framework",
+          "brief": "A framework that combines discrete and continuous diffusion processes for multimodal understanding and generation"
+        },
+        {
+          "name": "Length-Adaptive Decoding",
+          "brief": "A strategy that enables flexible-length decoding in multimodal settings without architectural changes"
+        },
+        {
+          "name": "Omni-Diffusion Models",
+          "brief": "A type of model that can perform multiple tasks, such as text understanding and visual generation, in a unified framework"
+        },
+        {
+          "name": "Attention Mechanism",
+          "brief": "A technique used to focus on specific parts of the input data when generating output"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and how they are used in diffusion models"
+        },
+        {
+          "topic": "Multimodal Learning",
+          "why_needed": "To understand how to process and generate multiple types of data, such as text and images"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand how to generate and process visual data"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand how to process and generate text data"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the fundamentals of training and evaluating models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2602.23906": {
+    "title": "Half-Truths Break Similarity-Based Retrieval",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "CLIP (Contrastive Language-Image Pre-training)",
+          "brief": "A dual-encoder model that learns to align text and image representations"
+        },
+        {
+          "name": "Half-Truths",
+          "brief": "Cases where appending a plausible but incorrect detail to a correct description increases the similarity score"
+        },
+        {
+          "name": "Component-Supervised Learning",
+          "brief": "A method that decomposes captions into entity and relation units to improve model performance"
+        },
+        {
+          "name": "Dual-Encoder Inference",
+          "brief": "A technique used in CLIP-style models to compute similarity between text and image representations"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of CLIP-style models"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the concepts of text representation, entity recognition, and relation extraction"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To grasp the idea of image representation and similarity measurement"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of contrastive learning, supervision, and fine-tuning"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2602.21317": {
+    "title": "Shared Nature, Unique Nurture: PRISM for Pluralistic Reasoning via In-context Structure Modeling",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models trained on vast amounts of data to generate human-like language"
+        },
+        {
+          "name": "Epistemic Evolution",
+          "brief": "A paradigm for individualized learning and knowledge acquisition"
+        },
+        {
+          "name": "Pluralistic Reasoning",
+          "brief": "The ability to consider multiple perspectives and approaches to problem-solving"
+        },
+        {
+          "name": "In-context Structure Modeling",
+          "brief": "A technique for dynamically modeling knowledge graphs to facilitate reasoning and exploration"
+        },
+        {
+          "name": "PRISM (Pluralistic Reasoning via In-context Structure Modeling)",
+          "brief": "A model-agnostic system for augmenting LLMs with dynamic epistemic graphs"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context and limitations of LLMs"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the training and evaluation of LLMs"
+        },
+        {
+          "topic": "Cognitive Science",
+          "why_needed": "To appreciate the importance of pluralistic reasoning and epistemic evolution"
+        },
+        {
+          "topic": "Graph Theory",
+          "why_needed": "To understand the representation and manipulation of knowledge graphs"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To recognize the applications and challenges of LLMs in real-world scenarios"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2603.00912": {
+    "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Visual Geometry Grounded Transformer (VGGT)",
+          "brief": "A model that infers 3D cues directly from images"
+        },
+        {
+          "name": "Sensor-Geometry-Free (SG-Free) multi-view indoor 3D object detection",
+          "brief": "A setting where no sensor-provided geometric inputs are available"
+        },
+        {
+          "name": "Attention-Guided Query Generation (AG)",
+          "brief": "A method that uses VGGT attention maps to initialize object queries"
+        },
+        {
+          "name": "Query-Driven Feature Aggregation (QD)",
+          "brief": "A method that dynamically aggregates multi-level geometric features across VGGT layers"
+        },
+        {
+          "name": "Transformer-based pipeline",
+          "brief": "A framework that integrates VGGT encoder for 3D object detection"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the architecture and components of VGGT and the proposed framework"
+        },
+        {
+          "topic": "Computer vision",
+          "why_needed": "To comprehend the concepts of 3D object detection, multi-view geometry, and sensor geometry"
+        },
+        {
+          "topic": "Transformer models",
+          "why_needed": "To grasp the transformer-based pipeline and its applications in 3D object detection"
+        },
+        {
+          "topic": "Geometry and spatial reasoning",
+          "why_needed": "To understand the geometric priors and spatial structure used in the proposed framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2602.23952": {
+    "title": "CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Knowledge-Based Visual Question Answering (KB-VQA)",
+          "brief": "A task that requires answering questions based on visual information and external knowledge"
+        },
+        {
+          "name": "Vision Language Models (VLMs)",
+          "brief": "Models that combine visual and language understanding to generate responses"
+        },
+        {
+          "name": "Conflict-Aware Methods",
+          "brief": "Techniques that identify and mitigate conflicts between different sources of information"
+        },
+        {
+          "name": "Correlation-Guided Encoding and Decoding",
+          "brief": "A method that uses correlation weights to guide the encoding and decoding process"
+        },
+        {
+          "name": "Visual-Semantic Conflict Analysis",
+          "brief": "A technique that analyzes conflicts between visual and semantic information"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of VLMs"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend visual feature extraction and analysis"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand language modeling and text analysis"
+        },
+        {
+          "topic": "Information Retrieval",
+          "why_needed": "To grasp the concept of retrieving relevant information from external sources"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the principles of model training and evaluation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2602.20981": {
+    "title": "Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Alignment",
+          "brief": "The process of aligning video and audio data to generate coherent audio outputs"
+        },
+        {
+          "name": "Video-to-Audio Generation Models",
+          "brief": "Deep learning models that generate audio from video inputs"
+        },
+        {
+          "name": "Hierarchical Networks",
+          "brief": "Neural network architectures that use multiple layers to process data at different scales"
+        },
+        {
+          "name": "Non-Causal Mamba",
+          "brief": "A technique used to support long-form audio generation by processing input data in a non-sequential manner"
+        },
+        {
+          "name": "Length Generalization",
+          "brief": "The ability of a model to generate audio of varying lengths, including longer sequences than those seen during training"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of video-to-audio generation models"
+        },
+        {
+          "topic": "Multimodal Processing",
+          "why_needed": "To comprehend the challenges of aligning video and audio data"
+        },
+        {
+          "topic": "Signal Processing",
+          "why_needed": "To understand the techniques used for audio generation and processing"
+        },
+        {
+          "topic": "Neural Network Architectures",
+          "why_needed": "To appreciate the design and implementation of hierarchical networks and non-causal Mamba"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2603.01710": {
+    "title": "Legal RAG Bench: an end-to-end benchmark for legal RAG",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Legal RAG (Retrieval-Augmented Generation)",
+          "brief": "A system that combines information retrieval and generation capabilities to produce answers to complex questions"
+        },
+        {
+          "name": "Benchmarking",
+          "brief": "The process of evaluating and comparing the performance of different systems or models"
+        },
+        {
+          "name": "Embedding Models",
+          "brief": "Techniques used to represent words, phrases, or documents as vectors in a high-dimensional space"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models trained on vast amounts of text data to generate human-like language"
+        },
+        {
+          "name": "Error Decomposition",
+          "brief": "A method to break down errors into their constituent parts to analyze and understand their causes"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the concepts of embedding models, LLMs, and RAG systems"
+        },
+        {
+          "topic": "Information Retrieval",
+          "why_needed": "To comprehend the importance of retrieval in legal RAG systems"
+        },
+        {
+          "topic": "Criminal Law and Procedure",
+          "why_needed": "To understand the context and complexity of the questions and passages used in the Legal RAG Bench"
+        },
+        {
+          "topic": "Machine Learning and Evaluation Methodologies",
+          "why_needed": "To appreciate the design and implementation of the benchmark and evaluation framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2602.22495": {
+    "title": "Reinforcement-aware Knowledge Distillation for LLM Reasoning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A type of machine learning where an agent learns by interacting with an environment and receiving rewards or penalties"
+        },
+        {
+          "name": "Knowledge Distillation (KD)",
+          "brief": "A technique for transferring knowledge from a large, complex model (teacher) to a smaller, simpler model (student)"
+        },
+        {
+          "name": "Long Chain-of-Thought Reasoning Large Language Models (LLMs)",
+          "brief": "A type of language model that can perform complex reasoning tasks by generating a sequence of intermediate steps"
+        },
+        {
+          "name": "Trust Region Ratio Distillation (TRRD)",
+          "brief": "A novel distillation method that uses a likelihood-ratio objective to guide the student model towards the teacher model"
+        },
+        {
+          "name": "Proximal Policy Optimization (PPO)",
+          "brief": "A type of reinforcement learning algorithm that uses trust region optimization to update the policy"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and language models"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To understand the concepts of agents, environments, and reward functions"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the basics of language models and text generation"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To understand the concepts of trust region optimization and likelihood-ratio objectives"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
   }
 }
