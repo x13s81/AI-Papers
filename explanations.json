@@ -30418,5 +30418,349 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-03"
+  },
+  "2603.01096": {
+    "title": "Unified Vision-Language Modeling via Concept Space Alignment",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Language Modeling",
+          "brief": "A field of study that focuses on developing models that can understand and generate text based on visual inputs like images and videos"
+        },
+        {
+          "name": "Concept Space Alignment",
+          "brief": "A technique used to map representations from different modalities (e.g., vision and language) into a shared embedding space"
+        },
+        {
+          "name": "Embedding Space",
+          "brief": "A high-dimensional space where words, images, or other data points are represented as vectors to capture their semantic relationships"
+        },
+        {
+          "name": "Omnilingual Embeddings",
+          "brief": "A type of embedding that supports multiple languages, enabling models to understand and generate text in different languages"
+        },
+        {
+          "name": "Large Concept Model (LCM)",
+          "brief": "A model that operates in a shared embedding space and can perform concept understanding tasks in a zero-shot manner"
+        },
+        {
+          "name": "Vision-Language Instruction Tuning",
+          "brief": "A technique used to fine-tune models on vision-language tasks, such as image and video captioning, using instruction-based objectives"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of vision-language models"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the text-only embedding space and the extension to vision-language modeling"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To grasp the concepts of vision encoders and the alignment of visual representations with language embeddings"
+        },
+        {
+          "topic": "Multimodal Learning",
+          "why_needed": "To appreciate the challenges and opportunities of integrating multiple modalities (e.g., vision, language, and speech) in a single model"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6-12 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2603.00889": {
+    "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models that process and understand human language"
+        },
+        {
+          "name": "Supervised Fine-Tuning (SFT)",
+          "brief": "A machine learning technique used to fine-tune pre-trained models on specific tasks"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A machine learning technique that involves training models through trial and error"
+        },
+        {
+          "name": "Chain-of-Thought (CoT) Reasoning",
+          "brief": "A type of reasoning that involves generating a sequence of intermediate steps to arrive at a conclusion"
+        },
+        {
+          "name": "Synthetic Data",
+          "brief": "Artificially generated data used to supplement or replace real data"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of LLMs, SFT, and RL"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the challenges of working with human language and the importance of high-quality training data"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To appreciate the broader context of LLMs and their applications"
+        },
+        {
+          "topic": "Data Science",
+          "why_needed": "To understand the importance of data quality, annotation, and evaluation pipelines"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2603.02099": {
+    "title": "Recursive Think-Answer Process for LLMs and VLMs",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Recursive Think-Answer Process (R-TAP)",
+          "brief": "An approach enabling models to engage in iterative reasoning cycles for more accurate answers"
+        },
+        {
+          "name": "Think-Answer reasoners",
+          "brief": "Models that leverage interpretable internal reasoning, such as DeepSeek-R1"
+        },
+        {
+          "name": "Confidence generator",
+          "brief": "A component evaluating the certainty of model responses to guide improvements"
+        },
+        {
+          "name": "Recursively Confidence Increase Reward",
+          "brief": "A reward mechanism promoting increased confidence in model responses"
+        },
+        {
+          "name": "Final Answer Confidence Reward",
+          "brief": "A reward mechanism promoting confidence in final model answers"
+        },
+        {
+          "name": "Large Language Models (LLMs) and Vision-Language Models (VLMs)",
+          "brief": "Types of models that can be enhanced with R-TAP"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning and neural networks",
+          "why_needed": "To understand the basics of LLMs and VLMs"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the context and applications of Think-Answer reasoners"
+        },
+        {
+          "topic": "Reinforcement learning and reward mechanisms",
+          "why_needed": "To grasp the role of Recursively Confidence Increase Reward and Final Answer Confidence Reward"
+        },
+        {
+          "topic": "Artificial Intelligence (AI) and machine learning",
+          "why_needed": "To appreciate the broader implications and potential of R-TAP"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2603.01896": {
+    "title": "Agentic Code Reasoning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Agentic Code Reasoning",
+          "brief": "The ability of LLM agents to explore codebases and reason about code semantics without executing the code"
+        },
+        {
+          "name": "Semi-formal Reasoning",
+          "brief": "A structured prompting methodology for agents to construct explicit premises, trace execution paths, and derive formal conclusions"
+        },
+        {
+          "name": "Patch Equivalence Verification",
+          "brief": "The task of determining whether two code patches are equivalent in terms of their functionality"
+        },
+        {
+          "name": "Fault Localization",
+          "brief": "The task of identifying the location of a bug or error in a codebase"
+        },
+        {
+          "name": "Code Question Answering",
+          "brief": "The task of answering questions about a codebase"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the capabilities and limitations of LLMs in code analysis"
+        },
+        {
+          "topic": "Programming Languages and Code Structure",
+          "why_needed": "To comprehend the syntax and semantics of code and how agents can reason about them"
+        },
+        {
+          "topic": "Formal Methods and Logic",
+          "why_needed": "To grasp the concepts of formal reasoning and proof-based verification"
+        },
+        {
+          "topic": "Software Engineering and Code Review",
+          "why_needed": "To appreciate the practical applications of agentic code reasoning in real-world scenarios"
+        },
+        {
+          "topic": "Reinforcement Learning (RL) and Reward Signals",
+          "why_needed": "To understand the potential applications of agentic code reasoning in RL training pipelines"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2603.00516": {
+    "title": "ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed Poisoned Data",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Federated Instruction Tuning (FIT)",
+          "brief": "A method for collaborative instruction tuning of large language models across multiple organizations"
+        },
+        {
+          "name": "Backdoors in AI models",
+          "brief": "Malicious inputs or data that can compromise the security of AI models"
+        },
+        {
+          "name": "Poisoned data",
+          "brief": "Data that has been intentionally or unintentionally corrupted to compromise the security of AI models"
+        },
+        {
+          "name": "Frequency domain analysis",
+          "brief": "A method for analyzing signals or data in the frequency domain to identify patterns or anomalies"
+        },
+        {
+          "name": "Global secondary clustering mechanism",
+          "brief": "A method for collaborative identification of poisoned samples across clients"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine learning",
+          "why_needed": "To understand the basics of AI models and their potential vulnerabilities"
+        },
+        {
+          "topic": "Federated learning",
+          "why_needed": "To understand the concept of collaborative learning across multiple organizations"
+        },
+        {
+          "topic": "Data security and privacy",
+          "why_needed": "To understand the importance of protecting data from malicious attacks or corruption"
+        },
+        {
+          "topic": "Signal processing",
+          "why_needed": "To understand the basics of frequency domain analysis and its applications"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2603.02208": {
+    "title": "Reasoning Core: A Scalable Procedural Data Generation Suite for Symbolic Pre-training and Post-Training",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Procedural Data Generation",
+          "brief": "Generating data using algorithms and procedures"
+        },
+        {
+          "name": "Symbolic Pre-training and Post-Training",
+          "brief": "Training language models using symbolic data before and after the main training phase"
+        },
+        {
+          "name": "Reasoning Core Suite",
+          "brief": "A scalable suite for generating verifiable symbolic reasoning data"
+        },
+        {
+          "name": "Formal Domains",
+          "brief": "Specific areas of study such as PDDL planning, first-order logic, and causal reasoning"
+        },
+        {
+          "name": "Curriculum Design",
+          "brief": "Controlling the difficulty of training data to improve model performance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Language Models",
+          "why_needed": "Understanding language models and their training processes is necessary to appreciate the context of the research"
+        },
+        {
+          "topic": "Artificial Intelligence and Machine Learning",
+          "why_needed": "Familiarity with AI and ML concepts is required to understand the reasoning tasks and procedural data generation"
+        },
+        {
+          "topic": "Formal Methods and Logic",
+          "why_needed": "Knowledge of formal methods and logic is necessary to understand the specific tasks and domains used in the Reasoning Core suite"
+        },
+        {
+          "topic": "Programming and Software Development",
+          "why_needed": "Understanding programming concepts is necessary to appreciate the implementation of the Reasoning Core suite and its applications"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-03"
+  },
+  "2603.02024": {
+    "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "AI models that process and understand multiple forms of data, such as text and images"
+        },
+        {
+          "name": "Multimodal Multi-image Reasoning",
+          "brief": "The ability of AI models to reason and draw conclusions from multiple images and text"
+        },
+        {
+          "name": "Reasoning Types",
+          "brief": "Different methods of reasoning, including abductive, analogical, causal, deductive, inductive, spatial, and temporal"
+        },
+        {
+          "name": "Benchmarking",
+          "brief": "The process of evaluating and comparing the performance of AI models on a specific task or dataset"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context and capabilities of MLLMs"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend how AI models process and analyze images"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand how AI models process and generate text"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp how AI models learn and improve from data"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-03"
   }
 }
