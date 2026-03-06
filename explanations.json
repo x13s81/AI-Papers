@@ -32938,5 +32938,485 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-06"
+  },
+  "2603.04448": {
+    "title": "SkillNet: Create, Evaluate, and Connect AI Skills",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "AI Skills",
+          "brief": "Reusable capabilities that AI agents can invoke to perform tasks"
+        },
+        {
+          "name": "Skill Ontology",
+          "brief": "A unified framework for organizing and structuring AI skills"
+        },
+        {
+          "name": "Multi-dimensional Evaluation",
+          "brief": "Assessing AI skills across multiple criteria such as Safety, Completeness, and Cost-awareness"
+        },
+        {
+          "name": "Skill Composition",
+          "brief": "Combining individual skills to create more complex capabilities"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "Understanding of AI concepts and techniques is necessary to grasp the context of SkillNet"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Familiarity with machine learning is required to understand how SkillNet evaluates and improves AI skills"
+        },
+        {
+          "topic": "Software Engineering",
+          "why_needed": "Knowledge of software engineering principles is necessary to understand the design and implementation of SkillNet's infrastructure"
+        },
+        {
+          "topic": "Cognitive Architectures",
+          "why_needed": "Understanding of cognitive architectures is helpful to appreciate the potential applications and implications of SkillNet"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2603.00466": {
+    "title": "DreamWorld: Unified World Modeling in Video Generation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Unified World Modeling",
+          "brief": "A framework that integrates multiple forms of world-related knowledge into video generators"
+        },
+        {
+          "name": "Joint World Modeling Paradigm",
+          "brief": "A paradigm that jointly predicts video pixels and features to capture temporal dynamics, spatial geometry, and semantic consistency"
+        },
+        {
+          "name": "Consistent Constraint Annealing (CCA)",
+          "brief": "A technique to progressively regulate world-level constraints during training"
+        },
+        {
+          "name": "Multi-Source Inner-Guidance",
+          "brief": "A method to enforce learned world priors at inference"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Video Generation",
+          "why_needed": "To understand the limitations of existing models and the importance of unified world modeling"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the concepts of foundation models, joint prediction, and constraint annealing"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the concepts of spatial geometry, temporal dynamics, and semantic consistency in video generation"
+        },
+        {
+          "topic": "Machine Learning Optimization",
+          "why_needed": "To understand the challenges of optimizing heterogeneous objectives and the need for techniques like CCA"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2603.04291": {
+    "title": "CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Spatio-Temporal Autoregressive Diffusion Model",
+          "brief": "A type of generative model that uses autoregressive techniques to model spatial and temporal relationships in data"
+        },
+        {
+          "name": "Cubemap Representation",
+          "brief": "A method of representing 360° videos as a set of six 2D images, each corresponding to a face of a cube"
+        },
+        {
+          "name": "Cube Face Context Management",
+          "brief": "A mechanism for managing the context of each cube face in the cubemap representation to improve efficiency"
+        },
+        {
+          "name": "Continuity-Aware Techniques",
+          "brief": "Methods for ensuring seamless transitions between cube faces and time windows, such as cube-aware positional encoding and blending"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Virtual Reality (VR)",
+          "why_needed": "To understand the importance of high-resolution 360° video generation for immersive experiences"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the concepts of diffusion models, autoregressive techniques, and sparse context attention"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the challenges of generating high-quality 360° videos and the role of cubemap representations"
+        },
+        {
+          "topic": "Signal Processing",
+          "why_needed": "To grasp the concepts of spatial and temporal relationships in video data"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2603.04800": {
+    "title": "MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Post-training quantization (PTQ)",
+          "brief": "A technique to reduce the precision of model weights after training to improve efficiency"
+        },
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "AI models that process and generate text based on multiple input modalities (e.g., text, images, audio)"
+        },
+        {
+          "name": "Modality-Aware Smoothing Quantization (MASQuant)",
+          "brief": "A novel framework for quantizing MLLMs that accounts for differences between modalities"
+        },
+        {
+          "name": "Smoothing Misalignment",
+          "brief": "A issue that occurs when smoothing factors are not adapted to specific modalities"
+        },
+        {
+          "name": "Cross-Modal Computational Invariance",
+          "brief": "A challenge that arises when quantizing MLLMs due to differences in activation distributions across modalities"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the basics of neural networks and language models"
+        },
+        {
+          "topic": "Quantization techniques",
+          "why_needed": "To comprehend the concept of reducing precision of model weights and its implications"
+        },
+        {
+          "topic": "Multimodal processing",
+          "why_needed": "To grasp the challenges of handling multiple input modalities in AI models"
+        },
+        {
+          "topic": "Linear algebra (SVD)",
+          "why_needed": "To understand the mathematical techniques used in the proposed framework (e.g., SVD whitening)"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2602.23166": {
+    "title": "AgentVista: Evaluating Multimodal Agents in Ultra-Challenging Realistic Visual Scenarios",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Agents",
+          "brief": "Agents that can process and interact with multiple forms of data, such as text, images, and audio"
+        },
+        {
+          "name": "Realistic Visual Scenarios",
+          "brief": "Scenarios that mimic real-world situations, requiring agents to reason and act in complex environments"
+        },
+        {
+          "name": "Long-Horizon Tool Use",
+          "brief": "The ability of agents to use tools and interact with their environment over an extended period, requiring planning and problem-solving"
+        },
+        {
+          "name": "Multimodal Benchmarks",
+          "brief": "Evaluation frameworks for assessing the performance of multimodal agents in various tasks and scenarios"
+        },
+        {
+          "name": "Generalist Multimodal Agents",
+          "brief": "Agents that can perform a wide range of tasks, across multiple domains and modalities"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context and capabilities of multimodal agents"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the visual aspects of the scenarios and the agents' ability to process and interact with visual data"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the language-based interactions and tool use, such as web search and page navigation"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concepts of model evaluation, accuracy, and the challenges of training agents for complex tasks"
+        },
+        {
+          "topic": "Human-Computer Interaction",
+          "why_needed": "To appreciate the importance of designing agents that can interact with humans and their environment in a natural and effective way"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2603.05449": {
+    "title": "RealWonder: Real-Time Physical Action-Conditioned Video Generation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Physics Simulation",
+          "brief": "Using physics engines to simulate real-world interactions and consequences"
+        },
+        {
+          "name": "3D Reconstruction",
+          "brief": "Reconstructing 3D scenes from single images"
+        },
+        {
+          "name": "Video Generation",
+          "brief": "Generating videos from images or other inputs"
+        },
+        {
+          "name": "Diffusion Models",
+          "brief": "A type of deep learning model used for image and video generation"
+        },
+        {
+          "name": "Action-Conditioned Generation",
+          "brief": "Generating videos based on specific actions or conditions"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of image and video processing, 3D reconstruction, and object detection"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Knowledge of neural networks, convolutional neural networks, and generative models"
+        },
+        {
+          "topic": "Physics and Robotics",
+          "why_needed": "Understanding of physics principles, robotic manipulations, and simulation"
+        },
+        {
+          "topic": "Programming",
+          "why_needed": "Familiarity with programming languages such as Python, and experience with deep learning frameworks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2603.04254": {
+    "title": "EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "EmbodiedSplat",
+          "brief": "An online feed-forward 3DGS for open-vocabulary scene understanding"
+        },
+        {
+          "name": "3DGS (3D Geometric Scene)",
+          "brief": "A representation of a 3D scene with geometric and semantic information"
+        },
+        {
+          "name": "CLIP (Contrastive Language-Image Pre-training)",
+          "brief": "A model that learns to align text and image embeddings"
+        },
+        {
+          "name": "Online Sparse Coefficients Field",
+          "brief": "A method to bind 2D CLIP embeddings to 3D Gaussians while minimizing memory consumption"
+        },
+        {
+          "name": "3D U-Net",
+          "brief": "A neural network architecture for aggregating partial point clouds and generating 3D geometric-aware features"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand 3D scene reconstruction and semantic understanding"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the architectures and techniques used in the paper, such as CLIP and 3D U-Net"
+        },
+        {
+          "topic": "3D Geometry and Point Cloud Processing",
+          "why_needed": "To understand the representation and processing of 3D scenes"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the role of language embeddings in the paper"
+        },
+        {
+          "topic": "Embodied AI",
+          "why_needed": "To understand the context and applications of embodied scene understanding"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2603.03447": {
+    "title": "Proact-VL: A Proactive VideoLLM for Real-Time AI Companions",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Proactive VideoLLM",
+          "brief": "A model that enables real-time interactive experiences for AI companions"
+        },
+        {
+          "name": "Real-Time AI Companions",
+          "brief": "AI systems that interact with humans in real-time, mimicking human-like behavior"
+        },
+        {
+          "name": "Multimodal Language Models",
+          "brief": "Models that process and generate multiple forms of data, such as text, images, and videos"
+        },
+        {
+          "name": "Live Gaming Benchmark",
+          "brief": "A large-scale dataset for evaluating AI companions in gaming scenarios"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of Proact-VL"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the language generation and understanding capabilities of Proact-VL"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To grasp the video understanding and processing aspects of Proact-VL"
+        },
+        {
+          "topic": "Human-Computer Interaction",
+          "why_needed": "To appreciate the design and evaluation of real-time interactive AI companions"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2603.03942": {
+    "title": "Lightweight Visual Reasoning for Socially-Aware Robots",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Language Models (VLMs)",
+          "brief": "Models that combine visual and language understanding for tasks like image description and question answering"
+        },
+        {
+          "name": "Language-to-Vision Feedback Module",
+          "brief": "A module that projects image-token hidden states back into the encoder input for reinterpreting the scene under text context"
+        },
+        {
+          "name": "Multimodal Human-Robot Interactions (HRI)",
+          "brief": "Interactions between humans and robots that involve multiple modes of communication, such as speech, vision, and gesture"
+        },
+        {
+          "name": "Gated Multi-Layer Perceptron (MLP)",
+          "brief": "A type of neural network architecture that uses gates to control the flow of information"
+        },
+        {
+          "name": "Robotics-Centred Tasks",
+          "brief": "Tasks that involve robots navigating, interacting, and detecting their surroundings, such as navigation and human-intention recognition"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of Vision-Language Models and the proposed feedback module"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand how robots perceive and interpret their surroundings"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand how language is used to interact with robots and interpret human behaviour"
+        },
+        {
+          "topic": "Robotics",
+          "why_needed": "To understand the challenges and requirements of human-robot interactions and robotics-centred tasks"
+        },
+        {
+          "topic": "Human-Computer Interaction",
+          "why_needed": "To understand how humans interact with robots and how robots can be designed to interact with humans effectively"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-06"
+  },
+  "2603.03655": {
+    "title": "Mozi: Governed Autonomy for Drug Discovery LLM Agents",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Model (LLM) Agents",
+          "brief": "AI models that combine scientific reasoning with computation"
+        },
+        {
+          "name": "Governed Autonomy",
+          "brief": "A framework for controlling and supervising autonomous agents"
+        },
+        {
+          "name": "Drug Discovery Pipelines",
+          "brief": "A series of stages for identifying and developing new drugs"
+        },
+        {
+          "name": "Tool-augmented LLM Agents",
+          "brief": "LLM agents that use external tools to enhance their capabilities"
+        },
+        {
+          "name": "Stateful, Composable Skill Graphs",
+          "brief": "A representation of complex tasks as graphs of interconnected skills"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence (AI) and Machine Learning (ML)",
+          "why_needed": "To understand the basics of LLM agents and their applications"
+        },
+        {
+          "topic": "Computational Biology",
+          "why_needed": "To comprehend the integration of biological concepts and computational methods in drug discovery"
+        },
+        {
+          "topic": "Pharmaceutical Pipelines and Drug Development",
+          "why_needed": "To understand the context and challenges of drug discovery"
+        },
+        {
+          "topic": "Human-in-the-Loop (HITL) Systems",
+          "why_needed": "To appreciate the role of human oversight and feedback in autonomous systems"
+        },
+        {
+          "topic": "Software Architecture and Design Patterns",
+          "why_needed": "To understand the design principles and architecture of the Mozi system"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-06"
   }
 }
