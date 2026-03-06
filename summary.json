@@ -1,111 +1,115 @@
 {
-  "date": "2026-03-05",
-  "generated_at": "2026-03-05T14:42:19Z",
-  "total_papers": 242,
-  "must_read_count": 10,
-  "notable_count": 26,
-  "daily_summary": "Today's top-scoring papers offer significant advancements in AI research, particularly in areas such as real-time video generation and interaction, as seen in Helios and RIVER, which push the boundaries of long video generation and real-time interaction benchmarks for video LLMs. Additionally, papers like BeamPERL and Memex(RL) showcase innovative approaches to parameter-efficient reinforcement learning and long-horizon LLM agents, respectively, highlighting the ongoing efforts to improve the efficiency and scalability of AI models. The diversity of topics, including heterogeneous agent collaborative reinforcement learning and scientific data-centric research, as explored in Heterogeneous Agent Collaborative Reinforcement Learning and SciDER, demonstrates the rapid progress being made in the field and the potential for interdisciplinary applications.",
+  "date": "2026-03-06",
+  "generated_at": "2026-03-06T03:42:40Z",
+  "total_papers": 246,
+  "must_read_count": 16,
+  "notable_count": 24,
+  "daily_summary": "Today's top-scoring papers underscore significant advancements in AI research, particularly in video generation and large language models. Notably, papers like RealWonder, InfinityStory, and Helios demonstrate substantial progress in real-time video generation, while Memex(RL) and BeamPERL showcase innovative approaches to scaling long-horizon LLM agents and parameter-efficient RL. The intersection of these topics is further explored in papers such as Spilled Energy in Large Language Models, highlighting the complex interplay between model efficiency, generation capabilities, and reasoning mechanisms that define the current state of AI research.",
   "weekly_trends": {
     "hot_topics": [
       {
         "topic": "Computer Vision (cs.CV)",
-        "paper_count": 75,
-        "insight": "Research in computer vision continues to thrive, with a focus on real-time video generation and processing, as seen in papers like Helios: Real Real-Time Long Video Generation Model and RIVER: A Real-Time Interaction Benchmark for Video LLMs"
+        "paper_count": 60,
+        "insight": "Advances in video generation, with papers like RealWonder, InfinityStory, and Helios, showcasing real-time physical action-conditioned video generation and unlimited video generation with world consistency."
       },
       {
         "topic": "Machine Learning (cs.LG)",
-        "paper_count": 80,
-        "insight": "Advances in machine learning are being driven by the development of more efficient and scalable models, such as BeamPERL: Parameter-Efficient RL with Verifiable Rewards and Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory"
+        "paper_count": 74,
+        "insight": "Research focus on scaling long-horizon LLM agents, as seen in Memex(RL), and improving efficiency, such as in MOOSE-Star, which unlocks tractable training for scientific discovery."
       },
       {
-        "topic": "Artificial Intelligence (cs.AI)",
-        "paper_count": 77,
-        "insight": "Research in artificial intelligence is becoming increasingly interdisciplinary, with papers like SciDER: Scientific Data-centric End-to-end Researcher and ParEVO: Synthesizing Code for Irregular Data showcasing the integration of AI with other fields"
+        "topic": "Natural Language Processing (cs.CL)",
+        "paper_count": 49,
+        "insight": "Investigations into large language models, including Spilled Energy in Large Language Models, and the development of agentic baselines, like Towards Multimodal Lifelong Understanding."
       }
     ],
     "key_developments": [
-      "The development of real-time video generation models like Helios, which achieves state-of-the-art results in long video generation",
-      "The introduction of parameter-efficient reinforcement learning methods like BeamPERL, which enables the specialization of compact large language models for specific tasks",
-      "The creation of benchmarks like RIVER, which evaluates the performance of video large language models in real-time interaction scenarios"
+      "The introduction of RealWonder, a real-time physical action-conditioned video generation model, which achieves high-quality video generation.",
+      "The development of Memex(RL), which scales long-horizon LLM agents via indexed experience memory, pushing the boundaries of LLM capabilities.",
+      "The proposal of HDINO, a concise and efficient open-vocabulary detector, highlighting advancements in object detection and recognition."
     ],
     "emerging_trends": [
-      "There is a growing interest in the development of more efficient and scalable AI models, with a focus on real-time processing and generation of multimedia data.",
-      "The integration of AI with other fields, such as science and programming, is becoming increasingly prominent, with papers like SciDER and ParEVO showcasing the potential of AI to drive innovation in these areas."
+      "There is a growing focus on multimodal understanding, with papers like Towards Multimodal Lifelong Understanding, indicating a shift towards more comprehensive and interactive AI systems.",
+      "The integration of reinforcement learning and large language models, as seen in BeamPERL, is becoming increasingly prominent, enabling more sophisticated and specialized AI models."
     ],
     "summary": [
-      "This week in AI research saw significant advancements in computer vision, machine learning, and artificial intelligence, with a focus on real-time processing and generation of multimedia data.",
-      "The development of more efficient and scalable models, such as BeamPERL and Memex(RL), is driving progress in these areas, with applications in fields like robotics, natural language processing, and programming.",
-      "As AI continues to evolve, we can expect to see further integration with other disciplines, leading to innovative solutions and applications that transform the way we live and work."
+      "This week in AI research saw significant advancements in computer vision, machine learning, and natural language processing, with a focus on video generation, LLM scaling, and multimodal understanding.",
+      "Papers like RealWonder, InfinityStory, and Memex(RL) demonstrated substantial progress in their respective areas, showcasing the potential for real-time video generation, unlimited video creation, and improved LLM efficiency.",
+      "As the field continues to evolve, we can expect to see further developments in multimodal interaction, reinforcement learning, and large language models, driving innovation and applications in various domains."
     ]
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 192
+    "arXiv": 196
   },
   "tags": {
-    "cs.LG": 80,
-    "cs.AI": 77,
-    "cs.CV": 75,
-    "cs.CL": 30,
-    "cs.RO": 15,
-    "stat.ML": 10,
-    "cs.CR": 9,
-    "cs.HC": 7,
-    "cs.SE": 6,
-    "cs.CY": 6,
-    "cs.SD": 5,
-    "cs.NE": 4,
-    "cs.IR": 3,
-    "cs.LO": 3,
-    "stat.ME": 3,
-    "cs.SI": 2,
-    "cs.NI": 2,
-    "cs.GR": 2,
+    "cs.AI": 85,
+    "cs.LG": 74,
+    "cs.CV": 60,
+    "cs.CL": 49,
+    "cs.RO": 12,
+    "stat.ML": 12,
+    "cs.HC": 5,
+    "cs.SD": 4,
+    "cs.MA": 4,
+    "cs.GR": 3,
+    "cs.AR": 2,
+    "cs.IR": 2,
+    "cs.CR": 2,
     "cs.IT": 2,
-    "cs.MA": 1
+    "cs.DB": 1,
+    "stat.ME": 1,
+    "cs.MM": 1,
+    "cs.SC": 1,
+    "cs.CC": 1,
+    "cs.SE": 1
   },
   "institutions": {
-    "MIT": 2,
+    "MIT": 3,
     "Amazon": 1
   },
   "must_read_ids": [
     "2603.04379",
-    "2603.02604",
-    "2603.03194",
     "2603.04257",
-    "2603.03195",
+    "2602.18671",
+    "2603.03646",
+    "2603.05449",
+    "2603.02604",
+    "2603.02765",
+    "2603.04304",
     "2603.01421",
-    "2603.03985",
     "2603.02510",
+    "2602.22600",
+    "2603.02482",
+    "2603.03756",
     "2603.04124",
-    "2603.00618"
+    "2603.05484",
+    "2603.02924"
   ],
   "notable_ids": [
-    "2603.03283",
     "2603.03447",
-    "2603.04338",
-    "2603.02765",
     "2603.04291",
-    "2603.03205",
-    "2602.22600",
-    "2603.03646",
+    "2603.03281",
+    "2603.03197",
     "2603.01563",
-    "2602.17100",
-    "2603.02482",
-    "2603.02924",
-    "2603.03790",
-    "2603.00729",
-    "2603.03379",
-    "2603.03202",
-    "2602.18671",
-    "2603.01683",
-    "2603.00656",
-    "2603.03282",
+    "2603.04791",
+    "2603.05218",
     "2603.04254",
-    "2603.01375",
     "2602.21773",
-    "2603.01059",
     "2603.01697",
-    "2603.03197"
+    "2603.05433",
+    "2603.03379",
+    "2603.04338",
+    "2603.03975",
+    "2603.03985",
+    "2602.20629",
+    "2603.04743",
+    "2603.03282",
+    "2603.01847",
+    "2603.01059",
+    "2603.05312",
+    "2603.04736",
+    "2603.00618",
+    "2603.01655"
   ]
 }
