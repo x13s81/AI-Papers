@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-<title>AI Papers - 2026-03-07</title>
+<title>AI Papers - 2026-03-08</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-03-07 - 245 papers</description>
-<lastBuildDate>Sat, 07 Mar 2026 14:20:55 +0000</lastBuildDate>
+<description>AI papers as of 2026-03-08 - 245 papers</description>
+<lastBuildDate>Sun, 08 Mar 2026 14:21:47 +0000</lastBuildDate>
 <item>
 <title><![CDATA[Helios: Real Real-Time Long Video Generation Model]]></title>
 <link>https://huggingface.co/papers/2603.04379</link>
@@ -16,30 +16,12 @@ Institution:
 Published: 2026-03-04
 Score: 9/10
 Citations: 0
-Upvotes: 132
+Upvotes: 134
 GitHub: 
 Stars: 0
 
 We introduce Helios, the first 14B video generation model that runs at 19.5 FPS on a single NVIDIA H100 GPU and supports minute-scale generation while matching the quality of a strong baseline. We make breakthroughs along three key dimensions: (1) robustness to long-video drifting without commonly used anti-drifting heuristics such as self-forcing, error-banks, or keyframe sampling; (2) real-time generation without standard acceleration techniques such as KV-cache, sparse/linear attention, or quantization; and (3) training without parallelism or sharding frameworks, enabling image-diffusion-scale batch sizes while fitting up to four 14B models within 80 GB of GPU memory. Specifically, Helios is a 14B autoregressive diffusion model with a unified input representation that natively supports T2V, I2V, and V2V tasks. To mitigate drifting in long-video generation, we characterize typical failure modes and propose simple yet effective training strategies that explicitly simulate drifting during training, while eliminating repetitive motion at its source. For efficiency, we heavily compress the historical and noisy context and reduce the number of sampling steps, yielding computational costs comparable to -- or lower than -- those of 1.3B video generative models. Moreover, we introduce infrastructure-level optimizations that accelerate both inference and training while reducing memory consumption. Extensive experiments demonstrate that Helios consistently outperforms prior methods on both short- and long-video generation. We plan to release the code, base model, and distilled model to support further development by the community.]]></description>
 <pubDate>Wed, 04 Mar 2026 18:45:21 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier]]></title>
-<link>https://huggingface.co/papers/2603.03756</link>
-<guid>2603.03756</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Zonglin Yang, Lidong Bing
-Institution: 
-Published: 2026-03-04
-Score: 9/10
-Citations: 0
-Upvotes: 77
-GitHub: 
-Stars: 0
-
-While large language models (LLMs) show promise in scientific discovery, existing research focuses on inference or feedback-driven training, leaving the direct modeling of the generative reasoning process, P(hypothesis|background) (P(h|b)), unexplored. We demonstrate that directly training P(h|b) is mathematically intractable due to the combinatorial complexity (O(N^k)) inherent in retrieving and composing inspirations from a vast knowledge base. To break this barrier, we introduce MOOSE-Star, a unified framework enabling tractable training and scalable inference. In the best case, MOOSE-Star reduces complexity from exponential to logarithmic (O(log N)) by (1) training on decomposed subtasks derived from the probabilistic equation of discovery, (2) employing motivation-guided hierarchical search to enable logarithmic retrieval and prune irrelevant subspaces, and (3) utilizing bounded composition for robustness against retrieval noise. To facilitate this, we release TOMATO-Star, a dataset of 108,717 decomposed papers (38,400 GPU hours) for training. Furthermore, we show that while brute-force sampling hits a ''complexity wall,'' MOOSE-Star exhibits continuous test-time scaling.]]></description>
-<pubDate>Wed, 04 Mar 2026 06:11:18 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Interactive Benchmarks]]></title>
@@ -52,12 +34,30 @@ Institution:
 Published: 2026-03-05
 Score: 9/10
 Citations: 0
-Upvotes: 13
+Upvotes: 16
 GitHub: 
 Stars: 0
 
 Standard benchmarks have become increasingly unreliable due to saturation, subjectivity, and poor generalization. We argue that evaluating model's ability to acquire information actively is important to assess model's intelligence. We propose Interactive Benchmarks, a unified evaluation paradigm that assesses model's reasoning ability in an interactive process under budget constraints. We instantiate this framework across two settings: Interactive Proofs, where models interact with a judge to deduce objective truths or answers in logic and mathematics; and Interactive Games, where models reason strategically to maximize long-horizon utilities. Our results show that interactive benchmarks provide a robust and faithful assessment of model intelligence, revealing that there is still substantial room to improve in interactive scenarios. Project page: https://github.com/interactivebench/interactivebench]]></description>
 <pubDate>Thu, 05 Mar 2026 02:18:26 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[RealWonder: Real-Time Physical Action-Conditioned Video Generation]]></title>
+<link>https://huggingface.co/papers/2603.05449</link>
+<guid>2603.05449</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Wei Liu, Ziyu Chen, Zizhang Li, Yue Wang, Hong-Xing Yu
+Institution: 
+Published: 2026-03-05
+Score: 9/10
+Citations: 0
+Upvotes: 7
+GitHub: 
+Stars: 0
+
+Current video generation models cannot simulate physical consequences of 3D actions like forces and robotic manipulations, as they lack structural understanding of how actions affect 3D scenes. We present RealWonder, the first real-time system for action-conditioned video generation from a single image. Our key insight is using physics simulation as an intermediate bridge: instead of directly encoding continuous actions, we translate them through physics simulation into visual representations (optical flow and RGB) that video models can process. RealWonder integrates three components: 3D reconstruction from single images, physics simulation, and a distilled video generator requiring only 4 diffusion steps. Our system achieves 13.2 FPS at 480x832 resolution, enabling interactive exploration of forces, robot actions, and camera controls on rigid objects, deformable bodies, fluids, and granular materials. We envision RealWonder opens new opportunities to apply video models in immersive experiences, AR/VR, and robot learning. Our code and model weights are publicly available in our project website: https://liuwei283.github.io/RealWonder/]]></description>
+<pubDate>Thu, 05 Mar 2026 18:22:54 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[SkillNet: Create, Evaluate, and Connect AI Skills]]></title>
@@ -70,7 +70,7 @@ Institution:
 Published: 2026-02-26
 Score: 8/10
 Citations: 0
-Upvotes: 52
+Upvotes: 60
 GitHub: 
 Stars: 0
 
@@ -88,7 +88,7 @@ Institution:
 Published: 2026-02-28
 Score: 8/10
 Citations: 0
-Upvotes: 13
+Upvotes: 14
 GitHub: 
 Stars: 0
 
@@ -106,7 +106,7 @@ Institution:
 Published: 2026-03-04
 Score: 8/10
 Citations: 0
-Upvotes: 12
+Upvotes: 13
 GitHub: 
 Stars: 0
 
@@ -124,7 +124,7 @@ Institution:
 Published: 2026-03-05
 Score: 8/10
 Citations: 0
-Upvotes: 8
+Upvotes: 11
 GitHub: 
 Stars: 0
 
@@ -142,30 +142,12 @@ Institution:
 Published: 2026-03-04
 Score: 8/10
 Citations: 0
-Upvotes: 7
+Upvotes: 8
 GitHub: 
 Stars: 0
 
 Generating long-form storytelling videos with consistent visual narratives remains a significant challenge in video synthesis. We present a novel framework, dataset, and a model that address three critical limitations: background consistency across shots, seamless multi-subject shot-to-shot transitions, and scalability to hour-long narratives. Our approach introduces a background-consistent generation pipeline that maintains visual coherence across scenes while preserving character identity and spatial relationships. We further propose a transition-aware video synthesis module that generates smooth shot transitions for complex scenarios involving multiple subjects entering or exiting frames, going beyond the single-subject limitations of prior work. To support this, we contribute with a synthetic dataset of 10,000 multi-subject transition sequences covering underrepresented dynamic scene compositions. On VBench, InfinityStory achieves the highest Background Consistency (88.94), highest Subject Consistency (82.11), and the best overall average rank (2.80), showing improved stability, smoother transitions, and better temporal coherence.]]></description>
 <pubDate>Wed, 04 Mar 2026 02:10:32 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[RealWonder: Real-Time Physical Action-Conditioned Video Generation]]></title>
-<link>https://huggingface.co/papers/2603.05449</link>
-<guid>2603.05449</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Wei Liu, Ziyu Chen, Zizhang Li, Yue Wang, Hong-Xing Yu
-Institution: 
-Published: 2026-03-05
-Score: 8/10
-Citations: 0
-Upvotes: 6
-GitHub: 
-Stars: 0
-
-Current video generation models cannot simulate physical consequences of 3D actions like forces and robotic manipulations, as they lack structural understanding of how actions affect 3D scenes. We present RealWonder, the first real-time system for action-conditioned video generation from a single image. Our key insight is using physics simulation as an intermediate bridge: instead of directly encoding continuous actions, we translate them through physics simulation into visual representations (optical flow and RGB) that video models can process. RealWonder integrates three components: 3D reconstruction from single images, physics simulation, and a distilled video generator requiring only 4 diffusion steps. Our system achieves 13.2 FPS at 480x832 resolution, enabling interactive exploration of forces, robot actions, and camera controls on rigid objects, deformable bodies, fluids, and granular materials. We envision RealWonder opens new opportunities to apply video models in immersive experiences, AR/VR, and robot learning. Our code and model weights are publicly available in our project website: https://liuwei283.github.io/RealWonder/]]></description>
-<pubDate>Thu, 05 Mar 2026 18:22:54 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[KARL: Knowledge Agents via Reinforcement Learning]]></title>
@@ -278,22 +260,22 @@ Can reinforcement learning with hard, verifiable rewards teach a compact languag
 <pubDate>Wed, 04 Mar 2026 14:42:43 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias]]></title>
-<link>https://huggingface.co/papers/2602.21773</link>
-<guid>2602.21773</guid>
+<title><![CDATA[MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier]]></title>
+<link>https://huggingface.co/papers/2603.03756</link>
+<guid>2603.03756</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: JuneHyoung Kwon, MiHyeon Kim, Eunju Lee, Yoonji Lee, Seunghoon Lee
+Authors: Zonglin Yang, Lidong Bing
 Institution: 
-Published: 2026-02-25
-Score: 8/10
+Published: 2026-03-04
+Score: 7/10
 Citations: 0
-Upvotes: 1
+Upvotes: 81
 GitHub: 
 Stars: 0
 
-Machine unlearning, which enables a model to forget specific data, is crucial for ensuring data privacy and model reliability. However, its effectiveness can be severely undermined in real-world scenarios where models learn unintended biases from spurious correlations within the data. This paper investigates the unique challenges of unlearning from such biased models. We identify a novel phenomenon we term ``shortcut unlearning," where models exhibit an ``easy to learn, yet hard to forget" tendency. Specifically, models struggle to forget easily-learned, bias-aligned samples; instead of forgetting the class attribute, they unlearn the bias attribute, which can paradoxically improve accuracy on the class intended to be forgotten. To address this, we propose CUPID, a new unlearning framework inspired by the observation that samples with different biases exhibit distinct loss landscape sharpness. Our method first partitions the forget set into causal- and bias-approximated subsets based on sample sharpness, then disentangles model parameters into causal and bias pathways, and finally performs a targeted update by routing refined causal and bias gradients to their respective pathways. Extensive experiments on biased datasets including Waterbirds, BAR, and Biased NICO++ demonstrate that our method achieves state-of-the-art forgetting performance and effectively mitigates the shortcut unlearning problem.]]></description>
-<pubDate>Wed, 25 Feb 2026 10:48:51 +0000</pubDate>
+While large language models (LLMs) show promise in scientific discovery, existing research focuses on inference or feedback-driven training, leaving the direct modeling of the generative reasoning process, P(hypothesis|background) (P(h|b)), unexplored. We demonstrate that directly training P(h|b) is mathematically intractable due to the combinatorial complexity (O(N^k)) inherent in retrieving and composing inspirations from a vast knowledge base. To break this barrier, we introduce MOOSE-Star, a unified framework enabling tractable training and scalable inference. In the best case, MOOSE-Star reduces complexity from exponential to logarithmic (O(log N)) by (1) training on decomposed subtasks derived from the probabilistic equation of discovery, (2) employing motivation-guided hierarchical search to enable logarithmic retrieval and prune irrelevant subspaces, and (3) utilizing bounded composition for robustness against retrieval noise. To facilitate this, we release TOMATO-Star, a dataset of 108,717 decomposed papers (38,400 GPU hours) for training. Furthermore, we show that while brute-force sampling hits a ''complexity wall,'' MOOSE-Star exhibits continuous test-time scaling.]]></description>
+<pubDate>Wed, 04 Mar 2026 06:11:18 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[DARE: Aligning LLM Agents with the R Statistical Ecosystem via Distribution-Aware Retrieval]]></title>
@@ -306,7 +288,7 @@ Institution:
 Published: 2026-03-05
 Score: 7/10
 Citations: 0
-Upvotes: 41
+Upvotes: 43
 GitHub: 
 Stars: 0
 
@@ -324,7 +306,7 @@ Institution:
 Published: 2026-03-03
 Score: 7/10
 Citations: 0
-Upvotes: 25
+Upvotes: 26
 GitHub: 
 Stars: 0
 
@@ -342,48 +324,12 @@ Institution:
 Published: 2026-03-04
 Score: 7/10
 Citations: 0
-Upvotes: 19
+Upvotes: 20
 GitHub: 
 Stars: 0
 
 Synthesizing physically plausible articulated human-object interactions (HOI) without 3D/4D supervision remains a fundamental challenge. While recent zero-shot approaches leverage video diffusion models to synthesize human-object interactions, they are largely confined to rigid-object manipulation and lack explicit 4D geometric reasoning. To bridge this gap, we formulate articulated HOI synthesis as a 4D reconstruction problem from monocular video priors: given only a video generated by a diffusion model, we reconstruct a full 4D articulated scene without any 3D supervision. This reconstruction-based approach treats the generated 2D video as supervision for an inverse rendering problem, recovering geometrically consistent and physically plausible 4D scenes that naturally respect contact, articulation, and temporal coherence. We introduce ArtHOI, the first zero-shot framework for articulated human-object interaction synthesis via 4D reconstruction from video priors. Our key designs are: 1) Flow-based part segmentation: leveraging optical flow as a geometric cue to disentangle dynamic from static regions in monocular video; 2) Decoupled reconstruction pipeline: joint optimization of human motion and object articulation is unstable under monocular ambiguity, so we first recover object articulation, then synthesize human motion conditioned on the reconstructed object states. ArtHOI bridges video-based generation and geometry-aware reconstruction, producing interactions that are both semantically aligned and physically grounded. Across diverse articulated scenes (e.g., opening fridges, cabinets, microwaves), ArtHOI significantly outperforms prior methods in contact accuracy, penetration reduction, and articulation fidelity, extending zero-shot interaction synthesis beyond rigid manipulation through reconstruction-informed synthesis.]]></description>
 <pubDate>Wed, 04 Mar 2026 17:58:04 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video]]></title>
-<link>https://huggingface.co/papers/2603.04291</link>
-<guid>2603.04291</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Lingen Li, Guangzhi Wang, Xiaoyu Li, Zhaoyang Zhang, Qi Dou
-Institution: 
-Published: 2026-03-04
-Score: 7/10
-Citations: 0
-Upvotes: 11
-GitHub: 
-Stars: 0
-
-Generating high-quality 360° panoramic videos from perspective input is one of the crucial applications for virtual reality (VR), whereby high-resolution videos are especially important for immersive experience. Existing methods are constrained by computational limitations of vanilla diffusion models, only supporting leq 1K resolution native generation and relying on suboptimal post super-resolution to increase resolution. We introduce CubeComposer, a novel spatio-temporal autoregressive diffusion model that natively generates 4K-resolution 360° videos. By decomposing videos into cubemap representations with six faces, CubeComposer autoregressively synthesizes content in a well-planned spatio-temporal order, reducing memory demands while enabling high-resolution output. Specifically, to address challenges in multi-dimensional autoregression, we propose: (1) a spatio-temporal autoregressive strategy that orchestrates 360° video generation across cube faces and time windows for coherent synthesis; (2) a cube face context management mechanism, equipped with a sparse context attention design to improve efficiency; and (3) continuity-aware techniques, including cube-aware positional encoding, padding, and blending to eliminate boundary seams. Extensive experiments on benchmark datasets demonstrate that CubeComposer outperforms state-of-the-art methods in native resolution and visual quality, supporting practical VR application scenarios. Project page: https://lg-li.github.io/project/cubecomposer]]></description>
-<pubDate>Wed, 04 Mar 2026 17:06:56 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[UltraDexGrasp: Learning Universal Dexterous Grasping for Bimanual Robots with Synthetic Data]]></title>
-<link>https://huggingface.co/papers/2603.05312</link>
-<guid>2603.05312</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Sizhe Yang, Yiman Xie, Zhixuan Liang, Yang Tian, Jia Zeng
-Institution: 
-Published: 2026-03-05
-Score: 7/10
-Citations: 0
-Upvotes: 4
-GitHub: 
-Stars: 0
-
-Grasping is a fundamental capability for robots to interact with the physical world. Humans, equipped with two hands, autonomously select appropriate grasp strategies based on the shape, size, and weight of objects, enabling robust grasping and subsequent manipulation. In contrast, current robotic grasping remains limited, particularly in multi-strategy settings. Although substantial efforts have targeted parallel-gripper and single-hand grasping, dexterous grasping for bimanual robots remains underexplored, with data being a primary bottleneck. Achieving physically plausible and geometrically conforming grasps that can withstand external wrenches poses significant challenges. To address these issues, we introduce UltraDexGrasp, a framework for universal dexterous grasping with bimanual robots. The proposed data-generation pipeline integrates optimization-based grasp synthesis with planning-based demonstration generation, yielding high-quality and diverse trajectories across multiple grasp strategies. With this framework, we curate UltraDexGrasp-20M, a large-scale, multi-strategy grasp dataset comprising 20 million frames across 1,000 objects. Based on UltraDexGrasp-20M, we further develop a simple yet effective grasp policy that takes point clouds as input, aggregates scene features via unidirectional attention, and predicts control commands. Trained exclusively on synthetic data, the policy achieves robust zero-shot sim-to-real transfer and consistently succeeds on novel objects with varied shapes, sizes, and weights, attaining an average success rate of 81.2% in real-world universal dexterous grasping. To facilitate future research on grasping with bimanual robots, we open-source the data generation pipeline at https://github.com/InternRobotics/UltraDexGrasp.]]></description>
-<pubDate>Thu, 05 Mar 2026 15:54:21 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification]]></title>
@@ -441,6 +387,24 @@ Tool-augmented large language model (LLM) agents promise to unify scientific rea
 <pubDate>Wed, 04 Mar 2026 02:22:21 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[Distribution-Conditioned Transport]]></title>
+<link>https://huggingface.co/papers/2603.04736</link>
+<guid>2603.04736</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Nic Fishman, Gokul Gowri, Paolo L. B. Fischer, Marinka Zitnik, Omar Abudayyeh
+Institution: 
+Published: 2026-03-05
+Score: 7/10
+Citations: 0
+Upvotes: 2
+GitHub: 
+Stars: 0
+
+Learning a transport model that maps a source distribution to a target distribution is a canonical problem in machine learning, but scientific applications increasingly require models that can generalize to source and target distributions unseen during training. We introduce distribution-conditioned transport (DCT), a framework that conditions transport maps on learned embeddings of source and target distributions, enabling generalization to unseen distribution pairs. DCT also allows semi-supervised learning for distributional forecasting problems: because it learns from arbitrary distribution pairs, it can leverage distributions observed at only one condition to improve transport prediction. DCT is agnostic to the underlying transport mechanism, supporting models ranging from flow matching to distributional divergence-based models (e.g. Wasserstein, MMD). We demonstrate the practical performance benefits of DCT on synthetic benchmarks and four applications in biology: batch effect transfer in single-cell genomics, perturbation prediction from mass cytometry data, learning clonal transcriptional dynamics in hematopoiesis, and modeling T-cell receptor sequence evolution.]]></description>
+<pubDate>Thu, 05 Mar 2026 02:17:08 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models]]></title>
 <link>https://huggingface.co/papers/2603.02482</link>
 <guid>2603.02482</guid>
@@ -496,24 +460,6 @@ Detection Transformer (DETR) and its variants show strong performance on object 
 <pubDate>Mon, 02 Mar 2026 13:26:40 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Distribution-Conditioned Transport]]></title>
-<link>https://huggingface.co/papers/2603.04736</link>
-<guid>2603.04736</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Nic Fishman, Gokul Gowri, Paolo L. B. Fischer, Marinka Zitnik, Omar Abudayyeh
-Institution: 
-Published: 2026-03-05
-Score: 7/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Learning a transport model that maps a source distribution to a target distribution is a canonical problem in machine learning, but scientific applications increasingly require models that can generalize to source and target distributions unseen during training. We introduce distribution-conditioned transport (DCT), a framework that conditions transport maps on learned embeddings of source and target distributions, enabling generalization to unseen distribution pairs. DCT also allows semi-supervised learning for distributional forecasting problems: because it learns from arbitrary distribution pairs, it can leverage distributions observed at only one condition to improve transport prediction. DCT is agnostic to the underlying transport mechanism, supporting models ranging from flow matching to distributional divergence-based models (e.g. Wasserstein, MMD). We demonstrate the practical performance benefits of DCT on synthetic benchmarks and four applications in biology: batch effect transfer in single-cell genomics, perturbation prediction from mass cytometry data, learning clonal transcriptional dynamics in hematopoiesis, and modeling T-cell receptor sequence evolution.]]></description>
-<pubDate>Thu, 05 Mar 2026 02:17:08 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[HDINO: A Concise and Efficient Open-Vocabulary Detector]]></title>
 <link>https://huggingface.co/papers/2603.02924</link>
 <guid>2603.02924</guid>
@@ -542,7 +488,7 @@ Institution:
 Published: 2026-03-03
 Score: 6/10
 Citations: 0
-Upvotes: 137
+Upvotes: 144
 GitHub: 
 Stars: 0
 
@@ -560,7 +506,7 @@ Institution:
 Published: 2026-03-04
 Score: 6/10
 Citations: 0
-Upvotes: 105
+Upvotes: 106
 GitHub: 
 Stars: 0
 
@@ -596,7 +542,7 @@ Institution:
 Published: 2026-03-05
 Score: 6/10
 Citations: 0
-Upvotes: 29
+Upvotes: 30
 GitHub: 
 Stars: 0
 
@@ -614,7 +560,7 @@ Institution:
 Published: 2026-03-03
 Score: 6/10
 Citations: 0
-Upvotes: 24
+Upvotes: 25
 GitHub: 
 Stars: 0
 
@@ -632,7 +578,7 @@ Institution:
 Published: 2026-03-04
 Score: 6/10
 Citations: 0
-Upvotes: 12
+Upvotes: 13
 GitHub: 
 Stars: 0
 
@@ -699,6 +645,24 @@ Reasoning models think out loud, but much of what they say is noise. We introduc
 <pubDate>Thu, 05 Mar 2026 17:54:40 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[UltraDexGrasp: Learning Universal Dexterous Grasping for Bimanual Robots with Synthetic Data]]></title>
+<link>https://huggingface.co/papers/2603.05312</link>
+<guid>2603.05312</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Sizhe Yang, Yiman Xie, Zhixuan Liang, Yang Tian, Jia Zeng
+Institution: 
+Published: 2026-03-05
+Score: 6/10
+Citations: 0
+Upvotes: 5
+GitHub: 
+Stars: 0
+
+Grasping is a fundamental capability for robots to interact with the physical world. Humans, equipped with two hands, autonomously select appropriate grasp strategies based on the shape, size, and weight of objects, enabling robust grasping and subsequent manipulation. In contrast, current robotic grasping remains limited, particularly in multi-strategy settings. Although substantial efforts have targeted parallel-gripper and single-hand grasping, dexterous grasping for bimanual robots remains underexplored, with data being a primary bottleneck. Achieving physically plausible and geometrically conforming grasps that can withstand external wrenches poses significant challenges. To address these issues, we introduce UltraDexGrasp, a framework for universal dexterous grasping with bimanual robots. The proposed data-generation pipeline integrates optimization-based grasp synthesis with planning-based demonstration generation, yielding high-quality and diverse trajectories across multiple grasp strategies. With this framework, we curate UltraDexGrasp-20M, a large-scale, multi-strategy grasp dataset comprising 20 million frames across 1,000 objects. Based on UltraDexGrasp-20M, we further develop a simple yet effective grasp policy that takes point clouds as input, aggregates scene features via unidirectional attention, and predicts control commands. Trained exclusively on synthetic data, the policy achieves robust zero-shot sim-to-real transfer and consistently succeeds on novel objects with varied shapes, sizes, and weights, attaining an average success rate of 81.2% in real-world universal dexterous grasping. To facilitate future research on grasping with bimanual robots, we open-source the data generation pipeline at https://github.com/InternRobotics/UltraDexGrasp.]]></description>
+<pubDate>Thu, 05 Mar 2026 15:54:21 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Truncated Step-Level Sampling with Process Rewards for Retrieval-Augmented Reasoning]]></title>
 <link>https://huggingface.co/papers/2602.23440</link>
 <guid>2602.23440</guid>
@@ -715,6 +679,24 @@ Stars: 0
 
 Training large language models to reason with search engines via reinforcement learning is hindered by a fundamental credit assignment problem: existing methods such as Search-R1 provide only a sparse outcome reward after an entire multi-step trajectory, making it infeasible to attribute success or failure to individual reasoning and retrieval decisions. Process-reward methods like StepSearch alleviate this by introducing step-level supervision, but rely on heuristic rewards such as TF-IDF overlap with gold documents, and still sample k complete trajectories per example, retaining high gradient variance. We propose SLATE, a framework built on two complementary ideas: (1) truncated step-level sampling, which generates k trajectories that share a common prefix and differ only at the next step, and (2) dense LLM-as-judge rewards, which replace heuristic scoring with a capable LLM evaluator that assesses the quality of each reasoning step, search query, and answer, providing richer and more reliable supervision. We theoretically prove that under the same dense reward structure, truncated sampling reduces the variance of advantage estimates by up to a factor of T compared to full-trajectory sampling for T-step trajectories, yielding lower-variance, better-targeted policy gradients. Experiments on seven QA benchmarks confirm that SLATE consistently outperforms both sparse-reward and process-reward baselines, with the largest gains on harder multi-hop tasks and smaller models.]]></description>
 <pubDate>Thu, 26 Feb 2026 19:05:40 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[MIBURI: Towards Expressive Interactive Gesture Synthesis]]></title>
+<link>https://huggingface.co/papers/2603.03282</link>
+<guid>2603.03282</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: M. Hamza Mughal, Rishabh Dabral, Vera Demberg, Christian Theobalt
+Institution: 
+Published: 2026-03-03
+Score: 6/10
+Citations: 0
+Upvotes: 3
+GitHub: 
+Stars: 0
+
+Embodied Conversational Agents (ECAs) aim to emulate human face-to-face interaction through speech, gestures, and facial expressions. Current large language model (LLM)-based conversational agents lack embodiment and the expressive gestures essential for natural interaction. Existing solutions for ECAs often produce rigid, low-diversity motions, that are unsuitable for human-like interaction. Alternatively, generative methods for co-speech gesture synthesis yield natural body gestures but depend on future speech context and require long run-times. To bridge this gap, we present MIBURI, the first online, causal framework for generating expressive full-body gestures and facial expressions synchronized with real-time spoken dialogue. We employ body-part aware gesture codecs that encode hierarchical motion details into multi-level discrete tokens. These tokens are then autoregressively generated by a two-dimensional causal framework conditioned on LLM-based speech-text embeddings, modeling both temporal dynamics and part-level motion hierarchy in real time. Further, we introduce auxiliary objectives to encourage expressive and diverse gestures while preventing convergence to static poses. Comparative evaluations demonstrate that our causal and real-time approach produces natural and contextually aligned gestures against recent baselines. We urge the reader to explore demo videos on https://vcai.mpi-inf.mpg.de/projects/MIBURI/.]]></description>
+<pubDate>Tue, 03 Mar 2026 18:59:51 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding]]></title>
@@ -753,6 +735,24 @@ Test-time policy adaptation for multi-turn interactions (T2PAM) is essential for
 <pubDate>Mon, 02 Mar 2026 02:16:20 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias]]></title>
+<link>https://huggingface.co/papers/2602.21773</link>
+<guid>2602.21773</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: JuneHyoung Kwon, MiHyeon Kim, Eunju Lee, Yoonji Lee, Seunghoon Lee
+Institution: 
+Published: 2026-02-25
+Score: 6/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+Machine unlearning, which enables a model to forget specific data, is crucial for ensuring data privacy and model reliability. However, its effectiveness can be severely undermined in real-world scenarios where models learn unintended biases from spurious correlations within the data. This paper investigates the unique challenges of unlearning from such biased models. We identify a novel phenomenon we term ``shortcut unlearning," where models exhibit an ``easy to learn, yet hard to forget" tendency. Specifically, models struggle to forget easily-learned, bias-aligned samples; instead of forgetting the class attribute, they unlearn the bias attribute, which can paradoxically improve accuracy on the class intended to be forgotten. To address this, we propose CUPID, a new unlearning framework inspired by the observation that samples with different biases exhibit distinct loss landscape sharpness. Our method first partitions the forget set into causal- and bias-approximated subsets based on sample sharpness, then disentangles model parameters into causal and bias pathways, and finally performs a targeted update by routing refined causal and bias gradients to their respective pathways. Extensive experiments on biased datasets including Waterbirds, BAR, and Biased NICO++ demonstrate that our method achieves state-of-the-art forgetting performance and effectively mitigates the shortcut unlearning problem.]]></description>
+<pubDate>Wed, 25 Feb 2026 10:48:51 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images]]></title>
 <link>https://huggingface.co/papers/2603.02210</link>
 <guid>2603.02210</guid>
@@ -781,7 +781,7 @@ Institution:
 Published: 2026-03-04
 Score: 5/10
 Citations: 0
-Upvotes: 15
+Upvotes: 19
 GitHub: 
 Stars: 0
 
@@ -799,7 +799,7 @@ Institution:
 Published: 2026-02-26
 Score: 5/10
 Citations: 0
-Upvotes: 13
+Upvotes: 16
 GitHub: 
 Stars: 0
 
@@ -817,12 +817,48 @@ Institution:
 Published: 2026-03-02
 Score: 5/10
 Citations: 0
-Upvotes: 13
+Upvotes: 14
 GitHub: 
 Stars: 0
 
 Low-bit attention, such as SageAttention, has emerged as an effective approach for accelerating model inference, but its applicability to training remains poorly understood. In prior work, we introduced SageBwd, a trainable INT8 attention that quantizes six of seven attention matrix multiplications while preserving fine-tuning performance. However, SageBwd exhibited a persistent performance gap to full-precision attention (FPA) during pre-training. In this work, we investigate why this gap occurs and demonstrate that SageBwd matches full-precision attention during pretraining. Through experiments and theoretical analysis, we reach a few important insights and conclusions: (i) QK-norm is necessary for stable training at large tokens per step, (ii) quantization errors primarily arise from the backward-pass score gradient dS, (iii) reducing tokens per step enables SageBwd to match FPA performance in pre-training, and (iv) K-smoothing remains essential for training stability, while Q-smoothing provides limited benefit during pre-training.]]></description>
 <pubDate>Mon, 02 Mar 2026 18:39:49 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in Large Vision-Language Models]]></title>
+<link>https://huggingface.co/papers/2603.01236</link>
+<guid>2603.01236</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Changwoo Baek, Jouwon Song, Sohyeon Kim, Kyeongbo Kong
+Institution: 
+Published: 2026-03-01
+Score: 5/10
+Citations: 0
+Upvotes: 11
+GitHub: 
+Stars: 0
+
+Large Vision-Language Models (LVLMs) have adopted visual token pruning strategies to mitigate substantial computational overhead incurred by extensive visual token sequences. While prior works primarily focus on either attention-based or diversity-based pruning methods, in-depth analysis of these approaches' characteristics and limitations remains largely unexplored. In this work, we conduct thorough empirical analysis using effective rank (erank) as a measure of feature diversity and attention score entropy to investigate visual token processing mechanisms and analyze the strengths and weaknesses of each approach. Our analysis reveals two insights: (1) Our erank-based quantitative analysis shows that many diversity-oriented pruning methods preserve substantially less feature diversity than intended; moreover, analysis using the CHAIR dataset reveals that the diversity they do retain is closely tied to increased hallucination frequency compared to attention-based pruning. (2) We further observe that attention-based approaches are more effective on simple images where visual evidence is concentrated, while diversity-based methods better handle complex images with distributed features. Building on these empirical insights, we show that incorporating image-aware adjustments into existing hybrid pruning strategies consistently improves their performance. We also provide a minimal instantiation of our empirical findings through a simple adaptive pruning mechanism, which achieves strong and reliable performance across standard benchmarks as well as hallucination-specific evaluations. Our project page available at https://cvsp-lab.github.io/AgilePruner.]]></description>
+<pubDate>Sun, 01 Mar 2026 19:14:39 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video]]></title>
+<link>https://huggingface.co/papers/2603.04291</link>
+<guid>2603.04291</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Lingen Li, Guangzhi Wang, Xiaoyu Li, Zhaoyang Zhang, Qi Dou
+Institution: 
+Published: 2026-03-04
+Score: 5/10
+Citations: 0
+Upvotes: 11
+GitHub: 
+Stars: 0
+
+Generating high-quality 360° panoramic videos from perspective input is one of the crucial applications for virtual reality (VR), whereby high-resolution videos are especially important for immersive experience. Existing methods are constrained by computational limitations of vanilla diffusion models, only supporting leq 1K resolution native generation and relying on suboptimal post super-resolution to increase resolution. We introduce CubeComposer, a novel spatio-temporal autoregressive diffusion model that natively generates 4K-resolution 360° videos. By decomposing videos into cubemap representations with six faces, CubeComposer autoregressively synthesizes content in a well-planned spatio-temporal order, reducing memory demands while enabling high-resolution output. Specifically, to address challenges in multi-dimensional autoregression, we propose: (1) a spatio-temporal autoregressive strategy that orchestrates 360° video generation across cube faces and time windows for coherent synthesis; (2) a cube face context management mechanism, equipped with a sparse context attention design to improve efficiency; and (3) continuity-aware techniques, including cube-aware positional encoding, padding, and blending to eliminate boundary seams. Extensive experiments on benchmark datasets demonstrate that CubeComposer outperforms state-of-the-art methods in native resolution and visual quality, supporting practical VR application scenarios. Project page: https://lg-li.github.io/project/cubecomposer]]></description>
+<pubDate>Wed, 04 Mar 2026 17:06:56 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Locality-Attending Vision Transformer]]></title>
@@ -835,48 +871,12 @@ Institution:
 Published: 2026-03-05
 Score: 5/10
 Citations: 0
-Upvotes: 5
+Upvotes: 6
 GitHub: 
 Stars: 0
 
 Vision transformers have demonstrated remarkable success in classification by leveraging global self-attention to capture long-range dependencies. However, this same mechanism can obscure fine-grained spatial details crucial for tasks such as segmentation. In this work, we seek to enhance segmentation performance of vision transformers after standard image-level classification training. More specifically, we present a simple yet effective add-on that improves performance on segmentation tasks while retaining vision transformers' image-level recognition capabilities. In our approach, we modulate the self-attention with a learnable Gaussian kernel that biases the attention toward neighboring patches. We further refine the patch representations to learn better embeddings at patch positions. These modifications encourage tokens to focus on local surroundings and ensure meaningful representations at spatial positions, while still preserving the model's ability to incorporate global information. Experiments demonstrate the effectiveness of our modifications, evidenced by substantial segmentation gains on three benchmarks (e.g., over 6% and 4% on ADE20K for ViT Tiny and Base), without changing the training regime or sacrificing classification performance. The code is available at https://github.com/sinahmr/LocAtViT/.]]></description>
 <pubDate>Thu, 05 Mar 2026 07:31:49 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[MIBURI: Towards Expressive Interactive Gesture Synthesis]]></title>
-<link>https://huggingface.co/papers/2603.03282</link>
-<guid>2603.03282</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: M. Hamza Mughal, Rishabh Dabral, Vera Demberg, Christian Theobalt
-Institution: 
-Published: 2026-03-03
-Score: 5/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-Embodied Conversational Agents (ECAs) aim to emulate human face-to-face interaction through speech, gestures, and facial expressions. Current large language model (LLM)-based conversational agents lack embodiment and the expressive gestures essential for natural interaction. Existing solutions for ECAs often produce rigid, low-diversity motions, that are unsuitable for human-like interaction. Alternatively, generative methods for co-speech gesture synthesis yield natural body gestures but depend on future speech context and require long run-times. To bridge this gap, we present MIBURI, the first online, causal framework for generating expressive full-body gestures and facial expressions synchronized with real-time spoken dialogue. We employ body-part aware gesture codecs that encode hierarchical motion details into multi-level discrete tokens. These tokens are then autoregressively generated by a two-dimensional causal framework conditioned on LLM-based speech-text embeddings, modeling both temporal dynamics and part-level motion hierarchy in real time. Further, we introduce auxiliary objectives to encourage expressive and diverse gestures while preventing convergence to static poses. Comparative evaluations demonstrate that our causal and real-time approach produces natural and contextually aligned gestures against recent baselines. We urge the reader to explore demo videos on https://vcai.mpi-inf.mpg.de/projects/MIBURI/.]]></description>
-<pubDate>Tue, 03 Mar 2026 18:59:51 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration]]></title>
-<link>https://huggingface.co/papers/2603.03823</link>
-<guid>2603.03823</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jialong Chen, Xander Xu, Hu Wei, Chuan Chen, Bing Zhao
-Institution: 
-Published: 2026-03-04
-Score: 5/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-Large language model (LLM)-powered agents have demonstrated strong capabilities in automating software engineering tasks such as static bug fixing, as evidenced by benchmarks like SWE-bench. However, in the real world, the development of mature software is typically predicated on complex requirement changes and long-term feature iterations -- a process that static, one-shot repair paradigms fail to capture. To bridge this gap, we propose SWE-CI, the first repository-level benchmark built upon the Continuous Integration loop, aiming to shift the evaluation paradigm for code generation from static, short-term functional correctness toward dynamic, long-term maintainability. The benchmark comprises 100 tasks, each corresponding on average to an evolution history spanning 233 days and 71 consecutive commits in a real-world code repository. SWE-CI requires agents to systematically resolve these tasks through dozens of rounds of analysis and coding iterations. SWE-CI provides valuable insights into how well agents can sustain code quality throughout long-term evolution.]]></description>
-<pubDate>Wed, 04 Mar 2026 08:20:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Lightweight Visual Reasoning for Socially-Aware Robots]]></title>
@@ -897,22 +897,22 @@ Robots operating in shared human environments must not only navigate, interact, 
 <pubDate>Wed, 04 Mar 2026 11:08:44 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in Large Vision-Language Models]]></title>
-<link>https://huggingface.co/papers/2603.01236</link>
-<guid>2603.01236</guid>
+<title><![CDATA[SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration]]></title>
+<link>https://huggingface.co/papers/2603.03823</link>
+<guid>2603.03823</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Changwoo Baek, Jouwon Song, Sohyeon Kim, Kyeongbo Kong
+Authors: Jialong Chen, Xander Xu, Hu Wei, Chuan Chen, Bing Zhao
 Institution: 
-Published: 2026-03-01
+Published: 2026-03-04
 Score: 4/10
 Citations: 0
-Upvotes: 10
+Upvotes: 3
 GitHub: 
 Stars: 0
 
-Large Vision-Language Models (LVLMs) have adopted visual token pruning strategies to mitigate substantial computational overhead incurred by extensive visual token sequences. While prior works primarily focus on either attention-based or diversity-based pruning methods, in-depth analysis of these approaches' characteristics and limitations remains largely unexplored. In this work, we conduct thorough empirical analysis using effective rank (erank) as a measure of feature diversity and attention score entropy to investigate visual token processing mechanisms and analyze the strengths and weaknesses of each approach. Our analysis reveals two insights: (1) Our erank-based quantitative analysis shows that many diversity-oriented pruning methods preserve substantially less feature diversity than intended; moreover, analysis using the CHAIR dataset reveals that the diversity they do retain is closely tied to increased hallucination frequency compared to attention-based pruning. (2) We further observe that attention-based approaches are more effective on simple images where visual evidence is concentrated, while diversity-based methods better handle complex images with distributed features. Building on these empirical insights, we show that incorporating image-aware adjustments into existing hybrid pruning strategies consistently improves their performance. We also provide a minimal instantiation of our empirical findings through a simple adaptive pruning mechanism, which achieves strong and reliable performance across standard benchmarks as well as hallucination-specific evaluations. Our project page available at https://cvsp-lab.github.io/AgilePruner.]]></description>
-<pubDate>Sun, 01 Mar 2026 19:14:39 +0000</pubDate>
+Large language model (LLM)-powered agents have demonstrated strong capabilities in automating software engineering tasks such as static bug fixing, as evidenced by benchmarks like SWE-bench. However, in the real world, the development of mature software is typically predicated on complex requirement changes and long-term feature iterations -- a process that static, one-shot repair paradigms fail to capture. To bridge this gap, we propose SWE-CI, the first repository-level benchmark built upon the Continuous Integration loop, aiming to shift the evaluation paradigm for code generation from static, short-term functional correctness toward dynamic, long-term maintainability. The benchmark comprises 100 tasks, each corresponding on average to an evolution history spanning 233 days and 71 consecutive commits in a real-world code repository. SWE-CI requires agents to systematically resolve these tasks through dozens of rounds of analysis and coding iterations. SWE-CI provides valuable insights into how well agents can sustain code quality throughout long-term evolution.]]></description>
+<pubDate>Wed, 04 Mar 2026 08:20:25 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Transformer-Based Inpainting for Real-Time 3D Streaming in Sparse Multi-Camera Setups]]></title>
