@@ -33950,5 +33950,301 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-08"
+  },
+  "2603.06408": {
+    "title": "Physical Simulator In-the-Loop Video Generation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion-based Video Generation",
+          "brief": "A technique for generating videos using diffusion models"
+        },
+        {
+          "name": "Physical Simulator",
+          "brief": "A system that simulates real-world physics for objects and scenes"
+        },
+        {
+          "name": "4D Scene Reconstruction",
+          "brief": "The process of reconstructing 3D scenes over time"
+        },
+        {
+          "name": "Test-Time Texture Consistency Optimization (TTCO)",
+          "brief": "A technique for maintaining texture consistency during object movement"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand video generation and scene reconstruction"
+        },
+        {
+          "topic": "Physics and Mechanics",
+          "why_needed": "To comprehend the physical laws and constraints used in the simulator"
+        },
+        {
+          "topic": "Machine Learning and Deep Learning",
+          "why_needed": "To understand the diffusion models and optimization techniques used in the paper"
+        },
+        {
+          "topic": "Graphics and Animation",
+          "why_needed": "To appreciate the challenges of generating realistic videos"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-09"
+  },
+  "2603.05888": {
+    "title": "PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Autoregressive Mesh Generation",
+          "brief": "A method to generate 3D meshes one step at a time, based on previous steps"
+        },
+        {
+          "name": "Mesh-Native Scene Reconstruction",
+          "brief": "Reconstructing 3D scenes directly as meshes, without intermediate representations"
+        },
+        {
+          "name": "Single-View Scene Reconstruction",
+          "brief": "Reconstructing 3D scenes from a single 2D image"
+        },
+        {
+          "name": "Cross-Attention Mechanism",
+          "brief": "A technique to combine information from different sources, such as images and point clouds"
+        },
+        {
+          "name": "Point-Cloud Encoder",
+          "brief": "A neural network component that processes 3D point cloud data"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the neural network architectures and training procedures used in PixARMesh"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand image processing, feature extraction, and 3D reconstruction techniques"
+        },
+        {
+          "topic": "3D Geometry and Mesh Processing",
+          "why_needed": "To understand the representation and manipulation of 3D meshes"
+        },
+        {
+          "topic": "Generative Models",
+          "why_needed": "To understand the concepts of autoregressive generation and token-based representation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-09"
+  },
+  "2602.23229": {
+    "title": "Large Multimodal Models as General In-Context Classifiers",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Multimodal Models (LMMs)",
+          "brief": "Models that can process and integrate multiple forms of data, such as text and images, for various tasks"
+        },
+        {
+          "name": "Contrastive Vision-Language Models (VLMs)",
+          "brief": "Models that learn to align text and image representations using contrastive learning"
+        },
+        {
+          "name": "In-Context Learning",
+          "brief": "Ability of models to learn from a few examples provided at test time"
+        },
+        {
+          "name": "Zero-Shot Classification",
+          "brief": "Ability of models to classify unseen classes without any training examples"
+        },
+        {
+          "name": "Open-World Classification",
+          "brief": "Classification task where the model must handle unseen classes and reject unknown examples"
+        },
+        {
+          "name": "CIRCLE Method",
+          "brief": "A simple training-free method for assigning pseudo-labels to in-context examples and refining them iteratively"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and their applications"
+        },
+        {
+          "topic": "Multimodal Learning",
+          "why_needed": "To comprehend how models can process and integrate multiple forms of data"
+        },
+        {
+          "topic": "Contrastive Learning",
+          "why_needed": "To understand how VLMs learn to align text and image representations"
+        },
+        {
+          "topic": "Classification Tasks",
+          "why_needed": "To understand the differences between closed-world and open-world classification"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-09"
+  },
+  "2603.04304": {
+    "title": "V_1: Unifying Generation and Self-Verification for Parallel Reasoners",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Parallel Reasoners",
+          "brief": "Methods that leverage inference-time compute to improve task outcomes"
+        },
+        {
+          "name": "Self-Verification",
+          "brief": "The process of identifying correct solutions among candidates"
+        },
+        {
+          "name": "Pairwise Ranking",
+          "brief": "A method of ranking candidates based on their relative correctness"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A framework for training models to make decisions in complex environments"
+        },
+        {
+          "name": "Uncertainty-Guided Algorithm",
+          "brief": "An algorithm that dynamically allocates compute based on uncertainty"
+        },
+        {
+          "name": "Tournament-Based Ranking",
+          "brief": "A method of ranking candidates based on a tournament-style competition"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of model training, inference, and reinforcement learning"
+        },
+        {
+          "topic": "Code Generation",
+          "why_needed": "To understand the application of V_1 to code generation benchmarks"
+        },
+        {
+          "topic": "Math Reasoning",
+          "why_needed": "To understand the application of V_1 to math reasoning benchmarks"
+        },
+        {
+          "topic": "Test-Time Scaling",
+          "why_needed": "To understand the concept of scaling models at test-time to improve performance"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of model architecture, training, and optimization"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-09"
+  },
+  "2603.02083": {
+    "title": "π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A subfield of machine learning that involves training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Vision-Language-Action (VLA) Models",
+          "brief": "Models that integrate visual, linguistic, and action-based inputs to enable embodied control"
+        },
+        {
+          "name": "Flow-based Models",
+          "brief": "Probabilistic models that use normalizing flows to transform complex distributions into simpler ones"
+        },
+        {
+          "name": "Online Reinforcement Learning",
+          "brief": "A type of RL that involves learning from interactions with the environment in real-time"
+        },
+        {
+          "name": "Fine-Tuning",
+          "brief": "A technique used to adapt pre-trained models to new tasks or environments"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and their applications"
+        },
+        {
+          "topic": "Probabilistic Modeling",
+          "why_needed": "To grasp the concepts of likelihoods, distributions, and normalizing flows"
+        },
+        {
+          "topic": "Reinforcement Learning Algorithms",
+          "why_needed": "To understand the challenges of online RL and the role of value networks"
+        },
+        {
+          "topic": "Computer Vision and Natural Language Processing",
+          "why_needed": "To appreciate the integration of visual and linguistic inputs in VLA models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-09"
+  },
+  "2603.06199": {
+    "title": "FlashPrefill: Instantaneous Pattern Discovery and Thresholding for Ultra-Fast Long-Context Prefilling",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Long-context modeling",
+          "brief": "A capability for Large Language Models to handle long sequences of data"
+        },
+        {
+          "name": "Sparse attention mechanisms",
+          "brief": "Techniques to reduce computational complexity in attention-based models"
+        },
+        {
+          "name": "Prefilling phase",
+          "brief": "A compute-intensive phase in Large Language Models where context is filled"
+        },
+        {
+          "name": "Dynamic thresholding",
+          "brief": "A mechanism to eliminate long-tail distribution and enhance sparsity in attention patterns"
+        },
+        {
+          "name": "Block-searching technique",
+          "brief": "A method to locate dynamic vertical, slash, and block-sparse attention patterns"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models",
+          "why_needed": "To understand the context and importance of long-context modeling"
+        },
+        {
+          "topic": "Attention mechanisms",
+          "why_needed": "To comprehend the challenges and limitations of current attention-based models"
+        },
+        {
+          "topic": "Sparse modeling techniques",
+          "why_needed": "To appreciate the trade-offs and benefits of sparse attention mechanisms"
+        },
+        {
+          "topic": "Computational complexity",
+          "why_needed": "To recognize the need for efficient algorithms in Large Language Models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-09"
   }
 }
