@@ -1,27 +1,55 @@
 {
   "date": "2026-03-10",
-  "generated_at": "2026-03-10T03:40:53Z",
-  "total_papers": 249,
-  "must_read_count": 10,
-  "notable_count": 27,
-  "daily_summary": "Today's top-scoring papers offer significant advancements in AI research, particularly in the areas of benchmarking, reasoning, and multimodal processing. Notably, papers such as \"Interactive Benchmarks\" and \"\\$OneMillion-Bench: How Far are Language Agents from Human Experts?\" push the boundaries of evaluating AI performance, while \"nabla-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space\" and \"τ-Knowledge: Evaluating Conversational Agents over Unstructured Knowledge\" delve into the intricacies of language model reasoning and knowledge evaluation. Furthermore, innovative approaches like \"Penguin-VL: Exploring the Efficiency Limits of VLM with LLM-based Vision Encoders\" and \"PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction\" demonstrate promising directions in vision-language modeling and 3D scene reconstruction.",
-  "weekly_trends": {},
+  "generated_at": "2026-03-10T14:44:16Z",
+  "total_papers": 240,
+  "must_read_count": 9,
+  "notable_count": 28,
+  "daily_summary": "Today's top-scoring papers offer significant advancements in AI research, particularly in areas such as neural memory frameworks, as seen in HY-WU (Part I), and robustness improvement in vision transformers, as explored in Concept-Guided Fine-Tuning. The development of innovative methods like MedSteer's counterfactual endoscopic synthesis and nabla-Reasoner's test-time gradient descent in latent space also underscores the rapid progress being made in specialized domains. Furthermore, benchmarks like OfficeQA Pro and \\$OneMillion-Bench provide valuable insights into the current capabilities and limitations of language agents, highlighting the need for continued innovation in areas like AutoResearch-RL's autonomous neural architecture discovery.",
+  "weekly_trends": {
+    "hot_topics": [
+      {
+        "topic": "Machine Learning (cs.LG)",
+        "paper_count": 77,
+        "insight": "Research in machine learning continues to dominate, with papers like AutoResearch-RL exploring autonomous neural architecture discovery and Breaking Training Bottlenecks focusing on effective reinforcement learning for coding models."
+      },
+      {
+        "topic": "Artificial Intelligence (cs.AI)",
+        "paper_count": 73,
+        "insight": "The cs.AI category saw significant activity, including the introduction of Concept-Guided Fine-Tuning for steering ViTs away from spurious correlations and improving robustness."
+      },
+      {
+        "topic": "Computer Vision (cs.CV)",
+        "paper_count": 64,
+        "insight": "Advances in computer vision are evident in papers such as HY-WU (Part I), which presents an extensible functional neural memory framework for text-guided image editing, and MedSteer, which demonstrates counterfactual endoscopic synthesis via training-free activation steering."
+      }
+    ],
+    "key_developments": [
+      "The development of extensible neural memory frameworks, as seen in HY-WU (Part I), which could significantly impact text-guided image editing and similar applications.",
+      "The introduction of novel methods for improving the robustness of vision transformers, such as Concept-Guided Fine-Tuning, which aims to steer models away from spurious correlations.",
+      "Advancements in reinforcement learning, including AutoResearch-RL and Breaking Training Bottlenecks, which are crucial for autonomous neural architecture discovery and overcoming training bottlenecks in coding models."
+    ],
+    "emerging_trends": [
+      "There is a noticeable shift towards developing more robust and generalizable models, as evidenced by papers focusing on steering models away from spurious correlations and improving their performance in diverse scenarios.",
+      "The integration of reinforcement learning with other areas of AI research, such as computer vision and natural language processing, is becoming increasingly prominent, with potential applications in autonomous discovery and real-world problem-solving."
+    ],
+    "summary": "This week in AI research saw significant advancements across multiple categories, with a strong focus on machine learning, artificial intelligence, and computer vision. Notable papers such as HY-WU (Part I), MedSteer, and Concept-Guided Fine-Tuning showcased innovative approaches to text-guided image editing, endoscopic synthesis, and improving model robustness. As the field continues to evolve, there is a growing emphasis on developing more robust, generalizable, and autonomous models, with reinforcement learning playing a crucial role in these developments."
+  },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 199
+    "arXiv": 190
   },
   "tags": {
-    "cs.LG": 80,
-    "cs.AI": 78,
-    "cs.CV": 69,
-    "cs.CL": 39,
+    "cs.LG": 77,
+    "cs.AI": 73,
+    "cs.CV": 64,
+    "cs.CL": 35,
     "cs.RO": 16,
     "stat.ML": 12,
-    "cs.IR": 6,
+    "cs.IR": 5,
     "cs.HC": 5,
     "cs.SD": 4,
-    "cs.CR": 4,
     "cs.NE": 4,
+    "cs.CR": 3,
     "cs.GT": 2,
     "cs.GR": 2,
     "cs.SE": 2,
@@ -33,47 +61,47 @@
     "cs.CY": 1
   },
   "institutions": {
-    "MIT": 4
+    "MIT": 5
   },
   "must_read_ids": [
-    "2603.04737",
-    "2603.06569",
-    "2603.04448",
-    "2603.00586",
+    "2603.07236",
     "2603.07980",
-    "2603.08013",
-    "2603.04553",
-    "2603.04370",
-    "2603.05888",
+    "2603.08397",
+    "2603.08309",
+    "2603.07300",
+    "2603.00446",
+    "2603.08655",
+    "2603.07066",
     "2603.04948"
   ],
   "notable_ids": [
-    "2603.04918",
-    "2603.04800",
-    "2603.04750",
-    "2603.06014",
-    "2603.05181",
-    "2603.06408",
-    "2603.03825",
+    "2603.08660",
     "2603.03872",
-    "2603.05607",
-    "2602.22839",
-    "2603.03655",
-    "2603.05504",
-    "2603.05369",
-    "2603.07660",
-    "2603.06199",
-    "2603.06351",
-    "2602.23440",
-    "2603.00695",
-    "2603.04445",
-    "2603.06331",
-    "2603.08708",
+    "2603.08589",
+    "2603.07700",
+    "2603.03825",
+    "2603.06014",
+    "2603.08706",
+    "2603.07901",
+    "2603.07777",
+    "2603.07169",
     "2603.02554",
+    "2603.05607",
+    "2603.04989",
+    "2603.07660",
+    "2603.03269",
+    "2603.08652",
+    "2603.08703",
+    "2603.08013",
+    "2603.08709",
+    "2603.08708",
+    "2603.05344",
+    "2603.07779",
+    "2603.07148",
+    "2603.07475",
+    "2603.04370",
     "2603.01193",
-    "2603.04738",
-    "2603.01666",
-    "2603.05940",
-    "2603.05630"
+    "2603.07799",
+    "2603.05117"
   ]
 }
