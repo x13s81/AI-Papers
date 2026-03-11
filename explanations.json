@@ -35522,5 +35522,393 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-10"
+  },
+  "2603.06333": {
+    "title": "SAHOO: Safeguarded Alignment for High-Order Optimization Objectives in Recursive Self-Improvement",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Recursive Self-Improvement",
+          "brief": "A process where systems can critique, revise, and evaluate their own outputs, leading to potential alignment drift"
+        },
+        {
+          "name": "SAHOO Framework",
+          "brief": "A practical framework to monitor and control drift through three safeguards: Goal Drift Index, constraint preservation checks, and regression-risk quantification"
+        },
+        {
+          "name": "Goal Drift Index (GDI)",
+          "brief": "A learned multi-signal detector combining semantic, lexical, structural, and distributional measures to monitor alignment drift"
+        },
+        {
+          "name": "Constraint Preservation Checks",
+          "brief": "Checks that enforce safety-critical invariants such as syntactic correctness and non-hallucination"
+        },
+        {
+          "name": "Regression-Risk Quantification",
+          "brief": "A method to flag improvement cycles that undo prior gains"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context of recursive self-improvement and the need for alignment preservation"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the concepts of learned detectors, constraint preservation, and regression-risk quantification"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the applications of SAHOO in code generation, mathematical reasoning, and truthfulness"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To grasp the concept of high-order optimization objectives and the trade-offs between capability and alignment"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-11"
+  },
+  "2603.06577": {
+    "title": "Omni-Diffusion: Unified Multimodal Understanding and Generation with Masked Discrete Diffusion",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "Models that process and generate multiple forms of data such as text, speech, and images"
+        },
+        {
+          "name": "Discrete Diffusion Models",
+          "brief": "A type of generative model that uses a diffusion process to model complex data distributions"
+        },
+        {
+          "name": "Mask-based Discrete Diffusion Models",
+          "brief": "A variant of discrete diffusion models that uses masking to capture joint distributions over discrete tokens"
+        },
+        {
+          "name": "Autoregressive Architecture",
+          "brief": "A traditional architecture used in many language models, where each output is generated based on previous outputs"
+        },
+        {
+          "name": "Any-to-Any Multimodal Language Model",
+          "brief": "A model that can understand and generate multiple forms of data, including text, speech, and images, in any combination"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and generative models"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the concepts of language models and text generation"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the concepts of image generation and visual understanding"
+        },
+        {
+          "topic": "Information Theory",
+          "why_needed": "To understand the concepts of entropy, probability, and information theory"
+        },
+        {
+          "topic": "Mathematics (Linear Algebra, Calculus)",
+          "why_needed": "To understand the mathematical formulations of the models and algorithms"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-11"
+  },
+  "2603.09200": {
+    "title": "The Reasoning Trap -- Logical Reasoning as a Mechanistic Pathway to Situational Awareness",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Situational Awareness",
+          "brief": "The capacity of an AI system to recognize its own nature and understand its context"
+        },
+        {
+          "name": "Logical Reasoning",
+          "brief": "The ability of AI systems to reason deductively, inductively, and abductively"
+        },
+        {
+          "name": "RAISE Framework",
+          "brief": "A framework that identifies mechanistic pathways to situational awareness through logical reasoning"
+        },
+        {
+          "name": "Mechanistic Pathways",
+          "brief": "Deductive self inference, inductive context recognition, and abductive self modeling"
+        },
+        {
+          "name": "Escalation Ladder",
+          "brief": "A progression from basic self recognition to strategic deception"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context of situational awareness and logical reasoning in AI systems"
+        },
+        {
+          "topic": "Large Language Models",
+          "why_needed": "To comprehend the role of LLMs in logical reasoning and situational awareness"
+        },
+        {
+          "topic": "Deductive, Inductive, and Abductive Reasoning",
+          "why_needed": "To understand the different types of logical reasoning and their applications"
+        },
+        {
+          "topic": "AI Safety and Ethics",
+          "why_needed": "To appreciate the importance of safeguards and responsible development of AI systems"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-11"
+  },
+  "2603.03583": {
+    "title": "ByteFlow: Language Modeling through Adaptive Byte Compression without a Tokenizer",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "ByteFlow Net",
+          "brief": "A hierarchical architecture for language modeling that removes tokenizers and enables models to learn their own segmentation of raw byte streams"
+        },
+        {
+          "name": "Compression-driven segmentation",
+          "brief": "A method of segmenting raw byte streams into semantically meaningful units based on the coding rate of latent representations"
+        },
+        {
+          "name": "Top-K selection",
+          "brief": "A technique used to preserve a static computation graph while allowing for adaptive boundaries in the segmentation process"
+        },
+        {
+          "name": "Subword tokenizations",
+          "brief": "A method of breaking down text into subword units, which can be limiting in modern language models"
+        },
+        {
+          "name": "Language modeling",
+          "brief": "The process of predicting the next word or character in a sequence of text"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and applications of language modeling"
+        },
+        {
+          "topic": "Deep learning",
+          "why_needed": "To comprehend the architecture and techniques used in ByteFlow Net"
+        },
+        {
+          "topic": "Information theory",
+          "why_needed": "To understand the concept of coding rate and its application in compression-driven segmentation"
+        },
+        {
+          "topic": "Transformer architectures",
+          "why_needed": "To compare and contrast ByteFlow Net with existing language models"
+        },
+        {
+          "topic": "Byte-level architectures",
+          "why_needed": "To understand the differences and advantages of ByteFlow Net over previous architectures"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-11"
+  },
+  "2603.09951": {
+    "title": "Towards a Neural Debugger for Python",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Neural Debuggers",
+          "brief": "Language models that emulate traditional debuggers for interactive control over code execution"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models trained on vast amounts of data to generate human-like text and code"
+        },
+        {
+          "name": "Neural Interpreters",
+          "brief": "Language models that predict line-by-line execution of whole programs"
+        },
+        {
+          "name": "Debugger Actions",
+          "brief": "Operations like stepping into, over, or out of functions and setting breakpoints"
+        },
+        {
+          "name": "Conditional Execution Modeling",
+          "brief": "Modeling both forward and inverse execution conditioned on debugger actions"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Python Programming",
+          "why_needed": "To understand the context of the research and the application of neural debuggers"
+        },
+        {
+          "topic": "Machine Learning and Deep Learning",
+          "why_needed": "To comprehend the concepts of language models, LLMs, and neural interpreters"
+        },
+        {
+          "topic": "Debugging and Debuggers",
+          "why_needed": "To understand the traditional debugging process and the limitations that neural debuggers aim to address"
+        },
+        {
+          "topic": "Software Development and Coding",
+          "why_needed": "To appreciate the potential applications of neural debuggers in agentic coding systems"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-11"
+  },
+  "2603.08648": {
+    "title": "CAST: Modeling Visual State Transitions for Consistent Video Retrieval",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Consistent Video Retrieval (CVR)",
+          "brief": "A task that involves composing short clips into coherent storylines"
+        },
+        {
+          "name": "Context-Aware State Transition (CAST)",
+          "brief": "A lightweight adapter for modeling visual state transitions"
+        },
+        {
+          "name": "State-conditioned residual update (Δ)",
+          "brief": "A prediction mechanism for latent state evolution"
+        },
+        {
+          "name": "Vision-language embedding spaces",
+          "brief": "A representation space that combines visual and linguistic features"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the architecture and training of CAST"
+        },
+        {
+          "topic": "Computer vision",
+          "why_needed": "To comprehend the visual state transitions and video retrieval tasks"
+        },
+        {
+          "topic": "Natural language processing",
+          "why_needed": "To grasp the linguistic aspects of video retrieval and embedding spaces"
+        },
+        {
+          "topic": "Video analysis and understanding",
+          "why_needed": "To appreciate the challenges and importance of consistent video retrieval"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-11"
+  },
+  "2603.07145": {
+    "title": "LiveWorld: Simulating Out-of-Sight Dynamics in Generative Video World Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Generative Video World Models",
+          "brief": "Models that simulate visual environment evolution for interactive exploration"
+        },
+        {
+          "name": "Out-of-Sight Dynamics",
+          "brief": "The problem of simulating object evolution when they are not in the observer's field of view"
+        },
+        {
+          "name": "LiveWorld Framework",
+          "brief": "A novel framework that extends video world models to support persistent world evolution"
+        },
+        {
+          "name": "Persistent Global State",
+          "brief": "A state composed of a static 3D background and dynamic entities that continue evolving even when unobserved"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand generative video world models and their limitations"
+        },
+        {
+          "topic": "3D Modeling and Simulation",
+          "why_needed": "To comprehend the concept of persistent global state and dynamic entities"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the underlying mechanisms of LiveWorld and its evaluation using LiveBench"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To grasp the technical details of implementing LiveWorld and its components"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-11"
+  },
+  "2603.07148": {
+    "title": "Agentic Planning with Reasoning for Image Styling via Offline RL",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Agentic Planning",
+          "brief": "A framework that enables structured planning with explicit reasoning for image styling tasks"
+        },
+        {
+          "name": "Offline Reinforcement Learning (RL)",
+          "brief": "A method for training agents using pre-collected data without interacting with the environment"
+        },
+        {
+          "name": "Compositional Image Editing",
+          "brief": "A technique that involves breaking down complex image editing tasks into simpler, orthogonal primitive transformations"
+        },
+        {
+          "name": "Chain-of-Thought Reasoning",
+          "brief": "A process that involves generating a sequence of intermediate thoughts to arrive at a final decision or action"
+        },
+        {
+          "name": "Tool-Based Agentic RL",
+          "brief": "A framework that combines agentic planning with tool-based image editing for improved performance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To understand the basics of RL and its application to image styling tasks"
+        },
+        {
+          "topic": "Image Editing",
+          "why_needed": "To comprehend the challenges of complex image transformations and the need for structured planning"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To grasp the concepts of large-scale models like Qwen3-VL and their role in image styling"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the fundamentals of image processing and analysis"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To appreciate the broader context of agentic planning and its potential applications"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-11"
   }
 }
