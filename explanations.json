@@ -37226,5 +37226,429 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-12"
+  },
+  "2603.12089": {
+    "title": "EmbTracker: Traceable Black-box Watermarking for Federated Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Federated Language Models (FedLM)",
+          "brief": "A collaborative learning approach that allows multiple clients to train a model without sharing raw data"
+        },
+        {
+          "name": "Watermarking",
+          "brief": "A technique to embed a unique identifier or signature into a model to prove ownership or detect leaks"
+        },
+        {
+          "name": "Black-box Watermarking",
+          "brief": "A type of watermarking that does not require access to the model's internal workings or client-side cooperation"
+        },
+        {
+          "name": "Backdoor-based Watermarking",
+          "brief": "A technique that embeds a watermark by introducing a backdoor into the model, detectable through simple API queries"
+        },
+        {
+          "name": "Traceability",
+          "brief": "The ability to attribute a leaked model to a specific client or culprit"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of language models and federated learning"
+        },
+        {
+          "topic": "Federated Learning",
+          "why_needed": "To comprehend the concept of collaborative learning without sharing raw data"
+        },
+        {
+          "topic": "Model Watermarking",
+          "why_needed": "To understand the existing watermarking schemes and their limitations"
+        },
+        {
+          "topic": "Adversarial Attacks",
+          "why_needed": "To understand the types of removal attacks (fine-tuning, pruning, quantization) that EmbTracker is designed to withstand"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-13"
+  },
+  "2603.12257": {
+    "title": "DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Latent Identity Reinforcement Learning",
+          "brief": "A technique used to preserve identity in video synthesis"
+        },
+        {
+          "name": "Omni-Motion Control",
+          "brief": "A method for controlling both multi-subject identity and multi-granularity motion in video synthesis"
+        },
+        {
+          "name": "Diffusion Models",
+          "brief": "A type of deep learning model used for video synthesis and editing"
+        },
+        {
+          "name": "3D Rotary Positional Embedding",
+          "brief": "A technique used to coordinate heterogeneous inputs in video synthesis"
+        },
+        {
+          "name": "Hierarchical Motion Injection",
+          "brief": "A strategy used to enhance global motion guidance in video synthesis"
+        },
+        {
+          "name": "Group and Role Embeddings",
+          "brief": "A method used to disentangle complex scenes into independent controllable instances"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the fundamentals of diffusion models and reinforcement learning"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend video synthesis, motion control, and identity preservation"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concepts of latent space, embeddings, and reward feedback learning"
+        },
+        {
+          "topic": "Video Processing",
+          "why_needed": "To understand the challenges and techniques involved in video synthesis and editing"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-13"
+  },
+  "2603.12265": {
+    "title": "OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "OmniStream",
+          "brief": "A unified streaming visual backbone for perception, reconstruction, and action in continuous streams"
+        },
+        {
+          "name": "Causal Spatiotemporal Attention",
+          "brief": "A mechanism for efficient online processing of video streams"
+        },
+        {
+          "name": "3D Rotary Positional Embeddings (3D-RoPE)",
+          "brief": "A technique for incorporating spatial geometry into the model"
+        },
+        {
+          "name": "Persistent KV-cache",
+          "brief": "A caching mechanism for frame-by-frame processing of video streams"
+        },
+        {
+          "name": "Synergistic Multi-task Framework",
+          "brief": "A framework for pre-training the model on multiple tasks simultaneously"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the concepts of image semantic perception, spatial geometry, and temporal modeling"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the architecture and training of the OmniStream model"
+        },
+        {
+          "topic": "Robotics and Embodied Agents",
+          "why_needed": "To appreciate the applications of OmniStream in interactive and embodied agents"
+        },
+        {
+          "topic": "Streaming and Online Processing",
+          "why_needed": "To understand the challenges and requirements of processing continuous streams of data"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-13"
+  },
+  "2603.12245": {
+    "title": "One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion Transformers (DiTs)",
+          "brief": "A type of generative model that achieves high-quality results but has limitations in terms of latency and resource allocation"
+        },
+        {
+          "name": "Elastic Latent Interface Transformer (ELIT)",
+          "brief": "A mechanism that decouples input image size from compute, allowing for more efficient resource allocation"
+        },
+        {
+          "name": "Latent Interface",
+          "brief": "A learnable variable-length token sequence that enables standard transformer blocks to operate on input data"
+        },
+        {
+          "name": "Cross-Attention Layers",
+          "brief": "Layers that move information between spatial tokens and latents, prioritizing important input regions"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Transformer Architecture",
+          "why_needed": "To understand how ELIT modifies the standard transformer architecture to achieve its goals"
+        },
+        {
+          "topic": "Generative Models",
+          "why_needed": "To appreciate the context and limitations of DiTs, and how ELIT addresses these limitations"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the application of ELIT to image generation tasks and the evaluation metrics used (e.g. FID, FDD scores)"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the training and inference processes of ELIT, including the use of random dropping of tail latents"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-13"
+  },
+  "2603.11510": {
+    "title": "Tiny Aya: Bridging Scale and Multilingual Depth",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multilingual Language Models",
+          "brief": "AI models that can understand and generate text in multiple languages"
+        },
+        {
+          "name": "Post-training and Fine-tuning",
+          "brief": "Techniques used to refine and adapt pre-trained language models for specific tasks"
+        },
+        {
+          "name": "Region-aware Training",
+          "brief": "Training approach that considers the geographical and cultural context of languages"
+        },
+        {
+          "name": "Efficient Scaling",
+          "brief": "Methods to reduce the computational resources required for training large language models"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of language models"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the challenges and techniques in multilingual language modeling"
+        },
+        {
+          "topic": "Machine Translation",
+          "why_needed": "To appreciate the evaluation metrics and applications of multilingual models"
+        },
+        {
+          "topic": "Computational Linguistics",
+          "why_needed": "To recognize the importance of linguistic and cultural diversity in language modeling"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-13"
+  },
+  "2603.06922": {
+    "title": "NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Eigenspectrum Dynamics",
+          "brief": "The study of how the eigenvalues and eigenvectors of a matrix change over time or iterations"
+        },
+        {
+          "name": "Feed-Forward Networks (FFNs)",
+          "brief": "A type of neural network where data flows only in one direction, from input to output"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models designed to process and understand human language, often using transformer architectures"
+        },
+        {
+          "name": "Nonlinear Eigenspectrum Dynamics",
+          "brief": "The study of how nonlinear interactions affect the eigenspectrum of a system"
+        },
+        {
+          "name": "Latent Space",
+          "brief": "A high-dimensional space where data is represented in a compressed or abstract form"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Linear Algebra",
+          "why_needed": "To understand eigenspectrum dynamics and matrix operations"
+        },
+        {
+          "topic": "Neural Networks",
+          "why_needed": "To comprehend the architecture and functioning of feed-forward networks and large language models"
+        },
+        {
+          "topic": "Information Theory",
+          "why_needed": "To grasp concepts like entropy, participation ratio, and Jensen-Shannon divergence"
+        },
+        {
+          "topic": "Optimization Methods",
+          "why_needed": "To understand how optimizer geometry affects variance reinjection and model performance"
+        },
+        {
+          "topic": "Deep Learning Architectures",
+          "why_needed": "To familiarize with transformer and MLP-Mixer architectures"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-13"
+  },
+  "2603.10377": {
+    "title": "Causal Concept Graphs in LLM Latent Space for Stepwise Reasoning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Causal Concept Graphs (CCG)",
+          "brief": "A directed acyclic graph representing causal dependencies between concepts in language models"
+        },
+        {
+          "name": "Sparse Autoencoders",
+          "brief": "A type of neural network used for dimensionality reduction and concept discovery"
+        },
+        {
+          "name": "Differentiable Structure Learning",
+          "brief": "A method for learning graph structures in a differentiable manner"
+        },
+        {
+          "name": "Causal Fidelity Score (CFS)",
+          "brief": "A metric for evaluating the effectiveness of graph-guided interventions"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Language Models",
+          "why_needed": "To understand the context of the research and the application of CCG"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the implementation of sparse autoencoders and differentiable structure learning"
+        },
+        {
+          "topic": "Graph Theory",
+          "why_needed": "To understand the representation and analysis of causal concept graphs"
+        },
+        {
+          "topic": "Causal Inference",
+          "why_needed": "To appreciate the importance of capturing causal dependencies between concepts"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-13"
+  },
+  "2603.11076": {
+    "title": "DIVE: Scaling Diversity in Agentic Task Synthesis for Generalizable Tool Use",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Agentic Task Synthesis",
+          "brief": "The process of generating tasks for training AI models to use tools effectively"
+        },
+        {
+          "name": "Diversity in Task Synthesis",
+          "brief": "The importance of creating a wide range of tasks to improve model generalization"
+        },
+        {
+          "name": "Tool Use and Generalization",
+          "brief": "The ability of AI models to apply learned skills to new, unseen tasks and tools"
+        },
+        {
+          "name": "DIVE (Scaling Diversity in Agentic Task Synthesis)",
+          "brief": "A proposed method for scaling diversity in task synthesis to improve model generalization"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context of the research and the application of DIVE"
+        },
+        {
+          "topic": "Reinforcement Learning (RL) and Supervised Fine-Tuning (SFT)",
+          "why_needed": "To comprehend the training methods used in the research"
+        },
+        {
+          "topic": "Out-of-Distribution (OOD) Generalization",
+          "why_needed": "To understand the challenge of generalizing to new, unseen tasks and tools"
+        },
+        {
+          "topic": "Artificial Intelligence and Machine Learning",
+          "why_needed": "To grasp the fundamental concepts and techniques used in the research"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-13"
+  },
+  "2603.12255": {
+    "title": "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Spatial Intelligence",
+          "brief": "The ability to understand and maintain spatial information from visual observations"
+        },
+        {
+          "name": "Test-Time Training (TTT)",
+          "brief": "A method that adapts model parameters during inference to improve performance"
+        },
+        {
+          "name": "Streaming Visual Processing",
+          "brief": "The ability to process and analyze video streams in real-time"
+        },
+        {
+          "name": "3D Spatiotemporal Convolution",
+          "brief": "A technique used to capture geometric correspondence and temporal continuity in videos"
+        },
+        {
+          "name": "Hybrid Architecture",
+          "brief": "A combination of different architectural designs to improve model performance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of neural networks, convolutional layers, and model training"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the processing and analysis of visual data"
+        },
+        {
+          "topic": "Video Processing",
+          "why_needed": "To grasp the concepts of streaming video analysis and temporal modeling"
+        },
+        {
+          "topic": "3D Spatial Understanding",
+          "why_needed": "To understand the concepts of geometric correspondence and spatial awareness"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-13"
   }
 }
