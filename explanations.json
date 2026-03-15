@@ -38558,5 +38558,469 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-14"
+  },
+  "2603.07865": {
+    "title": "SoundWeaver: Semantic Warm-Starting for Text-to-Audio Diffusion Serving",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Text-to-Audio Diffusion Models",
+          "brief": "AI models that generate audio from text inputs"
+        },
+        {
+          "name": "Semantic Warm-Starting",
+          "brief": "Technique to accelerate model inference by using cached, semantically similar data"
+        },
+        {
+          "name": "Cache Management",
+          "brief": "Strategies to maintain and optimize cache utility for efficient model serving"
+        },
+        {
+          "name": "Model-Agnostic Serving Systems",
+          "brief": "Systems that can accelerate inference across different AI models"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the fundamentals of text-to-audio diffusion models"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the semantic aspects of text inputs and audio outputs"
+        },
+        {
+          "topic": "Computer Systems and Architecture",
+          "why_needed": "To appreciate the design and optimization of serving systems for AI models"
+        },
+        {
+          "topic": "Signal Processing",
+          "why_needed": "To understand the audio processing and quality evaluation aspects"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2603.12246": {
+    "title": "Examining Reasoning LLMs-as-Judges in Non-Verifiable LLM Post-Training",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reasoning LLMs-as-Judges",
+          "brief": "Using large language models as judges to evaluate the quality of outputs in non-verifiable domains"
+        },
+        {
+          "name": "Non-Verifiable Domains",
+          "brief": "Domains where the output correctness or quality cannot be directly checked"
+        },
+        {
+          "name": "Reinforcement-Learning-Based LLM Alignment",
+          "brief": "Training large language models using reinforcement learning to align with desired outcomes"
+        },
+        {
+          "name": "Reward Hacking",
+          "brief": "Exploiting the reward function in reinforcement learning to achieve high rewards without achieving the desired outcome"
+        },
+        {
+          "name": "Adversarial Outputs",
+          "brief": "Outputs that are designed to deceive or manipulate other models or judges"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "Understanding the basics of LLMs is necessary to comprehend the concept of using them as judges"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "Knowledge of reinforcement learning is required to understand the training process of LLMs"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "Familiarity with NLP concepts is necessary to understand the application of LLMs in non-verifiable domains"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Basic understanding of machine learning concepts, such as training and evaluation, is necessary to understand the study"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2603.09018": {
+    "title": "Meissa: Multi-modal Medical Agentic Intelligence",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multi-modal Large Language Models (MM-LLMs)",
+          "brief": "AI models that process and understand multiple forms of data, such as text and images"
+        },
+        {
+          "name": "Medical Agent Systems",
+          "brief": "Systems that use AI to make decisions and take actions in medical contexts"
+        },
+        {
+          "name": "Unified Trajectory Modeling",
+          "brief": "A method of representing complex sequences of actions and decisions in a single formalism"
+        },
+        {
+          "name": "Stratified Supervision",
+          "brief": "A training method that uses multiple levels of supervision to improve model performance"
+        },
+        {
+          "name": "Prospective-Retrospective Supervision",
+          "brief": "A training method that uses both forward and backward looking approaches to learn effective policies"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of MM-LLMs"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand how MM-LLMs process and generate text"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand how MM-LLMs process and understand medical images"
+        },
+        {
+          "topic": "Medical Informatics",
+          "why_needed": "To understand the clinical context and requirements of medical agent systems"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the concepts of agent systems, decision-making, and strategy selection"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2603.08258": {
+    "title": "WaDi: Weight Direction-aware Distillation for One-step Image Synthesis",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion Models",
+          "brief": "A type of deep learning model used for image generation"
+        },
+        {
+          "name": "Knowledge Distillation",
+          "brief": "A technique to transfer knowledge from a complex model to a simpler one"
+        },
+        {
+          "name": "One-step Image Synthesis",
+          "brief": "A method to generate images in a single step, as opposed to multi-step approaches"
+        },
+        {
+          "name": "Weight Direction-aware Distillation (WaDi)",
+          "brief": "A novel distillation framework that considers the direction of weight changes during distillation"
+        },
+        {
+          "name": "Low-rank Rotation of weight Direction (LoRaD)",
+          "brief": "A parameter-efficient adapter for one-step diffusion distillation"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and their applications"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend image generation and synthesis techniques"
+        },
+        {
+          "topic": "Linear Algebra",
+          "why_needed": "To understand concepts like weight matrices, rotation matrices, and low-rank approximations"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To grasp the concepts of distillation, parameter efficiency, and model compression"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2603.11327": {
+    "title": "Meta-Reinforcement Learning with Self-Reflection for Agentic Search",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Meta-Reinforcement Learning",
+          "brief": "A subfield of reinforcement learning that involves learning to learn from multiple tasks or environments"
+        },
+        {
+          "name": "Agentic Search",
+          "brief": "A type of search problem where an agent must adapt its search strategy to find a goal or solution"
+        },
+        {
+          "name": "Self-Reflection",
+          "brief": "The ability of an agent to reflect on its own performance and adapt its behavior accordingly"
+        },
+        {
+          "name": "Cross-Episode Exploration",
+          "brief": "A technique where an agent explores and learns across multiple episodes or trials"
+        },
+        {
+          "name": "Multi-Turn RL Algorithm",
+          "brief": "A type of reinforcement learning algorithm that involves making decisions over multiple turns or time steps"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To understand the basics of RL and how meta-RL builds upon it"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the neural network architectures used in meta-RL and agentic search"
+        },
+        {
+          "topic": "Markov Decision Processes",
+          "why_needed": "To understand the mathematical framework underlying RL and meta-RL"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To understand the optimization methods used in meta-RL, such as gradient descent and policy gradients"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2603.11653": {
+    "title": "Simple Recipe Works: Vision-Language-Action Models are Natural Continual Learners with Reinforcement Learning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Continual Reinforcement Learning (CRL)",
+          "brief": "A type of machine learning that enables agents to learn from continuous streams of data and adapt to changing environments"
+        },
+        {
+          "name": "Vision-Language-Action (VLA) models",
+          "brief": "A type of artificial intelligence model that integrates visual, linguistic, and action-based inputs to enable embodied agents to interact with their environment"
+        },
+        {
+          "name": "Sequential Fine-Tuning (Seq. FT)",
+          "brief": "A method of updating a pre-trained model on a sequence of tasks to adapt to new data and prevent forgetting"
+        },
+        {
+          "name": "Low-Rank Adaptation (LoRA)",
+          "brief": "A technique for efficient adaptation of pre-trained models by updating only a subset of model parameters"
+        },
+        {
+          "name": "Lifelong Learning",
+          "brief": "A paradigm of machine learning that focuses on continuous learning and adaptation over time"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and pre-trained models"
+        },
+        {
+          "topic": "Reinforcement Learning",
+          "why_needed": "To comprehend the principles of agent-environment interaction and reward-based learning"
+        },
+        {
+          "topic": "Continual Learning",
+          "why_needed": "To grasp the challenges of learning from continuous data streams and adapting to changing environments"
+        },
+        {
+          "topic": "Computer Vision and Natural Language Processing",
+          "why_needed": "To understand the components of VLA models and their applications"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2602.24181": {
+    "title": "A Mixed Diet Makes DINO An Omnivorous Vision Encoder",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision Encoders",
+          "brief": "Models that extract features from visual data"
+        },
+        {
+          "name": "Modality-Agnostic Feature Space",
+          "brief": "A feature space that is consistent across different data modalities"
+        },
+        {
+          "name": "Cross-Modal Understanding",
+          "brief": "The ability of a model to understand and relate different types of data"
+        },
+        {
+          "name": "Knowledge Distillation",
+          "brief": "A technique for transferring knowledge from a teacher model to a student model"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of vision encoders and knowledge distillation"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the different modalities of visual data and their applications"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of feature learning and representation"
+        },
+        {
+          "topic": "DINOv2",
+          "why_needed": "To understand the specific vision encoder model used as a teacher in this research"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2603.07534": {
+    "title": "Accent Vector: Controllable Accent Manipulation for Multilingual TTS Without Accented Data",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Text-To-Speech (TTS) Systems",
+          "brief": "Technology used to convert text into spoken language"
+        },
+        {
+          "name": "Accent Vector",
+          "brief": "A controllable representation for accent manipulation in TTS systems"
+        },
+        {
+          "name": "Multilingual TTS",
+          "brief": "TTS systems capable of generating speech in multiple languages"
+        },
+        {
+          "name": "Accent Manipulation",
+          "brief": "The process of controlling and modifying accents in speech synthesis"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the fine-tuning process of TTS systems and vector computation"
+        },
+        {
+          "topic": "Speech Processing",
+          "why_needed": "To comprehend the basics of speech synthesis and accent characteristics"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To grasp the concept of language modeling and text-to-speech conversion"
+        },
+        {
+          "topic": "Linguistics",
+          "why_needed": "To understand the concept of accents, dialects, and language variation"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2603.12252": {
+    "title": "EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "Large language models that can process and understand multiple forms of data, including text and images"
+        },
+        {
+          "name": "Diffusion Models",
+          "brief": "Deep learning models that use a process called diffusion-based image synthesis to generate high-quality images"
+        },
+        {
+          "name": "Chain-of-Thought Reasoning",
+          "brief": "A reasoning process that involves breaking down complex problems into a series of intermediate steps to arrive at a solution"
+        },
+        {
+          "name": "Endogenous Chain-of-Thought (EndoCoT)",
+          "brief": "A novel framework that activates MLLMs' reasoning potential by iteratively refining latent thought states"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of diffusion models and MLLMs"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the role of text encoders in MLLMs"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the application of diffusion models in image synthesis and spatial reasoning"
+        },
+        {
+          "topic": "Reasoning and Problem-Solving",
+          "why_needed": "To appreciate the importance of chain-of-thought reasoning in complex tasks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
+  },
+  "2603.11593": {
+    "title": "WeEdit: A Dataset, Benchmark and Glyph-Guided Framework for Text-centric Image Editing",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Text-centric Image Editing",
+          "brief": "Modifying textual elements within images according to user instructions"
+        },
+        {
+          "name": "Glyph-Guided Framework",
+          "brief": "Using glyph information to guide text editing in images"
+        },
+        {
+          "name": "Instruction-Based Image Editing",
+          "brief": "Editing images based on user-provided instructions while preserving non-target regions"
+        },
+        {
+          "name": "Multi-Objective Reinforcement Learning",
+          "brief": "Optimizing multiple objectives simultaneously in a reinforcement learning framework"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding image editing and object manipulation"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "Understanding text analysis and instruction-based editing"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Understanding neural networks and reinforcement learning"
+        },
+        {
+          "topic": "HTML and Web Development",
+          "why_needed": "Understanding the proposed HTML-based automatic editing pipeline"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-15"
   }
 }

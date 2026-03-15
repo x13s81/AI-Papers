@@ -1,46 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-<title>AI Papers - 2026-03-14</title>
+<title>AI Papers - 2026-03-15</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-03-14 - 233 papers</description>
-<lastBuildDate>Sat, 14 Mar 2026 14:25:46 +0000</lastBuildDate>
-<item>
-<title><![CDATA[Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training]]></title>
-<link>https://huggingface.co/papers/2603.12255</link>
-<guid>2603.12255</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Fangfu Liu, Diankun Wu, Jiawei Chi, Yimo Cai, Yi-Hsin Hung
-Institution: 
-Published: 2026-03-12
-Score: 8/10
-Citations: 0
-Upvotes: 66
-GitHub: 
-Stars: 0
-
-Humans perceive and understand real-world spaces through a stream of visual observations. Therefore, the ability to streamingly maintain and update spatial evidence from potentially unbounded video streams is essential for spatial intelligence. The core challenge is not simply longer context windows but how spatial information is selected, organized, and retained over time. In this paper, we propose Spatial-TTT towards streaming visual-based spatial intelligence with test-time training (TTT), which adapts a subset of parameters (fast weights) to capture and organize spatial evidence over long-horizon scene videos. Specifically, we design a hybrid architecture and adopt large-chunk updates parallel with sliding-window attention for efficient spatial video processing. To further promote spatial awareness, we introduce a spatial-predictive mechanism applied to TTT layers with 3D spatiotemporal convolution, which encourages the model to capture geometric correspondence and temporal continuity across frames. Beyond architecture design, we construct a dataset with dense 3D spatial descriptions, which guides the model to update its fast weights to memorize and organize global 3D spatial signals in a structured manner. Extensive experiments demonstrate that Spatial-TTT improves long-horizon spatial understanding and achieves state-of-the-art performance on video spatial benchmarks. Project page: https://liuff19.github.io/Spatial-TTT.]]></description>
-<pubDate>Thu, 12 Mar 2026 17:58:58 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[DVD: Deterministic Video Depth Estimation with Generative Priors]]></title>
-<link>https://huggingface.co/papers/2603.12250</link>
-<guid>2603.12250</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Hongfei Zhang, Harold Haodong Chen, Chenfei Liao, Jing He, Zixin Zhang
-Institution: 
-Published: 2026-03-12
-Score: 8/10
-Citations: 0
-Upvotes: 16
-GitHub: 
-Stars: 0
-
-Existing video depth estimation faces a fundamental trade-off: generative models suffer from stochastic geometric hallucinations and scale drift, while discriminative models demand massive labeled datasets to resolve semantic ambiguities. To break this impasse, we present DVD, the first framework to deterministically adapt pre-trained video diffusion models into single-pass depth regressors. Specifically, DVD features three core designs: (i) repurposing the diffusion timestep as a structural anchor to balance global stability with high-frequency details; (ii) latent manifold rectification (LMR) to mitigate regression-induced over-smoothing, enforcing differential constraints to restore sharp boundaries and coherent motion; and (iii) global affine coherence, an inherent property bounding inter-window divergence, which enables seamless long-video inference without requiring complex temporal alignment. Extensive experiments demonstrate that DVD achieves state-of-the-art zero-shot performance across benchmarks. Furthermore, DVD successfully unlocks the profound geometric priors implicit in video foundation models using 163x less task-specific data than leading baselines. Notably, we fully release our pipeline, providing the whole training suite for SOTA video depth estimation to benefit the open-source community.]]></description>
-<pubDate>Thu, 12 Mar 2026 17:58:06 +0000</pubDate>
-</item>
+<description>AI papers as of 2026-03-15 - 233 papers</description>
+<lastBuildDate>Sun, 15 Mar 2026 14:27:23 +0000</lastBuildDate>
 <item>
 <title><![CDATA[CREATE: Testing LLMs for Associative Creativity]]></title>
 <link>https://huggingface.co/papers/2603.09970</link>
@@ -52,7 +16,7 @@ Institution:
 Published: 2026-03-10
 Score: 8/10
 Citations: 0
-Upvotes: 11
+Upvotes: 12
 GitHub: 
 Stars: 0
 
@@ -70,12 +34,30 @@ Institution:
 Published: 2026-03-12
 Score: 8/10
 Citations: 0
-Upvotes: 8
+Upvotes: 9
 GitHub: 
 Stars: 0
 
 Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geometry. This paper introduces OmniStream, a unified streaming visual backbone that effectively perceives, reconstructs, and acts from diverse visual inputs. By incorporating causal spatiotemporal attention and 3D rotary positional embeddings (3D-RoPE), our model supports efficient, frame-by-frame online processing of video streams via a persistent KV-cache. We pre-train OmniStream using a synergistic multi-task framework coupling static and temporal representation learning, streaming geometric reconstruction, and vision-language alignment on 29 datasets. Extensive evaluations show that, even with a strictly frozen backbone, OmniStream achieves consistently competitive performance with specialized experts across image and video probing, streaming geometric reconstruction, complex video and spatial reasoning, as well as robotic manipulation (unseen at training). Rather than pursuing benchmark-specific dominance, our work demonstrates the viability of training a single, versatile vision backbone that generalizes across semantic, spatial, and temporal reasoning, i.e., a more meaningful step toward general-purpose visual understanding for interactive and embodied agents.]]></description>
 <pubDate>Thu, 12 Mar 2026 17:59:55 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Automatic Generation of High-Performance RL Environments]]></title>
+<link>https://huggingface.co/papers/2603.12145</link>
+<guid>2603.12145</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Seth Karten, Rahul Dev Appapogu, Chi Jin
+Institution: 
+Published: 2026-03-12
+Score: 8/10
+Citations: 0
+Upvotes: 4
+GitHub: 
+Stars: 0
+
+Translating complex reinforcement learning (RL) environments into high-performance implementations has traditionally required months of specialized engineering. We present a reusable recipe - a generic prompt template, hierarchical verification, and iterative agent-assisted repair - that produces semantically equivalent high-performance environments for <$10 in compute cost. We demonstrate three distinct workflows across five environments. Direct translation (no prior performance implementation exists): EmuRust (1.5x PPO speedup via Rust parallelism for a Game Boy emulator) and PokeJAX, the first GPU-parallel Pokemon battle simulator (500M SPS random action, 15.2M SPS PPO; 22,320x over the TypeScript reference). Translation verified against existing performance implementations: throughput parity with MJX (1.04x) and 5x over Brax at matched GPU batch sizes (HalfCheetah JAX); 42x PPO (Puffer Pong). New environment creation: TCGJax, the first deployable JAX Pokemon TCG engine (717K SPS random action, 153K SPS PPO; 6.6x over the Python reference), synthesized from a web-extracted specification. At 200M parameters, the environment overhead drops below 4% of training time. Hierarchical verification (property, interaction, and rollout tests) confirms semantic equivalence for all five environments; cross-backend policy transfer confirms zero sim-to-sim gap for all five environments. TCGJax, synthesized from a private reference absent from public repositories, serves as a contamination control for agent pretraining data concerns. The paper contains sufficient detail - including representative prompts, verification methodology, and complete results - that a coding agent could reproduce the translations directly from the manuscript.]]></description>
+<pubDate>Thu, 12 Mar 2026 16:45:47 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[FireRedASR2S: A State-of-the-Art Industrial-Grade All-in-One Automatic Speech Recognition System]]></title>
@@ -88,12 +70,48 @@ Institution:
 Published: 2026-03-11
 Score: 8/10
 Citations: 0
-Upvotes: 3
+Upvotes: 4
 GitHub: 
 Stars: 0
 
 We present FireRedASR2S, a state-of-the-art industrial-grade all-in-one automatic speech recognition (ASR) system. It integrates four modules in a unified pipeline: ASR, Voice Activity Detection (VAD), Spoken Language Identification (LID), and Punctuation Prediction (Punc). All modules achieve SOTA performance on the evaluated benchmarks: FireRedASR2: An ASR module with two variants, FireRedASR2-LLM (8B+ parameters) and FireRedASR2-AED (1B+ parameters), supporting speech and singing transcription for Mandarin, Chinese dialects and accents, English, and code-switching. Compared to FireRedASR, FireRedASR2 delivers improved recognition accuracy and broader dialect and accent coverage. FireRedASR2-LLM achieves 2.89% average CER on 4 public Mandarin benchmarks and 11.55% on 19 public Chinese dialects and accents benchmarks, outperforming competitive baselines including Doubao-ASR, Qwen3-ASR, and Fun-ASR. FireRedVAD: An ultra-lightweight module (0.6M parameters) based on the Deep Feedforward Sequential Memory Network (DFSMN), supporting streaming VAD, non-streaming VAD, and multi-label VAD (mVAD). On the FLEURS-VAD-102 benchmark, it achieves 97.57% frame-level F1 and 99.60% AUC-ROC, outperforming Silero-VAD, TEN-VAD, FunASR-VAD, and WebRTC-VAD. FireRedLID: An Encoder-Decoder LID module supporting 100+ languages and 20+ Chinese dialects and accents. On FLEURS (82 languages), it achieves 97.18% utterance-level accuracy, outperforming Whisper and SpeechBrain. FireRedPunc: A BERT-style punctuation prediction module for Chinese and English. On multi-domain benchmarks, it achieves 78.90% average F1, outperforming FunASR-Punc (62.77%). To advance research in speech processing, we release model weights and code at https://github.com/FireRedTeam/FireRedASR2S.]]></description>
 <pubDate>Wed, 11 Mar 2026 05:11:06 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Tiny Aya: Bridging Scale and Multilingual Depth]]></title>
+<link>https://huggingface.co/papers/2603.11510</link>
+<guid>2603.11510</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Alejandro R. Salamanca, Diana Abagyan, Daniel D'souza, Ammar Khairi, David Mora
+Institution: 
+Published: 2026-03-12
+Score: 8/10
+Citations: 0
+Upvotes: 4
+GitHub: 
+Stars: 0
+
+Tiny Aya redefines what a small multilingual language model can achieve. Trained on 70 languages and refined through region-aware posttraining, it delivers state-of-the-art in translation quality, strong multilingual understanding, and high-quality target-language generation, all with just 3.35B parameters. The release includes a pretrained foundation model, a globally balanced instruction-tuned variant, and three region-specialized models targeting languages from Africa, South Asia, Europe, Asia-Pacific, and West Asia. This report details the training strategy, data composition, and comprehensive evaluation framework behind Tiny Aya, and presents an alternative scaling path for multilingual AI: one centered on efficiency, balanced performance across languages, and practical deployment.]]></description>
+<pubDate>Thu, 12 Mar 2026 03:53:13 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[SoundWeaver: Semantic Warm-Starting for Text-to-Audio Diffusion Serving]]></title>
+<link>https://huggingface.co/papers/2603.07865</link>
+<guid>2603.07865</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Ayush Barik, Sofia Stoica, Nikhil Sarda, Arnav Kethana, Abhinav Khanduja
+Institution: 
+Published: 2026-03-09
+Score: 8/10
+Citations: 0
+Upvotes: 3
+GitHub: 
+Stars: 0
+
+Text-to-audio diffusion models produce high-fidelity audio but require tens of function evaluations (NFEs), incurring multi-second latency and limited throughput. We present SoundWeaver, the first training-free, model-agnostic serving system that accelerates text-to-audio diffusion by warm-starting from semantically similar cached audio. SoundWeaver introduces three components: a Reference Selector that retrieves and temporally aligns cached candidates via semantic and duration-aware gating; a Skip Gater that dynamically determines the percentage of NFEs to skip; and a lightweight Cache Manager that maintains cache utility through quality-aware eviction and refinement. On real-world audio traces, SoundWeaver achieves 1.8--3.0 times  latency reduction with a cache of only {sim}1K entries while preserving or improving perceptual quality.]]></description>
+<pubDate>Mon, 09 Mar 2026 00:38:02 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Neural Field Thermal Tomography: A Differentiable Physics Framework for Non-Destructive Evaluation]]></title>
@@ -132,24 +150,6 @@ Physics-based humanoid control has achieved remarkable progress in enabling real
 <pubDate>Mon, 09 Mar 2026 05:52:13 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Tiny Aya: Bridging Scale and Multilingual Depth]]></title>
-<link>https://huggingface.co/papers/2603.11510</link>
-<guid>2603.11510</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Alejandro R. Salamanca, Diana Abagyan, Daniel D'souza, Ammar Khairi, David Mora
-Institution: 
-Published: 2026-03-12
-Score: 8/10
-Citations: 0
-Upvotes: 2
-GitHub: 
-Stars: 0
-
-Tiny Aya redefines what a small multilingual language model can achieve. Trained on 70 languages and refined through region-aware posttraining, it delivers state-of-the-art in translation quality, strong multilingual understanding, and high-quality target-language generation, all with just 3.35B parameters. The release includes a pretrained foundation model, a globally balanced instruction-tuned variant, and three region-specialized models targeting languages from Africa, South Asia, Europe, Asia-Pacific, and West Asia. This report details the training strategy, data composition, and comprehensive evaluation framework behind Tiny Aya, and presents an alternative scaling path for multilingual AI: one centered on efficiency, balanced performance across languages, and practical deployment.]]></description>
-<pubDate>Thu, 12 Mar 2026 03:53:13 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks]]></title>
 <link>https://huggingface.co/papers/2603.06922</link>
 <guid>2603.06922</guid>
@@ -178,7 +178,7 @@ Institution:
 Published: 2026-03-12
 Score: 7/10
 Citations: 0
-Upvotes: 43
+Upvotes: 50
 GitHub: 
 Stars: 0
 
@@ -196,7 +196,7 @@ Institution:
 Published: 2026-03-12
 Score: 7/10
 Citations: 0
-Upvotes: 34
+Upvotes: 37
 GitHub: 
 Stars: 0
 
@@ -232,12 +232,30 @@ Institution:
 Published: 2026-03-12
 Score: 7/10
 Citations: 0
-Upvotes: 17
+Upvotes: 20
 GitHub: 
 Stars: 0
 
 Multimodal agents can now tackle complex reasoning tasks with diverse tools, yet they still suffer from inefficient tool use and inflexible orchestration in open-ended settings. A central challenge is enabling such agents to continually improve without parameter updates by learning from past trajectories. We identify two complementary forms of reusable knowledge essential for this goal: experiences, providing concise action-level guidance for tool selection and decision making, and skills, providing structured task-level guidance for planning and tool use. To this end, we propose XSkill, a dual-stream framework for continual learning from experience and skills in multimodal agents. XSkill grounds both knowledge extraction and retrieval in visual observations. During accumulation, XSkill distills and consolidates experiences and skills from multi-path rollouts via visually grounded summarization and cross-rollout critique. During inference, it retrieves and adapts this knowledge to the current visual context and feeds usage history back into accumulation to form a continual learning loop. Evaluated on five benchmarks across diverse domains with four backbone models, XSkill consistently and substantially outperforms both tool-only and learning-based baselines. Further analysis reveals that the two knowledge streams play complementary roles in influencing the reasoning behaviors of agents and show superior zero-shot generalization.]]></description>
 <pubDate>Thu, 12 Mar 2026 15:25:57 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[DVD: Deterministic Video Depth Estimation with Generative Priors]]></title>
+<link>https://huggingface.co/papers/2603.12250</link>
+<guid>2603.12250</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Hongfei Zhang, Harold Haodong Chen, Chenfei Liao, Jing He, Zixin Zhang
+Institution: 
+Published: 2026-03-12
+Score: 7/10
+Citations: 0
+Upvotes: 18
+GitHub: 
+Stars: 0
+
+Existing video depth estimation faces a fundamental trade-off: generative models suffer from stochastic geometric hallucinations and scale drift, while discriminative models demand massive labeled datasets to resolve semantic ambiguities. To break this impasse, we present DVD, the first framework to deterministically adapt pre-trained video diffusion models into single-pass depth regressors. Specifically, DVD features three core designs: (i) repurposing the diffusion timestep as a structural anchor to balance global stability with high-frequency details; (ii) latent manifold rectification (LMR) to mitigate regression-induced over-smoothing, enforcing differential constraints to restore sharp boundaries and coherent motion; and (iii) global affine coherence, an inherent property bounding inter-window divergence, which enables seamless long-video inference without requiring complex temporal alignment. Extensive experiments demonstrate that DVD achieves state-of-the-art zero-shot performance across benchmarks. Furthermore, DVD successfully unlocks the profound geometric priors implicit in video foundation models using 163x less task-specific data than leading baselines. Notably, we fully release our pipeline, providing the whole training suite for SOTA video depth estimation to benefit the open-source community.]]></description>
+<pubDate>Thu, 12 Mar 2026 17:58:06 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers]]></title>
@@ -250,7 +268,7 @@ Institution:
 Published: 2026-03-12
 Score: 7/10
 Citations: 0
-Upvotes: 12
+Upvotes: 13
 GitHub: 
 Stars: 0
 
@@ -276,6 +294,24 @@ Autoregressive (AR) video generative models rely on video tokenizers that compre
 <pubDate>Thu, 12 Mar 2026 17:59:59 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[Understanding by Reconstruction: Reversing the Software Development Process for LLM Pretraining]]></title>
+<link>https://huggingface.co/papers/2603.11103</link>
+<guid>2603.11103</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Zhiyuan Zeng, Yichi Zhang, Yong Shan, Kai Hua, Siyuan Fang
+Institution: 
+Published: 2026-03-11
+Score: 7/10
+Citations: 0
+Upvotes: 8
+GitHub: 
+Stars: 0
+
+While Large Language Models (LLMs) have achieved remarkable success in code generation, they often struggle with the deep, long-horizon reasoning required for complex software engineering. We attribute this limitation to the nature of standard pre-training data: static software repositories represent only the terminal state of an intricate intellectual process, abstracting away the intermediate planning, debugging, and iterative refinement. To bridge this gap, we propose a novel paradigm: understanding via reconstruction. We hypothesize that reverse-engineering the latent agentic trajectories -- the planning, reasoning, and debugging steps -- behind static repositories provides a far richer supervision signal than raw code alone. To operationalize this, we introduce a framework that synthesizes these trajectories using a multi-agent simulation. This process is grounded in the structural realities of the source repositories (e.g., dependency graphs and file hierarchies) to ensure fidelity. Furthermore, to guarantee the logical rigor of the synthetic data, we employ a search-based optimization technique that iteratively refines the Chain-of-Thought (CoT) reasoning to maximize the likelihood of the ground-truth code. Empirical results demonstrate that continuous pre-training on these reconstructed trajectories significantly enhances Llama-3-8B's performance across diverse benchmarks, including long-context understanding, coding proficiency, and agentic capabilities.]]></description>
+<pubDate>Wed, 11 Mar 2026 09:23:20 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Are Video Reasoning Models Ready to Go Outside?]]></title>
 <link>https://huggingface.co/papers/2603.10652</link>
 <guid>2603.10652</guid>
@@ -294,22 +330,40 @@ In real-world deployment, vision-language models often encounter disturbances su
 <pubDate>Wed, 11 Mar 2026 11:10:52 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Understanding by Reconstruction: Reversing the Software Development Process for LLM Pretraining]]></title>
-<link>https://huggingface.co/papers/2603.11103</link>
-<guid>2603.11103</guid>
+<title><![CDATA[Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights]]></title>
+<link>https://huggingface.co/papers/2603.12228</link>
+<guid>2603.12228</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Zhiyuan Zeng, Yichi Zhang, Yong Shan, Kai Hua, Siyuan Fang
+Authors: Yulu Gan, Phillip Isola
+Institution: 
+Published: 2026-03-12
+Score: 7/10
+Citations: 0
+Upvotes: 4
+GitHub: 
+Stars: 0
+
+Pretraining produces a learned parameter vector that is typically treated as a starting point for further iterative adaptation. In this work, we instead view the outcome of pretraining as a distribution over parameter vectors, whose support already contains task-specific experts. We show that in small models such expert solutions occupy a negligible fraction of the volume of this distribution, making their discovery reliant on structured optimization methods such as gradient descent. In contrast, in large, well-pretrained models the density of task-experts increases dramatically, so that diverse, task-improving specialists populate a substantial fraction of the neighborhood around the pretrained weights. Motivated by this perspective, we explore a simple, fully parallel post-training method that samples N parameter perturbations at random, selects the top K, and ensembles predictions via majority vote. Despite its simplicity, this approach is competitive with standard post-training methods such as PPO, GRPO, and ES for contemporary large-scale models.]]></description>
+<pubDate>Thu, 12 Mar 2026 17:49:30 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[PACED: Distillation at the Frontier of Student Competence]]></title>
+<link>https://huggingface.co/papers/2603.11178</link>
+<guid>2603.11178</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yuanda Xu, Hejian Sang, Zhengze Zhou, Ran He, Zhipeng Wang
 Institution: 
 Published: 2026-03-11
 Score: 7/10
 Citations: 0
-Upvotes: 5
+Upvotes: 4
 GitHub: 
 Stars: 0
 
-While Large Language Models (LLMs) have achieved remarkable success in code generation, they often struggle with the deep, long-horizon reasoning required for complex software engineering. We attribute this limitation to the nature of standard pre-training data: static software repositories represent only the terminal state of an intricate intellectual process, abstracting away the intermediate planning, debugging, and iterative refinement. To bridge this gap, we propose a novel paradigm: understanding via reconstruction. We hypothesize that reverse-engineering the latent agentic trajectories -- the planning, reasoning, and debugging steps -- behind static repositories provides a far richer supervision signal than raw code alone. To operationalize this, we introduce a framework that synthesizes these trajectories using a multi-agent simulation. This process is grounded in the structural realities of the source repositories (e.g., dependency graphs and file hierarchies) to ensure fidelity. Furthermore, to guarantee the logical rigor of the synthetic data, we employ a search-based optimization technique that iteratively refines the Chain-of-Thought (CoT) reasoning to maximize the likelihood of the ground-truth code. Empirical results demonstrate that continuous pre-training on these reconstructed trajectories significantly enhances Llama-3-8B's performance across diverse benchmarks, including long-context understanding, coding proficiency, and agentic capabilities.]]></description>
-<pubDate>Wed, 11 Mar 2026 09:23:20 +0000</pubDate>
+Standard LLM distillation wastes compute on two fronts: problems the student has already mastered (near-zero gradients) and problems far beyond its reach (incoherent gradients that erode existing capabilities). We show that this waste is not merely intuitive but structurally inevitable: the gradient signal-to-noise ratio in distillation provably vanishes at both pass-rate extremes. This theoretical observation leads to Paced, a framework that concentrates distillation on the zone of proximal development -- the frontier of a student model's competence -- via a principled pass-rate weight w(p) = p^α(1 - p)^β derived from the boundary-vanishing structure of distillation gradients. Key results: (1) Theory: We prove that the Beta kernel w(p) = p^α(1-p)^β is a leading-order weight family arising from the SNR structure of distillation, and that it is minimax-robust -- under bounded multiplicative misspecification, worst-case efficiency loss is only O(δ^2). (2)Distillation: On distillation from a larger teacher to a smaller student model with forward KL, Paced achieves significant gain over the base model, while keeping benchmark forgetting at a low level. (3)Self-distillation: On instruction-tuned models with reverse KL, gains are exceeding baselines as well. (4)Two-stage synergy: A forward-KL-then-reverse-KL schedule yields the strongest results in our setting, reaching substantial improvements on standard reasoning benchmarks -- supporting a mode-coverage-then-consolidation interpretation of the distillation process. All configurations require only student rollouts to estimate pass rates, need no architectural changes, and are compatible with any KL direction.]]></description>
+<pubDate>Wed, 11 Mar 2026 18:00:05 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Examining Reasoning LLMs-as-Judges in Non-Verifiable LLM Post-Training]]></title>
@@ -330,60 +384,6 @@ Reasoning LLMs-as-Judges, which can benefit from inference-time scaling, provide
 <pubDate>Thu, 12 Mar 2026 17:57:06 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[PACED: Distillation at the Frontier of Student Competence]]></title>
-<link>https://huggingface.co/papers/2603.11178</link>
-<guid>2603.11178</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yuanda Xu, Hejian Sang, Zhengze Zhou, Ran He, Zhipeng Wang
-Institution: 
-Published: 2026-03-11
-Score: 7/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-Standard LLM distillation wastes compute on two fronts: problems the student has already mastered (near-zero gradients) and problems far beyond its reach (incoherent gradients that erode existing capabilities). We show that this waste is not merely intuitive but structurally inevitable: the gradient signal-to-noise ratio in distillation provably vanishes at both pass-rate extremes. This theoretical observation leads to Paced, a framework that concentrates distillation on the zone of proximal development -- the frontier of a student model's competence -- via a principled pass-rate weight w(p) = p^α(1 - p)^β derived from the boundary-vanishing structure of distillation gradients. Key results: (1) Theory: We prove that the Beta kernel w(p) = p^α(1-p)^β is a leading-order weight family arising from the SNR structure of distillation, and that it is minimax-robust -- under bounded multiplicative misspecification, worst-case efficiency loss is only O(δ^2). (2)Distillation: On distillation from a larger teacher to a smaller student model with forward KL, Paced achieves significant gain over the base model, while keeping benchmark forgetting at a low level. (3)Self-distillation: On instruction-tuned models with reverse KL, gains are exceeding baselines as well. (4)Two-stage synergy: A forward-KL-then-reverse-KL schedule yields the strongest results in our setting, reaching substantial improvements on standard reasoning benchmarks -- supporting a mode-coverage-then-consolidation interpretation of the distillation process. All configurations require only student rollouts to estimate pass rates, need no architectural changes, and are compatible with any KL direction.]]></description>
-<pubDate>Wed, 11 Mar 2026 18:00:05 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Training Language Models via Neural Cellular Automata]]></title>
-<link>https://huggingface.co/papers/2603.10055</link>
-<guid>2603.10055</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Dan Lee, Seungwook Han, Akarsh Kumar, Pulkit Agrawal
-Institution: 
-Published: 2026-03-09
-Score: 7/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-Pre-training is crucial for large language models (LLMs), as it is when most representations and capabilities are acquired. However, natural language pre-training has problems: high-quality text is finite, it contains human biases, and it entangles knowledge with reasoning. This raises a fundamental question: is natural language the only path to intelligence? We propose using neural cellular automata (NCA) to generate synthetic, non-linguistic data for pre-pre-training LLMs--training on synthetic-then-natural language. NCA data exhibits rich spatiotemporal structure and statistics resembling natural language while being controllable and cheap to generate at scale. We find that pre-pre-training on only 164M NCA tokens improves downstream language modeling by up to 6% and accelerates convergence by up to 1.6x. Surprisingly, this even outperforms pre-pre-training on 1.6B tokens of natural language from Common Crawl with more compute. These gains also transfer to reasoning benchmarks, including GSM8K, HumanEval, and BigBench-Lite. Investigating what drives transfer, we find that attention layers are the most transferable, and that optimal NCA complexity varies by domain: code benefits from simpler dynamics, while math and web text favor more complex ones. These results enable systematic tuning of the synthetic distribution to target domains. More broadly, our work opens a path toward more efficient models with fully synthetic pre-training.]]></description>
-<pubDate>Mon, 09 Mar 2026 18:14:26 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Automatic Generation of High-Performance RL Environments]]></title>
-<link>https://huggingface.co/papers/2603.12145</link>
-<guid>2603.12145</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Seth Karten, Rahul Dev Appapogu, Chi Jin
-Institution: 
-Published: 2026-03-12
-Score: 7/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-Translating complex reinforcement learning (RL) environments into high-performance implementations has traditionally required months of specialized engineering. We present a reusable recipe - a generic prompt template, hierarchical verification, and iterative agent-assisted repair - that produces semantically equivalent high-performance environments for <$10 in compute cost. We demonstrate three distinct workflows across five environments. Direct translation (no prior performance implementation exists): EmuRust (1.5x PPO speedup via Rust parallelism for a Game Boy emulator) and PokeJAX, the first GPU-parallel Pokemon battle simulator (500M SPS random action, 15.2M SPS PPO; 22,320x over the TypeScript reference). Translation verified against existing performance implementations: throughput parity with MJX (1.04x) and 5x over Brax at matched GPU batch sizes (HalfCheetah JAX); 42x PPO (Puffer Pong). New environment creation: TCGJax, the first deployable JAX Pokemon TCG engine (717K SPS random action, 153K SPS PPO; 6.6x over the Python reference), synthesized from a web-extracted specification. At 200M parameters, the environment overhead drops below 4% of training time. Hierarchical verification (property, interaction, and rollout tests) confirms semantic equivalence for all five environments; cross-backend policy transfer confirms zero sim-to-sim gap for all five environments. TCGJax, synthesized from a private reference absent from public repositories, serves as a contamination control for agent pretraining data concerns. The paper contains sufficient detail - including representative prompts, verification methodology, and complete results - that a coding agent could reproduce the translations directly from the manuscript.]]></description>
-<pubDate>Thu, 12 Mar 2026 16:45:47 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[Meissa: Multi-modal Medical Agentic Intelligence]]></title>
 <link>https://huggingface.co/papers/2603.09018</link>
 <guid>2603.09018</guid>
@@ -402,22 +402,22 @@ Multi-modal large language models (MM-LLMs) have shown strong performance in med
 <pubDate>Mon, 09 Mar 2026 23:22:55 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights]]></title>
-<link>https://huggingface.co/papers/2603.12228</link>
-<guid>2603.12228</guid>
+<title><![CDATA[Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training]]></title>
+<link>https://huggingface.co/papers/2603.12255</link>
+<guid>2603.12255</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yulu Gan, Phillip Isola
+Authors: Fangfu Liu, Diankun Wu, Jiawei Chi, Yimo Cai, Yi-Hsin Hung
 Institution: 
 Published: 2026-03-12
-Score: 7/10
+Score: 6/10
 Citations: 0
-Upvotes: 2
+Upvotes: 71
 GitHub: 
 Stars: 0
 
-Pretraining produces a learned parameter vector that is typically treated as a starting point for further iterative adaptation. In this work, we instead view the outcome of pretraining as a distribution over parameter vectors, whose support already contains task-specific experts. We show that in small models such expert solutions occupy a negligible fraction of the volume of this distribution, making their discovery reliant on structured optimization methods such as gradient descent. In contrast, in large, well-pretrained models the density of task-experts increases dramatically, so that diverse, task-improving specialists populate a substantial fraction of the neighborhood around the pretrained weights. Motivated by this perspective, we explore a simple, fully parallel post-training method that samples N parameter perturbations at random, selects the top K, and ensembles predictions via majority vote. Despite its simplicity, this approach is competitive with standard post-training methods such as PPO, GRPO, and ES for contemporary large-scale models.]]></description>
-<pubDate>Thu, 12 Mar 2026 17:49:30 +0000</pubDate>
+Humans perceive and understand real-world spaces through a stream of visual observations. Therefore, the ability to streamingly maintain and update spatial evidence from potentially unbounded video streams is essential for spatial intelligence. The core challenge is not simply longer context windows but how spatial information is selected, organized, and retained over time. In this paper, we propose Spatial-TTT towards streaming visual-based spatial intelligence with test-time training (TTT), which adapts a subset of parameters (fast weights) to capture and organize spatial evidence over long-horizon scene videos. Specifically, we design a hybrid architecture and adopt large-chunk updates parallel with sliding-window attention for efficient spatial video processing. To further promote spatial awareness, we introduce a spatial-predictive mechanism applied to TTT layers with 3D spatiotemporal convolution, which encourages the model to capture geometric correspondence and temporal continuity across frames. Beyond architecture design, we construct a dataset with dense 3D spatial descriptions, which guides the model to update its fast weights to memorize and organize global 3D spatial signals in a structured manner. Extensive experiments demonstrate that Spatial-TTT improves long-horizon spatial understanding and achieves state-of-the-art performance on video spatial benchmarks. Project page: https://liuff19.github.io/Spatial-TTT.]]></description>
+<pubDate>Thu, 12 Mar 2026 17:58:58 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation]]></title>
@@ -430,7 +430,7 @@ Institution:
 Published: 2026-03-12
 Score: 6/10
 Citations: 0
-Upvotes: 25
+Upvotes: 28
 GitHub: 
 Stars: 0
 
@@ -492,24 +492,6 @@ Recently, Multimodal Large Language Models (MLLMs) have been widely integrated i
 <pubDate>Thu, 12 Mar 2026 17:58:48 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[The Curse and Blessing of Mean Bias in FP4-Quantized LLM Training]]></title>
-<link>https://huggingface.co/papers/2603.10444</link>
-<guid>2603.10444</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Hengjie Cao, Zhendong Huang, Mengyi Chen, Yifeng Yang, Fanqi Yu
-Institution: 
-Published: 2026-03-11
-Score: 6/10
-Citations: 0
-Upvotes: 6
-GitHub: 
-Stars: 0
-
-Large language models trained on natural language exhibit pronounced anisotropy: a small number of directions concentrate disproportionate energy, while the remaining dimensions form a broad semantic tail. In low-bit training regimes, this geometry becomes numerically unstable. Because blockwise quantization scales are determined by extreme elementwise magnitudes, dominant directions stretch the dynamic range, compressing long-tail semantic variation into narrow numerical bins. We show that this instability is primarily driven by a coherent rank-one mean bias, which constitutes the dominant component of spectral anisotropy in LLM representations. This mean component emerges systematically across layers and training stages and accounts for the majority of extreme activation magnitudes, making it the principal driver of dynamic-range inflation under low precision. Crucially, because the dominant instability is rank-one, it can be eliminated through a simple source-level mean-subtraction operation. This bias-centric conditioning recovers most of the stability benefits of SVD-based spectral methods while requiring only reduction operations and standard quantization kernels. Empirical results on FP4 (W4A4G4) training show that mean removal substantially narrows the loss gap to BF16 and restores downstream performance, providing a hardware-efficient path to stable low-bit LLM training.]]></description>
-<pubDate>Wed, 11 Mar 2026 05:59:12 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[Meta-Reinforcement Learning with Self-Reflection for Agentic Search]]></title>
 <link>https://huggingface.co/papers/2603.11327</link>
 <guid>2603.11327</guid>
@@ -520,12 +502,48 @@ Institution:
 Published: 2026-03-11
 Score: 6/10
 Citations: 0
-Upvotes: 5
+Upvotes: 6
 GitHub: 
 Stars: 0
 
 This paper introduces MR-Search, an in-context meta reinforcement learning (RL) formulation for agentic search with self-reflection. Instead of optimizing a policy within a single independent episode with sparse rewards, MR-Search trains a policy that conditions on past episodes and adapts its search strategy across episodes. MR-Search learns to learn a search strategy with self-reflection, allowing search agents to improve in-context exploration at test-time. Specifically, MR-Search performs cross-episode exploration by generating explicit self-reflections after each episode and leveraging them as additional context to guide subsequent attempts, thereby promoting more effective exploration during test-time. We further introduce a multi-turn RL algorithm that estimates a dense relative advantage at the turn level, enabling fine-grained credit assignment on each episode. Empirical results across various benchmarks demonstrate the advantages of MR-Search over baselines based RL, showing strong generalization and relative improvements of 9.2% to 19.3% across eight benchmarks. Our code and data are available at https://github.com/tengxiao1/MR-Search.]]></description>
 <pubDate>Wed, 11 Mar 2026 21:40:26 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Accent Vector: Controllable Accent Manipulation for Multilingual TTS Without Accented Data]]></title>
+<link>https://huggingface.co/papers/2603.07534</link>
+<guid>2603.07534</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Thanathai Lertpetchpun, Thanapat Trachu, Jihwan Lee, Tiantian Feng, Dani Byrd
+Institution: 
+Published: 2026-03-08
+Score: 6/10
+Citations: 0
+Upvotes: 5
+GitHub: 
+Stars: 0
+
+Accent is an integral part of society, reflecting multiculturalism and shaping how individuals express identity. The majority of English speakers are non-native (L2) speakers, yet current Text-To-Speech (TTS) systems primarily model American-accented English due limited accented data. We propose Accent Vector, a controllable representation that enables accent manipulation in multilingual TTS without requiring accented training data. Accent Vector is derived by fine-tuning a TTS system on native speech of a different language (i.e. non-English) and computing task vectors capturing accent characteristics (i.e. in English). By scaling and interpolating the vector, we achieve fine-grained control over accent strength and generate mixed-accent speech. In addition, it generalizes beyond English, enabling accent control across multiple languages. Objective and human evaluations confirm the effectiveness of Accent Vector for fine-grained and compositional accent control.]]></description>
+<pubDate>Sun, 08 Mar 2026 08:48:42 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Training Language Models via Neural Cellular Automata]]></title>
+<link>https://huggingface.co/papers/2603.10055</link>
+<guid>2603.10055</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Dan Lee, Seungwook Han, Akarsh Kumar, Pulkit Agrawal
+Institution: 
+Published: 2026-03-09
+Score: 6/10
+Citations: 0
+Upvotes: 4
+GitHub: 
+Stars: 0
+
+Pre-training is crucial for large language models (LLMs), as it is when most representations and capabilities are acquired. However, natural language pre-training has problems: high-quality text is finite, it contains human biases, and it entangles knowledge with reasoning. This raises a fundamental question: is natural language the only path to intelligence? We propose using neural cellular automata (NCA) to generate synthetic, non-linguistic data for pre-pre-training LLMs--training on synthetic-then-natural language. NCA data exhibits rich spatiotemporal structure and statistics resembling natural language while being controllable and cheap to generate at scale. We find that pre-pre-training on only 164M NCA tokens improves downstream language modeling by up to 6% and accelerates convergence by up to 1.6x. Surprisingly, this even outperforms pre-pre-training on 1.6B tokens of natural language from Common Crawl with more compute. These gains also transfer to reasoning benchmarks, including GSM8K, HumanEval, and BigBench-Lite. Investigating what drives transfer, we find that attention layers are the most transferable, and that optimal NCA complexity varies by domain: code benefits from simpler dynamics, while math and web text favor more complex ones. These results enable systematic tuning of the synthetic distribution to target domains. More broadly, our work opens a path toward more efficient models with fully synthetic pre-training.]]></description>
+<pubDate>Mon, 09 Mar 2026 18:14:26 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[DIVE: Scaling Diversity in Agentic Task Synthesis for Generalizable Tool Use]]></title>
@@ -556,7 +574,7 @@ Institution:
 Published: 2026-03-11
 Score: 6/10
 Citations: 0
-Upvotes: 3
+Upvotes: 4
 GitHub: 
 Stars: 0
 
@@ -582,40 +600,58 @@ Continual Reinforcement Learning (CRL) for Vision-Language-Action (VLA) models i
 <pubDate>Thu, 12 Mar 2026 08:22:39 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Accent Vector: Controllable Accent Manipulation for Multilingual TTS Without Accented Data]]></title>
-<link>https://huggingface.co/papers/2603.07534</link>
-<guid>2603.07534</guid>
+<title><![CDATA[EmbTracker: Traceable Black-box Watermarking for Federated Language Models]]></title>
+<link>https://huggingface.co/papers/2603.12089</link>
+<guid>2603.12089</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Thanathai Lertpetchpun, Thanapat Trachu, Jihwan Lee, Tiantian Feng, Dani Byrd
+Authors: Haodong Zhao, Jinming Hu, Yijie Bai, Tian Dong, Wei Du
 Institution: 
-Published: 2026-03-08
+Published: 2026-03-12
 Score: 6/10
 Citations: 0
 Upvotes: 2
 GitHub: 
 Stars: 0
 
-Accent is an integral part of society, reflecting multiculturalism and shaping how individuals express identity. The majority of English speakers are non-native (L2) speakers, yet current Text-To-Speech (TTS) systems primarily model American-accented English due limited accented data. We propose Accent Vector, a controllable representation that enables accent manipulation in multilingual TTS without requiring accented training data. Accent Vector is derived by fine-tuning a TTS system on native speech of a different language (i.e. non-English) and computing task vectors capturing accent characteristics (i.e. in English). By scaling and interpolating the vector, we achieve fine-grained control over accent strength and generate mixed-accent speech. In addition, it generalizes beyond English, enabling accent control across multiple languages. Objective and human evaluations confirm the effectiveness of Accent Vector for fine-grained and compositional accent control.]]></description>
-<pubDate>Sun, 08 Mar 2026 08:48:42 +0000</pubDate>
+Federated Language Model (FedLM) allows a collaborative learning without sharing raw data, yet it introduces a critical vulnerability, as every untrustworthy client may leak the received functional model instance. Current watermarking schemes for FedLM often require white-box access and client-side cooperation, providing only group-level proof of ownership rather than individual traceability. We propose EmbTracker, a server-side, traceable black-box watermarking framework specifically designed for FedLMs. EmbTracker achieves black-box verifiability by embedding a backdoor-based watermark detectable through simple API queries. Client-level traceability is realized by injecting unique identity-specific watermarks into the model distributed to each client. In this way, a leaked model can be attributed to a specific culprit, ensuring robustness even against non-cooperative participants. Extensive experiments on various language and vision-language models demonstrate that EmbTracker achieves robust traceability with verification rates near 100\%, high resilience against removal attacks (fine-tuning, pruning, quantization), and negligible impact on primary task performance (typically within 1-2\%).]]></description>
+<pubDate>Thu, 12 Mar 2026 15:57:32 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[SoundWeaver: Semantic Warm-Starting for Text-to-Audio Diffusion Serving]]></title>
-<link>https://huggingface.co/papers/2603.07865</link>
-<guid>2603.07865</guid>
+<title><![CDATA[Attention Sinks Are Provably Necessary in Softmax Transformers: Evidence from Trigger-Conditional Tasks]]></title>
+<link>https://huggingface.co/papers/2603.11487</link>
+<guid>2603.11487</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Ayush Barik, Sofia Stoica, Nikhil Sarda, Arnav Kethana, Abhinav Khanduja
+Authors: Yuval Ran-Milo
+Institution: 
+Published: 2026-03-12
+Score: 6/10
+Citations: 0
+Upvotes: 2
+GitHub: 
+Stars: 0
+
+Transformers often display an attention sink: probability mass concentrates on a fixed, content-agnostic position. We prove that computing a simple trigger-conditional behavior necessarily induces a sink in softmax self-attention models. Our results formalize a familiar intuition: normalization over a probability simplex must force attention to collapse onto a stable anchor to realize a default state (e.g., when the model needs to ignore the input). We instantiate this with a concrete task: when a designated trigger token appears, the model must return the average of all preceding token representations, and otherwise output zero, a task which mirrors the functionality of attention heads in the wild (Barbero et al., 2025; Guo et al., 2024). We also prove that non-normalized ReLU attention can solve the same task without any sink, confirming that the normalization constraint is the fundamental driver of sink behavior. Experiments validate our predictions and demonstrate they extend beyond the theoretically analyzed setting: softmax models develop strong sinks while ReLU attention eliminates them in both single-head and multi-head variants.]]></description>
+<pubDate>Thu, 12 Mar 2026 03:13:28 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[WaDi: Weight Direction-aware Distillation for One-step Image Synthesis]]></title>
+<link>https://huggingface.co/papers/2603.08258</link>
+<guid>2603.08258</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Lei Wang, Yang Cheng, Senmao Li, Ge Wu, Yaxing Wang
 Institution: 
 Published: 2026-03-09
 Score: 6/10
 Citations: 0
-Upvotes: 2
+Upvotes: 1
 GitHub: 
 Stars: 0
 
-Text-to-audio diffusion models produce high-fidelity audio but require tens of function evaluations (NFEs), incurring multi-second latency and limited throughput. We present SoundWeaver, the first training-free, model-agnostic serving system that accelerates text-to-audio diffusion by warm-starting from semantically similar cached audio. SoundWeaver introduces three components: a Reference Selector that retrieves and temporally aligns cached candidates via semantic and duration-aware gating; a Skip Gater that dynamically determines the percentage of NFEs to skip; and a lightweight Cache Manager that maintains cache utility through quality-aware eviction and refinement. On real-world audio traces, SoundWeaver achieves 1.8--3.0 times  latency reduction with a cache of only {sim}1K entries while preserving or improving perceptual quality.]]></description>
-<pubDate>Mon, 09 Mar 2026 00:38:02 +0000</pubDate>
+Despite the impressive performance of diffusion models such as Stable Diffusion (SD) in image generation, their slow inference limits practical deployment. Recent works accelerate inference by distilling multi-step diffusion into one-step generators. To better understand the distillation mechanism, we analyze U-Net/DiT weight changes between one-step students and their multi-step teacher counterparts. Our analysis reveals that changes in weight direction significantly exceed those in weight norm, highlighting it as the key factor during distillation. Motivated by this insight, we propose the Low-rank Rotation of weight Direction (LoRaD), a parameter-efficient adapter tailored to one-step diffusion distillation. LoRaD is designed to model these structured directional changes using learnable low-rank rotation matrices. We further integrate LoRaD into Variational Score Distillation (VSD), resulting in Weight Direction-aware Distillation (WaDi)-a novel one-step distillation framework. WaDi achieves state-of-the-art FID scores on COCO 2014 and COCO 2017 while using only approximately 10% of the trainable parameters of the U-Net/DiT. Furthermore, the distilled one-step model demonstrates strong versatility and scalability, generalizing well to various downstream tasks such as controllable generation, relation inversion, and high-resolution synthesis.]]></description>
+<pubDate>Mon, 09 Mar 2026 11:27:28 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[A Mixed Diet Makes DINO An Omnivorous Vision Encoder]]></title>
@@ -636,60 +672,6 @@ Pre-trained vision encoders like DINOv2 have demonstrated exceptional performanc
 <pubDate>Fri, 27 Feb 2026 17:03:45 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[EmbTracker: Traceable Black-box Watermarking for Federated Language Models]]></title>
-<link>https://huggingface.co/papers/2603.12089</link>
-<guid>2603.12089</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Haodong Zhao, Jinming Hu, Yijie Bai, Tian Dong, Wei Du
-Institution: 
-Published: 2026-03-12
-Score: 6/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Federated Language Model (FedLM) allows a collaborative learning without sharing raw data, yet it introduces a critical vulnerability, as every untrustworthy client may leak the received functional model instance. Current watermarking schemes for FedLM often require white-box access and client-side cooperation, providing only group-level proof of ownership rather than individual traceability. We propose EmbTracker, a server-side, traceable black-box watermarking framework specifically designed for FedLMs. EmbTracker achieves black-box verifiability by embedding a backdoor-based watermark detectable through simple API queries. Client-level traceability is realized by injecting unique identity-specific watermarks into the model distributed to each client. In this way, a leaked model can be attributed to a specific culprit, ensuring robustness even against non-cooperative participants. Extensive experiments on various language and vision-language models demonstrate that EmbTracker achieves robust traceability with verification rates near 100\%, high resilience against removal attacks (fine-tuning, pruning, quantization), and negligible impact on primary task performance (typically within 1-2\%).]]></description>
-<pubDate>Thu, 12 Mar 2026 15:57:32 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Attention Sinks Are Provably Necessary in Softmax Transformers: Evidence from Trigger-Conditional Tasks]]></title>
-<link>https://huggingface.co/papers/2603.11487</link>
-<guid>2603.11487</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yuval Ran-Milo
-Institution: 
-Published: 2026-03-12
-Score: 6/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Transformers often display an attention sink: probability mass concentrates on a fixed, content-agnostic position. We prove that computing a simple trigger-conditional behavior necessarily induces a sink in softmax self-attention models. Our results formalize a familiar intuition: normalization over a probability simplex must force attention to collapse onto a stable anchor to realize a default state (e.g., when the model needs to ignore the input). We instantiate this with a concrete task: when a designated trigger token appears, the model must return the average of all preceding token representations, and otherwise output zero, a task which mirrors the functionality of attention heads in the wild (Barbero et al., 2025; Guo et al., 2024). We also prove that non-normalized ReLU attention can solve the same task without any sink, confirming that the normalization constraint is the fundamental driver of sink behavior. Experiments validate our predictions and demonstrate they extend beyond the theoretically analyzed setting: softmax models develop strong sinks while ReLU attention eliminates them in both single-head and multi-head variants.]]></description>
-<pubDate>Thu, 12 Mar 2026 03:13:28 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[WaDi: Weight Direction-aware Distillation for One-step Image Synthesis]]></title>
-<link>https://huggingface.co/papers/2603.08258</link>
-<guid>2603.08258</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Lei Wang, Yang Cheng, Senmao Li, Ge Wu, Yaxing Wang
-Institution: 
-Published: 2026-03-09
-Score: 6/10
-Citations: 0
-Upvotes: 0
-GitHub: 
-Stars: 0
-
-Despite the impressive performance of diffusion models such as Stable Diffusion (SD) in image generation, their slow inference limits practical deployment. Recent works accelerate inference by distilling multi-step diffusion into one-step generators. To better understand the distillation mechanism, we analyze U-Net/DiT weight changes between one-step students and their multi-step teacher counterparts. Our analysis reveals that changes in weight direction significantly exceed those in weight norm, highlighting it as the key factor during distillation. Motivated by this insight, we propose the Low-rank Rotation of weight Direction (LoRaD), a parameter-efficient adapter tailored to one-step diffusion distillation. LoRaD is designed to model these structured directional changes using learnable low-rank rotation matrices. We further integrate LoRaD into Variational Score Distillation (VSD), resulting in Weight Direction-aware Distillation (WaDi)-a novel one-step distillation framework. WaDi achieves state-of-the-art FID scores on COCO 2014 and COCO 2017 while using only approximately 10% of the trainable parameters of the U-Net/DiT. Furthermore, the distilled one-step model demonstrates strong versatility and scalability, generalizing well to various downstream tasks such as controllable generation, relation inversion, and high-resolution synthesis.]]></description>
-<pubDate>Mon, 09 Mar 2026 11:27:28 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[Video-Based Reward Modeling for Computer-Use Agents]]></title>
 <link>https://huggingface.co/papers/2603.10178</link>
 <guid>2603.10178</guid>
@@ -700,7 +682,7 @@ Institution:
 Published: 2026-03-10
 Score: 5/10
 Citations: 0
-Upvotes: 32
+Upvotes: 35
 GitHub: 
 Stars: 0
 
@@ -718,7 +700,7 @@ Institution:
 Published: 2026-03-12
 Score: 5/10
 Citations: 0
-Upvotes: 24
+Upvotes: 26
 GitHub: 
 Stars: 0
 
@@ -754,7 +736,7 @@ Institution:
 Published: 2026-03-10
 Score: 5/10
 Citations: 0
-Upvotes: 9
+Upvotes: 10
 GitHub: 
 Stars: 0
 
@@ -772,7 +754,7 @@ Institution:
 Published: 2026-03-12
 Score: 5/10
 Citations: 0
-Upvotes: 6
+Upvotes: 7
 GitHub: 
 Stars: 0
 
@@ -808,7 +790,7 @@ Institution:
 Published: 2026-03-12
 Score: 5/10
 Citations: 0
-Upvotes: 2
+Upvotes: 3
 GitHub: 
 Stars: 0
 
@@ -826,7 +808,7 @@ Institution:
 Published: 2026-03-12
 Score: 5/10
 Citations: 0
-Upvotes: 1
+Upvotes: 2
 GitHub: 
 Stars: 0
 
@@ -868,6 +850,24 @@ Stars: 0
 
 4D reconstruction of equine family (e.g. horses) from monocular video is important for animal welfare. Previous mainstream 4D animal reconstruction methods require joint optimization of motion and appearance over a whole video, which is time-consuming and sensitive to incomplete observation. In this work, we propose a novel framework called 4DEquine by disentangling the 4D reconstruction problem into two sub-problems: dynamic motion reconstruction and static appearance reconstruction. For motion, we introduce a simple yet effective spatio-temporal transformer with a post-optimization stage to regress smooth and pixel-aligned pose and shape sequences from video. For appearance, we design a novel feed-forward network that reconstructs a high-fidelity, animatable 3D Gaussian avatar from as few as a single image. To assist training, we create a large-scale synthetic motion dataset, VarenPoser, which features high-quality surface motions and diverse camera trajectories, as well as a synthetic appearance dataset, VarenTex, comprising realistic multi-view images generated through multi-view diffusion. While training only on synthetic datasets, 4DEquine achieves state-of-the-art performance on real-world APT36K and AiM datasets, demonstrating the superiority of 4DEquine and our new datasets for both geometry and appearance reconstruction. Comprehensive ablation studies validate the effectiveness of both the motion and appearance reconstruction network. Project page: https://luoxue-star.github.io/4DEquine_Project_Page/.]]></description>
 <pubDate>Tue, 10 Mar 2026 18:01:10 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[The Curse and Blessing of Mean Bias in FP4-Quantized LLM Training]]></title>
+<link>https://huggingface.co/papers/2603.10444</link>
+<guid>2603.10444</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Hengjie Cao, Zhendong Huang, Mengyi Chen, Yifeng Yang, Fanqi Yu
+Institution: 
+Published: 2026-03-11
+Score: 4/10
+Citations: 0
+Upvotes: 7
+GitHub: 
+Stars: 0
+
+Large language models trained on natural language exhibit pronounced anisotropy: a small number of directions concentrate disproportionate energy, while the remaining dimensions form a broad semantic tail. In low-bit training regimes, this geometry becomes numerically unstable. Because blockwise quantization scales are determined by extreme elementwise magnitudes, dominant directions stretch the dynamic range, compressing long-tail semantic variation into narrow numerical bins. We show that this instability is primarily driven by a coherent rank-one mean bias, which constitutes the dominant component of spectral anisotropy in LLM representations. This mean component emerges systematically across layers and training stages and accounts for the majority of extreme activation magnitudes, making it the principal driver of dynamic-range inflation under low precision. Crucially, because the dominant instability is rank-one, it can be eliminated through a simple source-level mean-subtraction operation. This bias-centric conditioning recovers most of the stability benefits of SVD-based spectral methods while requiring only reduction operations and standard quantization kernels. Empirical results on FP4 (W4A4G4) training show that mean removal substantially narrows the loss gap to BF16 and restores downstream performance, providing a hardware-efficient path to stable low-bit LLM training.]]></description>
+<pubDate>Wed, 11 Mar 2026 05:59:12 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis]]></title>
