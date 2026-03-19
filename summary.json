@@ -1,60 +1,64 @@
 {
   "date": "2026-03-19",
-  "generated_at": "2026-03-19T04:03:34Z",
-  "total_papers": 247,
+  "generated_at": "2026-03-19T14:43:05Z",
+  "total_papers": 241,
   "must_read_count": 13,
-  "notable_count": 24,
-  "daily_summary": "Today's top-scoring papers represent significant advancements in various areas of AI research, from multimodal learning to reinforcement learning and natural language processing. Notably, papers like HistoAtlas and MolmoB0T demonstrate the potential of AI in biomedical research and simulation, while ARISE and Anticipatory Planning for Multimodal AI Agents push the boundaries of agent reasoning and planning. Furthermore, breakthroughs in machine translation, as seen in Omnilingual MT, and video super-resolution, as showcased in SparkVSR, highlight the rapid progress being made in these fields, with potential applications in areas such as healthcare, robotics, and document intelligence, as explored in Qianfan-OCR and Kinema4D.",
+  "notable_count": 25,
+  "daily_summary": "Today's top-scoring papers push the boundaries of AI research, with MetaClaw and ARISE advancing the field of reinforcement learning through meta-learning and intrinsic skill evolution, while Omnilingual MT and Qianfan-OCR make significant strides in natural language processing and document intelligence. The Alignment Makes Language Models Normative, Not Descriptive paper sparks important discussions on the role of language models in shaping norms, highlighting the need for careful consideration in AI development. Meanwhile, papers like VideoAtlas and Efficient Exploration at Scale demonstrate innovative solutions for navigating complex data and optimizing exploration strategies, underscoring the rapid progress being made in AI research.",
   "weekly_trends": {
     "hot_topics": [
       {
-        "topic": "Computer Vision (cs.CV)",
-        "paper_count": 84,
-        "insight": "Advances in image and video processing, with notable papers like SparkVSR, which enables interactive video super-resolution, and Kinema4D, which focuses on kinematic 4D world modeling for spatiotemporal embodied simulation."
+        "topic": "cs.CV",
+        "paper_count": 80,
+        "insight": "Computer vision continues to dominate with 80 papers, including notable works like Qianfan-OCR, a unified end-to-end model for document intelligence, and VideoAtlas, which enables navigating long-form video in logarithmic compute."
       },
       {
-        "topic": "Artificial Intelligence (cs.AI)",
-        "paper_count": 72,
-        "insight": "Research in AI is flourishing, with papers like ARISE, which explores agent reasoning with intrinsic skill evolution in hierarchical reinforcement learning, and Anticipatory Planning for Multimodal AI Agents, which focuses on planning for multimodal AI agents."
+        "topic": "cs.AI",
+        "paper_count": 69,
+        "insight": "Artificial intelligence papers are abundant, with MetaClaw standing out, an agent that meta-learns and evolves in the wild, and ARISE, which focuses on agent reasoning with intrinsic skill evolution in hierarchical reinforcement learning."
       },
       {
-        "topic": "Machine Learning (cs.LG)",
-        "paper_count": 67,
-        "insight": "Machine learning continues to be a dominant area, with papers like Chain-of-Trajectories, which unlocks the intrinsic generative optimality of diffusion models via graph-theoretic planning, and TRUST-SQL, which introduces tool-integrated multi-turn reinforcement learning for text-to-SQL over unknown schemas."
+        "topic": "cs.LG",
+        "paper_count": 65,
+        "insight": "Machine learning is thriving, with papers like Omnilingual MT, which achieves machine translation for 1,600 languages, and Efficient Exploration at Scale, highlighting advancements in exploration efficiency at scale."
       }
     ],
     "key_developments": [
-      "The introduction of HistoAtlas, a pan-cancer morphology atlas that links histomics to molecular programs and clinical outcomes, marks a significant advancement in medical AI research.",
-      "The development of MolmoB0T, which enables large-scale simulation for zero-shot manipulation, has the potential to revolutionize fields like robotics and autonomous systems.",
-      "The release of Omnilingual MT, a machine translation model for 1,600 languages, represents a major breakthrough in natural language processing and language understanding."
+      "The development of MetaClaw, an agent that can meta-learn and evolve in the wild, marks a significant step in autonomous AI development.",
+      "Omnilingual MT's achievement of machine translation for 1,600 languages underscores the rapid progress in natural language processing.",
+      "The introduction of Qianfan-OCR, a unified end-to-end model for document intelligence, indicates a growing interest in applying AI to document analysis and understanding."
     ],
     "emerging_trends": [
-      "There is a growing interest in multimodal AI, with papers like Anticipatory Planning for Multimodal AI Agents and Kinema4D exploring the intersection of computer vision, natural language processing, and robotics.",
-      "The increasing focus on reinforcement learning and hierarchical reinforcement learning is evident in papers like ARISE and Chain-of-Trajectories, which are pushing the boundaries of agent reasoning and decision-making."
+      "There is a noticeable shift towards more autonomous and adaptive AI systems, as seen in papers like MetaClaw and ARISE, which focus on meta-learning and intrinsic skill evolution.",
+      "The field is also witnessing significant advancements in natural language processing and computer vision, with applications in machine translation, document intelligence, and video analysis."
     ],
-    "summary": "This week in AI research saw significant advancements in computer vision, artificial intelligence, and machine learning, with notable papers like HistoAtlas, MolmoB0T, and Omnilingual MT. The field is witnessing a growing interest in multimodal AI and reinforcement learning, with researchers exploring new frontiers in areas like medical AI, robotics, and natural language processing. As the field continues to evolve, we can expect to see more innovative applications of AI in various domains, from healthcare to autonomous systems."
+    "summary": [
+      "This week in AI research saw a plethora of papers across various topics, with computer vision, artificial intelligence, and machine learning being the most prominent.",
+      "Notable developments include the introduction of MetaClaw, an agent that meta-learns and evolves in the wild, and Omnilingual MT, which achieves machine translation for 1,600 languages.",
+      "The trends suggest a growing emphasis on autonomy, adaptability, and efficiency in AI systems, with significant advancements in natural language processing and computer vision applications."
+    ]
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 197
+    "arXiv": 191
   },
   "tags": {
-    "cs.CV": 84,
-    "cs.AI": 72,
-    "cs.LG": 67,
-    "cs.CL": 38,
+    "cs.CV": 80,
+    "cs.AI": 69,
+    "cs.LG": 65,
+    "cs.CL": 37,
     "stat.ML": 9,
     "cs.RO": 8,
     "cs.SE": 5,
     "cs.CR": 5,
     "cs.IR": 5,
     "cs.HC": 4,
-    "cs.GR": 2,
     "stat.ME": 2,
     "cs.MA": 2,
     "cs.SD": 2,
     "cs.CY": 1,
     "stat.AP": 1,
+    "cs.GR": 1,
     "cs.CE": 1,
     "cs.SI": 1,
     "cs.PL": 1,
@@ -64,44 +68,45 @@
     "MIT": 5
   },
   "must_read_ids": [
-    "2603.16861",
-    "2603.16587",
     "2603.13398",
-    "2603.16669",
-    "2603.16871",
-    "2603.16448",
-    "2603.16859",
-    "2603.16864",
-    "2603.16844",
+    "2603.17187",
     "2603.16309",
-    "2603.16777",
+    "2603.16669",
+    "2603.17218",
+    "2603.13875",
+    "2603.17378",
+    "2603.17965",
+    "2603.17948",
+    "2603.17216",
+    "2603.15674",
     "2603.16060",
-    "2603.14704"
+    "2603.16587"
   ],
   "notable_ids": [
-    "2603.16790",
-    "2603.16867",
-    "2603.16649",
-    "2603.16063",
-    "2603.17621",
-    "2603.14326",
-    "2603.15674",
-    "2603.16099",
-    "2603.16077",
-    "2603.15118",
-    "2603.13366",
-    "2603.08262",
-    "2603.16139",
-    "2603.13875",
-    "2603.09022",
-    "2603.09821",
-    "2603.15600",
-    "2603.17375",
-    "2603.16496",
-    "2603.16792",
+    "2603.17117",
+    "2603.17240",
+    "2603.16864",
+    "2603.17662",
+    "2603.17942",
+    "2603.17891",
     "2603.15670",
-    "2603.16343",
+    "2603.16077",
+    "2603.14704",
+    "2603.15118",
+    "2603.14935",
+    "2603.15132",
+    "2603.16139",
+    "2603.17621",
+    "2603.09022",
+    "2603.17541",
+    "2603.16557",
+    "2603.13033",
+    "2603.16496",
     "2603.18004",
-    "2603.12396"
+    "2603.16792",
+    "2603.16649",
+    "2603.16653",
+    "2603.14326",
+    "2603.17074"
   ]
 }
