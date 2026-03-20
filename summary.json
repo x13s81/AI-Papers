@@ -1,51 +1,47 @@
 {
   "date": "2026-03-20",
-  "generated_at": "2026-03-20T03:54:48Z",
-  "total_papers": 239,
-  "must_read_count": 12,
-  "notable_count": 24,
-  "daily_summary": "Today's top-scoring papers offer significant advancements in AI research, particularly in areas such as language model alignment and efficient video processing. Notably, \"Alignment Makes Language Models Normative, Not Descriptive\" and \"VideoAtlas: Navigating Long-Form Video in Logarithmic Compute\" showcase innovative approaches to refining language models and streamlining video analysis, respectively. Meanwhile, papers like \"Nemotron-Cascade 2\" and \"RAMP: Reinforcement Adaptive Mixed Precision Quantization\" highlight ongoing efforts to optimize and fine-tune large language models, underscoring the community's push for more efficient and effective AI systems.",
+  "generated_at": "2026-03-20T14:40:12Z",
+  "total_papers": 235,
+  "must_read_count": 14,
+  "notable_count": 23,
+  "daily_summary": "Today's top-scoring papers push the boundaries of AI research in multiple domains, with SimulU and MonoArt showcasing significant advancements in simultaneous speech-to-speech translation and monocular 3D reconstruction, respectively. Meanwhile, papers like Memento-Skills and AI Scientist via Synthetic Task Scaling explore innovative approaches to agent design and task scaling, highlighting the potential for autonomous AI development. The inclusion of papers such as Tinted Frames and VTC-Bench also underscores the importance of evaluating and refining vision-language models and agentic multimodal models, ensuring that these systems are robust, reliable, and effective in real-world applications.",
   "weekly_trends": {
     "hot_topics": [
       {
         "topic": "cs.AI",
         "paper_count": 79,
-        "insight": "Research in cs.AI is flourishing, with a focus on language models, as seen in papers like 'Alignment Makes Language Models Normative, Not Descriptive' and 'Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation'"
+        "insight": "Significant advancements in policy learning, with papers like SimulU and Memento-Skills pushing the boundaries of simultaneous speech-to-speech translation and agent design."
       },
       {
         "topic": "cs.LG",
         "paper_count": 78,
-        "insight": "The cs.LG category is also highly active, with papers such as 'VideoAtlas: Navigating Long-Form Video in Logarithmic Compute' and 'RAMP: Reinforcement Adaptive Mixed Precision Quantization for Efficient On Device LLM Inference' showcasing advancements in efficient computation and reinforcement learning"
+        "insight": "Notable progress in large language models, including F2LLM-v2, which focuses on inclusive and efficient embeddings for a multilingual world, and Nemotron-Cascade 2, which explores post-training LLMs with cascade RL and multi-domain on-policy distillation."
       },
       {
         "topic": "cs.CV",
-        "paper_count": 59,
-        "insight": "Computer vision research is progressing, with notable papers like 'Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass' and 'Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding' demonstrating improved scene understanding and reconstruction capabilities"
+        "paper_count": 55,
+        "insight": "Advances in computer vision, such as MonoArt, which achieves progressive structural reasoning for monocular articulated 3D reconstruction, and EffectErase, which demonstrates joint video object removal and insertion for high-quality effect erasing."
       }
     ],
     "key_developments": [
-      "The development of more efficient language models, as seen in 'Nemotron-Cascade 2' and 'RAMP', which leverage techniques like cascade RL and mixed precision quantization",
-      "Advancements in scene understanding and reconstruction, with papers like 'Coherent Human-Scene Reconstruction' and 'Generation Models Know Space' showcasing improved capabilities",
-      "The emergence of research on embodied spatial reasoning, with the introduction of diagnostic benchmarks like 'ESPIRE'"
+      "The development of training-free policies, as seen in SimulU, which enables long-form simultaneous speech-to-speech translation without requiring extensive training data.",
+      "The emergence of more sophisticated multimodal models, such as VTC-Bench, which evaluates agentic multimodal models via compositional visual tool chaining, and LVOmniBench, which pioneers long audio-video understanding evaluation for omnimodal LLMs.",
+      "The focus on improving language models, including the introduction of AI Scientist via Synthetic Task Scaling, which aims to enhance the capabilities of AI scientists through synthetic task scaling."
     ],
     "emerging_trends": [
-      "There is a growing focus on developing more generalizable and efficient AI models, with researchers exploring techniques like synthetic task scaling and multi-domain on-policy distillation, as seen in papers like 'AI Scientist via Synthetic Task Scaling' and 'Nemotron-Cascade 2'",
-      "The field is also shifting towards more nuanced understandings of AI model limitations, with research like 'FINER: MLLMs Hallucinate under Fine-grained Negative Queries' highlighting the need for more robust and reliable models"
+      "There is a growing interest in developing more inclusive and efficient language models, as evidenced by papers like F2LLM-v2, which focuses on multilingual embeddings, and Nemotron-Cascade 2, which explores post-training LLMs with cascade RL and multi-domain on-policy distillation.",
+      "The field is also shifting towards more sophisticated multimodal models, with papers like VTC-Bench and LVOmniBench pushing the boundaries of audio-visual understanding and evaluation."
     ],
-    "summary": [
-      "This week in AI research saw significant advancements in language models, computer vision, and reinforcement learning, with a focus on efficiency, generalizability, and robustness",
-      "Notable papers like 'Alignment Makes Language Models Normative, Not Descriptive' and 'VideoAtlas' demonstrated the potential for AI models to drive meaningful progress in areas like scene understanding and video navigation",
-      "As the field continues to evolve, researchers are prioritizing the development of more reliable and efficient models, with a growing emphasis on embodied spatial reasoning, synthetic task scaling, and multi-domain learning"
-    ]
+    "summary": "This week in AI research saw significant advancements in policy learning, large language models, and computer vision, with papers like SimulU, F2LLM-v2, and MonoArt showcasing notable progress in their respective areas. The development of more sophisticated multimodal models and the focus on improving language models are emerging trends that are expected to continue in the coming weeks. Overall, the field is witnessing a surge in innovative solutions that are pushing the boundaries of what is possible with AI, with a growing emphasis on inclusivity, efficiency, and multimodal understanding."
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 189
+    "arXiv": 185
   },
   "tags": {
     "cs.AI": 79,
     "cs.LG": 78,
-    "cs.CV": 59,
+    "cs.CV": 55,
     "cs.CL": 35,
     "stat.ML": 14,
     "cs.CR": 10,
@@ -69,43 +65,44 @@
     "Mila": 1
   },
   "must_read_ids": [
-    "2603.17218",
-    "2603.17948",
-    "2603.17187",
-    "2603.19235",
+    "2603.19231",
     "2603.18743",
-    "2603.13033",
-    "2603.19220",
-    "2603.17662",
-    "2603.17891",
-    "2603.12789",
+    "2603.16924",
     "2603.17216",
-    "2603.16060"
+    "2603.17218",
+    "2603.19217",
+    "2603.19223",
+    "2603.17240",
+    "2603.19220",
+    "2603.19224",
+    "2603.15030",
+    "2603.10263",
+    "2603.17948",
+    "2603.19203"
   ],
   "notable_ids": [
-    "2603.17621",
-    "2603.17240",
-    "2603.19223",
-    "2603.17378",
-    "2603.19217",
     "2603.12372",
+    "2603.14935",
+    "2603.19235",
+    "2603.19228",
+    "2603.18472",
+    "2603.13033",
     "2603.14482",
-    "2603.17942",
-    "2603.16653",
-    "2603.16077",
+    "2603.13045",
+    "2603.14456",
     "2603.19199",
-    "2603.15618",
-    "2603.17541",
+    "2603.18524",
+    "2603.19227",
     "2603.19232",
-    "2603.16496",
-    "2603.17375",
-    "2603.11535",
-    "2603.18004",
+    "2603.17541",
+    "2603.15083",
+    "2603.18815",
     "2603.17079",
+    "2603.17554",
+    "2603.19234",
     "2603.14706",
-    "2603.13395",
-    "2603.18886",
-    "2603.08501",
-    "2603.17074"
+    "2603.12789",
+    "2603.16653",
+    "2603.13964"
   ]
 }

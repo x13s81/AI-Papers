@@ -43014,5 +43014,473 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-20"
+  },
+  "2603.16924": {
+    "title": "SimulU: Training-free Policy for Long-form Simultaneous Speech-to-Speech Translation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Simultaneous Speech-to-Speech Translation (SimulS2S)",
+          "brief": "Real-time translation of speech from one language to another"
+        },
+        {
+          "name": "Training-free Policy",
+          "brief": "A method that doesn't require additional training data or procedures"
+        },
+        {
+          "name": "History Management",
+          "brief": "Technique to handle and regulate input history in speech translation"
+        },
+        {
+          "name": "Cross-attention in Pre-trained End-to-end Models",
+          "brief": "Mechanism to focus on relevant parts of input data in neural network models"
+        },
+        {
+          "name": "Speech Output Selection Strategies",
+          "brief": "Methods to choose the best output in speech translation"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning and Deep Learning",
+          "why_needed": "To understand the concepts of training, neural networks, and pre-trained models"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend speech-to-speech translation and its challenges"
+        },
+        {
+          "topic": "Speech Recognition and Synthesis",
+          "why_needed": "To grasp the basics of speech processing and generation"
+        },
+        {
+          "topic": "Attention Mechanisms in Neural Networks",
+          "why_needed": "To understand how cross-attention is used in the proposed SimulU policy"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.19231": {
+    "title": "MonoArt: Progressive Structural Reasoning for Monocular Articulated 3D Reconstruction",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Monocular Articulated 3D Reconstruction",
+          "brief": "Reconstructing 3D objects with movable parts from a single 2D image"
+        },
+        {
+          "name": "Progressive Structural Reasoning",
+          "brief": "A step-by-step approach to infer object geometry, part structure, and motion parameters"
+        },
+        {
+          "name": "Articulation Inference",
+          "brief": "Predicting the motion and structure of articulated objects"
+        },
+        {
+          "name": "Canonical Geometry",
+          "brief": "A standardized representation of object geometry"
+        },
+        {
+          "name": "Structured Part Representations",
+          "brief": "Organized descriptions of object parts and their relationships"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding image processing and 3D reconstruction techniques"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Familiarity with neural networks and their applications in vision tasks"
+        },
+        {
+          "topic": "Geometry and Kinematics",
+          "why_needed": "Knowledge of 3D geometry and motion principles"
+        },
+        {
+          "topic": "Robotics and Manipulation",
+          "why_needed": "Understanding of robotic systems and their interactions with environments"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.19203": {
+    "title": "Tinted Frames: Question Framing Blinds Vision-Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Language Models (VLMs)",
+          "brief": "AI models that process and integrate both visual and linguistic inputs"
+        },
+        {
+          "name": "Question Framing",
+          "brief": "The way a question is phrased, which can influence the model's attention and response"
+        },
+        {
+          "name": "Visual Attention",
+          "brief": "The model's ability to focus on specific parts of an image when processing it"
+        },
+        {
+          "name": "Prompt-Tuning",
+          "brief": "A method of fine-tuning a model using learnable tokens to improve its performance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of Vision-Language Models"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the linguistic aspects of question framing and its impact on VLMs"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To grasp the visual processing aspects of VLMs and how they interact with linguistic inputs"
+        },
+        {
+          "topic": "Attention Mechanisms",
+          "why_needed": "To understand how VLMs allocate attention to different parts of an image and how it affects their performance"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.19224": {
+    "title": "EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Video Object Removal",
+          "brief": "Eliminating dynamic target objects and their visual effects from videos"
+        },
+        {
+          "name": "Diffusion-based Video Inpainting",
+          "brief": "A method for removing objects from videos but often struggles with erasing effects and synthesizing backgrounds"
+        },
+        {
+          "name": "Reciprocal Learning Scheme",
+          "brief": "A learning approach that treats video object insertion as the inverse auxiliary task for video object removal"
+        },
+        {
+          "name": "Task-aware Region Guidance",
+          "brief": "A technique that focuses learning on affected areas and enables flexible task switching"
+        },
+        {
+          "name": "Insertion-Removal Consistency Objective",
+          "brief": "An objective that encourages complementary behaviors and shared localization of effect regions and structural cues"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Understanding of image and video processing techniques is necessary to comprehend the concepts of video object removal and inpainting"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Knowledge of deep learning architectures and techniques is required to understand the reciprocal learning scheme and task-aware region guidance"
+        },
+        {
+          "topic": "Dataset Creation and Curation",
+          "why_needed": "Understanding of dataset creation and curation is necessary to appreciate the significance of the VOR dataset"
+        },
+        {
+          "topic": "Object Detection and Tracking",
+          "why_needed": "Knowledge of object detection and tracking is necessary to understand the object masks and localization of effect regions"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.15030": {
+    "title": "VTC-Bench: Evaluating Agentic Multimodal Models via Compositional Visual Tool Chaining",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "AI models that process and understand multiple forms of data, such as text and images"
+        },
+        {
+          "name": "Visual Tool Chaining",
+          "brief": "The ability of models to use and combine multiple visual tools to perform complex tasks"
+        },
+        {
+          "name": "Compositional Visual Tool Chaining",
+          "brief": "The ability of models to compose and execute multiple visual tools in a specific order to achieve a goal"
+        },
+        {
+          "name": "OpenCV",
+          "brief": "A computer vision library used for building and evaluating visual tools"
+        },
+        {
+          "name": "Cognitive Hierarchy",
+          "brief": "A framework for categorizing and evaluating cognitive tasks based on their complexity and requirements"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the visual tools and operations used in the benchmark"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the language models and their limitations in processing and generating text"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the training and evaluation of models on the benchmark"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the broader context and applications of multimodal models and visual tool chaining"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.19217": {
+    "title": "LVOmniBench: Pioneering Long Audio-Video Understanding Evaluation for Omnimodal LLMs",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Omnimodal Large Language Models (OmniLLMs)",
+          "brief": "AI models that can process and understand multiple forms of input, including audio and video"
+        },
+        {
+          "name": "Long Audio-Video Understanding",
+          "brief": "The ability of AI models to comprehend and interpret long-form audio and video inputs"
+        },
+        {
+          "name": "Cross-Modal Comprehension",
+          "brief": "The ability of AI models to understand relationships between different forms of input, such as audio and video"
+        },
+        {
+          "name": "LVOmniBench Dataset",
+          "brief": "A benchmark dataset for evaluating the capabilities of OmniLLMs on long-form audio and video inputs"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of OmniLLMs"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the concepts of language models and text-based understanding"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand the concepts of image and video processing"
+        },
+        {
+          "topic": "Multimodal Learning",
+          "why_needed": "To understand the concepts of processing and integrating multiple forms of input"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.10263": {
+    "title": "From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A subfield of machine learning that involves training agents to take actions in an environment to maximize a reward"
+        },
+        {
+          "name": "Distribution Contractive Reinforcement Learning (DICE-RL)",
+          "brief": "A framework that refines pretrained generative robot policies using RL as a distribution contraction operator"
+        },
+        {
+          "name": "Generative Robot Policies",
+          "brief": "Policies that generate actions for a robot to perform tasks"
+        },
+        {
+          "name": "Diffusion- or Flow-based Policy",
+          "brief": "A type of policy that uses diffusion or flow models to generate actions"
+        },
+        {
+          "name": "Residual Off-policy RL Framework",
+          "brief": "A framework that combines selective behavior regularization with value-guided action selection for stable and sample-efficient RL"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the basics of RL and generative models"
+        },
+        {
+          "topic": "Robotics",
+          "why_needed": "To understand the application of RL in robotics and manipulation skills"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the use of diffusion or flow models in generative policies"
+        },
+        {
+          "topic": "Mathematics (Linear Algebra, Calculus)",
+          "why_needed": "To understand the mathematical formulations of RL and generative models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.14456": {
+    "title": "PARSA-Bench: A Comprehensive Persian Audio-Language Model Benchmark",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Audio-Language Models",
+          "brief": "Models that process and understand audio and language inputs"
+        },
+        {
+          "name": "Persian Language and Culture",
+          "brief": "Unique aspects of the Persian language, including classical poetry and traditional music"
+        },
+        {
+          "name": "Code-Switching",
+          "brief": "The practice of switching between two or more languages in a single conversation"
+        },
+        {
+          "name": "Benchmarking",
+          "brief": "Evaluating the performance of models on a set of tasks and datasets"
+        },
+        {
+          "name": "Prosodic Perception",
+          "brief": "The ability to perceive and understand the rhythm and sound of speech"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the concepts and techniques used in audio-language models"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the training and evaluation of models on benchmarks"
+        },
+        {
+          "topic": "Linguistics",
+          "why_needed": "To appreciate the unique aspects of the Persian language and culture"
+        },
+        {
+          "topic": "Cultural Competence",
+          "why_needed": "To understand the importance of culturally-grounded tasks in evaluating model performance"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.13045": {
+    "title": "Mending the Holes: Mitigating Reward Hacking in Reinforcement Learning for Multilingual Translation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A type of machine learning that involves training agents to take actions to maximize rewards"
+        },
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "AI models designed to process and understand human language"
+        },
+        {
+          "name": "Multilingual Translation",
+          "brief": "The ability of a model to translate text from one language to another, supporting multiple languages"
+        },
+        {
+          "name": "Reward Hacking",
+          "brief": "The phenomenon where a model exploits weaknesses in the reward function to achieve high rewards without achieving the desired goal"
+        },
+        {
+          "name": "Word Alignment and Language Alignment",
+          "brief": "Techniques used to mitigate holes in the reward function for reinforcement learning training"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the basics of reinforcement learning and language models"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the challenges of multilingual translation and the importance of quality estimation models"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To grasp the architecture and training of Large Language Models"
+        },
+        {
+          "topic": "Linguistics",
+          "why_needed": "To understand the complexities of language translation and the nuances of different languages"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
+  },
+  "2603.18472": {
+    "title": "Cognitive Mismatch in Multimodal Large Language Models for Discrete Symbol Understanding",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "AI models that process and interpret multiple forms of data, including text and images"
+        },
+        {
+          "name": "Discrete Symbol Understanding",
+          "brief": "The ability to interpret and understand discrete symbols such as mathematical formulas, chemical structures, and linguistic characters"
+        },
+        {
+          "name": "Cognitive Mismatch",
+          "brief": "The phenomenon where AI models fail at basic symbol recognition yet succeed in complex reasoning tasks due to reliance on linguistic probability rather than true visual perception"
+        },
+        {
+          "name": "Discrete Semantic Spaces",
+          "brief": "The domains where discrete symbols are used, including language, culture, mathematics, physics, and chemistry"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence (AI) and Machine Learning (ML)",
+          "why_needed": "To understand the basics of MLLMs and their applications"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend how AI models process and interpret visual data"
+        },
+        {
+          "topic": "Linguistics and Symbolic Languages",
+          "why_needed": "To understand the importance of discrete symbols in human cognition and scientific discovery"
+        },
+        {
+          "topic": "Cognitive Science and Human Perception",
+          "why_needed": "To appreciate the concept of cognitive mismatch and its implications for AI development"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-20"
   }
 }
