@@ -43978,5 +43978,357 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-21"
+  },
+  "2603.17079": {
+    "title": "ACE-LoRA: Graph-Attentive Context Enhancement for Parameter-Efficient Adaptation of Medical Vision-Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision-Language Models (VLMs)",
+          "brief": "Models that process and relate visual and textual data"
+        },
+        {
+          "name": "Parameter-Efficient Fine-Tuning (PEFT)",
+          "brief": "Methods for adapting pre-trained models with minimal additional parameters"
+        },
+        {
+          "name": "Graph-Attentive Context Enhancement",
+          "brief": "Technique for enhancing model representations by capturing higher-order contextual interactions"
+        },
+        {
+          "name": "Low-Rank Adaptation (LoRA)",
+          "brief": "Method for efficient adaptation of pre-trained models through low-rank updates"
+        },
+        {
+          "name": "InfoNCE Loss",
+          "brief": "Loss function for contrastive learning that distinguishes between positive and negative pairs"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Understanding of neural networks and their applications"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Familiarity with image processing and analysis techniques"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "Knowledge of text analysis and processing methods"
+        },
+        {
+          "topic": "Medical Imaging",
+          "why_needed": "Understanding of medical image analysis and its challenges"
+        },
+        {
+          "topic": "Graph Neural Networks",
+          "why_needed": "Familiarity with graph-based models and their applications"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-22"
+  },
+  "2603.18002": {
+    "title": "Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "Models that connect vision and language"
+        },
+        {
+          "name": "Vision-Language Models",
+          "brief": "Models that process both visual and linguistic inputs"
+        },
+        {
+          "name": "3D Reasoning and Spatial Understanding",
+          "brief": "Ability to understand and reason about 3D spaces"
+        },
+        {
+          "name": "Monocular Video Input",
+          "brief": "Using a single camera to capture video input"
+        },
+        {
+          "name": "Global Layout Reconstruction",
+          "brief": "Building a holistic representation of a scene's structure"
+        },
+        {
+          "name": "Egocentric Perspective and Situation Modeling",
+          "brief": "Understanding the scene from the viewer's perspective"
+        },
+        {
+          "name": "Camera Pose Priors and 3D Foundation Models",
+          "brief": "Using pre-trained models to estimate camera pose and 3D information"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning and Computer Vision",
+          "why_needed": "To understand the basics of vision-language models and 3D reasoning"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To comprehend the language-based aspects of the model"
+        },
+        {
+          "topic": "Geometry and 3D Math",
+          "why_needed": "To grasp the spatial understanding and 3D reasoning components"
+        },
+        {
+          "topic": "Human Spatial Cognition",
+          "why_needed": "To appreciate the inspiration behind the Loc3R-VLM framework"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-22"
+  },
+  "2603.18815": {
+    "title": "ProRL Agent: Rollout-as-a-Service for RL Training of Multi-Turn LLM Agents",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A machine learning approach for training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Multi-Turn LLM Agents",
+          "brief": "Large language models that interact with their environment over multiple turns to achieve a goal"
+        },
+        {
+          "name": "Rollout-as-a-Service",
+          "brief": "A philosophy for decoupling rollout orchestration from the training loop in RL"
+        },
+        {
+          "name": "Sandboxed Rollout Trajectories",
+          "brief": "Simulated environments for testing and training RL agents"
+        },
+        {
+          "name": "Rootless HPC Settings",
+          "brief": "High-performance computing environments that do not require root access"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the basics of RL and LLM agents"
+        },
+        {
+          "topic": "Software Engineering",
+          "why_needed": "To appreciate the application of ProRL Agent in software engineering tasks"
+        },
+        {
+          "topic": "Distributed Systems",
+          "why_needed": "To comprehend the scalability and infrastructure aspects of ProRL Agent"
+        },
+        {
+          "topic": "High-Performance Computing",
+          "why_needed": "To understand the rootless HPC settings and their relevance to ProRL Agent"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-22"
+  },
+  "2603.19228": {
+    "title": "SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Semantic Anchoring",
+          "brief": "A technique to establish a reliable visual anchor by predicting semantic tokens and video latents at sparse anchor frames"
+        },
+        {
+          "name": "Motion Alignment",
+          "brief": "A method to internalize temporal dynamics directly from raw videos through motion-centric video restoration pretext tasks"
+        },
+        {
+          "name": "Factorized Pre-training",
+          "brief": "A two-stage pipeline that learns inherent semantic-motion representations without paired video-instruction editing data"
+        },
+        {
+          "name": "Instruction-Guided Video Editing",
+          "brief": "A task that involves editing videos based on given instructions while preserving motion and semantic information"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of SAMA model"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend video editing, semantic tokens, and motion modeling"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand instruction-guided video editing and the role of language in the model"
+        },
+        {
+          "topic": "Video Restoration",
+          "why_needed": "To grasp the motion-centric pretext tasks used in Motion Alignment"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-22"
+  },
+  "2603.16929": {
+    "title": "MHPO: Modulated Hazard-aware Policy Optimization for Stable Reinforcement Learning",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Reinforcement Learning",
+          "brief": "A subfield of machine learning that involves training agents to make decisions in complex environments"
+        },
+        {
+          "name": "Policy Optimization",
+          "brief": "A method for improving the policy of an agent in reinforcement learning"
+        },
+        {
+          "name": "Importance Ratio",
+          "brief": "A measure used in reinforcement learning to weigh the importance of different experiences"
+        },
+        {
+          "name": "Hazard-aware Mechanism",
+          "brief": "A method for adaptively suppressing extreme deviations in policy optimization"
+        },
+        {
+          "name": "Log-Fidelity Modulator (LFM)",
+          "brief": "A mechanism for mapping unbounded importance ratios into a bounded, differentiable domain"
+        },
+        {
+          "name": "Decoupled Hazard Penalty (DHP)",
+          "brief": "A method for regulating positive and negative policy shifts using cumulative hazard functions"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Reinforcement Learning Fundamentals",
+          "why_needed": "To understand the context and motivations behind the proposed MHPO framework"
+        },
+        {
+          "topic": "Policy Optimization Techniques",
+          "why_needed": "To appreciate the limitations of existing methods and the contributions of MHPO"
+        },
+        {
+          "topic": "Survival Analysis",
+          "why_needed": "To understand the cumulative hazard functions used in the Decoupled Hazard Penalty (DHP) mechanism"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the implementation details of the proposed framework"
+        },
+        {
+          "topic": "Mathematical Optimization",
+          "why_needed": "To understand the optimization landscape and the role of hazard-aware penalties"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-22"
+  },
+  "2603.11535": {
+    "title": "Expert Threshold Routing for Autoregressive Language Modeling with Dynamic Computation Allocation and Load Balancing",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Token-choice Mixture-of-Experts (TC-MoE)",
+          "brief": "A routing mechanism for autoregressive language modeling"
+        },
+        {
+          "name": "Expert Threshold (ET) routing",
+          "brief": "A proposed routing mechanism for dynamic computation allocation and load balancing"
+        },
+        {
+          "name": "Exponential Moving Average (EMA) threshold",
+          "brief": "A method for estimating thresholds in ET routing"
+        },
+        {
+          "name": "Autoregressive language modeling",
+          "brief": "A type of language modeling where the model predicts the next token based on the previous tokens"
+        },
+        {
+          "name": "Dynamic computation allocation",
+          "brief": "The ability to allocate computational resources dynamically based on the input"
+        },
+        {
+          "name": "Load balancing",
+          "brief": "The process of distributing workload evenly across multiple experts or resources"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the concepts of language modeling, mixture-of-experts, and autoregressive models"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the context and applications of language modeling"
+        },
+        {
+          "topic": "Machine learning",
+          "why_needed": "To understand the concepts of training, inference, and optimization"
+        },
+        {
+          "topic": "Computer architecture",
+          "why_needed": "To understand the concepts of computation allocation and load balancing"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-22"
+  },
+  "2603.17541": {
+    "title": "Temporal Gains, Spatial Costs: Revisiting Video Fine-Tuning in Multimodal Large Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multimodal Large Language Models (MLLMs)",
+          "brief": "AI models that process and understand multiple forms of data, such as text, images, and videos"
+        },
+        {
+          "name": "Video-Based Supervised Fine-Tuning (Video-SFT)",
+          "brief": "A technique used to improve the visual understanding of MLLMs by fine-tuning them on video data"
+        },
+        {
+          "name": "Spatial and Temporal Understanding",
+          "brief": "The ability of MLLMs to understand and interpret visual data in terms of space and time"
+        },
+        {
+          "name": "Hybrid-Frame Strategy",
+          "brief": "An approach to allocate frame counts adaptively to mitigate the trade-off between image and video performance"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the basics of neural networks and how they are used in MLLMs"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the concepts of spatial and temporal understanding in visual data"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand how MLLMs process and generate text"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concept of fine-tuning and its applications in MLLMs"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-22"
   }
 }

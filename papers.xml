@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
-<title>AI Papers - 2026-03-21</title>
+<title>AI Papers - 2026-03-22</title>
 <link>https://arxiv.org</link>
-<description>AI papers as of 2026-03-21 - 233 papers</description>
-<lastBuildDate>Sat, 21 Mar 2026 14:23:30 +0000</lastBuildDate>
+<description>AI papers as of 2026-03-22 - 233 papers</description>
+<lastBuildDate>Sun, 22 Mar 2026 14:24:42 +0000</lastBuildDate>
 <item>
 <title><![CDATA[Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation]]></title>
 <link>https://huggingface.co/papers/2603.19220</link>
@@ -16,7 +16,7 @@ Institution:
 Published: 2026-03-19
 Score: 9/10
 Citations: 0
-Upvotes: 36
+Upvotes: 45
 GitHub: 
 Stars: 0
 
@@ -34,7 +34,7 @@ Institution:
 Published: 2026-03-19
 Score: 9/10
 Citations: 0
-Upvotes: 30
+Upvotes: 35
 GitHub: 
 Stars: 0
 
@@ -54,12 +54,30 @@ Institution:
 Published: 2026-03-19
 Score: 8/10
 Citations: 0
-Upvotes: 76
+Upvotes: 83
 GitHub: 
 Stars: 0
 
 While Multimodal Large Language Models demonstrate impressive semantic capabilities, they often suffer from spatial blindness, struggling with fine-grained geometric reasoning and physical dynamics. Existing solutions typically rely on explicit 3D modalities or complex geometric scaffolding, which are limited by data scarcity and generalization challenges. In this work, we propose a paradigm shift by leveraging the implicit spatial prior within large-scale video generation models. We posit that to synthesize temporally coherent videos, these models inherently learn robust 3D structural priors and physical laws. We introduce VEGA-3D (Video Extracted Generative Awareness), a plug-and-play framework that repurposes a pre-trained video diffusion model as a Latent World Simulator. By extracting spatiotemporal features from intermediate noise levels and integrating them with semantic representations via a token-level adaptive gated fusion mechanism, we enrich MLLMs with dense geometric cues without explicit 3D supervision. Extensive experiments across 3D scene understanding, spatial reasoning, and embodied manipulation benchmarks demonstrate that our method outperforms state-of-the-art baselines, validating that generative priors provide a scalable foundation for physical-world understanding. Code is publicly available at https://github.com/H-EmbodVis/VEGA-3D.]]></description>
 <pubDate>Thu, 19 Mar 2026 17:59:58 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[3DreamBooth: High-Fidelity 3D Subject-Driven Video Generation Model]]></title>
+<link>https://huggingface.co/papers/2603.18524</link>
+<guid>2603.18524</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Hyun-kyu Ko, Jihyeon Park, Younghyun Kim, Dongheok Park, Eunbyung Park
+Institution: 
+Published: 2026-03-19
+Score: 8/10
+Citations: 0
+Upvotes: 49
+GitHub: 
+Stars: 0
+
+Creating dynamic, view-consistent videos of customized subjects is highly sought after for a wide range of emerging applications, including immersive VR/AR, virtual production, and next-generation e-commerce. However, despite rapid progress in subject-driven video generation, existing methods predominantly treat subjects as 2D entities, focusing on transferring identity through single-view visual features or textual prompts. Because real-world subjects are inherently 3D, applying these 2D-centric approaches to 3D object customization reveals a fundamental limitation: they lack the comprehensive spatial priors necessary to reconstruct the 3D geometry. Consequently, when synthesizing novel views, they must rely on generating plausible but arbitrary details for unseen regions, rather than preserving the true 3D identity. Achieving genuine 3D-aware customization remains challenging due to the scarcity of multi-view video datasets. While one might attempt to fine-tune models on limited video sequences, this often leads to temporal overfitting. To resolve these issues, we introduce a novel framework for 3D-aware video customization, comprising 3DreamBooth and 3Dapter. 3DreamBooth decouples spatial geometry from temporal motion through a 1-frame optimization paradigm. By restricting updates to spatial representations, it effectively bakes a robust 3D prior into the model without the need for exhaustive video-based training. To enhance fine-grained textures and accelerate convergence, we incorporate 3Dapter, a visual conditioning module. Following single-view pre-training, 3Dapter undergoes multi-view joint optimization with the main generation branch via an asymmetrical conditioning strategy. This design allows the module to act as a dynamic selective router, querying view-specific geometric hints from a minimal reference set. Project page: https://ko-lani.github.io/3DreamBooth/]]></description>
+<pubDate>Thu, 19 Mar 2026 06:14:05 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Alignment Makes Language Models Normative, Not Descriptive]]></title>
@@ -72,7 +90,7 @@ Institution:
 Published: 2026-03-17
 Score: 8/10
 Citations: 0
-Upvotes: 39
+Upvotes: 42
 GitHub: 
 Stars: 0
 
@@ -90,30 +108,12 @@ Institution:
 Published: 2026-03-19
 Score: 8/10
 Citations: 0
-Upvotes: 35
+Upvotes: 37
 GitHub: 
 Stars: 0
 
 Prior motion generation largely follows two paradigms: continuous diffusion models that excel at kinematic control, and discrete token-based generators that are effective for semantic conditioning. To combine their strengths, we propose a three-stage framework comprising condition feature extraction (Perception), discrete token generation (Planning), and diffusion-based motion synthesis (Control). Central to this framework is MoTok, a diffusion-based discrete motion tokenizer that decouples semantic abstraction from fine-grained reconstruction by delegating motion recovery to a diffusion decoder, enabling compact single-layer tokens while preserving motion fidelity. For kinematic conditions, coarse constraints guide token generation during planning, while fine-grained constraints are enforced during control through diffusion-based optimization. This design prevents kinematic details from disrupting semantic token planning. On HumanML3D, our method significantly improves controllability and fidelity over MaskControl while using only one-sixth of the tokens, reducing trajectory error from 0.72 cm to 0.08 cm and FID from 0.083 to 0.029. Unlike prior methods that degrade under stronger kinematic constraints, ours improves fidelity, reducing FID from 0.033 to 0.014.]]></description>
 <pubDate>Thu, 19 Mar 2026 17:59:51 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[MonoArt: Progressive Structural Reasoning for Monocular Articulated 3D Reconstruction]]></title>
-<link>https://huggingface.co/papers/2603.19231</link>
-<guid>2603.19231</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Haitian Li, Haozhe Xie, Junxiang Xu, Beichen Wen, Fangzhou Hong
-Institution: 
-Published: 2026-03-19
-Score: 8/10
-Citations: 0
-Upvotes: 28
-GitHub: 
-Stars: 0
-
-Reconstructing articulated 3D objects from a single image requires jointly inferring object geometry, part structure, and motion parameters from limited visual evidence. A key difficulty lies in the entanglement between motion cues and object structure, which makes direct articulation regression unstable. Existing methods address this challenge through multi-view supervision, retrieval-based assembly, or auxiliary video generation, often sacrificing scalability or efficiency. We present MonoArt, a unified framework grounded in progressive structural reasoning. Rather than predicting articulation directly from image features, MonoArt progressively transforms visual observations into canonical geometry, structured part representations, and motion-aware embeddings within a single architecture. This structured reasoning process enables stable and interpretable articulation inference without external motion templates or multi-stage pipelines. Extensive experiments on PartNet-Mobility demonstrate that OM achieves state-of-the-art performance in both reconstruction accuracy and inference speed. The framework further generalizes to robotic manipulation and articulated scene reconstruction.]]></description>
-<pubDate>Thu, 19 Mar 2026 17:59:52 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[F2LLM-v2: Inclusive, Performant, and Efficient Embeddings for a Multilingual World]]></title>
@@ -126,7 +126,7 @@ Institution:
 Published: 2026-03-19
 Score: 8/10
 Citations: 0
-Upvotes: 22
+Upvotes: 23
 GitHub: 
 Stars: 0
 
@@ -162,7 +162,7 @@ Institution:
 Published: 2026-03-15
 Score: 8/10
 Citations: 0
-Upvotes: 12
+Upvotes: 13
 GitHub: 
 Stars: 0
 
@@ -217,7 +217,7 @@ Institution:
 Published: 2026-03-12
 Score: 7/10
 Citations: 0
-Upvotes: 127
+Upvotes: 132
 GitHub: 
 Stars: 0
 
@@ -225,40 +225,22 @@ Large Reasoning Models (LRMs) have shown remarkable reasoning capabilities, yet 
 <pubDate>Thu, 12 Mar 2026 18:48:07 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Video-CoE: Reinforcing Video Event Prediction via Chain of Events]]></title>
-<link>https://huggingface.co/papers/2603.14935</link>
-<guid>2603.14935</guid>
+<title><![CDATA[MonoArt: Progressive Structural Reasoning for Monocular Articulated 3D Reconstruction]]></title>
+<link>https://huggingface.co/papers/2603.19231</link>
+<guid>2603.19231</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Qile Su, Jing Tang, Rui Chen, Lei Sun, Xiangxiang Chu
-Institution: 
-Published: 2026-03-16
-Score: 7/10
-Citations: 0
-Upvotes: 88
-GitHub: 
-Stars: 0
-
-Despite advances in the application of MLLMs for various video tasks, video event prediction (VEP) remains relatively underexplored. VEP requires the model to perform fine-grained temporal modeling of videos and establish logical relationships between videos and future events, which current MLLMs still struggle with. In this work, we first present a comprehensive evaluation of current leading MLLMs on the VEP task, revealing the reasons behind their inaccurate predictions, including lack of logical reasoning ability for future events prediction and insufficient utilization of visual information. To address these challenges, we propose Chain of Events (CoE) paradigm, which constructs temporal event chains to implicitly enforce MLLM focusing on the visual content and the logical connections between videos and future events, incentivizing model's reasoning capability with multiple training protocols. Experimental results on public benchmarks demonstrate that our method outperforms both leading open-source and commercial MLLMs, establishing a new state-of-the-art on the VEP task. Codes and models will be released soon.]]></description>
-<pubDate>Mon, 16 Mar 2026 07:38:15 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[3DreamBooth: High-Fidelity 3D Subject-Driven Video Generation Model]]></title>
-<link>https://huggingface.co/papers/2603.18524</link>
-<guid>2603.18524</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Hyun-kyu Ko, Jihyeon Park, Younghyun Kim, Dongheok Park, Eunbyung Park
+Authors: Haitian Li, Haozhe Xie, Junxiang Xu, Beichen Wen, Fangzhou Hong
 Institution: 
 Published: 2026-03-19
 Score: 7/10
 Citations: 0
-Upvotes: 43
+Upvotes: 30
 GitHub: 
 Stars: 0
 
-Creating dynamic, view-consistent videos of customized subjects is highly sought after for a wide range of emerging applications, including immersive VR/AR, virtual production, and next-generation e-commerce. However, despite rapid progress in subject-driven video generation, existing methods predominantly treat subjects as 2D entities, focusing on transferring identity through single-view visual features or textual prompts. Because real-world subjects are inherently 3D, applying these 2D-centric approaches to 3D object customization reveals a fundamental limitation: they lack the comprehensive spatial priors necessary to reconstruct the 3D geometry. Consequently, when synthesizing novel views, they must rely on generating plausible but arbitrary details for unseen regions, rather than preserving the true 3D identity. Achieving genuine 3D-aware customization remains challenging due to the scarcity of multi-view video datasets. While one might attempt to fine-tune models on limited video sequences, this often leads to temporal overfitting. To resolve these issues, we introduce a novel framework for 3D-aware video customization, comprising 3DreamBooth and 3Dapter. 3DreamBooth decouples spatial geometry from temporal motion through a 1-frame optimization paradigm. By restricting updates to spatial representations, it effectively bakes a robust 3D prior into the model without the need for exhaustive video-based training. To enhance fine-grained textures and accelerate convergence, we incorporate 3Dapter, a visual conditioning module. Following single-view pre-training, 3Dapter undergoes multi-view joint optimization with the main generation branch via an asymmetrical conditioning strategy. This design allows the module to act as a dynamic selective router, querying view-specific geometric hints from a minimal reference set. Project page: https://ko-lani.github.io/3DreamBooth/]]></description>
-<pubDate>Thu, 19 Mar 2026 06:14:05 +0000</pubDate>
+Reconstructing articulated 3D objects from a single image requires jointly inferring object geometry, part structure, and motion parameters from limited visual evidence. A key difficulty lies in the entanglement between motion cues and object structure, which makes direct articulation regression unstable. Existing methods address this challenge through multi-view supervision, retrieval-based assembly, or auxiliary video generation, often sacrificing scalability or efficiency. We present MonoArt, a unified framework grounded in progressive structural reasoning. Rather than predicting articulation directly from image features, MonoArt progressively transforms visual observations into canonical geometry, structured part representations, and motion-aware embeddings within a single architecture. This structured reasoning process enables stable and interpretable articulation inference without external motion templates or multi-stage pipelines. Extensive experiments on PartNet-Mobility demonstrate that OM achieves state-of-the-art performance in both reconstruction accuracy and inference speed. The framework further generalizes to robotic manipulation and articulated scene reconstruction.]]></description>
+<pubDate>Thu, 19 Mar 2026 17:59:52 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[LVOmniBench: Pioneering Long Audio-Video Understanding Evaluation for Omnimodal LLMs]]></title>
@@ -279,6 +261,24 @@ Recent advancements in omnimodal large language models (OmniLLMs) have significa
 <pubDate>Thu, 19 Mar 2026 17:58:13 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[VTC-Bench: Evaluating Agentic Multimodal Models via Compositional Visual Tool Chaining]]></title>
+<link>https://huggingface.co/papers/2603.15030</link>
+<guid>2603.15030</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Xuanyu Zhu, Yuhao Dong, Rundong Wang, Yang Shi, Zhipeng Wu
+Institution: 
+Published: 2026-03-16
+Score: 7/10
+Citations: 0
+Upvotes: 15
+GitHub: 
+Stars: 0
+
+Recent advancements extend Multimodal Large Language Models (MLLMs) beyond standard visual question answering to utilizing external tools for advanced visual tasks. Despite this progress, precisely executing and effectively composing diverse tools for complex tasks remain persistent bottleneck. Constrained by sparse tool-sets and simple tool-use trajectories, existing benchmarks fail to capture complex and diverse tool interactions, falling short in evaluating model performance under practical, real-world conditions. To bridge this gap, we introduce VisualToolChain-Bench(VTC-Bench), a comprehensive benchmark designed to evaluate tool-use proficiency in MLLMs. To align with realistic computer vision pipelines, our framework features 32 diverse OpenCV-based visual operations. This rich tool-set enables extensive combinations, allowing VTC-Bench to rigorously assess multi-tool composition and long-horizon, multi-step plan execution. For precise evaluation, we provide 680 curated problems structured across a nine-category cognitive hierarchy, each with ground-truth execution trajectories. Extensive experiments on 19 leading MLLMs reveal critical limitations in current models' visual agentic capabilities. Specifically, models struggle to adapt to diverse tool-sets and generalize to unseen operations, with the leading model Gemini-3.0-Pro only achieving 51% on our benchmark. Furthermore, multi-tool composition remains a persistent challenge. When facing complex tasks, models struggle to formulate efficient execution plans, relying heavily on a narrow, suboptimal subset of familiar functions rather than selecting the optimal tools. By identifying these fundamental challenges, VTC-Bench establishes a rigorous baseline to guide the development of more generalized visual agentic models.]]></description>
+<pubDate>Mon, 16 Mar 2026 09:31:44 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[Tinted Frames: Question Framing Blinds Vision-Language Models]]></title>
 <link>https://huggingface.co/papers/2603.19203</link>
 <guid>2603.19203</guid>
@@ -295,24 +295,6 @@ Stars: 0
 
 Vision-Language Models (VLMs) have been shown to be blind, often underutilizing their visual inputs even on tasks that require visual reasoning. In this work, we demonstrate that VLMs are selectively blind. They modulate the amount of attention applied to visual inputs based on linguistic framing even when alternative framings demand identical visual reasoning. Using visual attention as a probe, we quantify how framing alters both the amount and distribution of attention over the image. Constrained framings, such as multiple choice and yes/no, induce substantially lower attention to image context compared to open-ended, reduce focus on task-relevant regions, and shift attention towards uninformative tokens. We further demonstrate that this attention misallocation is the principal cause of degraded accuracy and cross-framing inconsistency. Building on this mechanistic insight, we introduce a lightweight prompt-tuning method using learnable tokens that encourages the robust, visually grounded attention patterns observed in open-ended settings, improving visual grounding and improving performance across framings.]]></description>
 <pubDate>Thu, 19 Mar 2026 17:53:09 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[VTC-Bench: Evaluating Agentic Multimodal Models via Compositional Visual Tool Chaining]]></title>
-<link>https://huggingface.co/papers/2603.15030</link>
-<guid>2603.15030</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Xuanyu Zhu, Yuhao Dong, Rundong Wang, Yang Shi, Zhipeng Wu
-Institution: 
-Published: 2026-03-16
-Score: 7/10
-Citations: 0
-Upvotes: 13
-GitHub: 
-Stars: 0
-
-Recent advancements extend Multimodal Large Language Models (MLLMs) beyond standard visual question answering to utilizing external tools for advanced visual tasks. Despite this progress, precisely executing and effectively composing diverse tools for complex tasks remain persistent bottleneck. Constrained by sparse tool-sets and simple tool-use trajectories, existing benchmarks fail to capture complex and diverse tool interactions, falling short in evaluating model performance under practical, real-world conditions. To bridge this gap, we introduce VisualToolChain-Bench(VTC-Bench), a comprehensive benchmark designed to evaluate tool-use proficiency in MLLMs. To align with realistic computer vision pipelines, our framework features 32 diverse OpenCV-based visual operations. This rich tool-set enables extensive combinations, allowing VTC-Bench to rigorously assess multi-tool composition and long-horizon, multi-step plan execution. For precise evaluation, we provide 680 curated problems structured across a nine-category cognitive hierarchy, each with ground-truth execution trajectories. Extensive experiments on 19 leading MLLMs reveal critical limitations in current models' visual agentic capabilities. Specifically, models struggle to adapt to diverse tool-sets and generalize to unseen operations, with the leading model Gemini-3.0-Pro only achieving 51% on our benchmark. Furthermore, multi-tool composition remains a persistent challenge. When facing complex tasks, models struggle to formulate efficient execution plans, relying heavily on a narrow, suboptimal subset of familiar functions rather than selecting the optimal tools. By identifying these fundamental challenges, VTC-Bench establishes a rigorous baseline to guide the development of more generalized visual agentic models.]]></description>
-<pubDate>Mon, 16 Mar 2026 09:31:44 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[ESPIRE: A Diagnostic Benchmark for Embodied Spatial Reasoning of Vision-Language Models]]></title>
@@ -343,12 +325,30 @@ Institution:
 Published: 2026-03-19
 Score: 7/10
 Citations: 0
-Upvotes: 2
+Upvotes: 3
 GitHub: 
 Stars: 0
 
 The ability to precisely derive mathematical objects is a core requirement for downstream STEM applications, including mathematics, physics, and chemistry, where reasoning must culminate in formally structured expressions. Yet, current LM evaluations of mathematical and scientific reasoning rely heavily on simplified answer formats such as numerical values or multiple choice options due to the convenience of automated assessment. In this paper we provide three contributions for improving reasoning over mathematical objects: (i) we build and release training data and benchmarks for deriving mathematical objects, the Principia suite; (ii) we provide training recipes with strong LLM-judges and verifiers, where we show that on-policy judge training boosts performance; (iii) we show how on-policy training can also be used to scale test-time compute via aggregation. We find that strong LMs such as Qwen3-235B and o3 struggle on Principia, while our training recipes can bring significant improvements over different LLM backbones, while simultaneously improving results on existing numerical and MCQA tasks, demonstrating cross-format generalization of reasoning abilities.]]></description>
 <pubDate>Thu, 19 Mar 2026 13:27:12 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[ACE-LoRA: Graph-Attentive Context Enhancement for Parameter-Efficient Adaptation of Medical Vision-Language Models]]></title>
+<link>https://huggingface.co/papers/2603.17079</link>
+<guid>2603.17079</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: M. Arda Aydın, Melih B. Yilmaz, Aykut Koç, Tolga Çukur
+Institution: 
+Published: 2026-03-17
+Score: 7/10
+Citations: 0
+Upvotes: 3
+GitHub: 
+Stars: 0
+
+The success of CLIP-like vision-language models (VLMs) on natural images has inspired medical counterparts, yet existing approaches largely fall into two extremes: specialist models trained on single-domain data, which capture domain-specific details but generalize poorly, and generalist medical VLMs trained on multi-domain data, which retain broad semantics but dilute fine-grained diagnostic cues. Bridging this specialization-generalization trade-off remains challenging. To address this problem, we propose ACE-LoRA, a parameter-efficient adaptation framework for generalist medical VLMs that maintains robust zero-shot generalization. ACE-LoRA integrates Low-Rank Adaptation (LoRA) modules into frozen image-text encoders and introduces an Attention-based Context Enhancement Hypergraph Neural Network (ACE-HGNN) module that captures higher-order contextual interactions beyond pairwise similarity to enrich global representations with localized diagnostic cues, addressing a key limitation of prior Parameter-Efficient Fine-Tuning (PEFT) methods that overlook fine-grained details. To further enhance cross-modal alignment, we formulate a label-guided InfoNCE loss to effectively suppress false negatives between semantically related image-text pairs. Despite adding only 0.95M trainable parameters, ACE-LoRA consistently outperforms state-of-the-art medical VLMs and PEFT baselines across zero-shot classification, segmentation, and detection benchmarks spanning multiple domains. Our code is available at https://github.com/icon-lab/ACE-LoRA.]]></description>
+<pubDate>Tue, 17 Mar 2026 19:06:33 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning]]></title>
@@ -433,7 +433,7 @@ Institution:
 Published: 2026-03-19
 Score: 6/10
 Citations: 0
-Upvotes: 59
+Upvotes: 60
 GitHub: 
 Stars: 0
 
@@ -451,7 +451,7 @@ Institution:
 Published: 2026-03-19
 Score: 6/10
 Citations: 0
-Upvotes: 26
+Upvotes: 30
 GitHub: 
 Stars: 0
 
@@ -469,7 +469,7 @@ Institution:
 Published: 2026-03-18
 Score: 6/10
 Citations: 0
-Upvotes: 22
+Upvotes: 23
 GitHub: 
 Stars: 0
 
@@ -505,12 +505,30 @@ Institution:
 Published: 2026-03-18
 Score: 6/10
 Citations: 0
-Upvotes: 19
+Upvotes: 20
 GitHub: 
 Stars: 0
 
 Multimodal large language models (MLLMs) are typically trained in multiple stages, with video-based supervised fine-tuning (Video-SFT) serving as a key step for improving visual understanding. Yet its effect on the fine-grained evolution of visual capabilities, particularly the balance between spatial and temporal understanding, remains poorly understood. In this paper, we systematically study how Video-SFT reshapes visual capabilities in MLLMs. Across architectures, parameter scales, and frame sampling settings, we observe a consistent pattern: Video-SFT reliably improves video performance, but often yields limited gains or even degradation on static image benchmarks. We further show that this trade-off is closely tied to temporal budget: increasing the number of sampled frames generally improves video performance, but does not reliably improve static image performance. Motivated by this finding, we study an instruction-aware Hybrid-Frame strategy that adaptively allocates frame counts and partially mitigates the image-video trade-off. Our results indicate that Video-SFT is not a free lunch for MLLMs, and preserving spatial understanding remains a central challenge in joint image-video training.]]></description>
 <pubDate>Wed, 18 Mar 2026 09:46:44 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Cognitive Mismatch in Multimodal Large Language Models for Discrete Symbol Understanding]]></title>
+<link>https://huggingface.co/papers/2603.18472</link>
+<guid>2603.18472</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yinghui Li, Jiayi Kuang, Peng Xing, Daixian Liu, Junnan Dong
+Institution: 
+Published: 2026-03-19
+Score: 6/10
+Citations: 0
+Upvotes: 17
+GitHub: 
+Stars: 0
+
+While Multimodal Large Language Models (MLLMs) have achieved remarkable success in interpreting natural scenes, their ability to process discrete symbols -- the fundamental building blocks of human cognition -- remains a critical open question. Unlike continuous visual data, symbols such as mathematical formulas, chemical structures, and linguistic characters require precise, deeper interpretation. This paper introduces a comprehensive benchmark to evaluate how top-tier MLLMs navigate these "discrete semantic spaces" across five domains: language, culture, mathematics, physics, and chemistry. Our investigation uncovers a counterintuitive phenomenon: models often fail at basic symbol recognition yet succeed in complex reasoning tasks, suggesting they rely on linguistic probability rather than true visual perception. By exposing this "cognitive mismatch", we highlight a significant gap in current AI capabilities: the struggle to truly perceive and understand the symbolic languages that underpin scientific discovery and abstract thought. This work offers a roadmap for developing more rigorous, human-aligned intelligent systems.]]></description>
+<pubDate>Thu, 19 Mar 2026 04:08:20 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing]]></title>
@@ -531,24 +549,6 @@ Video object removal aims to eliminate dynamic target objects and their visual e
 <pubDate>Thu, 19 Mar 2026 17:59:22 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Cognitive Mismatch in Multimodal Large Language Models for Discrete Symbol Understanding]]></title>
-<link>https://huggingface.co/papers/2603.18472</link>
-<guid>2603.18472</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yinghui Li, Jiayi Kuang, Peng Xing, Daixian Liu, Junnan Dong
-Institution: 
-Published: 2026-03-19
-Score: 6/10
-Citations: 0
-Upvotes: 16
-GitHub: 
-Stars: 0
-
-While Multimodal Large Language Models (MLLMs) have achieved remarkable success in interpreting natural scenes, their ability to process discrete symbols -- the fundamental building blocks of human cognition -- remains a critical open question. Unlike continuous visual data, symbols such as mathematical formulas, chemical structures, and linguistic characters require precise, deeper interpretation. This paper introduces a comprehensive benchmark to evaluate how top-tier MLLMs navigate these "discrete semantic spaces" across five domains: language, culture, mathematics, physics, and chemistry. Our investigation uncovers a counterintuitive phenomenon: models often fail at basic symbol recognition yet succeed in complex reasoning tasks, suggesting they rely on linguistic probability rather than true visual perception. By exposing this "cognitive mismatch", we highlight a significant gap in current AI capabilities: the struggle to truly perceive and understand the symbolic languages that underpin scientific discovery and abstract thought. This work offers a roadmap for developing more rigorous, human-aligned intelligent systems.]]></description>
-<pubDate>Thu, 19 Mar 2026 04:08:20 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[Expert Threshold Routing for Autoregressive Language Modeling with Dynamic Computation Allocation and Load Balancing]]></title>
 <link>https://huggingface.co/papers/2603.11535</link>
 <guid>2603.11535</guid>
@@ -559,30 +559,12 @@ Institution:
 Published: 2026-03-12
 Score: 6/10
 Citations: 0
-Upvotes: 8
+Upvotes: 9
 GitHub: 
 Stars: 0
 
 Token-choice Mixture-of-Experts (TC-MoE) routes each token to a fixed number of experts, limiting dynamic computation allocation and requiring auxiliary losses to maintain load balance. We propose Expert Threshold (ET) routing, where each expert maintains an exponential moving average (EMA) threshold estimated from the global token distribution. At both training and inference, each token is independently routed to an expert if its score exceeds the expert's threshold, enabling dynamic computation allocation while achieving load balance without auxiliary losses. This fully causal mechanism eliminates dependence on other tokens in the batch, making it well-suited for autoregressive language modeling. In pretraining experiments scaling to 2.4B parameters on FineWeb-Edu, ET achieves 0.067 lower cross-entropy loss than TC-MoE, equivalent to reaching the same performance with 1.6times fewer tokens.]]></description>
 <pubDate>Thu, 12 Mar 2026 04:45:48 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models]]></title>
-<link>https://huggingface.co/papers/2603.18002</link>
-<guid>2603.18002</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Kevin Qu, Haozhe Qi, Mihai Dusmanu, Mahdi Rad, Rui Wang
-Institution: 
-Published: 2026-03-18
-Score: 6/10
-Citations: 0
-Upvotes: 6
-GitHub: 
-Stars: 0
-
-Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching models to reason in 3D space. We introduce Loc3R-VLM, a framework that equips 2D Vision-Language Models with advanced 3D understanding capabilities from monocular video input. Inspired by human spatial cognition, Loc3R-VLM relies on two joint objectives: global layout reconstruction to build a holistic representation of the scene structure, and explicit situation modeling to anchor egocentric perspective. These objectives provide direct spatial supervision that grounds both perception and language in a 3D context. To ensure geometric consistency and metric-scale alignment, we leverage lightweight camera pose priors extracted from a pre-trained 3D foundation model. Loc3R-VLM achieves state-of-the-art performance in language-based localization and outperforms existing 2D- and video-based approaches on situated and general 3D question-answering benchmarks, demonstrating that our spatial supervision framework enables strong 3D understanding. Project page: https://kevinqu7.github.io/loc3r-vlm]]></description>
-<pubDate>Wed, 18 Mar 2026 17:59:10 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[ProRL Agent: Rollout-as-a-Service for RL Training of Multi-Turn LLM Agents]]></title>
@@ -595,12 +577,30 @@ Institution:
 Published: 2026-03-19
 Score: 6/10
 Citations: 0
-Upvotes: 5
+Upvotes: 8
 GitHub: 
 Stars: 0
 
 Multi-turn LLM agents are increasingly important for solving complex, interactive tasks, and reinforcement learning (RL) is a key ingredient for improving their long-horizon behavior. However, RL training requires generating large numbers of sandboxed rollout trajectories, and existing infrastructures often couple rollout orchestration with the training loop, making systems hard to migrate and maintain. Under the rollout-as-a-service philosophy, we present ProRL Agent , a scalable infrastructure that serves the full agentic rollout lifecycle through an API service. ProRL Agent also provides standardized and extensible sandbox environments that support diverse agentic tasks in rootless HPC settings. We validate ProRL Agent through RL training on software engineering, math, STEM, and coding tasks. ProRL Agent is open-sourced and integrated as part of NVIDIA NeMo Gym.]]></description>
 <pubDate>Thu, 19 Mar 2026 12:08:51 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models]]></title>
+<link>https://huggingface.co/papers/2603.18002</link>
+<guid>2603.18002</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Kevin Qu, Haozhe Qi, Mihai Dusmanu, Mahdi Rad, Rui Wang
+Institution: 
+Published: 2026-03-18
+Score: 6/10
+Citations: 0
+Upvotes: 7
+GitHub: 
+Stars: 0
+
+Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching models to reason in 3D space. We introduce Loc3R-VLM, a framework that equips 2D Vision-Language Models with advanced 3D understanding capabilities from monocular video input. Inspired by human spatial cognition, Loc3R-VLM relies on two joint objectives: global layout reconstruction to build a holistic representation of the scene structure, and explicit situation modeling to anchor egocentric perspective. These objectives provide direct spatial supervision that grounds both perception and language in a 3D context. To ensure geometric consistency and metric-scale alignment, we leverage lightweight camera pose priors extracted from a pre-trained 3D foundation model. Loc3R-VLM achieves state-of-the-art performance in language-based localization and outperforms existing 2D- and video-based approaches on situated and general 3D question-answering benchmarks, demonstrating that our spatial supervision framework enables strong 3D understanding. Project page: https://kevinqu7.github.io/loc3r-vlm]]></description>
+<pubDate>Wed, 18 Mar 2026 17:59:10 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[MHPO: Modulated Hazard-aware Policy Optimization for Stable Reinforcement Learning]]></title>
@@ -711,6 +711,24 @@ Understanding and generating 3D objects as compositions of meaningful parts is f
 <pubDate>Thu, 19 Mar 2026 17:58:11 +0000</pubDate>
 </item>
 <item>
+<title><![CDATA[Video-CoE: Reinforcing Video Event Prediction via Chain of Events]]></title>
+<link>https://huggingface.co/papers/2603.14935</link>
+<guid>2603.14935</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Qile Su, Jing Tang, Rui Chen, Lei Sun, Xiangxiang Chu
+Institution: 
+Published: 2026-03-16
+Score: 5/10
+Citations: 0
+Upvotes: 90
+GitHub: 
+Stars: 0
+
+Despite advances in the application of MLLMs for various video tasks, video event prediction (VEP) remains relatively underexplored. VEP requires the model to perform fine-grained temporal modeling of videos and establish logical relationships between videos and future events, which current MLLMs still struggle with. In this work, we first present a comprehensive evaluation of current leading MLLMs on the VEP task, revealing the reasons behind their inaccurate predictions, including lack of logical reasoning ability for future events prediction and insufficient utilization of visual information. To address these challenges, we propose Chain of Events (CoE) paradigm, which constructs temporal event chains to implicitly enforce MLLM focusing on the visual content and the logical connections between videos and future events, incentivizing model's reasoning capability with multiple training protocols. Experimental results on public benchmarks demonstrate that our method outperforms both leading open-source and commercial MLLMs, establishing a new state-of-the-art on the VEP task. Codes and models will be released soon.]]></description>
+<pubDate>Mon, 16 Mar 2026 07:38:15 +0000</pubDate>
+</item>
+<item>
 <title><![CDATA[FASTER: Rethinking Real-Time Flow VLAs]]></title>
 <link>https://huggingface.co/papers/2603.19199</link>
 <guid>2603.19199</guid>
@@ -721,12 +739,30 @@ Institution:
 Published: 2026-03-19
 Score: 5/10
 Citations: 0
-Upvotes: 43
+Upvotes: 47
 GitHub: 
 Stars: 0
 
 Real-time execution is crucial for deploying Vision-Language-Action (VLA) models in the physical world. Existing asynchronous inference methods primarily optimize trajectory smoothness, but neglect the critical latency in reacting to environmental changes. By rethinking the notion of reaction in action chunking policies, this paper presents a systematic analysis of the factors governing reaction time. We show that reaction time follows a uniform distribution determined jointly by the Time to First Action (TTFA) and the execution horizon. Moreover, we reveal that the standard practice of applying a constant schedule in flow-based VLAs can be inefficient and forces the system to complete all sampling steps before any movement can start, forming the bottleneck in reaction latency. To overcome this issue, we propose Fast Action Sampling for ImmediaTE Reaction (FASTER). By introducing a Horizon-Aware Schedule, FASTER adaptively prioritizes near-term actions during flow sampling, compressing the denoising of the immediate reaction by tenfold (e.g., in π_{0.5} and X-VLA) into a single step, while preserving the quality of long-horizon trajectory. Coupled with a streaming client-server pipeline, FASTER substantially reduces the effective reaction latency on real robots, especially when deployed on consumer-grade GPUs. Real-world experiments, including a highly dynamic table tennis task, prove that FASTER unlocks unprecedented real-time responsiveness for generalist policies, enabling rapid generation of accurate and smooth trajectories.]]></description>
 <pubDate>Thu, 19 Mar 2026 17:51:37 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[AndroTMem: From Interaction Trajectories to Anchored Memory in Long-Horizon GUI Agents]]></title>
+<link>https://huggingface.co/papers/2603.18429</link>
+<guid>2603.18429</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yibo Shi, Jungang Li, Linghao Zhang, Zihao Dongfang, Biao Wu
+Institution: 
+Published: 2026-03-19
+Score: 5/10
+Citations: 0
+Upvotes: 21
+GitHub: 
+Stars: 0
+
+Long-horizon GUI agents are a key step toward real-world deployment, yet effective interaction memory under prevailing paradigms remains under-explored. Replaying full interaction sequences is redundant and amplifies noise, while summaries often erase dependency-critical information and traceability. We present AndroTMem, a diagnostic framework for anchored memory in long-horizon Android GUI agents. Its core benchmark, AndroTMem-Bench, comprises 1,069 tasks with 34,473 interaction steps (avg. 32.1 per task, max. 65). We evaluate agents with TCR (Task Complete Rate), focusing on tasks whose completion requires carrying forward critical intermediate state; AndroTMem-Bench is designed to enforce strong step-to-step causal dependencies, making sparse yet essential intermediate states decisive for downstream actions and centering interaction memory in evaluation. Across open- and closed-source GUI agents, we observe a consistent pattern: as interaction sequences grow longer, performance drops are driven mainly by within-task memory failures, not isolated perception errors or local action mistakes. Guided by this diagnosis, we propose Anchored State Memory (ASM), which represents interaction sequences as a compact set of causally linked intermediate-state anchors to enable subgoal-targeted retrieval and attribution-aware decision making. Across multiple settings and 12 evaluated GUI agents, ASM consistently outperforms full-sequence replay and summary-based baselines, improving TCR by 5%-30.16% and AMS by 4.93%-24.66%, indicating that anchored, structured memory effectively mitigates the interaction-memory bottleneck in long-horizon GUI tasks. The code, benchmark, and related resources are publicly available at [https://github.com/CVC2233/AndroTMem](https://github.com/CVC2233/AndroTMem).]]></description>
+<pubDate>Thu, 19 Mar 2026 02:45:21 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Look Before Acting: Enhancing Vision Foundation Representations for Vision-Language-Action Models]]></title>
@@ -747,24 +783,6 @@ Vision-Language-Action (VLA) models have recently emerged as a promising paradig
 <pubDate>Mon, 16 Mar 2026 17:59:54 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[AndroTMem: From Interaction Trajectories to Anchored Memory in Long-Horizon GUI Agents]]></title>
-<link>https://huggingface.co/papers/2603.18429</link>
-<guid>2603.18429</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yibo Shi, Jungang Li, Linghao Zhang, Zihao Dongfang, Biao Wu
-Institution: 
-Published: 2026-03-19
-Score: 5/10
-Citations: 0
-Upvotes: 19
-GitHub: 
-Stars: 0
-
-Long-horizon GUI agents are a key step toward real-world deployment, yet effective interaction memory under prevailing paradigms remains under-explored. Replaying full interaction sequences is redundant and amplifies noise, while summaries often erase dependency-critical information and traceability. We present AndroTMem, a diagnostic framework for anchored memory in long-horizon Android GUI agents. Its core benchmark, AndroTMem-Bench, comprises 1,069 tasks with 34,473 interaction steps (avg. 32.1 per task, max. 65). We evaluate agents with TCR (Task Complete Rate), focusing on tasks whose completion requires carrying forward critical intermediate state; AndroTMem-Bench is designed to enforce strong step-to-step causal dependencies, making sparse yet essential intermediate states decisive for downstream actions and centering interaction memory in evaluation. Across open- and closed-source GUI agents, we observe a consistent pattern: as interaction sequences grow longer, performance drops are driven mainly by within-task memory failures, not isolated perception errors or local action mistakes. Guided by this diagnosis, we propose Anchored State Memory (ASM), which represents interaction sequences as a compact set of causally linked intermediate-state anchors to enable subgoal-targeted retrieval and attribution-aware decision making. Across multiple settings and 12 evaluated GUI agents, ASM consistently outperforms full-sequence replay and summary-based baselines, improving TCR by 5%-30.16% and AMS by 4.93%-24.66%, indicating that anchored, structured memory effectively mitigates the interaction-memory bottleneck in long-horizon GUI tasks. The code, benchmark, and related resources are publicly available at [https://github.com/CVC2233/AndroTMem](https://github.com/CVC2233/AndroTMem).]]></description>
-<pubDate>Thu, 19 Mar 2026 02:45:21 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[MOSS-TTS Technical Report]]></title>
 <link>https://huggingface.co/papers/2603.18090</link>
 <guid>2603.18090</guid>
@@ -775,12 +793,30 @@ Institution:
 Published: 2026-03-18
 Score: 5/10
 Citations: 0
-Upvotes: 6
+Upvotes: 7
 GitHub: 
 Stars: 0
 
 This technical report presents MOSS-TTS, a speech generation foundation model built on a scalable recipe: discrete audio tokens, autoregressive modeling, and large-scale pretraining. Built on MOSS-Audio-Tokenizer, a causal Transformer tokenizer that compresses 24 kHz audio to 12.5 fps with variable-bitrate RVQ and unified semantic-acoustic representations, we release two complementary generators: MOSS-TTS, which emphasizes structural simplicity, scalability, and long-context/control-oriented deployment, and MOSS-TTS-Local-Transformer, which introduces a frame-local autoregressive module for higher modeling efficiency, stronger speaker preservation, and a shorter time to first audio. Across multilingual and open-domain settings, MOSS-TTS supports zero-shot voice cloning, token-level duration control, phoneme-/pinyin-level pronunciation control, smooth code-switching, and stable long-form generation. This report summarizes the design, training recipe, and empirical characteristics of the released models.]]></description>
 <pubDate>Wed, 18 Mar 2026 09:08:06 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Matryoshka Gaussian Splatting]]></title>
+<link>https://huggingface.co/papers/2603.19234</link>
+<guid>2603.19234</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Zhilin Guo, Boqiao Zhang, Hakan Aktas, Kyle Fogarty, Jeffrey Hu
+Institution: 
+Published: 2026-03-19
+Score: 5/10
+Citations: 0
+Upvotes: 6
+GitHub: 
+Stars: 0
+
+The ability to render scenes at adjustable fidelity from a single model, known as level of detail (LoD), is crucial for practical deployment of 3D Gaussian Splatting (3DGS). Existing discrete LoD methods expose only a limited set of operating points, while concurrent continuous LoD approaches enable smoother scaling but often suffer noticeable quality degradation at full capacity, making LoD a costly design decision. We introduce Matryoshka Gaussian Splatting (MGS), a training framework that enables continuous LoD for standard 3DGS pipelines without sacrificing full-capacity rendering quality. MGS learns a single ordered set of Gaussians such that rendering any prefix, the first k splats, produces a coherent reconstruction whose fidelity improves smoothly with increasing budget. Our key idea is stochastic budget training: each iteration samples a random splat budget and optimises both the corresponding prefix and the full set. This strategy requires only two forward passes and introduces no architectural modifications. Experiments across four benchmarks and six baselines show that MGS matches the full-capacity performance of its backbone while enabling a continuous speed-quality trade-off from a single model. Extensive ablations on ordering strategies, training objectives, and model capacity further validate the designs.]]></description>
+<pubDate>Thu, 19 Mar 2026 17:59:56 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[OSM-based Domain Adaptation for Remote Sensing VLMs]]></title>
@@ -801,42 +837,6 @@ Vision-Language Models (VLMs) adapted to remote sensing rely heavily on domain-s
 <pubDate>Thu, 12 Mar 2026 11:08:30 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Matryoshka Gaussian Splatting]]></title>
-<link>https://huggingface.co/papers/2603.19234</link>
-<guid>2603.19234</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Zhilin Guo, Boqiao Zhang, Hakan Aktas, Kyle Fogarty, Jeffrey Hu
-Institution: 
-Published: 2026-03-19
-Score: 5/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-The ability to render scenes at adjustable fidelity from a single model, known as level of detail (LoD), is crucial for practical deployment of 3D Gaussian Splatting (3DGS). Existing discrete LoD methods expose only a limited set of operating points, while concurrent continuous LoD approaches enable smoother scaling but often suffer noticeable quality degradation at full capacity, making LoD a costly design decision. We introduce Matryoshka Gaussian Splatting (MGS), a training framework that enables continuous LoD for standard 3DGS pipelines without sacrificing full-capacity rendering quality. MGS learns a single ordered set of Gaussians such that rendering any prefix, the first k splats, produces a coherent reconstruction whose fidelity improves smoothly with increasing budget. Our key idea is stochastic budget training: each iteration samples a random splat budget and optimises both the corresponding prefix and the full set. This strategy requires only two forward passes and introduces no architectural modifications. Experiments across four benchmarks and six baselines show that MGS matches the full-capacity performance of its backbone while enabling a continuous speed-quality trade-off from a single model. Extensive ablations on ordering strategies, training objectives, and model capacity further validate the designs.]]></description>
-<pubDate>Thu, 19 Mar 2026 17:59:56 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[ACE-LoRA: Graph-Attentive Context Enhancement for Parameter-Efficient Adaptation of Medical Vision-Language Models]]></title>
-<link>https://huggingface.co/papers/2603.17079</link>
-<guid>2603.17079</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: M. Arda Aydın, Melih B. Yilmaz, Aykut Koç, Tolga Çukur
-Institution: 
-Published: 2026-03-17
-Score: 5/10
-Citations: 0
-Upvotes: 2
-GitHub: 
-Stars: 0
-
-The success of CLIP-like vision-language models (VLMs) on natural images has inspired medical counterparts, yet existing approaches largely fall into two extremes: specialist models trained on single-domain data, which capture domain-specific details but generalize poorly, and generalist medical VLMs trained on multi-domain data, which retain broad semantics but dilute fine-grained diagnostic cues. Bridging this specialization-generalization trade-off remains challenging. To address this problem, we propose ACE-LoRA, a parameter-efficient adaptation framework for generalist medical VLMs that maintains robust zero-shot generalization. ACE-LoRA integrates Low-Rank Adaptation (LoRA) modules into frozen image-text encoders and introduces an Attention-based Context Enhancement Hypergraph Neural Network (ACE-HGNN) module that captures higher-order contextual interactions beyond pairwise similarity to enrich global representations with localized diagnostic cues, addressing a key limitation of prior Parameter-Efficient Fine-Tuning (PEFT) methods that overlook fine-grained details. To further enhance cross-modal alignment, we formulate a label-guided InfoNCE loss to effectively suppress false negatives between semantically related image-text pairs. Despite adding only 0.95M trainable parameters, ACE-LoRA consistently outperforms state-of-the-art medical VLMs and PEFT baselines across zero-shot classification, segmentation, and detection benchmarks spanning multiple domains. Our code is available at https://github.com/icon-lab/ACE-LoRA.]]></description>
-<pubDate>Tue, 17 Mar 2026 19:06:33 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[VID-AD: A Dataset for Image-Level Logical Anomaly Detection under Vision-Induced Distraction]]></title>
 <link>https://huggingface.co/papers/2603.13964</link>
 <guid>2603.13964</guid>
@@ -847,7 +847,7 @@ Institution:
 Published: 2026-03-14
 Score: 5/10
 Citations: 0
-Upvotes: 0
+Upvotes: 1
 GitHub: 
 Stars: 0
 
@@ -865,7 +865,7 @@ Institution:
 Published: 2026-03-11
 Score: 5/10
 Citations: 0
-Upvotes: 0
+Upvotes: 1
 GitHub: 
 Stars: 0
 
@@ -901,7 +901,7 @@ Institution:
 Published: 2026-03-17
 Score: 4/10
 Citations: 0
-Upvotes: 19
+Upvotes: 20
 GitHub: 
 Stars: 0
 
