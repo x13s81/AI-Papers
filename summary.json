@@ -1,109 +1,112 @@
 {
-  "date": "2026-03-23",
-  "generated_at": "2026-03-23T14:51:23Z",
-  "total_papers": 243,
+  "date": "2026-03-24",
+  "generated_at": "2026-03-24T03:58:23Z",
+  "total_papers": 244,
   "must_read_count": 11,
   "notable_count": 27,
-  "daily_summary": "Today's top-scoring papers bring significant advancements in AI research, particularly in areas such as large language models, world simulation, and multimodal generation. Notably, \"The Y-Combinator for LLMs\" and \"Hyperagents\" push the boundaries of long-context processing and agent-based systems, while \"EgoForge\" introduces a novel goal-directed egocentric world simulator, offering promising directions for future research. Meanwhile, papers like \"ReLi3D\" and \"DreamPartGen\" demonstrate impressive progress in 3D reconstruction and generation, highlighting the growing intersection of computer vision, graphics, and AI.",
+  "daily_summary": "Today's top-scoring papers offer significant advancements in AI research, particularly in areas such as egocentric world simulation, as seen in EgoForge: Goal-Directed Egocentric World Simulator, and the development of more sophisticated language models, like those presented in Perceptio: Perception Enhanced Vision Language Models via Spatial Token Generation and CurveStream: Boosting Streaming Video Understanding in MLLMs via Curvature-Aware Hierarchical Visual Memory Management. These works, along with others like Hyperagents and Agentic AI and the next intelligence explosion, have the potential to reshape our understanding of artificial intelligence and its applications. By exploring innovative approaches to formal reasoning, such as LongCat-Flash-Prover, and addressing longstanding challenges like the capability ceiling of large language models, as discussed in Breaking the Capability Ceiling of LLM Post-Training by Reintroducing Markov States, these papers collectively push the boundaries of what is possible in AI research.",
   "weekly_trends": {
     "hot_topics": [
       {
         "topic": "Computer Vision (cs.CV)",
-        "paper_count": 77,
-        "insight": "Advances in multi-view 3D reconstruction, such as ReLi3D, and video content editing, like Versatile Editing of Video Content, Actions, and Dynamics without Training, are driving progress in this area."
-      },
-      {
-        "topic": "Machine Learning (cs.LG)",
-        "paper_count": 68,
-        "insight": "Research on long-context models, as seen in The Y-Combinator for LLMs, and discrete diffusion models, such as Beyond Single Tokens, is pushing the boundaries of model capabilities."
+        "paper_count": 85,
+        "insight": "Advances in vision language models, such as Perceptio, and 3D reconstruction, like ReLi3D, are driving progress in this area"
       },
       {
         "topic": "Artificial Intelligence (cs.AI)",
-        "paper_count": 63,
-        "insight": "Innovations in goal-directed world simulation, like EgoForge, and forward-process reinforcement learning, as in Astrolabe, are transforming the field of AI research."
+        "paper_count": 77,
+        "insight": "Research on agentic AI, as seen in papers like EgoForge and Hyperagents, is gaining traction, with a focus on goal-directed behavior and next-generation intelligence explosions"
+      },
+      {
+        "topic": "Machine Learning (cs.LG)",
+        "paper_count": 70,
+        "insight": "Techniques like reinforcement learning, as applied in LongCat-Flash-Prover, and hierarchical visual memory management, as in CurveStream, are being explored to improve model performance"
       }
     ],
     "key_developments": [
-      "The introduction of the Y-Combinator for LLMs, which addresses long-context rotation issues using λ-Calculus, marks a significant step forward in large language model development.",
-      "The development of EgoForge, a goal-directed egocentric world simulator, has the potential to revolutionize areas like robotics and autonomous systems.",
-      "The emergence of Hyperagents, a new concept in AI research, is expected to have a substantial impact on the field, although its specifics are still being explored."
+      "The introduction of EgoForge, a goal-directed egocentric world simulator, which has the potential to significantly impact the development of agentic AI",
+      "The proposal of the Y-Combinator for LLMs, which addresses the long-context rotation problem using λ-Calculus, as seen in the paper 'The Y-Combinator for LLMs: Solving Long-Context Rot with λ-Calculus'",
+      "The development of TerraScope, a pixel-grounded visual reasoning framework for earth observation, demonstrating the growing interest in applying AI to real-world problems"
     ],
     "emerging_trends": [
-      "There is a growing focus on multimodal and multiscale approaches, as seen in papers like TerraScope and DreamPartGen, which are pushing the boundaries of visual reasoning and 3D generation.",
-      "The increasing importance of efficient and scalable methods, such as SimulU's training-free policy for long-form simultaneous speech-to-speech translation, is becoming more apparent."
+      "There is a growing focus on developing more advanced and human-like AI systems, with an emphasis on agentic behavior, as seen in papers like Agentic AI and the next intelligence explosion, and Hyperagents",
+      "Researchers are exploring new techniques to improve the performance and efficiency of large language models, such as the use of curvature-aware hierarchical visual memory management in CurveStream, and the reintroduction of Markov states in Breaking the Capability Ceiling of LLM Post-Training"
     ],
-    "summary": "This week in AI research has seen significant advancements in computer vision, machine learning, and artificial intelligence, with a focus on long-context models, goal-directed simulation, and multimodal approaches. Papers like The Y-Combinator for LLMs, EgoForge, and Hyperagents are driving progress in their respective areas. As the field continues to evolve, we can expect to see further innovations in areas like efficient translation, 3D generation, and visual reasoning, as exemplified by SimulU, DreamPartGen, and TerraScope."
+    "summary": [
+      "This week in AI research saw significant advancements in computer vision, artificial intelligence, and machine learning, with a focus on developing more advanced and human-like AI systems",
+      "Papers like EgoForge, Hyperagents, and Perceptio are driving progress in these areas, and introducing new techniques such as goal-directed egocentric world simulation, agentic AI, and perception-enhanced vision language models",
+      "The growing interest in applying AI to real-world problems is also evident, with the development of frameworks like TerraScope, demonstrating the potential of AI to drive positive change"
+    ]
   },
   "sources": {
     "HuggingFace": 50,
-    "arXiv": 193
+    "arXiv": 194
   },
   "tags": {
-    "cs.CV": 77,
-    "cs.LG": 68,
-    "cs.AI": 63,
-    "cs.CL": 35,
+    "cs.CV": 85,
+    "cs.AI": 77,
+    "cs.LG": 70,
+    "cs.CL": 33,
     "stat.ML": 13,
-    "cs.CR": 8,
     "cs.RO": 6,
-    "cs.IR": 6,
-    "cs.DB": 4,
-    "cs.HC": 3,
-    "cs.SE": 3,
+    "cs.HC": 6,
+    "cs.GR": 4,
+    "cs.IR": 4,
     "cs.SD": 3,
-    "cs.MA": 2,
-    "cs.CE": 1,
+    "cs.CR": 3,
+    "stat.AP": 3,
+    "stat.ME": 3,
+    "cs.GT": 2,
+    "cs.SE": 2,
+    "cs.MM": 2,
     "cs.IT": 1,
-    "cs.CC": 1,
-    "cs.NI": 1,
-    "cs.SI": 1,
-    "stat.AP": 1,
-    "cs.CY": 1
+    "stat.OT": 1,
+    "cs.DB": 1,
+    "cs.NE": 1
   },
   "institutions": {
-    "MIT": 2,
-    "Microsoft": 1
+    "MIT": 2
   },
   "must_read_ids": [
-    "2603.20105",
     "2603.19461",
     "2603.20169",
-    "2603.17051",
+    "2603.21065",
     "2603.19039",
-    "2603.19231",
-    "2603.16924",
-    "2603.17989",
-    "2603.20155",
+    "2603.20105",
+    "2603.19987",
+    "2603.17512",
     "2603.19753",
-    "2603.19216"
+    "2603.19571",
+    "2603.20639",
+    "2603.18795"
   ],
   "notable_ids": [
     "2603.17024",
-    "2603.18524",
-    "2603.19227",
-    "2603.19466",
-    "2603.19224",
-    "2603.19203",
+    "2603.19598",
+    "2603.21986",
     "2603.19685",
-    "2603.19076",
-    "2603.19571",
-    "2603.17512",
-    "2603.15911",
-    "2603.15083",
-    "2603.20192",
-    "2603.18472",
-    "2603.09151",
-    "2603.18002",
-    "2603.08462",
-    "2603.18558",
-    "2603.19635",
+    "2603.17989",
     "2603.19714",
-    "2603.19209",
-    "2603.19500",
-    "2603.17309",
+    "2603.20155",
+    "2603.19076",
+    "2603.21383",
     "2603.17735",
-    "2603.13964",
-    "2603.14456",
-    "2603.13045"
+    "2603.09290",
+    "2603.17309",
+    "2603.17051",
+    "2603.19466",
+    "2603.20192",
+    "2603.21606",
+    "2603.08462",
+    "2603.22285",
+    "2603.09151",
+    "2603.18558",
+    "2603.22117",
+    "2603.19500",
+    "2603.22286",
+    "2603.15911",
+    "2603.20193",
+    "2603.19470",
+    "2603.22241"
   ]
 }
