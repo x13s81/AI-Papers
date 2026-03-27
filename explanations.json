@@ -48170,5 +48170,497 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-27"
+  },
+  "2603.23516": {
+    "title": "MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Memory Sparse Attention (MSA)",
+          "brief": "An end-to-end trainable, efficient, and massively scalable memory model framework"
+        },
+        {
+          "name": "Scalable Sparse Attention",
+          "brief": "A technique to reduce computational complexity in attention mechanisms"
+        },
+        {
+          "name": "Document-wise RoPE",
+          "brief": "A method to improve the stability of MSA"
+        },
+        {
+          "name": "KV Cache Compression",
+          "brief": "A technique to reduce memory usage in MSA"
+        },
+        {
+          "name": "Memory Parallel",
+          "brief": "A parallelization technique to speed up MSA inference"
+        },
+        {
+          "name": "Memory Interleaving",
+          "brief": "A technique to facilitate complex multi-hop reasoning across scattered memory segments"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Attention Mechanisms",
+          "why_needed": "To understand the limitations of full-attention architectures and the need for sparse attention"
+        },
+        {
+          "topic": "Large Language Models (LLMs)",
+          "why_needed": "To understand the context and applications of MSA"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of end-to-end training, scalability, and parallelization"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "To understand the applications of MSA in NLP tasks such as large-corpus summarization and long-history agent reasoning"
+        },
+        {
+          "topic": "Computer Architecture",
+          "why_needed": "To understand the implications of MSA on hardware resources such as memory and GPUs"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.16733": {
+    "title": "IQuest-Coder-V1 Technical Report",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Models (LLMs)",
+          "brief": "Artificial intelligence models designed to process and understand human language"
+        },
+        {
+          "name": "Code-Flow Multi-Stage Training Paradigm",
+          "brief": "A training approach that captures the dynamic evolution of software logic through different phases of the pipeline"
+        },
+        {
+          "name": "Evolutionary Pipeline",
+          "brief": "A development process that involves multiple stages of training and refinement"
+        },
+        {
+          "name": "Reinforcement Learning (RL)",
+          "brief": "A type of machine learning that involves training models through trial and error"
+        },
+        {
+          "name": "Agentic Software Engineering",
+          "brief": "A field that focuses on developing software systems that can adapt and learn"
+        },
+        {
+          "name": "Recurrent Mechanism",
+          "brief": "A design approach that allows models to optimize the trade-off between capacity and deployment footprint"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the underlying architecture and training mechanisms of LLMs"
+        },
+        {
+          "topic": "Software Engineering",
+          "why_needed": "To appreciate the applications and implications of the IQuest-Coder-V1 series in software development"
+        },
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To recognize the broader context and potential of LLMs in various fields"
+        },
+        {
+          "topic": "Computer Science",
+          "why_needed": "To comprehend the technical aspects of the IQuest-Coder-V1 series and its components"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the training and optimization techniques used in the IQuest-Coder-V1 series"
+        }
+      ],
+      "difficulty_level": "expert",
+      "estimated_study_time": "6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.25398": {
+    "title": "PMT: Plain Mask Transformer for Image and Video Segmentation with Frozen Vision Encoders",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Vision Foundation Models (VFMs)",
+          "brief": "Pre-trained models that enable a single frozen encoder for multiple downstream tasks"
+        },
+        {
+          "name": "Plain Mask Decoder (PMD)",
+          "brief": "A fast Transformer-based segmentation decoder for image and video segmentation"
+        },
+        {
+          "name": "Plain Mask Transformer (PMT)",
+          "brief": "A model that combines PMD with frozen VFM features for image and video segmentation"
+        },
+        {
+          "name": "Encoder-only models",
+          "brief": "Models that use a pre-trained encoder without fine-tuning for downstream tasks"
+        },
+        {
+          "name": "Transformer-based architectures",
+          "brief": "Neural network architectures that utilize self-attention mechanisms"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning fundamentals",
+          "why_needed": "To understand the basics of neural networks and their applications"
+        },
+        {
+          "topic": "Computer vision",
+          "why_needed": "To comprehend the concepts of image and video segmentation"
+        },
+        {
+          "topic": "Transformer architectures",
+          "why_needed": "To grasp the workings of self-attention mechanisms and their applications in vision tasks"
+        },
+        {
+          "topic": "Pre-trained models and fine-tuning",
+          "why_needed": "To understand the trade-offs between using pre-trained models and fine-tuning them for specific tasks"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.24800": {
+    "title": "Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Diffusion Transformers (DiTs)",
+          "brief": "A type of neural network architecture used for generative tasks"
+        },
+        {
+          "name": "Denoising Process",
+          "brief": "A process in DiTs that involves removing noise from input data to generate high-quality outputs"
+        },
+        {
+          "name": "Parameter-Efficient Calibration",
+          "brief": "A technique to optimize the performance of DiTs by modifying a small number of parameters"
+        },
+        {
+          "name": "Evolutionary Algorithm",
+          "brief": "A type of optimization algorithm used to solve complex problems, such as the black-box reward optimization problem in Calibri"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the fundamentals of neural networks and their applications in generative tasks"
+        },
+        {
+          "topic": "Transformer Architecture",
+          "why_needed": "To comprehend the basics of transformer models and their role in DiTs"
+        },
+        {
+          "topic": "Generative Models",
+          "why_needed": "To grasp the concepts of generative tasks, such as text-to-image synthesis, and the challenges involved"
+        },
+        {
+          "topic": "Optimization Techniques",
+          "why_needed": "To understand the principles of optimization algorithms, including evolutionary algorithms, and their applications in deep learning"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.25502": {
+    "title": "RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Image Restoration",
+          "brief": "The process of removing degradations from images to improve their quality"
+        },
+        {
+          "name": "Large-Scale Image Editing Models",
+          "brief": "Models trained on vast amounts of data to perform various image editing tasks, including restoration"
+        },
+        {
+          "name": "Real-World Degradations",
+          "brief": "Types of image degradations that occur in real-world scenarios, such as noise, blur, and distortion"
+        },
+        {
+          "name": "Generalizability",
+          "brief": "The ability of a model to perform well on unseen data, including different types of degradations and images"
+        },
+        {
+          "name": "RealIR-Bench",
+          "brief": "A benchmark dataset and evaluation metrics for real-world image restoration tasks"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of large-scale image editing models and their training"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the principles of image restoration and real-world degradations"
+        },
+        {
+          "topic": "Image Processing",
+          "why_needed": "To familiarize oneself with the techniques used in image restoration and editing"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concepts of model training, evaluation, and generalizability"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.25551": {
+    "title": "Voxtral TTS",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Text-to-Speech (TTS) Models",
+          "brief": "Systems that generate speech from text input"
+        },
+        {
+          "name": "Auto-Regressive Generation",
+          "brief": "A method of generating data one step at a time, based on previous steps"
+        },
+        {
+          "name": "Flow-Matching",
+          "brief": "A technique used for acoustic token generation in TTS models"
+        },
+        {
+          "name": "Voxtral Codec",
+          "brief": "A speech tokenizer trained with a hybrid VQ-FSQ quantization scheme"
+        },
+        {
+          "name": "Hybrid Architecture",
+          "brief": "Combining different approaches (e.g., auto-regressive and flow-matching) in a single model"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Understanding of neural networks and their applications in speech synthesis"
+        },
+        {
+          "topic": "Speech Processing",
+          "why_needed": "Knowledge of speech signals, acoustic modeling, and speech recognition"
+        },
+        {
+          "topic": "Natural Language Processing (NLP)",
+          "why_needed": "Familiarity with text analysis and language models"
+        },
+        {
+          "topic": "Quantization Schemes",
+          "why_needed": "Understanding of vector quantization (VQ) and other quantization methods"
+        },
+        {
+          "topic": "Multilingual Models",
+          "why_needed": "Knowledge of challenges and approaches in developing models that support multiple languages"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.13904": {
+    "title": "Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Visual State Representation",
+          "brief": "Learning compact representations of visual scenes for sequential decision making"
+        },
+        {
+          "name": "Self-Supervised Learning",
+          "brief": "Methods for learning from unlabeled data, such as streaming video observations"
+        },
+        {
+          "name": "What-is-Where Composition",
+          "brief": "Jointly encoding semantic identities and spatial locations of scene elements"
+        },
+        {
+          "name": "Global-to-Local Reconstruction",
+          "brief": "Reconstructing local patches from global context for representation learning"
+        },
+        {
+          "name": "CroBo Framework",
+          "brief": "A proposed framework for learning visual state representations using global-to-local reconstruction"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "Understanding neural networks and self-supervised learning methods"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "Familiarity with image and video processing, and visual representation learning"
+        },
+        {
+          "topic": "Robotics",
+          "why_needed": "Context for understanding the application of visual state representations in sequential decision making"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "Knowledge of supervised and unsupervised learning methods, and evaluation metrics"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.24793": {
+    "title": "AVControl: Efficient Framework for Training Audio-Visual Controls",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Audio-Visual Controls",
+          "brief": "Techniques for controlling video and audio generation using various modalities"
+        },
+        {
+          "name": "LTX-2 Foundation Model",
+          "brief": "A joint audio-visual foundation model used as the base for the AVControl framework"
+        },
+        {
+          "name": "LoRA (Low-Rank Adaptation)",
+          "brief": "A method for efficient adaptation of pre-trained models to new tasks or modalities"
+        },
+        {
+          "name": "Parallel Canvas Approach",
+          "brief": "A technique for training control modalities in parallel, providing a reference signal as additional tokens in attention layers"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the concepts of foundation models, LoRA, and attention mechanisms"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the various modalities used for controlling video generation, such as depth, pose, and camera trajectories"
+        },
+        {
+          "topic": "Audio Processing",
+          "why_needed": "To understand the concepts of audio transformations and audio-visual controls"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the ideas of model training, adaptation, and evaluation metrics"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.25702": {
+    "title": "S2D2: Fast Decoding for Diffusion LLMs via Training-Free Self-Speculation",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Block-Diffusion Language Models",
+          "brief": "A type of language model that combines block-wise autoregressive decoding with within-block parallel denoising"
+        },
+        {
+          "name": "Autoregressive Decoding",
+          "brief": "A decoding method where each token is generated one at a time, conditioned on the previous tokens"
+        },
+        {
+          "name": "Diffusion-Based Decoding",
+          "brief": "A decoding method that uses a process called diffusion to generate tokens in parallel"
+        },
+        {
+          "name": "Self-Speculative Decoding",
+          "brief": "A decoding framework that uses a pretrained model as both a drafter and a verifier to improve decoding efficiency"
+        },
+        {
+          "name": "Confidence-Thresholded Decoding",
+          "brief": "A decoding method that uses a confidence threshold to determine when to stop decoding"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Language Models",
+          "why_needed": "To understand the context and applications of block-diffusion language models"
+        },
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To comprehend the underlying neural network architectures and training methods"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To appreciate the challenges and opportunities in language generation and decoding"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the concepts of training, testing, and evaluation of language models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
+  },
+  "2603.25728": {
+    "title": "PixelSmile: Toward Fine-Grained Facial Expression Editing",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Facial Expression Editing",
+          "brief": "Techniques for modifying facial expressions in images or videos"
+        },
+        {
+          "name": "Diffusion Framework",
+          "brief": "A type of deep learning model for generating and editing images"
+        },
+        {
+          "name": "Disentanglement",
+          "brief": "Separating mixed factors of variation in data, such as expression and identity"
+        },
+        {
+          "name": "Contrastive Learning",
+          "brief": "A self-supervised learning method for distinguishing between similar and dissimilar data points"
+        },
+        {
+          "name": "Latent Interpolation",
+          "brief": "A technique for generating new data points by interpolating between existing ones in a latent space"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the diffusion framework and other neural network-based concepts"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend image and video processing techniques"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To grasp the concepts of disentanglement, contrastive learning, and latent interpolation"
+        },
+        {
+          "topic": "Affective Computing",
+          "why_needed": "To understand the importance of facial expression editing and its applications"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-27"
   }
 }
