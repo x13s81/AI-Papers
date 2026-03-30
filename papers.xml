@@ -4,7 +4,7 @@
 <title>AI Papers - 2026-03-30</title>
 <link>https://arxiv.org</link>
 <description>AI papers as of 2026-03-30 - 50 papers</description>
-<lastBuildDate>Mon, 30 Mar 2026 04:25:57 +0000</lastBuildDate>
+<lastBuildDate>Mon, 30 Mar 2026 15:00:38 +0000</lastBuildDate>
 <item>
 <title><![CDATA[Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale]]></title>
 <link>https://huggingface.co/papers/2603.25040</link>
@@ -16,7 +16,7 @@ Institution:
 Published: 2026-03-26
 Score: 9/10
 Citations: 0
-Upvotes: 110
+Upvotes: 113
 GitHub: 
 Stars: 0
 
@@ -34,7 +34,7 @@ Institution:
 Published: 2026-03-06
 Score: 9/10
 Citations: 0
-Upvotes: 35
+Upvotes: 36
 GitHub: 
 Stars: 0
 
@@ -72,76 +72,40 @@ We show that PLDR-LLMs pretrained at self-organized criticality exhibit reasonin
 <pubDate>Thu, 12 Mar 2026 19:09:06 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[WAFT-Stereo: Warping-Alone Field Transforms for Stereo Matching]]></title>
-<link>https://huggingface.co/papers/2603.24836</link>
-<guid>2603.24836</guid>
+<title><![CDATA[MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data]]></title>
+<link>https://huggingface.co/papers/2603.25319</link>
+<guid>2603.25319</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yihan Wang, Jia Deng
-Institution: 
-Published: 2026-03-25
-Score: 9/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-We introduce WAFT-Stereo, a simple and effective warping-based method for stereo matching. WAFT-Stereo demonstrates that cost volumes, a common design used in many leading methods, are not necessary for strong performance and can be replaced by warping with improved efficiency. WAFT-Stereo ranks first on ETH3D, KITTI and Middlebury public benchmarks, reducing the zero-shot error by 81% on ETH3D benchmark, while being 1.8-6.7x faster than competitive methods. Code and model weights are available at https://github.com/princeton-vl/WAFT-Stereo.]]></description>
-<pubDate>Wed, 25 Mar 2026 22:07:55 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models]]></title>
-<link>https://huggingface.co/papers/2603.25502</link>
-<guid>2603.25502</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yufeng Yang, Xianfang Zeng, Zhangqi Jiang, Fukun Yin, Jianzhuang Liu
+Authors: Zhekai Chen, Yuqing Wang, Manyuan Zhang, Xihui Liu
 Institution: 
 Published: 2026-03-26
 Score: 8/10
 Citations: 0
-Upvotes: 48
+Upvotes: 29
 GitHub: 
 Stars: 0
 
-Image restoration under real-world degradations is critical for downstream tasks such as autonomous driving and object detection. However, existing restoration models are often limited by the scale and distribution of their training data, resulting in poor generalization to real-world scenarios. Recently, large-scale image editing models have shown strong generalization ability in restoration tasks, especially for closed-source models like Nano Banana Pro, which can restore images while preserving consistency. Nevertheless, achieving such performance with those large universal models requires substantial data and computational costs. To address this issue, we construct a large-scale dataset covering nine common real-world degradation types and train a state-of-the-art open-source model to narrow the gap with closed-source alternatives. Furthermore, we introduce RealIR-Bench, which contains 464 real-world degraded images and tailored evaluation metrics focusing on degradation removal and consistency preservation. Extensive experiments demonstrate our model ranks first among open-source methods, achieving state-of-the-art performance.]]></description>
-<pubDate>Thu, 26 Mar 2026 14:39:39 +0000</pubDate>
+Generating images conditioned on multiple visual references is critical for real-world applications such as multi-subject composition, narrative illustration, and novel view synthesis, yet current models suffer from severe performance degradation as the number of input references grows. We identify the root cause as a fundamental data bottleneck: existing datasets are dominated by single- or few-reference pairs and lack the structured, long-context supervision needed to learn dense inter-reference dependencies. To address this, we introduce MacroData, a large-scale dataset of 400K samples, each containing up to 10 reference images, systematically organized across four complementary dimensions -- Customization, Illustration, Spatial reasoning, and Temporal dynamics -- to provide comprehensive coverage of the multi-reference generation space. Recognizing the concurrent absence of standardized evaluation protocols, we further propose MacroBench, a benchmark of 4,000 samples that assesses generative coherence across graded task dimensions and input scales. Extensive experiments show that fine-tuning on MacroData yields substantial improvements in multi-reference generation, and ablation studies further reveal synergistic benefits of cross-task co-training and effective strategies for handling long-context complexity. The dataset and benchmark will be publicly released.]]></description>
+<pubDate>Thu, 26 Mar 2026 11:09:14 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling]]></title>
-<link>https://huggingface.co/papers/2603.25746</link>
-<guid>2603.25746</guid>
+<title><![CDATA[MedOpenClaw: Auditable Medical Imaging Agents Reasoning over Uncurated Full Studies]]></title>
+<link>https://huggingface.co/papers/2603.24649</link>
+<guid>2603.24649</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yawen Luo, Xiaoyu Shi, Junhao Zhuang, Yutian Chen, Quande Liu
-Institution: 
-Published: 2026-03-26
-Score: 8/10
-Citations: 0
-Upvotes: 44
-GitHub: 
-Stars: 0
-
-Multi-shot video generation is crucial for long narrative storytelling, yet current bidirectional architectures suffer from limited interactivity and high latency. We propose ShotStream, a novel causal multi-shot architecture that enables interactive storytelling and efficient on-the-fly frame generation. By reformulating the task as next-shot generation conditioned on historical context, ShotStream allows users to dynamically instruct ongoing narratives via streaming prompts. We achieve this by first fine-tuning a text-to-video model into a bidirectional next-shot generator, which is then distilled into a causal student via Distribution Matching Distillation. To overcome the challenges of inter-shot consistency and error accumulation inherent in autoregressive generation, we introduce two key innovations. First, a dual-cache memory mechanism preserves visual coherence: a global context cache retains conditional frames for inter-shot consistency, while a local context cache holds generated frames within the current shot for intra-shot consistency. And a RoPE discontinuity indicator is employed to explicitly distinguish the two caches to eliminate ambiguity. Second, to mitigate error accumulation, we propose a two-stage distillation strategy. This begins with intra-shot self-forcing conditioned on ground-truth historical shots and progressively extends to inter-shot self-forcing using self-generated histories, effectively bridging the train-test gap. Extensive experiments demonstrate that ShotStream generates coherent multi-shot videos with sub-second latency, achieving 16 FPS on a single GPU. It matches or exceeds the quality of slower bidirectional models, paving the way for real-time interactive storytelling. Training and inference code, as well as the models, are available on our]]></description>
-<pubDate>Thu, 26 Mar 2026 17:59:59 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Why Does Self-Distillation (Sometimes) Degrade the Reasoning Capability of LLMs?]]></title>
-<link>https://huggingface.co/papers/2603.24472</link>
-<guid>2603.24472</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jeonghye Kim, Xufang Luo, Minbeom Kim, Sangmook Lee, Dohyung Kim
+Authors: Weixiang Shen, Yanzhu Hu, Che Liu, Junde Wu, Jiayuan Zhu
 Institution: 
 Published: 2026-03-25
 Score: 8/10
 Citations: 0
-Upvotes: 41
+Upvotes: 18
 GitHub: 
 Stars: 0
 
-Self-distillation has emerged as an effective post-training paradigm for LLMs, often improving performance while shortening reasoning traces. However, in mathematical reasoning, we find that it can reduce response length while degrading performance. We trace this degradation to the suppression of epistemic verbalization - the model's expression of uncertainty during reasoning. Through controlled experiments varying conditioning context richness and task coverage, we show that conditioning the teacher on rich information suppresses uncertainty expression, enabling rapid in-domain optimization with limited task coverage but harming OOD performance, where unseen problems benefit from expressing uncertainty and adjusting accordingly. Across Qwen3-8B, DeepSeek-Distill-Qwen-7B, and Olmo3-7B-Instruct, we observe performance drops of up to 40%. Our findings highlight that exposing appropriate levels of uncertainty is crucial for robust reasoning and underscore the importance of optimizing reasoning behavior beyond merely reinforcing correct answer traces.]]></description>
-<pubDate>Wed, 25 Mar 2026 16:14:52 +0000</pubDate>
+Currently, evaluating vision-language models (VLMs) in medical imaging tasks oversimplifies clinical reality by relying on pre-selected 2D images that demand significant manual labor to curate. This setup misses the core challenge of realworld diagnostics: a true clinical agent must actively navigate full 3D volumes across multiple sequences or modalities to gather evidence and ultimately support a final decision. To address this, we propose MEDOPENCLAW, an auditable runtime designed to let VLMs operate dynamically within standard medical tools or viewers (e.g., 3D Slicer). On top of this runtime, we introduce MEDFLOWBENCH, a full-study medical imaging benchmark covering multi-sequence brain MRI and lung CT/PET. It systematically evaluates medical agentic capabilities across viewer-only, tool-use, and open-method tracks. Initial results reveal a critical insight: while state-of-the-art LLMs/VLMs (e.g., Gemini 3.1 Pro and GPT-5.4) can successfully navigate the viewer to solve basic study-level tasks, their performance paradoxically degrades when given access to professional support tools due to a lack of precise spatial grounding. By bridging the gap between static-image perception and interactive clinical workflows, MEDOPENCLAW and MEDFLOWBENCH establish a reproducible foundation for developing auditable, full-study medical imaging agents.]]></description>
+<pubDate>Wed, 25 Mar 2026 17:33:58 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Less Gaussians, Texture More: 4K Feed-Forward Textured Splatting]]></title>
@@ -153,13 +117,31 @@ Authors: Yixing Lao, Xuyang Bai, Xiaoyang Wu, Nuoyuan Yan, Zixin Luo
 Institution: 
 Published: 2026-03-26
 Score: 8/10
-Citations: 0
+Citations: 1
 Upvotes: 10
 GitHub: 
 Stars: 0
 
 Existing feed-forward 3D Gaussian Splatting methods predict pixel-aligned primitives, leading to a quadratic growth in primitive count as resolution increases. This fundamentally limits their scalability, making high-resolution synthesis such as 4K intractable. We introduce LGTM (Less Gaussians, Texture More), a feed-forward framework that overcomes this resolution scaling barrier. By predicting compact Gaussian primitives coupled with per-primitive textures, LGTM decouples geometric complexity from rendering resolution. This approach enables high-fidelity 4K novel view synthesis without per-scene optimization, a capability previously out of reach for feed-forward methods, all while using significantly fewer Gaussian primitives. Project page: https://yxlao.github.io/lgtm/]]></description>
 <pubDate>Thu, 26 Mar 2026 17:59:59 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Qworld: Question-Specific Evaluation Criteria for LLMs]]></title>
+<link>https://huggingface.co/papers/2603.23522</link>
+<guid>2603.23522</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Shanghua Gao, Yuchang Su, Pengwei Sui, Curtis Ginder, Marinka Zitnik
+Institution: 
+Published: 2026-03-06
+Score: 8/10
+Citations: 0
+Upvotes: 9
+GitHub: 
+Stars: 0
+
+Evaluating large language models (LLMs) on open-ended questions is difficult because response quality depends on the question's context. Binary scores and static rubrics fail to capture these context-dependent requirements. Existing methods define criteria at the dataset level or generate them in a single pass, which limits their ability to explore the evaluation space implied by each question. We introduce One-Question-One-World (Qworld), a method that generates question-specific evaluation criteria using a recursive expansion tree. Given a question, Qworld decomposes it into scenarios, perspectives, and fine-grained binary criteria through structured hierarchical and horizontal expansion. The resulting criteria specify what a high-quality answer must address for that question. On HealthBench, Qworld covers 89% of expert-authored criteria and generates 79% novel criteria validated by human experts. Experts rate Qworld criteria higher in insight and granularity than those produced by prior methods. When applied to 11 frontier LLMs on HealthBench and Humanity's Last Exam, Qworld reveals capability differences in dimensions such as long-term impact, equity, error handling, and interdisciplinary reasoning that coarse rubrics do not distinguish. By formulating criteria generation as structured coverage of question-implied evaluation axes, Qworld enables evaluation that adapts to each question rather than relying on fixed task-level criteria.]]></description>
+<pubDate>Fri, 06 Mar 2026 15:20:45 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[MuRF: Unlocking the Multi-Scale Potential of Vision Foundation Models]]></title>
@@ -180,40 +162,22 @@ Vision Foundation Models (VFMs) have become the cornerstone of modern computer v
 <pubDate>Thu, 26 Mar 2026 17:59:58 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference]]></title>
-<link>https://huggingface.co/papers/2603.25730</link>
-<guid>2603.25730</guid>
+<title><![CDATA[AVO: Agentic Variation Operators for Autonomous Evolutionary Search]]></title>
+<link>https://huggingface.co/papers/2603.24517</link>
+<guid>2603.24517</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Xiaofeng Mao, Shaohao Rui, Kaining Ying, Bo Zheng, Chuanhao Li
-Institution: 
-Published: 2026-03-26
-Score: 8/10
-Citations: 0
-Upvotes: 4
-GitHub: 
-Stars: 0
-
-Autoregressive video diffusion models have demonstrated remarkable progress, yet they remain bottlenecked by intractable linear KV-cache growth, temporal repetition, and compounding errors during long-video generation. To address these challenges, we present PackForcing, a unified framework that efficiently manages the generation history through a novel three-partition KV-cache strategy. Specifically, we categorize the historical context into three distinct types: (1) Sink tokens, which preserve early anchor frames at full resolution to maintain global semantics; (2) Mid tokens, which achieve a massive spatiotemporal compression (32x token reduction) via a dual-branch network fusing progressive 3D convolutions with low-resolution VAE re-encoding; and (3) Recent tokens, kept at full resolution to ensure local temporal coherence. To strictly bound the memory footprint without sacrificing quality, we introduce a dynamic top-k context selection mechanism for the mid tokens, coupled with a continuous Temporal RoPE Adjustment that seamlessly re-aligns position gaps caused by dropped tokens with negligible overhead. Empowered by this principled hierarchical context compression, PackForcing can generate coherent 2-minute, 832x480 videos at 16 FPS on a single H200 GPU. It achieves a bounded KV cache of just 4 GB and enables a remarkable 24x temporal extrapolation (5s to 120s), operating effectively either zero-shot or trained on merely 5-second clips. Extensive results on VBench demonstrate state-of-the-art temporal consistency (26.07) and dynamic degree (56.25), proving that short-video supervision is sufficient for high-quality, long-video synthesis. https://github.com/ShandaAI/PackForcing]]></description>
-<pubDate>Thu, 26 Mar 2026 17:59:05 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Reaching Beyond the Mode: RL for Distributional Reasoning in Language Models]]></title>
-<link>https://huggingface.co/papers/2603.24844</link>
-<guid>2603.24844</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Isha Puri, Mehul Damani, Idan Shenfeld, Marzyeh Ghassemi, Jacob Andreas
+Authors: Terry Chen, Zhifan Ye, Bing Xu, Zihao Ye, Timmy Liu
 Institution: 
 Published: 2026-03-25
 Score: 8/10
 Citations: 0
-Upvotes: 3
+Upvotes: 5
 GitHub: 
 Stars: 0
 
-Given a question, a language model (LM) implicitly encodes a distribution over possible answers. In practice, post-training procedures for LMs often collapse this distribution onto a single dominant mode. While this is generally not a problem for benchmark-style evaluations that assume one correct answer, many real-world tasks inherently involve multiple valid answers or irreducible uncertainty. Examples include medical diagnosis, ambiguous question answering, and settings with incomplete information. In these cases, we would like LMs to generate multiple plausible hypotheses, ideally with confidence estimates for each one, and without computationally intensive repeated sampling to generate non-modal answers. This paper describes a multi-answer reinforcement learning approach for training LMs to perform distributional reasoning over multiple answers during inference. We modify the RL objective to enable models to explicitly generate multiple candidate answers in a single forward pass, internalizing aspects of inference-time search into the model's generative process. Across question-answering, medical diagnostic, and coding benchmarks, we observe improved diversity, coverage, and set-level calibration scores compared to single answer trained baselines. Models trained with our approach require fewer tokens to generate multiple answers than competing approaches. On coding tasks, they are also substantially more accurate. These results position multi-answer RL as a principled and compute-efficient alternative to inference-time scaling procedures such as best-of-k. Code and more information can be found at https://multi-answer-rl.github.io/.]]></description>
-<pubDate>Wed, 25 Mar 2026 22:20:25 +0000</pubDate>
+Agentic Variation Operators (AVO) are a new family of evolutionary variation operators that replace the fixed mutation, crossover, and hand-designed heuristics of classical evolutionary search with autonomous coding agents. Rather than confining a language model to candidate generation within a prescribed pipeline, AVO instantiates variation as a self-directed agent loop that can consult the current lineage, a domain-specific knowledge base, and execution feedback to propose, repair, critique, and verify implementation edits. We evaluate AVO on attention, among the most aggressively optimized kernel targets in AI, on NVIDIA Blackwell (B200) GPUs. Over 7 days of continuous autonomous evolution on multi-head attention, AVO discovers kernels that outperform cuDNN by up to 3.5% and FlashAttention-4 by up to 10.5% across the evaluated configurations. The discovered optimizations transfer readily to grouped-query attention, requiring only 30 minutes of additional autonomous adaptation and yielding gains of up to 7.0% over cuDNN and 9.3% over FlashAttention-4. Together, these results show that agentic variation operators move beyond prior LLM-in-the-loop evolutionary pipelines by elevating the agent from candidate generator to variation operator, and can discover performance-critical micro-architectural optimizations that produce kernels surpassing state-of-the-art expert-engineered attention implementations on today's most advanced GPU hardware.]]></description>
+<pubDate>Wed, 25 Mar 2026 16:55:04 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning]]></title>
@@ -234,40 +198,76 @@ Existing Multimodal Large Language Models (MLLMs) struggle with 3D spatial reaso
 <pubDate>Tue, 24 Mar 2026 16:38:09 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models]]></title>
-<link>https://huggingface.co/papers/2603.14636</link>
-<guid>2603.14636</guid>
+<title><![CDATA[Electrostatic Photoluminescence Tuning in All-Solid-State Perovskite Transistors]]></title>
+<link>https://huggingface.co/papers/2603.25718</link>
+<guid>2603.25718</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Lok-Lam Ieong, Chia-Chien Chen, Chih-Kai Yang, Yu-Han Huang, An-Yu Cheng
-Institution: 
-Published: 2026-03-15
+Authors: Vladimir Bruevich, Dmitry Maslennikov, Beier Hu, Artem A. Bakulin, Vitaly Podzorov
+Institution: MIT
+Published: 2026-03-26
 Score: 8/10
 Citations: 0
 Upvotes: 2
 GitHub: 
 Stars: 0
 
-Chain-of-thought (CoT) prompting has been extended to large audio-language models (LALMs) to elicit reasoning, yet enhancing its effectiveness without training remains challenging. We study inference-time model steering as a training-free approach to improve LALM reasoning. We introduce three strategies using diverse information sources and evaluate them across four LALMs and four benchmarks. Results show general accuracy gains up to 4.4% over CoT prompting. Notably, we identify a cross-modal transfer where steering vectors derived from few text samples effectively guide speech-based reasoning, demonstrating high data efficiency. We also examine hyperparameter sensitivity to understand the robustness of these approaches. Our findings position model steering as a practical direction for strengthening LALM reasoning.]]></description>
-<pubDate>Sun, 15 Mar 2026 22:12:36 +0000</pubDate>
+We demonstrate an all solid state semiconductor device, based on epitaxial single crystalline metal halide perovskites, enabling reversible control of a perovskite photoluminescence with a gate voltage. Fundamentally distinct from electroluminescent diodes, such a photoluminescence field effect transistor uses the gate electric field to electrostatically modulate the interfacial density of mobile charges, thereby affecting the radiative and nonradiative recombination channels of photocarriers. Varying the gate voltage in such transistors efficiently changes the rate of nonradiative interfacial recombination and modulates the photoluminescence intensity by 65 to 98 percent (depending on temperature). At favorable gating, nearly complete elimination of non-radiative losses can be achieved. This functionality, coupled with the strong visible-range absorption and emission, possible due to the high absorption coefficient, as well as controllable thickness and macroscopically homogeneous morphology of epitaxial perovskite films, leads to high external photoluminescence quantum efficiencies realized in large-area, thin-film devices. Such high-efficiency, scalable, electrostatically tunable optoelectronic switches broaden the potential applications of metal-halide perovskites in photonics and optoelectronics.]]></description>
+<pubDate>Thu, 26 Mar 2026 17:57:34 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[PixelSmile: Toward Fine-Grained Facial Expression Editing]]></title>
-<link>https://huggingface.co/papers/2603.25728</link>
-<guid>2603.25728</guid>
+<title><![CDATA[IQuest-Coder-V1 Technical Report]]></title>
+<link>https://huggingface.co/papers/2603.16733</link>
+<guid>2603.16733</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Jiabin Hua, Hengyuan Xu, Aojie Li, Wei Cheng, Gang Yu
+Authors: Jian Yang, Wei Zhang, Shawn Guo, Zhengmao Ye, Lin Jing
+Institution: 
+Published: 2026-03-17
+Score: 8/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+In this report, we introduce the IQuest-Coder-V1 series-(7B/14B/40B/40B-Loop), a new family of code large language models (LLMs). Moving beyond static code representations, we propose the code-flow multi-stage training paradigm, which captures the dynamic evolution of software logic through different phases of the pipeline. Our models are developed through the evolutionary pipeline, starting with the initial pre-training consisting of code facts, repository, and completion data. Following that, we implement a specialized mid-training stage that integrates reasoning and agentic trajectories in 32k-context and repository-scale in 128k-context to forge deep logical foundations. The models are then finalized with post-training of specialized coding capabilities, which is bifurcated into two specialized paths: the thinking path (utilizing reasoning-driven RL) and the instruct path (optimized for general assistance). IQuest-Coder-V1 achieves state-of-the-art performance among competitive models across critical dimensions of code intelligence: agentic software engineering, competitive programming, and complex tool use. To address deployment constraints, the IQuest-Coder-V1-Loop variant introduces a recurrent mechanism designed to optimize the trade-off between model capacity and deployment footprint, offering an architecturally enhanced path for efficacy-efficiency trade-off. We believe the release of the IQuest-Coder-V1 series, including the complete white-box chain of checkpoints from pre-training bases to the final thinking and instruction models, will advance research in autonomous code intelligence and real-world agentic systems.]]></description>
+<pubDate>Tue, 17 Mar 2026 16:15:31 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Extending Precipitation Nowcasting Horizons via Spectral Fusion of Radar Observations and Foundation Model Priors]]></title>
+<link>https://huggingface.co/papers/2603.21768</link>
+<guid>2603.21768</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yuze Qin, Qingyong Li, Zhiqing Guo, Wen Wang, Yan Liu
+Institution: 
+Published: 2026-03-23
+Score: 8/10
+Citations: 0
+Upvotes: 1
+GitHub: 
+Stars: 0
+
+Precipitation nowcasting is critical for disaster mitigation and aviation safety. However, radar-only models frequently suffer from a lack of large-scale atmospheric context, leading to performance degradation at longer lead times. While integrating meteorological variables predicted by weather foundation models offers a potential remedy, existing architectures fail to reconcile the profound representational heterogeneities between radar imagery and meteorological data. To bridge this gap, we propose PW-FouCast, a novel frequency-domain fusion framework that leverages Pangu-Weather forecasts as spectral priors within a Fourier-based backbone. Our architecture introduces three key innovations: (i) Pangu-Weather-guided Frequency Modulation to align spectral magnitudes and phases with meteorological priors; (ii) Frequency Memory to correct phase discrepancies and preserve temporal evolution; and (iii) Inverted Frequency Attention to reconstruct high-frequency details typically lost in spectral filtering. Extensive experiments on the SEVIR and MeteoNet benchmarks demonstrate that PW-FouCast achieves state-of-the-art performance, effectively extending the reliable forecast horizon while maintaining structural fidelity. Our code is available at https://github.com/Onemissed/PW-FouCast.]]></description>
+<pubDate>Mon, 23 Mar 2026 10:05:51 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling]]></title>
+<link>https://huggingface.co/papers/2603.25746</link>
+<guid>2603.25746</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yawen Luo, Xiaoyu Shi, Junhao Zhuang, Yutian Chen, Quande Liu
 Institution: 
 Published: 2026-03-26
 Score: 7/10
 Citations: 0
-Upvotes: 113
+Upvotes: 106
 GitHub: 
 Stars: 0
 
-Fine-grained facial expression editing has long been limited by intrinsic semantic overlap. To address this, we construct the Flex Facial Expression (FFE) dataset with continuous affective annotations and establish FFE-Bench to evaluate structural confusion, editing accuracy, linear controllability, and the trade-off between expression editing and identity preservation. We propose PixelSmile, a diffusion framework that disentangles expression semantics via fully symmetric joint training. PixelSmile combines intensity supervision with contrastive learning to produce stronger and more distinguishable expressions, achieving precise and stable linear expression control through textual latent interpolation. Extensive experiments demonstrate that PixelSmile achieves superior disentanglement and robust identity preservation, confirming its effectiveness for continuous, controllable, and fine-grained expression editing, while naturally supporting smooth expression blending.]]></description>
-<pubDate>Thu, 26 Mar 2026 17:59:04 +0000</pubDate>
+Multi-shot video generation is crucial for long narrative storytelling, yet current bidirectional architectures suffer from limited interactivity and high latency. We propose ShotStream, a novel causal multi-shot architecture that enables interactive storytelling and efficient on-the-fly frame generation. By reformulating the task as next-shot generation conditioned on historical context, ShotStream allows users to dynamically instruct ongoing narratives via streaming prompts. We achieve this by first fine-tuning a text-to-video model into a bidirectional next-shot generator, which is then distilled into a causal student via Distribution Matching Distillation. To overcome the challenges of inter-shot consistency and error accumulation inherent in autoregressive generation, we introduce two key innovations. First, a dual-cache memory mechanism preserves visual coherence: a global context cache retains conditional frames for inter-shot consistency, while a local context cache holds generated frames within the current shot for intra-shot consistency. And a RoPE discontinuity indicator is employed to explicitly distinguish the two caches to eliminate ambiguity. Second, to mitigate error accumulation, we propose a two-stage distillation strategy. This begins with intra-shot self-forcing conditioned on ground-truth historical shots and progressively extends to inter-shot self-forcing using self-generated histories, effectively bridging the train-test gap. Extensive experiments demonstrate that ShotStream generates coherent multi-shot videos with sub-second latency, achieving 16 FPS on a single GPU. It matches or exceeds the quality of slower bidirectional models, paving the way for real-time interactive storytelling. Training and inference code, as well as the models, are available on our]]></description>
+<pubDate>Thu, 26 Mar 2026 17:59:59 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration]]></title>
@@ -280,7 +280,7 @@ Institution:
 Published: 2026-03-25
 Score: 7/10
 Citations: 0
-Upvotes: 54
+Upvotes: 57
 GitHub: 
 Stars: 0
 
@@ -288,40 +288,76 @@ In this paper, we uncover the hidden potential of Diffusion Transformers (DiTs) 
 <pubDate>Wed, 25 Mar 2026 20:19:50 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models]]></title>
-<link>https://huggingface.co/papers/2603.25716</link>
-<guid>2603.25716</guid>
+<title><![CDATA[RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models]]></title>
+<link>https://huggingface.co/papers/2603.25502</link>
+<guid>2603.25502</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Kaijin Chen, Dingkang Liang, Xin Zhou, Yikang Ding, Xiaoqiang Liu
+Authors: Yufeng Yang, Xianfang Zeng, Zhangqi Jiang, Fukun Yin, Jianzhuang Liu
 Institution: 
 Published: 2026-03-26
 Score: 7/10
 Citations: 0
-Upvotes: 47
+Upvotes: 49
 GitHub: 
 Stars: 0
 
-Video world models have shown immense potential in simulating the physical world, yet existing memory mechanisms primarily treat environments as static canvases. When dynamic subjects hide out of sight and later re-emerge, current methods often struggle, leading to frozen, distorted, or vanishing subjects. To address this, we introduce Hybrid Memory, a novel paradigm requiring models to simultaneously act as precise archivists for static backgrounds and vigilant trackers for dynamic subjects, ensuring motion continuity during out-of-view intervals. To facilitate research in this direction, we construct HM-World, the first large-scale video dataset dedicated to hybrid memory. It features 59K high-fidelity clips with decoupled camera and subject trajectories, encompassing 17 diverse scenes, 49 distinct subjects, and meticulously designed exit-entry events to rigorously evaluate hybrid coherence. Furthermore, we propose HyDRA, a specialized memory architecture that compresses memory into tokens and utilizes a spatiotemporal relevance-driven retrieval mechanism. By selectively attending to relevant motion cues, HyDRA effectively preserves the identity and motion of hidden subjects. Extensive experiments on HM-World demonstrate that our method significantly outperforms state-of-the-art approaches in both dynamic subject consistency and overall generation quality.]]></description>
-<pubDate>Thu, 26 Mar 2026 17:56:01 +0000</pubDate>
+Image restoration under real-world degradations is critical for downstream tasks such as autonomous driving and object detection. However, existing restoration models are often limited by the scale and distribution of their training data, resulting in poor generalization to real-world scenarios. Recently, large-scale image editing models have shown strong generalization ability in restoration tasks, especially for closed-source models like Nano Banana Pro, which can restore images while preserving consistency. Nevertheless, achieving such performance with those large universal models requires substantial data and computational costs. To address this issue, we construct a large-scale dataset covering nine common real-world degradation types and train a state-of-the-art open-source model to narrow the gap with closed-source alternatives. Furthermore, we introduce RealIR-Bench, which contains 464 real-world degraded images and tailored evaluation metrics focusing on degradation removal and consistency preservation. Extensive experiments demonstrate our model ranks first among open-source methods, achieving state-of-the-art performance.]]></description>
+<pubDate>Thu, 26 Mar 2026 14:39:39 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[EVA: Efficient Reinforcement Learning for End-to-End Video Agent]]></title>
-<link>https://huggingface.co/papers/2603.22918</link>
-<guid>2603.22918</guid>
+<title><![CDATA[PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference]]></title>
+<link>https://huggingface.co/papers/2603.25730</link>
+<guid>2603.25730</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yaolun Zhang, Ruohui Wang, Jiahao Wang, Yepeng Tang, Xuanyu Zheng
+Authors: Xiaofeng Mao, Shaohao Rui, Kaining Ying, Bo Zheng, Chuanhao Li
+Institution: 
+Published: 2026-03-26
+Score: 7/10
+Citations: 0
+Upvotes: 32
+GitHub: 
+Stars: 0
+
+Autoregressive video diffusion models have demonstrated remarkable progress, yet they remain bottlenecked by intractable linear KV-cache growth, temporal repetition, and compounding errors during long-video generation. To address these challenges, we present PackForcing, a unified framework that efficiently manages the generation history through a novel three-partition KV-cache strategy. Specifically, we categorize the historical context into three distinct types: (1) Sink tokens, which preserve early anchor frames at full resolution to maintain global semantics; (2) Mid tokens, which achieve a massive spatiotemporal compression (32x token reduction) via a dual-branch network fusing progressive 3D convolutions with low-resolution VAE re-encoding; and (3) Recent tokens, kept at full resolution to ensure local temporal coherence. To strictly bound the memory footprint without sacrificing quality, we introduce a dynamic top-k context selection mechanism for the mid tokens, coupled with a continuous Temporal RoPE Adjustment that seamlessly re-aligns position gaps caused by dropped tokens with negligible overhead. Empowered by this principled hierarchical context compression, PackForcing can generate coherent 2-minute, 832x480 videos at 16 FPS on a single H200 GPU. It achieves a bounded KV cache of just 4 GB and enables a remarkable 24x temporal extrapolation (5s to 120s), operating effectively either zero-shot or trained on merely 5-second clips. Extensive results on VBench demonstrate state-of-the-art temporal consistency (26.07) and dynamic degree (56.25), proving that short-video supervision is sufficient for high-quality, long-video synthesis. https://github.com/ShandaAI/PackForcing]]></description>
+<pubDate>Thu, 26 Mar 2026 17:59:05 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks]]></title>
+<link>https://huggingface.co/papers/2603.24755</link>
+<guid>2603.24755</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Gabriel Orlanski, Devjeet Roy, Alexander Yun, Changho Shin, Alex Gu
+Institution: 
+Published: 2026-03-25
+Score: 7/10
+Citations: 0
+Upvotes: 24
+GitHub: 
+Stars: 0
+
+Software development is iterative, yet agentic coding benchmarks overwhelmingly evaluate single-shot solutions against complete specifications. Code can pass the test suite but become progressively harder to extend. Recent iterative benchmarks attempt to close this gap, but constrain the agent's design decisions too tightly to faithfully measure how code quality shapes future extensions. We introduce SlopCodeBench, a language-agnostic benchmark comprising 20 problems and 93 checkpoints, in which agents repeatedly extend their own prior solutions under evolving specifications that force architectural decisions without prescribing internal structure. We track two trajectory-level quality signals: verbosity, the fraction of redundant or duplicated code, and structural erosion, the share of complexity mass concentrated in high-complexity functions. No agent solves any problem end-to-end across 11 models; the highest checkpoint solve rate is 17.2%. Quality degrades steadily: erosion rises in 80% of trajectories and verbosity in 89.8%. Against 48 open-source Python repositories, agent code is 2.2x more verbose and markedly more eroded. Tracking 20 of those repositories over time shows that human code stays flat, while agent code deteriorates with each iteration. A prompt-intervention study shows that initial quality can be improved, but it does not halt degradation. These results demonstrate that pass-rate benchmarks systematically undermeasure extension robustness, and that current agents lack the design discipline iterative software development demands.]]></description>
+<pubDate>Wed, 25 Mar 2026 19:26:44 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[LongTail Driving Scenarios with Reasoning Traces: The KITScenes LongTail Dataset]]></title>
+<link>https://huggingface.co/papers/2603.23607</link>
+<guid>2603.23607</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Royden Wagner, Omer Sahin Tas, Jaime Villa, Felix Hauser, Yinzhe Shen
 Institution: 
 Published: 2026-03-24
 Score: 7/10
 Citations: 0
-Upvotes: 39
+Upvotes: 11
 GitHub: 
 Stars: 0
 
-Video understanding with multimodal large language models (MLLMs) remains challenging due to the long token sequences of videos, which contain extensive temporal dependencies and redundant frames. Existing approaches typically treat MLLMs as passive recognizers, processing entire videos or uniformly sampled frames without adaptive reasoning. Recent agent-based methods introduce external tools, yet still depend on manually designed workflows and perception-first strategies, resulting in inefficiency on long videos. We present EVA, an Efficient Reinforcement Learning framework for End-to-End Video Agent, which enables planning-before-perception through iterative summary-plan-action-reflection reasoning. EVA autonomously decides what to watch, when to watch, and how to watch, achieving query-driven and efficient video understanding. To train such agents, we design a simple yet effective three-stage learning pipeline - comprising supervised fine-tuning (SFT), Kahneman-Tversky Optimization (KTO), and Generalized Reward Policy Optimization (GRPO) - that bridges supervised imitation and reinforcement learning. We further construct high-quality datasets for each stage, supporting stable and reproducible training. We evaluate EVA on six video understanding benchmarks, demonstrating its comprehensive capabilities. Compared with existing baselines, EVA achieves a substantial improvement of 6-12% over general MLLM baselines and a further 1-3% gain over prior adaptive agent methods. Our code and model are available at https://github.com/wangruohui/EfficientVideoAgent.]]></description>
-<pubDate>Tue, 24 Mar 2026 08:06:29 +0000</pubDate>
+In real-world domains such as self-driving, generalization to rare scenarios remains a fundamental challenge. To address this, we introduce a new dataset designed for end-to-end driving that focuses on long-tail driving events. We provide multi-view video data, trajectories, high-level instructions, and detailed reasoning traces, facilitating in-context learning and few-shot generalization. The resulting benchmark for multimodal models, such as VLMs and VLAs, goes beyond safety and comfort metrics by evaluating instruction following and semantic coherence between model outputs. The multilingual reasoning traces in English, Spanish, and Chinese are from domain experts with diverse cultural backgrounds. Thus, our dataset is a unique resource for studying how different forms of reasoning affect driving competence. Our dataset is available at: https://hf.co/datasets/kit-mrt/kitscenes-longtail]]></description>
+<pubDate>Tue, 24 Mar 2026 18:00:08 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[SpectralSplats: Robust Differentiable Tracking via Spectral Moment Supervision]]></title>
@@ -342,30 +378,48 @@ Stars: 0
 <pubDate>Wed, 25 Mar 2026 07:48:22 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[4DGS360: 360° Gaussian Reconstruction of Dynamic Objects from a Single Video]]></title>
-<link>https://huggingface.co/papers/2603.21618</link>
-<guid>2603.21618</guid>
+<title><![CDATA[LagerNVS: Latent Geometry for Fully Neural Real-time Novel View Synthesis]]></title>
+<link>https://huggingface.co/papers/2603.20176</link>
+<guid>2603.20176</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Jae Won Jang, Yeonjin Chang, Wonsik Shin, Juhwan Cho, Nojun Kwak
+Authors: Stanislaw Szymanowicz, Minghao Chen, Jianyuan Wang, Christian Rupprecht, Andrea Vedaldi
 Institution: 
-Published: 2026-03-23
+Published: 2026-03-20
 Score: 7/10
 Citations: 0
-Upvotes: 11
+Upvotes: 8
 GitHub: 
 Stars: 0
 
-We introduce 4DGS360, a diffusion-free framework for 360^{circ} dynamic object reconstruction from casual monocular video. Existing methods often fail to reconstruct consistent 360^{circ} geometry, as their heavy reliance on 2D-native priors causes initial points to overfit to visible surface in each training view. 4DGS360 addresses this challenge through a advanced 3D-native initialization that mitigates the geometric ambiguity of occluded regions. Our proposed 3D tracker, AnchorTAP3D, produces reinforced 3D point trajectories by leveraging confident 2D track points as anchors, suppressing drift and providing reliable initialization that preserves geometry in occluded regions. This initialization, combined with optimization, yields coherent 360^{circ} 4D reconstructions. We further present iPhone360, a new benchmark where test cameras are placed up to 135^{circ} apart from training views, enabling 360^{circ} evaluation that existing datasets cannot provide. Experiments show that 4DGS360 achieves state-of-the-art performance on the iPhone360, iPhone, and DAVIS datasets, both qualitatively and quantitatively.]]></description>
-<pubDate>Mon, 23 Mar 2026 06:30:46 +0000</pubDate>
+Recent work has shown that neural networks can perform 3D tasks such as Novel View Synthesis (NVS) without explicit 3D reconstruction. Even so, we argue that strong 3D inductive biases are still helpful in the design of such networks. We show this point by introducing LagerNVS, an encoder-decoder neural network for NVS that builds on `3D-aware' latent features. The encoder is initialized from a 3D reconstruction network pre-trained using explicit 3D supervision. This is paired with a lightweight decoder, and trained end-to-end with photometric losses. LagerNVS achieves state-of-the-art deterministic feed-forward Novel View Synthesis (including 31.4 PSNR on Re10k), with and without known cameras, renders in real time, generalizes to in-the-wild data, and can be paired with a diffusion decoder for generative extrapolation.]]></description>
+<pubDate>Fri, 20 Mar 2026 17:53:06 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills]]></title>
-<link>https://huggingface.co/papers/2603.25158</link>
-<guid>2603.25158</guid>
+<title><![CDATA[Reaching Beyond the Mode: RL for Distributional Reasoning in Language Models]]></title>
+<link>https://huggingface.co/papers/2603.24844</link>
+<guid>2603.24844</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Jingwei Ni, Yihao Liu, Xinpeng Liu, Yutao Sun, Mengyu Zhou
+Authors: Isha Puri, Mehul Damani, Idan Shenfeld, Marzyeh Ghassemi, Jacob Andreas
+Institution: 
+Published: 2026-03-25
+Score: 7/10
+Citations: 0
+Upvotes: 6
+GitHub: 
+Stars: 0
+
+Given a question, a language model (LM) implicitly encodes a distribution over possible answers. In practice, post-training procedures for LMs often collapse this distribution onto a single dominant mode. While this is generally not a problem for benchmark-style evaluations that assume one correct answer, many real-world tasks inherently involve multiple valid answers or irreducible uncertainty. Examples include medical diagnosis, ambiguous question answering, and settings with incomplete information. In these cases, we would like LMs to generate multiple plausible hypotheses, ideally with confidence estimates for each one, and without computationally intensive repeated sampling to generate non-modal answers. This paper describes a multi-answer reinforcement learning approach for training LMs to perform distributional reasoning over multiple answers during inference. We modify the RL objective to enable models to explicitly generate multiple candidate answers in a single forward pass, internalizing aspects of inference-time search into the model's generative process. Across question-answering, medical diagnostic, and coding benchmarks, we observe improved diversity, coverage, and set-level calibration scores compared to single answer trained baselines. Models trained with our approach require fewer tokens to generate multiple answers than competing approaches. On coding tasks, they are also substantially more accurate. These results position multi-answer RL as a principled and compute-efficient alternative to inference-time scaling procedures such as best-of-k. Code and more information can be found at https://multi-answer-rl.github.io/.]]></description>
+<pubDate>Wed, 25 Mar 2026 22:20:25 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[S2D2: Fast Decoding for Diffusion LLMs via Training-Free Self-Speculation]]></title>
+<link>https://huggingface.co/papers/2603.25702</link>
+<guid>2603.25702</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Ligong Han, Hao Wang, Han Gao, Kai Xu, Akash Srivastava
 Institution: 
 Published: 2026-03-26
 Score: 7/10
@@ -374,8 +428,8 @@ Upvotes: 4
 GitHub: 
 Stars: 0
 
-Equipping Large Language Model (LLM) agents with domain-specific skills is critical for tackling complex tasks. Yet, manual authoring creates a severe scalability bottleneck. Conversely, automated skill generation often yields fragile or fragmented results because it either relies on shallow parametric knowledge or sequentially overfits to non-generalizable trajectory-local lessons. To overcome this, we introduce Trace2Skill, a framework that mirrors how human experts author skills: by holistically analyzing broad execution experience before distilling it into a single, comprehensive guide. Instead of reacting sequentially to individual trajectories, Trace2Skill dispatches a parallel fleet of sub-agents to analyze a diverse pool of executions. It extracts trajectory-specific lessons and hierarchically consolidates them into a unified, conflict-free skill directory via inductive reasoning. Trace2Skill supports both deepening existing human-written skills and creating new ones from scratch. Experiments in challenging domains, such as spreadsheet, VisionQA and math reasoning, show that Trace2Skill significantly improves upon strong baselines, including Anthropic's official xlsx skills. Crucially, this trajectory-grounded evolution does not merely memorize task instances or model-specific quirks: evolved skills transfer across LLM scales and generalize to OOD settings. For example, skills evolved by Qwen3.5-35B on its own trajectories improved a Qwen3.5-122B agent by up to 57.65 absolute percentage points on WikiTableQuestions. Ultimately, our results demonstrate that complex agent experience can be packaged into highly transferable, declarative skills -- requiring no parameter updates, no external retrieval modules, and utilizing open-source models as small as 35B parameters.]]></description>
-<pubDate>Thu, 26 Mar 2026 08:26:38 +0000</pubDate>
+Block-diffusion language models offer a promising path toward faster-than-autoregressive generation by combining block-wise autoregressive decoding with within-block parallel denoising. However, in the few-step regime needed for practical acceleration, standard confidence-thresholded decoding is often brittle: aggressive thresholds hurt quality, while conservative thresholds require unnecessary denoising steps. Existing approaches that address this issue either require additional training or incur extra test-time compute. We present S2D2, a training-free self-speculative decoding framework for block-diffusion language models. Our key observation is that a block-diffusion model becomes autoregressive when the block size is reduced to one, allowing the same pretrained model to act as both drafter and verifier. S2D2 inserts a speculative verification step into standard block-diffusion decoding and uses lightweight routing policies to decide when verification is worth its cost. This yields a hybrid decoding trajectory in which diffusion proposes tokens in parallel, while the autoregressive mode acts as a local sequence-level critic. Across three mainstream block-diffusion families, S2D2 consistently improves the accuracy-speed tradeoff over strong confidence-thresholding baselines. On SDAR, we observe up to 4.7times speedup over autoregressive decoding, and up to 1.57times over a tuned dynamic decoding baseline while improving accuracy by up to 4.5 points. On LLaDA2.1-Mini, S2D2 remains complementary to built-in self-correction, including a conservative setting where it is 4.4times faster than the static baseline with slightly higher accuracy.]]></description>
+<pubDate>Thu, 26 Mar 2026 17:48:50 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Vega: Learning to Drive with Natural Language Instructions]]></title>
@@ -414,66 +468,138 @@ For robotic agents operating in dynamic environments, learning visual state repr
 <pubDate>Sat, 14 Mar 2026 11:32:02 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Extending Precipitation Nowcasting Horizons via Spectral Fusion of Radar Observations and Foundation Model Priors]]></title>
-<link>https://huggingface.co/papers/2603.21768</link>
-<guid>2603.21768</guid>
+<title><![CDATA[Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models]]></title>
+<link>https://huggingface.co/papers/2603.14636</link>
+<guid>2603.14636</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Yuze Qin, Qingyong Li, Zhiqing Guo, Wen Wang, Yan Liu
+Authors: Lok-Lam Ieong, Chia-Chien Chen, Chih-Kai Yang, Yu-Han Huang, An-Yu Cheng
 Institution: 
-Published: 2026-03-23
+Published: 2026-03-15
+Score: 7/10
+Citations: 0
+Upvotes: 2
+GitHub: 
+Stars: 0
+
+Chain-of-thought (CoT) prompting has been extended to large audio-language models (LALMs) to elicit reasoning, yet enhancing its effectiveness without training remains challenging. We study inference-time model steering as a training-free approach to improve LALM reasoning. We introduce three strategies using diverse information sources and evaluate them across four LALMs and four benchmarks. Results show general accuracy gains up to 4.4% over CoT prompting. Notably, we identify a cross-modal transfer where steering vectors derived from few text samples effectively guide speech-based reasoning, demonstrating high data efficiency. We also examine hyperparameter sensitivity to understand the robustness of these approaches. Our findings position model steering as a practical direction for strengthening LALM reasoning.]]></description>
+<pubDate>Sun, 15 Mar 2026 22:12:36 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[WAFT-Stereo: Warping-Alone Field Transforms for Stereo Matching]]></title>
+<link>https://huggingface.co/papers/2603.24836</link>
+<guid>2603.24836</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yihan Wang, Jia Deng
+Institution: 
+Published: 2026-03-25
 Score: 7/10
 Citations: 0
 Upvotes: 1
 GitHub: 
 Stars: 0
 
-Precipitation nowcasting is critical for disaster mitigation and aviation safety. However, radar-only models frequently suffer from a lack of large-scale atmospheric context, leading to performance degradation at longer lead times. While integrating meteorological variables predicted by weather foundation models offers a potential remedy, existing architectures fail to reconcile the profound representational heterogeneities between radar imagery and meteorological data. To bridge this gap, we propose PW-FouCast, a novel frequency-domain fusion framework that leverages Pangu-Weather forecasts as spectral priors within a Fourier-based backbone. Our architecture introduces three key innovations: (i) Pangu-Weather-guided Frequency Modulation to align spectral magnitudes and phases with meteorological priors; (ii) Frequency Memory to correct phase discrepancies and preserve temporal evolution; and (iii) Inverted Frequency Attention to reconstruct high-frequency details typically lost in spectral filtering. Extensive experiments on the SEVIR and MeteoNet benchmarks demonstrate that PW-FouCast achieves state-of-the-art performance, effectively extending the reliable forecast horizon while maintaining structural fidelity. Our code is available at https://github.com/Onemissed/PW-FouCast.]]></description>
-<pubDate>Mon, 23 Mar 2026 10:05:51 +0000</pubDate>
+We introduce WAFT-Stereo, a simple and effective warping-based method for stereo matching. WAFT-Stereo demonstrates that cost volumes, a common design used in many leading methods, are not necessary for strong performance and can be replaced by warping with improved efficiency. WAFT-Stereo ranks first on ETH3D, KITTI and Middlebury public benchmarks, reducing the zero-shot error by 81% on ETH3D benchmark, while being 1.8-6.7x faster than competitive methods. Code and model weights are available at https://github.com/princeton-vl/WAFT-Stereo.]]></description>
+<pubDate>Wed, 25 Mar 2026 22:07:55 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[UI-Voyager: A Self-Evolving GUI Agent Learning via Failed Experience]]></title>
-<link>https://huggingface.co/papers/2603.24533</link>
-<guid>2603.24533</guid>
+<title><![CDATA[Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models]]></title>
+<link>https://huggingface.co/papers/2603.25716</link>
+<guid>2603.25716</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Zichuan Lin, Feiyu Liu, Yijun Yang, Jiafei Lyu, Yiming Gao
-Institution: 
-Published: 2026-03-25
-Score: 6/10
-Citations: 0
-Upvotes: 40
-GitHub: 
-Stars: 0
-
-Autonomous mobile GUI agents have attracted increasing attention along with the advancement of Multimodal Large Language Models (MLLMs). However, existing methods still suffer from inefficient learning from failed trajectories and ambiguous credit assignment under sparse rewards for long-horizon GUI tasks. To that end, we propose UI-Voyager, a novel two-stage self-evolving mobile GUI agent. In the first stage, we employ Rejection Fine-Tuning (RFT), which enables the continuous co-evolution of data and models in a fully autonomous loop. The second stage introduces Group Relative Self-Distillation (GRSD), which identifies critical fork points in group rollouts and constructs dense step-level supervision from successful trajectories to correct failed ones. Extensive experiments on AndroidWorld show that our 4B model achieves an 81.0% Pass@1 success rate, outperforming numerous recent baselines and exceeding human-level performance. Ablation and case studies further verify the effectiveness of GRSD. Our method represents a significant leap toward efficient, self-evolving, and high-performance mobile GUI automation without expensive manual data annotation.]]></description>
-<pubDate>Wed, 25 Mar 2026 17:10:29 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data]]></title>
-<link>https://huggingface.co/papers/2603.25319</link>
-<guid>2603.25319</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Zhekai Chen, Yuqing Wang, Manyuan Zhang, Xihui Liu
+Authors: Kaijin Chen, Dingkang Liang, Xin Zhou, Yikang Ding, Xiaoqiang Liu
 Institution: 
 Published: 2026-03-26
 Score: 6/10
 Citations: 0
-Upvotes: 27
+Upvotes: 129
 GitHub: 
 Stars: 0
 
-Generating images conditioned on multiple visual references is critical for real-world applications such as multi-subject composition, narrative illustration, and novel view synthesis, yet current models suffer from severe performance degradation as the number of input references grows. We identify the root cause as a fundamental data bottleneck: existing datasets are dominated by single- or few-reference pairs and lack the structured, long-context supervision needed to learn dense inter-reference dependencies. To address this, we introduce MacroData, a large-scale dataset of 400K samples, each containing up to 10 reference images, systematically organized across four complementary dimensions -- Customization, Illustration, Spatial reasoning, and Temporal dynamics -- to provide comprehensive coverage of the multi-reference generation space. Recognizing the concurrent absence of standardized evaluation protocols, we further propose MacroBench, a benchmark of 4,000 samples that assesses generative coherence across graded task dimensions and input scales. Extensive experiments show that fine-tuning on MacroData yields substantial improvements in multi-reference generation, and ablation studies further reveal synergistic benefits of cross-task co-training and effective strategies for handling long-context complexity. The dataset and benchmark will be publicly released.]]></description>
-<pubDate>Thu, 26 Mar 2026 11:09:14 +0000</pubDate>
+Video world models have shown immense potential in simulating the physical world, yet existing memory mechanisms primarily treat environments as static canvases. When dynamic subjects hide out of sight and later re-emerge, current methods often struggle, leading to frozen, distorted, or vanishing subjects. To address this, we introduce Hybrid Memory, a novel paradigm requiring models to simultaneously act as precise archivists for static backgrounds and vigilant trackers for dynamic subjects, ensuring motion continuity during out-of-view intervals. To facilitate research in this direction, we construct HM-World, the first large-scale video dataset dedicated to hybrid memory. It features 59K high-fidelity clips with decoupled camera and subject trajectories, encompassing 17 diverse scenes, 49 distinct subjects, and meticulously designed exit-entry events to rigorously evaluate hybrid coherence. Furthermore, we propose HyDRA, a specialized memory architecture that compresses memory into tokens and utilizes a spatiotemporal relevance-driven retrieval mechanism. By selectively attending to relevant motion cues, HyDRA effectively preserves the identity and motion of hidden subjects. Extensive experiments on HM-World demonstrate that our method significantly outperforms state-of-the-art approaches in both dynamic subject consistency and overall generation quality.]]></description>
+<pubDate>Thu, 26 Mar 2026 17:56:01 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Understanding the Challenges in Iterative Generative Optimization with LLMs]]></title>
-<link>https://huggingface.co/papers/2603.23994</link>
-<guid>2603.23994</guid>
+<title><![CDATA[PixelSmile: Toward Fine-Grained Facial Expression Editing]]></title>
+<link>https://huggingface.co/papers/2603.25728</link>
+<guid>2603.25728</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Allen Nie, Xavier Daull, Zhiyi Kuang, Abhinav Akkiraju, Anish Chaudhuri
+Authors: Jiabin Hua, Hengyuan Xu, Aojie Li, Wei Cheng, Gang Yu
+Institution: 
+Published: 2026-03-26
+Score: 6/10
+Citations: 0
+Upvotes: 114
+GitHub: 
+Stars: 0
+
+Fine-grained facial expression editing has long been limited by intrinsic semantic overlap. To address this, we construct the Flex Facial Expression (FFE) dataset with continuous affective annotations and establish FFE-Bench to evaluate structural confusion, editing accuracy, linear controllability, and the trade-off between expression editing and identity preservation. We propose PixelSmile, a diffusion framework that disentangles expression semantics via fully symmetric joint training. PixelSmile combines intensity supervision with contrastive learning to produce stronger and more distinguishable expressions, achieving precise and stable linear expression control through textual latent interpolation. Extensive experiments demonstrate that PixelSmile achieves superior disentanglement and robust identity preservation, confirming its effectiveness for continuous, controllable, and fine-grained expression editing, while naturally supporting smooth expression blending.]]></description>
+<pubDate>Thu, 26 Mar 2026 17:59:04 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Voxtral TTS]]></title>
+<link>https://huggingface.co/papers/2603.25551</link>
+<guid>2603.25551</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Alexander H. Liu, Alexis Tacnet, Andy Ehrenberg, Andy Lo, Chen-Yo Sun
+Institution: 
+Published: 2026-03-26
+Score: 6/10
+Citations: 0
+Upvotes: 47
+GitHub: 
+Stars: 0
+
+We introduce Voxtral TTS, an expressive multilingual text-to-speech model that generates natural speech from as little as 3 seconds of reference audio. Voxtral TTS adopts a hybrid architecture that combines auto-regressive generation of semantic speech tokens with flow-matching for acoustic tokens. These tokens are encoded and decoded with Voxtral Codec, a speech tokenizer trained from scratch with a hybrid VQ-FSQ quantization scheme. In human evaluations conducted by native speakers, Voxtral TTS is preferred for multilingual voice cloning due to its naturalness and expressivity, achieving a 68.4\% win rate over ElevenLabs Flash v2.5. We release the model weights under a CC BY-NC license.]]></description>
+<pubDate>Thu, 26 Mar 2026 15:23:34 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[EVA: Efficient Reinforcement Learning for End-to-End Video Agent]]></title>
+<link>https://huggingface.co/papers/2603.22918</link>
+<guid>2603.22918</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Yaolun Zhang, Ruohui Wang, Jiahao Wang, Yepeng Tang, Xuanyu Zheng
+Institution: 
+Published: 2026-03-24
+Score: 6/10
+Citations: 0
+Upvotes: 39
+GitHub: 
+Stars: 0
+
+Video understanding with multimodal large language models (MLLMs) remains challenging due to the long token sequences of videos, which contain extensive temporal dependencies and redundant frames. Existing approaches typically treat MLLMs as passive recognizers, processing entire videos or uniformly sampled frames without adaptive reasoning. Recent agent-based methods introduce external tools, yet still depend on manually designed workflows and perception-first strategies, resulting in inefficiency on long videos. We present EVA, an Efficient Reinforcement Learning framework for End-to-End Video Agent, which enables planning-before-perception through iterative summary-plan-action-reflection reasoning. EVA autonomously decides what to watch, when to watch, and how to watch, achieving query-driven and efficient video understanding. To train such agents, we design a simple yet effective three-stage learning pipeline - comprising supervised fine-tuning (SFT), Kahneman-Tversky Optimization (KTO), and Generalized Reward Policy Optimization (GRPO) - that bridges supervised imitation and reinforcement learning. We further construct high-quality datasets for each stage, supporting stable and reproducible training. We evaluate EVA on six video understanding benchmarks, demonstrating its comprehensive capabilities. Compared with existing baselines, EVA achieves a substantial improvement of 6-12% over general MLLM baselines and a further 1-3% gain over prior adaptive agent methods. Our code and model are available at https://github.com/wangruohui/EfficientVideoAgent.]]></description>
+<pubDate>Tue, 24 Mar 2026 08:06:29 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills]]></title>
+<link>https://huggingface.co/papers/2603.25158</link>
+<guid>2603.25158</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Jingwei Ni, Yihao Liu, Xinpeng Liu, Yutao Sun, Mengyu Zhou
+Institution: 
+Published: 2026-03-26
+Score: 6/10
+Citations: 0
+Upvotes: 29
+GitHub: 
+Stars: 0
+
+Equipping Large Language Model (LLM) agents with domain-specific skills is critical for tackling complex tasks. Yet, manual authoring creates a severe scalability bottleneck. Conversely, automated skill generation often yields fragile or fragmented results because it either relies on shallow parametric knowledge or sequentially overfits to non-generalizable trajectory-local lessons. To overcome this, we introduce Trace2Skill, a framework that mirrors how human experts author skills: by holistically analyzing broad execution experience before distilling it into a single, comprehensive guide. Instead of reacting sequentially to individual trajectories, Trace2Skill dispatches a parallel fleet of sub-agents to analyze a diverse pool of executions. It extracts trajectory-specific lessons and hierarchically consolidates them into a unified, conflict-free skill directory via inductive reasoning. Trace2Skill supports both deepening existing human-written skills and creating new ones from scratch. Experiments in challenging domains, such as spreadsheet, VisionQA and math reasoning, show that Trace2Skill significantly improves upon strong baselines, including Anthropic's official xlsx skills. Crucially, this trajectory-grounded evolution does not merely memorize task instances or model-specific quirks: evolved skills transfer across LLM scales and generalize to OOD settings. For example, skills evolved by Qwen3.5-35B on its own trajectories improved a Qwen3.5-122B agent by up to 57.65 absolute percentage points on WikiTableQuestions. Ultimately, our results demonstrate that complex agent experience can be packaged into highly transferable, declarative skills -- requiring no parameter updates, no external retrieval modules, and utilizing open-source models as small as 35B parameters.]]></description>
+<pubDate>Thu, 26 Mar 2026 08:26:38 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[AVControl: Efficient Framework for Training Audio-Visual Controls]]></title>
+<link>https://huggingface.co/papers/2603.24793</link>
+<guid>2603.24793</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Matan Ben-Yosef, Tavi Halperin, Naomi Ken Korem, Mohammad Salama, Harel Cain
 Institution: 
 Published: 2026-03-25
 Score: 6/10
@@ -482,8 +608,26 @@ Upvotes: 20
 GitHub: 
 Stars: 0
 
-Generative optimization uses large language models (LLMs) to iteratively improve artifacts (such as code, workflows or prompts) using execution feedback. It is a promising approach to building self-improving agents, yet in practice remains brittle: despite active research, only 9% of surveyed agents used any automated optimization. We argue that this brittleness arises because, to set up a learning loop, an engineer must make ``hidden'' design choices: What can the optimizer edit and what is the "right" learning evidence to provide at each update? We investigate three factors that affect most applications: the starting artifact, the credit horizon for execution traces, and batching trials and errors into learning evidence. Through case studies in MLAgentBench, Atari, and BigBench Extra Hard, we find that these design decisions can determine whether generative optimization succeeds, yet they are rarely made explicit in prior work. Different starting artifacts determine which solutions are reachable in MLAgentBench, truncated traces can still improve Atari agents, and larger minibatches do not monotonically improve generalization on BBEH. We conclude that the lack of a simple, universal way to set up learning loops across domains is a major hurdle for productionization and adoption. We provide practical guidance for making these choices.]]></description>
-<pubDate>Wed, 25 Mar 2026 06:49:24 +0000</pubDate>
+Controlling video and audio generation requires diverse modalities, from depth and pose to camera trajectories and audio transformations, yet existing approaches either train a single monolithic model for a fixed set of controls or introduce costly architectural changes for each new modality. We introduce AVControl, a lightweight, extendable framework built on LTX-2, a joint audio-visual foundation model, where each control modality is trained as a separate LoRA on a parallel canvas that provides the reference signal as additional tokens in the attention layers, requiring no architectural changes beyond the LoRA adapters themselves. We show that simply extending image-based in-context methods to video fails for structural control, and that our parallel canvas approach resolves this. On the VACE Benchmark, we outperform all evaluated baselines on depth- and pose-guided generation, inpainting, and outpainting, and show competitive results on camera control and audio-visual benchmarks. Our framework supports a diverse set of independently trained modalities: spatially-aligned controls such as depth, pose, and edges, camera trajectory with intrinsics, sparse motion control, video editing, and, to our knowledge, the first modular audio-visual controls for a joint generation model. Our method is both compute- and data-efficient: each modality requires only a small dataset and converges within a few hundred to a few thousand training steps, a fraction of the budget of monolithic alternatives. We publicly release our code and trained LoRA checkpoints.]]></description>
+<pubDate>Wed, 25 Mar 2026 20:06:43 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[The Pulse of Motion: Measuring Physical Frame Rate from Visual Dynamics]]></title>
+<link>https://huggingface.co/papers/2603.14375</link>
+<guid>2603.14375</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Xiangbo Gao, Mingyang Wu, Siyuan Yang, Jiongze Yu, Pardis Taghavi
+Institution: 
+Published: 2026-03-15
+Score: 6/10
+Citations: 0
+Upvotes: 17
+GitHub: 
+Stars: 0
+
+While recent generative video models have achieved remarkable visual realism and are being explored as world models, true physical simulation requires mastering both space and time. Current models can produce visually smooth kinematics, yet they lack a reliable internal motion pulse to ground these motions in a consistent, real-world time scale. This temporal ambiguity stems from the common practice of indiscriminately training on videos with vastly different real-world speeds, forcing them into standardized frame rates. This leads to what we term chronometric hallucination: generated sequences exhibit ambiguous, unstable, and uncontrollable physical motion speeds. To address this, we propose Visual Chronometer, a predictor that recovers the Physical Frames Per Second (PhyFPS) directly from the visual dynamics of an input video. Trained via controlled temporal resampling, our method estimates the true temporal scale implied by the motion itself, bypassing unreliable metadata. To systematically quantify this issue, we establish two benchmarks, PhyFPS-Bench-Real and PhyFPS-Bench-Gen. Our evaluations reveal a harsh reality: state-of-the-art video generators suffer from severe PhyFPS misalignment and temporal instability. Finally, we demonstrate that applying PhyFPS corrections significantly improves the human-perceived naturalness of AI-generated videos. Our project page is https://xiangbogaobarry.github.io/Visual_Chronometer/.]]></description>
+<pubDate>Sun, 15 Mar 2026 13:29:31 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models]]></title>
@@ -496,7 +640,7 @@ Institution:
 Published: 2026-03-25
 Score: 6/10
 Citations: 0
-Upvotes: 13
+Upvotes: 14
 GitHub: 
 Stars: 0
 
@@ -504,40 +648,22 @@ Scalable Vector Graphics (SVG) are an essential format for technical illustratio
 <pubDate>Wed, 25 Mar 2026 17:52:23 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[LagerNVS: Latent Geometry for Fully Neural Real-time Novel View Synthesis]]></title>
-<link>https://huggingface.co/papers/2603.20176</link>
-<guid>2603.20176</guid>
+<title><![CDATA[RealChart2Code: Advancing Chart-to-Code Generation with Real Data and Multi-Task Evaluation]]></title>
+<link>https://huggingface.co/papers/2603.25804</link>
+<guid>2603.25804</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Stanislaw Szymanowicz, Minghao Chen, Jianyuan Wang, Christian Rupprecht, Andrea Vedaldi
+Authors: Jiajun Zhang, Yuying Li, Zhixun Li, Xingyu Guo, Jingzhuo Wu
 Institution: 
-Published: 2026-03-20
+Published: 2026-03-26
 Score: 6/10
 Citations: 0
-Upvotes: 8
+Upvotes: 13
 GitHub: 
 Stars: 0
 
-Recent work has shown that neural networks can perform 3D tasks such as Novel View Synthesis (NVS) without explicit 3D reconstruction. Even so, we argue that strong 3D inductive biases are still helpful in the design of such networks. We show this point by introducing LagerNVS, an encoder-decoder neural network for NVS that builds on `3D-aware' latent features. The encoder is initialized from a 3D reconstruction network pre-trained using explicit 3D supervision. This is paired with a lightweight decoder, and trained end-to-end with photometric losses. LagerNVS achieves state-of-the-art deterministic feed-forward Novel View Synthesis (including 31.4 PSNR on Re10k), with and without known cameras, renders in real time, generalizes to in-the-wild data, and can be paired with a diffusion decoder for generative extrapolation.]]></description>
-<pubDate>Fri, 20 Mar 2026 17:53:06 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[MemMA: Coordinating the Memory Cycle through Multi-Agent Reasoning and In-Situ Self-Evolution]]></title>
-<link>https://huggingface.co/papers/2603.18718</link>
-<guid>2603.18718</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Minhua Lin, Zhiwei Zhang, Hanqing Lu, Hui Liu, Xianfeng Tang
-Institution: 
-Published: 2026-03-19
-Score: 6/10
-Citations: 0
-Upvotes: 7
-GitHub: 
-Stars: 0
-
-Memory-augmented LLM agents maintain external memory banks to support long-horizon interaction, yet most existing systems treat construction, retrieval, and utilization as isolated subroutines. This creates two coupled challenges: strategic blindness on the forward path of the memory cycle, where construction and retrieval are driven by local heuristics rather than explicit strategic reasoning, and sparse, delayed supervision on the backward path, where downstream failures rarely translate into direct repairs of the memory bank. To address these challenges, we propose MemMA, a plug-and-play multi-agent framework that coordinates the memory cycle along both the forward and backward paths. On the forward path, a Meta-Thinker produces structured guidance that steers a Memory Manager during construction and directs a Query Reasoner during iterative retrieval. On the backward path, MemMA introduces in-situ self-evolving memory construction, which synthesizes probe QA pairs, verifies the current memory, and converts failures into repair actions before the memory is finalized. Extensive experiments on LoCoMo show that MemMA consistently outperforms existing baselines across multiple LLM backbones and improves three different storage backends in a plug-and-play manner. Our code is publicly available at https://github.com/ventr1c/memma.]]></description>
-<pubDate>Thu, 19 Mar 2026 10:15:59 +0000</pubDate>
+Vision-Language Models (VLMs) have demonstrated impressive capabilities in code generation across various domains. However, their ability to replicate complex, multi-panel visualizations from real-world data remains largely unassessed. To address this gap, we introduce \texttt{RealChart2Code}, a new large-scale benchmark with over 2,800 instances grounded in authentic datasets and featuring tasks with clear analytical intent. Crucially, it is the first benchmark to systematically evaluate chart generation from large-scale raw data and assess iterative code refinement in a multi-turn conversational setting. Our comprehensive evaluation of 14 leading VLMs on RealChart2Code reveals significant performance degradation compared to simpler benchmarks, highlighting their struggles with complex plot structures and authentic data. Our analysis uncovers a substantial performance gap between proprietary and open-weight models and confirms that even state-of-the-art VLMs often fail to accurately replicate intricate, multi-panel charts. These findings provide valuable insights into the current limitations of VLMs and guide future research directions. We release the benchmark and code at https://github.com/Speakn0w/RealChart2Code.]]></description>
+<pubDate>Thu, 26 Mar 2026 18:11:46 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use under the Model Context Protocol]]></title>
@@ -550,7 +676,7 @@ Institution:
 Published: 2026-03-26
 Score: 6/10
 Citations: 0
-Upvotes: 7
+Upvotes: 8
 GitHub: 
 Stars: 0
 
@@ -558,40 +684,22 @@ This paper introduces FinMCP-Bench, a novel benchmark for evaluating large langu
 <pubDate>Thu, 26 Mar 2026 02:20:04 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[AVO: Agentic Variation Operators for Autonomous Evolutionary Search]]></title>
-<link>https://huggingface.co/papers/2603.24517</link>
-<guid>2603.24517</guid>
+<title><![CDATA[Know3D: Prompting 3D Generation with Knowledge from Vision-Language Models]]></title>
+<link>https://huggingface.co/papers/2603.22782</link>
+<guid>2603.22782</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Terry Chen, Zhifan Ye, Bing Xu, Zihao Ye, Timmy Liu
+Authors: Wenyue Chen, Wenjue Chen, Peng Li, Qinghe Wang, Xu Jia
 Institution: 
-Published: 2026-03-25
+Published: 2026-03-24
 Score: 6/10
 Citations: 0
-Upvotes: 5
+Upvotes: 7
 GitHub: 
 Stars: 0
 
-Agentic Variation Operators (AVO) are a new family of evolutionary variation operators that replace the fixed mutation, crossover, and hand-designed heuristics of classical evolutionary search with autonomous coding agents. Rather than confining a language model to candidate generation within a prescribed pipeline, AVO instantiates variation as a self-directed agent loop that can consult the current lineage, a domain-specific knowledge base, and execution feedback to propose, repair, critique, and verify implementation edits. We evaluate AVO on attention, among the most aggressively optimized kernel targets in AI, on NVIDIA Blackwell (B200) GPUs. Over 7 days of continuous autonomous evolution on multi-head attention, AVO discovers kernels that outperform cuDNN by up to 3.5% and FlashAttention-4 by up to 10.5% across the evaluated configurations. The discovered optimizations transfer readily to grouped-query attention, requiring only 30 minutes of additional autonomous adaptation and yielding gains of up to 7.0% over cuDNN and 9.3% over FlashAttention-4. Together, these results show that agentic variation operators move beyond prior LLM-in-the-loop evolutionary pipelines by elevating the agent from candidate generator to variation operator, and can discover performance-critical micro-architectural optimizations that produce kernels surpassing state-of-the-art expert-engineered attention implementations on today's most advanced GPU hardware.]]></description>
-<pubDate>Wed, 25 Mar 2026 16:55:04 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[S2D2: Fast Decoding for Diffusion LLMs via Training-Free Self-Speculation]]></title>
-<link>https://huggingface.co/papers/2603.25702</link>
-<guid>2603.25702</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Ligong Han, Hao Wang, Han Gao, Kai Xu, Akash Srivastava
-Institution: 
-Published: 2026-03-26
-Score: 6/10
-Citations: 0
-Upvotes: 4
-GitHub: 
-Stars: 0
-
-Block-diffusion language models offer a promising path toward faster-than-autoregressive generation by combining block-wise autoregressive decoding with within-block parallel denoising. However, in the few-step regime needed for practical acceleration, standard confidence-thresholded decoding is often brittle: aggressive thresholds hurt quality, while conservative thresholds require unnecessary denoising steps. Existing approaches that address this issue either require additional training or incur extra test-time compute. We present S2D2, a training-free self-speculative decoding framework for block-diffusion language models. Our key observation is that a block-diffusion model becomes autoregressive when the block size is reduced to one, allowing the same pretrained model to act as both drafter and verifier. S2D2 inserts a speculative verification step into standard block-diffusion decoding and uses lightweight routing policies to decide when verification is worth its cost. This yields a hybrid decoding trajectory in which diffusion proposes tokens in parallel, while the autoregressive mode acts as a local sequence-level critic. Across three mainstream block-diffusion families, S2D2 consistently improves the accuracy-speed tradeoff over strong confidence-thresholding baselines. On SDAR, we observe up to 4.7times speedup over autoregressive decoding, and up to 1.57times over a tuned dynamic decoding baseline while improving accuracy by up to 4.5 points. On LLaDA2.1-Mini, S2D2 remains complementary to built-in self-correction, including a conservative setting where it is 4.4times faster than the static baseline with slightly higher accuracy.]]></description>
-<pubDate>Thu, 26 Mar 2026 17:48:50 +0000</pubDate>
+Recent advances in 3D generation have improved the fidelity and geometric details of synthesized 3D assets. However, due to the inherent ambiguity of single-view observations and the lack of robust global structural priors caused by limited 3D training data, the unseen regions generated by existing models are often stochastic and difficult to control, which may sometimes fail to align with user intentions or produce implausible geometries. In this paper, we propose Know3D, a novel framework that incorporates rich knowledge from multimodal large language models into 3D generative processes via latent hidden-state injection, enabling language-controllable generation of the back-view for 3D assets. We utilize a VLM-diffusion-based model, where the VLM is responsible for semantic understanding and guidance. The diffusion model acts as a bridge that transfers semantic knowledge from the VLM to the 3D generation model. In this way, we successfully bridge the gap between abstract textual instructions and the geometric reconstruction of unobserved regions, transforming the traditionally stochastic back-view hallucination into a semantically controllable process, demonstrating a promising direction for future 3D generation models.]]></description>
+<pubDate>Tue, 24 Mar 2026 04:18:29 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[6Bit-Diffusion: Inference-Time Mixed-Precision Quantization for Video Diffusion Models]]></title>
@@ -604,7 +712,7 @@ Institution:
 Published: 2026-03-19
 Score: 6/10
 Citations: 0
-Upvotes: 4
+Upvotes: 5
 GitHub: 
 Stars: 0
 
@@ -612,148 +720,58 @@ Diffusion transformers have demonstrated remarkable capabilities in generating v
 <pubDate>Thu, 19 Mar 2026 10:45:11 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment]]></title>
-<link>https://huggingface.co/papers/2603.23883</link>
-<guid>2603.23883</guid>
+<title><![CDATA[Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes]]></title>
+<link>https://huggingface.co/papers/2603.25562</link>
+<guid>2603.25562</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Risa Shinoda, Kaede Shiohara, Nakamasa Inoue, Kuniaki Saito, Hiroaki Santo
-Institution: 
-Published: 2026-03-25
-Score: 6/10
-Citations: 0
-Upvotes: 3
-GitHub: 
-Stars: 0
-
-Understanding animal species from multimodal data poses an emerging challenge at the intersection of computer vision and ecology. While recent biological models, such as BioCLIP, have demonstrated strong alignment between images and textual taxonomic information for species identification, the integration of the audio modality remains an open problem. We propose BioVITA, a novel visual-textual-acoustic alignment framework for biological applications. BioVITA involves (i) a training dataset, (ii) a representation model, and (iii) a retrieval benchmark. First, we construct a large-scale training dataset comprising 1.3 million audio clips and 2.3 million images, covering 14,133 species annotated with 34 ecological trait labels. Second, building upon BioCLIP2, we introduce a two-stage training framework to effectively align audio representations with visual and textual representations. Third, we develop a cross-modal retrieval benchmark that covers all possible directional retrieval across the three modalities (i.e., image-to-audio, audio-to-text, text-to-image, and their reverse directions), with three taxonomic levels: Family, Genus, and Species. Extensive experiments demonstrate that our model learns a unified representation space that captures species-level semantics beyond taxonomy, advancing multimodal biodiversity understanding. The project page is available at: https://dahlian00.github.io/BioVITA_Page/]]></description>
-<pubDate>Wed, 25 Mar 2026 03:15:04 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Sommelier: Scalable Open Multi-turn Audio Pre-processing for Full-duplex Speech Language Models]]></title>
-<link>https://huggingface.co/papers/2603.25750</link>
-<guid>2603.25750</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Kyudan Jung, Jihwan Kim, Soyoon Kim, Jeongoon Kim, Jaegul Choo
-Institution: 
-Published: 2026-03-20
-Score: 6/10
-Citations: 0
-Upvotes: 2
-GitHub: 
-Stars: 0
-
-As the paradigm of AI shifts from text-based LLMs to Speech Language Models (SLMs), there is a growing demand for full-duplex systems capable of real-time, natural human-computer interaction. However, the development of such models is constrained by the scarcity of high-quality, multi-speaker conversational data, as existing large-scale resources are predominantly single-speaker or limited in volume. Addressing the complex dynamics of natural dialogue, such as overlapping and back-channeling remains a challenge, with standard processing pipelines suffering from diarization errors and ASR hallucinations. To bridge this gap, we present a robust and scalable open-source data processing pipeline designed for full-duplex model.]]></description>
-<pubDate>Fri, 20 Mar 2026 09:10:43 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[IQuest-Coder-V1 Technical Report]]></title>
-<link>https://huggingface.co/papers/2603.16733</link>
-<guid>2603.16733</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jian Yang, Wei Zhang, Shawn Guo, Zhengmao Ye, Lin Jing
-Institution: 
-Published: 2026-03-17
-Score: 6/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-In this report, we introduce the IQuest-Coder-V1 series-(7B/14B/40B/40B-Loop), a new family of code large language models (LLMs). Moving beyond static code representations, we propose the code-flow multi-stage training paradigm, which captures the dynamic evolution of software logic through different phases of the pipeline. Our models are developed through the evolutionary pipeline, starting with the initial pre-training consisting of code facts, repository, and completion data. Following that, we implement a specialized mid-training stage that integrates reasoning and agentic trajectories in 32k-context and repository-scale in 128k-context to forge deep logical foundations. The models are then finalized with post-training of specialized coding capabilities, which is bifurcated into two specialized paths: the thinking path (utilizing reasoning-driven RL) and the instruct path (optimized for general assistance). IQuest-Coder-V1 achieves state-of-the-art performance among competitive models across critical dimensions of code intelligence: agentic software engineering, competitive programming, and complex tool use. To address deployment constraints, the IQuest-Coder-V1-Loop variant introduces a recurrent mechanism designed to optimize the trade-off between model capacity and deployment footprint, offering an architecturally enhanced path for efficacy-efficiency trade-off. We believe the release of the IQuest-Coder-V1 series, including the complete white-box chain of checkpoints from pre-training bases to the final thinking and instruction models, will advance research in autonomous code intelligence and real-world agentic systems.]]></description>
-<pubDate>Tue, 17 Mar 2026 16:15:31 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[UniFunc3D: Unified Active Spatial-Temporal Grounding for 3D Functionality Segmentation]]></title>
-<link>https://huggingface.co/papers/2603.23478</link>
-<guid>2603.23478</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Jiaying Lin, Dan Xu
-Institution: 
-Published: 2026-03-24
-Score: 6/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Functionality segmentation in 3D scenes requires an agent to ground implicit natural-language instructions into precise masks of fine-grained interactive elements. Existing methods rely on fragmented pipelines that suffer from visual blindness during initial task parsing. We observe that these methods are limited by single-scale, passive and heuristic frame selection. We present UniFunc3D, a unified and training-free framework that treats the multimodal large language model as an active observer. By consolidating semantic, temporal, and spatial reasoning into a single forward pass, UniFunc3D performs joint reasoning to ground task decomposition in direct visual evidence. Our approach introduces active spatial-temporal grounding with a coarse-to-fine strategy. This allows the model to select correct video frames adaptively and focus on high-detail interactive parts while preserving the global context necessary for disambiguation. On SceneFun3D, UniFunc3D achieves state-of-the-art performance, surpassing both training-free and training-based methods by a large margin with a relative 59.9\% mIoU improvement, without any task-specific training. Code will be released on our project page: https://jiaying.link/unifunc3d.]]></description>
-<pubDate>Tue, 24 Mar 2026 17:42:31 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Voxtral TTS]]></title>
-<link>https://huggingface.co/papers/2603.25551</link>
-<guid>2603.25551</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Alexander H. Liu, Alexis Tacnet, Andy Ehrenberg, Andy Lo, Chen-Yo Sun
+Authors: Yuqian Fu, Haohuan Huang, Kaiwen Jiang, Yuanheng Zhu, Dongbin Zhao
 Institution: 
 Published: 2026-03-26
-Score: 5/10
+Score: 6/10
 Citations: 0
-Upvotes: 42
+Upvotes: 4
 GitHub: 
 Stars: 0
 
-We introduce Voxtral TTS, an expressive multilingual text-to-speech model that generates natural speech from as little as 3 seconds of reference audio. Voxtral TTS adopts a hybrid architecture that combines auto-regressive generation of semantic speech tokens with flow-matching for acoustic tokens. These tokens are encoded and decoded with Voxtral Codec, a speech tokenizer trained from scratch with a hybrid VQ-FSQ quantization scheme. In human evaluations conducted by native speakers, Voxtral TTS is preferred for multilingual voice cloning due to its naturalness and expressivity, achieving a 68.4\% win rate over ElevenLabs Flash v2.5. We release the model weights under a CC BY-NC license.]]></description>
-<pubDate>Thu, 26 Mar 2026 15:23:34 +0000</pubDate>
+On-policy distillation (OPD) is appealing for large language model (LLM) post-training because it evaluates teacher feedback on student-generated rollouts rather than fixed teacher traces. In long-horizon settings, however, the common sampled-token variant is fragile: it reduces distribution matching to a one-token signal and becomes increasingly unreliable as rollouts drift away from prefixes the teacher commonly visits. We revisit OPD from the estimator and implementation sides. Theoretically, token-level OPD is biased relative to sequence-level reverse-KL, but it has a much tighter worst-case variance bound; our toy study shows the same tradeoff empirically, with stronger future-reward coupling producing higher gradient variance and less stable learning. Empirically, we identify three failure modes of sampled-token OPD: an imbalanced one-token signal, unreliable teacher guidance on student-generated prefixes, and distortions caused by tokenizer or special-token mismatch. We address these issues with teacher top-K local support matching, implemented as truncated reverse-KL with top-p rollout sampling and special-token masking. Across single-task math reasoning and multi-task agentic-plus-math training, this objective yields more stable optimization and better downstream performance than sampled-token OPD.]]></description>
+<pubDate>Thu, 26 Mar 2026 15:35:59 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[T-MAP: Red-Teaming LLM Agents with Trajectory-aware Evolutionary Search]]></title>
-<link>https://huggingface.co/papers/2603.22341</link>
-<guid>2603.22341</guid>
+<title><![CDATA[PMT: Plain Mask Transformer for Image and Video Segmentation with Frozen Vision Encoders]]></title>
+<link>https://huggingface.co/papers/2603.25398</link>
+<guid>2603.25398</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Hyomin Lee, Sangwoo Park, Yumin Choi, Sohyun An, Seanie Lee
+Authors: Niccolò Cavagnero, Narges Norouzi, Gijs Dubbelman, Daan de Geus
 Institution: 
-Published: 2026-03-21
-Score: 5/10
+Published: 2026-03-26
+Score: 6/10
 Citations: 0
-Upvotes: 34
+Upvotes: 1
 GitHub: 
 Stars: 0
 
-While prior red-teaming efforts have focused on eliciting harmful text outputs from large language models (LLMs), such approaches fail to capture agent-specific vulnerabilities that emerge through multi-step tool execution, particularly in rapidly growing ecosystems such as the Model Context Protocol (MCP). To address this gap, we propose a trajectory-aware evolutionary search method, T-MAP, which leverages execution trajectories to guide the discovery of adversarial prompts. Our approach enables the automatic generation of attacks that not only bypass safety guardrails but also reliably realize harmful objectives through actual tool interactions. Empirical evaluations across diverse MCP environments demonstrate that T-MAP substantially outperforms baselines in attack realization rate (ARR) and remains effective against frontier models, including GPT-5.2, Gemini-3-Pro, Qwen3.5, and GLM-5, thereby revealing previously underexplored vulnerabilities in autonomous LLM agents.]]></description>
-<pubDate>Sat, 21 Mar 2026 12:33:34 +0000</pubDate>
+Vision Foundation Models (VFMs) pre-trained at scale enable a single frozen encoder to serve multiple downstream tasks simultaneously. Recent VFM-based encoder-only models for image and video segmentation, such as EoMT and VidEoMT, achieve competitive accuracy with remarkably low latency, yet they require finetuning the encoder, sacrificing the multi-task encoder sharing that makes VFMs practically attractive for large-scale deployment. To reconcile encoder-only simplicity and speed with frozen VFM features, we propose the Plain Mask Decoder (PMD), a fast Transformer-based segmentation decoder that operates on top of frozen VFM features. The resulting model, the Plain Mask Transformer (PMT), preserves the architectural simplicity and low latency of encoder-only designs while keeping the encoder representation unchanged and shareable. The design seamlessly applies to both image and video segmentation, inheriting the generality of the encoder-only framework. On standard image segmentation benchmarks, PMT matches the frozen-encoder state of the art while running up to ~3x faster. For video segmentation, it even performs on par with fully finetuned methods, while being up to 8x faster than state-of-the-art frozen-encoder models. Code: https://github.com/tue-mps/pmt.]]></description>
+<pubDate>Thu, 26 Mar 2026 12:44:30 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks]]></title>
-<link>https://huggingface.co/papers/2603.24755</link>
-<guid>2603.24755</guid>
+<title><![CDATA[Understanding the Challenges in Iterative Generative Optimization with LLMs]]></title>
+<link>https://huggingface.co/papers/2603.23994</link>
+<guid>2603.23994</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Gabriel Orlanski, Devjeet Roy, Alexander Yun, Changho Shin, Alex Gu
-Institution: 
-Published: 2026-03-25
-Score: 5/10
-Citations: 0
-Upvotes: 24
-GitHub: 
-Stars: 0
-
-Software development is iterative, yet agentic coding benchmarks overwhelmingly evaluate single-shot solutions against complete specifications. Code can pass the test suite but become progressively harder to extend. Recent iterative benchmarks attempt to close this gap, but constrain the agent's design decisions too tightly to faithfully measure how code quality shapes future extensions. We introduce SlopCodeBench, a language-agnostic benchmark comprising 20 problems and 93 checkpoints, in which agents repeatedly extend their own prior solutions under evolving specifications that force architectural decisions without prescribing internal structure. We track two trajectory-level quality signals: verbosity, the fraction of redundant or duplicated code, and structural erosion, the share of complexity mass concentrated in high-complexity functions. No agent solves any problem end-to-end across 11 models; the highest checkpoint solve rate is 17.2%. Quality degrades steadily: erosion rises in 80% of trajectories and verbosity in 89.8%. Against 48 open-source Python repositories, agent code is 2.2x more verbose and markedly more eroded. Tracking 20 of those repositories over time shows that human code stays flat, while agent code deteriorates with each iteration. A prompt-intervention study shows that initial quality can be improved, but it does not halt degradation. These results demonstrate that pass-rate benchmarks systematically undermeasure extension robustness, and that current agents lack the design discipline iterative software development demands.]]></description>
-<pubDate>Wed, 25 Mar 2026 19:26:44 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[AVControl: Efficient Framework for Training Audio-Visual Controls]]></title>
-<link>https://huggingface.co/papers/2603.24793</link>
-<guid>2603.24793</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Matan Ben-Yosef, Tavi Halperin, Naomi Ken Korem, Mohammad Salama, Harel Cain
+Authors: Allen Nie, Xavier Daull, Zhiyi Kuang, Abhinav Akkiraju, Anish Chaudhuri
 Institution: 
 Published: 2026-03-25
 Score: 5/10
 Citations: 0
-Upvotes: 18
+Upvotes: 22
 GitHub: 
 Stars: 0
 
-Controlling video and audio generation requires diverse modalities, from depth and pose to camera trajectories and audio transformations, yet existing approaches either train a single monolithic model for a fixed set of controls or introduce costly architectural changes for each new modality. We introduce AVControl, a lightweight, extendable framework built on LTX-2, a joint audio-visual foundation model, where each control modality is trained as a separate LoRA on a parallel canvas that provides the reference signal as additional tokens in the attention layers, requiring no architectural changes beyond the LoRA adapters themselves. We show that simply extending image-based in-context methods to video fails for structural control, and that our parallel canvas approach resolves this. On the VACE Benchmark, we outperform all evaluated baselines on depth- and pose-guided generation, inpainting, and outpainting, and show competitive results on camera control and audio-visual benchmarks. Our framework supports a diverse set of independently trained modalities: spatially-aligned controls such as depth, pose, and edges, camera trajectory with intrinsics, sparse motion control, video editing, and, to our knowledge, the first modular audio-visual controls for a joint generation model. Our method is both compute- and data-efficient: each modality requires only a small dataset and converges within a few hundred to a few thousand training steps, a fraction of the budget of monolithic alternatives. We publicly release our code and trained LoRA checkpoints.]]></description>
-<pubDate>Wed, 25 Mar 2026 20:06:43 +0000</pubDate>
+Generative optimization uses large language models (LLMs) to iteratively improve artifacts (such as code, workflows or prompts) using execution feedback. It is a promising approach to building self-improving agents, yet in practice remains brittle: despite active research, only 9% of surveyed agents used any automated optimization. We argue that this brittleness arises because, to set up a learning loop, an engineer must make ``hidden'' design choices: What can the optimizer edit and what is the "right" learning evidence to provide at each update? We investigate three factors that affect most applications: the starting artifact, the credit horizon for execution traces, and batching trials and errors into learning evidence. Through case studies in MLAgentBench, Atari, and BigBench Extra Hard, we find that these design decisions can determine whether generative optimization succeeds, yet they are rarely made explicit in prior work. Different starting artifacts determine which solutions are reachable in MLAgentBench, truncated traces can still improve Atari agents, and larger minibatches do not monotonically improve generalization on BBEH. We conclude that the lack of a simple, universal way to set up learning loops across domains is a major hurdle for productionization and adoption. We provide practical guidance for making these choices.]]></description>
+<pubDate>Wed, 25 Mar 2026 06:49:24 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Representation Alignment for Just Image Transformers is not Easier than You Think]]></title>
@@ -774,58 +792,76 @@ Representation Alignment (REPA) has emerged as a simple way to accelerate Diffus
 <pubDate>Sun, 15 Mar 2026 13:08:31 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Qworld: Question-Specific Evaluation Criteria for LLMs]]></title>
-<link>https://huggingface.co/papers/2603.23522</link>
-<guid>2603.23522</guid>
+<title><![CDATA[Natural-Language Agent Harnesses]]></title>
+<link>https://huggingface.co/papers/2603.25723</link>
+<guid>2603.25723</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Shanghua Gao, Yuchang Su, Pengwei Sui, Curtis Ginder, Marinka Zitnik
-Institution: 
-Published: 2026-03-06
-Score: 5/10
-Citations: 0
-Upvotes: 9
-GitHub: 
-Stars: 0
-
-Evaluating large language models (LLMs) on open-ended questions is difficult because response quality depends on the question's context. Binary scores and static rubrics fail to capture these context-dependent requirements. Existing methods define criteria at the dataset level or generate them in a single pass, which limits their ability to explore the evaluation space implied by each question. We introduce One-Question-One-World (Qworld), a method that generates question-specific evaluation criteria using a recursive expansion tree. Given a question, Qworld decomposes it into scenarios, perspectives, and fine-grained binary criteria through structured hierarchical and horizontal expansion. The resulting criteria specify what a high-quality answer must address for that question. On HealthBench, Qworld covers 89% of expert-authored criteria and generates 79% novel criteria validated by human experts. Experts rate Qworld criteria higher in insight and granularity than those produced by prior methods. When applied to 11 frontier LLMs on HealthBench and Humanity's Last Exam, Qworld reveals capability differences in dimensions such as long-term impact, equity, error handling, and interdisciplinary reasoning that coarse rubrics do not distinguish. By formulating criteria generation as structured coverage of question-implied evaluation axes, Qworld enables evaluation that adapts to each question rather than relying on fixed task-level criteria.]]></description>
-<pubDate>Fri, 06 Mar 2026 15:20:45 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Know3D: Prompting 3D Generation with Knowledge from Vision-Language Models]]></title>
-<link>https://huggingface.co/papers/2603.22782</link>
-<guid>2603.22782</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Wenyue Chen, Wenjue Chen, Peng Li, Qinghe Wang, Xu Jia
-Institution: 
-Published: 2026-03-24
-Score: 5/10
-Citations: 0
-Upvotes: 4
-GitHub: 
-Stars: 0
-
-Recent advances in 3D generation have improved the fidelity and geometric details of synthesized 3D assets. However, due to the inherent ambiguity of single-view observations and the lack of robust global structural priors caused by limited 3D training data, the unseen regions generated by existing models are often stochastic and difficult to control, which may sometimes fail to align with user intentions or produce implausible geometries. In this paper, we propose Know3D, a novel framework that incorporates rich knowledge from multimodal large language models into 3D generative processes via latent hidden-state injection, enabling language-controllable generation of the back-view for 3D assets. We utilize a VLM-diffusion-based model, where the VLM is responsible for semantic understanding and guidance. The diffusion model acts as a bridge that transfers semantic knowledge from the VLM to the 3D generation model. In this way, we successfully bridge the gap between abstract textual instructions and the geometric reconstruction of unobserved regions, transforming the traditionally stochastic back-view hallucination into a semantically controllable process, demonstrating a promising direction for future 3D generation models.]]></description>
-<pubDate>Tue, 24 Mar 2026 04:18:29 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes]]></title>
-<link>https://huggingface.co/papers/2603.25562</link>
-<guid>2603.25562</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Yuqian Fu, Haohuan Huang, Kaiwen Jiang, Yuanheng Zhu, Dongbin Zhao
+Authors: Linyue Pan, Lexiao Zou, Shuo Guo, Jingchen Ni, Hai-Tao Zheng
 Institution: 
 Published: 2026-03-26
 Score: 5/10
 Citations: 0
-Upvotes: 4
+Upvotes: 7
 GitHub: 
 Stars: 0
 
-On-policy distillation (OPD) is appealing for large language model (LLM) post-training because it evaluates teacher feedback on student-generated rollouts rather than fixed teacher traces. In long-horizon settings, however, the common sampled-token variant is fragile: it reduces distribution matching to a one-token signal and becomes increasingly unreliable as rollouts drift away from prefixes the teacher commonly visits. We revisit OPD from the estimator and implementation sides. Theoretically, token-level OPD is biased relative to sequence-level reverse-KL, but it has a much tighter worst-case variance bound; our toy study shows the same tradeoff empirically, with stronger future-reward coupling producing higher gradient variance and less stable learning. Empirically, we identify three failure modes of sampled-token OPD: an imbalanced one-token signal, unreliable teacher guidance on student-generated prefixes, and distortions caused by tokenizer or special-token mismatch. We address these issues with teacher top-K local support matching, implemented as truncated reverse-KL with top-p rollout sampling and special-token masking. Across single-task math reasoning and multi-task agentic-plus-math training, this objective yields more stable optimization and better downstream performance than sampled-token OPD.]]></description>
-<pubDate>Thu, 26 Mar 2026 15:35:59 +0000</pubDate>
+Agent performance increasingly depends on harness engineering, yet harness design is usually buried in controller code and runtime-specific conventions, making it hard to transfer, compare, and study as a scientific object. We ask whether the high-level control logic of an agent harness can instead be externalized as a portable executable artifact. We introduce Natural-Language Agent Harnesses (NLAHs), which express harness behavior in editable natural language, and Intelligent Harness Runtime (IHR), a shared runtime that executes these harnesses through explicit contracts, durable artifacts, and lightweight adapters. Across coding and computer-use benchmarks, we conduct controlled evaluations of operational viability, module ablation, and code-to-text harness migration.]]></description>
+<pubDate>Thu, 26 Mar 2026 17:58:15 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[Sommelier: Scalable Open Multi-turn Audio Pre-processing for Full-duplex Speech Language Models]]></title>
+<link>https://huggingface.co/papers/2603.25750</link>
+<guid>2603.25750</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Kyudan Jung, Jihwan Kim, Soyoon Kim, Jeongoon Kim, Jaegul Choo
+Institution: 
+Published: 2026-03-20
+Score: 5/10
+Citations: 0
+Upvotes: 7
+GitHub: 
+Stars: 0
+
+As the paradigm of AI shifts from text-based LLMs to Speech Language Models (SLMs), there is a growing demand for full-duplex systems capable of real-time, natural human-computer interaction. However, the development of such models is constrained by the scarcity of high-quality, multi-speaker conversational data, as existing large-scale resources are predominantly single-speaker or limited in volume. Addressing the complex dynamics of natural dialogue, such as overlapping and back-channeling remains a challenge, with standard processing pipelines suffering from diarization errors and ASR hallucinations. To bridge this gap, we present a robust and scalable open-source data processing pipeline designed for full-duplex model.]]></description>
+<pubDate>Fri, 20 Mar 2026 09:10:43 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[MemMA: Coordinating the Memory Cycle through Multi-Agent Reasoning and In-Situ Self-Evolution]]></title>
+<link>https://huggingface.co/papers/2603.18718</link>
+<guid>2603.18718</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Minhua Lin, Zhiwei Zhang, Hanqing Lu, Hui Liu, Xianfeng Tang
+Institution: 
+Published: 2026-03-19
+Score: 5/10
+Citations: 0
+Upvotes: 7
+GitHub: 
+Stars: 0
+
+Memory-augmented LLM agents maintain external memory banks to support long-horizon interaction, yet most existing systems treat construction, retrieval, and utilization as isolated subroutines. This creates two coupled challenges: strategic blindness on the forward path of the memory cycle, where construction and retrieval are driven by local heuristics rather than explicit strategic reasoning, and sparse, delayed supervision on the backward path, where downstream failures rarely translate into direct repairs of the memory bank. To address these challenges, we propose MemMA, a plug-and-play multi-agent framework that coordinates the memory cycle along both the forward and backward paths. On the forward path, a Meta-Thinker produces structured guidance that steers a Memory Manager during construction and directs a Query Reasoner during iterative retrieval. On the backward path, MemMA introduces in-situ self-evolving memory construction, which synthesizes probe QA pairs, verifies the current memory, and converts failures into repair actions before the memory is finalized. Extensive experiments on LoCoMo show that MemMA consistently outperforms existing baselines across multiple LLM backbones and improves three different storage backends in a plug-and-play manner. Our code is publicly available at https://github.com/ventr1c/memma.]]></description>
+<pubDate>Thu, 19 Mar 2026 10:15:59 +0000</pubDate>
+</item>
+<item>
+<title><![CDATA[BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment]]></title>
+<link>https://huggingface.co/papers/2603.23883</link>
+<guid>2603.23883</guid>
+<description><![CDATA[Source: HuggingFace
+Tags: 
+Authors: Risa Shinoda, Kaede Shiohara, Nakamasa Inoue, Kuniaki Saito, Hiroaki Santo
+Institution: 
+Published: 2026-03-25
+Score: 5/10
+Citations: 0
+Upvotes: 3
+GitHub: 
+Stars: 0
+
+Understanding animal species from multimodal data poses an emerging challenge at the intersection of computer vision and ecology. While recent biological models, such as BioCLIP, have demonstrated strong alignment between images and textual taxonomic information for species identification, the integration of the audio modality remains an open problem. We propose BioVITA, a novel visual-textual-acoustic alignment framework for biological applications. BioVITA involves (i) a training dataset, (ii) a representation model, and (iii) a retrieval benchmark. First, we construct a large-scale training dataset comprising 1.3 million audio clips and 2.3 million images, covering 14,133 species annotated with 34 ecological trait labels. Second, building upon BioCLIP2, we introduce a two-stage training framework to effectively align audio representations with visual and textual representations. Third, we develop a cross-modal retrieval benchmark that covers all possible directional retrieval across the three modalities (i.e., image-to-audio, audio-to-text, text-to-image, and their reverse directions), with three taxonomic levels: Family, Genus, and Species. Extensive experiments demonstrate that our model learns a unified representation space that captures species-level semantics beyond taxonomy, advancing multimodal biodiversity understanding. The project page is available at: https://dahlian00.github.io/BioVITA_Page/]]></description>
+<pubDate>Wed, 25 Mar 2026 03:15:04 +0000</pubDate>
 </item>
 <item>
 <title><![CDATA[Can MLLMs Read Students' Minds? Unpacking Multimodal Error Analysis in Handwritten Math]]></title>
@@ -846,42 +882,6 @@ Assessing student handwritten scratchwork is crucial for personalized educationa
 <pubDate>Thu, 26 Mar 2026 02:57:20 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[PMT: Plain Mask Transformer for Image and Video Segmentation with Frozen Vision Encoders]]></title>
-<link>https://huggingface.co/papers/2603.25398</link>
-<guid>2603.25398</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Niccolò Cavagnero, Narges Norouzi, Gijs Dubbelman, Daan de Geus
-Institution: 
-Published: 2026-03-26
-Score: 5/10
-Citations: 0
-Upvotes: 1
-GitHub: 
-Stars: 0
-
-Vision Foundation Models (VFMs) pre-trained at scale enable a single frozen encoder to serve multiple downstream tasks simultaneously. Recent VFM-based encoder-only models for image and video segmentation, such as EoMT and VidEoMT, achieve competitive accuracy with remarkably low latency, yet they require finetuning the encoder, sacrificing the multi-task encoder sharing that makes VFMs practically attractive for large-scale deployment. To reconcile encoder-only simplicity and speed with frozen VFM features, we propose the Plain Mask Decoder (PMD), a fast Transformer-based segmentation decoder that operates on top of frozen VFM features. The resulting model, the Plain Mask Transformer (PMT), preserves the architectural simplicity and low latency of encoder-only designs while keeping the encoder representation unchanged and shareable. The design seamlessly applies to both image and video segmentation, inheriting the generality of the encoder-only framework. On standard image segmentation benchmarks, PMT matches the frozen-encoder state of the art while running up to ~3x faster. For video segmentation, it even performs on par with fully finetuned methods, while being up to 8x faster than state-of-the-art frozen-encoder models. Code: https://github.com/tue-mps/pmt.]]></description>
-<pubDate>Thu, 26 Mar 2026 12:44:30 +0000</pubDate>
-</item>
-<item>
-<title><![CDATA[The Pulse of Motion: Measuring Physical Frame Rate from Visual Dynamics]]></title>
-<link>https://huggingface.co/papers/2603.14375</link>
-<guid>2603.14375</guid>
-<description><![CDATA[Source: HuggingFace
-Tags: 
-Authors: Xiangbo Gao, Mingyang Wu, Siyuan Yang, Jiongze Yu, Pardis Taghavi
-Institution: 
-Published: 2026-03-15
-Score: 4/10
-Citations: 0
-Upvotes: 16
-GitHub: 
-Stars: 0
-
-While recent generative video models have achieved remarkable visual realism and are being explored as world models, true physical simulation requires mastering both space and time. Current models can produce visually smooth kinematics, yet they lack a reliable internal motion pulse to ground these motions in a consistent, real-world time scale. This temporal ambiguity stems from the common practice of indiscriminately training on videos with vastly different real-world speeds, forcing them into standardized frame rates. This leads to what we term chronometric hallucination: generated sequences exhibit ambiguous, unstable, and uncontrollable physical motion speeds. To address this, we propose Visual Chronometer, a predictor that recovers the Physical Frames Per Second (PhyFPS) directly from the visual dynamics of an input video. Trained via controlled temporal resampling, our method estimates the true temporal scale implied by the motion itself, bypassing unreliable metadata. To systematically quantify this issue, we establish two benchmarks, PhyFPS-Bench-Real and PhyFPS-Bench-Gen. Our evaluations reveal a harsh reality: state-of-the-art video generators suffer from severe PhyFPS misalignment and temporal instability. Finally, we demonstrate that applying PhyFPS corrections significantly improves the human-perceived naturalness of AI-generated videos. Our project page is https://xiangbogaobarry.github.io/Visual_Chronometer/.]]></description>
-<pubDate>Sun, 15 Mar 2026 13:29:31 +0000</pubDate>
-</item>
-<item>
 <title><![CDATA[StreamingClaw Technical Report]]></title>
 <link>https://huggingface.co/papers/2603.22120</link>
 <guid>2603.22120</guid>
@@ -892,7 +892,7 @@ Institution:
 Published: 2026-03-23
 Score: 4/10
 Citations: 0
-Upvotes: 7
+Upvotes: 8
 GitHub: 
 Stars: 0
 
@@ -900,22 +900,22 @@ Applications such as embodied intelligence rely on a real-time perception-decisi
 <pubDate>Mon, 23 Mar 2026 15:43:52 +0000</pubDate>
 </item>
 <item>
-<title><![CDATA[Electrostatic Photoluminescence Tuning in All-Solid-State Perovskite Transistors]]></title>
-<link>https://huggingface.co/papers/2603.25718</link>
-<guid>2603.25718</guid>
+<title><![CDATA[Diffutron: A Masked Diffusion Language Model for Turkish Language]]></title>
+<link>https://huggingface.co/papers/2603.20466</link>
+<guid>2603.20466</guid>
 <description><![CDATA[Source: HuggingFace
 Tags: 
-Authors: Vladimir Bruevich, Dmitry Maslennikov, Beier Hu, Artem A. Bakulin, Vitaly Podzorov
-Institution: MIT
-Published: 2026-03-26
-Score: 2/10
+Authors: Şuayp Talha Kocabay, Talha Rüzgar Akkuş
+Institution: 
+Published: 2026-03-20
+Score: 4/10
 Citations: 0
-Upvotes: 2
+Upvotes: 3
 GitHub: 
 Stars: 0
 
-We demonstrate an all solid state semiconductor device, based on epitaxial single crystalline metal halide perovskites, enabling reversible control of a perovskite photoluminescence with a gate voltage. Fundamentally distinct from electroluminescent diodes, such a photoluminescence field effect transistor uses the gate electric field to electrostatically modulate the interfacial density of mobile charges, thereby affecting the radiative and nonradiative recombination channels of photocarriers. Varying the gate voltage in such transistors efficiently changes the rate of nonradiative interfacial recombination and modulates the photoluminescence intensity by 65 to 98 percent (depending on temperature). At favorable gating, nearly complete elimination of non-radiative losses can be achieved. This functionality, coupled with the strong visible-range absorption and emission, possible due to the high absorption coefficient, as well as controllable thickness and macroscopically homogeneous morphology of epitaxial perovskite films, leads to high external photoluminescence quantum efficiencies realized in large-area, thin-film devices. Such high-efficiency, scalable, electrostatically tunable optoelectronic switches broaden the potential applications of metal-halide perovskites in photonics and optoelectronics.]]></description>
-<pubDate>Thu, 26 Mar 2026 17:57:34 +0000</pubDate>
+Masked Diffusion Language Models (MDLMs) have emerged as a compelling non-autoregressive alternative to standard large language models; however, their application to morphologically rich languages remains limited. In this paper, we introduce Diffutron, a masked diffusion language model specifically designed for Turkish. Our approach leverages a resource-efficient training pipeline, starting with LoRA-based continual pre-training of a multilingual encoder on a large-scale corpus. To enable generative capabilities, we employ a progressive instruction-tuning strategy, sequentially adapting the model on general and task-specific instruction sets. Experimental results across comprehensive benchmarks demonstrate that, despite its compact size, our model achieves competitive performance compared to existing multi-billion-parameter baselines. These findings validate the effectiveness of masked diffusion modeling combined with multi-stage tuning for non-autoregressive text generation in Turkish.]]></description>
+<pubDate>Fri, 20 Mar 2026 19:52:37 +0000</pubDate>
 </item>
 </channel>
 </rss>
