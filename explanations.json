@@ -49302,5 +49302,261 @@
       "estimated_study_time": "3-6 months"
     },
     "last_updated": "2026-03-29"
+  },
+  "2603.25730": {
+    "title": "PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Autoregressive video diffusion models",
+          "brief": "Models that generate videos by iteratively adding new frames based on previous ones"
+        },
+        {
+          "name": "KV-cache strategy",
+          "brief": "A method to efficiently store and manage the generation history in video diffusion models"
+        },
+        {
+          "name": "Three-partition KV-cache strategy",
+          "brief": "A novel approach to categorize historical context into sink, mid, and recent tokens for efficient management"
+        },
+        {
+          "name": "Spatiotemporal compression",
+          "brief": "A technique to reduce the dimensionality of video data while preserving important information"
+        },
+        {
+          "name": "Temporal RoPE Adjustment",
+          "brief": "A method to re-align position gaps caused by dropped tokens in video generation"
+        },
+        {
+          "name": "Dynamic top-k context selection mechanism",
+          "brief": "A technique to select the most important tokens to retain in the generation history"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep learning",
+          "why_needed": "To understand the fundamentals of video diffusion models and their applications"
+        },
+        {
+          "topic": "Computer vision",
+          "why_needed": "To comprehend the concepts of video generation, spatiotemporal compression, and temporal coherence"
+        },
+        {
+          "topic": "Video processing",
+          "why_needed": "To familiarize with video formats, resolutions, and frame rates"
+        },
+        {
+          "topic": "Machine learning",
+          "why_needed": "To understand the principles of model training, optimization, and evaluation"
+        },
+        {
+          "topic": "GPU acceleration",
+          "why_needed": "To appreciate the computational requirements and optimizations for video generation models"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-30"
+  },
+  "2603.25746": {
+    "title": "ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Multi-Shot Video Generation",
+          "brief": "Generating multiple shots of a video to create a narrative"
+        },
+        {
+          "name": "Causal Multi-Shot Architecture",
+          "brief": "A novel architecture that enables interactive storytelling and efficient frame generation"
+        },
+        {
+          "name": "Next-Shot Generation",
+          "brief": "Generating the next shot of a video based on historical context"
+        },
+        {
+          "name": "Distribution Matching Distillation",
+          "brief": "A method to distill knowledge from a teacher model to a student model"
+        },
+        {
+          "name": "Dual-Cache Memory Mechanism",
+          "brief": "A mechanism to preserve visual coherence between shots"
+        },
+        {
+          "name": "RoPE Discontinuity Indicator",
+          "brief": "A method to distinguish between different caches"
+        },
+        {
+          "name": "Two-Stage Distillation Strategy",
+          "brief": "A strategy to mitigate error accumulation in autoregressive generation"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and training of ShotStream"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To understand video generation and processing"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the text-to-video model and streaming prompts"
+        },
+        {
+          "topic": "Autoregressive Models",
+          "why_needed": "To understand the challenges of inter-shot consistency and error accumulation"
+        },
+        {
+          "topic": "Knowledge Distillation",
+          "why_needed": "To understand the distillation process from a teacher model to a student model"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-30"
+  },
+  "2603.25158": {
+    "title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Large Language Model (LLM)",
+          "brief": "A type of artificial intelligence model designed to process and understand human language"
+        },
+        {
+          "name": "Trajectory-Local Lessons",
+          "brief": "Specific knowledge or skills learned from individual trajectories or experiences"
+        },
+        {
+          "name": "Transferable Agent Skills",
+          "brief": "Skills that can be applied across different tasks, domains, or models"
+        },
+        {
+          "name": "Inductive Reasoning",
+          "brief": "A type of reasoning that involves making generalizations or drawing conclusions based on specific observations"
+        },
+        {
+          "name": "Parallel Fleet of Sub-Agents",
+          "brief": "A technique used to analyze and process multiple trajectories or experiences simultaneously"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Artificial Intelligence",
+          "why_needed": "To understand the context and applications of LLMs and agent skills"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To comprehend the concepts of model training, overfitting, and generalization"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To understand the role of language models in processing and generating human-like language"
+        },
+        {
+          "topic": "Cognitive Architectures",
+          "why_needed": "To appreciate the design and implementation of agent skills and their integration with LLMs"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-30"
+  },
+  "2603.25716": {
+    "title": "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Hybrid Memory",
+          "brief": "A novel paradigm for video world models that combines precise archiving of static backgrounds and vigilant tracking of dynamic subjects"
+        },
+        {
+          "name": "Video World Models",
+          "brief": "Simulations of the physical world using video data"
+        },
+        {
+          "name": "Dynamic Subject Tracking",
+          "brief": "The ability to track and preserve the identity and motion of subjects that move out of sight and re-emerge"
+        },
+        {
+          "name": "Spatiotemporal Relevance-Driven Retrieval",
+          "brief": "A mechanism for selectively attending to relevant motion cues to preserve subject motion and identity"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Deep Learning",
+          "why_needed": "To understand the architecture and implementation of the proposed HyDRA model"
+        },
+        {
+          "topic": "Computer Vision",
+          "why_needed": "To comprehend the concepts of video world models, dynamic subject tracking, and spatiotemporal relevance-driven retrieval"
+        },
+        {
+          "topic": "Memory Mechanisms",
+          "why_needed": "To appreciate the limitations of existing memory mechanisms and the need for hybrid memory"
+        },
+        {
+          "topic": "Dataset Construction",
+          "why_needed": "To understand the design and creation of the HM-World dataset"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-30"
+  },
+  "2603.25750": {
+    "title": "Sommelier: Scalable Open Multi-turn Audio Pre-processing for Full-duplex Speech Language Models",
+    "prerequisites": {
+      "core_concepts": [
+        {
+          "name": "Full-duplex Speech Language Models",
+          "brief": "Models capable of real-time, natural human-computer interaction"
+        },
+        {
+          "name": "Multi-turn Audio Pre-processing",
+          "brief": "Processing pipeline for handling multiple speakers and turns in a conversation"
+        },
+        {
+          "name": "Diarization",
+          "brief": "The process of identifying and separating speakers in an audio recording"
+        },
+        {
+          "name": "ASR (Automatic Speech Recognition)",
+          "brief": "Technology used to recognize and transcribe spoken language"
+        },
+        {
+          "name": "Open-source Data Processing Pipeline",
+          "brief": "A scalable and accessible pipeline for processing conversational data"
+        }
+      ],
+      "background_knowledge": [
+        {
+          "topic": "Speech Recognition",
+          "why_needed": "To understand the challenges and limitations of current speech recognition systems"
+        },
+        {
+          "topic": "Natural Language Processing",
+          "why_needed": "To comprehend the complexities of human-computer interaction and dialogue dynamics"
+        },
+        {
+          "topic": "Machine Learning",
+          "why_needed": "To understand the development and training of speech language models"
+        },
+        {
+          "topic": "Audio Signal Processing",
+          "why_needed": "To grasp the fundamentals of audio processing and its applications in speech recognition"
+        }
+      ],
+      "difficulty_level": "advanced",
+      "estimated_study_time": "3-6 months"
+    },
+    "last_updated": "2026-03-30"
   }
 }
