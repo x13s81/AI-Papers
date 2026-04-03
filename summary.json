@@ -1,108 +1,87 @@
 {
-  "date": "2026-04-02",
-  "generated_at": "2026-04-02T14:52:22Z",
-  "total_papers": 239,
-  "must_read_count": 11,
-  "notable_count": 26,
-  "daily_summary": "Today's top-scoring papers offer significant advancements in AI research, particularly in the areas of multimodal modeling and large language models, as seen in Dynin-Omni and daVinci-LLM, which push the boundaries of omnimodal understanding and pretraining techniques. Meanwhile, papers like WorldFlow3D and GaussianGPT demonstrate promising approaches to 3D generation and scene understanding, with potential applications in fields such as robotics and computer vision. Additionally, studies like Brevity Constraints Reverse Performance Hierarchies in Language Models and The Model Says Walk provide valuable insights into the limitations and biases of current language models, highlighting the need for continued research into their underlying mechanisms and potential flaws.",
+  "date": "2026-04-03",
+  "generated_at": "2026-04-03T04:10:01Z",
+  "total_papers": 50,
+  "must_read_count": 12,
+  "notable_count": 27,
+  "daily_summary": "Today's top-scoring papers offer significant advancements in language models, autonomous driving, and multimodal understanding, with works like \"Brevity Constraints Reverse Performance Hierarchies in Language Models\" and \"Dynin-Omni: Omnimodal Unified Large Diffusion Language Model\" pushing the boundaries of language processing capabilities. Meanwhile, papers such as \"UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving\" and \"VideoZeroBench: Probing the Limits of Video MLLMs with Spatio-Temporal Evidence Verification\" are redefining the state-of-the-art in autonomous driving and video understanding. These breakthroughs, along with others like \"PixelPrune\" and \"QuitoBench\", have the potential to reshape the AI research landscape and warrant close attention from the academic community.",
   "weekly_trends": {
     "hot_topics": [
       {
-        "topic": "Computer Vision (cs.CV)",
-        "paper_count": 75,
-        "insight": "Research in computer vision continues to thrive, with a large number of papers exploring various aspects of the field, including 3D generation and scene understanding, as seen in papers like WorldFlow3D and GaussianGPT."
+        "topic": "Language Models",
+        "paper_count": 4,
+        "insight": "Research is focused on improving language models with papers like Brevity Constraints Reverse Performance Hierarchies in Language Models and Dynin-Omni: Omnimodal Unified Large Diffusion Language Model, showcasing advancements in diffusion language models and performance hierarchies."
       },
       {
-        "topic": "Machine Learning (cs.LG)",
-        "paper_count": 72,
-        "insight": "Machine learning remains a dominant area of research, with papers like Dynin-Omni and daVinci-LLM pushing the boundaries of large language models and pretraining techniques."
+        "topic": "Computer Vision",
+        "paper_count": 3,
+        "insight": "There is a notable interest in video understanding and perception-centric reasoning, as seen in papers like VideoZeroBench: Probing the Limits of Video MLLMs with Spatio-Temporal Evidence Verification and PerceptionComp: A Video Benchmark for Complex Perception-Centric Reasoning."
       },
       {
-        "topic": "Artificial Intelligence (cs.AI)",
-        "paper_count": 65,
-        "insight": "The cs.AI category saw significant activity, with papers such as Embarrassingly Simple Self-Distillation Improves Code Generation and The Model Says Walk exploring new approaches to AI reasoning and code generation."
+        "topic": "Autonomous Systems",
+        "paper_count": 2,
+        "insight": "Autonomous driving is being explored with UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving, highlighting the need for integrated approaches to understanding, perception, and action planning."
       }
     ],
     "key_developments": [
-      "The introduction of Dynin-Omni, a unified large diffusion language model, which achieves state-of-the-art results in various tasks",
-      "The development of WorldFlow3D, a method for unbounded 3D world generation, which has significant implications for fields like robotics and gaming",
-      "The release of Project Imaging-X, a comprehensive survey of open-access medical imaging datasets for foundation model development, which can accelerate progress in medical AI research"
+      "The introduction of Dynin-Omni, a unified large diffusion language model, marks a significant step in omnimodal language understanding.",
+      "The development of PixelPrune, a method for pixel-level adaptive visual token reduction, demonstrates advancements in efficient visual processing.",
+      "The proposal of S0 Tuning for zero-overhead adaptation of hybrid recurrent-attention models indicates a focus on improving model adaptability without added computational cost."
     ],
     "emerging_trends": [
-      "There is a growing interest in multimodal and omnimodal models, as seen in papers like Dynin-Omni, which can handle a wide range of tasks and data types.",
-      "The field is also shifting towards more efficient and scalable architectures, with papers like UniMixer and Embarrassingly Simple Self-Distillation Improves Code Generation exploring new approaches to recommendation systems and code generation."
+      "There is a growing emphasis on evaluating and improving the safety and reliability of AI systems, as evidenced by papers like ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents Through Skills, Plugins, and Watchers.",
+      "The field is also seeing a shift towards more comprehensive benchmarks for evaluating AI performance, such as QuitoBench: A High-Quality Open Time Series Forecasting Benchmark and PerceptionComp: A Video Benchmark for Complex Perception-Centric Reasoning."
     ],
-    "summary": "This week in AI research saw significant advancements in computer vision, machine learning, and artificial intelligence, with a focus on developing more efficient, scalable, and generalizable models. Papers like Dynin-Omni and WorldFlow3D pushed the boundaries of large language models and 3D generation, while projects like Project Imaging-X provided valuable resources for medical AI research. Overall, the field continues to evolve rapidly, with a growing emphasis on multimodal models, efficient architectures, and real-world applications."
+    "summary": "This week in AI research saw significant advancements in language models, with a focus on diffusion models and performance hierarchies, as highlighted by papers like Brevity Constraints Reverse Performance Hierarchies in Language Models and Dynin-Omni: Omnimodal Unified Large Diffusion Language Model. Additionally, there was notable progress in computer vision, particularly in video understanding and perception-centric reasoning, with papers such as VideoZeroBench and PerceptionComp. Overall, the field is moving towards more integrated, efficient, and reliable AI systems, with an emphasis on safety and comprehensive evaluation benchmarks, as demonstrated by the development of UniDriveVLA for autonomous driving and the proposal of PixelPrune for efficient visual processing."
   },
   "sources": {
-    "HuggingFace": 50,
-    "arXiv": 189
+    "HuggingFace": 50
   },
-  "tags": {
-    "cs.CV": 75,
-    "cs.LG": 72,
-    "cs.AI": 65,
-    "cs.CL": 41,
-    "stat.ML": 8,
-    "cs.CR": 8,
-    "cs.RO": 7,
-    "cs.IR": 5,
-    "cs.HC": 4,
-    "cs.NE": 4,
-    "cs.GR": 3,
-    "cs.MA": 3,
-    "cs.CY": 3,
-    "cs.DB": 3,
-    "cs.SE": 3,
-    "stat.ME": 3,
-    "cs.ET": 2,
-    "cs.MM": 2,
-    "cs.DC": 2,
-    "cs.CC": 1
-  },
+  "tags": {},
   "institutions": {
-    "MIT": 3,
-    "Mila": 1
+    "MIT": 1
   },
   "must_read_ids": [
-    "2603.27164",
+    "2604.00025",
     "2604.00007",
-    "2603.29089",
-    "2603.27460",
+    "2603.24414",
+    "2603.26017",
+    "2603.26653",
     "2603.26661",
-    "2603.29025",
     "2604.01128",
-    "2604.01193",
-    "2603.28763",
-    "2604.00590",
-    "2604.00025"
+    "2604.02190",
+    "2603.28052",
+    "2604.01569",
+    "2604.00886",
+    "2604.01168"
   ],
   "notable_ids": [
     "2603.28407",
+    "2604.02268",
     "2603.25823",
-    "2603.26017",
-    "2604.01161",
-    "2604.00528",
-    "2603.26174",
-    "2603.25406",
-    "2603.25791",
-    "2603.30045",
-    "2603.27520",
-    "2603.26246",
-    "2603.24414",
+    "2603.26164",
     "2603.26648",
-    "2603.28590",
-    "2603.26653",
+    "2604.01161",
+    "2604.02097",
+    "2604.00528",
+    "2604.01676",
+    "2603.25406",
+    "2603.29002",
+    "2603.30045",
+    "2604.00892",
     "2604.01221",
     "2604.00479",
     "2604.00093",
-    "2603.25732",
+    "2604.01193",
+    "2604.02029",
+    "2604.01001",
     "2604.00842",
     "2604.00626",
-    "2603.29497",
-    "2603.29002",
-    "2603.26357",
-    "2603.29092",
-    "2603.17191"
+    "2604.02088",
+    "2604.00590",
+    "2603.27666",
+    "2603.25764",
+    "2604.00913",
+    "2603.27520"
   ]
 }
